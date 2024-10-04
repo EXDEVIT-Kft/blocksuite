@@ -9,7 +9,7 @@ export class ParagraphBlockService extends BlockService {
 
   placeholderGenerator: (model: ParagraphBlockModel) => string = model => {
     if (model.type === 'text') {
-      return "Type '/' for commands";
+      return "Írj be '/' jelet az utasításokért...";
     }
 
     const placeholders = {
