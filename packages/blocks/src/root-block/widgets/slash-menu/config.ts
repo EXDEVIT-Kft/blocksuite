@@ -133,15 +133,15 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
   tooltipTimeout: 800,
   items: [
     // ---------------------------------------------------------
-    { groupName: 'Basic' },
+    { groupName: 'Alapvető' },
     ...textConversionConfigs
       .filter(i => i.type && ['h1', 'h2', 'h3', 'text'].includes(i.type))
       .map(createConversionItem),
     {
-      name: 'Other Headings',
+      name: 'Egyéb Címsorok',
       icon: HeadingIcon,
       subMenu: [
-        { groupName: 'Headings' },
+        { groupName: 'Címsorok' },
         ...textConversionConfigs
           .filter(i => i.type && ['h4', 'h5', 'h6'].includes(i.type))
           .map<SlashMenuActionItem>(createConversionItem),
@@ -199,8 +199,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       })),
 
     {
-      name: 'Inline equation',
-      description: 'Create a equation block.',
+      name: 'Egysoros Egyenlet',
+      description: 'Szúrj be egy új egysoros egyenletet.',
       icon: TeXIcon({
         width: '20',
         height: '20',
@@ -261,15 +261,15 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'List' },
+    { groupName: 'Felsorolások' },
     ...textConversionConfigs
       .filter(i => i.flavour === 'affine:list')
       .map(createConversionItem),
 
     // ---------------------------------------------------------
-    { groupName: 'Style' },
+    { groupName: 'Stílusok' },
     ...textFormatConfigs
-      .filter(i => !['Code', 'Link'].includes(i.name))
+      .filter(i => !['Kód', 'Link'].includes(i.name))
       .map<SlashMenuActionItem>(({ name, icon, id }) => ({
         name,
         icon,
@@ -299,15 +299,15 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
     // ---------------------------------------------------------
     {
-      groupName: 'Page',
+      groupName: 'Oldalak',
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
     },
     {
-      name: 'New Doc',
-      description: 'Start a new document.',
+      name: 'Új Dokumentum',
+      description: 'Hozz létre egy új dokumentumot.',
       icon: NewDocIcon,
-      tooltip: slashMenuToolTips['New Doc'],
+      tooltip: slashMenuToolTips['Új Dokumentum'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
       action: ({ rootComponent, model }) => {
@@ -321,10 +321,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Linked Doc',
-      description: 'Link to another document.',
+      name: 'Hivatkozás',
+      description: 'Meglévő dokumentumra hivatkozás.',
       icon: LinkedDocIcon,
-      tooltip: slashMenuToolTips['Linked Doc'],
+      tooltip: slashMenuToolTips['Hivatkozás'],
       alias: ['dual link'],
       showWhen: ({ rootComponent, model }) => {
         const linkedDocWidgetEle =
@@ -366,12 +366,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Content & Media' },
+    { groupName: 'Tartalom & Média' },
     {
-      name: 'Image',
-      description: 'Insert an image.',
+      name: 'Kép',
+      description: 'Szúrj be egy képet.',
       icon: ImageIcon20,
-      tooltip: slashMenuToolTips['Image'],
+      tooltip: slashMenuToolTips['Kép'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:image') &&
         !insideDatabase(model),
@@ -398,10 +398,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Link',
-      description: 'Add a bookmark for reference.',
+      name: 'Weboldal',
+      description: 'Hivatkozz egy külső weboldalra elegánsan.',
       icon: LinkIcon,
-      tooltip: slashMenuToolTips['Link'],
+      tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:bookmark') &&
         !insideDatabase(model),
@@ -421,10 +421,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Attachment',
-      description: 'Attach a file to document.',
+      name: 'Fájl',
+      description: 'Mellékelj egy tetszőleges fájlt.',
       icon: FileIcon,
-      tooltip: slashMenuToolTips['Attachment'],
+      tooltip: slashMenuToolTips['Fájl'],
       alias: ['file'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:attachment') &&
@@ -449,7 +449,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'YouTube',
-      description: 'Embed a YouTube video.',
+      description: 'Ágyazz be egy YouTube videót.',
       icon: YoutubeIcon,
       tooltip: slashMenuToolTips['YouTube'],
       showWhen: ({ model }) =>
@@ -464,7 +464,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'YouTube',
-          'The added YouTube video link will be displayed as an embed view.',
+          'A hozzáadott YouTube videó link beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -472,7 +472,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'GitHub',
-      description: 'Link to a GitHub repository.',
+      description: 'Hivatkozz egy GitHub forrásra.',
       icon: GithubIcon,
       tooltip: slashMenuToolTips['Github'],
       showWhen: ({ model }) =>
@@ -487,7 +487,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'GitHub',
-          'The added GitHub issue or pull request link will be displayed as a card view.',
+          'A hozzáadott GitHub issue vagy Pull Request hivatkozás kártyanézetben lesz megjelenítve.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -497,7 +497,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
     {
       name: 'Figma',
-      description: 'Embed a Figma document.',
+      description: 'Ágyazz be egy Figma dokumentumot.',
       icon: FigmaIcon,
       tooltip: slashMenuToolTips['Figma'],
       showWhen: ({ model }) =>
@@ -512,7 +512,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'Figma',
-          'The added Figma link will be displayed as an embed view.',
+          'A hozzáadott Figma hivatkozás beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -520,8 +520,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Loom',
+      name: 'Loom Videó',
       icon: LoomIcon,
+      description: 'Ágyazz be egy Loom videót.',
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-loom') &&
         !insideDatabase(model),
@@ -533,8 +534,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         const index = parentModel.children.indexOf(model) + 1;
         await toggleEmbedCardCreateModal(
           rootComponent.host,
-          'Loom',
-          'The added Loom video link will be displayed as an embed view.',
+          'Loom Videó',
+          'A hozzáadott Loom videó hivatkozás beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -542,8 +543,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Equation',
-      description: 'Create a equation block.',
+      name: 'Egyenlet',
+      description: 'Hozz létre egy új egyenlet blokkot.',
       icon: TeXIcon({
         width: '20',
         height: '20',
@@ -627,7 +628,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       ).filter(element => element.get('type') === CanvasElementType.GROUP);
 
       const groupItems = groupElements.map(element => ({
-        name: 'Group: ' + element.get('title'),
+        name: 'Csoport: ' + element.get('title'),
         icon: GroupingIcon(),
         action: () => {
           const { doc } = rootComponent;
@@ -657,7 +658,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       if (items.length !== 0) {
         return [
           {
-            groupName: 'Document Group & Frame',
+            groupName: 'Dokumentum Csoport & Keret',
           },
           ...items,
         ];
@@ -667,7 +668,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Date' },
+    { groupName: 'Dátumok' },
     () => {
       const now = new Date();
       const tomorrow = new Date();
@@ -678,18 +679,18 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
       return [
         {
-          name: 'Today',
+          name: 'Ma',
           icon: TodayIcon,
-          tooltip: slashMenuToolTips['Today'],
+          tooltip: slashMenuToolTips['Ma'],
           description: formatDate(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatDate(now));
           },
         },
         {
-          name: 'Tomorrow',
+          name: 'Holnap',
           icon: TomorrowIcon,
-          tooltip: slashMenuToolTips['Tomorrow'],
+          tooltip: slashMenuToolTips['Holnap'],
           description: formatDate(tomorrow),
           action: ({ rootComponent, model }) => {
             const tomorrow = new Date();
@@ -698,9 +699,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           },
         },
         {
-          name: 'Yesterday',
+          name: 'Tegnap',
           icon: YesterdayIcon,
-          tooltip: slashMenuToolTips['Yesterday'],
+          tooltip: slashMenuToolTips['Tegnap'],
           description: formatDate(yesterday),
           action: ({ rootComponent, model }) => {
             const yesterday = new Date();
@@ -709,9 +710,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           },
         },
         {
-          name: 'Now',
+          name: 'Most',
           icon: NowIcon,
-          tooltip: slashMenuToolTips['Now'],
+          tooltip: slashMenuToolTips['Most'],
           description: formatTime(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatTime(now));
@@ -721,13 +722,13 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Database' },
+    { groupName: 'Adatbázis' },
     {
-      name: 'Table View',
-      description: 'Display items in a table format.',
+      name: 'Táblázat Nézet',
+      description: 'Jelenítsd meg az elemeket táblázatban.',
       alias: ['database'],
       icon: DatabaseTableViewIcon20,
-      tooltip: slashMenuToolTips['Table View'],
+      tooltip: slashMenuToolTips['Táblázat Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideDatabase(model) &&
@@ -750,10 +751,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Todo',
+      name: 'Todo Nézet',
       alias: ['todo view'],
       icon: DatabaseTableViewIcon20,
-      tooltip: slashMenuToolTips['Todo'],
+      tooltip: slashMenuToolTips['Todo Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideDatabase(model) &&
@@ -782,11 +783,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Kanban View',
-      description: 'Visualize data in a dashboard.',
+      name: 'Kanban Nézet',
+      description: 'Vizualizáld az elvégzendő feladatokat.',
       alias: ['database'],
       icon: DatabaseKanbanViewIcon20,
-      tooltip: slashMenuToolTips['Kanban View'],
+      tooltip: slashMenuToolTips['Kanban Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideDatabase(model) &&
@@ -810,12 +811,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Actions' },
+    { groupName: 'Műveletek' },
     {
-      name: 'Move Up',
-      description: 'Shift this line up.',
+      name: 'Felfele Mozgatás',
+      description: 'Jelenlegi sor feljebb mozgatása.',
       icon: ArrowUpBigIcon,
-      tooltip: slashMenuToolTips['Move Up'],
+      tooltip: slashMenuToolTips['Felfele Mozgatás'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const previousSiblingModel = doc.getPrev(model);
@@ -828,10 +829,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Move Down',
-      description: 'Shift this line down.',
+      name: 'Lefele Mozgatás',
+      description: 'Jelenlegi sor lejjebb mozgatása.',
       icon: ArrowDownBigIcon,
-      tooltip: slashMenuToolTips['Move Down'],
+      tooltip: slashMenuToolTips['Lefele Mozgatás'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const nextSiblingModel = doc.getNext(model);
@@ -844,17 +845,17 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Copy',
-      description: 'Copy this line to clipboard.',
+      name: 'Másolás',
+      description: 'Jelenlegi sor vágólapra másolása.',
       icon: PasteIcon,
-      tooltip: slashMenuToolTips['Copy'],
+      tooltip: slashMenuToolTips['Másolás'],
       action: ({ rootComponent, model }) => {
         const slice = Slice.fromModels(rootComponent.std.doc, [model]);
 
         rootComponent.std.clipboard
           .copy(slice)
           .then(() => {
-            toast(rootComponent.host, 'Copied to clipboard');
+            toast(rootComponent.host, 'Tartalom a vágólapra másolva');
           })
           .catch(e => {
             console.error(e);
@@ -862,8 +863,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Duplicate',
-      description: 'Create a duplicate of this line.',
+      name: 'Duplikálás',
+      description: 'Jelenlegi sor duplikálása.',
       icon: CopyIcon,
       tooltip: slashMenuToolTips['Copy'],
       action: ({ rootComponent, model }) => {
@@ -898,11 +899,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Delete',
-      description: 'Remove this line permanently.',
+      name: 'Törlés',
+      description: 'Jelenlegi sor törlése.',
       alias: ['remove'],
       icon: DeleteIcon,
-      tooltip: slashMenuToolTips['Delete'],
+      tooltip: slashMenuToolTips['Törlés'],
       action: ({ rootComponent, model }) => {
         rootComponent.doc.deleteBlock(model);
       },
