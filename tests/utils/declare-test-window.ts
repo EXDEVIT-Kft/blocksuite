@@ -1,10 +1,10 @@
-import type { RefNodeSlotsProvider, TestUtils } from '@blocks/index.js';
 import type {
   EditorHost,
   ExtensionType,
   WidgetViewMapIdentifier,
-} from '@blocksuite/block-std';
-import type { AffineEditorContainer } from '@blocksuite/presets';
+} from '@algogrind/block-std';
+import type { AffineEditorContainer } from '@algogrind/presets';
+import type { RefNodeSlotsProvider, TestUtils } from '@blocks/index.js';
 import type { DebugMenu } from '@playground/apps/_common/components/debug-menu.js';
 import type { BlockModel, Doc, DocCollection, Job } from '@store/index.js';
 

@@ -3,7 +3,7 @@ import type { Signal } from '@preact/signals-core';
 import {
   GeneralStyleIcon,
   ScribbledStyleIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   DEFAULT_SHAPE_FILL_COLOR,
   LineColor,
@@ -12,10 +12,10 @@ import {
   type ShapeName,
   ShapeStyle,
   ShapeType,
-} from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { computed, signal } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

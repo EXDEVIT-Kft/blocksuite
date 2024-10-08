@@ -1,10 +1,10 @@
-import type { BlockCollection, DocCollection } from '@blocksuite/store';
+import type { BlockCollection, DocCollection } from '@algogrind/store';
 
 import {
   BlockServiceWatcher,
   type EditorHost,
   type ExtensionType,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import {
   CommunityCanvasTextFonts,
   FontConfigExtension,
@@ -14,14 +14,14 @@ import {
   RefNodeSlotsExtension,
   RefNodeSlotsProvider,
   SpecProvider,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import {
   AffineFormatBarWidget,
   DocModeProvider,
   toolbarDefaultConfig,
-} from '@blocksuite/blocks';
-import { assertExists } from '@blocksuite/global/utils';
-import { AffineEditorContainer, CommentPanel } from '@blocksuite/presets';
+} from '@algogrind/blocks';
+import { assertExists } from '@algogrind/global/utils';
+import { AffineEditorContainer, CommentPanel } from '@algogrind/presets';
 
 import { CustomFramePanel } from '../../_common/components/custom-frame-panel.js';
 import { CustomOutlinePanel } from '../../_common/components/custom-outline-panel.js';

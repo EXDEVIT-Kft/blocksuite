@@ -1,14 +1,14 @@
-import { SmallScissorsIcon } from '@blocksuite/affine-components/icons';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { getRectByBlockComponent } from '@blocksuite/affine-shared/utils';
+import { SmallScissorsIcon } from '@algogrind/affine-components/icons';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@algogrind/affine-shared/consts';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { getRectByBlockComponent } from '@algogrind/affine-shared/utils';
 import {
   deserializeXYWH,
   DisposableGroup,
   Point,
   serializeXYWH,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

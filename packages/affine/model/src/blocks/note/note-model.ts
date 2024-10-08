@@ -1,8 +1,8 @@
-import type { GfxElementGeometry } from '@blocksuite/block-std/gfx';
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { GfxElementGeometry } from '@algogrind/block-std/gfx';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
-import { Bound } from '@blocksuite/global/utils';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { Bound } from '@algogrind/global/utils';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 import {
   type Color,

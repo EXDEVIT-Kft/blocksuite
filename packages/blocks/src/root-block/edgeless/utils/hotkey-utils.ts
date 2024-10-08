@@ -1,4 +1,4 @@
-import { ShapeType } from '@blocksuite/affine-model';
+import { ShapeType } from '@algogrind/affine-model';
 
 import type { ShapeTool } from '../tools/shape-tool.js';
 

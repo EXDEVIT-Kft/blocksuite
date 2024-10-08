@@ -1,7 +1,7 @@
 import {
   popFilterableSimpleMenu,
   popMenu,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import {
   AddCursorIcon,
   DeleteIcon,

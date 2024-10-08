@@ -1,6 +1,6 @@
-import type { BlockCommands } from '@blocksuite/block-std';
+import type { BlockCommands } from '@algogrind/block-std';
 
-import { getImageSelectionsCommand } from '@blocksuite/affine-shared/commands';
+import { getImageSelectionsCommand } from '@algogrind/affine-shared/commands';
 
 export const commands: BlockCommands = {
   getImageSelections: getImageSelectionsCommand,

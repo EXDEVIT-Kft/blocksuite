@@ -3,20 +3,20 @@ import type {
   IPoint,
   IVec,
   PointLocation,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import {
   EMBED_HTML_MIN_HEIGHT,
   EMBED_HTML_MIN_WIDTH,
   SYNCED_MIN_HEIGHT,
   SYNCED_MIN_WIDTH,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   CanvasElementType,
   CommonUtils,
   normalizeShapeBound,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type BookmarkBlockModel,
   ConnectorElementModel,
@@ -27,12 +27,12 @@ import {
   NoteBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   clamp,
   requestThrottledConnectedFrame,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   assertType,
   Bound,
@@ -40,7 +40,7 @@ import {
   pickValues,
   Slot,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

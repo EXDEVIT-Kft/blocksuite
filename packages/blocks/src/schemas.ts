@@ -1,8 +1,8 @@
 // Import models only, the bundled file should not include anything else.
-import type { BlockSchema } from '@blocksuite/store';
+import type { BlockSchema } from '@algogrind/store';
 import type { z } from 'zod';
 
-import { SurfaceBlockSchema } from '@blocksuite/affine-block-surface';
+import { SurfaceBlockSchema } from '@algogrind/affine-block-surface';
 import {
   AttachmentBlockSchema,
   BookmarkBlockSchema,
@@ -25,7 +25,7 @@ import {
   ParagraphBlockSchema,
   RootBlockSchema,
   SurfaceRefBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import { DataViewBlockSchema } from './data-view-block/data-view-model.js';
 

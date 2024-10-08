@@ -1,4 +1,4 @@
-import { popFilterableSimpleMenu } from '@blocksuite/affine-components/context-menu';
+import { popFilterableSimpleMenu } from '@algogrind/affine-components/context-menu';
 import {
   CopyIcon,
   DeleteIcon,

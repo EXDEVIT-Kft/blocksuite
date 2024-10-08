@@ -1,18 +1,18 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { Doc } from '@blocksuite/store';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { Doc } from '@algogrind/store';
 
-import { ColorScheme, FrameBlockModel } from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+import { ColorScheme, FrameBlockModel } from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 import {
   docContext,
   GfxBlockComponent,
   modelContext,
   ShadowlessElement,
   stdContext,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
-import { Bound, type SerializedXYWH } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
+import { Bound, type SerializedXYWH } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';

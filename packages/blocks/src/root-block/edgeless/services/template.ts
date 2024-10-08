@@ -1,8 +1,8 @@
 import type {
   SurfaceBlockModel,
   SurfaceBlockTransformer,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@algogrind/affine-block-surface';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
 
 import {
   assertExists,
@@ -10,7 +10,7 @@ import {
   Bound,
   getCommonBound,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import {
   type BlockModel,
   type BlockSnapshot,
@@ -19,7 +19,7 @@ import {
   Job,
   type SnapshotReturn,
   type Y,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 /**
  * Those block contains other block's id

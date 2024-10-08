@@ -1,8 +1,8 @@
-import type { LatexBlockModel } from '@blocksuite/affine-model';
+import type { LatexBlockModel } from '@algogrind/affine-model';
 import type { Placement } from '@floating-ui/dom';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
+import { createLitPortal } from '@algogrind/affine-components/portal';
 import { effect } from '@preact/signals-core';
 import katex from 'katex';
 import { html, render } from 'lit';

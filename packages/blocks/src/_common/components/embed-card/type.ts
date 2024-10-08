@@ -6,8 +6,8 @@ import type {
   EmbedLoomModel,
   EmbedSyncedDocModel,
   EmbedYoutubeModel,
-} from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
 
 import {
   EmbedFigmaBlockComponent,
@@ -16,7 +16,7 @@ import {
   EmbedLoomBlockComponent,
   EmbedSyncedDocBlockComponent,
   EmbedYoutubeBlockComponent,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 
 import { BookmarkBlockComponent } from '../../../bookmark-block/bookmark-block.js';
 

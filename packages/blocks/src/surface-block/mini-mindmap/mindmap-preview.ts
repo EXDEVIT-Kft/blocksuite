@@ -1,17 +1,17 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
 
 import {
   MindmapStyleFour,
   MindmapStyleOne,
   MindmapStyleThree,
   MindmapStyleTwo,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   type MindmapElementModel,
   MindmapStyle,
-} from '@blocksuite/affine-model';
-import { BlockStdScope, type EditorHost } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { BlockStdScope, type EditorHost } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import {
   type Doc,
   DocCollection,
@@ -19,7 +19,7 @@ import {
   IdGeneratorType,
   Job,
   Schema,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

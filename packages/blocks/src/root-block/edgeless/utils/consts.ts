@@ -4,7 +4,7 @@ import {
   LineWidth,
   ShapeFillColor,
   StrokeStyle,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 export const BOOKMARK_MIN_WIDTH = 450;
 

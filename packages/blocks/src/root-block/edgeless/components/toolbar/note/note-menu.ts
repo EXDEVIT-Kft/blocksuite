@@ -1,5 +1,5 @@
-import { AttachmentIcon, LinkIcon } from '@blocksuite/affine-components/icons';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { AttachmentIcon, LinkIcon } from '@algogrind/affine-components/icons';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

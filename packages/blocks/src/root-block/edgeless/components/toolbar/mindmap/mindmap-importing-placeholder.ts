@@ -1,5 +1,5 @@
-import { LightLoadingIcon } from '@blocksuite/affine-components/icons';
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { LightLoadingIcon } from '@algogrind/affine-components/icons';
+import { ShadowlessElement } from '@algogrind/block-std';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, unsafeCSS } from 'lit';
 

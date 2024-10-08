@@ -1,6 +1,6 @@
-import { LineWidth } from '@blocksuite/affine-model';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { LineWidth } from '@algogrind/affine-model';
+import { requestConnectedFrame } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, queryAll } from 'lit/decorators.js';
 

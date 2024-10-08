@@ -1,11 +1,11 @@
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
 import {
   getShapeRadius,
   getShapeType,
   type ShapeName,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
-import { Bound, sleep, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound, sleep, WithDisposable } from '@algogrind/global/utils';
 import {
   css,
   html,

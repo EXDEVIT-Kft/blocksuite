@@ -1,10 +1,10 @@
-import { type BlockStdScope, LifeCycleWatcher } from '@blocksuite/block-std';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { type BlockStdScope, LifeCycleWatcher } from '@algogrind/block-std';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   type DeepPartial,
   DisposableGroup,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { computed, type Signal, signal } from '@preact/signals-core';
 import clonedeep from 'lodash.clonedeep';
 import mergeWith from 'lodash.mergewith';

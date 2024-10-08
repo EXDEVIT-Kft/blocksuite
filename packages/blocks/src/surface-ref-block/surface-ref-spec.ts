@@ -3,7 +3,7 @@ import {
   type ExtensionType,
   FlavourExtension,
   WidgetViewMapExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { SurfaceRefBlockService } from './surface-ref-service.js';

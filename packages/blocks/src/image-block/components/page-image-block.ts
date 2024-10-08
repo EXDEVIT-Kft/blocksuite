@@ -1,7 +1,7 @@
-import type { BaseSelection, UIEventStateContext } from '@blocksuite/block-std';
+import type { BaseSelection, UIEventStateContext } from '@algogrind/block-std';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

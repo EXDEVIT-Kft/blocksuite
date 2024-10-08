@@ -1,16 +1,16 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@algogrind/affine-model';
 import {
   DragHandleConfigExtension,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   convertDragPreviewDocToEdgeless,
   convertDragPreviewEdgelessToDoc,
   isInsideEdgelessEditor,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BlockService } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { BlockService } from '@algogrind/block-std';
 
 import type { RootBlockComponent } from '../root-block/types.js';
 import type { ImageBlockComponent } from './image-block.js';

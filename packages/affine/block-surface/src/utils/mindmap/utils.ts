@@ -8,14 +8,14 @@ import {
   type NodeDetail,
   type NodeType,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   generateKeyBetween,
   type GfxModel,
   type SurfaceBlockModel,
-} from '@blocksuite/block-std/gfx';
-import { assertType } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { assertType } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import { ConnectorPathGenerator } from '../../managers/connector-manager.js';
 import { fitContent } from '../../renderer/elements/shape/utils.js';

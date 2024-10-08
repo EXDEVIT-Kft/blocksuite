@@ -1,8 +1,8 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IPoint, IVec } from '@blocksuite/global/utils';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IPoint, IVec } from '@algogrind/global/utils';
 
-import { CommonUtils, Overlay } from '@blocksuite/affine-block-surface';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+import { CommonUtils, Overlay } from '@algogrind/affine-block-surface';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 import {
   Bound,
   getBoundFromPoints,
@@ -12,7 +12,7 @@ import {
   pointInPolygon,
   rotatePoints,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { EdgelessTool } from '../types.js';
 

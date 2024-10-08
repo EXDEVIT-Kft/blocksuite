@@ -6,9 +6,9 @@ import {
   type GfxModel,
   type PointTestOptions,
   SurfaceBlockModel,
-} from '@blocksuite/block-std/gfx';
-import { Bound, type SerializedXYWH } from '@blocksuite/global/utils';
-import { BlockModel, defineBlockSchema, type Text } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { Bound, type SerializedXYWH } from '@algogrind/global/utils';
+import { BlockModel, defineBlockSchema, type Text } from '@algogrind/store';
 
 import type { Color } from '../../consts/index.js';
 

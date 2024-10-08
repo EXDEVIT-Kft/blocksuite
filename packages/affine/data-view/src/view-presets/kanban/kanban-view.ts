@@ -1,4 +1,4 @@
-import { popMenu } from '@blocksuite/affine-components/context-menu';
+import { popMenu } from '@algogrind/affine-components/context-menu';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from 'lit';
 import { query } from 'lit/decorators.js';

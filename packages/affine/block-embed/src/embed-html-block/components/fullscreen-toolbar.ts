@@ -1,5 +1,5 @@
-import { popMenu } from '@blocksuite/affine-components/context-menu';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { popMenu } from '@algogrind/affine-components/context-menu';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 import {
   CopyIcon,
   DoneIcon,

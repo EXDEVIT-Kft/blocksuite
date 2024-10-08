@@ -1,18 +1,18 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
-import type { TextElementModel } from '@blocksuite/affine-model';
+import type { RichText } from '@algogrind/affine-components/rich-text';
+import type { TextElementModel } from '@algogrind/affine-model';
 
-import { CommonUtils, TextUtils } from '@blocksuite/affine-block-surface';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+import { CommonUtils, TextUtils } from '@algogrind/affine-block-surface';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 import {
   RANGE_SYNC_EXCLUDE_ATTR,
   ShadowlessElement,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import {
   assertExists,
   Bound,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

@@ -1,7 +1,7 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { Bound, getElementsBound } from '@blocksuite/global/utils';
-import { Slot } from '@blocksuite/store';
+import { Bound, getElementsBound } from '@algogrind/global/utils';
+import { Slot } from '@algogrind/store';
 
 import type { EdgelessTool } from '../types.js';
 

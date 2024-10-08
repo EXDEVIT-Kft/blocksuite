@@ -1,4 +1,4 @@
-import type { Menu } from '@blocksuite/affine-components/context-menu';
+import type { Menu } from '@algogrind/affine-components/context-menu';
 
 import { html, type TemplateResult } from 'lit';
 

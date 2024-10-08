@@ -1,7 +1,7 @@
-import type { BlockStdScope, ExtensionType } from '@blocksuite/block-std';
+import type { BlockStdScope, ExtensionType } from '@algogrind/block-std';
 import type { TemplateResult } from 'lit';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 import type { AffineReference } from './reference-node.js';
 

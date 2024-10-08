@@ -1,16 +1,16 @@
 import type {
   EdgelessRootBlockComponent,
   NoteBlockModel,
-} from '@blocksuite/blocks';
-import type { Doc } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import type { Doc } from '@algogrind/store';
 
-import { BlocksUtils, NoteDisplayMode } from '@blocksuite/blocks';
+import { BlocksUtils, NoteDisplayMode } from '@algogrind/blocks';
 import {
   Bound,
   DisposableGroup,
   SignalWatcher,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { effect, signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

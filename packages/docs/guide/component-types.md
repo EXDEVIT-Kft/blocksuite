@@ -8,7 +8,7 @@ After getting started, this section outlines the foundational [editing component
 
 ## Editors and Fragments
 
-The `@blocksuite/presets` package includes reusable editors like `PageEditor` and `EdgelessEditor`. Besides these editors, BlockSuite also defines **_fragments_** - UI components that are **NOT** editors but are dependent on the document's state. These fragments, such as sidebars, panels, and toolbars, may be independent in lifecycle from the editors, yet should work out-of-the-box when attached to the block tree.
+The `@algogrind/presets` package includes reusable editors like `PageEditor` and `EdgelessEditor`. Besides these editors, BlockSuite also defines **_fragments_** - UI components that are **NOT** editors but are dependent on the document's state. These fragments, such as sidebars, panels, and toolbars, may be independent in lifecycle from the editors, yet should work out-of-the-box when attached to the block tree.
 
 The distinction between editors and fragments lies in their complexity and functionality. **Fragments typically offer more simplified capabilities, serving specific UI purposes, whereas editors provide comprehensive editing capabilities over the block tree**. Nevertheless, both editors and fragments shares similar [data flows](/blog/crdt-native-data-flow).
 
@@ -24,17 +24,17 @@ Within each block spec, there can be [`Widget`](./block-widgets)s specific to th
 
 ## Composing Editors by Blocks
 
-In BlockSuite, the `editor` is typically designed to be remarkably lightweight. The actual editable blocks are registered to the [`EditorHost`](/api/@blocksuite/block-std/) component, which is a container for mounting block UI components.
+In BlockSuite, the `editor` is typically designed to be remarkably lightweight. The actual editable blocks are registered to the [`EditorHost`](/api/@algogrind/block-std/) component, which is a container for mounting block UI components.
 
 BlockSuite by default offers a host based on the [lit](https://lit.dev) framework. For example, this is a conceptually usable BlockSuite editor composed of [`BlockSpec`](./block-spec)s:
 
 ```ts
 // Default BlockSuite editable blocks
-import { PageEditorBlockSpecs } from '@blocksuite/blocks';
+import { PageEditorBlockSpecs } from '@algogrind/blocks';
 // The container for mounting block UI components
-import { EditorHost } from '@blocksuite/lit';
+import { EditorHost } from '@algogrind/lit';
 // The store for working with block tree
-import { type Doc } from '@blocksuite/store';
+import { type Doc } from '@algogrind/store';
 
 // Standard lit framework primitives
 import { html, LitElement } from 'lit';

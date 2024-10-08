@@ -1,11 +1,11 @@
-import type { Constructor } from '@blocksuite/global/utils';
+import type { Constructor } from '@algogrind/global/utils';
 
 import {
   type BaseBlockTransformer,
   type BlockModel,
   defineBlockSchema,
   type InternalPrimitives,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { GfxCompatible, type GfxCompatibleProps } from './gfx-compatible.js';
 

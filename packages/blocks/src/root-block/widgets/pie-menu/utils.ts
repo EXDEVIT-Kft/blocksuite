@@ -1,7 +1,7 @@
-import type { IVec } from '@blocksuite/global/utils';
+import type { IVec } from '@algogrind/global/utils';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 
 import type { EdgelessTool } from '../../edgeless/types.js';
 import type {

@@ -1,8 +1,8 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists } from '@blocksuite/global/utils';
-import { Job } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists } from '@algogrind/global/utils';
+import { Job } from '@algogrind/store';
 
 import { MarkdownAdapter } from '../adapters/index.js';
 import { defaultImageProxyMiddleware } from './middlewares.js';

@@ -1,4 +1,4 @@
-import { popMenu } from '@blocksuite/affine-components/context-menu';
+import { popMenu } from '@algogrind/affine-components/context-menu';
 import { css, html } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';

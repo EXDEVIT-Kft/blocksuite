@@ -1,12 +1,12 @@
-import type { ServiceIdentifier } from '@blocksuite/global/di';
-import type { BlockModel } from '@blocksuite/store';
+import type { ServiceIdentifier } from '@algogrind/global/di';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   Bound,
   DisposableGroup,
   type IBound,
   last,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { BlockStdScope } from '../scope/block-std-scope.js';
 import type { SurfaceBlockModel } from './surface/surface-model.js';

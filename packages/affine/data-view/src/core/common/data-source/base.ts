@@ -1,4 +1,4 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 import type { ReadonlySignal } from '@preact/signals-core';
 
 import type { TType } from '../../logical/index.js';

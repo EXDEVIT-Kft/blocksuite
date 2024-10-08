@@ -1,4 +1,4 @@
-import type { IVec } from '@blocksuite/global/utils';
+import type { IVec } from '@algogrind/global/utils';
 
 import { html, nothing } from 'lit';
 

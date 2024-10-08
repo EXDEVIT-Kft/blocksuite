@@ -1,10 +1,10 @@
-import type { XYWH } from '@blocksuite/global/utils';
+import type { XYWH } from '@algogrind/global/utils';
 
 import {
   type Options,
   Overlay,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type Color,
   DEFAULT_NOTE_BACKGROUND_COLOR,
@@ -12,9 +12,9 @@ import {
   DEFAULT_SHAPE_STROKE_COLOR,
   shapeMethods,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { Bound, DisposableGroup, noop, Slot } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { Bound, DisposableGroup, noop, Slot } from '@algogrind/global/utils';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 

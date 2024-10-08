@@ -1,9 +1,9 @@
 import {
   DarkLoadingIcon,
   LightLoadingIcon,
-} from '@blocksuite/affine-components/icons';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { WithDisposable } from '@algogrind/global/utils';
 import { baseTheme, cssVar } from '@toeverything/theme';
 import {
   css,

@@ -1,15 +1,15 @@
-import type { AffineAIPanelState } from '@blocksuite/blocks';
+import type { AffineAIPanelState } from '@algogrind/blocks';
 
-import { BlockStdScope, type EditorHost } from '@blocksuite/block-std';
+import { BlockStdScope, type EditorHost } from '@algogrind/block-std';
 import {
   CodeBlockComponent,
   DividerBlockComponent,
   ListBlockComponent,
   ParagraphBlockComponent,
   SpecProvider,
-} from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
-import { BlockViewType, type Doc, type Query } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
+import { BlockViewType, type Doc, type Query } from '@algogrind/store';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

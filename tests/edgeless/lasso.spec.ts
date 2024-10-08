@@ -1,4 +1,4 @@
-import { sleep } from '@blocksuite/global/utils';
+import { sleep } from '@algogrind/global/utils';
 import { expect } from '@playwright/test';
 
 import {

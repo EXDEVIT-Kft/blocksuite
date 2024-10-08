@@ -1,4 +1,4 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
 import {
   BookmarkIcon,
@@ -7,7 +7,7 @@ import {
   DeleteIcon,
   DownloadIcon,
   DuplicateIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 

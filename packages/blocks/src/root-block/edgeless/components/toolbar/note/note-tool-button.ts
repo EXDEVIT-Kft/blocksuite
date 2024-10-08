@@ -1,4 +1,4 @@
-import { ArrowUpIcon, NoteIcon } from '@blocksuite/affine-components/icons';
+import { ArrowUpIcon, NoteIcon } from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 import { state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

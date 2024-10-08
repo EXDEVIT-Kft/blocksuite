@@ -5,14 +5,14 @@ import {
   type Command,
   type CommandKeyToData,
   type InitCommandCtx,
-} from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 import {
   INLINE_ROOT_ATTR,
   type InlineEditor,
   type InlineRange,
   type InlineRootElement,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { effect } from '@preact/signals-core';
 
 import type { AffineTextAttributes } from '../extension/index.js';

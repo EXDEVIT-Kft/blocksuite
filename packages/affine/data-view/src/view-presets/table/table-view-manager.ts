@@ -1,7 +1,7 @@
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 
 import type { ViewManager } from '../../core/view-manager/view-manager.js';

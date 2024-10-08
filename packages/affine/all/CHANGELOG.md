@@ -1,4 +1,4 @@
-# @blocksuite/affine
+# @algogrind/affine
 
 ## 0.17.17
 
@@ -24,12 +24,12 @@
   - fix: outline popup ref area [#8456](https://github.com/toeverything/blocksuite/pull/8456)
 
 - Updated dependencies [a89c9c1]
-  - @blocksuite/blocks@0.17.17
-  - @blocksuite/block-std@0.17.17
-  - @blocksuite/global@0.17.17
-  - @blocksuite/inline@0.17.17
-  - @blocksuite/store@0.17.17
-  - @blocksuite/presets@0.17.17
+  - @algogrind/blocks@0.17.17
+  - @algogrind/block-std@0.17.17
+  - @algogrind/global@0.17.17
+  - @algogrind/inline@0.17.17
+  - @algogrind/store@0.17.17
+  - @algogrind/presets@0.17.17
 
 ## 0.17.16
 
@@ -43,12 +43,12 @@
   - some ui improvements [#8446](https://github.com/toeverything/blocksuite/pull/8446), [#8450](https://github.com/toeverything/blocksuite/pull/8450)
 
 - Updated dependencies [ce9a242]
-  - @blocksuite/blocks@0.17.16
-  - @blocksuite/block-std@0.17.16
-  - @blocksuite/global@0.17.16
-  - @blocksuite/inline@0.17.16
-  - @blocksuite/store@0.17.16
-  - @blocksuite/presets@0.17.16
+  - @algogrind/blocks@0.17.16
+  - @algogrind/block-std@0.17.16
+  - @algogrind/global@0.17.16
+  - @algogrind/inline@0.17.16
+  - @algogrind/store@0.17.16
+  - @algogrind/presets@0.17.16
 
 ## 0.17.15
 
@@ -67,12 +67,12 @@
   - Chore: Upgraded non-major dependencies
   - Chore: Improved ThemeObserver and added tests
 - Updated dependencies [931315f]
-  - @blocksuite/blocks@0.17.15
-  - @blocksuite/block-std@0.17.15
-  - @blocksuite/global@0.17.15
-  - @blocksuite/inline@0.17.15
-  - @blocksuite/store@0.17.15
-  - @blocksuite/presets@0.17.15
+  - @algogrind/blocks@0.17.15
+  - @algogrind/block-std@0.17.15
+  - @algogrind/global@0.17.15
+  - @algogrind/inline@0.17.15
+  - @algogrind/store@0.17.15
+  - @algogrind/presets@0.17.15
 
 ## 0.17.14
 
@@ -86,9 +86,9 @@
   - Fix pasting multiple times when span nested in p.
   - Refactor range sync.
 - Updated dependencies [163cb11]
-  - @blocksuite/blocks@0.17.14
-  - @blocksuite/block-std@0.17.14
-  - @blocksuite/global@0.17.14
-  - @blocksuite/inline@0.17.14
-  - @blocksuite/store@0.17.14
-  - @blocksuite/presets@0.17.14
+  - @algogrind/blocks@0.17.14
+  - @algogrind/block-std@0.17.14
+  - @algogrind/global@0.17.14
+  - @algogrind/inline@0.17.14
+  - @algogrind/store@0.17.14
+  - @algogrind/presets@0.17.14

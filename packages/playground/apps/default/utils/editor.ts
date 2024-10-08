@@ -1,7 +1,7 @@
-import type { EditorHost, ExtensionType } from '@blocksuite/block-std';
-import type { BlockCollection, DocCollection } from '@blocksuite/store';
+import type { EditorHost, ExtensionType } from '@algogrind/block-std';
+import type { BlockCollection, DocCollection } from '@algogrind/store';
 
-import { PeekViewExtension } from '@blocksuite/affine-components/peek';
+import { PeekViewExtension } from '@algogrind/affine-components/peek';
 import {
   CommunityCanvasTextFonts,
   DocModeExtension,
@@ -11,9 +11,9 @@ import {
   ParseDocUrlExtension,
   RefNodeSlotsExtension,
   RefNodeSlotsProvider,
-} from '@blocksuite/blocks';
-import { assertExists } from '@blocksuite/global/utils';
-import { AffineEditorContainer } from '@blocksuite/presets';
+} from '@algogrind/blocks';
+import { assertExists } from '@algogrind/global/utils';
+import { AffineEditorContainer } from '@algogrind/presets';
 
 import { DocsPanel } from '../../_common/components/docs-panel.js';
 import { LeftSidePanel } from '../../_common/components/left-side-panel.js';

@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/e2e",
+  "name": "@algogrind/e2e",
   "version": "0.16.0",
   "private": true,
   "type": "module",
@@ -8,10 +8,10 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@blocksuite/affine-model": "workspace:*",
-    "@blocksuite/block-std": "workspace:*",
-    "@blocksuite/global": "workspace:*",
-    "@blocksuite/presets": "workspace:*"
+    "@algogrind/affine-model": "workspace:*",
+    "@algogrind/block-std": "workspace:*",
+    "@algogrind/global": "workspace:*",
+    "@algogrind/presets": "workspace:*"
   },
   "repository": {
     "type": "git",

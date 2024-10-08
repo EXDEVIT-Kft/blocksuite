@@ -2,18 +2,18 @@ import type {
   GridManager,
   LayerManager,
   Viewport,
-} from '@blocksuite/block-std/gfx';
-import type { IBound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import type { IBound } from '@algogrind/global/utils';
 
-import { type Color, ColorScheme } from '@blocksuite/affine-model';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
+import { type Color, ColorScheme } from '@algogrind/affine-model';
+import { requestConnectedFrame } from '@algogrind/affine-shared/utils';
 import {
   DisposableGroup,
   getBoundsWithRotation,
   intersects,
   last,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { ElementRenderer } from './elements/index.js';
 

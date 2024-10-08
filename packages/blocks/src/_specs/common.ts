@@ -1,10 +1,10 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { EmbedExtensions } from '@blocksuite/affine-block-embed';
-import { ListBlockSpec } from '@blocksuite/affine-block-list';
-import { ParagraphBlockSpec } from '@blocksuite/affine-block-paragraph';
-import { RichTextExtensions } from '@blocksuite/affine-components/rich-text';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EmbedExtensions } from '@algogrind/affine-block-embed';
+import { ListBlockSpec } from '@algogrind/affine-block-list';
+import { ParagraphBlockSpec } from '@algogrind/affine-block-paragraph';
+import { RichTextExtensions } from '@algogrind/affine-components/rich-text';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 
 import { AttachmentBlockSpec } from '../attachment-block/attachment-spec.js';
 import { BookmarkBlockSpec } from '../bookmark-block/bookmark-spec.js';

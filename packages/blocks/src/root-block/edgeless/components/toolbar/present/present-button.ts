@@ -1,4 +1,4 @@
-import { FrameNavigatorIcon } from '@blocksuite/affine-components/icons';
+import { FrameNavigatorIcon } from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 
 import type { EdgelessTool } from '../../../types.js';

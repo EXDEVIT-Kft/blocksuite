@@ -2,11 +2,11 @@ import {
   getInlineEditorByModel,
   markdownInput,
   textKeymap,
-} from '@blocksuite/affine-components/rich-text';
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { KeymapExtension } from '@blocksuite/block-std';
-import { IS_MAC } from '@blocksuite/global/env';
+} from '@algogrind/affine-components/rich-text';
+import { ParagraphBlockSchema } from '@algogrind/affine-model';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { KeymapExtension } from '@algogrind/block-std';
+import { IS_MAC } from '@algogrind/global/env';
 
 import { forwardDelete } from './utils/forward-delete.js';
 import { mergeWithPrev } from './utils/merge-with-prev.js';

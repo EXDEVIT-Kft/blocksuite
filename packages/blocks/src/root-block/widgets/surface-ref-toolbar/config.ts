@@ -1,12 +1,12 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
 import {
   CopyIcon,
   DeleteIcon,
   DownloadIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { downloadBlob } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { downloadBlob } from '@algogrind/affine-shared/utils';
 
 import type { EdgelessRootPreviewBlockComponent } from '../../edgeless/edgeless-root-preview-block.js';
 import type { SurfaceRefToolbarContext } from './context.js';

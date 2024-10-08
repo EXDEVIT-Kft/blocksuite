@@ -1,7 +1,7 @@
-import type { BlockSelection, Command } from '@blocksuite/block-std';
+import type { BlockSelection, Command } from '@algogrind/block-std';
 
-import { assertExists } from '@blocksuite/global/utils';
-import { INLINE_ROOT_ATTR, type InlineRootElement } from '@blocksuite/inline';
+import { assertExists } from '@algogrind/global/utils';
+import { INLINE_ROOT_ATTR, type InlineRootElement } from '@algogrind/inline';
 
 import type { AffineTextAttributes } from '../extension/index.js';
 

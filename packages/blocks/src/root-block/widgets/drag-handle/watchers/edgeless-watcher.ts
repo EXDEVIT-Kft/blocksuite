@@ -1,7 +1,7 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { type IVec, Rect } from '@blocksuite/global/utils';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { type IVec, Rect } from '@algogrind/global/utils';
 
 import type {
   EdgelessRootBlockComponent,

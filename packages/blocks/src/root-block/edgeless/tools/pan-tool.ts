@@ -1,6 +1,6 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { noop } from '@blocksuite/global/utils';
+import { noop } from '@algogrind/global/utils';
 
 import { EdgelessToolController } from './edgeless-tool.js';
 

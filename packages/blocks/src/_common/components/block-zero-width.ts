@@ -1,8 +1,8 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { ZERO_WIDTH_SPACE } from '@blocksuite/inline/consts';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { ZERO_WIDTH_SPACE } from '@algogrind/inline/consts';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

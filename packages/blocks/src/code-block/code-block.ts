@@ -1,25 +1,25 @@
-import type { CodeBlockModel } from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { CodeBlockModel } from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
 import type { ThemedToken } from 'shiki';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
 import {
   focusTextModel,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
-import { BRACKET_PAIRS, NOTE_SELECTOR } from '@blocksuite/affine-shared/consts';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
-import { getInlineRangeProvider } from '@blocksuite/block-std';
-import { IS_MAC } from '@blocksuite/global/env';
-import { noop } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
+import { BRACKET_PAIRS, NOTE_SELECTOR } from '@algogrind/affine-shared/consts';
+import { getViewportElement } from '@algogrind/affine-shared/utils';
+import { getInlineRangeProvider } from '@algogrind/block-std';
+import { IS_MAC } from '@algogrind/global/env';
+import { noop } from '@algogrind/global/utils';
 import {
   INLINE_ROOT_ATTR,
   type InlineRangeProvider,
   type InlineRootElement,
   type VLine,
-} from '@blocksuite/inline';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/inline';
+import { Slice } from '@algogrind/store';
 import { computed, effect, type Signal, signal } from '@preact/signals-core';
 import { html, nothing, type TemplateResult } from 'lit';
 import { query } from 'lit/decorators.js';

@@ -1,7 +1,7 @@
 import {
   ArrowUpIcon,
   LargeFrameIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

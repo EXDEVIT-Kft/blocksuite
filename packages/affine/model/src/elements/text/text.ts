@@ -1,15 +1,15 @@
-import type { BaseElementProps } from '@blocksuite/block-std/gfx';
-import type { IVec, SerializedXYWH } from '@blocksuite/global/utils';
+import type { BaseElementProps } from '@algogrind/block-std/gfx';
+import type { IVec, SerializedXYWH } from '@algogrind/global/utils';
 
-import { field, GfxPrimitiveElementModel } from '@blocksuite/block-std/gfx';
+import { field, GfxPrimitiveElementModel } from '@algogrind/block-std/gfx';
 import {
   Bound,
   getPointsFromBoundsWithRotation,
   linePolygonIntersects,
   pointInPolygon,
   polygonNearestPoint,
-} from '@blocksuite/global/utils';
-import { DocCollection, type Y } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection, type Y } from '@algogrind/store';
 
 import {
   type Color,

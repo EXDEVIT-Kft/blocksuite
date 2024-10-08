@@ -1,8 +1,8 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
-import type { Point } from '@blocksuite/global/utils';
+import type { NoteBlockModel } from '@algogrind/affine-model';
+import type { Point } from '@algogrind/global/utils';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { handleNativeRangeAtPoint } from '@blocksuite/affine-shared/utils';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { handleNativeRangeAtPoint } from '@algogrind/affine-shared/utils';
 
 import type { NoteChildrenFlavour } from '../../../_common/utils/index.js';
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';

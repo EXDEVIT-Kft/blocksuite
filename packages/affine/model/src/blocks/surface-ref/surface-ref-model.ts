@@ -1,4 +1,4 @@
-import { defineBlockSchema, type SchemaToModel } from '@blocksuite/store';
+import { defineBlockSchema, type SchemaToModel } from '@algogrind/store';
 
 type SurfaceRefProps = {
   reference: string;

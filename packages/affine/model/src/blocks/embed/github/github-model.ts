@@ -1,4 +1,4 @@
-import { BlockModel } from '@blocksuite/store';
+import { BlockModel } from '@algogrind/store';
 
 import type { EmbedCardStyle } from '../../../utils/index.js';
 

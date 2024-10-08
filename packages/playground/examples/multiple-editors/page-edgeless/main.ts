@@ -1,8 +1,4 @@
-import {
-  createEmptyDoc,
-  EdgelessEditor,
-  PageEditor,
-} from '@blocksuite/presets';
+import { createEmptyDoc, EdgelessEditor, PageEditor } from '@algogrind/presets';
 
 import '../../../style.css';
 

@@ -1,7 +1,7 @@
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
-import type { Command } from '@blocksuite/block-std';
+import type { EmbedCardStyle } from '@algogrind/affine-model';
+import type { Command } from '@algogrind/block-std';
 
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
+import { EmbedOptionProvider } from '@algogrind/affine-shared/services';
 
 import { insertEmbedCard } from '../../_common/embed-block-helper/insert-embed-card.js';
 

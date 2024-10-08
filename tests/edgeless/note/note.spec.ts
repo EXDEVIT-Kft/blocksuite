@@ -1,4 +1,4 @@
-import { NOTE_WIDTH, NoteDisplayMode } from '@blocksuite/affine-model';
+import { NOTE_WIDTH, NoteDisplayMode } from '@algogrind/affine-model';
 import { expect } from '@playwright/test';
 
 import {

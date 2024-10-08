@@ -1,7 +1,7 @@
 import {
   EdgelessEraserDarkIcon,
   EdgelessEraserLightIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 
 import type { EdgelessTool } from '../../../types.js';

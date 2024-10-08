@@ -2,23 +2,23 @@ import type {
   Connection,
   ConnectorElementModel,
   ConnectorMode,
-} from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IBound, IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IBound, IVec } from '@algogrind/global/utils';
 
 import {
   calculateNearestLocation,
   CanvasElementType,
   ConnectorEndpointLocations,
   ConnectorEndpointLocationsOnTriangle,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   GroupElementModel,
   ShapeElementModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { Bound, noop } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { Bound, noop } from '@algogrind/global/utils';
 
 import type { EdgelessTool } from '../types.js';
 

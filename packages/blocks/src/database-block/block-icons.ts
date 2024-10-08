@@ -1,5 +1,5 @@
-import type { ParagraphType } from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+import type { ParagraphType } from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 import type { TemplateResult } from 'lit';
 
 import {

@@ -3,9 +3,9 @@ import type {
   ConnectorElementModel,
   DocMode,
   GroupElementModel,
-} from '@blocksuite/affine-model';
-import type { Slot } from '@blocksuite/global/utils';
-import type { Doc } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { Slot } from '@algogrind/global/utils';
+import type { Doc } from '@algogrind/store';
 
 /** Common context interface definition for block models. */
 
@@ -24,5 +24,5 @@ export type Connectable = Exclude<
   ConnectorElementModel | BrushElementModel | GroupElementModel
 >;
 
-export type { EmbedCardStyle } from '@blocksuite/affine-model';
-export * from '@blocksuite/affine-shared/types';
+export type { EmbedCardStyle } from '@algogrind/affine-model';
+export * from '@algogrind/affine-shared/types';

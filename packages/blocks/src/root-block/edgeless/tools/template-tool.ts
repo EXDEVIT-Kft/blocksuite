@@ -1,4 +1,4 @@
-import { noop } from '@blocksuite/global/utils';
+import { noop } from '@algogrind/global/utils';
 
 import { EdgelessToolController } from './edgeless-tool.js';
 

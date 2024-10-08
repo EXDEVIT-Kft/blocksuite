@@ -1,6 +1,6 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { nToLast } from '@blocksuite/global/utils';
+import { nToLast } from '@algogrind/global/utils';
 
 import type { GfxBlockElementModel, GfxModel } from '../gfx/gfx-block-model.js';
 import type { Layer } from '../gfx/layer.js';

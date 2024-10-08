@@ -1,9 +1,9 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
 import {
   type MindmapSurfaceBlock,
   MiniMindmapPreview,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import { beforeEach, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

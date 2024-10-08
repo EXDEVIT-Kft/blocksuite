@@ -1,21 +1,21 @@
 import type {
   BaseElementProps,
   PointTestOptions,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import type {
   Bound,
   IBound,
   IVec,
   PointLocation,
   SerializedXYWH,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import {
   field,
   GfxPrimitiveElementModel,
   local,
-} from '@blocksuite/block-std/gfx';
-import { DocCollection, type Y } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { DocCollection, type Y } from '@algogrind/store';
 
 import {
   type Color,

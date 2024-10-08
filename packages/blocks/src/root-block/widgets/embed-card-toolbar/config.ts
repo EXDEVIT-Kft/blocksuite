@@ -1,14 +1,14 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
 import {
   CopyIcon,
   DeleteIcon,
   DuplicateIcon,
   RefreshIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { getBlockProps } from '@algogrind/affine-shared/utils';
+import { Slice } from '@algogrind/store';
 
 import type { EmbedCardToolbarContext } from './context.js';
 

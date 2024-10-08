@@ -2,9 +2,9 @@ import type {
   BookmarkBlockModel,
   EmbedGithubModel,
   EmbedLinkedDocModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { WithDisposable } from '@blocksuite/global/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -2,14 +2,14 @@ import {
   ConnectorUtils,
   normalizeShapeBound,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   SmallArrowDownIcon,
   TextAlignCenterIcon,
   TextAlignLeftIcon,
   TextAlignRightIcon,
-} from '@blocksuite/affine-components/icons';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/icons';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
 import {
   type ColorScheme,
   FontFamily,
@@ -17,20 +17,15 @@ import {
   FontWeight,
   TextAlign,
   type TextStyleProps,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   ConnectorElementModel,
   EdgelessTextBlockModel,
   LINE_COLORS,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import {
-  Bound,
-  countBy,
-  maxBy,
-  WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound, countBy, maxBy, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

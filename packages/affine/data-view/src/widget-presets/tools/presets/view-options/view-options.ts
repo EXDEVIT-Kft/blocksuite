@@ -1,4 +1,4 @@
-import { popMenu } from '@blocksuite/affine-components/context-menu';
+import { popMenu } from '@algogrind/affine-components/context-menu';
 import {
   ArrowRightSmallIcon,
   DeleteIcon,

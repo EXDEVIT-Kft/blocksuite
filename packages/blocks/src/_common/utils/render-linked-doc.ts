@@ -1,14 +1,14 @@
-import type { FrameBlockModel, NoteBlockModel } from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { FrameBlockModel, NoteBlockModel } from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteDisplayMode } from '@algogrind/affine-model';
 import {
   DocModeProvider,
   NotificationProvider,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps, matchFlavours } from '@blocksuite/affine-shared/utils';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { getBlockProps, matchFlavours } from '@algogrind/affine-shared/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import { GfxBlockModel } from '../../root-block/edgeless/block-model.js';
 import {

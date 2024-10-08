@@ -1,4 +1,4 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
 import {
   assertType,
@@ -6,7 +6,7 @@ import {
   DisposableGroup,
   last,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { generateKeyBetween } from 'fractional-indexing';
 
 import {

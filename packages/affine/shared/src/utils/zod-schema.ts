@@ -33,7 +33,7 @@ import {
   StrokeStyle,
   TextAlign,
   TextVerticalAlign,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import { z, ZodDefault, ZodObject, type ZodTypeAny, ZodUnion } from 'zod';
 
 const ConnectorEndpointSchema = z.nativeEnum(PointStyle);

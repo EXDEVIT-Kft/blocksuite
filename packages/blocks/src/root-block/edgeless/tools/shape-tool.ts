@@ -1,20 +1,20 @@
-import type { ShapeElementModel, ShapeName } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+import type { ShapeElementModel, ShapeName } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
 import {
   DEFAULT_SHAPE_FILL_COLOR,
   DEFAULT_SHAPE_STROKE_COLOR,
   getShapeType,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { Bound, noop } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { Bound, noop } from '@algogrind/global/utils';
 
 import type { SelectionArea } from '../services/tools-manager.js';
 import type { EdgelessTool } from '../types.js';

@@ -1,12 +1,12 @@
-import type { SurfaceBlockProps } from '@blocksuite/block-std/gfx';
+import type { SurfaceBlockProps } from '@algogrind/block-std/gfx';
 import type {
   FromSnapshotPayload,
   SnapshotReturn,
   ToSnapshotPayload,
   Y,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
-import { BaseBlockTransformer, DocCollection } from '@blocksuite/store';
+import { BaseBlockTransformer, DocCollection } from '@algogrind/store';
 
 const SURFACE_TEXT_UNIQ_IDENTIFIER = 'affine:surface:text';
 // Used for group children field

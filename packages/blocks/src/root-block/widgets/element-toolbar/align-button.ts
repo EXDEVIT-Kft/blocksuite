@@ -8,13 +8,13 @@ import {
   AlignTopIcon,
   AlignVerticallyIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   ConnectorElementModel,
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

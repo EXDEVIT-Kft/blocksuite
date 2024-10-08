@@ -1,5 +1,5 @@
-import { ShapeStyle } from '@blocksuite/affine-model';
-import { Slot } from '@blocksuite/global/utils';
+import { ShapeStyle } from '@algogrind/affine-model';
+import { Slot } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

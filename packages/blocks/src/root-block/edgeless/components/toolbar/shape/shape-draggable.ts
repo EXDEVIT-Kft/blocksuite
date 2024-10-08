@@ -1,20 +1,20 @@
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
 import {
   ellipseSvg,
   roundedSvg,
   triangleSvg,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   getShapeRadius,
   getShapeType,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { assertExists, SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { assertExists, SignalWatcher } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

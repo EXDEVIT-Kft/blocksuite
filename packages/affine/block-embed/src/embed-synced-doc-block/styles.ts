@@ -1,7 +1,7 @@
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import { css, html } from 'lit';
 
 import { embedNoteContentStyles } from '../common/embed-note-content-styles.js';

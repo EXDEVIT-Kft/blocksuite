@@ -1,17 +1,17 @@
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   BlockStdScope,
   type ExtensionType,
   ShadowlessElement,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import {
   type AbstractEditor,
   type DocMode,
   EdgelessEditorBlockSpecs,
   PageEditorBlockSpecs,
-} from '@blocksuite/blocks';
-import { SignalWatcher, Slot, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/blocks';
+import { SignalWatcher, Slot, WithDisposable } from '@algogrind/global/utils';
 import { computed, signal } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

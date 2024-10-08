@@ -1,44 +1,44 @@
 import type {
   SurfaceBlockComponent,
   SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import type {
   AttachmentBlockProps,
   ImageBlockProps,
   RootBlockModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import type {
   GfxBlockComponent,
   SurfaceSelection,
   UIEventHandler,
-} from '@blocksuite/block-std';
-import type { IBound, IPoint, IVec } from '@blocksuite/global/utils';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import type { IBound, IPoint, IVec } from '@algogrind/global/utils';
+import type { BlockModel } from '@algogrind/store';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
+import { NoteDisplayMode } from '@algogrind/affine-model';
 import {
   EditPropsStore,
   FontLoaderService,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 import {
   handleNativeRangeAtPoint,
   humanFileSize,
   isTouchPadPinchEvent,
   requestConnectedFrame,
   requestThrottledConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
-import { BlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { BlockComponent } from '@algogrind/block-std';
 import {
   GfxBlockElementModel,
   type GfxViewportElement,
-} from '@blocksuite/block-std/gfx';
-import { IS_WINDOWS } from '@blocksuite/global/env';
+} from '@algogrind/block-std/gfx';
+import { IS_WINDOWS } from '@algogrind/global/env';
 import {
   assertExists,
   Bound,
@@ -46,7 +46,7 @@ import {
   serializeXYWH,
   throttle,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

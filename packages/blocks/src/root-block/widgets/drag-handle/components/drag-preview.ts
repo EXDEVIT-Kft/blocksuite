@@ -1,8 +1,8 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 import type { TemplateResult } from 'lit';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { Point } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { Point } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';

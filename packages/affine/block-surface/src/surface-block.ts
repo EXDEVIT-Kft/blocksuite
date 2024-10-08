@@ -1,14 +1,14 @@
-import type { Color } from '@blocksuite/affine-model';
-import type { EditorHost, SurfaceSelection } from '@blocksuite/block-std';
-import type { Slot } from '@blocksuite/global/utils';
+import type { Color } from '@algogrind/affine-model';
+import type { EditorHost, SurfaceSelection } from '@algogrind/block-std';
+import type { Slot } from '@algogrind/global/utils';
 
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { BlockComponent, RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/block-std';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { BlockComponent, RANGE_SYNC_EXCLUDE_ATTR } from '@algogrind/block-std';
 import {
   GfxControllerIdentifier,
   type Viewport,
-} from '@blocksuite/block-std/gfx';
-import { Bound, values } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import { Bound, values } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 

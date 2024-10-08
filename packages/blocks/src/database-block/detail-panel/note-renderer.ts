@@ -1,17 +1,17 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
-import type { DetailSlotProps, SingleView } from '@blocksuite/data-view';
+import type { DatabaseBlockModel } from '@algogrind/affine-model';
+import type { DetailSlotProps, SingleView } from '@algogrind/data-view';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 import {
   createDefaultDoc,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   BlockStdScope,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 export class NoteRenderer

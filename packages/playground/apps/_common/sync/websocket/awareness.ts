@@ -1,7 +1,7 @@
-import type { AwarenessSource } from '@blocksuite/sync';
+import type { AwarenessSource } from '@algogrind/sync';
 import type { Awareness } from 'y-protocols/awareness';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import {
   applyAwarenessUpdate,
   encodeAwarenessUpdate,

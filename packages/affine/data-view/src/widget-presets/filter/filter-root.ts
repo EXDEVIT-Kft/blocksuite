@@ -1,6 +1,6 @@
-import { popFilterableSimpleMenu } from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { popFilterableSimpleMenu } from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import {
   ArrowDownSmallIcon,
   ConvertIcon,

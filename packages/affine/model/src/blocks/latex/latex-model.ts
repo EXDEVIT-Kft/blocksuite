@@ -1,10 +1,10 @@
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
 import {
   GfxCompatible,
   type GfxElementGeometry,
-} from '@blocksuite/block-std/gfx';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 type LatexProps = {
   xywh: SerializedXYWH;

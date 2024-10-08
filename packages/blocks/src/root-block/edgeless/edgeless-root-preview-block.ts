@@ -1,22 +1,19 @@
 import type {
   SurfaceBlockComponent,
   SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type {
-  GfxBlockComponent,
-  SurfaceSelection,
-} from '@blocksuite/block-std';
-import type { IBound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-block-surface';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { GfxBlockComponent, SurfaceSelection } from '@algogrind/block-std';
+import type { IBound } from '@algogrind/global/utils';
 
-import { FontLoaderService } from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { BlockComponent } from '@blocksuite/block-std';
+import { FontLoaderService } from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { BlockComponent } from '@algogrind/block-std';
 import {
   GfxBlockElementModel,
   type GfxViewportElement,
-} from '@blocksuite/block-std/gfx';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import { assertExists } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { query, state } from 'lit/decorators.js';
 

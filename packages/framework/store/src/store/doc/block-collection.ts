@@ -1,4 +1,4 @@
-import { Slot } from '@blocksuite/global/utils';
+import { Slot } from '@algogrind/global/utils';
 import { uuidv4 } from 'lib0/random.js';
 import * as Y from 'yjs';
 

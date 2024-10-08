@@ -1,4 +1,4 @@
-import { last } from '@blocksuite/global/utils';
+import { last } from '@algogrind/global/utils';
 
 import type { MindmapNode } from './mindmap.js';
 

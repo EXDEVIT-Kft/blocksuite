@@ -1,11 +1,11 @@
 import type {
   SurfaceBlockComponent,
   SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@algogrind/affine-block-surface';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
 
-import { CommonUtils, Overlay } from '@blocksuite/affine-block-surface';
-import { Bound, deserializeXYWH, Point } from '@blocksuite/global/utils';
+import { CommonUtils, Overlay } from '@algogrind/affine-block-surface';
+import { Bound, deserializeXYWH, Point } from '@algogrind/global/utils';
 
 import type { EdgelessRootService } from '../edgeless-root-service.js';
 

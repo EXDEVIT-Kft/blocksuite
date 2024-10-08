@@ -3,9 +3,9 @@ import {
   ConnectorIcon,
   ConnectorLWithArrowIcon,
   ConnectorXWithArrowIcon,
-} from '@blocksuite/affine-components/icons';
-import { ConnectorMode } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-components/icons';
+import { ConnectorMode } from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 
 import type { DenseMenuBuilder } from '../common/type.js';
 

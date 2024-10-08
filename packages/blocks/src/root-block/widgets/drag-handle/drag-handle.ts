@@ -1,24 +1,24 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { GfxBlockElementModel } from '@blocksuite/block-std/gfx';
-import type { IVec } from '@blocksuite/global/utils';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { GfxBlockElementModel } from '@algogrind/block-std/gfx';
+import type { IVec } from '@algogrind/global/utils';
 
 import {
   DocModeProvider,
   DragHandleConfigIdentifier,
   type DropType,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   getScrollContainer,
   isInsideEdgelessEditor,
   isInsidePageEditor,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   type PointerEventState,
   WidgetComponent,
-} from '@blocksuite/block-std';
-import { DisposableGroup, Point, Rect } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { DisposableGroup, Point, Rect } from '@algogrind/global/utils';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 import { html } from 'lit';
 import { query, state } from 'lit/decorators.js';

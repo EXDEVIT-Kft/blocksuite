@@ -1,4 +1,4 @@
-import { GroupElementModel } from '@blocksuite/affine-model';
+import { GroupElementModel } from '@algogrind/affine-model';
 export function getElementsWithoutGroup(elements: BlockSuite.EdgelessModel[]) {
   const set = new Set<BlockSuite.EdgelessModel>();
 

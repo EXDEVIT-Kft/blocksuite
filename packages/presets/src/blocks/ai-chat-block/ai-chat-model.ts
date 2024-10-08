@@ -1,7 +1,7 @@
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
-import { GfxCompatible } from '@blocksuite/block-std/gfx';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { GfxCompatible } from '@algogrind/block-std/gfx';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 type AIChatProps = {
   xywh: SerializedXYWH;

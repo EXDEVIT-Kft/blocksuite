@@ -6,9 +6,9 @@ import type {
 } from '@floating-ui/dom';
 import type { TemplateResult } from 'lit';
 
-import { rangeWrap } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { rangeWrap } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import {
   ArrowRightSmallIcon,
   CheckBoxCkeckSolidIcon,

@@ -1,24 +1,24 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import type { Doc } from '@blocksuite/store';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
+import type { Doc } from '@algogrind/store';
 
-import { Overlay } from '@blocksuite/affine-block-surface';
+import { Overlay } from '@algogrind/affine-block-surface';
 import {
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type GfxModel,
   isGfxContainerElm,
   renderableInEdgeless,
-} from '@blocksuite/block-std/gfx';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/block-std/gfx';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   Bound,
   deserializeXYWH,
   DisposableGroup,
   type IVec,
-} from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import type {
   EdgelessRootService,

@@ -2,8 +2,8 @@ import {
   BlockViewExtension,
   type ExtensionType,
   FlavourExtension,
-} from '@blocksuite/block-std';
-import { DatabaseSelectionExtension } from '@blocksuite/data-view';
+} from '@algogrind/block-std';
+import { DatabaseSelectionExtension } from '@algogrind/data-view';
 import { literal } from 'lit/static-html.js';
 
 import { DatabaseDragHandleOption } from './config.js';

@@ -1,18 +1,18 @@
 import {
   type MenuHandler,
   popMenu,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
   MoreHorizontalIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { debounce, WithDisposable } from '@blocksuite/global/utils';
-import { Slot } from '@blocksuite/store';
+} from '@algogrind/affine-components/icons';
+import { ColorScheme } from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { debounce, WithDisposable } from '@algogrind/global/utils';
+import { Slot } from '@algogrind/store';
 import { offset } from '@floating-ui/dom';
 import { ContextProvider } from '@lit/context';
 import { baseTheme, cssVar } from '@toeverything/theme';

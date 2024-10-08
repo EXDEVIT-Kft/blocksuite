@@ -1,4 +1,4 @@
-# @blocksuite/affine-widget-scroll-anchoring
+# @algogrind/affine-widget-scroll-anchoring
 
 ## 0.17.17
 
@@ -24,10 +24,10 @@
   - fix: outline popup ref area [#8456](https://github.com/toeverything/blocksuite/pull/8456)
 
 - Updated dependencies [a89c9c1]
-  - @blocksuite/affine-model@0.17.17
-  - @blocksuite/affine-shared@0.17.17
-  - @blocksuite/block-std@0.17.17
-  - @blocksuite/global@0.17.17
+  - @algogrind/affine-model@0.17.17
+  - @algogrind/affine-shared@0.17.17
+  - @algogrind/block-std@0.17.17
+  - @algogrind/global@0.17.17
 
 ## 0.17.16
 
@@ -41,10 +41,10 @@
   - some ui improvements [#8446](https://github.com/toeverything/blocksuite/pull/8446), [#8450](https://github.com/toeverything/blocksuite/pull/8450)
 
 - Updated dependencies [ce9a242]
-  - @blocksuite/affine-model@0.17.16
-  - @blocksuite/affine-shared@0.17.16
-  - @blocksuite/block-std@0.17.16
-  - @blocksuite/global@0.17.16
+  - @algogrind/affine-model@0.17.16
+  - @algogrind/affine-shared@0.17.16
+  - @algogrind/block-std@0.17.16
+  - @algogrind/global@0.17.16
 
 ## 0.17.15
 
@@ -63,10 +63,10 @@
   - Chore: Upgraded non-major dependencies
   - Chore: Improved ThemeObserver and added tests
 - Updated dependencies [931315f]
-  - @blocksuite/affine-model@0.17.15
-  - @blocksuite/affine-shared@0.17.15
-  - @blocksuite/block-std@0.17.15
-  - @blocksuite/global@0.17.15
+  - @algogrind/affine-model@0.17.15
+  - @algogrind/affine-shared@0.17.15
+  - @algogrind/block-std@0.17.15
+  - @algogrind/global@0.17.15
 
 ## 0.17.14
 
@@ -80,10 +80,10 @@
   - Fix pasting multiple times when span nested in p.
   - Refactor range sync.
 - Updated dependencies [163cb11]
-  - @blocksuite/affine-model@0.17.14
-  - @blocksuite/affine-shared@0.17.14
-  - @blocksuite/block-std@0.17.14
-  - @blocksuite/global@0.17.14
+  - @algogrind/affine-model@0.17.14
+  - @algogrind/affine-shared@0.17.14
+  - @algogrind/block-std@0.17.14
+  - @algogrind/global@0.17.14
 
 ## 0.17.13
 
@@ -91,10 +91,10 @@
 
 - 9de68e3: Update mindmap uitls export
 - Updated dependencies [9de68e3]
-  - @blocksuite/affine-model@0.17.13
-  - @blocksuite/affine-shared@0.17.13
-  - @blocksuite/block-std@0.17.13
-  - @blocksuite/global@0.17.13
+  - @algogrind/affine-model@0.17.13
+  - @algogrind/affine-shared@0.17.13
+  - @algogrind/block-std@0.17.13
+  - @algogrind/global@0.17.13
 
 ## 0.17.12
 
@@ -106,17 +106,17 @@
   - fix(edgeless): failed to alt clone move frame when it contains container element
   - fix: wrong size limit config
 - Updated dependencies [c334c91]
-  - @blocksuite/affine-model@0.17.12
-  - @blocksuite/affine-shared@0.17.12
-  - @blocksuite/block-std@0.17.12
-  - @blocksuite/global@0.17.12
+  - @algogrind/affine-model@0.17.12
+  - @algogrind/affine-shared@0.17.12
+  - @algogrind/block-std@0.17.12
+  - @algogrind/global@0.17.12
 
 ## 0.17.11
 
 ### Patch Changes
 
 - 1052ebd: - Refactor drag handle widget
-  - Split embed blocks to `@blocksuite/affine-block-embed`
+  - Split embed blocks to `@algogrind/affine-block-embed`
   - Fix latex selected state in edgeless mode
   - Fix unclear naming
   - Fix prototype pollution
@@ -125,7 +125,7 @@
   - Add scroll anchoring widget
   - Add highlight selection
 - Updated dependencies [1052ebd]
-  - @blocksuite/affine-model@0.17.11
-  - @blocksuite/affine-shared@0.17.11
-  - @blocksuite/block-std@0.17.11
-  - @blocksuite/global@0.17.11
+  - @algogrind/affine-model@0.17.11
+  - @algogrind/affine-shared@0.17.11
+  - @algogrind/block-std@0.17.11
+  - @algogrind/global@0.17.11

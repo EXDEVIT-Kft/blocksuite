@@ -4,12 +4,12 @@ import type {
   SurfaceSelection,
   UIEventHandler,
   UIEventState,
-} from '@blocksuite/block-std';
-import type { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import type { Bound } from '@algogrind/global/utils';
 
-import { NoteDisplayMode } from '@blocksuite/affine-model';
-import { IS_MAC } from '@blocksuite/global/env';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { NoteDisplayMode } from '@algogrind/affine-model';
+import { IS_MAC } from '@algogrind/global/env';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 import type { EdgelessRootService } from '../edgeless-root-service.js';

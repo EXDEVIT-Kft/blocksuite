@@ -1,8 +1,8 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IPoint, IVec } from '@blocksuite/global/utils';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IPoint, IVec } from '@algogrind/global/utils';
 
-import { CommonUtils, Overlay } from '@blocksuite/affine-block-surface';
-import { Bound, noop } from '@blocksuite/global/utils';
+import { CommonUtils, Overlay } from '@algogrind/affine-block-surface';
+import { Bound, noop } from '@algogrind/global/utils';
 
 import { deleteElements } from '../utils/crud.js';
 import { isTopLevelBlock } from '../utils/query.js';

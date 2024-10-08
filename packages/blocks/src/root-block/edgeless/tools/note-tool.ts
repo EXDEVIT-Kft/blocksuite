@@ -1,7 +1,7 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { noop, Point } from '@blocksuite/global/utils';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { noop, Point } from '@algogrind/global/utils';
 
 import type { SelectionArea } from '../services/tools-manager.js';
 import type { EdgelessTool } from '../types.js';

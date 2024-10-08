@@ -1,5 +1,5 @@
-import { BlockComponent } from '@blocksuite/block-std';
-import { Peekable } from '@blocksuite/blocks';
+import { BlockComponent } from '@algogrind/block-std';
+import { Peekable } from '@algogrind/blocks';
 import { computed } from '@preact/signals-core';
 import { html } from 'lit';
 

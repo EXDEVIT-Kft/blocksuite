@@ -1,11 +1,11 @@
-import type { ColorScheme } from '@blocksuite/affine-model';
+import type { ColorScheme } from '@algogrind/affine-model';
 import type { LitElement } from 'lit';
 
 import {
   type Constructor,
   type DisposableClass,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { cssVar } from '@toeverything/theme';
 import { property, state } from 'lit/decorators.js';

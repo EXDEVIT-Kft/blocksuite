@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/affine-model';
-import type { Chain, EditorHost, InitCommandCtx } from '@blocksuite/block-std';
+import type { DocMode } from '@algogrind/affine-model';
+import type { Chain, EditorHost, InitCommandCtx } from '@algogrind/block-std';
 import type { TemplateResult } from 'lit';
 
 export interface AIItemGroupConfig {

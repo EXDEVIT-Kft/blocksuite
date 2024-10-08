@@ -1,4 +1,4 @@
-import type { Menu } from '@blocksuite/affine-components/context-menu';
+import type { Menu } from '@algogrind/affine-components/context-menu';
 import type { TemplateResult } from 'lit';
 
 import { ArrowLeftBigIcon } from '@blocksuite/icons/lit';

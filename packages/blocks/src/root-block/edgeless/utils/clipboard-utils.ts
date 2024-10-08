@@ -4,9 +4,9 @@ import type {
   FrameBlockModel,
   ImageBlockModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { groupBy } from '@blocksuite/global/utils';
+import { groupBy } from '@algogrind/global/utils';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 

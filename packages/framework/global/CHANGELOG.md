@@ -1,4 +1,4 @@
-# @blocksuite/global
+# @algogrind/global
 
 ## 0.17.17
 
@@ -84,7 +84,7 @@
 ### Patch Changes
 
 - 1052ebd: - Refactor drag handle widget
-  - Split embed blocks to `@blocksuite/affine-block-embed`
+  - Split embed blocks to `@algogrind/affine-block-embed`
   - Fix latex selected state in edgeless mode
   - Fix unclear naming
   - Fix prototype pollution
@@ -195,7 +195,7 @@
 
 - 21b5d47: BlockSuite 0.17.1
 
-  Add @blocksuite/data-view package.
+  Add @algogrind/data-view package.
   Make font loader an extension.
   Frame improvement.
   Fix missing xywh when copy/paste mind map.

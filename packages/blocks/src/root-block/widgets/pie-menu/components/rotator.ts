@@ -1,4 +1,4 @@
-import { CommonUtils } from '@blocksuite/affine-block-surface';
+import { CommonUtils } from '@algogrind/affine-block-surface';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

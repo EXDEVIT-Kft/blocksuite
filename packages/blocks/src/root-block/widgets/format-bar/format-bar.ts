@@ -1,22 +1,22 @@
 import type {
   AffineTextAttributes,
   RichText,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import type {
   BaseSelection,
   BlockComponent,
   CursorSelection,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
-import { HoverController } from '@blocksuite/affine-components/hover';
-import { isFormatSupported } from '@blocksuite/affine-components/rich-text';
+import { HoverController } from '@algogrind/affine-components/hover';
+import { isFormatSupported } from '@algogrind/affine-components/rich-text';
 import {
   cloneGroups,
   type MenuItemGroup,
-} from '@blocksuite/affine-components/toolbar';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { assertExists, DisposableGroup } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/toolbar';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { assertExists, DisposableGroup } from '@algogrind/global/utils';
 import {
   autoUpdate,
   computePosition,

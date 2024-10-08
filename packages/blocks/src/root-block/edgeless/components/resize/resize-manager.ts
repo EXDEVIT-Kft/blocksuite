@@ -1,11 +1,11 @@
-import { CommonUtils } from '@blocksuite/affine-block-surface';
+import { CommonUtils } from '@algogrind/affine-block-surface';
 import {
   assertExists,
   type IPoint,
   type IVec,
   type PointLocation,
-} from '@blocksuite/global/utils';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
+import { Bound } from '@algogrind/global/utils';
 
 import type { SelectableProps } from '../../utils/query.js';
 

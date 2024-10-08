@@ -1,20 +1,20 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
-import type { ShapeElementModel } from '@blocksuite/affine-model';
+import type { RichText } from '@algogrind/affine-components/rich-text';
+import type { ShapeElementModel } from '@algogrind/affine-model';
 
-import { CommonUtils, TextUtils } from '@blocksuite/affine-block-surface';
-import { MindmapElementModel, TextResizing } from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+import { CommonUtils, TextUtils } from '@algogrind/affine-block-surface';
+import { MindmapElementModel, TextResizing } from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 import {
   RANGE_SYNC_EXCLUDE_ATTR,
   ShadowlessElement,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import {
   assertExists,
   Bound,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

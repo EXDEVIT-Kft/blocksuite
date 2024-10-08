@@ -1,17 +1,17 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { HoverController } from '@blocksuite/affine-components/hover';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
+import { HoverController } from '@algogrind/affine-components/hover';
 import {
   AttachmentIcon16,
   getAttachmentFileIcons,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   type AttachmentBlockModel,
   AttachmentBlockStyles,
-} from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { humanFileSize } from '@blocksuite/affine-shared/utils';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { humanFileSize } from '@algogrind/affine-shared/utils';
+import { Slice } from '@algogrind/store';
 import { flip, offset } from '@floating-ui/dom';
 import { html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';

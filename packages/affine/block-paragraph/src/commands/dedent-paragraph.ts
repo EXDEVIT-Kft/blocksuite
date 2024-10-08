@@ -1,7 +1,7 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 export const dedentParagraphCommand: Command<
   never,

@@ -2,8 +2,8 @@ import {
   ArrowUpIcon,
   LassoFreeHandIcon,
   LassoPolygonalIcon,
-} from '@blocksuite/affine-components/icons';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

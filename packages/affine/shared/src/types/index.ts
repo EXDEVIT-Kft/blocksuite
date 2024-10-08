@@ -1,6 +1,6 @@
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { EmbedCardStyle } from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
 export interface EditingState {
   element: BlockComponent;

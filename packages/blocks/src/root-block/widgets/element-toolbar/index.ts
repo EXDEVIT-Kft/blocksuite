@@ -17,24 +17,24 @@ import type {
   NoteBlockModel,
   RootBlockModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { ConnectorCWithArrowIcon } from '@blocksuite/affine-components/icons';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { ConnectorCWithArrowIcon } from '@algogrind/affine-components/icons';
 import {
   cloneGroups,
   type MenuItemGroup,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   ConnectorMode,
   GroupElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { atLeastNMatches, groupBy, pickValues } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { requestConnectedFrame } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { atLeastNMatches, groupBy, pickValues } from '@algogrind/global/utils';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

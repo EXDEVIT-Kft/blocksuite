@@ -1,4 +1,4 @@
-import { type Color, ColorScheme } from '@blocksuite/affine-model';
+import { type Color, ColorScheme } from '@algogrind/affine-model';
 import { signal } from '@preact/signals-core';
 
 const COLOR_SCHEMES: string[] = Object.values(ColorScheme);

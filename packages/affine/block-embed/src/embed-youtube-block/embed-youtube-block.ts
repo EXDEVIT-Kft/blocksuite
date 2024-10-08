@@ -1,9 +1,9 @@
 import type {
   EmbedYoutubeModel,
   EmbedYoutubeStyles,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { OpenIcon } from '@blocksuite/affine-components/icons';
+import { OpenIcon } from '@algogrind/affine-components/icons';
 import { html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

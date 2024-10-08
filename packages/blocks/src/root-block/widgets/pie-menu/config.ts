@@ -22,7 +22,7 @@ import {
   ToolsIcon,
   TriangleIcon,
   ViewBarIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   ConnectorMode,
   LINE_COLORS,
@@ -30,12 +30,12 @@ import {
   SHAPE_STROKE_COLORS,
   ShapeStyle,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   type LastProps,
-} from '@blocksuite/affine-shared/services';
-import { isControlledKeyboardEvent } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/services';
+import { isControlledKeyboardEvent } from '@algogrind/affine-shared/utils';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

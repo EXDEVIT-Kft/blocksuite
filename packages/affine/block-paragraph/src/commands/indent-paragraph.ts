@@ -1,8 +1,8 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import type { Command } from '@blocksuite/block-std';
+import type { ListBlockModel } from '@algogrind/affine-model';
+import type { Command } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 export const indentParagraphCommand: Command<
   never,

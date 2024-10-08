@@ -1,10 +1,10 @@
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { BlockStdScope } from '@blocksuite/block-std';
-import { assertExists, Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/consts';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { BlockStdScope } from '@algogrind/block-std';
+import { assertExists, Bound } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { choose } from 'lit/directives/choose.js';
 import { classMap } from 'lit/directives/class-map.js';

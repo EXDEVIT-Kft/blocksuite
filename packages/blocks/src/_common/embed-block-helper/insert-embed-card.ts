@@ -1,14 +1,14 @@
-import type { DocMode, EmbedCardStyle } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { DocMode, EmbedCardStyle } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { getLastNoteBlock } from '@blocksuite/affine-shared/utils';
-import { Bound, Vec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/consts';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
+import { getLastNoteBlock } from '@algogrind/affine-shared/utils';
+import { Bound, Vec } from '@algogrind/global/utils';
 
 import type { EdgelessRootBlockComponent } from '../../root-block/edgeless/index.js';
 

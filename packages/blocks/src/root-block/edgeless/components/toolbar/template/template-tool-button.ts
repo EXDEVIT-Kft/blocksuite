@@ -1,5 +1,5 @@
-import { ArrowDownSmallIcon } from '@blocksuite/affine-components/icons';
-import { once } from '@blocksuite/affine-shared/utils';
+import { ArrowDownSmallIcon } from '@algogrind/affine-components/icons';
+import { once } from '@algogrind/affine-shared/utils';
 import {
   arrow,
   autoUpdate,

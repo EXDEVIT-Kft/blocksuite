@@ -1,7 +1,7 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { AIStarIcon } from '@blocksuite/affine-components/icons';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { AIStarIcon } from '@algogrind/affine-components/icons';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

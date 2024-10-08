@@ -1,10 +1,10 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
+import type { DatabaseBlockModel } from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
 
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type DatabaseFlags,
   DataSourceBase,
@@ -15,10 +15,10 @@ import {
   type ViewManager,
   ViewManagerBase,
   type ViewMeta,
-} from '@blocksuite/data-view';
-import { propertyPresets } from '@blocksuite/data-view/property-presets';
-import { assertExists } from '@blocksuite/global/utils';
-import { type BlockModel, nanoid, Text } from '@blocksuite/store';
+} from '@algogrind/data-view';
+import { propertyPresets } from '@algogrind/data-view/property-presets';
+import { assertExists } from '@algogrind/global/utils';
+import { type BlockModel, nanoid, Text } from '@algogrind/store';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 
 import { getIcon } from './block-icons.js';

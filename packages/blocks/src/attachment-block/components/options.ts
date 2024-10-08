@@ -1,4 +1,4 @@
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
+import type { AttachmentBlockModel } from '@algogrind/affine-model';
 
 import {
   CaptionIcon,
@@ -6,13 +6,13 @@ import {
   EditIcon,
   MoreVerticalIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+} from '@algogrind/affine-components/icons';
+import { createLitPortal } from '@algogrind/affine-components/portal';
 import {
   cloneGroups,
   renderGroups,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import { flip, offset } from '@floating-ui/dom';
 import { html, nothing } from 'lit';
 import { join } from 'lit/directives/join.js';

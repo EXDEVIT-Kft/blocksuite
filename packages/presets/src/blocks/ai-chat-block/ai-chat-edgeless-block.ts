@@ -1,5 +1,5 @@
-import { toGfxBlockComponent } from '@blocksuite/block-std';
-import { Bound } from '@blocksuite/global/utils';
+import { toGfxBlockComponent } from '@algogrind/block-std';
+import { Bound } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

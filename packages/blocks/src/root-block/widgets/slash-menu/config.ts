@@ -1,8 +1,8 @@
 import type {
   FrameBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 import type { TemplateResult } from 'lit';
 
 import {
@@ -10,8 +10,8 @@ import {
   GithubIcon,
   LoomIcon,
   YoutubeIcon,
-} from '@blocksuite/affine-block-embed';
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-embed';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
@@ -31,23 +31,23 @@ import {
   TodayIcon,
   TomorrowIcon,
   YesterdayIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   clearMarksOnDiscontinuousInput,
   getInlineEditorByModel,
   REFERENCE_NODE,
   textFormatConfigs,
-} from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   createDefaultDoc,
   getImageFilesFromLocal,
   matchFlavours,
   openFileOrFiles,
-} from '@blocksuite/affine-shared/utils';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
+} from '@algogrind/affine-shared/utils';
+import { viewPresets } from '@algogrind/data-view/view-presets';
+import { Slice, Text } from '@algogrind/store';
 import { GroupingIcon, TeXIcon } from '@blocksuite/icons/lit';
-import { Slice, Text } from '@blocksuite/store';
 
 import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
 import type { RootBlockComponent } from '../../types.js';

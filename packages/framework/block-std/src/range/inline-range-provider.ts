@@ -1,9 +1,9 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   INLINE_ROOT_ATTR,
   type InlineRange,
   type InlineRangeProvider,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { signal } from '@preact/signals-core';
 
 import type { TextSelection } from '../selection/index.js';

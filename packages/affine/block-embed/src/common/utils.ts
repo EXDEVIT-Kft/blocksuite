@@ -13,8 +13,8 @@ import {
   EmbedCardLightListIcon,
   EmbedCardLightVerticalIcon,
   LightLoadingIcon,
-} from '@blocksuite/affine-components/icons';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-components/icons';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
 
 type EmbedCardIcons = {
   LoadingIcon: TemplateResult<1>;

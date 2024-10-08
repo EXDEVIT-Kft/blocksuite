@@ -1,15 +1,15 @@
 import {
   DocModeService,
   EmbedOptionService,
-} from '@blocksuite/affine-shared/services';
-import { AFFINE_SCROLL_ANCHORING_WIDGET } from '@blocksuite/affine-widget-scroll-anchoring';
+} from '@algogrind/affine-shared/services';
+import { AFFINE_SCROLL_ANCHORING_WIDGET } from '@algogrind/affine-widget-scroll-anchoring';
 import {
   BlockViewExtension,
   CommandExtension,
   type ExtensionType,
   FlavourExtension,
   WidgetViewMapExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal, unsafeStatic } from 'lit/static-html.js';
 
 import { ExportManagerExtension } from '../../_common/export-manager/export-manager.js';

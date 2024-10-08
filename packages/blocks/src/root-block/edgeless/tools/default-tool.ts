@@ -3,33 +3,33 @@ import type {
   FrameBlockModel,
   MindmapNode,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { PointTestOptions } from '@blocksuite/block-std/gfx';
-import type { IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { PointTestOptions } from '@algogrind/block-std/gfx';
+import type { IVec } from '@algogrind/global/utils';
 
-import { ConnectorUtils, MindmapUtils } from '@blocksuite/affine-block-surface';
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+import { ConnectorUtils, MindmapUtils } from '@algogrind/affine-block-surface';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 import {
   ConnectorElementModel,
   GroupElementModel,
   MindmapElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import {
   clamp,
   handleNativeRangeAtPoint,
   resetNativeSelection,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   Bound,
   DisposableGroup,
   intersects,
   noop,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { EdgelessTool } from '../types.js';
 

@@ -1,16 +1,16 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import type { CursorSelection, SurfaceSelection } from '@blocksuite/block-std';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
+import type { CursorSelection, SurfaceSelection } from '@algogrind/block-std';
 
 import {
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   assertType,
   DisposableGroup,
   groupBy,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { EdgelessRootService } from '../edgeless-root-service.js';
 

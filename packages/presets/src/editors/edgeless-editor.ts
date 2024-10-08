@@ -1,8 +1,8 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { BlockStdScope, ShadowlessElement } from '@blocksuite/block-std';
-import { EdgelessEditorBlockSpecs } from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { BlockStdScope, ShadowlessElement } from '@algogrind/block-std';
+import { EdgelessEditorBlockSpecs } from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { guard } from 'lit/directives/guard.js';

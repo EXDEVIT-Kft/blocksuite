@@ -1,16 +1,16 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@algogrind/affine-model';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
+import { CommonUtils } from '@algogrind/affine-block-surface';
 import {
   FrameNavigatorNextIcon,
   FrameNavigatorPrevIcon,
   NavigatorExitFullScreenIcon,
   NavigatorFullScreenIcon,
   StopAIIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { Bound } from '@algogrind/global/utils';
 import { cssVar } from '@toeverything/theme';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

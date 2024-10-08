@@ -1,10 +1,10 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IPoint, IVec } from '@blocksuite/global/utils';
+import type { FrameBlockModel } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IPoint, IVec } from '@algogrind/global/utils';
 
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { Bound, noop, Vec } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { Bound, noop, Vec } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import { getTopElements } from '../utils/tree.js';
 import { EdgelessToolController } from './edgeless-tool.js';

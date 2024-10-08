@@ -1,10 +1,10 @@
-import type { BlockSnapshot } from '@blocksuite/store';
+import type { BlockSnapshot } from '@algogrind/store';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { AssetsManager, MemoryBlobCRUD } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import { AssetsManager, MemoryBlobCRUD } from '@algogrind/store';
 import { describe, expect, test } from 'vitest';
 
 import { HtmlAdapter } from '../../_common/adapters/html.js';

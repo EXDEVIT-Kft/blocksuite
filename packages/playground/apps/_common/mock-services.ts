@@ -1,4 +1,4 @@
-import type { AffineEditorContainer } from '@blocksuite/presets';
+import type { AffineEditorContainer } from '@algogrind/presets';
 
 import {
   type DocMode,
@@ -6,8 +6,8 @@ import {
   type NotificationService,
   type ParseDocUrlService,
   toast,
-} from '@blocksuite/blocks';
-import { type DocCollection, Slot } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { type DocCollection, Slot } from '@algogrind/store';
 
 function getModeFromStorage() {
   const mapJson = localStorage.getItem('playground:docMode');

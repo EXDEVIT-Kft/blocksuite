@@ -1,4 +1,4 @@
-import type { BlockCommands } from '@blocksuite/block-std';
+import type { BlockCommands } from '@algogrind/block-std';
 
 import { reassociateConnectorsCommand } from './reassociate-connectors.js';
 

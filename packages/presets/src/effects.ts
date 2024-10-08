@@ -1,5 +1,5 @@
-import '@blocksuite/affine-shared/commands';
-import '@blocksuite/blocks/effects';
+import '@algogrind/affine-shared/commands';
+import '@algogrind/blocks/effects';
 
 import { AIChatMessage } from './blocks/ai-chat-block/components/ai-chat-messages.js';
 import {

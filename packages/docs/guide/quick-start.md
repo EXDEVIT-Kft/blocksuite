@@ -64,15 +64,15 @@ To use BlockSuite in your existing project, simply install these core packages:
 
 ```sh
 yarn install \
-  @blocksuite/presets@canary \
-  @blocksuite/blocks@canary \
-  @blocksuite/store@canary
+  @algogrind/presets@canary \
+  @algogrind/blocks@canary \
+  @algogrind/store@canary
 ```
 
 Key takeaways in the snippet above:
 
-- The `@blocksuite/presets` package contains the prebuilt editors and opt-in additional UI components.
-- To work with the BlockSuite document model and first-party blocks, the `@blocksuite/store` and `@blocksuite/blocks` packages are required.
+- The `@algogrind/presets` package contains the prebuilt editors and opt-in additional UI components.
+- To work with the BlockSuite document model and first-party blocks, the `@algogrind/store` and `@algogrind/blocks` packages are required.
 - The BlockSuite `canary` versions are released daily based on the master branch, which is also used in production in [AFFiNE](https://github.com/toeverything/AFFiNE).
 
 Then you can use the prebuilt `PageEditor` out of the box, with an initialized `doc` instance attached as its document model:
@@ -80,8 +80,8 @@ Then you can use the prebuilt `PageEditor` out of the box, with an initialized `
 ::: code-sandbox {coderHeight=420 previewHeight=300}
 
 ```ts /index.ts [active]
-import { createEmptyDoc, PageEditor } from '@blocksuite/presets';
-import { Text } from '@blocksuite/store';
+import { createEmptyDoc, PageEditor } from '@algogrind/presets';
+import { Text } from '@algogrind/store';
 
 (async () => {
   // Init editor with default block tree

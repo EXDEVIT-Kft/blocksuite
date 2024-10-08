@@ -5,14 +5,14 @@ import {
   HelpIcon,
   NewIcon,
   NotionIcon,
-} from '@blocksuite/affine-components/icons';
-import { sha, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { sha, WithDisposable } from '@algogrind/global/utils';
 import {
   type DocCollection,
   extMimeMap,
   type JobMiddleware,
-} from '@blocksuite/store';
-import { Job } from '@blocksuite/store';
+} from '@algogrind/store';
+import { Job } from '@algogrind/store';
 import { html, LitElement, type PropertyValues } from 'lit';
 import { query, state } from 'lit/decorators.js';
 

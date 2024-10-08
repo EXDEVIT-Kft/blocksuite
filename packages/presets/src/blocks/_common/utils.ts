@@ -1,11 +1,11 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { Doc } from '@blocksuite/store';
+import type { EditorHost } from '@algogrind/block-std';
+import type { Doc } from '@algogrind/store';
 
 import {
   defaultImageProxyMiddleware,
   MarkdownAdapter,
-} from '@blocksuite/blocks';
-import { DocCollection, Job } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { DocCollection, Job } from '@algogrind/store';
 
 export async function markDownToDoc(host: EditorHost, answer: string) {
   const schema = host.std.doc.collection.schema;

@@ -1,8 +1,8 @@
-import { popMenu } from '@blocksuite/affine-components/context-menu';
+import { popMenu } from '@algogrind/affine-components/context-menu';
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

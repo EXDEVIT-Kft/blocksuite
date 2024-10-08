@@ -1,4 +1,4 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';

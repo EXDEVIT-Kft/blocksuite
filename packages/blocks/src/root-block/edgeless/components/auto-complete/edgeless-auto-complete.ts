@@ -3,35 +3,35 @@ import type {
   ConnectorElementModel,
   NoteBlockModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import type { Bound, IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { Bound, IVec } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
   Overlay,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
-import { ConnectorPathGenerator } from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
+import { ConnectorPathGenerator } from '@algogrind/affine-block-surface';
 import {
   AutoCompleteArrowIcon,
   MindMapChildIcon,
   MindMapSiblingIcon,
   NoteAutoCompleteIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   DEFAULT_SHAPE_STROKE_COLOR,
   LayoutType,
   MindmapElementModel,
   ShapeElementModel,
   shapeMethods,
-} from '@blocksuite/affine-model';
-import { handleNativeRangeAtPoint } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { handleNativeRangeAtPoint } from '@algogrind/affine-shared/utils';
 import {
   assertExists,
   DisposableGroup,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

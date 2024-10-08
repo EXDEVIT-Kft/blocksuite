@@ -1,18 +1,18 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { type EditorHost, ShadowlessElement } from '@algogrind/block-std';
 import {
   DocModeProvider,
   EdgelessRootService,
   EditPropsStore,
   type FrameBlockModel,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import {
   Bound,
   DisposableGroup,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { keyed } from 'lit/directives/keyed.js';

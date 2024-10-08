@@ -4,9 +4,9 @@ import {
   type Menu,
   type MenuOptions,
   popMenu,
-} from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { ArrowRightSmallIcon, DeleteIcon } from '@blocksuite/icons/lit';
 import { css, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';

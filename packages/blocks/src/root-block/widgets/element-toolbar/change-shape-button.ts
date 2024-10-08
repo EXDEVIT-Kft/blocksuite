@@ -2,7 +2,7 @@ import type {
   ColorScheme,
   ShapeElementModel,
   ShapeProps,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import {
   AddTextIcon,
@@ -10,8 +10,8 @@ import {
   GeneralStyleIcon,
   ScribbledStyleIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/icons';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
 import {
   DEFAULT_SHAPE_FILL_COLOR,
   DEFAULT_SHAPE_STROKE_COLOR,
@@ -24,8 +24,8 @@ import {
   SHAPE_STROKE_COLORS,
   ShapeStyle,
   StrokeStyle,
-} from '@blocksuite/affine-model';
-import { countBy, maxBy, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { countBy, maxBy, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { cache } from 'lit/directives/cache.js';

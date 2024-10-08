@@ -24,7 +24,7 @@ Notably, the BlockSuite framework allows runtime compatibility between the page 
 ## Usage
 
 ```ts
-import { PageEditor } from '@blocksuite/presets';
+import { PageEditor } from '@algogrind/presets';
 
 const editor = new PageEditor();
 ```
@@ -45,7 +45,7 @@ To integrate and customize this editor, you can:
 
 ## Reference
 
-- [`PageEditor`](/api/@blocksuite/presets/classes/PageEditor.html)
-- [`PageRootService`](/api/@blocksuite/blocks/classes/PageRootService.html)
+- [`PageEditor`](/api/@algogrind/presets/classes/PageEditor.html)
+- [`PageRootService`](/api/@algogrind/blocks/classes/PageRootService.html)
 
 Since `PageEditor` is a native web component, all DOM-related properties are inherited.

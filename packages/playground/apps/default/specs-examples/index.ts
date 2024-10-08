@@ -1,7 +1,7 @@
 import {
   EdgelessEditorBlockSpecs,
   PageEditorBlockSpecs,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
 import { getCustomAttachmentSpecs } from './custom-attachment/custom-attachment.js';
 

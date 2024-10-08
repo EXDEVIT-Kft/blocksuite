@@ -1,7 +1,7 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { SurfaceRefBlockSchema } from '@blocksuite/affine-model';
-import { BlockService } from '@blocksuite/block-std';
+import { SurfaceRefBlockSchema } from '@algogrind/affine-model';
+import { BlockService } from '@algogrind/block-std';
 
 import { SurfaceRefRenderer } from './surface-ref-renderer.js';
 

@@ -1,10 +1,10 @@
-import type { DocMode } from '@blocksuite/affine-model';
-import type { BlockStdScope, ExtensionType } from '@blocksuite/block-std';
-import type { Container } from '@blocksuite/global/di';
+import type { DocMode } from '@algogrind/affine-model';
+import type { BlockStdScope, ExtensionType } from '@algogrind/block-std';
+import type { Container } from '@algogrind/global/di';
 
-import { Extension, StdIdentifier } from '@blocksuite/block-std';
-import { createIdentifier } from '@blocksuite/global/di';
-import { type Disposable, noop, Slot } from '@blocksuite/global/utils';
+import { Extension, StdIdentifier } from '@algogrind/block-std';
+import { createIdentifier } from '@algogrind/global/di';
+import { type Disposable, noop, Slot } from '@algogrind/global/utils';
 
 const DEFAULT_MODE: DocMode = 'page';
 

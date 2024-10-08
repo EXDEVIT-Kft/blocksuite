@@ -1,12 +1,12 @@
-import type { BaseSelection } from '@blocksuite/block-std';
+import type { BaseSelection } from '@algogrind/block-std';
 
-import { NotificationProvider } from '@blocksuite/affine-shared/services';
+import { NotificationProvider } from '@algogrind/affine-shared/services';
 import {
   getPageRootByElement,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 import {
   autoPlacement,
   autoUpdate,

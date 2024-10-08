@@ -3,12 +3,12 @@ import type {
   EmbedGithubBlockComponent,
   EmbedLoomBlockComponent,
   EmbedYoutubeBlockComponent,
-} from '@blocksuite/affine-block-embed';
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-block-embed';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
-import { isPeekable, peek } from '@blocksuite/affine-components/peek';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { Bound } from '@blocksuite/global/utils';
+import { isPeekable, peek } from '@algogrind/affine-components/peek';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { Bound } from '@algogrind/global/utils';
 import {
   ArrowDownBigBottomIcon,
   ArrowDownBigIcon,

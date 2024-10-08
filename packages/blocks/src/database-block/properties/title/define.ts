@@ -1,6 +1,6 @@
-import type { Text } from '@blocksuite/store';
+import type { Text } from '@algogrind/store';
 
-import { propertyType, tRichText } from '@blocksuite/data-view';
+import { propertyType, tRichText } from '@algogrind/data-view';
 
 export const titleColumnType = propertyType('title');
 

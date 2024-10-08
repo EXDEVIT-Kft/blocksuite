@@ -42,7 +42,7 @@ And under the hood, the vanilla BlockSuite framework supports:
 - Persistence of documents and compatibility with various third-party formats (such as markdown and HTML) based on block [snapshot](./data-synchronization#snapshot-api) and transformer.
 - State scheduling across multiple documents and reusing one document in multiple editors.
 
-To try out BlockSuite, refer to the [quick start](./quick-start) example and start with the preset editors in `@blocksuite/presets`.
+To try out BlockSuite, refer to the [quick start](./quick-start) example and start with the preset editors in `@algogrind/presets`.
 
 ## Architecture
 
@@ -60,15 +60,15 @@ To that end, the BlockSuite project is structured around key packages that are c
     <th colspan="2">Framework</th>
   </tr>
   <tr>
-    <td><code>@blocksuite/store</code></td>
+    <td><code>@algogrind/store</code></td>
     <td>Data layer for modeling collaborative document states. It is natively built on the CRDT library <a href="https://github.com/yjs/yjs">Yjs</a>, powering all BlockSuite documents with built-in real-time collaboration and time-travel capabilities.</td>
   </tr>
   <tr>
-    <td><code>@blocksuite/inline</code></td>
+    <td><code>@algogrind/inline</code></td>
     <td>Minimal rich text components for inline editing. BlockSuite allows spliting rich text content in different block nodes into different inline editors, making complex content conveniently composable. <strong>This significantly reduces the complexity required to implement traditional rich text editing features.</strong></td>
   </tr>
   <tr>
-    <td><code>@blocksuite/block-std</code></td>
+    <td><code>@algogrind/block-std</code></td>
     <td>Framework-agnostic library for modeling editable blocks. Its capabilities cover the structure of block fields, events, selection, clipboard support, etc.</td>
   </tr>
 </table>
@@ -78,11 +78,11 @@ To that end, the BlockSuite project is structured around key packages that are c
     <th colspan="2">Components</th>
   </tr>
   <tr>
-    <td><code>@blocksuite/blocks</code></td>
+    <td><code>@algogrind/blocks</code></td>
     <td>Default block implementations for composing preset editors, including widgets belonging to each block.</td>
   </tr>
   <tr>
-    <td><code>@blocksuite/presets</code></td>
+    <td><code>@algogrind/presets</code></td>
     <td>Plug-and-play editable components including <i>editors</i> (<code>PageEditor</code> / <code>EdgelessEditor</code>) and auxiliary UI components named <i>fragments</i> (<code>CopilotPanel</code>, <code>DocTitle</code>...).</td>
   </tr>
 </table>

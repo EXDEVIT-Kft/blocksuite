@@ -1,6 +1,6 @@
-import type { BlockComponent, Command } from '@blocksuite/block-std';
+import type { BlockComponent, Command } from '@algogrind/block-std';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import { getPrevContentBlock } from '../../utils/index.js';
 

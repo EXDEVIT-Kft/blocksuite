@@ -1,20 +1,20 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
 
 import {
   type DocMode,
   type ImageBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { EMBED_CARD_HEIGHT } from '@blocksuite/affine-shared/consts';
-import { matchFlavours, SpecProvider } from '@blocksuite/affine-shared/utils';
-import { BlockStdScope } from '@blocksuite/block-std';
-import { assertExists, Bound, getCommonBound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { EMBED_CARD_HEIGHT } from '@algogrind/affine-shared/consts';
+import { matchFlavours, SpecProvider } from '@algogrind/affine-shared/utils';
+import { BlockStdScope } from '@algogrind/block-std';
+import { assertExists, Bound, getCommonBound } from '@algogrind/global/utils';
 import {
   type BlockModel,
   BlockViewType,
   type Doc,
   type Query,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { render, type TemplateResult } from 'lit';
 
 import type { EmbedLinkedDocBlockComponent } from '../embed-linked-doc-block/index.js';

@@ -1,19 +1,19 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { ExtendedModel } from '@blocksuite/affine-shared/types';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel, Text } from '@blocksuite/store';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { ExtendedModel } from '@algogrind/affine-shared/types';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel, Text } from '@algogrind/store';
 
 import {
   asyncSetInlineRange,
   focusTextModel,
-} from '@blocksuite/affine-components/rich-text';
-import { EMBED_BLOCK_FLAVOUR_LIST } from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-components/rich-text';
+import { EMBED_BLOCK_FLAVOUR_LIST } from '@algogrind/affine-shared/consts';
 import {
   focusTitle,
   getDocTitleInlineEditor,
   getPrevContentBlock,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 /**
  * Merge the paragraph with prev block

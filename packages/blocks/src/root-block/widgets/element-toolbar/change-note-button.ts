@@ -6,11 +6,11 @@ import {
   ScissorsIcon,
   ShrinkIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   type EditorMenuButton,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   type ColorScheme,
   DEFAULT_NOTE_BACKGROUND_COLOR,
@@ -18,15 +18,15 @@ import {
   type NoteBlockModel,
   NoteDisplayMode,
   type StrokeStyle,
-} from '@blocksuite/affine-model';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 import {
   assertExists,
   Bound,
   countBy,
   maxBy,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

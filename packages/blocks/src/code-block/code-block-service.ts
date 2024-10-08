@@ -1,7 +1,7 @@
-import { textKeymap } from '@blocksuite/affine-components/rich-text';
-import { CodeBlockSchema, ColorScheme } from '@blocksuite/affine-model';
-import { ThemeObserver } from '@blocksuite/affine-shared/theme';
-import { BlockService } from '@blocksuite/block-std';
+import { textKeymap } from '@algogrind/affine-components/rich-text';
+import { CodeBlockSchema, ColorScheme } from '@algogrind/affine-model';
+import { ThemeObserver } from '@algogrind/affine-shared/theme';
+import { BlockService } from '@algogrind/block-std';
 import { type Signal, signal } from '@preact/signals-core';
 import {
   createHighlighterCore,

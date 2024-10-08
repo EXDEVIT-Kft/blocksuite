@@ -3,7 +3,7 @@ import type {
   GroupElementModel,
   ShapeElementModel,
   SurfaceBlockModel,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 

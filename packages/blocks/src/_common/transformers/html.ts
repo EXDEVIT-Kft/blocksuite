@@ -1,6 +1,6 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { Job } from '@blocksuite/store';
+import { Job } from '@algogrind/store';
 
 import { HtmlAdapter } from '../adapters/index.js';
 import { createAssetsArchive, download } from './utils.js';

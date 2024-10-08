@@ -1,10 +1,10 @@
-import type { BrushElementModel } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+import type { BrushElementModel } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { assertExists, noop } from '@blocksuite/global/utils';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { assertExists, noop } from '@algogrind/global/utils';
 
 import { EdgelessToolController } from './edgeless-tool.js';
 

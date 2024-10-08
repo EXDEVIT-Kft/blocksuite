@@ -1,5 +1,5 @@
-import { NOTE_WIDTH } from '@blocksuite/affine-model';
-import { assertExists } from '@blocksuite/global/utils';
+import { NOTE_WIDTH } from '@algogrind/affine-model';
+import { assertExists } from '@algogrind/global/utils';
 import { expect } from '@playwright/test';
 
 import {

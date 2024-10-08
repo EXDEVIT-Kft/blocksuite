@@ -1,10 +1,10 @@
-import type { Command, EditorHost } from '@blocksuite/block-std';
+import type { Command, EditorHost } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 import {
   getNextContinuousNumberedLists,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 import { correctNumberedListsOrderToPrev } from './utils.js';
 
