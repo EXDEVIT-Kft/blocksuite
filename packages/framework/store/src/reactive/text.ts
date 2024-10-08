@@ -41,7 +41,6 @@ export class Text {
     input?: Y.Text | string | DeltaInsert[],
     onChange?: OnTextChange
   ) {
-    console.log('EGY SZÖVEGET HOZOK LÉTRE!!!!');
     this._onChange = onChange;
     let length = 0;
     if (typeof input === 'string') {
