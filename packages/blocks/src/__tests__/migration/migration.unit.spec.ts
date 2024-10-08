@@ -172,7 +172,7 @@ describe('block migration', () => {
     let databaseBlock = (
       doc.getMap('blocks').get('Y76JkP9XRn') as Y.Map<unknown>
     ).toJSON();
-    expect(databaseBlock['prop:titleColumnName']).toBe('Title');
+    expect(databaseBlock['prop:titleColumnName']).toBe('Cím');
     expect(databaseBlock['prop:titleColumnWidth']).toBe(200);
     expect(
       databaseBlock['prop:columns'].find(

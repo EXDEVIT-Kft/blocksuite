@@ -687,7 +687,7 @@ test.describe('readonly mode', () => {
     await expect(addViewButton).toBeVisible();
 
     const titleHeader = page.locator('affine-database-header-column').filter({
-      hasText: 'Title',
+      hasText: 'Cím',
     });
     await titleHeader.hover();
     const columnDragBar = titleHeader.locator('.control-r');

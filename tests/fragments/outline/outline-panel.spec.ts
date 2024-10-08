@@ -69,7 +69,7 @@ test.describe('toc-panel', () => {
     const noHeadingPlaceholder = panel.locator('.note-placeholder');
 
     await focusTitle(page);
-    await type(page, 'Title');
+    await type(page, 'Cím');
     await focusRichTextEnd(page);
     await type(page, 'Hello World');
 
@@ -84,7 +84,7 @@ test.describe('toc-panel', () => {
     const panel = await toggleTocPanel(page);
 
     await focusTitle(page);
-    await type(page, 'Title');
+    await type(page, 'Cím');
     await focusRichTextEnd(page);
 
     // heading 1 to 6
@@ -121,8 +121,8 @@ test.describe('toc-panel', () => {
     const title = getTitle(panel);
     await expect(title).toBeHidden();
     await focusTitle(page);
-    await type(page, 'Title');
-    await expect(title).toHaveText('Title');
+    await type(page, 'Cím');
+    await expect(title).toHaveText('Cím');
 
     // heading 1 to 6
     for (let i = 1; i <= 6; i++) {
@@ -152,11 +152,11 @@ test.describe('toc-panel', () => {
     const title = getTitle(panel);
 
     await focusTitle(page);
-    await type(page, 'Title');
-    await expect(title).toContainText('Title');
+    await type(page, 'Cím');
+    await expect(title).toContainText('Cím');
 
     await pressBackspace(page, 2);
-    await expect(title).toContainText('Tit');
+    await expect(title).toContainText('C');
   });
 
   test('should add padding to sub-headings', async ({ page }) => {
@@ -242,7 +242,7 @@ test.describe('toc-panel', () => {
     const panel = await toggleTocPanel(page);
 
     await focusTitle(page);
-    await type(page, 'Title');
+    await type(page, 'Cím');
 
     await focusRichTextEnd(page);
     await createHeadingsWithGap(page);

@@ -5,7 +5,7 @@ import { propertyType, tRichText } from '@algogrind/data-view';
 export const titleColumnType = propertyType('title');
 
 export const titlePurePropertyConfig = titleColumnType.modelConfig<Text>({
-  name: 'Title',
+  name: 'Cím',
   type: () => tRichText.create(),
   defaultData: () => ({}),
   cellToString: data => data?.toString() ?? '',

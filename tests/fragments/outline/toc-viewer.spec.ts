@@ -57,7 +57,7 @@ test.describe('toc-viewer', () => {
     await toggleTocViewer(page);
 
     await focusTitle(page);
-    await type(page, 'Title');
+    await type(page, 'Cím');
     await focusRichTextEnd(page);
 
     const indicators = getIndicators(page);

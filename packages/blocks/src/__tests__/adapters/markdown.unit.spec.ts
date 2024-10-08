@@ -1251,7 +1251,7 @@ hhh
         columns: [
           {
             type: 'title',
-            name: 'Title',
+            name: 'Cím',
             data: {},
             id: 'block:2VfUaitjf9',
           },

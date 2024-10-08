@@ -77,7 +77,7 @@ describe('DatabaseManager', () => {
       'affine:database' as BlockSuite.Flavour,
       {
         columns: [],
-        titleColumn: 'Title',
+        titleColumn: 'Cím',
       },
       noteBlockId
     );
