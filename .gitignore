@@ -43,3 +43,7 @@ __screenshots__/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Ignore all Vite timestamp files
+vitest.config.ts.timestamp-*.mjs
+vite.config.ts.timestamp-*.mjs
