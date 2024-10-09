@@ -89,9 +89,9 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
         : ImageIcon;
 
     const titleText = loading
-      ? 'Loading image...'
+      ? 'Kép betöltése...'
       : error
-        ? 'Image loading failed.'
+        ? 'Kép betöltése sikertelen.'
         : 'Image';
 
     const size =
