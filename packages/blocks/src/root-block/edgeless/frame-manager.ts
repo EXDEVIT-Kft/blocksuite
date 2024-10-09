@@ -163,7 +163,7 @@ export class EdgelessFrameManager {
     const id = this._rootService.addBlock(
       'affine:frame',
       {
-        title: new DocCollection.Y.Text(`Frame ${this.frames.length + 1}`),
+        title: new DocCollection.Y.Text(`Keret ${this.frames.length + 1}`),
         xywh: bound.serialize(),
       },
       surfaceModel

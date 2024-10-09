@@ -10,17 +10,17 @@ import { repeat } from 'lit/directives/repeat.js';
 
 const TEXT_ALIGN_LIST = [
   {
-    name: 'Left',
+    name: 'Bal',
     value: TextAlign.Left,
     icon: TextAlignLeftIcon,
   },
   {
-    name: 'Center',
+    name: 'Közép',
     value: TextAlign.Center,
     icon: TextAlignCenterIcon,
   },
   {
-    name: 'Right',
+    name: 'Jobb',
     value: TextAlign.Right,
     icon: TextAlignRightIcon,
   },

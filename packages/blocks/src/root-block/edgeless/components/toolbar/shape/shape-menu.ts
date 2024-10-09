@@ -125,7 +125,7 @@ export class EdgelessShapeMenu extends SignalWatcher(LitElement) {
         <div class="menu-content">
           <div class="shape-style-container">
             <edgeless-tool-icon-button
-              .tooltip=${'General'}
+              .tooltip=${'Letisztult'}
               .active=${shapeStyle === ShapeStyle.General}
               .activeMode=${'background'}
               @click=${() => {
@@ -135,7 +135,7 @@ export class EdgelessShapeMenu extends SignalWatcher(LitElement) {
               ${GeneralStyleIcon}
             </edgeless-tool-icon-button>
             <edgeless-tool-icon-button
-              .tooltip=${'Scribbled'}
+              .tooltip=${'Rajzolt'}
               .active=${shapeStyle === ShapeStyle.Scribbled}
               .activeMode=${'background'}
               @click=${() => {

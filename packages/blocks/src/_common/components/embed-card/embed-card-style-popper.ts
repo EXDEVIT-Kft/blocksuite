@@ -65,7 +65,7 @@ export class EmbedCardStyleMenu extends WithDisposable(LitElement) {
           >
             ${EmbedCardHorizontalIcon}
             <affine-tooltip .offset=${4}
-              >${'Large horizontal style'}</affine-tooltip
+              >${'Nagy vízszintes elrendezés'}</affine-tooltip
             >
           </icon-button>
 
@@ -80,7 +80,7 @@ export class EmbedCardStyleMenu extends WithDisposable(LitElement) {
           >
             ${EmbedCardListIcon}
             <affine-tooltip .offset=${4}
-              >${'Small horizontal style'}</affine-tooltip
+              >${'Kicsi vízszintes elrendezés'}</affine-tooltip
             >
           </icon-button>
         </div>

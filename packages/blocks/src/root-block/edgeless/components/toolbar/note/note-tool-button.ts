@@ -97,7 +97,7 @@ export class EdgelessNoteToolButton extends QuickToolMixin(LitElement) {
     return html`
       <edgeless-tool-icon-button
         class="edgeless-note-button"
-        .tooltip=${this._noteMenu ? '' : getTooltipWithShortcut('Note', 'N')}
+        .tooltip=${this._noteMenu ? '' : getTooltipWithShortcut('Jegyzet', 'N')}
         .tooltipOffset=${17}
         .active=${active}
         .iconContainerPadding=${6}
@@ -120,7 +120,7 @@ export class EdgelessNoteToolButton extends QuickToolMixin(LitElement) {
   accessor childType = 'text';
 
   @state()
-  accessor tip = 'Text';
+  accessor tip = 'Szöveg';
 }
 
 declare global {

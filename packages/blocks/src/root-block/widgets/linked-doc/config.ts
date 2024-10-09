@@ -39,7 +39,7 @@ export type LinkedMenuGroup = {
   overflowText?: string;
 };
 
-const DEFAULT_DOC_NAME = 'Untitled';
+const DEFAULT_DOC_NAME = 'Új dokumentum';
 const DISPLAY_NAME_LENGTH = 8;
 
 export function createLinkedDocMenuGroup(
@@ -56,7 +56,7 @@ export function createLinkedDocMenuGroup(
   const MAX_DOCS = 6;
 
   return {
-    name: 'Link to Doc',
+    name: 'Hivatkozás meglévőre',
     items: filteredDocList.map(doc => ({
       key: doc.id,
       name: doc.title || DEFAULT_DOC_NAME,
@@ -82,7 +82,7 @@ export function createLinkedDocMenuGroup(
       },
     })),
     maxDisplay: MAX_DOCS,
-    overflowText: `${filteredDocList.length - MAX_DOCS} more docs`,
+    overflowText: `${filteredDocList.length - MAX_DOCS} további dokumentumok`,
   };
 }
 
@@ -99,11 +99,11 @@ export function createNewDocMenuGroup(
     (docName.length > DISPLAY_NAME_LENGTH ? '..' : '');
 
   return {
-    name: 'New Doc',
+    name: 'Új dokumentum',
     items: [
       {
         key: 'create',
-        name: `Create "${displayDocName}" doc`,
+        name: `"${displayDocName}" létrehozása`,
         icon: NewDocIcon,
         action: () => {
           abort();
@@ -132,7 +132,7 @@ export function createNewDocMenuGroup(
       },
       {
         key: 'import',
-        name: 'Import',
+        name: 'Importálás',
         icon: ImportIcon,
         action: () => {
           abort();
@@ -144,7 +144,7 @@ export function createNewDocMenuGroup(
           ) => {
             toast(
               editorHost,
-              `Successfully imported ${options.importedCount} Doc${options.importedCount > 1 ? 's' : ''}.`
+              `${options.importedCount} dokumentum sikeresen importálva.`
             );
             for (const docId of docIds) {
               insertLinkedNode({

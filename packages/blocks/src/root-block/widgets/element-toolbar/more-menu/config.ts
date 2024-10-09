@@ -60,7 +60,7 @@ export const sectionGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: FrameIcon({ width: '20', height: '20' }),
-      label: 'Frame section',
+      label: 'Keret Létrehozása',
       type: 'create-frame',
       action: ({ service, edgeless, std }) => {
         const frame = service.frame.createFrameOnSelected();
@@ -79,7 +79,7 @@ export const sectionGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: GroupIcon({ width: '20', height: '20' }),
-      label: 'Group section',
+      label: 'Csoportosítás',
       type: 'create-group',
       action: ({ service }) => {
         service.createGroupFromSelected();
@@ -95,7 +95,7 @@ export const reorderGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: ArrowUpBigTopIcon({ width: '20', height: '20' }),
-      label: 'Bring to Front',
+      label: 'Előrehozás',
       type: 'front',
       action: ({ service, selectedElements }) => {
         selectedElements.forEach(el => {
@@ -105,7 +105,7 @@ export const reorderGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: ArrowUpBigIcon({ width: '20', height: '20' }),
-      label: 'Bring Forward',
+      label: 'Előbbre hozás',
       type: 'forward',
       action: ({ service, selectedElements }) => {
         selectedElements.forEach(el => {
@@ -115,7 +115,7 @@ export const reorderGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: ArrowDownBigIcon({ width: '20', height: '20' }),
-      label: 'Send Backward',
+      label: 'Hátraküldés',
       type: 'backward',
       action: ({ service, selectedElements }) => {
         selectedElements.forEach(el => {
@@ -125,7 +125,7 @@ export const reorderGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: ArrowDownBigBottomIcon({ width: '20', height: '20' }),
-      label: 'Send to Back',
+      label: 'Hátrébb küldés',
       type: 'back',
       action: ({ service, selectedElements }) => {
         selectedElements.forEach(el => {
@@ -143,7 +143,7 @@ export const openGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: OpenInNewIcon({ width: '20', height: '20' }),
-      label: 'Open this doc',
+      label: 'Dokumentum megnyitása',
       type: 'open',
       generate: ctx => {
         const linkedDocBlock = ctx.getLinkedDocBlock();
@@ -169,7 +169,7 @@ export const openGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: CenterPeekIcon({ width: '20', height: '20' }),
-      label: 'Open in center peek',
+      label: 'Megtekintés középen',
       type: 'center-peek',
       generate: ctx => {
         const valid =
@@ -197,20 +197,20 @@ export const clipboardGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: CopyIcon({ width: '20', height: '20' }),
-      label: 'Copy',
+      label: 'Másolás',
       type: 'copy',
       action: ({ edgeless }) => edgeless.clipboardController.copy(),
     },
     {
       icon: DuplicateIcon({ width: '20', height: '20' }),
-      label: 'Duplicate',
+      label: 'Duplikálás',
       type: 'duplicate',
       action: ({ edgeless, selectedElements }) =>
         duplicate(edgeless, selectedElements),
     },
     {
       icon: ResetIcon({ width: '20', height: '20' }),
-      label: 'Reload',
+      label: 'Frissítés',
       type: 'reload',
       generate: ctx => {
         if (ctx.hasFrame()) {
@@ -246,7 +246,7 @@ export const conversionsGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: LinkedPageIcon({ width: '20', height: '20' }),
-      label: 'Turn into linked doc',
+      label: 'Hivatkozott dokumentummá konvertálás',
       type: 'turn-into-linked-doc',
       action: async ctx => {
         const { doc, service, surface, host, std } = ctx;
@@ -302,7 +302,7 @@ export const conversionsGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
     },
     {
       icon: LinkedPageIcon({ width: '20', height: '20' }),
-      label: 'Create linked doc',
+      label: 'Hivatkozott dokumentum létrehozása',
       type: 'create-linked-doc',
       action: async ({
         doc,
@@ -377,7 +377,7 @@ export const deleteGroup: MenuItemGroup<ElementToolbarMoreMenuContext> = {
   items: [
     {
       icon: DeleteIcon({ width: '20', height: '20' }),
-      label: 'Delete',
+      label: 'Törlés',
       type: 'delete',
       action: ({ doc, selection, selectedElements, edgeless }) => {
         doc.captureSync();

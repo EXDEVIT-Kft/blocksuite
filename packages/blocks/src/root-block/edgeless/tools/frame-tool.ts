@@ -83,7 +83,7 @@ export class FrameToolController extends EdgelessToolController<FrameTool> {
       const id = this._service.addBlock(
         'affine:frame',
         {
-          title: new DocCollection.Y.Text(`Frame ${frames.length + 1}`),
+          title: new DocCollection.Y.Text(`Keret ${frames.length + 1}`),
           xywh: Bound.fromPoints([this._startPoint, currentPoint]).serialize(),
         },
         this._service.surface

@@ -182,7 +182,7 @@ export class EdgelessNoteSeniorButton extends EdgelessToolbarToolMixin(
 
     return html`<edgeless-toolbar-button
       class="edgeless-note-button"
-      .tooltip=${this.popper ? '' : getTooltipWithShortcut('Note', 'N')}
+      .tooltip=${this.popper ? '' : getTooltipWithShortcut('Jegyzet', 'N')}
       .tooltipOffset=${5}
     >
       <div
@@ -207,5 +207,5 @@ export class EdgelessNoteSeniorButton extends EdgelessToolbarToolMixin(
   accessor childType = 'text';
 
   @state()
-  accessor tip = 'Note';
+  accessor tip = 'Jegyzet';
 }

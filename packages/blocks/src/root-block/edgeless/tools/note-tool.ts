@@ -37,7 +37,7 @@ export class NoteToolController extends EdgelessToolController<NoteTool> {
     type: 'affine:note',
     childFlavour: 'affine:paragraph',
     childType: 'text',
-    tip: 'Text',
+    tip: 'Szöveg',
   } as NoteTool;
 
   // Ensure clear overlay before adding a new note

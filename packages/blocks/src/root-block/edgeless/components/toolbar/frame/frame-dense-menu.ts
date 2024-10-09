@@ -8,7 +8,7 @@ import { FrameConfig } from './config.js';
 
 export const buildFrameDenseMenu: DenseMenuBuilder = edgeless => ({
   type: 'sub-menu',
-  name: 'Frame',
+  name: 'Keret',
   icon: FrameIcon,
   select: () => edgeless.tools.setEdgelessTool({ type: 'frame' }),
   isSelected: edgeless.tools.edgelessTool.type === 'frame',
@@ -16,14 +16,14 @@ export const buildFrameDenseMenu: DenseMenuBuilder = edgeless => ({
     items: [
       {
         type: 'action',
-        name: 'Custom',
+        name: 'Egyedi',
         select: () => edgeless.tools.setEdgelessTool({ type: 'frame' }),
       },
       ...FrameConfig.map(
         config =>
           ({
             type: 'action',
-            name: `Slide ${config.name}`,
+            name: `Dia ${config.name}`,
             select: () => {
               edgeless.tools.setEdgelessTool({ type: 'default' });
               edgeless.service.frame.createFrameOnViewportCenter(config.wh);

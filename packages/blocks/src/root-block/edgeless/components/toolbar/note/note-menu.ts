@@ -109,7 +109,7 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
           <div class="button-group-container">
             <edgeless-tool-icon-button
               .activeMode=${'background'}
-              .tooltip=${'Image'}
+              .tooltip=${'Kép'}
               @click=${this._addImages}
               .disabled=${this._imageLoading}
             >
@@ -128,7 +128,7 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
 
             <edgeless-tool-icon-button
               .activeMode=${'background'}
-              .tooltip=${'File'}
+              .tooltip=${'Fájl'}
               @click=${async () => {
                 const file = await openFileOrFiles();
                 if (!file) return;

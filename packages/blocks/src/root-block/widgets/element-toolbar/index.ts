@@ -249,8 +249,8 @@ export class EdgelessElementToolbarWidget extends WidgetComponent<
     return [
       html`
         <editor-icon-button
-          aria-label="Draw connector"
-          .tooltip=${'Draw connector'}
+          aria-label="Összekötés rajzolása"
+          .tooltip=${'Összekötés rajzolása'}
           .activeMode=${'background'}
           @click=${this._quickConnect}
         >

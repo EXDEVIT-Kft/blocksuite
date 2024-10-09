@@ -199,8 +199,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       })),
 
     {
-      name: 'Egysoros Egyenlet',
-      description: 'Szúrj be egy új egysoros egyenletet.',
+      name: 'Sorközi Egyenlet',
+      description: 'Szúrj be egy új sorközi egyenletet.',
       icon: TeXIcon({
         width: '20',
         height: '20',
@@ -413,8 +413,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         const index = parentModel.children.indexOf(model) + 1;
         await toggleEmbedCardCreateModal(
           rootComponent.host,
-          'Links',
-          'The added link will be displayed as a card view.',
+          'Weboldal hivatkozása',
+          'A hozzáadott weboldal kártya nézetben lesz megjelenítve.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);

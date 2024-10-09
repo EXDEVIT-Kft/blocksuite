@@ -1109,7 +1109,7 @@ export class MarkdownAdapter extends BaseAdapter<Markdown> {
       type: 'page',
       meta: {
         id: nanoid(),
-        title: 'Untitled',
+        title: 'Új dokumentum',
         createDate: Date.now(),
         tags: [],
       },
@@ -1122,7 +1122,7 @@ export class MarkdownAdapter extends BaseAdapter<Markdown> {
             '$blocksuite:internal:text$': true,
             delta: [
               {
-                insert: 'Untitled',
+                insert: 'Új dokumentum',
               },
             ],
           },

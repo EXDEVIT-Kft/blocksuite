@@ -145,8 +145,12 @@ export const NOTE_MENU_ITEMS = TEXT_ITEMS.concat(LIST_ITEMS)
       icon: item.icon,
       tooltip:
         item.type !== 'text'
-          ? item.tooltip.replace('Húzz/Kattints egy ', '')
-          : 'Text',
+          ? item.tooltip
+              .replace('Húzz/Kattints egy ', '')
+              .replace(' blokk beszúrásához', '')
+              .replace(' beszúrásához', '')
+              .replace('szimpla', '')
+          : 'Szöveg',
       childFlavour: item.flavour as NoteChildrenFlavour,
       childType: item.type,
     } as NoteMenuItem;

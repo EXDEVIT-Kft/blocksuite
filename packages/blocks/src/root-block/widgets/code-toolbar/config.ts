@@ -22,7 +22,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
     items: [
       {
         type: 'copy-code',
-        label: 'Copy code',
+        label: 'Kód másolása',
         icon: CopyIcon,
         generate: ({ blockComponent }) => {
           return {
@@ -48,7 +48,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
       },
       {
         type: 'caption',
-        label: 'Caption',
+        label: 'Felirat',
         icon: CaptionIcon,
         when: ({ doc }) => !doc.readonly,
         generate: ({ blockComponent }) => {
@@ -85,7 +85,7 @@ export const clipboardGroup: MenuItemGroup<CodeBlockToolbarContext> = {
       type: 'wrap',
       generate: ({ blockComponent, close }) => {
         const wrapped = blockComponent.model.wrap;
-        const label = wrapped ? 'Cancel wrap' : 'Wrap';
+        const label = wrapped ? 'Tördelés visszavonása' : 'Tördelés';
         const icon = wrapped ? CancelWrapIcon : WrapIcon;
 
         return {
@@ -100,7 +100,7 @@ export const clipboardGroup: MenuItemGroup<CodeBlockToolbarContext> = {
     },
     {
       type: 'duplicate',
-      label: 'Duplicate',
+      label: 'Duplikálás',
       icon: DuplicateIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ host, blockComponent, close }) => {
@@ -135,7 +135,7 @@ export const deleteGroup: MenuItemGroup<CodeBlockToolbarContext> = {
   items: [
     {
       type: 'delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ doc, blockComponent, close }) => {

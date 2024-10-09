@@ -60,7 +60,7 @@ export class EmbedCardEditCaptionEditModal extends WithDisposable(
             <label for="card-title">Caption</label>
             <textarea
               class="embed-card-modal-input caption"
-              placeholder="Write a caption..."
+              placeholder="Felirat megadása..."
               .value=${this._model.caption ?? ''}
             ></textarea>
           </div>
@@ -72,7 +72,7 @@ export class EmbedCardEditCaptionEditModal extends WithDisposable(
               })}
               @click=${() => this._onSave()}
             >
-              Save
+              Mentés
             </button>
           </div>
         </div>

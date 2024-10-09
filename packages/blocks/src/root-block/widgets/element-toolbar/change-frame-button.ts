@@ -106,7 +106,7 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
       targetParent
     );
 
-    toast(this.edgeless.host, 'Frame has been inserted into doc');
+    toast(this.edgeless.host, 'A Keret már a Szöveg nézetben is megjelenik');
   }
 
   private _setFrameBackground(color: string) {
@@ -128,14 +128,14 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
         onlyOne
           ? html`
               <editor-icon-button
-                aria-label=${'Insert into Page'}
-                .tooltip=${'Insert into Page'}
+                aria-label=${'Beszúrás a Szöveg nézetbe'}
+                .tooltip=${'Beszúrás a Szöveg nézetbe'}
                 .iconSize=${'20px'}
                 .labelHeight=${'20px'}
                 @click=${this._insertIntoPage}
               >
                 ${NoteIcon}
-                <span class="label">Insert into Page</span>
+                <span class="label">Beszúrás a Szöveg nézetbe</span>
               </editor-icon-button>
             `
           : nothing,
@@ -143,8 +143,8 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
         onlyOne
           ? html`
               <editor-icon-button
-                aria-label="Rename"
-                .tooltip=${'Rename'}
+                aria-label="Átnevezés"
+                .tooltip=${'Átnevezés'}
                 .iconSize=${'20px'}
                 @click=${() =>
                   mountFrameTitleEditor(this.frames[0], this.edgeless)}
@@ -166,7 +166,7 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
             return html`
               <edgeless-color-picker-button
                 class="background"
-                .label=${'Background'}
+                .label=${'Háttér'}
                 .pick=${this.pickColor}
                 .color=${background}
                 .colors=${colors}
@@ -180,10 +180,7 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
             <editor-menu-button
               .contentPadding=${'8px'}
               .button=${html`
-                <editor-icon-button
-                  aria-label="Background"
-                  .tooltip=${'Background'}
-                >
+                <editor-icon-button aria-label="Háttér" .tooltip=${'Háttér'}>
                   <edgeless-color-button
                     .color=${background}
                   ></edgeless-color-button>

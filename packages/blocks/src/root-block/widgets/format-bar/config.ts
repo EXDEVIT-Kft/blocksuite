@@ -445,7 +445,7 @@ export function toolbarMoreButton(toolbar: AffineFormatBarWidget) {
     <editor-menu-button
       .contentPadding=${'8px'}
       .button=${html`
-        <editor-icon-button aria-label="Több" .tooltip=${'Több'}>
+        <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
           ${MoreVerticalIcon}
         </editor-icon-button>
       `}

@@ -45,8 +45,8 @@ export function getShapeRadius(name: ShapeName): number {
 }
 
 export enum ShapeStyle {
-  General = 'General',
-  Scribbled = 'Scribbled',
+  General = 'General', // -> 'Letisztult'
+  Scribbled = 'Scribbled', // -> 'Rajzolt'
 }
 
 export enum ShapeFillColor {

@@ -62,7 +62,7 @@ export const AFFINE_PIE_MENU_ID_EDGELESS_TOOLS = 'affine:pie:edgeless:tools';
 
 const pie = new PieMenuBuilder({
   id: AFFINE_PIE_MENU_ID_EDGELESS_TOOLS,
-  label: 'Tools',
+  label: 'Eszközök',
   icon: ToolsIcon,
   trigger: ({ keyEvent: ev, rootComponent }) => {
     if (isControlledKeyboardEvent(ev)) return false;
@@ -73,12 +73,12 @@ const pie = new PieMenuBuilder({
 });
 
 pie.expandableCommand({
-  label: 'Pen',
+  label: 'Toll',
   icon: EdgelessPenLightIcon,
   action: setEdgelessToolAction({ type: 'brush' }),
   submenus: pie => {
     pie.colorPicker({
-      label: 'Pen Color',
+      label: 'Toll Színe',
       active: getActiveConnectorStrokeColor,
       onChange: (color: string, { rootComponent }: PieMenuContext) => {
         rootComponent.std.get(EditPropsStore).recordLastProps('brush', {
@@ -91,7 +91,7 @@ pie.expandableCommand({
 });
 
 pie.command({
-  label: 'Eraser',
+  label: 'Radír',
   icon: EdgelessEraserLightIcon,
   action: setEdgelessToolAction({
     type: 'eraser',
@@ -99,7 +99,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Frame',
+  label: 'Keret',
   icon: FrameIcon,
   action: setEdgelessToolAction({
     type: 'frame',
@@ -107,7 +107,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Select',
+  label: 'Kiválaszt',
   icon: SelectIcon,
   action: setEdgelessToolAction({
     type: 'default',
@@ -115,7 +115,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Note',
+  label: 'Jegyzet',
   icon: NoteIcon,
   action: setEdgelessToolAction({
     type: 'affine:note',
@@ -126,7 +126,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Reset Zoom',
+  label: 'Nagyítás Visszaállítása',
   icon: ViewBarIcon,
   action: ({ rootComponent }) => {
     rootComponent.service.zoomToFit();
@@ -134,7 +134,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Present',
+  label: 'Prezentálás',
   icon: ({ rootComponent }) => {
     const { type } = rootComponent.edgelessTool;
     if (type === 'frameNavigator') {
@@ -171,7 +171,7 @@ pie.command({
 });
 // Connector submenu
 pie.beginSubmenu({
-  label: 'Connector',
+  label: 'Összekötés',
   icon: ({ rootComponent }) => {
     const tool = rootComponent.edgelessTool;
 
@@ -190,7 +190,7 @@ pie.beginSubmenu({
 });
 
 pie.command({
-  label: 'Curved',
+  label: 'Íves',
   icon: ConnectorCWithArrowIcon,
   action: setEdgelessToolAction({
     type: 'connector',
@@ -199,7 +199,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Elbowed',
+  label: 'Szögletes',
   icon: ConnectorXWithArrowIcon,
   action: setEdgelessToolAction({
     type: 'connector',
@@ -208,7 +208,7 @@ pie.command({
 });
 
 pie.command({
-  label: 'Straight',
+  label: 'Egyenes',
   icon: ConnectorLWithArrowIcon,
   action: setEdgelessToolAction({
     type: 'connector',
@@ -217,7 +217,7 @@ pie.command({
 });
 
 pie.colorPicker({
-  label: 'Line Color',
+  label: 'Vonal Színe',
   active: getActiveConnectorStrokeColor,
   onChange: (color: string, { rootComponent }: PieMenuContext) => {
     rootComponent.std.get(EditPropsStore).recordLastProps('connector', {
@@ -231,32 +231,32 @@ pie.endSubmenu();
 
 // Shapes Submenu
 pie.beginSubmenu({
-  label: 'Shapes',
+  label: 'Alakzatok',
   icon: EdgelessGeneralShapeIcon,
 });
 
 const shapes = [
   {
     type: ShapeType.Rect,
-    label: 'Rect',
+    label: 'Négyzet',
     icon: (style: ShapeStyle) =>
       style === ShapeStyle.General ? SquareIcon : ScribbledSquareIcon,
   },
   {
     type: ShapeType.Ellipse,
-    label: 'Ellipse',
+    label: 'Ellipszis',
     icon: (style: ShapeStyle) =>
       style === ShapeStyle.General ? EllipseIcon : ScribbledEllipseIcon,
   },
   {
     type: ShapeType.Triangle,
-    label: 'Triangle',
+    label: 'Háromszög',
     icon: (style: ShapeStyle) =>
       style === ShapeStyle.General ? TriangleIcon : ScribbledTriangleIcon,
   },
   {
     type: ShapeType.Diamond,
-    label: 'Diamond',
+    label: 'Gyémánt',
     icon: (style: ShapeStyle) =>
       style === ShapeStyle.General ? DiamondIcon : ScribbledDiamondIcon,
   },
@@ -284,7 +284,7 @@ shapes.forEach(shape => {
 });
 
 pie.command({
-  label: 'Toggle Style',
+  label: 'Stílus Állítása',
   icon: ({ rootComponent }) => {
     const { shapeStyle } =
       rootComponent.std.get(EditPropsStore).lastProps$.value[
@@ -314,7 +314,7 @@ pie.command({
 });
 
 pie.colorPicker({
-  label: 'Fill',
+  label: 'Kitöltés',
   active: getActiveShapeColor('fill'),
   onChange: (color: string, { rootComponent }: PieMenuContext) => {
     rootComponent.std.get(EditPropsStore).recordLastProps('shape:roundedRect', {
@@ -326,7 +326,7 @@ pie.colorPicker({
 });
 
 pie.colorPicker({
-  label: 'Stroke',
+  label: 'Vonal',
   hollow: true,
   active: getActiveShapeColor('stroke'),
   onChange: (color: string, { rootComponent }: PieMenuContext) => {
@@ -335,7 +335,7 @@ pie.colorPicker({
     });
     updateShapeOverlay(rootComponent);
   },
-  colors: SHAPE_STROKE_COLORS.map(color => ({ color, name: 'Color' })),
+  colors: SHAPE_STROKE_COLORS.map(color => ({ color, name: 'Szín' })),
 });
 
 pie.endSubmenu();

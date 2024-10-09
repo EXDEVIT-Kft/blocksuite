@@ -29,17 +29,17 @@ interface LineStylesPanelProps {
 
 const LINE_STYLE_LIST = [
   {
-    name: 'Solid',
+    name: 'Folytonos',
     value: StrokeStyle.Solid,
     icon: StraightLineIcon,
   },
   {
-    name: 'Dash',
+    name: 'Szaggatott',
     value: StrokeStyle.Dash,
     icon: DashLineIcon,
   },
   {
-    name: 'None',
+    name: 'Nincs',
     value: StrokeStyle.None,
     icon: BanIcon,
   },

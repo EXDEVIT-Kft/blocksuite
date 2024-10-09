@@ -57,11 +57,11 @@ export class NoteDisplayModePanel extends WithDisposable(LitElement) {
   private _DisplayModeLabel(mode: NoteDisplayMode) {
     switch (mode) {
       case NoteDisplayMode.DocAndEdgeless:
-        return 'In Both';
+        return 'Mindkét nézetben';
       case NoteDisplayMode.DocOnly:
-        return 'In Page Only';
+        return 'Csak Szöveges nézetben';
       case NoteDisplayMode.EdgelessOnly:
-        return 'In Edgeless Only';
+        return 'Csak Rajztábla nézetben';
     }
   }
 

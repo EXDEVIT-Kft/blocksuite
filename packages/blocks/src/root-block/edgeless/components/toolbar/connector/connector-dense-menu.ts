@@ -25,7 +25,7 @@ export const buildConnectorDenseMenu: DenseMenuBuilder = edgeless => {
 
   return {
     type: 'sub-menu',
-    name: 'Connector',
+    name: 'Összekötés',
     icon: ConnectorIcon,
     select: createSelect(prevMode, false),
     isSelected,
@@ -33,21 +33,21 @@ export const buildConnectorDenseMenu: DenseMenuBuilder = edgeless => {
       items: [
         {
           type: 'action',
-          name: 'Curve',
+          name: 'Íves',
           icon: ConnectorCWithArrowIcon,
           select: createSelect(ConnectorMode.Curve),
           isSelected: isSelected && prevMode === ConnectorMode.Curve,
         },
         {
           type: 'action',
-          name: 'Elbowed',
+          name: 'Szögletes',
           icon: ConnectorXWithArrowIcon,
           select: createSelect(ConnectorMode.Orthogonal),
           isSelected: isSelected && prevMode === ConnectorMode.Orthogonal,
         },
         {
           type: 'action',
-          name: 'Straight',
+          name: 'Egyenes',
           icon: ConnectorLWithArrowIcon,
           select: createSelect(ConnectorMode.Straight),
           isSelected: isSelected && prevMode === ConnectorMode.Straight,

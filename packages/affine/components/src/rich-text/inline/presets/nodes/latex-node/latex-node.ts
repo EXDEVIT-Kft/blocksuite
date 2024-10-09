@@ -130,7 +130,7 @@ export class AffineLatexNode extends SignalWatcher(
 
             if (latex.length === 0) {
               render(
-                html`<span class="placeholder">Equation</span>`,
+                html`<span class="placeholder">Egyenlet</span>`,
                 latexContainer
               );
             } else {
@@ -144,7 +144,7 @@ export class AffineLatexNode extends SignalWatcher(
                 // @ts-ignore
                 delete latexContainer['_$litPart$'];
                 render(
-                  html`<span class="error-placeholder">Error equation</span>`,
+                  html`<span class="error-placeholder">Hibás egyenlet</span>`,
                   latexContainer
                 );
               }

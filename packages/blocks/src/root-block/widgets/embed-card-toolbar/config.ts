@@ -25,7 +25,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
     items: [
       {
         type: 'copy',
-        label: 'Copy',
+        label: 'Másolás',
         icon: CopyIcon,
         disabled: ({ doc }) => doc.readonly,
         action: async ({ host, doc, std, blockComponent, close }) => {
@@ -37,7 +37,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
       },
       {
         type: 'duplicate',
-        label: 'Duplicate',
+        label: 'Duplikálás',
         icon: DuplicateIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ doc, blockComponent, close }) => {
@@ -59,7 +59,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
       },
       {
         type: 'reload',
-        label: 'Reload',
+        label: 'Újratöltés',
         icon: RefreshIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ blockComponent, close }) => {
@@ -85,7 +85,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
     items: [
       {
         type: 'delete',
-        label: 'Delete',
+        label: 'Törlés',
         icon: DeleteIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ doc, blockComponent, close }) => {
