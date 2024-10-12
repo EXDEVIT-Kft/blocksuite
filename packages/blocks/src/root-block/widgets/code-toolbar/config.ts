@@ -6,6 +6,7 @@ import {
   CopyIcon,
   DeleteIcon,
   DuplicateIcon,
+  PlusIcon,
   WrapIcon,
 } from '@algogrind/affine-components/icons';
 import { isInsidePageEditor } from '@algogrind/affine-shared/utils';
@@ -14,6 +15,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 
 import type { CodeBlockToolbarContext } from './context.js';
 
+import { insertNewlineAfterCurrent } from '../../../utils/insert-newline-after-current.js';
 import { duplicateCodeBlock } from './utils.js';
 
 export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
@@ -124,6 +126,15 @@ export const clipboardGroup: MenuItemGroup<CodeBlockToolbarContext> = {
           .catch(console.error);
 
         close();
+      },
+    },
+    {
+      type: 'newline',
+      label: 'Új sor utána',
+      icon: PlusIcon,
+      when: ({ doc }) => !doc.readonly,
+      action: ({ blockComponent, doc, std }) => {
+        insertNewlineAfterCurrent(blockComponent.model, doc, std);
       },
     },
   ],

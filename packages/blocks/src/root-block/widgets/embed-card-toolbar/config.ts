@@ -4,6 +4,7 @@ import {
   CopyIcon,
   DeleteIcon,
   DuplicateIcon,
+  PlusIcon,
   RefreshIcon,
 } from '@algogrind/affine-components/icons';
 import { toast } from '@algogrind/affine-components/toast';
@@ -12,6 +13,7 @@ import { Slice } from '@algogrind/store';
 
 import type { EmbedCardToolbarContext } from './context.js';
 
+import { insertNewlineAfterCurrent } from '../../../utils/insert-newline-after-current.js';
 import {
   isAttachmentBlock,
   isBookmarkBlock,
@@ -76,6 +78,15 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
               isAttachmentBlock(model) ||
               isEmbeddedLinkBlock(model))
           );
+        },
+      },
+      {
+        type: 'newline',
+        label: 'Új sor utána',
+        icon: PlusIcon,
+        when: ({ doc }) => !doc.readonly,
+        action: ({ blockComponent, doc, std }) => {
+          insertNewlineAfterCurrent(blockComponent.model, doc, std);
         },
       },
     ],

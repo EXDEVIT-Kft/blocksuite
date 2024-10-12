@@ -7,12 +7,14 @@ import {
   DeleteIcon,
   DownloadIcon,
   DuplicateIcon,
+  PlusIcon,
 } from '@algogrind/affine-components/icons';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import type { ImageToolbarContext } from './context.js';
 
+import { insertNewlineAfterCurrent } from '../../../utils/insert-newline-after-current.js';
 import { duplicate } from './utils.js';
 
 export const PRIMARY_GROUPS: MenuItemGroup<ImageToolbarContext>[] = [
@@ -96,6 +98,15 @@ export const clipboardGroup: MenuItemGroup<ImageToolbarContext> = {
       when: ({ doc }) => !doc.readonly,
       action: ({ blockComponent, abortController }) => {
         duplicate(blockComponent, abortController);
+      },
+    },
+    {
+      type: 'newline',
+      label: 'Új sor utána',
+      icon: PlusIcon,
+      when: ({ doc }) => !doc.readonly,
+      action: ({ blockComponent, doc, std }) => {
+        insertNewlineAfterCurrent(blockComponent.model, doc, std);
       },
     },
   ],
