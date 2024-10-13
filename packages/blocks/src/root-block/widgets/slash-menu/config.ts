@@ -243,7 +243,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         width: '20',
         height: '20',
       }),
-      alias: ['inlineMath, inlineEquation', 'inlineLatex'],
+      alias: ['matematika', 'számolás', 'latex'],
       action: ({ rootComponent }) => {
         const selectionManager = rootComponent.host.selection;
         const textSelection = selectionManager.filter('text')[0];
@@ -308,9 +308,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     { groupName: 'Stílusok' },
     ...textFormatConfigs
       .filter(i => !['Kód', 'Link'].includes(i.name))
-      .map<SlashMenuActionItem>(({ name, icon, id }) => ({
+      .map<SlashMenuActionItem>(({ name, icon, id, alias }) => ({
         name,
         icon,
+        alias,
         tooltip: slashMenuToolTips[name],
         action: ({ rootComponent, model }) => {
           if (!model.text) {
@@ -346,6 +347,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Hozz létre egy új dokumentumot.',
       icon: NewDocIcon,
       tooltip: slashMenuToolTips['Új Dokumentum'],
+      alias: ['new doc', 'oldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
       action: ({ rootComponent, model }) => {
@@ -363,7 +365,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Meglévő dokumentumra hivatkozás.',
       icon: LinkedDocIcon,
       tooltip: slashMenuToolTips['Hivatkozás'],
-      alias: ['dual link'],
+      alias: ['link doc'],
       showWhen: ({ rootComponent, model }) => {
         const linkedDocWidgetEle =
           rootComponent.widgetComponents['affine-linked-doc-widget'];
@@ -410,6 +412,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Szúrj be egy képet.',
       icon: ImageIcon20,
       tooltip: slashMenuToolTips['Kép'],
+      alias: ['image', 'picture', 'gif', 'grafika'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:image') &&
         !insideDatabase(model),
@@ -440,6 +443,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Hivatkozz egy külső weboldalra elegánsan.',
       icon: LinkIcon,
       tooltip: slashMenuToolTips['Weboldal'],
+      alias: ['hivatkozás', 'link', 'bookmark', 'website'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:bookmark') &&
         !insideDatabase(model),
@@ -463,7 +467,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Mellékelj egy tetszőleges fájlt.',
       icon: FileIcon,
       tooltip: slashMenuToolTips['Fájl'],
-      alias: ['file'],
+      alias: ['file', 'attachment', 'melléklet', 'forrás'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:attachment') &&
         !insideDatabase(model),
@@ -490,6 +494,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Ágyazz be egy YouTube videót.',
       icon: YoutubeIcon,
       tooltip: slashMenuToolTips['YouTube'],
+      alias: ['videó', 'video', 'embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-youtube') &&
         !insideDatabase(model),
@@ -513,6 +518,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Hivatkozz egy GitHub forrásra.',
       icon: GithubIcon,
       tooltip: slashMenuToolTips['Github'],
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-github') &&
         !insideDatabase(model),
@@ -538,6 +544,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Ágyazz be egy Figma dokumentumot.',
       icon: FigmaIcon,
       tooltip: slashMenuToolTips['Figma'],
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-figma') &&
         !insideDatabase(model),
@@ -561,6 +568,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       name: 'Loom Videó',
       icon: LoomIcon,
       description: 'Ágyazz be egy Loom videót.',
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-loom') &&
         !insideDatabase(model),
@@ -587,7 +595,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         width: '20',
         height: '20',
       }),
-      alias: ['mathBlock, equationBlock', 'latexBlock'],
+      alias: ['equation', 'matematika', 'latex'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const parent = doc.getParent(model);
@@ -720,6 +728,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           name: 'Ma',
           icon: TodayIcon,
           tooltip: slashMenuToolTips['Ma'],
+          alias: ['today'],
           description: formatDate(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatDate(now));
@@ -729,6 +738,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           name: 'Holnap',
           icon: TomorrowIcon,
           tooltip: slashMenuToolTips['Holnap'],
+          alias: ['tomorrow'],
           description: formatDate(tomorrow),
           action: ({ rootComponent, model }) => {
             const tomorrow = new Date();
@@ -740,6 +750,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           name: 'Tegnap',
           icon: YesterdayIcon,
           tooltip: slashMenuToolTips['Tegnap'],
+          alias: ['yesterday'],
           description: formatDate(yesterday),
           action: ({ rootComponent, model }) => {
             const yesterday = new Date();
@@ -751,6 +762,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           name: 'Most',
           icon: NowIcon,
           tooltip: slashMenuToolTips['Most'],
+          alias: ['now'],
           description: formatTime(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatTime(now));
@@ -855,6 +867,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor feljebb mozgatása.',
       icon: ArrowUpBigIcon,
       tooltip: slashMenuToolTips['Felfele Mozgatás'],
+      alias: ['move up', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const previousSiblingModel = doc.getPrev(model);
@@ -871,6 +884,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor lejjebb mozgatása.',
       icon: ArrowDownBigIcon,
       tooltip: slashMenuToolTips['Lefele Mozgatás'],
+      alias: ['move down', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const nextSiblingModel = doc.getNext(model);
@@ -887,6 +901,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor vágólapra másolása.',
       icon: PasteIcon,
       tooltip: slashMenuToolTips['Másolás'],
+      alias: ['copy', 'operation'],
       action: ({ rootComponent, model }) => {
         const slice = Slice.fromModels(rootComponent.std.doc, [model]);
 
@@ -905,6 +920,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor duplikálása.',
       icon: CopyIcon,
       tooltip: slashMenuToolTips['Copy'],
+      alias: ['duplicate', 'operation'],
       action: ({ rootComponent, model }) => {
         if (!model.text || !(model.text instanceof Text)) {
           console.error("Can't duplicate a block without text");
@@ -939,9 +955,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Törlés',
       description: 'Jelenlegi sor törlése.',
-      alias: ['remove'],
       icon: DeleteIcon,
       tooltip: slashMenuToolTips['Törlés'],
+      alias: ['remove', 'operation'],
       action: ({ rootComponent, model }) => {
         rootComponent.doc.deleteBlock(model);
       },
