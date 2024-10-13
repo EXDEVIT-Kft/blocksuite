@@ -50,6 +50,10 @@ import { Loader } from './_common/components/loader.js';
 import { SmoothCorner } from './_common/components/smooth-corner.js';
 import { ToggleSwitch } from './_common/components/toggle-switch.js';
 import { registerSpecs } from './_specs/register-specs.js';
+import {
+  AccordionBlockComponent,
+  type AccordionBlockService,
+} from './accordion-block/index.js';
 import { AttachmentEdgelessBlockComponent } from './attachment-block/attachment-edgeless-block.js';
 import {
   AttachmentBlockComponent,
@@ -316,6 +320,12 @@ export function effects() {
   componentDragIndicatorEffects();
 
   widgetScrollAnchoringEffects();
+
+  // === algogrind
+
+  customElements.define('algogrind-accordion', AccordionBlockComponent);
+
+  // === blocksuite / affine
 
   customElements.define('affine-database-title', DatabaseTitle);
   customElements.define(
@@ -695,6 +705,7 @@ declare global {
       'affine:database': DatabaseBlockService;
       'affine:image': ImageBlockService;
       'affine:surface-ref': SurfaceRefBlockService;
+      'algogrind:accordion': AccordionBlockService;
     }
   }
 }

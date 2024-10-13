@@ -134,6 +134,44 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
   items: [
     // ---------------------------------------------------------
     { groupName: 'Alapvető' },
+    {
+      name: 'Összecsukható Tároló',
+      description: 'Hozz létre egy összecsukható elemet.',
+      icon: LinkIcon,
+      tooltip: slashMenuToolTips['Weboldal'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+        !insideDatabase(model),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        const doc = rootComponent.host.doc;
+        const index = parentModel.children.indexOf(model) + 1;
+        const accordionId = doc.addBlock(
+          'algogrind:accordion',
+          {},
+          parentModel.id,
+          index
+        );
+
+        tryRemoveEmptyLine(model);
+
+        rootComponent.host.updateComplete
+          .then(() => {
+            const accordionBlock = rootComponent.std.view.getBlock(accordionId);
+
+            if (!accordionBlock) {
+              return;
+            }
+
+            accordionBlock.querySelector('textarea')?.focus();
+          })
+          .catch(console.error);
+      },
+    },
     ...textConversionConfigs
       .filter(i => i.type && ['h1', 'h2', 'h3', 'text'].includes(i.type))
       .map(createConversionItem),
