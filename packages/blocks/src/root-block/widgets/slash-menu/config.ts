@@ -134,62 +134,6 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
   items: [
     // ---------------------------------------------------------
     { groupName: 'Alapvető' },
-    {
-      name: 'Összecsukható Tároló',
-      description: 'Hozz létre egy összecsukható elemet.',
-      icon: LinkIcon,
-      tooltip: slashMenuToolTips['Weboldal'],
-      showWhen: ({ model }) =>
-        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-        !insideDatabase(model),
-      action: ({ rootComponent, model }) => {
-        const parentModel = rootComponent.doc.getParent(model);
-        if (!parentModel) {
-          return;
-        }
-
-        //const doc = rootComponent.host.doc;
-        //const index = parentModel.children.indexOf(model) + 1;
-        //const accordionId = doc.addBlock(
-        //  'algogrind:accordion',
-        //  {
-        //    type: 'h1',
-        //    title: new Text(''),
-        //  },
-        //  parentModel.id,
-        //  index
-        //);
-
-        rootComponent.host.std.command
-          .chain()
-          .updateBlockType({
-            flavour: 'algogrind:accordion',
-            props: { type: 'h1', text: new Text('') },
-          })
-          .inline((ctx, next) => {
-            const newModels = ctx.updatedBlocks;
-            if (!newModels) return false;
-
-            if (newModels.length !== 1) {
-              console.error(
-                "Failed to reset selection! New model length isn't 1"
-              );
-              return false;
-            }
-            const codeModel = newModels[0];
-            onModelTextUpdated(rootComponent.host, codeModel, richText => {
-              const inlineEditor = richText.inlineEditor;
-              if (!inlineEditor) return;
-              inlineEditor.focusEnd();
-            }).catch(console.error);
-
-            return next();
-          })
-          .run();
-
-        tryRemoveEmptyLine(model);
-      },
-    },
     ...textConversionConfigs
       .filter(i => i.type && ['h1', 'h2', 'h3', 'text'].includes(i.type))
       .map(createConversionItem),
@@ -313,6 +257,360 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             latexNode.toggleEditor();
           })
           .catch(console.error);
+      },
+    },
+
+    { groupName: 'Elrendezés' },
+    {
+      name: 'Összecsukható Címsor 1',
+      description: 'Összecsukható tartalmú Címsor 1.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 1',
+      ],
+      icon: LinkIcon,
+      tooltip: slashMenuToolTips['Weboldal'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+        !insideDatabase(model),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h1', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'Összecsukható Címsor 2',
+      description: 'Összecsukható tartalmú Címsor 2.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 2',
+      ],
+      icon: LinkIcon,
+      tooltip: slashMenuToolTips['Weboldal'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+        !insideDatabase(model),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h2', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'Összecsukható Címsor 3',
+      description: 'Összecsukható tartalmú Címsor 3.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 3',
+      ],
+      icon: LinkIcon,
+      tooltip: slashMenuToolTips['Weboldal'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+        !insideDatabase(model),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h3', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'További Címsorok',
+      icon: HeadingIcon,
+      subMenu: [
+        { groupName: 'Összecsukható Címsorok' },
+        {
+          name: 'Összecsukható Címsor 4',
+          description: 'Összecsukható tartalmú Címsor 4.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 4',
+          ],
+          icon: LinkIcon,
+          tooltip: slashMenuToolTips['Weboldal'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+            !insideDatabase(model),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h4', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+        {
+          name: 'Összecsukható Címsor 5',
+          description: 'Összecsukható tartalmú Címsor 5.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 5',
+          ],
+          icon: LinkIcon,
+          tooltip: slashMenuToolTips['Weboldal'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+            !insideDatabase(model),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h5', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+        {
+          name: 'Összecsukható Címsor 6',
+          description: 'Összecsukható tartalmú Címsor 6.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 6',
+          ],
+          icon: LinkIcon,
+          tooltip: slashMenuToolTips['Weboldal'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+            !insideDatabase(model),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h6', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+      ],
+    },
+    {
+      name: 'Összecsukható Szöveg',
+      description: 'Összecsukható Szöveg elem.',
+      alias: ['accordion', 'accordion text', 'legördülő', 'legördülő szöveg'],
+      icon: LinkIcon,
+      tooltip: slashMenuToolTips['Weboldal'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
+        !insideDatabase(model),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'text', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
       },
     },
 
