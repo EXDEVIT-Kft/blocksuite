@@ -19,7 +19,7 @@ export const AccordionBlockSchema = defineBlockSchema({
   }),
   metadata: {
     version: 1,
-    role: 'hub',
+    role: 'content',
     parent: [
       'affine:note',
       'affine:database',

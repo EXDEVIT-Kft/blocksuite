@@ -3,6 +3,7 @@ import type { InlineRangeProvider } from '@algogrind/inline';
 
 import { SmallArrowDownIcon } from '@algogrind/affine-components/icons';
 import {
+  DefaultInlineManagerExtension,
   focusTextModel,
   type RichText,
 } from '@algogrind/affine-components/rich-text';
@@ -30,8 +31,20 @@ export class AccordionBlockComponent extends BlockComponent<
 
   private _inlineRangeProvider: InlineRangeProvider | null = null;
 
+  get attributeRenderer() {
+    return this.inlineManager.getRenderer();
+  }
+
+  get attributesSchema() {
+    return this.inlineManager.getSchema();
+  }
+
   get inlineEditor() {
     return this._richTextElement?.inlineEditor;
+  }
+
+  get inlineManager() {
+    return this.std.get(DefaultInlineManagerExtension.identifier);
   }
 
   override get topContenteditableElement() {
@@ -190,6 +203,7 @@ export class AccordionBlockComponent extends BlockComponent<
             .yText=${this.model.title.yText}
             .inlineEventSource=${this.topContenteditableElement ?? nothing}
             .undoManager=${this.doc.history}
+            .attributeRenderer=${this.attributeRenderer}
             .readonly=${this.doc.readonly}
             .inlineRangeProvider=${this._inlineRangeProvider}
             @click=${this._onRichTextClick}
