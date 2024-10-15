@@ -5,6 +5,10 @@ export const accordionBlockStyles = css`
     position: relative;
   }
 
+  .algogrind-accordion-block-container {
+    overflow-x: hidden;
+  }
+
   .algogrind-accordion-block-head > svg {
     cursor: pointer;
     transition: transform 0.15s ease-in-out;
@@ -120,12 +124,12 @@ export const accordionBlockStyles = css`
     overflow-y: hidden;
   }
 
-  .algogrind-accordion-block-container.open .algogrind-accordion-block-body {
+  .algogrind-accordion-block-container.open > .algogrind-accordion-block-body {
     grid-template-rows: 1fr;
   }
 
   .algogrind-accordion-block-container.open
-    .algogrind-accordion-block-head
+    > .algogrind-accordion-block-head
     > svg {
     transform: rotate(180deg);
   }
