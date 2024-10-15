@@ -9,6 +9,30 @@ export const accordionBlockStyles = css`
     overflow-x: hidden;
   }
 
+  .h1-accordion.algogrind-accordion-block-container {
+    margin-top: 18px;
+  }
+
+  .h2-accordion.algogrind-accordion-block-container {
+    margin-top: 14px;
+  }
+
+  .h3-accordion.algogrind-accordion-block-container {
+    margin-top: 12px;
+  }
+
+  .h4-accordion.algogrind-accordion-block-container {
+    margin-top: 12px;
+  }
+
+  .h5-accordion.algogrind-accordion-block-container {
+    margin-top: 12px;
+  }
+
+  .h6-accordion.algogrind-accordion-block-container {
+    margin-top: 12px;
+  }
+
   .algogrind-accordion-block-head > svg {
     cursor: pointer;
     transition: transform 0.15s ease-in-out;
@@ -21,7 +45,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
 
-    padding-top: 18px;
     padding-bottom: 10px;
   }
 
@@ -36,7 +59,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.02em;
     line-height: calc(1em + 10px);
 
-    padding-top: 14px;
     padding-bottom: 10px;
   }
 
@@ -51,7 +73,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
 
-    padding-top: 12px;
     padding-bottom: 10px;
   }
 
@@ -66,7 +87,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
 
-    padding-top: 12px;
     padding-bottom: 10px;
   }
 
@@ -81,7 +101,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
 
-    padding-top: 12px;
     padding-bottom: 10px;
   }
 
@@ -96,7 +115,6 @@ export const accordionBlockStyles = css`
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
 
-    padding-top: 12px;
     padding-bottom: 10px;
   }
 
@@ -142,30 +160,6 @@ export const accordionBlockStyles = css`
     pointer-events: none;
     color: var(--affine-black-30);
     fill: var(--affine-black-30);
-  }
-
-  .h1-accordion .accordion-placeholder {
-    top: 18px;
-  }
-
-  .h2-accordion .accordion-placeholder {
-    top: 14px;
-  }
-
-  .h3-accordion .accordion-placeholder {
-    top: 12px;
-  }
-
-  .h4-accordion .accordion-placeholder {
-    top: 12px;
-  }
-
-  .h5-accordion .accordion-placeholder {
-    top: 12px;
-  }
-
-  .h6-accordion .accordion-placeholder {
-    top: 12px;
   }
 
   @media print {

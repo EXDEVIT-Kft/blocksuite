@@ -189,6 +189,7 @@ export class AccordionBlockComponent extends BlockComponent<
       <div
         class=${classMap({
           'algogrind-accordion-block-container': true,
+          [`${this.model.type}-accordion`]: true,
           open: this._isOpen,
         })}
       >
