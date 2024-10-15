@@ -148,28 +148,46 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           return;
         }
 
-        const doc = rootComponent.host.doc;
-        const index = parentModel.children.indexOf(model) + 1;
-        const accordionId = doc.addBlock(
-          'algogrind:accordion',
-          {},
-          parentModel.id,
-          index
-        );
+        //const doc = rootComponent.host.doc;
+        //const index = parentModel.children.indexOf(model) + 1;
+        //const accordionId = doc.addBlock(
+        //  'algogrind:accordion',
+        //  {
+        //    type: 'h1',
+        //    title: new Text(''),
+        //  },
+        //  parentModel.id,
+        //  index
+        //);
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h1', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
 
         tryRemoveEmptyLine(model);
-
-        rootComponent.host.updateComplete
-          .then(() => {
-            const accordionBlock = rootComponent.std.view.getBlock(accordionId);
-
-            if (!accordionBlock) {
-              return;
-            }
-
-            accordionBlock.querySelector('textarea')?.focus();
-          })
-          .catch(console.error);
       },
     },
     ...textConversionConfigs

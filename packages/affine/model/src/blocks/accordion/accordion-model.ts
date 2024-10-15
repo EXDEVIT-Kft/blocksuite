@@ -1,13 +1,21 @@
-import { defineBlockSchema, type SchemaToModel } from '@algogrind/store';
+import {
+  defineBlockSchema,
+  type SchemaToModel,
+  type Text,
+} from '@algogrind/store';
+
+export type AccordionType = 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type AccordionBlockProps = {
-  title: string;
+  type: AccordionType;
+  title: Text;
 };
 
 export const AccordionBlockSchema = defineBlockSchema({
   flavour: 'algogrind:accordion',
-  props: (): AccordionBlockProps => ({
-    title: '',
+  props: (internal): AccordionBlockProps => ({
+    title: internal.Text(),
+    type: 'h1',
   }),
   metadata: {
     version: 1,
@@ -18,6 +26,7 @@ export const AccordionBlockSchema = defineBlockSchema({
       'affine:paragraph',
       'affine:list',
       'affine:edgeless-text',
+      'algogrind:accordion',
     ],
   },
 });

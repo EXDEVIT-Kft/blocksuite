@@ -17,6 +17,8 @@ import { effects as stdEffects } from '@algogrind/block-std/effects';
 import { effects as dataViewEffects } from '@algogrind/data-view/effects';
 import { effects as inlineEffects } from '@algogrind/inline/effects';
 
+import type { addAccordionChildCommand } from './accordion-block/commands/add-accordion-child.js';
+import type { splitAccordionTitleCommand } from './accordion-block/commands/split-accordion-title.js';
 import type { insertBookmarkCommand } from './bookmark-block/commands/insert-bookmark.js';
 import type { insertEdgelessTextCommand } from './edgeless-text-block/commands/insert-edgeless-text.js';
 import type { updateBlockType } from './note-block/commands/block-type.js';
@@ -686,6 +688,8 @@ declare global {
       updateBlockType: typeof updateBlockType;
       insertEdgelessText: typeof insertEdgelessTextCommand;
       dedentBlockToRoot: typeof dedentBlockToRoot;
+      addAccordionChild: typeof addAccordionChildCommand;
+      splitAccordionTitle: typeof splitAccordionTitleCommand;
     }
     interface CommandContext {
       focusBlock?: BlockComponent | null;

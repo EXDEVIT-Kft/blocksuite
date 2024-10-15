@@ -1,17 +1,21 @@
 import type { AccordionBlockModel } from '@algogrind/affine-model';
+import type { InlineRangeProvider } from '@algogrind/inline';
 
 import { SmallArrowDownIcon } from '@algogrind/affine-components/icons';
-import { focusTextModel } from '@algogrind/affine-components/rich-text';
-import { stopPropagation } from '@algogrind/affine-shared/utils';
-import { BlockComponent } from '@algogrind/block-std';
-import { Text } from '@algogrind/store';
-import { html, type TemplateResult } from 'lit';
+import {
+  focusTextModel,
+  type RichText,
+} from '@algogrind/affine-components/rich-text';
+import { NOTE_SELECTOR } from '@algogrind/affine-shared/consts';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
+import { BlockComponent, getInlineRangeProvider } from '@algogrind/block-std';
+import { effect, signal } from '@preact/signals-core';
+import { html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
 import type { AccordionBlockService } from './accordion-service.js';
 
-import { tryRemoveEmptyLine } from '../root-block/widgets/slash-menu/utils.js';
 import { accordionBlockStyles } from './styles.js';
 
 export class AccordionBlockComponent extends BlockComponent<
@@ -20,165 +24,151 @@ export class AccordionBlockComponent extends BlockComponent<
 > {
   static override styles = accordionBlockStyles;
 
-  private baseParagraphId: string | null = null;
+  private _composing = signal(false);
 
-  private _addBaseParagraphBlock() {
-    this.baseParagraphId = this.doc.addBlock(
-      'affine:paragraph',
-      {
-        text: new Text(''),
-      },
-      this.model.id
-    );
+  private _displayPlaceholder = signal(false);
+
+  private _inlineRangeProvider: InlineRangeProvider | null = null;
+
+  get inlineEditor() {
+    return this._richTextElement?.inlineEditor;
   }
 
-  private _onInputChange(e: InputEvent) {
-    const target = e.target as HTMLInputElement;
-    this.accordionTitle = target.value;
-    this.doc.updateBlock(this.model, {
-      title: this.accordionTitle,
-    });
-  }
-
-  protected _onHeadClick(event: MouseEvent) {
-    event.stopPropagation();
-    if (!this.model.firstChild()) {
-      this._addBaseParagraphBlock();
+  override get topContenteditableElement() {
+    if (this.std.get(DocModeProvider).getEditorMode() === 'edgeless') {
+      return this.closest<BlockComponent>(NOTE_SELECTOR);
     }
+    return this.rootComponent;
+  }
+
+  private _childAt(index: number) {
+    if (this.model.children.length >= Math.abs(index)) {
+      return this.model.children.at(index);
+    }
+
+    return null;
+  }
+
+  protected _onRichTextClick(evt: MouseEvent) {
+    if (!this.doc.readonly) {
+      evt.stopPropagation();
+    }
+  }
+
+  protected _toggleAccordion(event: MouseEvent) {
+    event.stopPropagation();
 
     this._isOpen = !this._isOpen;
-  }
-
-  protected _onTitleKeydown(event: KeyboardEvent) {
-    if (event.key === 'Backspace') {
-      const doc = this.doc;
-      const target = event.target as HTMLInputElement;
-      const start = target.selectionStart;
-
-      if (
-        start === null ||
-        start > 0 ||
-        (this.accordionTitle && this.accordionTitle.length > 0)
-      ) {
-        return;
-      }
-
-      event.preventDefault();
-
-      const model = this.model;
-      const parent = doc.getParent(model);
-      if (!parent) {
-        return;
-      }
-
-      const value = target.value;
-      const title = value.slice(0, start);
-      doc.updateBlock(model, { title });
-
-      doc.deleteBlock(model, {
-        deleteChildren: false,
-        bringChildrenTo: parent,
-      });
-
-      const firstChild = this.model.firstChild();
-
-      if (firstChild) {
-        focusTextModel(this.std, firstChild.id);
-      }
-    } else if (event.key === 'Enter') {
-      event.preventDefault();
-      if (!this._isOpen) {
-        this._isOpen = true;
-      }
-
-      const doc = this.doc;
-      const target = event.target as HTMLInputElement;
-      const start = target.selectionStart;
-      if (start === null) {
-        return;
-      }
-
-      const model = this.model;
-      const parent = doc.getParent(model);
-      if (!parent) {
-        return;
-      }
-
-      const value = target.value;
-      const firstChild = this.model.firstChild();
-
-      if (
-        firstChild?.flavour === 'affine:paragraph' &&
-        start === value.length
-      ) {
-        focusTextModel(this.std, firstChild.id);
-        return;
-      }
-
-      const title = value.slice(0, start);
-      doc.updateBlock(model, { title });
-      this.accordionTitle = title;
-
-      const nextBlockText = value.slice(start);
-      const id = doc.addBlock(
-        'affine:paragraph',
-        { text: new Text(nextBlockText) },
-        this.model,
-        0
-      );
-
-      focusTextModel(this.std, id);
-    }
   }
 
   override connectedCallback() {
     super.connectedCallback();
 
-    this.accordionTitle = this.model.title;
+    // Handle different title events:
 
-    const selectionManager = this.host.selection;
+    this.handleEvent(
+      'compositionStart',
+      () => {
+        this._composing.value = true;
+      },
+      { flavour: true }
+    );
+    this.handleEvent(
+      'compositionEnd',
+      () => {
+        this._composing.value = false;
+      },
+      { flavour: true }
+    );
 
-    const disposable = this.std.doc.slots.blockUpdated.on(props => {
+    this._inlineRangeProvider = getInlineRangeProvider(this);
+    this.disposables.add(
+      effect(() => {
+        const composing = this._composing.value;
+        if (composing || this.doc.readonly) {
+          this._displayPlaceholder.value = false;
+          return;
+        }
+        const textSelection = this.host.selection.find('text');
+        const isCollapsed = textSelection?.isCollapsed() ?? false;
+        if (!this.selected || !isCollapsed) {
+          this._displayPlaceholder.value = false;
+          return;
+        }
+
+        this.updateComplete
+          .then(() => {
+            if ((this.inlineEditor?.yTextLength ?? 0) > 0) {
+              this._displayPlaceholder.value = false;
+              return;
+            }
+            this._displayPlaceholder.value = true;
+            return;
+          })
+          .catch(console.error);
+      })
+    );
+
+    // Handle changing accordion behaviour based on child list
+
+    this.model.childMap.subscribe(map => {
+      // In readonly mode, let the user control when the accordion is opened / closed
+      if (this.doc.readonly) {
+        return;
+      }
+
+      // Always guarantee that there is a child paragraph block in the body
+      if (map.size === 0) {
+        this.doc.addBlock('affine:paragraph', {}, this.model, 0);
+        return;
+      }
+
+      // Make sure every time the child list updates, open the accordion
+      if (!this._isOpen) {
+        this._isOpen = true;
+      }
+
+      // Handle "stepping out" of the accordion body similarily to the quote behaviour:
+      // last 2 childs empty & cursor is in last child -> move the newly created block outside of the accordion
+      const lastChild = this._childAt(-1);
+
       if (
-        props.type === 'delete' &&
-        props.flavour === 'affine:paragraph' &&
-        !this.model.firstChild()
+        map.size > 2 &&
+        lastChild &&
+        lastChild.text?.length === 0 &&
+        this._childAt(-2)?.text?.length === 0
       ) {
-        this._addBaseParagraphBlock();
+        const text = this.host.selection.find('text');
 
-        // TODO[algogrind]:
-        // ez nagyon csúnya megoldás, de hirtelen nem volt jobb ötletem
-        // probléma: nincs egy blokk se ami olyan elven viselkedik, hogy a gyerek blokkjának "keydown" eseményét kellene felüldefiniálnia
-        // itt valószínűleg nem is ez lenne a helyes megoldás, mert a blokk életciklusa amennyire most látom nem teljesen erre van kitalálva
-        // lényeg: késleltetni akarjuk pont annyira a selection viselkedését hogy a következő életciklus utasítás megtörténjen
-        // (ez nem más mint az accordion előtt blokk fókuszálása), majd onnan elvesszük rögtön a selectiont és kijelöljük azaccordiont
+        /**
+         * Do nothing if the selection:
+         * - is not a text selection
+         * - or spans multiple blocks
+         * - or the selection is not in the accordion's last child
+         */
+        if (
+          !text ||
+          (text.to && text.from.blockId !== text.to.blockId) ||
+          lastChild.id !== text.from.blockId
+        ) {
+          return;
+        }
+
+        const parent = this.model.parent;
+
+        if (!parent) {
+          return;
+        }
+
+        this.doc.moveBlocks([lastChild], parent, this.model, false);
+
+        // At this pont the lifecycle did not get to a pont to move the lastChild
+        // delay the focus to let the block move happen. Kinda hacky.
         setTimeout(() => {
-          selectionManager.setGroup('note', [
-            selectionManager.create('block', { blockId: this.blockId }),
-          ]);
+          focusTextModel(this.std, lastChild.id);
         });
       }
-
-      // when an embedded / special content block gets added, try removing the empty paragraph in the accordion
-      if (
-        props.type === 'add' &&
-        props.flavour !== 'affine:paragraph' &&
-        this.baseParagraphId
-      ) {
-        const paragraphBlock = this.doc.getBlock(this.baseParagraphId);
-
-        if (paragraphBlock) {
-          tryRemoveEmptyLine(paragraphBlock.model);
-        }
-      }
-
-      if (props.id === this.model.id && props.type === 'delete') {
-        this.std.view.deleteBlock(this);
-        disposable.dispose();
-      }
     });
-
-    this._disposables.add(disposable);
   }
 
   override renderBlock(): TemplateResult<1> {
@@ -190,11 +180,30 @@ export class AccordionBlockComponent extends BlockComponent<
         })}
       >
         <div
-          class="algogrind-accordion-block-head"
-          @click="${this._onHeadClick}"
-          contenteditable="false"
+          class=${classMap({
+            'algogrind-accordion-block-head': true,
+            [`${this.model.type}-accordion`]: true,
+          })}
+          @click=${this._toggleAccordion}
         >
-          <div>${this.model.title}</div>
+          <rich-text
+            .yText=${this.model.title.yText}
+            .inlineEventSource=${this.topContenteditableElement ?? nothing}
+            .undoManager=${this.doc.history}
+            .readonly=${this.doc.readonly}
+            .inlineRangeProvider=${this._inlineRangeProvider}
+            @click=${this._onRichTextClick}
+          ></rich-text>
+
+          <div
+            contenteditable="false"
+            class=${classMap({
+              'accordion-placeholder': true,
+              visible: this._displayPlaceholder.value,
+            })}
+          >
+            ${this.service.placeholderGenerator(this.model)}
+          </div>
 
           ${SmallArrowDownIcon}
         </div>
@@ -203,26 +212,14 @@ export class AccordionBlockComponent extends BlockComponent<
         </div>
         <affine-block-selection .block=${this}></affine-block-selection>
       </div>
-      <textarea
-        .disabled=${this.doc.readonly}
-        placeholder="Cím megadása..."
-        class="accordion-title"
-        .value=${this.accordionTitle ?? ''}
-        @input=${this._onInputChange}
-        @pointerdown=${stopPropagation}
-        @click=${stopPropagation}
-        @dblclick=${stopPropagation}
-        @cut=${stopPropagation}
-        @copy=${stopPropagation}
-        @paste=${stopPropagation}
-        @keydown=${this._onTitleKeydown}
-        @keyup=${stopPropagation}
-      ></textarea>
     `;
   }
 
   @state()
   private accessor _isOpen = false;
+
+  @query('rich-text')
+  private accessor _richTextElement: RichText | null = null;
 
   @state()
   accessor accordionTitle: string | null | undefined = undefined;
