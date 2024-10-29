@@ -55,6 +55,7 @@ import { toggleEmbedCardCreateModal } from '../../../_common/components/embed-ca
 import { textConversionConfigs } from '../../../_common/configs/text-conversion.js';
 import { addSiblingAttachmentBlocks } from '../../../attachment-block/utils.js';
 import { getSurfaceBlock } from '../../../surface-ref-block/utils.js';
+import { onModelTextUpdated } from '../../utils/callback.js';
 import { formatDate, formatTime } from '../../utils/misc.js';
 import { type SlashMenuTooltip, slashMenuToolTips } from './tooltips/index.js';
 import {
@@ -182,8 +183,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       icon: LinkIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
-        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-        !insideDatabase(model),
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
         const parentModel = rootComponent.doc.getParent(model);
         if (!parentModel) {
@@ -232,8 +232,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       icon: LinkIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
-        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-        !insideDatabase(model),
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
         const parentModel = rootComponent.doc.getParent(model);
         if (!parentModel) {
@@ -282,8 +281,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       icon: LinkIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
-        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-        !insideDatabase(model),
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
         const parentModel = rootComponent.doc.getParent(model);
         if (!parentModel) {
@@ -337,8 +335,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           icon: LinkIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
-            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-            !insideDatabase(model),
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
             const parentModel = rootComponent.doc.getParent(model);
             if (!parentModel) {
@@ -387,8 +384,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           icon: LinkIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
-            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-            !insideDatabase(model),
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
             const parentModel = rootComponent.doc.getParent(model);
             if (!parentModel) {
@@ -437,8 +433,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           icon: LinkIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
-            model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-            !insideDatabase(model),
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
             const parentModel = rootComponent.doc.getParent(model);
             if (!parentModel) {
@@ -484,8 +479,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       icon: LinkIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
-        model.doc.schema.flavourSchemaMap.has('algogrind:accordion') &&
-        !insideDatabase(model),
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
         const parentModel = rootComponent.doc.getParent(model);
         if (!parentModel) {
