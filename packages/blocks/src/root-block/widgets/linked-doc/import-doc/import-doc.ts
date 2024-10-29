@@ -4,7 +4,6 @@ import {
   CloseIcon,
   ExportToHTMLIcon,
   ExportToMarkdownIcon,
-  HelpIcon,
   NewIcon,
   NotionIcon,
 } from '@blocksuite/affine-components/icons';
@@ -123,7 +122,7 @@ export class ImportDoc extends WithDisposable(LitElement) {
     needLoading && this.abortController.abort();
     if (hasMarkdown) {
       this._onFail(
-        'Importing markdown files from Notion is deprecated. Please export your Notion pages as HTML.'
+        'Notion-ből exportált markdown fájlok importálása már nincsen támogatva, kérjük exportáld a Notion dokumentumokat HTML-ként.'
       );
       return;
     }
@@ -189,12 +188,12 @@ export class ImportDoc extends WithDisposable(LitElement) {
             @mousedown="${this._onMouseDown}"
             @mouseup="${this._onMouseUp}"
           >
-            <div>Import</div>
+            <div>Importálás</div>
             <loader-element .width=${'50px'}></loader-element>
           </header>
           <div>
-            Importing the file may take some time. It depends on document size
-            and complexity.
+            A fájlok importálása a mérettől és komplexitástól függően időt vehet
+            igénybe.
           </div>
         </div>
       `;
@@ -209,15 +208,11 @@ export class ImportDoc extends WithDisposable(LitElement) {
           <icon-button height="28px" @click="${this._onCloseClick}">
             ${CloseIcon}
           </icon-button>
-          <div>Import</div>
+          <div>Importálás</div>
         </header>
         <div>
-          AFFiNE will gradually support more file formats for import.
-          <a
-            href="https://community.affine.pro/c/feature-requests/import-export"
-            target="_blank"
-            >Provide feedback.</a
-          >
+          Hamarosan még több dokumentumot tudsz szinkronizálni az AlgoGrind
+          rendszerével.
         </div>
         <div class="button-container">
           <icon-button
@@ -246,14 +241,9 @@ export class ImportDoc extends WithDisposable(LitElement) {
               slot="suffix"
               class="button-suffix"
               @click="${this._openLearnImportLink}"
-            >
-              ${HelpIcon}
-              <affine-tooltip>
-                Learn how to Import your Notion pages into AFFiNE.
-              </affine-tooltip>
-            </div>
+            ></div>
           </icon-button>
-          <icon-button class="button-item" text="Coming soon..." disabled>
+          <icon-button class="button-item" text="Hamarosan..." disabled>
             ${NewIcon}
           </icon-button>
         </div>

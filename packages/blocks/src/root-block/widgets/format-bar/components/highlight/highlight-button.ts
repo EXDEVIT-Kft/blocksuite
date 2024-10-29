@@ -59,7 +59,7 @@ const HighlightPanel = (
     <editor-menu-content class="highlight-panel" data-show ${ref(containerRef)}>
       <div data-orientation="vertical">
         <!-- Text Color Highlight -->
-        <div class="highligh-panel-heading">Color</div>
+        <div class="highligh-panel-heading">Szín</div>
         ${foregroundConfig.map(
           ({ name, color }) => html`
             <editor-menu-action
@@ -82,7 +82,7 @@ const HighlightPanel = (
         )}
 
         <!-- Text Background Highlight -->
-        <div class="highligh-panel-heading">Background</div>
+        <div class="highligh-panel-heading">Háttérszín</div>
         ${backgroundConfig.map(
           ({ name, color }) => html`
             <editor-menu-action

@@ -20,7 +20,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<SurfaceRefToolbarContext>[] = [
     items: [
       {
         type: 'copy',
-        label: 'Copy',
+        label: 'Másolás',
         icon: CopyIcon,
         action: ctx => {
           if (!(ctx.blockComponent.referenceModel && ctx.doc.root?.id)) {
@@ -54,7 +54,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<SurfaceRefToolbarContext>[] = [
       },
       {
         type: 'download',
-        label: 'Download',
+        label: 'Letöltés',
         icon: DownloadIcon,
         action: ctx => {
           if (!(ctx.blockComponent.referenceModel && ctx.doc.root?.id)) {
@@ -82,8 +82,8 @@ export const BUILT_IN_GROUPS: MenuItemGroup<SurfaceRefToolbarContext>[] = [
             .then(blob => {
               const fileName =
                 'title' in referencedModel
-                  ? (referencedModel.title?.toString() ?? 'Edgeless Content')
-                  : 'Edgeless Content';
+                  ? (referencedModel.title?.toString() ?? 'Rajztábla Tartalom')
+                  : 'Rajztábla Tartalom';
 
               downloadBlob(blob, fileName);
             })
@@ -99,7 +99,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<SurfaceRefToolbarContext>[] = [
     items: [
       {
         type: 'delete',
-        label: 'Delete',
+        label: 'Törlés',
         icon: DeleteIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ blockComponent, doc, close }) => {

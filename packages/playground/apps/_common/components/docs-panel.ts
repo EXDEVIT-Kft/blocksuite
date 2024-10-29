@@ -114,7 +114,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
             }
           };
           return html`<div class="doc-item" @click="${click}" style="${style}">
-            ${doc.meta?.title || 'Untitled'}
+            ${doc.meta?.title || 'Új dokumentum'}
             ${docs.length > 1
               ? html`<div @click="${deleteDoc}" class="delete-doc-icon">
                   ${CloseIcon}

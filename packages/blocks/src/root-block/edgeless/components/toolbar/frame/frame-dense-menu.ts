@@ -7,19 +7,19 @@ import { FrameConfig } from './config.js';
 
 export const buildFrameDenseMenu: DenseMenuBuilder = edgeless =>
   menu.subMenu({
-    name: 'Frame',
+    name: 'Keret',
     prefix: FrameIcon,
     select: () => edgeless.gfx.tool.setTool({ type: 'frame' }),
     isSelected: edgeless.gfx.tool.currentToolName$.peek() === 'frame',
     options: {
       items: [
         menu.action({
-          name: 'Custom',
+          name: 'Egyedi',
           select: () => edgeless.gfx.tool.setTool({ type: 'frame' }),
         }),
         ...FrameConfig.map(config =>
           menu.action({
-            name: `Slide ${config.name}`,
+            name: `Dia ${config.name}`,
             select: () => {
               edgeless.gfx.tool.setTool('default');
               edgeless.service.frame.createFrameOnViewportCenter(config.wh);

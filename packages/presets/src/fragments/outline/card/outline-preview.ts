@@ -175,12 +175,12 @@ export class OutlineBlockPreview extends SignalWatcher(
           doc => doc.id === refAttribute.pageId
         );
         const unavailable = !refMeta;
-        const title = unavailable ? 'Deleted doc' : refMeta.title;
+        const title = unavailable ? 'Törölt dokumentum' : refMeta.title;
         return html`<span
           class="linked-doc-preview ${unavailable ? 'unavailable' : ''}"
           >${SmallLinkedDocIcon}
           <span class="linked-doc-text"
-            >${title.length ? title : 'Untitled'}</span
+            >${title.length ? title : 'Új dokumentum'}</span
           ></span
         >`;
       } else {

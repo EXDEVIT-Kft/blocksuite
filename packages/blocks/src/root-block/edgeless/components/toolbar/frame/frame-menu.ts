@@ -72,7 +72,7 @@ export class EdgelessFrameMenu extends EdgelessToolbarToolMixin(LitElement) {
     return html`
       <edgeless-slide-menu .showNext=${false}>
         <div class="menu-content">
-          <div class="frame-add-button custom">Custom</div>
+          <div class="frame-add-button custom">Egyedi</div>
           <div class="divider"></div>
           ${repeat(
             FrameConfig,

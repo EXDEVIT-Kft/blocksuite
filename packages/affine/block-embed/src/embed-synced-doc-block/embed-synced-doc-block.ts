@@ -317,7 +317,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
   get docTitle() {
     return this.syncedDoc?.meta?.title.length
       ? this.syncedDoc.meta.title
-      : 'Untitled';
+      : 'Új dokumentum';
   }
 
   get docUpdatedAt() {

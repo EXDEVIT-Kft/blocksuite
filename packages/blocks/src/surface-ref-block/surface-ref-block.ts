@@ -54,14 +54,15 @@ const REF_LABEL_ICON = {
 } as Record<string, TemplateResult>;
 
 const NO_CONTENT_TITLE = {
-  'affine:frame': 'Frame',
-  group: 'Group',
-  DEFAULT: 'Content',
+  'affine:frame': 'Keret',
+  group: 'Csoport',
+  DEFAULT: 'Tartalom',
 } as Record<string, string>;
 
 const NO_CONTENT_REASON = {
-  group: 'This content was ungrouped or deleted on edgeless mode',
-  DEFAULT: 'This content was deleted on edgeless mode',
+  group:
+    'Ennek a tartalomnak a csoportja szét lett bontva vagy törölve lett a rajztáblán.',
+  DEFAULT: 'Ez a tartalom törölve lett a rajztáblán',
 } as Record<string, string>;
 
 @Peekable()

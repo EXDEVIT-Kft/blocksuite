@@ -71,12 +71,12 @@ export class EdgelessChangeAttachmentButton extends WithDisposable(LitElement) {
       {
         style: 'horizontalThin',
         Icon: EmbedCardListIcon,
-        tooltip: 'Horizontal style',
+        tooltip: 'Vízszintes elrendezés',
       },
       {
         style: 'cubeThick',
         Icon: EmbedCardCubeIcon,
-        tooltip: 'Vertical style',
+        tooltip: 'Függőleges elrendezés',
       },
     ];
   }
@@ -90,7 +90,10 @@ export class EdgelessChangeAttachmentButton extends WithDisposable(LitElement) {
       <editor-menu-button
         .contentPadding=${'8px'}
         .button=${html`
-          <editor-icon-button aria-label="Card style" .tooltip=${'Card style'}>
+          <editor-icon-button
+            aria-label="Kártya stílusa"
+            .tooltip=${'Kártya stílusa'}
+          >
             ${PaletteIcon}
           </editor-icon-button>
         `}
@@ -106,8 +109,8 @@ export class EdgelessChangeAttachmentButton extends WithDisposable(LitElement) {
       <editor-toolbar-separator></editor-toolbar-separator>
 
       <editor-icon-button
-        aria-label="Download"
-        .tooltip=${'Download'}
+        aria-label="Letöltés"
+        .tooltip=${'Letöltés'}
         ?disabled=${this._doc.readonly}
         @click=${this._download}
       >
@@ -117,8 +120,8 @@ export class EdgelessChangeAttachmentButton extends WithDisposable(LitElement) {
       <editor-toolbar-separator></editor-toolbar-separator>
 
       <editor-icon-button
-        aria-label="Add caption"
-        .tooltip=${'Add caption'}
+        aria-label="Felirat hozzáadása"
+        .tooltip=${'Felirat hozzáadása'}
         class="change-attachment-button caption"
         ?disabled=${this._doc.readonly}
         @click=${this._showCaption}

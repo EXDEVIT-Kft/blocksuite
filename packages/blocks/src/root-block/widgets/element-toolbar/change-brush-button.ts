@@ -133,7 +133,7 @@ export class EdgelessChangeBrushButton extends WithDisposable(LitElement) {
           return html`
             <edgeless-color-picker-button
               class="color"
-              .label=${'Color'}
+              .label=${'Szín'}
               .pick=${this.pickColor}
               .color=${selectedColor}
               .colors=${colors}
@@ -147,7 +147,7 @@ export class EdgelessChangeBrushButton extends WithDisposable(LitElement) {
           <editor-menu-button
             .contentPadding=${'8px'}
             .button=${html`
-              <editor-icon-button aria-label="Color" .tooltip=${'Color'}>
+              <editor-icon-button aria-label="Color" .tooltip=${'Szín'}>
                 <edgeless-color-button
                   .color=${selectedColor}
                 ></edgeless-color-button>

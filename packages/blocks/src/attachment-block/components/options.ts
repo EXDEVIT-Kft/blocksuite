@@ -43,7 +43,7 @@ export function AttachmentOptionsTemplate({
   const viewActions = [
     {
       type: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       disabled: readonly || !model.embed,
       action: () => {
         model.doc.updateBlock(model, { embed: false });
@@ -52,7 +52,7 @@ export function AttachmentOptionsTemplate({
     },
     {
       type: 'embed',
-      label: 'Embed view',
+      label: 'Beágyazott nézet',
       disabled: readonly || disableEmbed,
       action: () => {
         convertToEmbed(model, anchor.service.maxFileSize);
@@ -79,8 +79,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Rename"
-            .tooltip=${'Rename'}
+            aria-label="Átnevezés"
+            .tooltip=${'Átnevezés'}
             @click=${() => {
               abortController.abort();
               const renameAbortController = new AbortController();
@@ -110,14 +110,16 @@ export function AttachmentOptionsTemplate({
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Switch view"
+            aria-label="Nézet váltása"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
             .iconContainerWidth=${'110px'}
           >
             <div class="label">
-              <span style="text-transform: capitalize">${viewType}</span>
-              view
+              <span style="text-transform: capitalize"
+                >${viewType === 'embed' ? 'Beágyazott' : 'Kártya'}</span
+              >
+              nézet
             </div>
             ${SmallArrowDownIcon}
           </editor-icon-button>
@@ -145,8 +147,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Download"
-            .tooltip=${'Download'}
+            aria-label="Letöltés"
+            .tooltip=${'Letöltés'}
             @click=${() => anchor.download()}
           >
             ${DownloadIcon}
@@ -157,8 +159,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Caption"
-            .tooltip=${'Caption'}
+            aria-label="Felirat"
+            .tooltip=${'Felirat'}
             @click=${() => anchor.captionEditor?.show()}
           >
             ${CaptionIcon}
@@ -169,7 +171,7 @@ export function AttachmentOptionsTemplate({
       <editor-menu-button
         .contentPadding=${'8px'}
         .button=${html`
-          <editor-icon-button aria-label="More" .tooltip=${'More'}>
+          <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
             ${MoreVerticalIcon}
           </editor-icon-button>
         `}

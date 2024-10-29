@@ -25,6 +25,12 @@ And this would build the BlockSuite packages:
 yarn build
 ```
 
+This would publish them:
+
+```sh
+lerna publish --no-private --message "chore: bump version numbers"
+```
+
 ## Testing
 
 ### Test Locally

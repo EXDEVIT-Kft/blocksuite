@@ -219,19 +219,19 @@ export async function popImageMoreMenu(page: Page) {
   const menu = page.locator('.image-more-popup-menu');
 
   const turnIntoCardButton = page.locator('editor-menu-action', {
-    hasText: 'Turn into card view',
+    hasText: 'Kártya nézet',
   });
 
   const copyButton = page.locator('editor-menu-action', {
-    hasText: 'Copy',
+    hasText: 'Másolás',
   });
 
   const duplicateButton = page.locator('editor-menu-action', {
-    hasText: 'Duplicate',
+    hasText: 'Duplikálás',
   });
 
   const deleteButton = page.locator('editor-menu-action', {
-    hasText: 'Delete',
+    hasText: 'Törlés',
   });
 
   return {

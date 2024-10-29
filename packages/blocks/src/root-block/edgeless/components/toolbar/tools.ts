@@ -118,7 +118,7 @@ export const getSeniorTools = ({
 
   if (!doc.readonly) {
     tools.push({
-      name: 'Note',
+      name: 'Jegyzet',
       content: html`<edgeless-note-senior-button .edgeless=${edgeless}>
       </edgeless-note-senior-button>`,
     });
@@ -126,7 +126,7 @@ export const getSeniorTools = ({
 
   // Brush / Eraser
   tools.push({
-    name: 'Pen',
+    name: 'Toll',
     content: html`<div class="brush-and-eraser">
       <edgeless-brush-tool-button
         .edgeless=${edgeless}
@@ -140,7 +140,7 @@ export const getSeniorTools = ({
 
   // Shape
   tools.push({
-    name: 'Shape',
+    name: 'Alakzat',
     content: html`<edgeless-shape-tool-button
       .edgeless=${edgeless}
       .toolbarContainer=${toolbarContainer}
@@ -148,7 +148,7 @@ export const getSeniorTools = ({
   });
 
   tools.push({
-    name: 'Mind Map',
+    name: 'Gondolattérkép',
     content: html`<edgeless-mindmap-tool-button
       .edgeless=${edgeless}
       .toolbarContainer=${toolbarContainer}
@@ -157,7 +157,7 @@ export const getSeniorTools = ({
 
   // Template
   tools.push({
-    name: 'Template',
+    name: 'Sablon',
     content: html`<edgeless-template-button .edgeless=${edgeless}>
     </edgeless-template-button>`,
   });

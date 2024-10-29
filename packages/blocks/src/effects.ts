@@ -17,6 +17,8 @@ import { effects as stdEffects } from '@blocksuite/block-std/effects';
 import { effects as dataViewEffects } from '@blocksuite/data-view/effects';
 import { effects as inlineEffects } from '@blocksuite/inline/effects';
 
+import type { addAccordionChildCommand } from './accordion-block/commands/add-accordion-child.js';
+import type { splitAccordionTitleCommand } from './accordion-block/commands/split-accordion-title.js';
 import type { insertBookmarkCommand } from './bookmark-block/commands/insert-bookmark.js';
 import type { insertEdgelessTextCommand } from './edgeless-text-block/commands/insert-edgeless-text.js';
 import type { updateBlockType } from './note-block/commands/block-type.js';
@@ -50,6 +52,10 @@ import { Loader } from './_common/components/loader.js';
 import { SmoothCorner } from './_common/components/smooth-corner.js';
 import { ToggleSwitch } from './_common/components/toggle-switch.js';
 import { registerSpecs } from './_specs/register-specs.js';
+import {
+  AccordionBlockComponent,
+  type AccordionBlockService,
+} from './accordion-block/index.js';
 import { AttachmentEdgelessBlockComponent } from './attachment-block/attachment-edgeless-block.js';
 import {
   AttachmentBlockComponent,
@@ -341,6 +347,12 @@ export function effects() {
 
   widgetScrollAnchoringEffects();
   widgetMobileToolbarEffects();
+
+  // === algogrind
+
+  customElements.define('algogrind-accordion', AccordionBlockComponent);
+
+  // === blocksuite / affine
 
   customElements.define('affine-database-title', DatabaseTitle);
   customElements.define(
@@ -704,6 +716,8 @@ declare global {
       updateBlockType: typeof updateBlockType;
       insertEdgelessText: typeof insertEdgelessTextCommand;
       dedentBlockToRoot: typeof dedentBlockToRoot;
+      addAccordionChild: typeof addAccordionChildCommand;
+      splitAccordionTitle: typeof splitAccordionTitleCommand;
     }
     interface CommandContext {
       focusBlock?: BlockComponent | null;
@@ -723,6 +737,7 @@ declare global {
       'affine:database': DatabaseBlockService;
       'affine:image': ImageBlockService;
       'affine:surface-ref': SurfaceRefBlockService;
+      'algogrind:accordion': AccordionBlockService;
     }
   }
 }

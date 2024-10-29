@@ -109,31 +109,37 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
     .addDivider()
     .addTextStyleToggle({
       key: 'bold',
+      name: 'Félkövér',
       action: chain => chain.toggleBold().run(),
       icon: BoldIcon,
     })
     .addTextStyleToggle({
       key: 'italic',
+      name: 'Dőlt',
       action: chain => chain.toggleItalic().run(),
       icon: ItalicIcon,
     })
     .addTextStyleToggle({
       key: 'underline',
+      name: 'Aláhúzott',
       action: chain => chain.toggleUnderline().run(),
       icon: UnderlineIcon,
     })
     .addTextStyleToggle({
       key: 'strike',
+      name: 'Áthúzott',
       action: chain => chain.toggleStrike().run(),
       icon: StrikethroughIcon,
     })
     .addTextStyleToggle({
       key: 'code',
+      name: 'Kód',
       action: chain => chain.toggleCode().run(),
       icon: CodeIcon,
     })
     .addTextStyleToggle({
       key: 'link',
+      name: 'Link',
       action: chain => chain.toggleLink().run(),
       icon: LinkIcon,
     })
@@ -192,7 +198,7 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
     .addDivider()
     .addInlineAction({
       id: 'convert-to-linked-doc',
-      name: 'Create Linked Doc',
+      name: 'Új Hivatkozott Dokumentum',
       icon: LinkedDocIcon,
       isActive: () => false,
       action: (chain, formatBar) => {
@@ -243,72 +249,72 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'text',
-      name: 'Text',
+      name: 'Szöveg',
       icon: TextIcon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h1',
-      name: 'Heading 1',
+      name: 'Címsor 1',
       icon: Heading1Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h2',
-      name: 'Heading 2',
+      name: 'Címsor 2',
       icon: Heading2Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h3',
-      name: 'Heading 3',
+      name: 'Címsor 3',
       icon: Heading3Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h4',
-      name: 'Heading 4',
+      name: 'Címsor 4',
       icon: Heading4Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h5',
-      name: 'Heading 5',
+      name: 'Címsor 5',
       icon: Heading5Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'h6',
-      name: 'Heading 6',
+      name: 'Címsor 6',
       icon: Heading6Icon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:list',
       type: 'bulleted',
-      name: 'Bulleted List',
+      name: 'Felsorolás',
       icon: BulletedListIcon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:list',
       type: 'numbered',
-      name: 'Numbered List',
+      name: 'Számozott Felsorolás',
       icon: NumberedListIcon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:list',
       type: 'todo',
-      name: 'To-do List',
+      name: 'To-do Lista',
       icon: CheckBoxIcon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:code',
-      name: 'Code Block',
+      name: 'Kód Blokk',
       icon: CodeIcon,
     })
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'quote',
-      name: 'Quote',
+      name: 'Idézet',
       icon: QuoteIcon,
     });
 }
@@ -319,7 +325,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<FormatBarContext>[] = [
     items: [
       {
         type: 'copy',
-        label: 'Copy',
+        label: 'Másolás',
         icon: CopyIcon,
         disabled: c => c.doc.readonly,
         action: c => {
@@ -328,7 +334,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<FormatBarContext>[] = [
             .getSelectedModels()
             .with({
               onCopy: () => {
-                toast(c.host, 'Copied to clipboard');
+                toast(c.host, 'Tartalom a vágólapra másolva');
               },
             })
             .draftSelectedModels()
@@ -338,7 +344,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<FormatBarContext>[] = [
       },
       {
         type: 'duplicate',
-        label: 'Duplicate',
+        label: 'Duplikálás',
         icon: DuplicateIcon,
         disabled: c => c.doc.readonly,
         action: c => {
@@ -398,7 +404,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<FormatBarContext>[] = [
     items: [
       {
         type: 'delete',
-        label: 'Delete',
+        label: 'Törlés',
         icon: DeleteIcon,
         disabled: c => c.doc.readonly,
         action: c => {
@@ -439,7 +445,7 @@ export function toolbarMoreButton(toolbar: AffineFormatBarWidget) {
     <editor-menu-button
       .contentPadding=${'8px'}
       .button=${html`
-        <editor-icon-button aria-label="More" .tooltip=${'More'}>
+        <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
           ${MoreVerticalIcon}
         </editor-icon-button>
       `}

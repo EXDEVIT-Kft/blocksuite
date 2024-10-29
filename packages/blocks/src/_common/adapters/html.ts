@@ -1231,7 +1231,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
       type: 'page',
       meta: {
         id: nanoid(),
-        title: hastGetTextContent(titleAst, 'Untitled'),
+        title: hastGetTextContent(titleAst, 'Új dokumentum'),
         createDate: Date.now(),
         tags: [],
       },
@@ -1245,7 +1245,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
             delta: this._hastToDelta(
               titleAst ?? {
                 type: 'text',
-                value: 'Untitled',
+                value: 'Új dokumentum',
               }
             ),
           },

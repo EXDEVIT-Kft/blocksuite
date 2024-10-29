@@ -52,17 +52,17 @@ interface LayoutItem {
 
 const MINDMAP_LAYOUT_LIST: LayoutItem[] = [
   {
-    name: 'Left',
+    name: 'Bal',
     value: LayoutType.LEFT,
     icon: MindmapLeftLayoutIcon,
   },
   {
-    name: 'Radial',
+    name: 'Körkörös',
     value: LayoutType.BALANCE,
     icon: MindmapBalanceLayoutIcon,
   },
   {
-    name: 'Right',
+    name: 'Jobb',
     value: LayoutType.RIGHT,
     icon: MindmapRightLayoutIcon,
   },
@@ -213,7 +213,7 @@ export class EdgelessChangeMindmapButton extends WithDisposable(LitElement) {
           <editor-menu-button
             .contentPadding=${'8px'}
             .button=${html`
-              <editor-icon-button aria-label="Style" .tooltip=${'Style'}>
+              <editor-icon-button aria-label="Stílus" .tooltip=${'Stílus'}>
                 ${MindmapStyleIcon}${SmallArrowDownIcon}
               </editor-icon-button>
             `}
@@ -231,7 +231,10 @@ export class EdgelessChangeMindmapButton extends WithDisposable(LitElement) {
           : html`
               <editor-menu-button
                 .button=${html`
-                  <editor-icon-button aria-label="Layout" .tooltip=${'Layout'}>
+                  <editor-icon-button
+                    aria-label="Elrendezés"
+                    .tooltip=${'Elrendezés'}
+                  >
                     ${this.layout.icon}${SmallArrowDownIcon}
                   </editor-icon-button>
                 `}

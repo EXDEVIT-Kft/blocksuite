@@ -148,12 +148,12 @@ export async function checkAttachmentBlob(block: AttachmentBlockComponent) {
 export function downloadAttachmentBlob(block: AttachmentBlockComponent) {
   const { host, model, loading, error, downloading, blobUrl } = block;
   if (downloading) {
-    toast(host, 'Download in progress...');
+    toast(host, 'Letöltés folyamatban...');
     return;
   }
 
   if (loading) {
-    toast(host, 'Please wait, file is loading...');
+    toast(host, 'A fájl betöltése folyamatban van...');
     return;
   }
 
@@ -161,13 +161,13 @@ export function downloadAttachmentBlob(block: AttachmentBlockComponent) {
   const shortName = name.length < 20 ? name : name.slice(0, 20) + '...';
 
   if (error || !blobUrl) {
-    toast(host, `Failed to download ${shortName}!`);
+    toast(host, `Sikertelen letöltés: ${shortName}!`);
     return;
   }
 
   block.downloading = true;
 
-  toast(host, `Downloading ${shortName}`);
+  toast(host, `Letöltés: ${shortName}`);
 
   const tmpLink = document.createElement('a');
   const event = new MouseEvent('click');
@@ -208,11 +208,11 @@ export async function addSiblingAttachmentBlocks(
   if (isSizeExceeded) {
     toast(
       editorHost,
-      `You can only upload files less than ${humanFileSize(
+      `Csak ${humanFileSize(
         maxFileSize,
         true,
         0
-      )}`
+      )}-nál kisebb fájlokat tölthetsz fel`
     );
     return;
   }

@@ -316,7 +316,7 @@ export class MindmapElementModel extends GfxGroupLikeElementModel<MindmapElement
     }
 
     props['text'] = new DocCollection.Y.Text(
-      (props['text'] as string) ?? 'New node'
+      (props['text'] as string) ?? 'Új elem'
     );
 
     const type = (props.type as string) ?? 'shape';
