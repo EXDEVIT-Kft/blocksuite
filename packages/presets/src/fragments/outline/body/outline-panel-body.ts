@@ -249,7 +249,7 @@ export class OutlinePanelBody extends SignalWatcher(
   private _EmptyPanel() {
     return html`<div class="no-note-container">
       <div class="note-placeholder">
-        Use headings to create a table of contents.
+        Tartalomjegyzék létrehozásához használjon címsorokat.
       </div>
     </div>`;
   }
@@ -387,7 +387,7 @@ export class OutlinePanelBody extends SignalWatcher(
           )
         : html`${nothing}`}
       ${withEdgelessOnlyNotes
-        ? html`<div class="hidden-title">Hidden Contents</div>
+        ? html`<div class="hidden-title">Csak rajztábla nézetben</div>
             ${repeat(
               this._edgelessOnlyNotes,
               note => note.note.id,

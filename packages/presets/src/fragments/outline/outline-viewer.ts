@@ -210,7 +210,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
     const toggleOutlinePanelButton =
       this.toggleOutlinePanel !== null
         ? html`<edgeless-tool-icon-button
-            .tooltip=${'Open in sidebar'}
+            .tooltip=${'Kinagyítás'}
             .tipPosition=${'top-end'}
             .activeMode=${'background'}
             @click=${this._toggleOutlinePanel}
@@ -239,7 +239,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
         </div>
         <div class="outline-viewer-panel">
           <div class="outline-viewer-item outline-viewer-header">
-            <span>Table of Contents</span>
+            <span>Tartalomjegyzék</span>
             ${toggleOutlinePanelButton}
           </div>
           ${repeat(
