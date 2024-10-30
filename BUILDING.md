@@ -19,13 +19,33 @@ Then there would be multiple entries to choose from:
 
 All these entries are published to [try-blocksuite.vercel.app](https://try-blocksuite.vercel.app).
 
-And this would build the BlockSuite packages:
+To publish:
+
+1. replace all occurences of
+
+```
+@blocksuite\/(?!icons\/lit)
+```
+
+with:
+
+```
+@algogrind/
+```
+
+2. Build:
 
 ```sh
 yarn build
 ```
 
-This would publish them:
+3. Revert changed files:
+
+```
+@algogrind/    --> @blocksuite/
+```
+
+4. Publish:
 
 ```sh
 lerna publish --no-private --message "chore: bump version numbers"
