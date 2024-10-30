@@ -2,9 +2,9 @@ import {
   EmbedGithubBlockSchema,
   type EmbedGithubModel,
   EmbedGithubStyles,
-} from '@blocksuite/affine-model';
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
-import { BlockService } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import { EmbedOptionProvider } from '@algogrind/affine-shared/services';
+import { BlockService } from '@algogrind/block-std';
 
 import { LinkPreviewer } from '../common/link-previewer.js';
 import { githubUrlRegex } from './embed-github-model.js';

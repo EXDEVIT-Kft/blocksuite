@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { FrameBlockModel } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
 import type { TemplateResult } from 'lit';
 
 import {
@@ -7,14 +7,14 @@ import {
   getInlineEditorByModel,
   insertContent,
   REFERENCE_NODE,
-} from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   createDefaultDoc,
   openFileOrFiles,
-} from '@blocksuite/affine-shared/utils';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
-import { assertType } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { viewPresets } from '@algogrind/data-view/view-presets';
+import { assertType } from '@algogrind/global/utils';
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,

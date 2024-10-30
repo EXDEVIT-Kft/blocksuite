@@ -1481,19 +1481,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/affine-block-embed@workspace:*, @blocksuite/affine-block-embed@workspace:packages/affine/block-embed":
+"@algogrind/affine-block-embed@workspace:*, @algogrind/affine-block-embed@workspace:packages/affine/block-embed":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-block-embed@workspace:packages/affine/block-embed"
+  resolution: "@algogrind/affine-block-embed@workspace:packages/affine/block-embed"
   dependencies:
-    "@blocksuite/affine-block-surface": "workspace:*"
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/affine-block-surface": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.1.68"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1504,17 +1504,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-block-list@workspace:*, @blocksuite/affine-block-list@workspace:packages/affine/block-list":
+"@algogrind/affine-block-list@workspace:*, @algogrind/affine-block-list@workspace:packages/affine/block-list":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-block-list@workspace:packages/affine/block-list"
+  resolution: "@algogrind/affine-block-list@workspace:packages/affine/block-list"
   dependencies:
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1525,17 +1525,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-block-paragraph@workspace:*, @blocksuite/affine-block-paragraph@workspace:packages/affine/block-paragraph":
+"@algogrind/affine-block-paragraph@workspace:*, @algogrind/affine-block-paragraph@workspace:packages/affine/block-paragraph":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-block-paragraph@workspace:packages/affine/block-paragraph"
+  resolution: "@algogrind/affine-block-paragraph@workspace:packages/affine/block-paragraph"
   dependencies:
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1546,17 +1546,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-block-surface@workspace:*, @blocksuite/affine-block-surface@workspace:packages/affine/block-surface":
+"@algogrind/affine-block-surface@workspace:*, @algogrind/affine-block-surface@workspace:packages/affine/block-surface":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-block-surface@workspace:packages/affine/block-surface"
+  resolution: "@algogrind/affine-block-surface@workspace:packages/affine/block-surface"
   dependencies:
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
     "@toeverything/theme": "npm:^1.0.15"
@@ -1570,17 +1570,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-components@workspace:*, @blocksuite/affine-components@workspace:packages/affine/components":
+"@algogrind/affine-components@workspace:*, @algogrind/affine-components@workspace:packages/affine/components":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-components@workspace:packages/affine/components"
+  resolution: "@algogrind/affine-components@workspace:packages/affine/components"
   dependencies:
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.1.68"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@lottiefiles/dotlottie-wc": "npm:^0.2.16"
@@ -1595,28 +1595,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-model@workspace:*, @blocksuite/affine-model@workspace:packages/affine/model":
+"@algogrind/affine-model@workspace:*, @algogrind/affine-model@workspace:packages/affine/model":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-model@workspace:packages/affine/model"
+  resolution: "@algogrind/affine-model@workspace:packages/affine/model"
   dependencies:
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     fractional-indexing: "npm:^3.2.0"
     zod: "npm:^3.23.8"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-shared@workspace:*, @blocksuite/affine-shared@workspace:packages/affine/shared":
+"@algogrind/affine-shared@workspace:*, @algogrind/affine-shared@workspace:packages/affine/shared":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-shared@workspace:packages/affine/shared"
+  resolution: "@algogrind/affine-shared@workspace:packages/affine/shared"
   dependencies:
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1631,40 +1631,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine-widget-scroll-anchoring@workspace:*, @blocksuite/affine-widget-scroll-anchoring@workspace:packages/affine/widget-scroll-anchoring":
+"@algogrind/affine-widget-scroll-anchoring@workspace:*, @algogrind/affine-widget-scroll-anchoring@workspace:packages/affine/widget-scroll-anchoring":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine-widget-scroll-anchoring@workspace:packages/affine/widget-scroll-anchoring"
+  resolution: "@algogrind/affine-widget-scroll-anchoring@workspace:packages/affine/widget-scroll-anchoring"
   dependencies:
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@toeverything/theme": "npm:^1.0.15"
     lit: "npm:^3.2.0"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/affine@workspace:packages/affine/all":
+"@algogrind/affine@workspace:packages/affine/all":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/affine@workspace:packages/affine/all"
+  resolution: "@algogrind/affine@workspace:packages/affine/all"
   dependencies:
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/blocks": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/presets": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/blocks": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/presets": "workspace:*"
+    "@algogrind/store": "workspace:*"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/block-std@workspace:*, @blocksuite/block-std@workspace:packages/framework/block-std":
+"@algogrind/block-std@workspace:*, @algogrind/block-std@workspace:packages/framework/block-std":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/block-std@workspace:packages/framework/block-std"
+  resolution: "@algogrind/block-std@workspace:packages/framework/block-std"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
     "@types/hast": "npm:^3.0.4"
@@ -1679,24 +1679,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/blocks@workspace:*, @blocksuite/blocks@workspace:packages/blocks":
+"@algogrind/blocks@workspace:*, @algogrind/blocks@workspace:packages/blocks":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/blocks@workspace:packages/blocks"
+  resolution: "@algogrind/blocks@workspace:packages/blocks"
   dependencies:
-    "@blocksuite/affine-block-embed": "workspace:*"
-    "@blocksuite/affine-block-list": "workspace:*"
-    "@blocksuite/affine-block-paragraph": "workspace:*"
-    "@blocksuite/affine-block-surface": "workspace:*"
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/affine-widget-scroll-anchoring": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/affine-block-embed": "workspace:*"
+    "@algogrind/affine-block-list": "workspace:*"
+    "@algogrind/affine-block-paragraph": "workspace:*"
+    "@algogrind/affine-block-surface": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/affine-widget-scroll-anchoring": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/data-view": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.1.68"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1740,16 +1740,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/data-view@workspace:*, @blocksuite/data-view@workspace:packages/affine/data-view":
+"@algogrind/data-view@workspace:*, @algogrind/data-view@workspace:packages/affine/data-view":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/data-view@workspace:packages/affine/data-view"
+  resolution: "@algogrind/data-view@workspace:packages/affine/data-view"
   dependencies:
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.1.68"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1762,13 +1762,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/docs@workspace:packages/docs":
+"@algogrind/docs@workspace:packages/docs":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/docs@workspace:packages/docs"
+  resolution: "@algogrind/docs@workspace:packages/docs"
   dependencies:
-    "@blocksuite/blocks": "workspace:*"
-    "@blocksuite/presets": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/blocks": "workspace:*"
+    "@algogrind/presets": "workspace:*"
+    "@algogrind/store": "workspace:*"
     date-fns: "npm:^4.0.0"
     markdown-it-container: "npm:^4.0.0"
     typedoc: "npm:^0.26.6"
@@ -1780,20 +1780,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/e2e@workspace:tests":
+"@algogrind/e2e@workspace:tests":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/e2e@workspace:tests"
+  resolution: "@algogrind/e2e@workspace:tests"
   dependencies:
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/presets": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/presets": "workspace:*"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/global@workspace:*, @blocksuite/global@workspace:packages/framework/global":
+"@algogrind/global@workspace:*, @algogrind/global@workspace:packages/framework/global":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/global@workspace:packages/framework/global"
+  resolution: "@algogrind/global@workspace:packages/framework/global"
   dependencies:
     "@preact/signals-core": "npm:^1.8.0"
     lib0: "npm:^0.2.97"
@@ -1818,11 +1818,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/inline@workspace:*, @blocksuite/inline@workspace:packages/framework/inline":
+"@algogrind/inline@workspace:*, @algogrind/inline@workspace:packages/framework/inline":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/inline@workspace:packages/framework/inline"
+  resolution: "@algogrind/inline@workspace:packages/framework/inline"
   dependencies:
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/global": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     lit: "npm:^3.2.0"
     yjs: "npm:^13.6.18"
@@ -1833,20 +1833,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/playground@workspace:packages/playground":
+"@algogrind/playground@workspace:packages/playground":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/playground@workspace:packages/playground"
+  resolution: "@algogrind/playground@workspace:packages/playground"
   dependencies:
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/blocks": "workspace:*"
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/presets": "workspace:*"
-    "@blocksuite/store": "workspace:*"
-    "@blocksuite/sync": "workspace:*"
+    "@algogrind/affine-components": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/blocks": "workspace:*"
+    "@algogrind/data-view": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/presets": "workspace:*"
+    "@algogrind/store": "workspace:*"
+    "@algogrind/sync": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@shoelace-style/shoelace": "npm:2.18.0"
     "@toeverything/y-indexeddb": "npm:0.10.0-canary.9"
@@ -1868,18 +1868,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/presets@workspace:*, @blocksuite/presets@workspace:packages/presets":
+"@algogrind/presets@workspace:*, @algogrind/presets@workspace:packages/presets":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/presets@workspace:packages/presets"
+  resolution: "@algogrind/presets@workspace:packages/presets"
   dependencies:
-    "@blocksuite/affine-block-surface": "workspace:*"
-    "@blocksuite/affine-model": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/block-std": "workspace:*"
-    "@blocksuite/blocks": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/affine-block-surface": "workspace:*"
+    "@algogrind/affine-model": "workspace:*"
+    "@algogrind/affine-shared": "workspace:*"
+    "@algogrind/block-std": "workspace:*"
+    "@algogrind/blocks": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lottiefiles/dotlottie-wc": "npm:^0.2.16"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1889,13 +1889,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/store@workspace:*, @blocksuite/store@workspace:packages/framework/store":
+"@algogrind/store@workspace:*, @algogrind/store@workspace:packages/framework/store":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/store@workspace:packages/framework/store"
+  resolution: "@algogrind/store@workspace:packages/framework/store"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/inline": "workspace:*"
-    "@blocksuite/sync": "workspace:*"
+    "@algogrind/global": "workspace:*"
+    "@algogrind/inline": "workspace:*"
+    "@algogrind/sync": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@types/flexsearch": "npm:^0.7.6"
     "@types/lodash.clonedeep": "npm:^4.5.9"
@@ -1918,11 +1918,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/sync@workspace:*, @blocksuite/sync@workspace:packages/framework/sync":
+"@algogrind/sync@workspace:*, @algogrind/sync@workspace:packages/framework/sync":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/sync@workspace:packages/framework/sync"
+  resolution: "@algogrind/sync@workspace:packages/framework/sync"
   dependencies:
-    "@blocksuite/global": "workspace:*"
+    "@algogrind/global": "workspace:*"
     idb: "npm:^8.0.0"
     idb-keyval: "npm:^6.2.1"
     y-protocols: "npm:^1.0.6"

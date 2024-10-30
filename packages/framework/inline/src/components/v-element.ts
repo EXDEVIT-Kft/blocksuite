@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { DisposableGroup, SignalWatcher } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { DisposableGroup, SignalWatcher } from '@algogrind/global/utils';
 import { effect, signal } from '@preact/signals-core';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

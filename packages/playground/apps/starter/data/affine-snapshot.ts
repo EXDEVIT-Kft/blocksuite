@@ -1,5 +1,5 @@
-import { ZipTransformer } from '@blocksuite/blocks';
-import { type DocCollection, Text } from '@blocksuite/store';
+import { ZipTransformer } from '@algogrind/blocks';
+import { type DocCollection, Text } from '@algogrind/store';
 
 export async function affineSnapshot(collection: DocCollection, id: string) {
   const doc = collection.createDoc({ id });

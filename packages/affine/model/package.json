@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/affine-model",
+  "name": "@algogrind/affine-model",
   "version": "0.17.23",
   "description": "Models for BlockSuite in Affine.",
   "type": "module",
@@ -19,10 +19,10 @@
   "author": "toeverything",
   "license": "MPL-2.0",
   "dependencies": {
-    "@blocksuite/block-std": "workspace:*",
-    "@blocksuite/global": "workspace:*",
-    "@blocksuite/inline": "workspace:*",
-    "@blocksuite/store": "workspace:*",
+    "@algogrind/block-std": "workspace:*",
+    "@algogrind/global": "workspace:*",
+    "@algogrind/inline": "workspace:*",
+    "@algogrind/store": "workspace:*",
     "fractional-indexing": "^3.2.0",
     "zod": "^3.23.8"
   },

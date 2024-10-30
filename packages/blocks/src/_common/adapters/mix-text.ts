@@ -1,9 +1,9 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type AssetsManager,
   ASTWalker,
@@ -22,7 +22,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { MarkdownAdapter } from './markdown.js';
 

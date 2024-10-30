@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/affine",
+  "name": "@algogrind/affine",
   "version": "0.17.23",
   "description": "BlockSuite for Affine",
   "type": "module",
@@ -19,12 +19,12 @@
   "author": "toeverything",
   "license": "MPL-2.0",
   "dependencies": {
-    "@blocksuite/block-std": "workspace:*",
-    "@blocksuite/blocks": "workspace:*",
-    "@blocksuite/global": "workspace:*",
-    "@blocksuite/inline": "workspace:*",
-    "@blocksuite/presets": "workspace:*",
-    "@blocksuite/store": "workspace:*"
+    "@algogrind/block-std": "workspace:*",
+    "@algogrind/blocks": "workspace:*",
+    "@algogrind/global": "workspace:*",
+    "@algogrind/inline": "workspace:*",
+    "@algogrind/presets": "workspace:*",
+    "@algogrind/store": "workspace:*"
   },
   "exports": {
     ".": "./src/index.ts",

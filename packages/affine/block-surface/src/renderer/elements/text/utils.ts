@@ -3,15 +3,15 @@ import type {
   FontStyle,
   FontWeight,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import type { Bound } from '@blocksuite/global/utils';
-import type { Y } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { Bound } from '@algogrind/global/utils';
+import type { Y } from '@algogrind/store';
 
 import {
   getPointsFromBoundWithRotation,
   rotatePoints,
-} from '@blocksuite/global/utils';
-import { deltaInsertsToChunks } from '@blocksuite/inline';
+} from '@algogrind/global/utils';
+import { deltaInsertsToChunks } from '@algogrind/inline';
 
 import {
   getFontFacesByFontFamily,

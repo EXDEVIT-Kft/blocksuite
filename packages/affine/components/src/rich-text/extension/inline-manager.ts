@@ -1,14 +1,11 @@
-import type { Y } from '@blocksuite/store';
+import type { Y } from '@algogrind/store';
 
 import {
   type BlockStdScope,
   type ExtensionType,
   StdIdentifier,
-} from '@blocksuite/block-std';
-import {
-  createIdentifier,
-  type ServiceIdentifier,
-} from '@blocksuite/global/di';
+} from '@algogrind/block-std';
+import { createIdentifier, type ServiceIdentifier } from '@algogrind/global/di';
 import {
   type AttributeRenderer,
   baseTextAttributes,
@@ -16,7 +13,7 @@ import {
   getDefaultAttributeRenderer,
   KEYBOARD_ALLOW_DEFAULT,
   type KeyboardBindingContext,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { z, type ZodObject, type ZodTypeAny } from 'zod';
 
 import type {

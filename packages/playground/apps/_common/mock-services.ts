@@ -1,4 +1,4 @@
-import type { AffineEditorContainer } from '@blocksuite/presets';
+import type { AffineEditorContainer } from '@algogrind/presets';
 
 import {
   ColorScheme,
@@ -8,8 +8,8 @@ import {
   type ParseDocUrlService,
   type ThemeExtension,
   toast,
-} from '@blocksuite/blocks';
-import { type DocCollection, Slot } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { type DocCollection, Slot } from '@algogrind/store';
 import { signal } from '@preact/signals-core';
 
 function getModeFromStorage() {

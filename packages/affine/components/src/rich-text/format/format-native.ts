@@ -2,8 +2,8 @@ import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type Command,
-} from '@blocksuite/block-std';
-import { INLINE_ROOT_ATTR, type InlineRootElement } from '@blocksuite/inline';
+} from '@algogrind/block-std';
+import { INLINE_ROOT_ATTR, type InlineRootElement } from '@algogrind/inline';
 
 import type { AffineTextAttributes } from '../extension/index.js';
 

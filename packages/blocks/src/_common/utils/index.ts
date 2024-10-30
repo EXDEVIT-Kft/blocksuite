@@ -14,4 +14,4 @@ export {
   once,
   openFileOrFiles,
   requestThrottledConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';

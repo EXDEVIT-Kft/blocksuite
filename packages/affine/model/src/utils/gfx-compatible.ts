@@ -1,7 +1,7 @@
-import type { Constructor, SerializedXYWH } from '@blocksuite/global/utils';
+import type { Constructor, SerializedXYWH } from '@algogrind/global/utils';
 
-import { GfxBlockElementModel } from '@blocksuite/block-std/gfx';
-import { BlockModel } from '@blocksuite/store';
+import { GfxBlockElementModel } from '@algogrind/block-std/gfx';
+import { BlockModel } from '@algogrind/store';
 
 export type GfxCompatibleProps = {
   xywh: SerializedXYWH;

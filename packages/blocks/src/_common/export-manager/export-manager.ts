@@ -1,30 +1,30 @@
-import type { IBound } from '@blocksuite/global/utils';
-import type { Doc } from '@blocksuite/store';
+import type { IBound } from '@algogrind/global/utils';
+import type { Doc } from '@algogrind/store';
 
 import {
   type CanvasRenderer,
   SurfaceElementModel,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   GroupElementModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   CANVAS_EXPORT_IGNORE_TAGS,
   DEFAULT_IMAGE_PROXY_ENDPOINT,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   isInsidePageEditor,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockStdScope,
   type EditorHost,
   type ExtensionType,
   StdIdentifier,
-} from '@blocksuite/block-std';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Bound } from '@algogrind/global/utils';
 
 import type { GfxBlockModel } from '../../root-block/edgeless/block-model.js';
 import type { EdgelessRootBlockComponent } from '../../root-block/edgeless/edgeless-root-block.js';

@@ -1,13 +1,13 @@
 import type {
   AttachmentBlockModel,
   AttachmentBlockProps,
-} from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { toast } from '@blocksuite/affine-components/toast';
-import { defaultAttachmentProps } from '@blocksuite/affine-model';
-import { humanFileSize } from '@blocksuite/affine-shared/utils';
+import { toast } from '@algogrind/affine-components/toast';
+import { defaultAttachmentProps } from '@algogrind/affine-model';
+import { humanFileSize } from '@algogrind/affine-shared/utils';
 
 import type { AttachmentBlockComponent } from './attachment-block.js';
 

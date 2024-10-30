@@ -1,12 +1,12 @@
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
+import type { AttachmentBlockModel } from '@algogrind/affine-model';
 
 import {
   CaptionIcon,
   DownloadIcon,
   PaletteIcon,
-} from '@blocksuite/affine-components/icons';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { assertExists, Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { assertExists, Bound, WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 

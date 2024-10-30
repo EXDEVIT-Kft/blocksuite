@@ -1,9 +1,9 @@
-import type { AffineEditorContainer } from '@blocksuite/presets';
-import type { DocCollection } from '@blocksuite/store';
+import type { AffineEditorContainer } from '@algogrind/presets';
+import type { DocCollection } from '@algogrind/store';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { CloseIcon, createDefaultDoc } from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { CloseIcon, createDefaultDoc } from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

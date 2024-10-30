@@ -1,13 +1,13 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-components/rich-text';
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { AffineTextAttributes } from '@algogrind/affine-components/rich-text';
+import type { DeltaInsert } from '@algogrind/inline';
 import type { Element, Root } from 'hast';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { sha } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { sha } from '@algogrind/global/utils';
 import {
   type AssetsManager,
   ASTWalker,
@@ -26,7 +26,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { collapseWhiteSpace } from 'collapse-white-space';
 import rehypeParse from 'rehype-parse';
 import rehypeStringify from 'rehype-stringify';

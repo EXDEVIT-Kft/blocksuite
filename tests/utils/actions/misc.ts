@@ -1,7 +1,7 @@
+import type { EditorHost, ExtensionType } from '@algogrind/block-std';
+import type { BlockSuiteFlags } from '@algogrind/global/types';
+import type { AffineEditorContainer } from '@algogrind/presets';
 import type { DatabaseBlockModel, ListType, RichText } from '@blocks/index.js';
-import type { EditorHost, ExtensionType } from '@blocksuite/block-std';
-import type { BlockSuiteFlags } from '@blocksuite/global/types';
-import type { AffineEditorContainer } from '@blocksuite/presets';
 import type { InlineRange, InlineRootElement } from '@inline/index.js';
 import type { CustomFramePanel } from '@playground/apps/_common/components/custom-frame-panel.js';
 import type { CustomOutlinePanel } from '@playground/apps/_common/components/custom-outline-panel.js';
@@ -11,7 +11,7 @@ import type { DocsPanel } from '@playground/apps/_common/components/docs-panel.j
 import type { ConsoleMessage, Locator, Page } from '@playwright/test';
 import type { BlockModel } from '@store/schema/index.js';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { expect } from '@playwright/test';
 import { uuidv4 } from '@store/utils/id-generator.js';
 import lz from 'lz-string';

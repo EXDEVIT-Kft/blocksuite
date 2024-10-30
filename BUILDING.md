@@ -42,7 +42,7 @@ yarn build
 3. Revert changed files:
 
 ```
-@algogrind/    --> @blocksuite/
+@algogrind/    --> @algogrind/
 ```
 
 4. Publish:

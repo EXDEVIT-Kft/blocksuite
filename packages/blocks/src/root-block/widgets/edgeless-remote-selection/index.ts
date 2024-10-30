@@ -1,10 +1,10 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { UserInfo } from '@blocksuite/store';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { UserInfo } from '@algogrind/store';
 
-import { RemoteCursor } from '@blocksuite/affine-components/icons';
-import { requestThrottledConnectedFrame } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { assertExists, pickValues } from '@blocksuite/global/utils';
+import { RemoteCursor } from '@algogrind/affine-components/icons';
+import { requestThrottledConnectedFrame } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { assertExists, pickValues } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

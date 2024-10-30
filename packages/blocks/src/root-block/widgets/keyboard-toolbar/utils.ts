@@ -1,7 +1,7 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { DisposableGroup } from '@algogrind/global/utils';
 import { signal } from '@preact/signals-core';
 
 import type { PageRootBlockComponent } from '../../page/page-root-block.js';

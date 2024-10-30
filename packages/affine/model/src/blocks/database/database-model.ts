@@ -1,6 +1,6 @@
-import type { MigrationRunner, Text } from '@blocksuite/store';
+import type { MigrationRunner, Text } from '@algogrind/store';
 
-import { BlockModel, defineBlockSchema, nanoid } from '@blocksuite/store';
+import { BlockModel, defineBlockSchema, nanoid } from '@algogrind/store';
 
 import type { Column, SerializedCells, ViewBasicDataType } from './types.js';
 

@@ -1,14 +1,14 @@
-import type { ReferenceInfo, ReferenceParams } from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { ReferenceInfo, ReferenceParams } from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { ParseDocUrlProvider } from '@blocksuite/affine-shared/services';
-import { BLOCK_ID_ATTR, ShadowlessElement } from '@blocksuite/block-std';
+import { ParseDocUrlProvider } from '@algogrind/affine-shared/services';
+import { BLOCK_ID_ATTR, ShadowlessElement } from '@algogrind/block-std';
 import {
   type DeltaInsert,
   INLINE_ROOT_ATTR,
   type InlineRootElement,
   ZERO_WIDTH_SPACE,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ref } from 'lit/directives/ref.js';

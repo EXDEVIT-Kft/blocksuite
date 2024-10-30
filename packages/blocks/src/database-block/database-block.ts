@@ -1,17 +1,17 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
+import type { DatabaseBlockModel } from '@algogrind/affine-model';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { DragIndicator } from '@blocksuite/affine-components/drag-indicator';
-import { PeekViewProvider } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
-import { NOTE_SELECTOR } from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/block-std';
+} from '@algogrind/affine-components/context-menu';
+import { DragIndicator } from '@algogrind/affine-components/drag-indicator';
+import { PeekViewProvider } from '@algogrind/affine-components/peek';
+import { toast } from '@algogrind/affine-components/toast';
+import { NOTE_SELECTOR } from '@algogrind/affine-shared/consts';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
+import { RANGE_SYNC_EXCLUDE_ATTR } from '@algogrind/block-std';
 import {
   createRecordDetail,
   createUniComponentFromWebComponent,
@@ -27,15 +27,15 @@ import {
   renderUniLit,
   type SingleView,
   uniMap,
-} from '@blocksuite/data-view';
-import { widgetPresets } from '@blocksuite/data-view/widget-presets';
-import { Rect } from '@blocksuite/global/utils';
+} from '@algogrind/data-view';
+import { widgetPresets } from '@algogrind/data-view/widget-presets';
+import { Rect } from '@algogrind/global/utils';
+import { Slice } from '@algogrind/store';
 import {
   CopyIcon,
   DeleteIcon,
   MoreHorizontalIcon,
 } from '@blocksuite/icons/lit';
-import { Slice } from '@blocksuite/store';
 import { autoUpdate } from '@floating-ui/dom';
 import { computed, signal } from '@preact/signals-core';
 import { css, html, nothing, unsafeCSS } from 'lit';

@@ -1,7 +1,7 @@
-import type { InlineEditor, InlineRootElement } from '@blocksuite/inline';
+import type { InlineEditor, InlineRootElement } from '@algogrind/inline';
 
-import { ReferenceInfoSchema } from '@blocksuite/affine-model';
-import { StdIdentifier } from '@blocksuite/block-std';
+import { ReferenceInfoSchema } from '@algogrind/affine-model';
+import { StdIdentifier } from '@algogrind/block-std';
 import { html } from 'lit';
 import { z } from 'zod';
 

@@ -1,14 +1,14 @@
-import type { Column } from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { Block, Doc } from '@blocksuite/store';
+import type { Column } from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
+import type { Block, Doc } from '@algogrind/store';
 
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
-import { DataSourceBase, type PropertyMetaConfig } from '@blocksuite/data-view';
-import { propertyPresets } from '@blocksuite/data-view/property-presets';
-import { assertExists, Slot } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { DataSourceBase, type PropertyMetaConfig } from '@algogrind/data-view';
+import { propertyPresets } from '@algogrind/data-view/property-presets';
+import { assertExists, Slot } from '@algogrind/global/utils';
 
 import type { BlockMeta } from './block-meta/base.js';
 import type { DataViewBlockModel } from './data-view-model.js';

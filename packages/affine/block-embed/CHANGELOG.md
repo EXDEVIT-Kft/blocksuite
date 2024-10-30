@@ -1,4 +1,4 @@
-# @blocksuite/affine-block-embed
+# @algogrind/affine-block-embed
 
 ## 0.17.22
 
@@ -33,14 +33,14 @@
   - refactor(database): menu ui (#8608)
 
 - Updated dependencies [ba9613a]
-  - @blocksuite/affine-block-surface@0.17.22
-  - @blocksuite/affine-components@0.17.22
-  - @blocksuite/affine-model@0.17.22
-  - @blocksuite/affine-shared@0.17.22
-  - @blocksuite/block-std@0.17.22
-  - @blocksuite/global@0.17.22
-  - @blocksuite/inline@0.17.22
-  - @blocksuite/store@0.17.22
+  - @algogrind/affine-block-surface@0.17.22
+  - @algogrind/affine-components@0.17.22
+  - @algogrind/affine-model@0.17.22
+  - @algogrind/affine-shared@0.17.22
+  - @algogrind/block-std@0.17.22
+  - @algogrind/global@0.17.22
+  - @algogrind/inline@0.17.22
+  - @algogrind/store@0.17.22
 
 ## 0.17.21
 
@@ -68,14 +68,14 @@
   - refactor(blocks): remove hover state after button pressed in mobile (#8586)
 
 - Updated dependencies [24db578]
-  - @blocksuite/affine-block-surface@0.17.21
-  - @blocksuite/affine-components@0.17.21
-  - @blocksuite/affine-model@0.17.21
-  - @blocksuite/affine-shared@0.17.21
-  - @blocksuite/block-std@0.17.21
-  - @blocksuite/global@0.17.21
-  - @blocksuite/inline@0.17.21
-  - @blocksuite/store@0.17.21
+  - @algogrind/affine-block-surface@0.17.21
+  - @algogrind/affine-components@0.17.21
+  - @algogrind/affine-model@0.17.21
+  - @algogrind/affine-shared@0.17.21
+  - @algogrind/block-std@0.17.21
+  - @algogrind/global@0.17.21
+  - @algogrind/inline@0.17.21
+  - @algogrind/store@0.17.21
 
 ## 0.17.20
 
@@ -121,14 +121,14 @@
   - perf(edgeless): use css var to place collaboration cursors-n-selections on board zoom change (#8543)
 
 - Updated dependencies [99d69d5]
-  - @blocksuite/affine-block-surface@0.17.20
-  - @blocksuite/affine-components@0.17.20
-  - @blocksuite/affine-model@0.17.20
-  - @blocksuite/affine-shared@0.17.20
-  - @blocksuite/block-std@0.17.20
-  - @blocksuite/global@0.17.20
-  - @blocksuite/inline@0.17.20
-  - @blocksuite/store@0.17.20
+  - @algogrind/affine-block-surface@0.17.20
+  - @algogrind/affine-components@0.17.20
+  - @algogrind/affine-model@0.17.20
+  - @algogrind/affine-shared@0.17.20
+  - @algogrind/block-std@0.17.20
+  - @algogrind/global@0.17.20
+  - @algogrind/inline@0.17.20
+  - @algogrind/store@0.17.20
 
 ## 0.17.19
 
@@ -136,21 +136,21 @@
 
 - b69b00e: ---
 
-  '@blocksuite/affine-block-list': patch
-  '@blocksuite/affine-block-paragraph': patch
-  '@blocksuite/affine-block-surface': patch
-  '@blocksuite/affine-components': patch
-  '@blocksuite/data-view': patch
-  '@blocksuite/affine-model': patch
-  '@blocksuite/affine-shared': patch
-  '@blocksuite/blocks': patch
-  '@blocksuite/docs': patch
-  '@blocksuite/block-std': patch
-  '@blocksuite/global': patch
-  '@blocksuite/inline': patch
-  '@blocksuite/store': patch
-  '@blocksuite/sync': patch
-  '@blocksuite/presets': patch
+  '@algogrind/affine-block-list': patch
+  '@algogrind/affine-block-paragraph': patch
+  '@algogrind/affine-block-surface': patch
+  '@algogrind/affine-components': patch
+  '@algogrind/data-view': patch
+  '@algogrind/affine-model': patch
+  '@algogrind/affine-shared': patch
+  '@algogrind/blocks': patch
+  '@algogrind/docs': patch
+  '@algogrind/block-std': patch
+  '@algogrind/global': patch
+  '@algogrind/inline': patch
+  '@algogrind/store': patch
+  '@algogrind/sync': patch
+  '@algogrind/presets': patch
 
   ***
 
@@ -213,14 +213,14 @@
   [docs: update link](https://github.com/toeverything/blocksuite/pull/8533)
 
 - Updated dependencies [b69b00e]
-  - @blocksuite/affine-block-surface@0.17.19
-  - @blocksuite/affine-components@0.17.19
-  - @blocksuite/affine-model@0.17.19
-  - @blocksuite/affine-shared@0.17.19
-  - @blocksuite/block-std@0.17.19
-  - @blocksuite/global@0.17.19
-  - @blocksuite/inline@0.17.19
-  - @blocksuite/store@0.17.19
+  - @algogrind/affine-block-surface@0.17.19
+  - @algogrind/affine-components@0.17.19
+  - @algogrind/affine-model@0.17.19
+  - @algogrind/affine-shared@0.17.19
+  - @algogrind/block-std@0.17.19
+  - @algogrind/global@0.17.19
+  - @algogrind/inline@0.17.19
+  - @algogrind/store@0.17.19
 
 ## 0.17.18
 
@@ -237,14 +237,14 @@
   - fix: press backspace at the start of first line when edgeless text exist. [#8498](https://github.com/toeverything/blocksuite/pull/8498)
 
 - Updated dependencies [9f70715]
-  - @blocksuite/affine-block-surface@0.17.18
-  - @blocksuite/affine-components@0.17.18
-  - @blocksuite/affine-model@0.17.18
-  - @blocksuite/affine-shared@0.17.18
-  - @blocksuite/block-std@0.17.18
-  - @blocksuite/global@0.17.18
-  - @blocksuite/inline@0.17.18
-  - @blocksuite/store@0.17.18
+  - @algogrind/affine-block-surface@0.17.18
+  - @algogrind/affine-components@0.17.18
+  - @algogrind/affine-model@0.17.18
+  - @algogrind/affine-shared@0.17.18
+  - @algogrind/block-std@0.17.18
+  - @algogrind/global@0.17.18
+  - @algogrind/inline@0.17.18
+  - @algogrind/store@0.17.18
 
 ## 0.17.17
 
@@ -270,14 +270,14 @@
   - fix: outline popup ref area [#8456](https://github.com/toeverything/blocksuite/pull/8456)
 
 - Updated dependencies [a89c9c1]
-  - @blocksuite/affine-block-surface@0.17.17
-  - @blocksuite/affine-components@0.17.17
-  - @blocksuite/affine-model@0.17.17
-  - @blocksuite/affine-shared@0.17.17
-  - @blocksuite/block-std@0.17.17
-  - @blocksuite/global@0.17.17
-  - @blocksuite/inline@0.17.17
-  - @blocksuite/store@0.17.17
+  - @algogrind/affine-block-surface@0.17.17
+  - @algogrind/affine-components@0.17.17
+  - @algogrind/affine-model@0.17.17
+  - @algogrind/affine-shared@0.17.17
+  - @algogrind/block-std@0.17.17
+  - @algogrind/global@0.17.17
+  - @algogrind/inline@0.17.17
+  - @algogrind/store@0.17.17
 
 ## 0.17.16
 
@@ -291,14 +291,14 @@
   - some ui improvements [#8446](https://github.com/toeverything/blocksuite/pull/8446), [#8450](https://github.com/toeverything/blocksuite/pull/8450)
 
 - Updated dependencies [ce9a242]
-  - @blocksuite/affine-block-surface@0.17.16
-  - @blocksuite/affine-components@0.17.16
-  - @blocksuite/affine-model@0.17.16
-  - @blocksuite/affine-shared@0.17.16
-  - @blocksuite/block-std@0.17.16
-  - @blocksuite/global@0.17.16
-  - @blocksuite/inline@0.17.16
-  - @blocksuite/store@0.17.16
+  - @algogrind/affine-block-surface@0.17.16
+  - @algogrind/affine-components@0.17.16
+  - @algogrind/affine-model@0.17.16
+  - @algogrind/affine-shared@0.17.16
+  - @algogrind/block-std@0.17.16
+  - @algogrind/global@0.17.16
+  - @algogrind/inline@0.17.16
+  - @algogrind/store@0.17.16
 
 ## 0.17.15
 
@@ -317,14 +317,14 @@
   - Chore: Upgraded non-major dependencies
   - Chore: Improved ThemeObserver and added tests
 - Updated dependencies [931315f]
-  - @blocksuite/affine-block-surface@0.17.15
-  - @blocksuite/affine-components@0.17.15
-  - @blocksuite/affine-model@0.17.15
-  - @blocksuite/affine-shared@0.17.15
-  - @blocksuite/block-std@0.17.15
-  - @blocksuite/global@0.17.15
-  - @blocksuite/inline@0.17.15
-  - @blocksuite/store@0.17.15
+  - @algogrind/affine-block-surface@0.17.15
+  - @algogrind/affine-components@0.17.15
+  - @algogrind/affine-model@0.17.15
+  - @algogrind/affine-shared@0.17.15
+  - @algogrind/block-std@0.17.15
+  - @algogrind/global@0.17.15
+  - @algogrind/inline@0.17.15
+  - @algogrind/store@0.17.15
 
 ## 0.17.14
 
@@ -338,14 +338,14 @@
   - Fix pasting multiple times when span nested in p.
   - Refactor range sync.
 - Updated dependencies [163cb11]
-  - @blocksuite/affine-block-surface@0.17.14
-  - @blocksuite/affine-components@0.17.14
-  - @blocksuite/affine-model@0.17.14
-  - @blocksuite/affine-shared@0.17.14
-  - @blocksuite/block-std@0.17.14
-  - @blocksuite/global@0.17.14
-  - @blocksuite/inline@0.17.14
-  - @blocksuite/store@0.17.14
+  - @algogrind/affine-block-surface@0.17.14
+  - @algogrind/affine-components@0.17.14
+  - @algogrind/affine-model@0.17.14
+  - @algogrind/affine-shared@0.17.14
+  - @algogrind/block-std@0.17.14
+  - @algogrind/global@0.17.14
+  - @algogrind/inline@0.17.14
+  - @algogrind/store@0.17.14
 
 ## 0.17.13
 
@@ -353,14 +353,14 @@
 
 - 9de68e3: Update mindmap uitls export
 - Updated dependencies [9de68e3]
-  - @blocksuite/affine-block-surface@0.17.13
-  - @blocksuite/affine-components@0.17.13
-  - @blocksuite/affine-model@0.17.13
-  - @blocksuite/affine-shared@0.17.13
-  - @blocksuite/block-std@0.17.13
-  - @blocksuite/global@0.17.13
-  - @blocksuite/inline@0.17.13
-  - @blocksuite/store@0.17.13
+  - @algogrind/affine-block-surface@0.17.13
+  - @algogrind/affine-components@0.17.13
+  - @algogrind/affine-model@0.17.13
+  - @algogrind/affine-shared@0.17.13
+  - @algogrind/block-std@0.17.13
+  - @algogrind/global@0.17.13
+  - @algogrind/inline@0.17.13
+  - @algogrind/store@0.17.13
 
 ## 0.17.12
 
@@ -372,21 +372,21 @@
   - fix(edgeless): failed to alt clone move frame when it contains container element
   - fix: wrong size limit config
 - Updated dependencies [c334c91]
-  - @blocksuite/affine-block-surface@0.17.12
-  - @blocksuite/affine-components@0.17.12
-  - @blocksuite/affine-model@0.17.12
-  - @blocksuite/affine-shared@0.17.12
-  - @blocksuite/block-std@0.17.12
-  - @blocksuite/global@0.17.12
-  - @blocksuite/inline@0.17.12
-  - @blocksuite/store@0.17.12
+  - @algogrind/affine-block-surface@0.17.12
+  - @algogrind/affine-components@0.17.12
+  - @algogrind/affine-model@0.17.12
+  - @algogrind/affine-shared@0.17.12
+  - @algogrind/block-std@0.17.12
+  - @algogrind/global@0.17.12
+  - @algogrind/inline@0.17.12
+  - @algogrind/store@0.17.12
 
 ## 0.17.11
 
 ### Patch Changes
 
 - 1052ebd: - Refactor drag handle widget
-  - Split embed blocks to `@blocksuite/affine-block-embed`
+  - Split embed blocks to `@algogrind/affine-block-embed`
   - Fix latex selected state in edgeless mode
   - Fix unclear naming
   - Fix prototype pollution
@@ -395,11 +395,11 @@
   - Add scroll anchoring widget
   - Add highlight selection
 - Updated dependencies [1052ebd]
-  - @blocksuite/affine-block-surface@0.17.11
-  - @blocksuite/affine-components@0.17.11
-  - @blocksuite/affine-model@0.17.11
-  - @blocksuite/affine-shared@0.17.11
-  - @blocksuite/block-std@0.17.11
-  - @blocksuite/global@0.17.11
-  - @blocksuite/inline@0.17.11
-  - @blocksuite/store@0.17.11
+  - @algogrind/affine-block-surface@0.17.11
+  - @algogrind/affine-components@0.17.11
+  - @algogrind/affine-model@0.17.11
+  - @algogrind/affine-shared@0.17.11
+  - @algogrind/block-std@0.17.11
+  - @algogrind/global@0.17.11
+  - @algogrind/inline@0.17.11
+  - @algogrind/store@0.17.11

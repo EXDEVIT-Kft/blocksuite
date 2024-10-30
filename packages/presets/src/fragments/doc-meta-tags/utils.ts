@@ -1,5 +1,5 @@
-import type { AffineTextAttributes } from '@blocksuite/blocks';
-import type { DocMeta } from '@blocksuite/store';
+import type { AffineTextAttributes } from '@algogrind/blocks';
+import type { DocMeta } from '@algogrind/store';
 import type { TemplateResult } from 'lit';
 
 export const DOC_BLOCK_CHILD_PADDING = 24;

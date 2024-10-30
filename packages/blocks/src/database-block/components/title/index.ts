@@ -1,10 +1,10 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
-import type { InlineRange } from '@blocksuite/inline';
-import type { Text } from '@blocksuite/store';
+import type { RichText } from '@algogrind/affine-components/rich-text';
+import type { InlineRange } from '@algogrind/inline';
+import type { Text } from '@algogrind/store';
 
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+import { getViewportElement } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

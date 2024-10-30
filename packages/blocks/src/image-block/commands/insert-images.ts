@@ -1,6 +1,6 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { getImageFilesFromLocal } from '@blocksuite/affine-shared/utils';
+import { getImageFilesFromLocal } from '@algogrind/affine-shared/utils';
 
 import { addSiblingImageBlock } from '../utils.js';
 

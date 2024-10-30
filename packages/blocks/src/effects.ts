@@ -1,21 +1,21 @@
-import type { BlockComponent } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockComponent } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { effects as blockEmbedEffects } from '@blocksuite/affine-block-embed/effects';
-import { effects as blockListEffects } from '@blocksuite/affine-block-list/effects';
-import { effects as blockParagraphEffects } from '@blocksuite/affine-block-paragraph/effects';
-import { effects as blockSurfaceEffects } from '@blocksuite/affine-block-surface/effects';
-import { effects as componentCaptionEffects } from '@blocksuite/affine-components/caption';
-import { effects as componentContextMenuEffects } from '@blocksuite/affine-components/context-menu';
-import { effects as componentDatePickerEffects } from '@blocksuite/affine-components/date-picker';
-import { effects as componentDragIndicatorEffects } from '@blocksuite/affine-components/drag-indicator';
-import { effects as componentPortalEffects } from '@blocksuite/affine-components/portal';
-import { effects as componentRichTextEffects } from '@blocksuite/affine-components/rich-text';
-import { effects as componentToolbarEffects } from '@blocksuite/affine-components/toolbar';
-import { effects as widgetScrollAnchoringEffects } from '@blocksuite/affine-widget-scroll-anchoring/effects';
-import { effects as stdEffects } from '@blocksuite/block-std/effects';
-import { effects as dataViewEffects } from '@blocksuite/data-view/effects';
-import { effects as inlineEffects } from '@blocksuite/inline/effects';
+import { effects as blockEmbedEffects } from '@algogrind/affine-block-embed/effects';
+import { effects as blockListEffects } from '@algogrind/affine-block-list/effects';
+import { effects as blockParagraphEffects } from '@algogrind/affine-block-paragraph/effects';
+import { effects as blockSurfaceEffects } from '@algogrind/affine-block-surface/effects';
+import { effects as componentCaptionEffects } from '@algogrind/affine-components/caption';
+import { effects as componentContextMenuEffects } from '@algogrind/affine-components/context-menu';
+import { effects as componentDatePickerEffects } from '@algogrind/affine-components/date-picker';
+import { effects as componentDragIndicatorEffects } from '@algogrind/affine-components/drag-indicator';
+import { effects as componentPortalEffects } from '@algogrind/affine-components/portal';
+import { effects as componentRichTextEffects } from '@algogrind/affine-components/rich-text';
+import { effects as componentToolbarEffects } from '@algogrind/affine-components/toolbar';
+import { effects as widgetScrollAnchoringEffects } from '@algogrind/affine-widget-scroll-anchoring/effects';
+import { effects as stdEffects } from '@algogrind/block-std/effects';
+import { effects as dataViewEffects } from '@algogrind/data-view/effects';
+import { effects as inlineEffects } from '@algogrind/inline/effects';
 
 import type { addAccordionChildCommand } from './accordion-block/commands/add-accordion-child.js';
 import type { splitAccordionTitleCommand } from './accordion-block/commands/split-accordion-title.js';

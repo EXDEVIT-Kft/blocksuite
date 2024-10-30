@@ -1,36 +1,36 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 import type {
   GfxController,
   GfxModel,
   LayerManager,
   PointTestOptions,
   ReorderingDirection,
-} from '@blocksuite/block-std/gfx';
-import type { IBound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import type { IBound } from '@algogrind/global/utils';
 
 import {
   type ElementRenderer,
   elementRenderers,
   type SurfaceBlockModel,
   type SurfaceContext,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type ConnectorElementModel,
   type FrameBlockModel,
   type GroupElementModel,
   MindmapElementModel,
   RootBlockSchema,
-} from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { clamp } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { clamp } from '@algogrind/affine-shared/utils';
 import {
   GfxControllerIdentifier,
   GfxExtensionIdentifier,
   isGfxContainerElm,
-} from '@blocksuite/block-std/gfx';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Bound, getCommonBound } from '@blocksuite/global/utils';
-import { type BlockModel, Slot } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Bound, getCommonBound } from '@algogrind/global/utils';
+import { type BlockModel, Slot } from '@algogrind/store';
 import { effect } from '@preact/signals-core';
 
 import type { EdgelessFrameManager } from './frame-manager.js';

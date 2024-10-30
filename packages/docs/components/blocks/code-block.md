@@ -4,4 +4,4 @@ This is a block used to display code snippets. The code highlighting of differen
 
 ## Reference
 
-- [`CodeBlockSchema`](/api/@blocksuite/blocks/variables/CodeBlockSchema.html)
+- [`CodeBlockSchema`](/api/@algogrind/blocks/variables/CodeBlockSchema.html)

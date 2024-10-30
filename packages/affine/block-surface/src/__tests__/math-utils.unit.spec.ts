@@ -11,8 +11,8 @@ import {
   rotatePoints,
   toDegree,
   toRadian,
-} from '@blocksuite/global/utils';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { describe, expect, it } from 'vitest';
 
 describe('Line', () => {

@@ -5,7 +5,7 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import {
   ArrowRightSmallIcon,
   DeleteIcon,

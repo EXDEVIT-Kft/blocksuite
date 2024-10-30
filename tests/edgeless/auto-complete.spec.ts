@@ -1,4 +1,4 @@
-import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@blocksuite/affine-model';
+import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@algogrind/affine-model';
 import { expect, type Page } from '@playwright/test';
 
 import { clickView, moveView } from '../utils/actions/click.js';

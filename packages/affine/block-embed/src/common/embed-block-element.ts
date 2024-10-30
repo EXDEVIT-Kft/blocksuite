@@ -1,27 +1,27 @@
 import type {
   EmbedCardStyle,
   GfxCompatibleProps,
-} from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 import type { TemplateResult } from 'lit';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_MIN_WIDTH,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   DocModeProvider,
   DragHandleConfigExtension,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   convertDragPreviewDocToEdgeless,
   convertDragPreviewEdgelessToDoc,
-} from '@blocksuite/affine-shared/utils';
-import { type BlockService, isGfxBlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { type BlockService, isGfxBlockComponent } from '@algogrind/block-std';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

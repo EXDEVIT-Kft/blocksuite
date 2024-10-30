@@ -1,4 +1,4 @@
-import type { SurfaceBlockModel } from '@blocksuite/blocks';
+import type { SurfaceBlockModel } from '@algogrind/blocks';
 
 import { beforeEach, expect, test } from 'vitest';
 

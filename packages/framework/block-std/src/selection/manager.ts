@@ -1,6 +1,6 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { DisposableGroup, Slot } from '@blocksuite/global/utils';
-import { nanoid, type StackItem } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { DisposableGroup, Slot } from '@algogrind/global/utils';
+import { nanoid, type StackItem } from '@algogrind/store';
 import { computed, signal } from '@preact/signals-core';
 
 import type { BlockStdScope } from '../scope/index.js';

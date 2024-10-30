@@ -1,18 +1,18 @@
 import type {
   SurfaceBlockModel,
   SurfaceBlockService,
-} from '@blocksuite/affine-block-surface';
-import type { Color, NoteBlockModel } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { Doc } from '@blocksuite/store';
+} from '@algogrind/affine-block-surface';
+import type { Color, NoteBlockModel } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { Doc } from '@algogrind/store';
 
 import {
   CanvasRenderer,
   elementRenderers,
-} from '@blocksuite/affine-block-surface';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { GfxControllerIdentifier, Viewport } from '@blocksuite/block-std/gfx';
-import { DisposableGroup, Slot } from '@blocksuite/global/utils';
+} from '@algogrind/affine-block-surface';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { GfxControllerIdentifier, Viewport } from '@algogrind/block-std/gfx';
+import { DisposableGroup, Slot } from '@algogrind/global/utils';
 
 import { getSurfaceBlock } from './utils.js';
 

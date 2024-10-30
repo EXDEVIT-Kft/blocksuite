@@ -1,9 +1,9 @@
 import type {
   EmbedLoomBlockUrlData,
   EmbedLoomModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { isAbortError } from '@blocksuite/affine-shared/utils';
+import { isAbortError } from '@algogrind/affine-shared/utils';
 
 import type { EmbedLoomBlockComponent } from './embed-loom-block.js';
 

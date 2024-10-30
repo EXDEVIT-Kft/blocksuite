@@ -1,8 +1,8 @@
-import type { CodeBlockModel } from '@blocksuite/affine-model';
+import type { CodeBlockModel } from '@algogrind/affine-model';
 
-import { HoverController } from '@blocksuite/affine-components/hover';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { sleep } from '@blocksuite/global/utils';
+import { HoverController } from '@algogrind/affine-components/hover';
+import { WidgetComponent } from '@algogrind/block-std';
+import { sleep } from '@algogrind/global/utils';
 import { offset } from '@floating-ui/dom';
 import { computed } from '@preact/signals-core';
 import { html } from 'lit';

@@ -1,15 +1,15 @@
-import { RefNodeSlotsProvider } from '@blocksuite/affine-components/rich-text';
-import { ParseDocUrlProvider } from '@blocksuite/affine-shared/services';
+import { RefNodeSlotsProvider } from '@algogrind/affine-components/rich-text';
+import { ParseDocUrlProvider } from '@algogrind/affine-shared/services';
 import {
   isValidUrl,
   normalizeUrl,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   BaseCellRenderer,
   createFromBaseCellRenderer,
   createIcon,
-} from '@blocksuite/data-view';
+} from '@algogrind/data-view';
 import { PenIcon } from '@blocksuite/icons/lit';
 import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';

@@ -1,4 +1,4 @@
-import { WithDisposable } from '@blocksuite/global/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

@@ -1,13 +1,13 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { DetailSlotProps } from '@blocksuite/data-view';
+import type { EditorHost } from '@algogrind/block-std';
+import type { DetailSlotProps } from '@algogrind/data-view';
 import type {
   KanbanSingleView,
   TableSingleView,
-} from '@blocksuite/data-view/view-presets';
+} from '@algogrind/data-view/view-presets';
 
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-components/rich-text';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { DefaultInlineManagerExtension } from '@algogrind/affine-components/rich-text';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

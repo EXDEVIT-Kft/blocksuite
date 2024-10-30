@@ -1,20 +1,20 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { Doc, DocMeta } from '@blocksuite/store';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { Doc, DocMeta } from '@algogrind/store';
 
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { WithDisposable } from '@algogrind/global/utils';
 import {
   type DeltaInsert,
   INLINE_ROOT_ATTR,
   type InlineRootElement,
   ZERO_WIDTH_NON_JOINER,
   ZERO_WIDTH_SPACE,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

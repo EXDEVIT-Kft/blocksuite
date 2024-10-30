@@ -1,4 +1,4 @@
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
+import { popupTargetFromElement } from '@algogrind/affine-components/context-menu';
 import { html } from 'lit/static-html.js';
 
 import { BaseCellRenderer } from '../../core/property/index.js';

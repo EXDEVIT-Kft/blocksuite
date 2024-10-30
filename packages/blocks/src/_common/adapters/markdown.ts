@@ -1,5 +1,5 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-components/rich-text';
-import type { DeltaInsert } from '@blocksuite/inline/types';
+import type { AffineTextAttributes } from '@algogrind/affine-components/rich-text';
+import type { DeltaInsert } from '@algogrind/inline/types';
 import type { Heading, Root, RootContentMap, TableRow } from 'mdast';
 
 import {
@@ -7,9 +7,9 @@ import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
   type SerializedCells,
-} from '@blocksuite/affine-model';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { assertExists, sha } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { assertExists, sha } from '@algogrind/global/utils';
 import {
   type AssetsManager,
   ASTWalker,
@@ -28,7 +28,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { format } from 'date-fns/format';
 import remarkMath from 'remark-math';
 import remarkParse from 'remark-parse';

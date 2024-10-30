@@ -1,21 +1,21 @@
 import type {
   DatabaseBlockModel,
   RootBlockModel,
-} from '@blocksuite/affine-model';
-import type { DetailSlotProps, SingleView } from '@blocksuite/data-view';
-import type { BaseTextAttributes } from '@blocksuite/inline';
-import type { Text } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { DetailSlotProps, SingleView } from '@algogrind/data-view';
+import type { BaseTextAttributes } from '@algogrind/inline';
+import type { Text } from '@algogrind/store';
 
 import {
   type AffineTextAttributes,
   REFERENCE_NODE,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   createDefaultDoc,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { type EditorHost, ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

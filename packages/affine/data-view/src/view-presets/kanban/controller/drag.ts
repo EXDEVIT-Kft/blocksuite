@@ -1,7 +1,7 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 import type { ReactiveController } from 'lit';
 
-import { assertExists, Point, Rect } from '@blocksuite/global/utils';
+import { assertExists, Point, Rect } from '@algogrind/global/utils';
 
 import type { DataViewKanban } from '../kanban-view.js';
 

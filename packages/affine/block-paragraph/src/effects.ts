@@ -1,4 +1,4 @@
-import type { IndentContext } from '@blocksuite/affine-shared/types';
+import type { IndentContext } from '@algogrind/affine-shared/types';
 
 import type { addParagraphCommand } from './commands/add-paragraph.js';
 import type { appendParagraphCommand } from './commands/append-paragraph.js';

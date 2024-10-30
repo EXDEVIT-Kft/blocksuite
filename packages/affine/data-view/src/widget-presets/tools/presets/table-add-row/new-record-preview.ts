@@ -1,4 +1,4 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 

@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/affine-widget-scroll-anchoring",
+  "name": "@algogrind/affine-widget-scroll-anchoring",
   "version": "0.17.23",
   "description": "Affine scroll anchoring widget.",
   "type": "module",
@@ -19,10 +19,10 @@
   "author": "toeverything",
   "license": "MPL-2.0",
   "dependencies": {
-    "@blocksuite/affine-model": "workspace:*",
-    "@blocksuite/affine-shared": "workspace:*",
-    "@blocksuite/block-std": "workspace:*",
-    "@blocksuite/global": "workspace:*",
+    "@algogrind/affine-model": "workspace:*",
+    "@algogrind/affine-shared": "workspace:*",
+    "@algogrind/block-std": "workspace:*",
+    "@algogrind/global": "workspace:*",
     "@preact/signals-core": "^1.8.0",
     "@toeverything/theme": "^1.0.15",
     "lit": "^3.2.0"

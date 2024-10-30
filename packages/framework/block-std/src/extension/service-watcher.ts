@@ -1,6 +1,6 @@
-import type { Container } from '@blocksuite/global/di';
+import type { Container } from '@algogrind/global/di';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { BlockStdScope } from '../scope/index.js';
 import type { BlockService } from './service.js';

@@ -1,7 +1,7 @@
-import type { Doc, DocCollection } from '@blocksuite/store';
+import type { Doc, DocCollection } from '@algogrind/store';
 
-import { sha } from '@blocksuite/global/utils';
-import { extMimeMap, Job } from '@blocksuite/store';
+import { sha } from '@algogrind/global/utils';
+import { extMimeMap, Job } from '@algogrind/store';
 
 import { HtmlAdapter } from '../adapters/index.js';
 import {

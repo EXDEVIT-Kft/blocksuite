@@ -2,18 +2,18 @@ import type {
   Connection,
   ConnectorElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
-import type { XYWH } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { XYWH } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
   CommonUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   FontFamilyIcon,
   FrameIcon,
   SmallNoteIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   DEFAULT_NOTE_WIDTH,
@@ -28,22 +28,22 @@ import {
   NoteBlockModel,
   ShapeStyle,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { captureEventTarget } from '@blocksuite/affine-shared/utils';
-import { type BlockStdScope, stdContext } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-shared/services';
+import { captureEventTarget } from '@algogrind/affine-shared/utils';
+import { type BlockStdScope, stdContext } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import {
   assertInstanceOf,
   Bound,
   serializeXYWH,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { consume } from '@lit/context';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';

@@ -1,6 +1,6 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import { BlockComponent, type BlockService } from '@blocksuite/block-std';
+import { BlockComponent, type BlockService } from '@algogrind/block-std';
 import { html, nothing } from 'lit';
 import { createRef, type Ref, ref } from 'lit/directives/ref.js';
 import { type StyleInfo, styleMap } from 'lit/directives/style-map.js';

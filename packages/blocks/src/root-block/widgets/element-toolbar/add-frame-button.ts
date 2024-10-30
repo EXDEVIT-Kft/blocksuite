@@ -1,7 +1,7 @@
-import { FrameIcon } from '@blocksuite/affine-components/icons';
-import { MindmapElementModel } from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+import { FrameIcon } from '@algogrind/affine-components/icons';
+import { MindmapElementModel } from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

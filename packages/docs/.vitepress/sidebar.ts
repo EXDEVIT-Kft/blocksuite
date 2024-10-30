@@ -101,17 +101,17 @@ export const reference: DefaultTheme.NavItem[] = [
   {
     text: 'API Reference',
     items: [
-      { text: '@blocksuite/store', link: 'api/@blocksuite/store/index' },
+      { text: '@algogrind/store', link: 'api/@algogrind/store/index' },
       {
-        text: '@blocksuite/block-std',
-        link: 'api/@blocksuite/block-std/index',
+        text: '@algogrind/block-std',
+        link: 'api/@algogrind/block-std/index',
       },
-      { text: '@blocksuite/inline', link: 'api/@blocksuite/inline/index' },
+      { text: '@algogrind/inline', link: 'api/@algogrind/inline/index' },
       {
-        text: '@blocksuite/presets',
-        link: 'api/@blocksuite/presets/index',
+        text: '@algogrind/presets',
+        link: 'api/@algogrind/presets/index',
       },
-      { text: '@blocksuite/blocks', link: 'api/@blocksuite/blocks/index' },
+      { text: '@algogrind/blocks', link: 'api/@algogrind/blocks/index' },
     ],
   },
 ];

@@ -1,7 +1,7 @@
-import type { UIEventStateContext } from '@blocksuite/block-std';
+import type { UIEventStateContext } from '@algogrind/block-std';
 import type { ReactiveController } from 'lit';
 
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@algogrind/affine-components/toast';
 
 import type { Cell } from '../../../core/view-manager/cell.js';
 import type { Row } from '../../../core/view-manager/row.js';

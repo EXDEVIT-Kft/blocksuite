@@ -1,4 +1,4 @@
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { CloseIcon, SearchIcon } from '@blocksuite/icons/lit';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';

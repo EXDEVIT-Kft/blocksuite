@@ -2,9 +2,9 @@ import {
   createPopup,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { CloseIcon, FilterIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { css, html, type TemplateResult } from 'lit';

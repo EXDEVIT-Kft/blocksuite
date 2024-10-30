@@ -1,4 +1,4 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
+import type { ReferenceInfo } from '@algogrind/affine-model';
 import type {
   AttributeRenderer,
   BaseTextAttributes,
@@ -6,8 +6,8 @@ import type {
   InlineEditor,
   InlineRange,
   KeyboardBindingHandler,
-} from '@blocksuite/inline';
-import type { Y } from '@blocksuite/store';
+} from '@algogrind/inline';
+import type { Y } from '@algogrind/store';
 import type { ZodTypeAny } from 'zod';
 
 export interface AffineTextAttributes {

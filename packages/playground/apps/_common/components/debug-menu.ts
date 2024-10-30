@@ -1,9 +1,9 @@
-import type { SerializedXYWH } from '@blocksuite/global/utils';
-import type { DeltaInsert } from '@blocksuite/inline/types';
+import type { SerializedXYWH } from '@algogrind/global/utils';
+import type { DeltaInsert } from '@algogrind/inline/types';
 import type { SlDropdown } from '@shoelace-style/shoelace';
 import type { Pane } from 'tweakpane';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   type AffineTextAttributes,
   ColorScheme,
@@ -24,9 +24,9 @@ import {
   StyleVariables,
   toast,
   ZipTransformer,
-} from '@blocksuite/blocks';
-import { AffineEditorContainer, type CommentPanel } from '@blocksuite/presets';
-import { type DocCollection, Job, Text } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { AffineEditorContainer, type CommentPanel } from '@algogrind/presets';
+import { type DocCollection, Job, Text } from '@algogrind/store';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 import '@shoelace-style/shoelace/dist/components/button-group/button-group.js';
 import '@shoelace-style/shoelace/dist/components/color-picker/color-picker.js';
@@ -72,7 +72,7 @@ let styleDebugMenuLoaded = false;
 
 function initStyleDebugMenu(
   styleMenu: Pane,
-  { writer, reader }: { [K in 'writer' | 'reader']: CSSStyleDeclaration }
+  { writer, reader }: Record<'writer' | 'reader', CSSStyleDeclaration>
 ) {
   const sizeFolder = styleMenu.addFolder({ title: 'Size', expanded: false });
   const fontFamilyFolder = styleMenu.addFolder({

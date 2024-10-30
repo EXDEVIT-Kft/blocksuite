@@ -1,4 +1,4 @@
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 export type ElementCreationSource =
   | 'shortcut'

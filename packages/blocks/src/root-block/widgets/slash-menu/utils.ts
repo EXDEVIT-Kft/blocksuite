@@ -1,8 +1,8 @@
-import type { TextFormatConfig } from '@blocksuite/affine-components/rich-text';
-import type { BlockModel } from '@blocksuite/store';
+import type { TextFormatConfig } from '@algogrind/affine-components/rich-text';
+import type { BlockModel } from '@algogrind/store';
 
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import { assertType } from '@blocksuite/global/utils';
+import { isInsideBlockByFlavour } from '@algogrind/affine-shared/utils';
+import { assertType } from '@algogrind/global/utils';
 
 import type { TextConversionConfig } from '../../../_common/configs/text-conversion.js';
 import type {
