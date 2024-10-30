@@ -1,7 +1,7 @@
 import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
 import type {
   Chain,
-  CommandKeyToData,
+  //CommandKeyToData,
   InitCommandCtx,
 } from '@blocksuite/block-std';
 
@@ -11,7 +11,7 @@ import {
   CheckBoxIcon,
   CodeIcon,
   CopyIcon,
-  DatabaseTableViewIcon20,
+  //DatabaseTableViewIcon20,
   DeleteIcon,
   DuplicateIcon,
   Heading1Icon,
@@ -33,7 +33,7 @@ import {
 import { toast } from '@blocksuite/affine-components/toast';
 import { renderGroups } from '@blocksuite/affine-components/toolbar';
 //import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { tableViewMeta } from '@blocksuite/data-view/view-presets';
+//import { tableViewMeta } from '@blocksuite/data-view/view-presets';
 import { assertExists } from '@blocksuite/global/utils';
 import { Slice } from '@blocksuite/store';
 import { html, type TemplateResult } from 'lit';
@@ -46,8 +46,8 @@ import type { AffineFormatBarWidget } from './format-bar.js';
   notifyDocCreated,
   promptDocTitle,
 } from '../../../_common/utils/render-linked-doc.js';*/
-import { convertToDatabase } from '../../../database-block/data-source.js';
-import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils.js';
+//import { convertToDatabase } from '../../../database-block/data-source.js';
+//import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils.js';
 import { FormatBarContext } from './context.js';
 
 export type DividerConfigItem = {
@@ -145,7 +145,7 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
     })
     .addDivider()
     .addHighlighterDropdown()
-    .addDivider()
+    /*.addDivider()
     .addInlineAction({
       id: 'convert-to-database',
       name: 'Create Table',
@@ -196,7 +196,7 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
       },
     })
     .addDivider()
-    /*.addInlineAction({
+    .addInlineAction({
       id: 'convert-to-linked-doc',
       name: 'Új Hivatkozott Dokumentum',
       icon: LinkedDocIcon,

@@ -16,8 +16,8 @@ import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
   CopyIcon,
-  DatabaseKanbanViewIcon20,
-  DatabaseTableViewIcon20,
+  //DatabaseKanbanViewIcon20,
+  //DatabaseTableViewIcon20,
   DeleteIcon,
   FileIcon,
   FrameIcon,
@@ -42,12 +42,12 @@ import {
   //createDefaultDoc,
   openFileOrFiles,
 } from '@blocksuite/affine-shared/utils';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
+//import { viewPresets } from '@blocksuite/data-view/view-presets';
 //import { assertType } from '@blocksuite/global/utils';
 import { DualLinkIcon, GroupingIcon, TeXIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
 
-import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
+//import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
 import type { RootBlockComponent } from '../../types.js';
 //import type { AffineLinkedDocWidget } from '../linked-doc/index.js';
 
@@ -905,6 +905,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
+    /*
     { groupName: 'Adatbázis' },
     {
       name: 'Táblázat Nézet',
@@ -978,7 +979,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           })
           .run();
       },
-    },
+    },*/
 
     // ---------------------------------------------------------
     { groupName: 'Műveletek' },
