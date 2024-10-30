@@ -284,7 +284,7 @@ import { AffineImageToolbar } from './root-block/widgets/image-toolbar/component
 import { AFFINE_IMAGE_TOOLBAR_WIDGET } from './root-block/widgets/image-toolbar/index.js';
 import { AFFINE_INNER_MODAL_WIDGET } from './root-block/widgets/inner-modal/inner-modal.js';
 import { effects as widgetMobileToolbarEffects } from './root-block/widgets/keyboard-toolbar/effects.js';
-import { ImportDoc } from './root-block/widgets/linked-doc/import-doc/import-doc.js';
+//import { ImportDoc } from './root-block/widgets/linked-doc/import-doc/import-doc.js';
 import { AFFINE_LINKED_DOC_WIDGET } from './root-block/widgets/linked-doc/index.js';
 import { LinkedDocPopover } from './root-block/widgets/linked-doc/linked-doc-popover.js';
 import { AffineCustomModal } from './root-block/widgets/modal/custom-modal.js';
@@ -628,7 +628,7 @@ export function effects() {
     'edgeless-change-attachment-button',
     EdgelessChangeAttachmentButton
   );
-  customElements.define('import-doc', ImportDoc);
+  //customElements.define('import-doc', ImportDoc);
   customElements.define('edgeless-more-button', EdgelessMoreButton);
   customElements.define('edgeless-shape-style-panel', EdgelessShapeStylePanel);
   customElements.define(

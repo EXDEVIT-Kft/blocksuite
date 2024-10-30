@@ -396,6 +396,6 @@ export const BUILT_IN_GROUPS = [
   reorderGroup,
   openGroup,
   clipboardGroup,
-  conversionsGroup,
+  //conversionsGroup,
   deleteGroup,
 ];

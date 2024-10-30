@@ -121,6 +121,71 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
 
             <edgeless-tool-icon-button
               .activeMode=${'background'}
+              .tooltip=${'Fájl'}
+              @click=${async () => {
+                const file = await openFileOrFiles();
+                if (!file) return;
+                await addAttachments(this.edgeless.std, [file]);
+                this.edgeless.gfx.tool.setTool('default');
+                this.edgeless.std
+                  .getOptional(TelemetryProvider)
+                  ?.track('CanvasElementAdded', {
+                    control: 'toolbar:general',
+                    page: 'whiteboard editor',
+                    module: 'toolbar',
+                    segment: 'toolbar',
+                    type: 'attachment',
+                  });
+              }}
+            >
+              ${AttachmentIcon}
+            </edgeless-tool-icon-button>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- add to note -->
+          <div class="button-group-container">
+            ${repeat(
+              NOTE_MENU_ITEMS,
+              item => item.childFlavour,
+              item => html`
+                <edgeless-tool-icon-button
+                  .active=${childType === item.childType}
+                  .activeMode=${'background'}
+                  .tooltip=${item.tooltip}
+                  @click=${() =>
+                    this.onChange({
+                      childFlavour: item.childFlavour,
+                      childType: item.childType,
+                      tip: item.tooltip,
+                    })}
+                >
+                  ${item.icon}
+                </edgeless-tool-icon-button>
+              `
+            )}
+          </div>
+        </div>
+      </edgeless-slide-menu>
+    `;
+
+    return html`
+      <edgeless-slide-menu>
+        <div class="menu-content">
+          <!-- add to edgeless -->
+          <div class="button-group-container">
+            <edgeless-tool-icon-button
+              .activeMode=${'background'}
+              .tooltip=${'Kép'}
+              @click=${this._addImages}
+              .disabled=${this._imageLoading}
+            >
+              ${ImageIcon}
+            </edgeless-tool-icon-button>
+
+            <edgeless-tool-icon-button
+              .activeMode=${'background'}
               .tooltip=${getTooltipWithShortcut('Link', '@')}
               @click=${() => {
                 this._onHandleLinkButtonClick();

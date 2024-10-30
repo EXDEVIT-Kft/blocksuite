@@ -23,33 +23,33 @@ import {
   FrameIcon,
   HeadingIcon,
   ImageIcon20,
-  LinkedDocIcon,
+  //LinkedDocIcon,
   LinkIcon,
-  NewDocIcon,
+  //NewDocIcon,
   NowIcon,
   TodayIcon,
   TomorrowIcon,
   YesterdayIcon,
 } from '@blocksuite/affine-components/icons';
 import {
-  getInlineEditorByModel,
+  //getInlineEditorByModel,
   insertContent,
-  REFERENCE_NODE,
+  //REFERENCE_NODE,
   textFormatConfigs,
 } from '@blocksuite/affine-components/rich-text';
 import { toast } from '@blocksuite/affine-components/toast';
 import {
-  createDefaultDoc,
+  //createDefaultDoc,
   openFileOrFiles,
 } from '@blocksuite/affine-shared/utils';
 import { viewPresets } from '@blocksuite/data-view/view-presets';
-import { assertType } from '@blocksuite/global/utils';
+//import { assertType } from '@blocksuite/global/utils';
 import { DualLinkIcon, GroupingIcon, TeXIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
 
 import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
 import type { RootBlockComponent } from '../../types.js';
-import type { AffineLinkedDocWidget } from '../linked-doc/index.js';
+//import type { AffineLinkedDocWidget } from '../linked-doc/index.js';
 
 import { toggleEmbedCardCreateModal } from '../../../_common/components/embed-card/modal/embed-card-create-modal.js';
 import { textConversionConfigs } from '../../../_common/configs/text-conversion.js';
@@ -530,7 +530,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       .map<SlashMenuActionItem>(createTextFormatItem),
 
     // ---------------------------------------------------------
-    {
+    /*{
       groupName: 'Oldalak',
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
@@ -598,7 +598,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           linkedDocWidget.showLinkedDocPopover(inlineEditor, triggerKey);
         });
       },
-    },
+    },*/
 
     // ---------------------------------------------------------
     { groupName: 'Tartalom & Média' },

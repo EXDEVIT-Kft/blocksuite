@@ -21,7 +21,7 @@ import {
   Heading5Icon,
   Heading6Icon,
   ItalicIcon,
-  LinkedDocIcon,
+  //LinkedDocIcon,
   LinkIcon,
   MoreVerticalIcon,
   NumberedListIcon,
@@ -32,7 +32,7 @@ import {
 } from '@blocksuite/affine-components/icons';
 import { toast } from '@blocksuite/affine-components/toast';
 import { renderGroups } from '@blocksuite/affine-components/toolbar';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+//import { TelemetryProvider } from '@blocksuite/affine-shared/services';
 import { tableViewMeta } from '@blocksuite/data-view/view-presets';
 import { assertExists } from '@blocksuite/global/utils';
 import { Slice } from '@blocksuite/store';
@@ -40,12 +40,12 @@ import { html, type TemplateResult } from 'lit';
 
 import type { AffineFormatBarWidget } from './format-bar.js';
 
-import {
+/*import {
   convertSelectedBlocksToLinkedDoc,
   getTitleFromSelectedModels,
   notifyDocCreated,
   promptDocTitle,
-} from '../../../_common/utils/render-linked-doc.js';
+} from '../../../_common/utils/render-linked-doc.js';*/
 import { convertToDatabase } from '../../../database-block/data-source.js';
 import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils.js';
 import { FormatBarContext } from './context.js';
@@ -196,7 +196,7 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
       },
     })
     .addDivider()
-    .addInlineAction({
+    /*.addInlineAction({
       id: 'convert-to-linked-doc',
       name: 'Új Hivatkozott Dokumentum',
       icon: LinkedDocIcon,
@@ -245,7 +245,7 @@ export function toolbarDefaultConfig(toolbar: AffineFormatBarWidget) {
         const { selectedModels } = ctx;
         return !!selectedModels && selectedModels.length > 0;
       },
-    })
+    })*/
     .addBlockTypeSwitch({
       flavour: 'affine:paragraph',
       type: 'text',

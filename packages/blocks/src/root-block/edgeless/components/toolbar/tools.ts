@@ -7,7 +7,7 @@ import type { EdgelessRootBlockComponent } from '../../edgeless-root-block.js';
 
 import { buildConnectorDenseMenu } from './connector/connector-dense-menu.js';
 import { buildFrameDenseMenu } from './frame/frame-dense-menu.js';
-import { buildLinkDenseMenu } from './link/link-dense-menu.js';
+//import { buildLinkDenseMenu } from './link/link-dense-menu.js';
 
 export interface QuickTool {
   type?: keyof GfxToolsMap;
@@ -97,12 +97,12 @@ export const getQuickTools = ({
   // }
 
   // Link
-  quickTools.push({
+  /*quickTools.push({
     content: html`<edgeless-link-tool-button
       .edgeless=${edgeless}
     ></edgeless-link-tool-button>`,
     menu: buildLinkDenseMenu(edgeless),
-  });
+  });*/
   return quickTools;
 };
 
