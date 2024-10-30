@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/affine-widget-scroll-anchoring",
+  "name": "@blocksuite/affine-widget-scroll-anchoring",
   "version": "0.17.23",
   "description": "Affine scroll anchoring widget.",
   "type": "module",

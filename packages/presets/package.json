@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/presets",
+  "name": "@blocksuite/presets",
   "version": "0.17.23",
   "description": "Prebuilt BlockSuite editors and opt-in additional UI components.",
   "type": "module",

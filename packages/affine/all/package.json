@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/affine",
+  "name": "@blocksuite/affine",
   "version": "0.17.23",
   "description": "BlockSuite for Affine",
   "type": "module",

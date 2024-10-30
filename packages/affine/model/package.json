@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/affine-model",
+  "name": "@blocksuite/affine-model",
   "version": "0.17.23",
   "description": "Models for BlockSuite in Affine.",
   "type": "module",

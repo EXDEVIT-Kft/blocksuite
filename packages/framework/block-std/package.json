@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/block-std",
+  "name": "@blocksuite/block-std",
   "version": "0.17.22",
   "description": "Std for blocksuite blocks",
   "type": "module",

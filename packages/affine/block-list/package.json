@@ -1,5 +1,5 @@
 {
-  "name": "@algogrind/affine-block-list",
+  "name": "@blocksuite/affine-block-list",
   "version": "0.17.23",
   "description": "List block for BlockSuite.",
   "type": "module",
