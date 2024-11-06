@@ -804,7 +804,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         .map(block => block.model as FrameBlockModel);
 
       const frameItems = frameModels.map<SlashMenuActionItem>(frameModel => ({
-        name: 'Frame: ' + frameModel.title,
+        name: 'Keret: ' + frameModel.title,
         icon: FrameIcon,
         action: ({ rootComponent }) => {
           rootComponent.std.command

@@ -74,7 +74,7 @@ export class FrameTool extends BaseTool {
         'affine:frame',
         {
           title: new Text(
-            new DocCollection.Y.Text(`Frame ${frames.length + 1}`)
+            new DocCollection.Y.Text(`Keret ${frames.length + 1}`)
           ),
           xywh: Bound.fromPoints([this._startPoint, currentPoint]).serialize(),
         },

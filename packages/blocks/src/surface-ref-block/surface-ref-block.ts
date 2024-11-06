@@ -530,7 +530,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
             REF_LABEL_ICON.DEFAULT}
             <span>${title}</span>
           </div>
-          <div class="suffix">from edgeless mode</div>
+          <div class="suffix">Rajztábla nézetből</div>
         </div>
       </div>
     `;
