@@ -161,6 +161,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         width: '20',
         height: '20',
       }),
+      tooltip: slashMenuToolTips['Sorközi Egyenlet'],
       alias: ['matematika', 'számolás', 'latex'],
       action: ({ rootComponent }) => {
         rootComponent.std.command
@@ -182,7 +183,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő címsor 1',
       ],
       icon: ArrowUpSmallIcon,
-      tooltip: slashMenuToolTips['Weboldal'],
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
@@ -231,7 +232,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő címsor 2',
       ],
       icon: ArrowUpSmallIcon,
-      tooltip: slashMenuToolTips['Weboldal'],
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
@@ -280,7 +281,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő címsor 3',
       ],
       icon: ArrowUpSmallIcon,
-      tooltip: slashMenuToolTips['Weboldal'],
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
@@ -334,7 +335,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő címsor 4',
           ],
           icon: ArrowUpSmallIcon,
-          tooltip: slashMenuToolTips['Weboldal'],
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
@@ -383,7 +384,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő címsor 5',
           ],
           icon: ArrowUpSmallIcon,
-          tooltip: slashMenuToolTips['Weboldal'],
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
@@ -432,7 +433,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő címsor 6',
           ],
           icon: ArrowUpSmallIcon,
-          tooltip: slashMenuToolTips['Weboldal'],
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
           action: ({ rootComponent, model }) => {
@@ -478,7 +479,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Összecsukható Szöveg elem.',
       alias: ['accordion', 'accordion text', 'legördülő', 'legördülő szöveg'],
       icon: ArrowUpSmallIcon,
-      tooltip: slashMenuToolTips['Weboldal'],
+      tooltip: slashMenuToolTips['Összecsukható Szöveg'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
       action: ({ rootComponent, model }) => {
@@ -772,6 +773,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         width: '20',
         height: '20',
       }),
+      tooltip: slashMenuToolTips['Egyenlet'],
       alias: ['equation', 'matematika', 'latex'],
       action: ({ rootComponent }) => {
         rootComponent.std.command
@@ -861,7 +863,6 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         {
           name: 'Ma',
           icon: TodayIcon,
-          tooltip: slashMenuToolTips['Ma'],
           alias: ['today'],
           description: formatDate(now),
           action: ({ rootComponent, model }) => {
@@ -871,7 +872,6 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         {
           name: 'Holnap',
           icon: TomorrowIcon,
-          tooltip: slashMenuToolTips['Holnap'],
           alias: ['tomorrow'],
           description: formatDate(tomorrow),
           action: ({ rootComponent, model }) => {
@@ -883,7 +883,6 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         {
           name: 'Tegnap',
           icon: YesterdayIcon,
-          tooltip: slashMenuToolTips['Tegnap'],
           alias: ['yesterday'],
           description: formatDate(yesterday),
           action: ({ rootComponent, model }) => {
@@ -895,7 +894,6 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         {
           name: 'Most',
           icon: NowIcon,
-          tooltip: slashMenuToolTips['Most'],
           alias: ['now'],
           description: formatTime(now),
           action: ({ rootComponent, model }) => {

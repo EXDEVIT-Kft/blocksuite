@@ -9,11 +9,11 @@ export const NumberedListTooltip = html`<svg width="170" height="68" viewBox="0 
 <g clip-path="url(#clip0_16460_947)">
 <text fill="#1C81D9" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="10" y="29.6364">1.</tspan></text>
 </g>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="29.6364">Here&#39;s an example of a numbered list.</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="29.6364">Ez egy példa szöveg amely bemutatja</tspan></text>
 <g clip-path="url(#clip1_16460_947)">
 <text fill="#1C81D9" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="10" y="45.6364">2.</tspan></text>
 </g>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="45.6364">You can list your plans such as this</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="45.6364">a blokkok elrendezését és formázását</tspan></text>
 </g>
 <defs>
 <clipPath id="clip0_16460_947">

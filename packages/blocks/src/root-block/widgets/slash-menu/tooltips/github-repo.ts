@@ -7,11 +7,11 @@ export const GithubRepoTooltip = html`<svg width="170" height="68" viewBox="0 0 
 </mask>
 <g mask="url(#mask0_16460_1028)">
 <rect x="6.5" y="28.5" width="169" height="67" rx="3.5" fill="white" stroke="#E3E2E4"/>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="18" y="46.7727">toeverything/</tspan></text>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="9" font-weight="bold" letter-spacing="0em"><tspan x="75.041" y="46.7727">AFFiNE</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="18" y="46.7727">algogrind/</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="9" font-weight="bold" letter-spacing="0em"><tspan x="75.041" y="46.7727">education</tspan></text>
 <text fill="#8E8D91" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="7" letter-spacing="0em"><tspan x="18" y="57.5455">Write, Draw and Plan All at Once.</tspan></text>
 <rect x="146" y="38" width="24" height="24" fill="url(#pattern0_16460_1028)"/>
-<text fill="#8E8D91" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="10" y="18.6364">Link to a GitHub repository.</tspan></text>
+<text fill="#8E8D91" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="10" y="18.6364">Hivatkozz egy GitHub forrásra.</tspan></text>
 </g>
 <defs>
 <pattern id="pattern0_16460_1028" patternContentUnits="objectBoundingBox" width="1" height="1">

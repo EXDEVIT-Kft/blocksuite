@@ -7,7 +7,7 @@ export const QuoteTooltip = html`<svg width="170" height="68" viewBox="0 0 170 6
 </mask>
 <g mask="url(#mask0_16460_920)">
 <rect x="12" y="14" width="2" height="33" rx="1" fill="#C2C1C5"/>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="26.6364">In a decentralized system, we can have a </tspan><tspan x="24" y="40.6364">kaleidoscopic complexity to our data.&#10;…</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="24" y="26.6364">Ez egy példa szöveg, amely bemutatja </tspan><tspan x="24" y="40.6364">a blokkok elrendezését és formázását&#10;…</tspan></text>
 </g>
 </svg>
 `;

@@ -1,5 +1,7 @@
 import type { TemplateResult } from 'lit';
 
+import { AccordionTooltip } from './accordion.js';
+import { AccordionTextTooltip } from './accordion-text.js';
 import { AttachmentTooltip } from './attachment.js';
 import { BoldTextTooltip } from './bold-text.js';
 import { BulletedListTooltip } from './bulleted-list.js';
@@ -8,6 +10,7 @@ import { CopyTooltip } from './copy.js';
 import { DeleteTooltip } from './delete.js';
 import { DividerTooltip } from './divider.js';
 import { EdgelessTooltip } from './edgeless.js';
+import { EquationTooltip } from './equation.js';
 import { FigmaTooltip } from './figma.js';
 import { GithubRepoTooltip } from './github-repo.js';
 import { Heading1Tooltip } from './heading-1.js';
@@ -18,6 +21,7 @@ import { Heading5Tooltip } from './heading-5.js';
 import { Heading6Tooltip } from './heading-6.js';
 import { ItalicTooltip } from './italic.js';
 import { KanbanViewTooltip } from './kanban-view.js';
+import { LineEquationTooltip } from './line-equation.js';
 import { LinearTooltip } from './linear.js';
 import { LinkTooltip } from './link.js';
 import { LinkDocTooltip } from './link-doc.js';
@@ -238,5 +242,24 @@ export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
   'Csoport & Keret': {
     figure: EdgelessTooltip,
     caption: 'Vászon eszközök',
+  },
+
+  Egyenlet: {
+    figure: EquationTooltip,
+    caption: 'Egyenlet',
+  },
+  'Sorközi Egyenlet': {
+    figure: LineEquationTooltip,
+    caption: 'Sorközi Egyenlet',
+  },
+
+  'Összecsukható Címsor': {
+    figure: AccordionTooltip,
+    caption: 'Összecsukható Címsor',
+  },
+
+  'Összecsukható Szöveg': {
+    figure: AccordionTextTooltip,
+    caption: 'Összecsukható Szöveg',
   },
 };

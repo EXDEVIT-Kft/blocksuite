@@ -9,7 +9,7 @@ export const EdgelessTooltip = html`<svg width="170" height="106" viewBox="0 0 1
 <rect x="100.5" y="42.6565" width="141" height="51" stroke="#1E96EB" stroke-width="3" stroke-dasharray="5 5"/>
 <circle cx="101.5" cy="43.5" r="6" fill="white" stroke="#1E96EB" stroke-width="3"/>
 <rect x="105" y="8" width="59" height="26" rx="10" fill="black" fill-opacity="0.1"/>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="12" letter-spacing="0em"><tspan x="117" y="25.3636">Group</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="12" letter-spacing="0em"><tspan x="117" y="25.3636">Csoport</tspan></text>
 <mask id="mask1_16460_1252" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="98" height="106">
 <path d="M0 1.5C0 0.947717 0.447715 0.5 1 0.5H96.2527C96.8927 0.5 97.368 1.09278 97.2288 1.71742L74.1743 105.217C74.0725 105.675 73.6667 106 73.1982 106H0.999999C0.447715 106 0 105.552 0 105V1.5Z" fill="#F4F4F5"/>
 </mask>
