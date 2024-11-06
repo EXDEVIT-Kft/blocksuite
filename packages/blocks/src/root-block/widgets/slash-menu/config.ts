@@ -15,6 +15,7 @@ import {
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
+  ArrowUpSmallIcon,
   CopyIcon,
   //DatabaseKanbanViewIcon20,
   //DatabaseTableViewIcon20,
@@ -180,7 +181,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő',
         'legördülő címsor 1',
       ],
-      icon: LinkIcon,
+      icon: ArrowUpSmallIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -229,7 +230,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő',
         'legördülő címsor 2',
       ],
-      icon: LinkIcon,
+      icon: ArrowUpSmallIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -278,7 +279,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         'legördülő',
         'legördülő címsor 3',
       ],
-      icon: LinkIcon,
+      icon: ArrowUpSmallIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -320,7 +321,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'További Címsorok',
-      icon: HeadingIcon,
+      icon: ArrowUpSmallIcon,
       subMenu: [
         { groupName: 'Összecsukható Címsorok' },
         {
@@ -332,7 +333,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő',
             'legördülő címsor 4',
           ],
-          icon: LinkIcon,
+          icon: ArrowUpSmallIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -381,7 +382,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő',
             'legördülő címsor 5',
           ],
-          icon: LinkIcon,
+          icon: ArrowUpSmallIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -430,7 +431,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
             'legördülő',
             'legördülő címsor 6',
           ],
-          icon: LinkIcon,
+          icon: ArrowUpSmallIcon,
           tooltip: slashMenuToolTips['Weboldal'],
           showWhen: ({ model }) =>
             model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
@@ -476,7 +477,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       name: 'Összecsukható Szöveg',
       description: 'Összecsukható Szöveg elem.',
       alias: ['accordion', 'accordion text', 'legördülő', 'legördülő szöveg'],
-      icon: LinkIcon,
+      icon: ArrowUpSmallIcon,
       tooltip: slashMenuToolTips['Weboldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
