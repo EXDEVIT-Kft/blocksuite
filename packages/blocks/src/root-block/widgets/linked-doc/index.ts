@@ -84,32 +84,32 @@ export class AffineLinkedDocWidget extends WidgetComponent {
     this._handleInput(inlineEditor, true);
   };
 
-  private _onKeyDown = (ctx: UIEventStateContext) => {
-    const eventState = ctx.get('keyboardState');
-    const event = eventState.raw;
-
-    const key = event.key;
-    if (
-      key === undefined || // in mac os, the key may be undefined
-      key === 'Process' ||
-      event.isComposing
-    )
-      return;
-
-    const inlineEditor = this._getInlineEditor(event);
-    if (!inlineEditor) return;
-    const inlineRange = inlineEditor.getInlineRange();
-    if (!inlineRange) return;
-
-    if (inlineRange.length > 0) {
-      // When select text and press `[[` should not trigger transform,
-      // since it will break the bracket complete.
-      // Expected `[[selected text]]` instead of `@selected text]]`
-      return;
-    }
-
-    this._handleInput(inlineEditor, false);
-  };
+  //private _onKeyDown = (ctx: UIEventStateContext) => {
+  //  const eventState = ctx.get('keyboardState');
+  //  const event = eventState.raw;
+  //
+  //  const key = event.key;
+  //  if (
+  //    key === undefined || // in mac os, the key may be undefined
+  //    key === 'Process' ||
+  //    event.isComposing
+  //  )
+  //    return;
+  //
+  //  const inlineEditor = this._getInlineEditor(event);
+  //  if (!inlineEditor) return;
+  //  const inlineRange = inlineEditor.getInlineRange();
+  //  if (!inlineRange) return;
+  //
+  //  if (inlineRange.length > 0) {
+  //    // When select text and press `[[` should not trigger transform,
+  //    // since it will break the bracket complete.
+  //    // Expected `[[selected text]]` instead of `@selected text]]`
+  //    return;
+  //  }
+  //
+  //  this._handleInput(inlineEditor, false);
+  //};
 
   showLinkedDocPopover = (
     inlineEditor: AffineInlineEditor,
