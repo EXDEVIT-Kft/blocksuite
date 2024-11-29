@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-model",
-  "version": "0.17.22",
+  "version": "0.17.25",
   "description": "Models for BlockSuite in Affine.",
   "type": "module",
   "repository": {

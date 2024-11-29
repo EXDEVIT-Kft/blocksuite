@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-components",
-  "version": "0.17.22",
+  "version": "0.17.25",
   "description": "Default BlockSuite editable blocks.",
   "type": "module",
   "repository": {
