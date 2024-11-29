@@ -1,12 +1,12 @@
-import type { Y } from '@blocksuite/store';
+import type { Y } from '@algogrind/store';
 
-import { ColorScheme } from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar } from '@blocksuite/affine-shared/theme';
-import { type BlockStdScope, ShadowlessElement } from '@blocksuite/block-std';
-import { noop, SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ColorScheme } from '@algogrind/affine-model';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { unsafeCSSVar } from '@algogrind/affine-shared/theme';
+import { type BlockStdScope, ShadowlessElement } from '@algogrind/block-std';
+import { noop, SignalWatcher, WithDisposable } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { DoneIcon } from '@blocksuite/icons/lit';
-import { DocCollection } from '@blocksuite/store';
 import { effect, type Signal, signal } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

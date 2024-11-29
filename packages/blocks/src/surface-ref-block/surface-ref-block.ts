@@ -1,42 +1,42 @@
-import type { BlockCaptionEditor } from '@blocksuite/affine-components/caption';
-import type { Doc } from '@blocksuite/store';
+import type { BlockCaptionEditor } from '@algogrind/affine-components/caption';
+import type { Doc } from '@algogrind/store';
 
 import {
   type SurfaceBlockModel,
   SurfaceElementModel,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   EdgelessModeIcon,
   FrameIcon,
   MoreDeleteIcon,
-} from '@blocksuite/affine-components/icons';
-import { Peekable } from '@blocksuite/affine-components/peek';
+} from '@algogrind/affine-components/icons';
+import { Peekable } from '@algogrind/affine-components/peek';
 import {
   FrameBlockModel,
   GroupElementModel,
   type SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   DocModeProvider,
   EditPropsStore,
-} from '@blocksuite/affine-shared/services';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/services';
+import { requestConnectedFrame } from '@algogrind/affine-shared/utils';
 import {
   type BaseSelection,
   BlockStdScope,
   type EditorHost,
   LifeCycleWatcher,
-} from '@blocksuite/block-std';
-import { BlockComponent, BlockServiceWatcher } from '@blocksuite/block-std';
-import { GfxBlockElementModel } from '@blocksuite/block-std/gfx';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/block-std';
+import { BlockComponent, BlockServiceWatcher } from '@algogrind/block-std';
+import { GfxBlockElementModel } from '@algogrind/block-std/gfx';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   Bound,
   deserializeXYWH,
   DisposableGroup,
   type SerializedXYWH,
-} from '@blocksuite/global/utils';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

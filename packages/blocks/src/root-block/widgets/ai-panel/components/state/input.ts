@@ -1,9 +1,6 @@
-import {
-  AIStarIcon,
-  ArrowUpBigIcon,
-} from '@blocksuite/affine-components/icons';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { AIStarIcon, ArrowUpBigIcon } from '@algogrind/affine-components/icons';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

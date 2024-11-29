@@ -2,9 +2,9 @@ import type {
   BeforeinputHookCtx,
   CompositionEndHookCtx,
   HookContext,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 
-import { isStrictUrl } from '@blocksuite/affine-shared/utils';
+import { isStrictUrl } from '@algogrind/affine-shared/utils';
 
 import type { AffineTextAttributes } from './extension/index.js';
 

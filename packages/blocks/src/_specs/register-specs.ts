@@ -1,4 +1,4 @@
-import { SpecProvider } from '@blocksuite/affine-shared/utils';
+import { SpecProvider } from '@algogrind/affine-shared/utils';
 
 import { EdgelessEditorBlockSpecs } from './preset/edgeless-specs.js';
 import { PageEditorBlockSpecs } from './preset/page-specs.js';

@@ -1,15 +1,15 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
-import type { EditorHost, UIEventStateContext } from '@blocksuite/block-std';
+import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
+import type { EditorHost, UIEventStateContext } from '@algogrind/block-std';
 
-import { getInlineEditorByModel } from '@blocksuite/affine-components/rich-text';
+import { getInlineEditorByModel } from '@algogrind/affine-components/rich-text';
 import {
   getCurrentNativeRange,
   getViewportElement,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { DisposableGroup, throttle } from '@blocksuite/global/utils';
-import { InlineEditor } from '@blocksuite/inline';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { DisposableGroup, throttle } from '@algogrind/global/utils';
+import { InlineEditor } from '@algogrind/inline';
 
 import { getPopperPosition } from '../../../root-block/utils/position.js';
 import { getMenus, type LinkedMenuGroup } from './config.js';

@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { INLINE_ROOT_ATTR, type InlineRootElement } from '@blocksuite/inline';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { INLINE_ROOT_ATTR, type InlineRootElement } from '@algogrind/inline';
 
 import type { TextSelection } from '../selection/index.js';
 import type { BlockComponent } from '../view/element/block-component.js';

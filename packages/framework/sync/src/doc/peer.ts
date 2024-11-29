@@ -1,7 +1,7 @@
 import type { Doc } from 'yjs';
 
-import { type Logger, Slot } from '@blocksuite/global/utils';
-import { isEqual } from '@blocksuite/global/utils';
+import { type Logger, Slot } from '@algogrind/global/utils';
+import { isEqual } from '@algogrind/global/utils';
 import {
   applyUpdate,
   encodeStateAsUpdate,

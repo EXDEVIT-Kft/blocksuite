@@ -2,7 +2,7 @@ import {
   createPopup,
   menu,
   popMenu,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import { computed, signal } from '@preact/signals-core';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

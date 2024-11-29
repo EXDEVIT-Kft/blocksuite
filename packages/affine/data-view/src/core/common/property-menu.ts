@@ -1,4 +1,4 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
+import { menu } from '@algogrind/affine-components/context-menu';
 import { html } from 'lit/static-html.js';
 
 import type { Property } from '../view-manager/property.js';

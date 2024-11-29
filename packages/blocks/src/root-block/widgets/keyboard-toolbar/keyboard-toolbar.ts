@@ -1,5 +1,5 @@
-import { PropTypes, requiredProperties } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { PropTypes, requiredProperties } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { ArrowLeftBigIcon, KeyboardIcon } from '@blocksuite/icons/lit';
 import { batch, effect, signal } from '@preact/signals-core';
 import { html, LitElement, nothing } from 'lit';

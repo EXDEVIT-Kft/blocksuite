@@ -1,7 +1,7 @@
 import type { ReactiveController } from 'lit';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { KanbanGroup } from '../group.js';
 import type { DataViewKanban } from '../kanban-view.js';

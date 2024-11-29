@@ -1,4 +1,4 @@
-# @blocksuite/global
+# @algogrind/global
 
 ## 0.17.22
 
@@ -106,21 +106,21 @@
 
 - b69b00e: ---
 
-  '@blocksuite/affine-block-list': patch
-  '@blocksuite/affine-block-paragraph': patch
-  '@blocksuite/affine-block-surface': patch
-  '@blocksuite/affine-components': patch
-  '@blocksuite/data-view': patch
-  '@blocksuite/affine-model': patch
-  '@blocksuite/affine-shared': patch
-  '@blocksuite/blocks': patch
-  '@blocksuite/docs': patch
-  '@blocksuite/block-std': patch
-  '@blocksuite/global': patch
-  '@blocksuite/inline': patch
-  '@blocksuite/store': patch
-  '@blocksuite/sync': patch
-  '@blocksuite/presets': patch
+  '@algogrind/affine-block-list': patch
+  '@algogrind/affine-block-paragraph': patch
+  '@algogrind/affine-block-surface': patch
+  '@algogrind/affine-components': patch
+  '@algogrind/data-view': patch
+  '@algogrind/affine-model': patch
+  '@algogrind/affine-shared': patch
+  '@algogrind/blocks': patch
+  '@algogrind/docs': patch
+  '@algogrind/block-std': patch
+  '@algogrind/global': patch
+  '@algogrind/inline': patch
+  '@algogrind/store': patch
+  '@algogrind/sync': patch
+  '@algogrind/presets': patch
 
   ***
 
@@ -280,7 +280,7 @@
 ### Patch Changes
 
 - 1052ebd: - Refactor drag handle widget
-  - Split embed blocks to `@blocksuite/affine-block-embed`
+  - Split embed blocks to `@algogrind/affine-block-embed`
   - Fix latex selected state in edgeless mode
   - Fix unclear naming
   - Fix prototype pollution
@@ -391,7 +391,7 @@
 
 - 21b5d47: BlockSuite 0.17.1
 
-  Add @blocksuite/data-view package.
+  Add @algogrind/data-view package.
   Make font loader an extension.
   Frame improvement.
   Fix missing xywh when copy/paste mind map.

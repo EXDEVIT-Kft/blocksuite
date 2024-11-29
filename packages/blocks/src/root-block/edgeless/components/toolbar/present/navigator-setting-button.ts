@@ -1,9 +1,9 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@algogrind/affine-model';
 
-import { NavigatorSettingsIcon } from '@blocksuite/affine-components/icons';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { NavigatorSettingsIcon } from '@algogrind/affine-components/icons';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { createButtonPopper } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

@@ -1,6 +1,6 @@
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
-import { DEFAULT_ROUGHNESS } from '@blocksuite/affine-model';
+import { DEFAULT_ROUGHNESS } from '@algogrind/affine-model';
 import {
   Boxed,
   type DocCollection,
@@ -8,7 +8,7 @@ import {
   native2Y,
   Text,
   type Y,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import type { InitFn } from './utils.js';
 

@@ -1,24 +1,24 @@
-import type { GfxToolsMap, GfxToolsOption } from '@blocksuite/block-std/gfx';
+import type { GfxToolsMap, GfxToolsOption } from '@algogrind/block-std/gfx';
 
 import {
   LayoutType,
   MindmapElementModel,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   ConnectorElementModel,
   ConnectorMode,
   EdgelessTextBlockModel,
   GroupElementModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { IS_MAC } from '@blocksuite/global/env';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { IS_MAC } from '@algogrind/global/env';
+import { Bound } from '@algogrind/global/utils';
 
 import type { EdgelessRootBlockComponent } from './edgeless-root-block.js';
 

@@ -1,11 +1,11 @@
-import { type Color, ColorScheme } from '@blocksuite/affine-model';
+import { type Color, ColorScheme } from '@algogrind/affine-model';
 import {
   type BlockStdScope,
   Extension,
   type ExtensionType,
   StdIdentifier,
-} from '@blocksuite/block-std';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
+} from '@algogrind/block-std';
+import { type Container, createIdentifier } from '@algogrind/global/di';
 import { signal, type Signal } from '@preact/signals-core';
 import {
   type AffineCssVariables,

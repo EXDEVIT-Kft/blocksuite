@@ -1,11 +1,11 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
+import type { RichText } from '@algogrind/affine-components/rich-text';
 
-import { FrameBlockModel } from '@blocksuite/affine-model';
+import { FrameBlockModel } from '@algogrind/affine-model';
 import {
   RANGE_SYNC_EXCLUDE_ATTR,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { assertExists, Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists, Bound, WithDisposable } from '@algogrind/global/utils';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';

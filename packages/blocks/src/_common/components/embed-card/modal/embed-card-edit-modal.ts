@@ -4,12 +4,12 @@ import type {
   EmbedGithubModel,
   EmbedLoomModel,
   EmbedYoutubeModel,
-} from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { toast } from '@blocksuite/affine-components/toast';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { toast } from '@algogrind/affine-components/toast';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

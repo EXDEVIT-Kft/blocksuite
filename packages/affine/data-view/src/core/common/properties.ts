@@ -2,9 +2,9 @@ import {
   menu,
   popMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { InvisibleIcon, ViewIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { css, html } from 'lit';

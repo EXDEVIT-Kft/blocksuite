@@ -1,4 +1,4 @@
-# @blocksuite/affine-model
+# @algogrind/affine-model
 
 ## 0.17.22
 
@@ -33,10 +33,10 @@
   - refactor(database): menu ui (#8608)
 
 - Updated dependencies [ba9613a]
-  - @blocksuite/block-std@0.17.22
-  - @blocksuite/global@0.17.22
-  - @blocksuite/inline@0.17.22
-  - @blocksuite/store@0.17.22
+  - @algogrind/block-std@0.17.22
+  - @algogrind/global@0.17.22
+  - @algogrind/inline@0.17.22
+  - @algogrind/store@0.17.22
 
 ## 0.17.21
 
@@ -64,10 +64,10 @@
   - refactor(blocks): remove hover state after button pressed in mobile (#8586)
 
 - Updated dependencies [24db578]
-  - @blocksuite/block-std@0.17.21
-  - @blocksuite/global@0.17.21
-  - @blocksuite/inline@0.17.21
-  - @blocksuite/store@0.17.21
+  - @algogrind/block-std@0.17.21
+  - @algogrind/global@0.17.21
+  - @algogrind/inline@0.17.21
+  - @algogrind/store@0.17.21
 
 ## 0.17.20
 
@@ -113,10 +113,10 @@
   - perf(edgeless): use css var to place collaboration cursors-n-selections on board zoom change (#8543)
 
 - Updated dependencies [99d69d5]
-  - @blocksuite/block-std@0.17.20
-  - @blocksuite/global@0.17.20
-  - @blocksuite/inline@0.17.20
-  - @blocksuite/store@0.17.20
+  - @algogrind/block-std@0.17.20
+  - @algogrind/global@0.17.20
+  - @algogrind/inline@0.17.20
+  - @algogrind/store@0.17.20
 
 ## 0.17.19
 
@@ -124,21 +124,21 @@
 
 - b69b00e: ---
 
-  '@blocksuite/affine-block-list': patch
-  '@blocksuite/affine-block-paragraph': patch
-  '@blocksuite/affine-block-surface': patch
-  '@blocksuite/affine-components': patch
-  '@blocksuite/data-view': patch
-  '@blocksuite/affine-model': patch
-  '@blocksuite/affine-shared': patch
-  '@blocksuite/blocks': patch
-  '@blocksuite/docs': patch
-  '@blocksuite/block-std': patch
-  '@blocksuite/global': patch
-  '@blocksuite/inline': patch
-  '@blocksuite/store': patch
-  '@blocksuite/sync': patch
-  '@blocksuite/presets': patch
+  '@algogrind/affine-block-list': patch
+  '@algogrind/affine-block-paragraph': patch
+  '@algogrind/affine-block-surface': patch
+  '@algogrind/affine-components': patch
+  '@algogrind/data-view': patch
+  '@algogrind/affine-model': patch
+  '@algogrind/affine-shared': patch
+  '@algogrind/blocks': patch
+  '@algogrind/docs': patch
+  '@algogrind/block-std': patch
+  '@algogrind/global': patch
+  '@algogrind/inline': patch
+  '@algogrind/store': patch
+  '@algogrind/sync': patch
+  '@algogrind/presets': patch
 
   ***
 
@@ -201,10 +201,10 @@
   [docs: update link](https://github.com/toeverything/blocksuite/pull/8533)
 
 - Updated dependencies [b69b00e]
-  - @blocksuite/block-std@0.17.19
-  - @blocksuite/global@0.17.19
-  - @blocksuite/inline@0.17.19
-  - @blocksuite/store@0.17.19
+  - @algogrind/block-std@0.17.19
+  - @algogrind/global@0.17.19
+  - @algogrind/inline@0.17.19
+  - @algogrind/store@0.17.19
 
 ## 0.17.18
 
@@ -221,10 +221,10 @@
   - fix: press backspace at the start of first line when edgeless text exist. [#8498](https://github.com/toeverything/blocksuite/pull/8498)
 
 - Updated dependencies [9f70715]
-  - @blocksuite/block-std@0.17.18
-  - @blocksuite/global@0.17.18
-  - @blocksuite/inline@0.17.18
-  - @blocksuite/store@0.17.18
+  - @algogrind/block-std@0.17.18
+  - @algogrind/global@0.17.18
+  - @algogrind/inline@0.17.18
+  - @algogrind/store@0.17.18
 
 ## 0.17.17
 
@@ -250,10 +250,10 @@
   - fix: outline popup ref area [#8456](https://github.com/toeverything/blocksuite/pull/8456)
 
 - Updated dependencies [a89c9c1]
-  - @blocksuite/block-std@0.17.17
-  - @blocksuite/global@0.17.17
-  - @blocksuite/inline@0.17.17
-  - @blocksuite/store@0.17.17
+  - @algogrind/block-std@0.17.17
+  - @algogrind/global@0.17.17
+  - @algogrind/inline@0.17.17
+  - @algogrind/store@0.17.17
 
 ## 0.17.16
 
@@ -267,10 +267,10 @@
   - some ui improvements [#8446](https://github.com/toeverything/blocksuite/pull/8446), [#8450](https://github.com/toeverything/blocksuite/pull/8450)
 
 - Updated dependencies [ce9a242]
-  - @blocksuite/block-std@0.17.16
-  - @blocksuite/global@0.17.16
-  - @blocksuite/inline@0.17.16
-  - @blocksuite/store@0.17.16
+  - @algogrind/block-std@0.17.16
+  - @algogrind/global@0.17.16
+  - @algogrind/inline@0.17.16
+  - @algogrind/store@0.17.16
 
 ## 0.17.15
 
@@ -289,10 +289,10 @@
   - Chore: Upgraded non-major dependencies
   - Chore: Improved ThemeObserver and added tests
 - Updated dependencies [931315f]
-  - @blocksuite/block-std@0.17.15
-  - @blocksuite/global@0.17.15
-  - @blocksuite/inline@0.17.15
-  - @blocksuite/store@0.17.15
+  - @algogrind/block-std@0.17.15
+  - @algogrind/global@0.17.15
+  - @algogrind/inline@0.17.15
+  - @algogrind/store@0.17.15
 
 ## 0.17.14
 
@@ -306,10 +306,10 @@
   - Fix pasting multiple times when span nested in p.
   - Refactor range sync.
 - Updated dependencies [163cb11]
-  - @blocksuite/block-std@0.17.14
-  - @blocksuite/global@0.17.14
-  - @blocksuite/inline@0.17.14
-  - @blocksuite/store@0.17.14
+  - @algogrind/block-std@0.17.14
+  - @algogrind/global@0.17.14
+  - @algogrind/inline@0.17.14
+  - @algogrind/store@0.17.14
 
 ## 0.17.13
 
@@ -317,10 +317,10 @@
 
 - 9de68e3: Update mindmap uitls export
 - Updated dependencies [9de68e3]
-  - @blocksuite/block-std@0.17.13
-  - @blocksuite/global@0.17.13
-  - @blocksuite/inline@0.17.13
-  - @blocksuite/store@0.17.13
+  - @algogrind/block-std@0.17.13
+  - @algogrind/global@0.17.13
+  - @algogrind/inline@0.17.13
+  - @algogrind/store@0.17.13
 
 ## 0.17.12
 
@@ -332,17 +332,17 @@
   - fix(edgeless): failed to alt clone move frame when it contains container element
   - fix: wrong size limit config
 - Updated dependencies [c334c91]
-  - @blocksuite/block-std@0.17.12
-  - @blocksuite/global@0.17.12
-  - @blocksuite/inline@0.17.12
-  - @blocksuite/store@0.17.12
+  - @algogrind/block-std@0.17.12
+  - @algogrind/global@0.17.12
+  - @algogrind/inline@0.17.12
+  - @algogrind/store@0.17.12
 
 ## 0.17.11
 
 ### Patch Changes
 
 - 1052ebd: - Refactor drag handle widget
-  - Split embed blocks to `@blocksuite/affine-block-embed`
+  - Split embed blocks to `@algogrind/affine-block-embed`
   - Fix latex selected state in edgeless mode
   - Fix unclear naming
   - Fix prototype pollution
@@ -351,10 +351,10 @@
   - Add scroll anchoring widget
   - Add highlight selection
 - Updated dependencies [1052ebd]
-  - @blocksuite/block-std@0.17.11
-  - @blocksuite/global@0.17.11
-  - @blocksuite/inline@0.17.11
-  - @blocksuite/store@0.17.11
+  - @algogrind/block-std@0.17.11
+  - @algogrind/global@0.17.11
+  - @algogrind/inline@0.17.11
+  - @algogrind/store@0.17.11
 
 ## 0.17.10
 
@@ -370,10 +370,10 @@
   - Improve ParseDocUrl service
   - Support custom max zoom
 - Updated dependencies [e0d0016]
-  - @blocksuite/block-std@0.17.10
-  - @blocksuite/global@0.17.10
-  - @blocksuite/inline@0.17.10
-  - @blocksuite/store@0.17.10
+  - @algogrind/block-std@0.17.10
+  - @algogrind/global@0.17.10
+  - @algogrind/inline@0.17.10
+  - @algogrind/store@0.17.10
 
 ## 0.17.9
 
@@ -388,10 +388,10 @@
   - Add parse url service
   - Add ref node slots extension
 - Updated dependencies [5f29800]
-  - @blocksuite/block-std@0.17.9
-  - @blocksuite/global@0.17.9
-  - @blocksuite/inline@0.17.9
-  - @blocksuite/store@0.17.9
+  - @algogrind/block-std@0.17.9
+  - @algogrind/global@0.17.9
+  - @algogrind/inline@0.17.9
+  - @algogrind/store@0.17.9
 
 ## 0.17.8
 
@@ -404,10 +404,10 @@
   - test: add mini-mindmap test
   - feat(database): full width POC
 - Updated dependencies [2f7dbe9]
-  - @blocksuite/block-std@0.17.8
-  - @blocksuite/global@0.17.8
-  - @blocksuite/inline@0.17.8
-  - @blocksuite/store@0.17.8
+  - @algogrind/block-std@0.17.8
+  - @algogrind/global@0.17.8
+  - @algogrind/inline@0.17.8
+  - @algogrind/store@0.17.8
 
 ## 0.17.7
 
@@ -424,10 +424,10 @@
   - Fix edgeless preview pointer events
   - Fix latex editor focus shake
 - Updated dependencies [5ab06c3]
-  - @blocksuite/block-std@0.17.7
-  - @blocksuite/global@0.17.7
-  - @blocksuite/inline@0.17.7
-  - @blocksuite/store@0.17.7
+  - @algogrind/block-std@0.17.7
+  - @algogrind/global@0.17.7
+  - @algogrind/inline@0.17.7
+  - @algogrind/store@0.17.7
 
 ## 0.17.6
 
@@ -441,10 +441,10 @@
   - Database statistic improvements
   - Add keymap extension
 - Updated dependencies [d8d5656]
-  - @blocksuite/block-std@0.17.6
-  - @blocksuite/global@0.17.6
-  - @blocksuite/inline@0.17.6
-  - @blocksuite/store@0.17.6
+  - @algogrind/block-std@0.17.6
+  - @algogrind/global@0.17.6
+  - @algogrind/inline@0.17.6
+  - @algogrind/store@0.17.6
 
 ## 0.17.5
 
@@ -459,10 +459,10 @@
   - Inline extensions
   - Mindmap remember last settings
 - Updated dependencies [debf65c]
-  - @blocksuite/block-std@0.17.5
-  - @blocksuite/global@0.17.5
-  - @blocksuite/inline@0.17.5
-  - @blocksuite/store@0.17.5
+  - @algogrind/block-std@0.17.5
+  - @algogrind/global@0.17.5
+  - @algogrind/inline@0.17.5
+  - @algogrind/store@0.17.5
 
 ## 0.17.4
 
@@ -470,10 +470,10 @@
 
 - 9978a71: Create git tag
 - Updated dependencies [9978a71]
-  - @blocksuite/block-std@0.17.4
-  - @blocksuite/global@0.17.4
-  - @blocksuite/inline@0.17.4
-  - @blocksuite/store@0.17.4
+  - @algogrind/block-std@0.17.4
+  - @algogrind/global@0.17.4
+  - @algogrind/inline@0.17.4
+  - @algogrind/store@0.17.4
 
 ## 0.17.3
 
@@ -481,10 +481,10 @@
 
 - be60caf: Generate git tag
 - Updated dependencies [be60caf]
-  - @blocksuite/block-std@0.17.3
-  - @blocksuite/global@0.17.3
-  - @blocksuite/inline@0.17.3
-  - @blocksuite/store@0.17.3
+  - @algogrind/block-std@0.17.3
+  - @algogrind/global@0.17.3
+  - @algogrind/inline@0.17.3
+  - @algogrind/store@0.17.3
 
 ## 0.17.2
 
@@ -492,10 +492,10 @@
 
 - 5543e32: Fix missing export in dataview
 - Updated dependencies [5543e32]
-  - @blocksuite/block-std@0.17.2
-  - @blocksuite/global@0.17.2
-  - @blocksuite/inline@0.17.2
-  - @blocksuite/store@0.17.2
+  - @algogrind/block-std@0.17.2
+  - @algogrind/global@0.17.2
+  - @algogrind/inline@0.17.2
+  - @algogrind/store@0.17.2
 
 ## 0.17.1
 
@@ -503,17 +503,17 @@
 
 - 21b5d47: BlockSuite 0.17.1
 
-  Add @blocksuite/data-view package.
+  Add @algogrind/data-view package.
   Make font loader an extension.
   Frame improvement.
   Fix missing xywh when copy/paste mind map.
   Fix connector label text.
 
 - Updated dependencies [21b5d47]
-  - @blocksuite/block-std@0.17.1
-  - @blocksuite/global@0.17.1
-  - @blocksuite/inline@0.17.1
-  - @blocksuite/store@0.17.1
+  - @algogrind/block-std@0.17.1
+  - @algogrind/global@0.17.1
+  - @algogrind/inline@0.17.1
+  - @algogrind/store@0.17.1
 
 ## 0.17.0
 
@@ -542,7 +542,7 @@
 ### Patch Changes
 
 - Updated dependencies [767180a]
-  - @blocksuite/block-std@0.17.0
-  - @blocksuite/global@0.17.0
-  - @blocksuite/inline@0.17.0
-  - @blocksuite/store@0.17.0
+  - @algogrind/block-std@0.17.0
+  - @algogrind/global@0.17.0
+  - @algogrind/inline@0.17.0
+  - @algogrind/store@0.17.0

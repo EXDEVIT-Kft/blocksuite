@@ -1,10 +1,10 @@
-import type { ColorScheme } from '@blocksuite/affine-model';
+import type { ColorScheme } from '@algogrind/affine-model';
 
 import {
   AIStarIconWithAnimation,
   AIStopIcon,
-} from '@blocksuite/affine-components/icons';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { WithDisposable } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

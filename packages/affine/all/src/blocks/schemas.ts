@@ -1,1 +1,1 @@
-export * from '@blocksuite/blocks/schemas';
+export * from '@algogrind/blocks/schemas';

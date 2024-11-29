@@ -2,8 +2,8 @@ import type {
   BaseElementProps,
   GfxModel,
   SerializedElement,
-} from '@blocksuite/block-std/gfx';
-import type { SerializedXYWH, XYWH } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import type { SerializedXYWH, XYWH } from '@algogrind/global/utils';
 
 import {
   convert,
@@ -11,7 +11,7 @@ import {
   GfxGroupLikeElementModel,
   observe,
   watch,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import {
   assertType,
   deserializeXYWH,
@@ -19,8 +19,8 @@ import {
   last,
   noop,
   pick,
-} from '@blocksuite/global/utils';
-import { DocCollection, type Y } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection, type Y } from '@algogrind/store';
 import { generateKeyBetween } from 'fractional-indexing';
 import { z } from 'zod';
 

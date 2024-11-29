@@ -1,6 +1,6 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { ArrowLeftBigIcon, CloseIcon, SearchIcon } from '@blocksuite/icons/lit';
 import {
   autoPlacement,

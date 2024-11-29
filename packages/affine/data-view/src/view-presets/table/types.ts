@@ -1,4 +1,4 @@
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 export type ColumnType = string;
 

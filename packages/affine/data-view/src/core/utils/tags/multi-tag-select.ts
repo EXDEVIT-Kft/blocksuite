@@ -4,17 +4,17 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { rangeWrap } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { rangeWrap } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
+import { nanoid } from '@algogrind/store';
 import {
   CloseIcon,
   DeleteIcon,
   MoreHorizontalIcon,
   PlusIcon,
 } from '@blocksuite/icons/lit';
-import { nanoid } from '@blocksuite/store';
 import { flip, offset } from '@floating-ui/dom';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

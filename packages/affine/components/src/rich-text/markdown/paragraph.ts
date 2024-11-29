@@ -1,8 +1,8 @@
-import type { ParagraphType } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { ParagraphType } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 import { focusTextModel } from '../dom.js';
 import { beforeConvert } from './utils.js';

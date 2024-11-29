@@ -1,17 +1,14 @@
-import type { Text } from '@blocksuite/store';
+import type { Text } from '@algogrind/store';
 
 import {
   DefaultInlineManagerExtension,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { ParseDocUrlProvider } from '@blocksuite/affine-shared/services';
-import {
-  getViewportElement,
-  isValidUrl,
-} from '@blocksuite/affine-shared/utils';
-import { BaseCellRenderer } from '@blocksuite/data-view';
-import { IS_MAC } from '@blocksuite/global/env';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/rich-text';
+import { ParseDocUrlProvider } from '@algogrind/affine-shared/services';
+import { getViewportElement, isValidUrl } from '@algogrind/affine-shared/utils';
+import { BaseCellRenderer } from '@algogrind/data-view';
+import { IS_MAC } from '@algogrind/global/env';
+import { assertExists } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css } from 'lit';
 import { property, query } from 'lit/decorators.js';

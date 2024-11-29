@@ -1,16 +1,16 @@
-import type { DocMode } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { DocMode } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
 import {
   docContext,
   modelContext,
   ShadowlessElement,
   stdContext,
-} from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
-import { Text } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
+import { Text } from '@algogrind/store';
 import { consume } from '@lit/context';
 import { css, html, nothing } from 'lit';
 import { query, state } from 'lit/decorators.js';

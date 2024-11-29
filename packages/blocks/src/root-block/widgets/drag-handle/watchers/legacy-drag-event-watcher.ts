@@ -1,20 +1,20 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+import type { NoteBlockModel } from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   captureEventTarget,
   findNoteBlockModel,
   getBlockComponentsExcludeSubtrees,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   isGfxBlockComponent,
   type PointerEventState,
   type UIEventHandler,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { Bound, Point } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { Bound, Point } from '@algogrind/global/utils';
 import { render } from 'lit';
 
 import type { EdgelessRootBlockComponent } from '../../../edgeless/index.js';

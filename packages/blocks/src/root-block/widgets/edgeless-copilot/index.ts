@@ -1,11 +1,11 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@algogrind/affine-model';
 
 import {
   MOUSE_BUTTON,
   requestConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { Bound, getCommonBoundWithRotation } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { Bound, getCommonBoundWithRotation } from '@algogrind/global/utils';
 import {
   autoUpdate,
   computePosition,

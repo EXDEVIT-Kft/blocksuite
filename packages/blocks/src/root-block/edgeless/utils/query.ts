@@ -3,16 +3,16 @@ import type {
   GfxPrimitiveElementModel,
   GfxToolsFullOptionValue,
   Viewport,
-} from '@blocksuite/block-std/gfx';
-import type { PointLocation } from '@blocksuite/global/utils';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import type { PointLocation } from '@algogrind/global/utils';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   type CanvasElementWithText,
   CommonUtils,
   GRID_GAP_MAX,
   GRID_GAP_MIN,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type AttachmentBlockModel,
   type BookmarkBlockModel,
@@ -32,12 +32,12 @@ import {
   type NoteBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   Bound,
   deserializeXYWH,
   getQuadBoundWithRotation,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { Connectable } from '../../../_common/utils/index.js';
 import type { GfxBlockModel } from '../block-model.js';

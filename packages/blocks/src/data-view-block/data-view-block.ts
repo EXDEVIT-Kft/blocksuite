@@ -1,16 +1,16 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import {
   CopyIcon,
   DeleteIcon,
   MoreHorizontalIcon,
-} from '@blocksuite/affine-components/icons';
-import { PeekViewProvider } from '@blocksuite/affine-components/peek';
-import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/block-std';
+} from '@algogrind/affine-components/icons';
+import { PeekViewProvider } from '@algogrind/affine-components/peek';
+import { RANGE_SYNC_EXCLUDE_ATTR } from '@algogrind/block-std';
 import {
   createRecordDetail,
   createUniComponentFromWebComponent,
@@ -25,9 +25,9 @@ import {
   defineUniComponent,
   renderUniLit,
   uniMap,
-} from '@blocksuite/data-view';
-import { widgetPresets } from '@blocksuite/data-view/widget-presets';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/data-view';
+import { widgetPresets } from '@algogrind/data-view/widget-presets';
+import { Slice } from '@algogrind/store';
 import { computed, signal } from '@preact/signals-core';
 import { css, nothing, unsafeCSS } from 'lit';
 import { html } from 'lit/static-html.js';

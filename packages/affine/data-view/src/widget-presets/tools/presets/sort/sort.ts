@@ -1,4 +1,4 @@
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
+import { popupTargetFromElement } from '@algogrind/affine-components/context-menu';
 import { SortIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { cssVarV2 } from '@toeverything/theme/v2';

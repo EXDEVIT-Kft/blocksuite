@@ -1,5 +1,5 @@
-import type { BlockComponent, BlockStdScope } from '@blocksuite/block-std';
-import type { DisposableClass } from '@blocksuite/global/utils';
+import type { BlockComponent, BlockStdScope } from '@algogrind/block-std';
+import type { DisposableClass } from '@algogrind/global/utils';
 import type { LitElement, TemplateResult } from 'lit';
 
 export type PeekableClass = { std: BlockStdScope } & DisposableClass &

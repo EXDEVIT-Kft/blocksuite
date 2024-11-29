@@ -1,21 +1,21 @@
-import { NoteIcon, RenameIcon } from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
+import { NoteIcon, RenameIcon } from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
 import {
   type ColorScheme,
   DEFAULT_NOTE_HEIGHT,
   FRAME_BACKGROUND_COLORS,
   type FrameBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 import {
   countBy,
   deserializeXYWH,
   maxBy,
   serializeXYWH,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

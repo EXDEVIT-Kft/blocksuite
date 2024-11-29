@@ -1,43 +1,43 @@
 import type {
   SurfaceBlockComponent,
   SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import type {
   RootBlockModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import type {
   GfxBlockComponent,
   SurfaceSelection,
   UIEventHandler,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   EditPropsStore,
   FontLoaderService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   isTouchPadPinchEvent,
   requestConnectedFrame,
   requestThrottledConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
-import { BlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { BlockComponent } from '@algogrind/block-std';
 import {
   GfxBlockElementModel,
   GfxControllerIdentifier,
   type GfxViewportElement,
-} from '@blocksuite/block-std/gfx';
-import { IS_WINDOWS } from '@blocksuite/global/env';
+} from '@algogrind/block-std/gfx';
+import { IS_WINDOWS } from '@algogrind/global/env';
 import {
   assertExists,
   Bound,
   Point,
   throttle,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

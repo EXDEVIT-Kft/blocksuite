@@ -1,7 +1,7 @@
 import type { ReadonlySignal } from '@preact/signals-core';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

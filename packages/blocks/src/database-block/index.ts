@@ -1,4 +1,4 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
+import type { DatabaseBlockModel } from '@algogrind/affine-model';
 
 export type { DatabaseOptionsConfig } from './config.js';
 

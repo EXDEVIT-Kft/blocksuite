@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Slot } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Slot } from '@algogrind/global/utils';
 
 import type { BlockModel, BlockSchemaType } from '../schema/index.js';
 import type { Doc, DocCollection, DocMeta } from '../store/index.js';

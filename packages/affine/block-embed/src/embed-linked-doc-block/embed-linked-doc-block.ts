@@ -3,25 +3,25 @@ import type {
   EmbedLinkedDocModel,
   EmbedLinkedDocStyles,
   ReferenceInfo,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { BlockLinkIcon } from '@blocksuite/affine-components/icons';
-import { isPeekable, Peekable } from '@blocksuite/affine-components/peek';
+import { BlockLinkIcon } from '@algogrind/affine-components/icons';
+import { isPeekable, Peekable } from '@algogrind/affine-components/peek';
 import {
   REFERENCE_NODE,
   RefNodeSlotsProvider,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   DocModeProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { Bound } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/affine-shared/services';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { html, nothing } from 'lit';
 import { property, queryAsync, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

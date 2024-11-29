@@ -10,7 +10,7 @@ import { CommandIdentifier } from '../identifier.js';
  *
  * @example
  * ```ts
- * import { CommandExtension } from '@blocksuite/block-std';
+ * import { CommandExtension } from '@algogrind/block-std';
  *
  * const MyCommandExtension = CommandExtension({
  *   'my-command': MyCommand

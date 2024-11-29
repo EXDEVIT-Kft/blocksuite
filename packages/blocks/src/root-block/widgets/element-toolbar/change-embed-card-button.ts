@@ -7,7 +7,7 @@ import type {
   EmbedLoomModel,
   EmbedSyncedDocModel,
   EmbedYoutubeModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import {
   type EmbedFigmaBlockComponent,
@@ -17,7 +17,7 @@ import {
   type EmbedSyncedDocBlockComponent,
   type EmbedYoutubeBlockComponent,
   isLinkToNode,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   CaptionIcon,
   CenterPeekIcon,
@@ -27,21 +27,21 @@ import {
   OpenIcon,
   PaletteIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { isPeekable, peek } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/icons';
+import { isPeekable, peek } from '@algogrind/affine-components/peek';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   type MenuItem,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
-import { BookmarkStyles } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/toolbar';
+import { BookmarkStyles } from '@algogrind/affine-model';
 import {
   EmbedOptionProvider,
   type EmbedOptions,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { getHostName } from '@blocksuite/affine-shared/utils';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { getHostName } from '@algogrind/affine-shared/utils';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

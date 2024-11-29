@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { sha } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { sha } from '@algogrind/global/utils';
 
 /**
  * @internal just for test

@@ -1,12 +1,12 @@
-import type { Column } from '@blocksuite/affine-model';
-import type { DataViewDataType } from '@blocksuite/data-view';
+import type { Column } from '@algogrind/affine-model';
+import type { DataViewDataType } from '@algogrind/data-view';
 
 import {
   arrayMove,
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+} from '@algogrind/affine-shared/utils';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 type Props = {
   title: string;

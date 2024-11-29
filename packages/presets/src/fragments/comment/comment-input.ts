@@ -1,9 +1,9 @@
-import type { TextSelection } from '@blocksuite/block-std';
-import type { RichText } from '@blocksuite/blocks';
+import type { TextSelection } from '@algogrind/block-std';
+import type { RichText } from '@algogrind/blocks';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { css, html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

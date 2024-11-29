@@ -1,4 +1,4 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   assertType,
@@ -7,7 +7,7 @@ import {
   getCommonBoundWithRotation,
   type IBound,
   last,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { BlockStdScope } from '../scope/block-std-scope.js';
 import type { BlockComponent } from '../view/index.js';

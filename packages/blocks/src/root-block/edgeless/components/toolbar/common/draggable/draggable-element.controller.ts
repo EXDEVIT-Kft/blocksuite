@@ -1,4 +1,4 @@
-import { assertExists, Bound } from '@blocksuite/global/utils';
+import { assertExists, Bound } from '@algogrind/global/utils';
 import {
   type ReactiveController,
   type ReactiveControllerHost,

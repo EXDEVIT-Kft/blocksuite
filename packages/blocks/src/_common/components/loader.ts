@@ -1,6 +1,6 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import { BLOCK_ID_ATTR } from '@blocksuite/block-std';
+import { BLOCK_ID_ATTR } from '@algogrind/block-std';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

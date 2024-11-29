@@ -1,8 +1,8 @@
 import type { ReactiveController } from 'lit';
 import type { Ref } from 'lit/directives/ref.js';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,6 +1,6 @@
 import type { ReadonlySignal } from '@preact/signals-core';
 
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import {
   CheckBoxCkeckSolidIcon,
   CheckBoxUnIcon,

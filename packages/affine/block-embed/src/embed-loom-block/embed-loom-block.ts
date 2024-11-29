@@ -1,7 +1,7 @@
-import type { EmbedLoomModel, EmbedLoomStyles } from '@blocksuite/affine-model';
+import type { EmbedLoomModel, EmbedLoomStyles } from '@algogrind/affine-model';
 
-import { OpenIcon } from '@blocksuite/affine-components/icons';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { OpenIcon } from '@algogrind/affine-components/icons';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -1,8 +1,8 @@
 import {
   getBlockProps,
   isInsidePageEditor,
-} from '@blocksuite/affine-shared/utils';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { ImageBlockComponent } from '../../../image-block/image-block.js';
 

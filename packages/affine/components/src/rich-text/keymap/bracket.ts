@@ -1,11 +1,11 @@
-import type { BlockStdScope, UIEventHandler } from '@blocksuite/block-std';
-import type { InlineEditor } from '@blocksuite/inline';
+import type { BlockStdScope, UIEventHandler } from '@algogrind/block-std';
+import type { InlineEditor } from '@algogrind/inline';
 
-import { BRACKET_PAIRS } from '@blocksuite/affine-shared/consts';
+import { BRACKET_PAIRS } from '@algogrind/affine-shared/consts';
 import {
   createDefaultDoc,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 import { getInlineEditorByModel } from '../dom.js';
 import { insertLinkedNode } from '../linked-node.js';

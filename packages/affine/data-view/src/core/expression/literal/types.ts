@@ -1,4 +1,4 @@
-import type { PopupTarget } from '@blocksuite/affine-components/context-menu';
+import type { PopupTarget } from '@algogrind/affine-components/context-menu';
 import type { ReadonlySignal } from '@preact/signals-core';
 
 import type { TType } from '../../logical/index.js';

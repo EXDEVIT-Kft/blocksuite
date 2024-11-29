@@ -1,8 +1,8 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { Bound, getCommonBoundWithRotation } from '@blocksuite/global/utils';
-import { Slot } from '@blocksuite/store';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { Bound, getCommonBoundWithRotation } from '@algogrind/global/utils';
+import { Slot } from '@algogrind/store';
 
 import {
   AFFINE_AI_PANEL_WIDGET,
@@ -144,7 +144,7 @@ export class CopilotTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     copilot: CopilotTool;
   }

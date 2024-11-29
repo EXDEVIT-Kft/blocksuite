@@ -1,4 +1,4 @@
-# @blocksuite/affine
+# @algogrind/affine
 
 ## 0.17.22
 
@@ -33,12 +33,12 @@
   - refactor(database): menu ui (#8608)
 
 - Updated dependencies [ba9613a]
-  - @blocksuite/blocks@0.17.22
-  - @blocksuite/block-std@0.17.22
-  - @blocksuite/global@0.17.22
-  - @blocksuite/inline@0.17.22
-  - @blocksuite/store@0.17.22
-  - @blocksuite/presets@0.17.22
+  - @algogrind/blocks@0.17.22
+  - @algogrind/block-std@0.17.22
+  - @algogrind/global@0.17.22
+  - @algogrind/inline@0.17.22
+  - @algogrind/store@0.17.22
+  - @algogrind/presets@0.17.22
 
 ## 0.17.21
 
@@ -66,12 +66,12 @@
   - refactor(blocks): remove hover state after button pressed in mobile (#8586)
 
 - Updated dependencies [24db578]
-  - @blocksuite/blocks@0.17.21
-  - @blocksuite/block-std@0.17.21
-  - @blocksuite/global@0.17.21
-  - @blocksuite/inline@0.17.21
-  - @blocksuite/store@0.17.21
-  - @blocksuite/presets@0.17.21
+  - @algogrind/blocks@0.17.21
+  - @algogrind/block-std@0.17.21
+  - @algogrind/global@0.17.21
+  - @algogrind/inline@0.17.21
+  - @algogrind/store@0.17.21
+  - @algogrind/presets@0.17.21
 
 ## 0.17.20
 
@@ -117,12 +117,12 @@
   - perf(edgeless): use css var to place collaboration cursors-n-selections on board zoom change (#8543)
 
 - Updated dependencies [99d69d5]
-  - @blocksuite/blocks@0.17.20
-  - @blocksuite/block-std@0.17.20
-  - @blocksuite/global@0.17.20
-  - @blocksuite/inline@0.17.20
-  - @blocksuite/store@0.17.20
-  - @blocksuite/presets@0.17.20
+  - @algogrind/blocks@0.17.20
+  - @algogrind/block-std@0.17.20
+  - @algogrind/global@0.17.20
+  - @algogrind/inline@0.17.20
+  - @algogrind/store@0.17.20
+  - @algogrind/presets@0.17.20
 
 ## 0.17.19
 
@@ -130,21 +130,21 @@
 
 - b69b00e: ---
 
-  '@blocksuite/affine-block-list': patch
-  '@blocksuite/affine-block-paragraph': patch
-  '@blocksuite/affine-block-surface': patch
-  '@blocksuite/affine-components': patch
-  '@blocksuite/data-view': patch
-  '@blocksuite/affine-model': patch
-  '@blocksuite/affine-shared': patch
-  '@blocksuite/blocks': patch
-  '@blocksuite/docs': patch
-  '@blocksuite/block-std': patch
-  '@blocksuite/global': patch
-  '@blocksuite/inline': patch
-  '@blocksuite/store': patch
-  '@blocksuite/sync': patch
-  '@blocksuite/presets': patch
+  '@algogrind/affine-block-list': patch
+  '@algogrind/affine-block-paragraph': patch
+  '@algogrind/affine-block-surface': patch
+  '@algogrind/affine-components': patch
+  '@algogrind/data-view': patch
+  '@algogrind/affine-model': patch
+  '@algogrind/affine-shared': patch
+  '@algogrind/blocks': patch
+  '@algogrind/docs': patch
+  '@algogrind/block-std': patch
+  '@algogrind/global': patch
+  '@algogrind/inline': patch
+  '@algogrind/store': patch
+  '@algogrind/sync': patch
+  '@algogrind/presets': patch
 
   ***
 
@@ -207,12 +207,12 @@
   [docs: update link](https://github.com/toeverything/blocksuite/pull/8533)
 
 - Updated dependencies [b69b00e]
-  - @blocksuite/blocks@0.17.19
-  - @blocksuite/block-std@0.17.19
-  - @blocksuite/global@0.17.19
-  - @blocksuite/inline@0.17.19
-  - @blocksuite/store@0.17.19
-  - @blocksuite/presets@0.17.19
+  - @algogrind/blocks@0.17.19
+  - @algogrind/block-std@0.17.19
+  - @algogrind/global@0.17.19
+  - @algogrind/inline@0.17.19
+  - @algogrind/store@0.17.19
+  - @algogrind/presets@0.17.19
 
 ## 0.17.18
 
@@ -229,12 +229,12 @@
   - fix: press backspace at the start of first line when edgeless text exist. [#8498](https://github.com/toeverything/blocksuite/pull/8498)
 
 - Updated dependencies [9f70715]
-  - @blocksuite/blocks@0.17.18
-  - @blocksuite/block-std@0.17.18
-  - @blocksuite/global@0.17.18
-  - @blocksuite/inline@0.17.18
-  - @blocksuite/store@0.17.18
-  - @blocksuite/presets@0.17.18
+  - @algogrind/blocks@0.17.18
+  - @algogrind/block-std@0.17.18
+  - @algogrind/global@0.17.18
+  - @algogrind/inline@0.17.18
+  - @algogrind/store@0.17.18
+  - @algogrind/presets@0.17.18
 
 ## 0.17.17
 
@@ -260,12 +260,12 @@
   - fix: outline popup ref area [#8456](https://github.com/toeverything/blocksuite/pull/8456)
 
 - Updated dependencies [a89c9c1]
-  - @blocksuite/blocks@0.17.17
-  - @blocksuite/block-std@0.17.17
-  - @blocksuite/global@0.17.17
-  - @blocksuite/inline@0.17.17
-  - @blocksuite/store@0.17.17
-  - @blocksuite/presets@0.17.17
+  - @algogrind/blocks@0.17.17
+  - @algogrind/block-std@0.17.17
+  - @algogrind/global@0.17.17
+  - @algogrind/inline@0.17.17
+  - @algogrind/store@0.17.17
+  - @algogrind/presets@0.17.17
 
 ## 0.17.16
 
@@ -279,12 +279,12 @@
   - some ui improvements [#8446](https://github.com/toeverything/blocksuite/pull/8446), [#8450](https://github.com/toeverything/blocksuite/pull/8450)
 
 - Updated dependencies [ce9a242]
-  - @blocksuite/blocks@0.17.16
-  - @blocksuite/block-std@0.17.16
-  - @blocksuite/global@0.17.16
-  - @blocksuite/inline@0.17.16
-  - @blocksuite/store@0.17.16
-  - @blocksuite/presets@0.17.16
+  - @algogrind/blocks@0.17.16
+  - @algogrind/block-std@0.17.16
+  - @algogrind/global@0.17.16
+  - @algogrind/inline@0.17.16
+  - @algogrind/store@0.17.16
+  - @algogrind/presets@0.17.16
 
 ## 0.17.15
 
@@ -303,12 +303,12 @@
   - Chore: Upgraded non-major dependencies
   - Chore: Improved ThemeObserver and added tests
 - Updated dependencies [931315f]
-  - @blocksuite/blocks@0.17.15
-  - @blocksuite/block-std@0.17.15
-  - @blocksuite/global@0.17.15
-  - @blocksuite/inline@0.17.15
-  - @blocksuite/store@0.17.15
-  - @blocksuite/presets@0.17.15
+  - @algogrind/blocks@0.17.15
+  - @algogrind/block-std@0.17.15
+  - @algogrind/global@0.17.15
+  - @algogrind/inline@0.17.15
+  - @algogrind/store@0.17.15
+  - @algogrind/presets@0.17.15
 
 ## 0.17.14
 
@@ -322,9 +322,9 @@
   - Fix pasting multiple times when span nested in p.
   - Refactor range sync.
 - Updated dependencies [163cb11]
-  - @blocksuite/blocks@0.17.14
-  - @blocksuite/block-std@0.17.14
-  - @blocksuite/global@0.17.14
-  - @blocksuite/inline@0.17.14
-  - @blocksuite/store@0.17.14
-  - @blocksuite/presets@0.17.14
+  - @algogrind/blocks@0.17.14
+  - @algogrind/block-std@0.17.14
+  - @algogrind/global@0.17.14
+  - @algogrind/inline@0.17.14
+  - @algogrind/store@0.17.14
+  - @algogrind/presets@0.17.14

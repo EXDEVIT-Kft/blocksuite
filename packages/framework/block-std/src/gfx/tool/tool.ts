@@ -1,6 +1,6 @@
-import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { type Container, createIdentifier } from '@algogrind/global/di';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import type { PointerEventState } from '../../event/index.js';
 import type { GfxController } from '../controller.js';

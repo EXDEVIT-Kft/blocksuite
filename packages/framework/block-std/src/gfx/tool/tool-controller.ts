@@ -1,12 +1,12 @@
-import type { ServiceIdentifier } from '@blocksuite/global/di';
+import type { ServiceIdentifier } from '@algogrind/global/di';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   DisposableGroup,
   type IBound,
   type IPoint,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { Signal } from '@preact/signals-core';
 
 import type { PointerEventState } from '../../event/index.js';

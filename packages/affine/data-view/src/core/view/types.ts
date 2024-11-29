@@ -1,10 +1,10 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 import type {
   BlockStdScope,
   EventName,
   UIEventHandler,
-} from '@blocksuite/block-std';
-import type { Disposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import type { Disposable } from '@algogrind/global/utils';
 import type { ReadonlySignal } from '@preact/signals-core';
 
 import type { DataSource } from '../common/index.js';

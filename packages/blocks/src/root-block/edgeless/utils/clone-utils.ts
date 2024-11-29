@@ -4,21 +4,21 @@ import type {
   SerializedConnectorElement,
   SerializedGroupElement,
   SerializedMindmapElement,
-} from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
 
 import {
   ConnectorElementModel,
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   getTopElements,
   type GfxModel,
   isGfxContainerElm,
   type SerializedElement,
-} from '@blocksuite/block-std/gfx';
-import { type BlockSnapshot, Job } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { type BlockSnapshot, Job } from '@algogrind/store';
 
 import { GfxBlockModel } from '../block-model.js';
 

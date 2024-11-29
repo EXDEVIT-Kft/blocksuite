@@ -3,16 +3,16 @@ import {
   type AffineTextAttributes,
   DefaultInlineManagerExtension,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-components/rich-text';
+import { getViewportElement } from '@algogrind/affine-shared/utils';
 import {
   BaseCellRenderer,
   createFromBaseCellRenderer,
   createIcon,
-} from '@blocksuite/data-view';
-import { IS_MAC } from '@blocksuite/global/env';
-import { assertExists } from '@blocksuite/global/utils';
-import { Text } from '@blocksuite/store';
+} from '@algogrind/data-view';
+import { IS_MAC } from '@algogrind/global/env';
+import { assertExists } from '@algogrind/global/utils';
+import { Text } from '@algogrind/store';
 import { css, nothing, type PropertyValues } from 'lit';
 import { query } from 'lit/decorators.js';
 import { keyed } from 'lit/directives/keyed.js';

@@ -1,5 +1,5 @@
-import { WidgetComponent } from '@blocksuite/block-std';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { WidgetComponent } from '@algogrind/block-std';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { signal } from '@preact/signals-core';
 import { html, nothing } from 'lit';
 

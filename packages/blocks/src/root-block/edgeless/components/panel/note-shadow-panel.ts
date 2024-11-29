@@ -1,9 +1,9 @@
 import {
   NoteNoShadowIcon,
   NoteShadowSampleIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme, NoteShadow } from '@blocksuite/affine-model';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { ColorScheme, NoteShadow } from '@algogrind/affine-model';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

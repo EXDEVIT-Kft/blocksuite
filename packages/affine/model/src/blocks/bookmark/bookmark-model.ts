@@ -1,7 +1,7 @@
-import type { GfxElementGeometry } from '@blocksuite/block-std/gfx';
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { GfxElementGeometry } from '@algogrind/block-std/gfx';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 import type { EmbedCardStyle, LinkPreviewData } from '../../utils/index.js';
 

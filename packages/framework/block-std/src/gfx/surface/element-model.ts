@@ -3,7 +3,7 @@ import type {
   IVec,
   SerializedXYWH,
   XYWH,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import {
   Bound,
@@ -17,8 +17,8 @@ import {
   polygonNearestPoint,
   randomSeed,
   rotatePoints,
-} from '@blocksuite/global/utils';
-import { DocCollection, type Y } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection, type Y } from '@algogrind/store';
 import { createMutex } from 'lib0/mutex';
 
 import type { EditorHost } from '../../view/index.js';
@@ -355,7 +355,6 @@ export abstract class GfxPrimitiveElementModel<
   @watch((_, instance) => {
     instance['_local'].delete('externalBound');
   })
-
   /**
    * In some cases, you need to draw something related to the element, but it does not belong to the element itself.
    * And it is also interactive, you can select element by clicking on it. E.g. the title of the group element.

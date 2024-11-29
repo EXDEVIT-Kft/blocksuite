@@ -1,9 +1,9 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { InlineRange } from '@blocksuite/inline';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { InlineRange } from '@algogrind/inline';
 
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/block-std';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+import { isInsideBlockByFlavour } from '@algogrind/affine-shared/utils';
+import { BLOCK_ID_ATTR, type BlockComponent } from '@algogrind/block-std';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import { computePosition, inline, offset, shift } from '@floating-ui/dom';
 import { effect } from '@preact/signals-core';
 import { html, LitElement, nothing } from 'lit';

@@ -1,12 +1,12 @@
-import type { DocMode } from '@blocksuite/affine-model';
+import type { DocMode } from '@algogrind/affine-model';
 
-import '@blocksuite/affine-shared/selection';
-import { WidgetComponent } from '@blocksuite/block-std';
+import '@algogrind/affine-shared/selection';
+import { WidgetComponent } from '@algogrind/block-std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/block-std/gfx';
-import { Bound, deserializeXYWH } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import { Bound, deserializeXYWH } from '@algogrind/global/utils';
 import { computed, signal } from '@preact/signals-core';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';

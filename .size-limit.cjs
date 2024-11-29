@@ -34,7 +34,7 @@ const folders = getFoldersWithPackageJson(entry)
   })
   .filter(data => {
     // We only want to include packages that need to be installed by the user
-    return ['@blocksuite/affine'].includes(data.json.name);
+    return ['@algogrind/affine'].includes(data.json.name);
   })
   .flatMap(data => {
     const pathList = Object.entries(data.json.exports).map(([key, p]) => {
@@ -46,7 +46,7 @@ const folders = getFoldersWithPackageJson(entry)
     const ignore = Object.keys({
       ...data.json.dependencies,
       ...data.json.devDependencies,
-    }).filter(name => !name.startsWith('@blocksuite/'));
+    }).filter(name => !name.startsWith('@algogrind/'));
     return pathList.map(p => ({
       name: path.join(data.json.name, p.subpath),
       path: p.path,

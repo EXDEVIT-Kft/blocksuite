@@ -1,1 +1,1 @@
-export { GfxBlockElementModel as GfxBlockModel } from '@blocksuite/block-std/gfx';
+export { GfxBlockElementModel as GfxBlockModel } from '@algogrind/block-std/gfx';

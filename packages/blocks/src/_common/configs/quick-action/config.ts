@@ -1,15 +1,15 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 import type { TemplateResult } from 'lit';
 
 import {
   CopyIcon,
   //DatabaseTableViewIcon20,
   //LinkedDocIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-//import { matchFlavours } from '@blocksuite/affine-shared/utils';
-//import { tableViewMeta } from '@blocksuite/data-view/view-presets';
-//import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+//import { matchFlavours } from '@algogrind/affine-shared/utils';
+//import { tableViewMeta } from '@algogrind/data-view/view-presets';
+//import { assertExists } from '@algogrind/global/utils';
 //
 //import { convertToDatabase } from '../../../database-block/data-source.js';
 //import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils.js';

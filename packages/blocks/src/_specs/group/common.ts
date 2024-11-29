@@ -6,9 +6,9 @@ import {
   EmbedLoomBlockSpec,
   EmbedSyncedDocBlockSpec,
   EmbedYoutubeBlockSpec,
-} from '@blocksuite/affine-block-embed';
-import { ListBlockSpec } from '@blocksuite/affine-block-list';
-import { ParagraphBlockSpec } from '@blocksuite/affine-block-paragraph';
+} from '@algogrind/affine-block-embed';
+import { ListBlockSpec } from '@algogrind/affine-block-list';
+import { ParagraphBlockSpec } from '@algogrind/affine-block-paragraph';
 
 import { AttachmentBlockSpec } from '../../attachment-block/attachment-spec.js';
 import { BookmarkBlockSpec } from '../../bookmark-block/bookmark-spec.js';

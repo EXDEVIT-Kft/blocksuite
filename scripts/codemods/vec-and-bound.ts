@@ -18,13 +18,13 @@ export default function (fileInfo: FileInfo, api: API) {
           specifier.imported.name === 'Vec' ||
           specifier.imported.name === 'IBound' ||
           specifier.imported.name === 'Bound') &&
-        path.node.source.value !== '@blocksuite/global/utils'
+        path.node.source.value !== '@algogrind/global/utils'
       ) {
         existModules.push(specifier.imported.name);
         return false;
       }
 
-      if (path.node.source.value === '@blocksuite/global/utils') {
+      if (path.node.source.value === '@algogrind/global/utils') {
         globalImportPath = path;
       }
 
@@ -39,7 +39,7 @@ export default function (fileInfo: FileInfo, api: API) {
       if (!globalImportPath!) {
         const newImport = j.importDeclaration(
           existModules.map(name => j.importSpecifier(j.identifier(name))),
-          j.literal('@blocksuite/global/utils')
+          j.literal('@algogrind/global/utils')
         );
 
         // Insert the new import statement at the beginning of the file
