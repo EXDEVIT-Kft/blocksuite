@@ -1,4 +1,4 @@
-import { Point } from '@blocksuite/global/utils';
+import { Point } from '@algogrind/global/utils';
 import { describe, expect, it } from 'vitest';
 
 describe('Point', () => {

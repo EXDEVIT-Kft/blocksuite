@@ -1,10 +1,10 @@
 import type {
   EdgelessRootBlockComponent,
   FrameBlockComponent,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
-import { assertType } from '@blocksuite/global/utils';
-import { Text } from '@blocksuite/store';
+import { assertType } from '@algogrind/global/utils';
+import { Text } from '@algogrind/store';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

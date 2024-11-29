@@ -6,7 +6,7 @@ import {
   tUnion,
   tUnknown,
   typesystem,
-} from '@blocksuite/data-view';
+} from '@algogrind/data-view';
 import { describe, expect, test } from 'vitest';
 
 export const tString = typesystem.defineData<{ value: string }>({
