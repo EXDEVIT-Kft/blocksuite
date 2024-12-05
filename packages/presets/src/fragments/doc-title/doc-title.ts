@@ -27,7 +27,6 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       max-width: var(--affine-editor-width);
       margin-left: auto;
       margin-right: auto;
-      padding: 38px 0;
 
       padding-left: var(
         --affine-editor-side-padding,
@@ -37,6 +36,8 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
         --affine-editor-side-padding,
         ${DOC_BLOCK_CHILD_PADDING}px
       );
+      padding-top: 5rem;
+      padding-bottom: 38px;
     }
 
     /* Extra small devices (phones, 640px and down) */
