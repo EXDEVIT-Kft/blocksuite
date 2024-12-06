@@ -1,7 +1,7 @@
-import type { Bound } from '@blocksuite/global/utils';
+import type { Bound } from '@algogrind/global/utils';
 
-import { openFileOrFiles } from '@blocksuite/affine-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { openFileOrFiles } from '@algogrind/affine-shared/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import c from 'simple-xml-to-json';
 
 type MindMapNode = {

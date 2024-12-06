@@ -1,11 +1,11 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   createIdentifier,
   type ServiceIdentifier,
   type ServiceProvider,
-} from '@blocksuite/global/di';
+} from '@algogrind/global/di';
 
 import type { InlineSpecs } from './type.js';
 

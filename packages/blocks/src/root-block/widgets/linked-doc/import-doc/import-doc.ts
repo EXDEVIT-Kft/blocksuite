@@ -1,4 +1,4 @@
-import type { DocCollection } from '@blocksuite/store';
+import type { DocCollection } from '@algogrind/store';
 
 import {
   CloseIcon,
@@ -6,8 +6,8 @@ import {
   ExportToMarkdownIcon,
   NewIcon,
   NotionIcon,
-} from '@blocksuite/affine-components/icons';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, type PropertyValues } from 'lit';
 import { query, state } from 'lit/decorators.js';
 

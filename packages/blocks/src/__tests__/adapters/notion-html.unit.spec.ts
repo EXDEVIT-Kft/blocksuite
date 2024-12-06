@@ -1,12 +1,12 @@
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   AssetsManager,
   type BlockSnapshot,
   MemoryBlobCRUD,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { describe, expect, test } from 'vitest';
 
 import { NotionHtmlAdapter } from '../../_common/adapters/notion-html.js';

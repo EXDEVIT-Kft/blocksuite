@@ -1,11 +1,11 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/affine-components/context-menu';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';

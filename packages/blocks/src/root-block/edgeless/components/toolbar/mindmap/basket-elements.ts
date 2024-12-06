@@ -1,10 +1,10 @@
 import type { TemplateResult } from 'lit';
 
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
-import { type MindmapStyle, TextElementModel } from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { assertInstanceOf, Bound } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
+import { type MindmapStyle, TextElementModel } from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { assertInstanceOf, Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../../../edgeless-root-block.js';
 import type { EdgelessRootService } from '../../../edgeless-root-service.js';

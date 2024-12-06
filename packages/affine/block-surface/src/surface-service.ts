@@ -1,5 +1,5 @@
-import { BlockService } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+import { BlockService } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 
 import { type SurfaceBlockModel, SurfaceBlockSchema } from './surface-model.js';
 

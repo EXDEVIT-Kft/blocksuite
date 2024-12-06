@@ -1,10 +1,10 @@
 import type {
   EmbedGithubModel,
   EmbedGithubStyles,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { OpenIcon } from '@blocksuite/affine-components/icons';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { OpenIcon } from '@algogrind/affine-components/icons';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import { html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

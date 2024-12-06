@@ -1,4 +1,4 @@
-import { WithDisposable } from '@blocksuite/global/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { isSameDay, isSameMonth, isToday } from 'date-fns';
 import {
   html,

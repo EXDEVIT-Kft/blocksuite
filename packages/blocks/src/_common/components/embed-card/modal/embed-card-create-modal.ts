@@ -1,15 +1,15 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { toast } from '@blocksuite/affine-components/toast';
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { toast } from '@algogrind/affine-components/toast';
+import { EmbedOptionProvider } from '@algogrind/affine-shared/services';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   assertExists,
   Bound,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

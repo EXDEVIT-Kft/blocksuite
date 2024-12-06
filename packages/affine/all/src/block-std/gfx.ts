@@ -1,1 +1,1 @@
-export * from '@blocksuite/block-std/gfx';
+export * from '@algogrind/block-std/gfx';

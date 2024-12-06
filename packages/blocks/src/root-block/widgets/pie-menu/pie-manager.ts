@@ -1,5 +1,5 @@
-import { assertExists, assertNotExists } from '@blocksuite/global/utils';
-import { Slot } from '@blocksuite/store';
+import { assertExists, assertNotExists } from '@algogrind/global/utils';
+import { Slot } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../../edgeless/edgeless-root-block.js';
 import type { PieMenuId } from '../../types.js';

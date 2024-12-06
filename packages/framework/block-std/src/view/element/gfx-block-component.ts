@@ -1,7 +1,7 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Bound, type SerializedXYWH } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Bound, type SerializedXYWH } from '@algogrind/global/utils';
 import { nothing } from 'lit';
 
 import type { BlockService } from '../../extension/index.js';

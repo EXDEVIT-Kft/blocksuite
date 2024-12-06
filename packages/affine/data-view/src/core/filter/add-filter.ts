@@ -5,7 +5,7 @@ import {
   menu,
   popMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 
 import type { Variable } from '../expression/index.js';

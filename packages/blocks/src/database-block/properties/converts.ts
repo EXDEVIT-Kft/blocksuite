@@ -1,12 +1,12 @@
-import { clamp } from '@blocksuite/affine-shared/utils';
+import { clamp } from '@algogrind/affine-shared/utils';
 import {
   createPropertyConvert,
   getTagColor,
   type SelectTag,
-} from '@blocksuite/data-view';
-import { presetPropertyConverts } from '@blocksuite/data-view/property-presets';
-import { propertyModelPresets } from '@blocksuite/data-view/property-pure-presets';
-import { nanoid, Text } from '@blocksuite/store';
+} from '@algogrind/data-view';
+import { presetPropertyConverts } from '@algogrind/data-view/property-presets';
+import { propertyModelPresets } from '@algogrind/data-view/property-pure-presets';
+import { nanoid, Text } from '@algogrind/store';
 
 import { richTextColumnModelConfig } from './rich-text/define.js';
 

@@ -1,8 +1,8 @@
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@algogrind/affine-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const dividerBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {

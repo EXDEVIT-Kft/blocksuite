@@ -1,4 +1,4 @@
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   type ColorScheme,
@@ -7,8 +7,8 @@ import {
   NoteDisplayMode,
   on,
   once,
-} from '@blocksuite/blocks';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/blocks';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

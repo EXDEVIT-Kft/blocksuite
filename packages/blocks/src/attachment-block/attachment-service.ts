@@ -1,17 +1,17 @@
-import { AttachmentBlockSchema } from '@blocksuite/affine-model';
+import { AttachmentBlockSchema } from '@algogrind/affine-model';
 import {
   DragHandleConfigExtension,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   convertDragPreviewDocToEdgeless,
   convertDragPreviewEdgelessToDoc,
   isInsideEdgelessEditor,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BlockService } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-shared/utils';
+import { BlockService } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 
 import type { AttachmentBlockComponent } from './attachment-block.js';
 

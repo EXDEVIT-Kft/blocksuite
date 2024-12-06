@@ -1,8 +1,8 @@
 import {
   type AccordionBlockModel,
   AccordionBlockSchema,
-} from '@blocksuite/affine-model';
-import { BlockService } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import { BlockService } from '@algogrind/block-std';
 
 export class AccordionBlockService extends BlockService {
   static override readonly flavour = AccordionBlockSchema.model.flavour;

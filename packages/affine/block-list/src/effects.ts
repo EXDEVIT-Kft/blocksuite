@@ -1,4 +1,4 @@
-import type { IndentContext } from '@blocksuite/affine-shared/types';
+import type { IndentContext } from '@algogrind/affine-shared/types';
 
 import type { convertToNumberedListCommand } from './commands/convert-to-numbered-list.js';
 import type {

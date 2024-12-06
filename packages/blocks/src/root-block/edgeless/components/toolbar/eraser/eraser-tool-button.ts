@@ -1,10 +1,10 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
 import {
   EdgelessEraserDarkIcon,
   EdgelessEraserLightIcon,
-} from '@blocksuite/affine-components/icons';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-components/icons';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import { css, html, LitElement } from 'lit';
 
 import { getTooltipWithShortcut } from '../../utils.js';

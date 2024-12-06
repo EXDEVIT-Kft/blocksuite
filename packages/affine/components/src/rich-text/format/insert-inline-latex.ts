@@ -1,4 +1,4 @@
-import type { Command, TextSelection } from '@blocksuite/block-std';
+import type { Command, TextSelection } from '@algogrind/block-std';
 
 export const insertInlineLatex: Command<
   'currentTextSelection',

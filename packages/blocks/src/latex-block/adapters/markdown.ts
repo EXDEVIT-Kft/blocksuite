@@ -1,10 +1,10 @@
-import { LatexBlockSchema } from '@blocksuite/affine-model';
+import { LatexBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 const isLatexNode = (node: MarkdownAST) => node.type === 'math';
 

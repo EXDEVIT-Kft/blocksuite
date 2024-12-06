@@ -1,10 +1,10 @@
-import type { DndEventState } from '@blocksuite/block-std';
+import type { DndEventState } from '@algogrind/block-std';
 
 import {
   GfxControllerIdentifier,
   type GfxToolsFullOptionValue,
-} from '@blocksuite/block-std/gfx';
-import { type IVec, Rect } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import { type IVec, Rect } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 
 import type {

@@ -5,7 +5,7 @@ In BlockSuite, all blocks should have a schema. The schema of the block describe
 You can use the `defineBlockSchema` function to define the schema of the block.
 
 ```ts
-import { defineBlockSchema } from '@blocksuite/store';
+import { defineBlockSchema } from '@algogrind/store';
 
 export const MyBlockSchema = defineBlockSchema({
   flavour: 'my-block',
@@ -67,7 +67,7 @@ Some examples:
 This means the block's children must match the flavour `my-leaf`.
 
 ```ts
-import { defineBlockSchema } from '@blocksuite/store';
+import { defineBlockSchema } from '@algogrind/store';
 
 export const MyBlockSchema = defineBlockSchema({
   // ...
@@ -132,7 +132,7 @@ MyBlockSchema
 For example, if we have a schema like this:
 
 ```ts
-import { defineBlockSchema, type Text } from '@blocksuite/store';
+import { defineBlockSchema, type Text } from '@algogrind/store';
 
 export type MyBlockProps = {
   text: Text;
@@ -155,7 +155,7 @@ export const MyBlockSchema = defineBlockSchema({
 And when the model is created, you can use it like this:
 
 ```ts
-import { type SchemaToModel } from '@blocksuite/store';
+import { type SchemaToModel } from '@algogrind/store';
 
 function doSomething(model: SchemaToModel<typeof MyBlockSchema>) {
   const id = model.id;

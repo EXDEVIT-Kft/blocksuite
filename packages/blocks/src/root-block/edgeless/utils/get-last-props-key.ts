@@ -1,10 +1,10 @@
 import type {
   LastProps,
   LastPropsKey,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 
-import { getShapeName, type ShapeProps } from '@blocksuite/affine-model';
-import { NodePropsSchema } from '@blocksuite/affine-shared/utils';
+import { getShapeName, type ShapeProps } from '@algogrind/affine-model';
+import { NodePropsSchema } from '@algogrind/affine-shared/utils';
 
 const LastPropsSchema = NodePropsSchema;
 

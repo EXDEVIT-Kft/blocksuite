@@ -1,10 +1,10 @@
-import type { TextElementModel } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { TextElementModel } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
 
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { BaseTool, type GfxController } from '@blocksuite/block-std/gfx';
-import { Bound } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { BaseTool, type GfxController } from '@algogrind/block-std/gfx';
+import { Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 
@@ -62,7 +62,7 @@ export class TextTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     text: TextTool;
   }

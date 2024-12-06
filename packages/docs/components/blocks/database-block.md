@@ -6,5 +6,5 @@ In a database block, each row is a standard paragraph block or list block. It su
 
 ## Reference
 
-- [`DatabaseBlockSchema`](/api/@blocksuite/blocks/variables/DatabaseBlockSchema.html)
-- [`DatabaseBlockService`](/api/@blocksuite/blocks/classes/DatabaseBlockService.html)
+- [`DatabaseBlockSchema`](/api/@algogrind/blocks/variables/DatabaseBlockSchema.html)
+- [`DatabaseBlockService`](/api/@algogrind/blocks/classes/DatabaseBlockService.html)

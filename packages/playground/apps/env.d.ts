@@ -1,7 +1,7 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { TestUtils } from '@blocksuite/blocks';
-import type { AffineEditorContainer } from '@blocksuite/presets';
-import type { BlockSchema, Doc, DocCollection, Job } from '@blocksuite/store';
+import type { EditorHost } from '@algogrind/block-std';
+import type { TestUtils } from '@algogrind/blocks';
+import type { AffineEditorContainer } from '@algogrind/presets';
+import type { BlockSchema, Doc, DocCollection, Job } from '@algogrind/store';
 import type { z } from 'zod';
 
 declare global {

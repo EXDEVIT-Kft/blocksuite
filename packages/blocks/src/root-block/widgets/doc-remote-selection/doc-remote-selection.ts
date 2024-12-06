@@ -1,13 +1,13 @@
-import type { UserInfo } from '@blocksuite/store';
+import type { UserInfo } from '@algogrind/store';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 import {
   type BaseSelection,
   BlockSelection,
   TextSelection,
-} from '@blocksuite/block-std';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { WidgetComponent } from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

@@ -1,4 +1,4 @@
-import type { Container } from '@blocksuite/global/di';
+import type { Container } from '@algogrind/global/di';
 
 /**
  * Generic extension.

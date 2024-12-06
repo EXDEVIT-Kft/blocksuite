@@ -1,10 +1,10 @@
 import type {
   EmbedGithubBlockUrlData,
   EmbedGithubModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { isAbortError } from '@blocksuite/affine-shared/utils';
-import { assertExists } from '@blocksuite/global/utils';
+import { isAbortError } from '@algogrind/affine-shared/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { nothing } from 'lit';
 
 import type { LinkPreviewer } from '../common/link-previewer.js';

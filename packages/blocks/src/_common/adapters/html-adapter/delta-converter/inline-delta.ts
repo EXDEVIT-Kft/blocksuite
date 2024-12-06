@@ -2,7 +2,7 @@ import {
   type InlineDeltaToHtmlAdapterMatcher,
   type InlineHtmlAST,
   toURLSearchParams,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const boldDeltaToHtmlAdapterMatcher: InlineDeltaToHtmlAdapterMatcher = {
   name: 'bold',

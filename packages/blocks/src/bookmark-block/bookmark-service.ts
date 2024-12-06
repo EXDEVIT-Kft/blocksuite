@@ -1,17 +1,17 @@
-import { LinkPreviewer } from '@blocksuite/affine-block-embed';
-import { BookmarkBlockSchema } from '@blocksuite/affine-model';
+import { LinkPreviewer } from '@algogrind/affine-block-embed';
+import { BookmarkBlockSchema } from '@algogrind/affine-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { DragHandleConfigExtension } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/consts';
+import { DragHandleConfigExtension } from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   convertDragPreviewDocToEdgeless,
   convertDragPreviewEdgelessToDoc,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BlockService } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { BlockService } from '@algogrind/block-std';
 
 import type { BookmarkBlockComponent } from './bookmark-block.js';
 

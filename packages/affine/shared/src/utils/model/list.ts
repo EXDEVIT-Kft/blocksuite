@@ -1,6 +1,6 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { ListBlockModel } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import { matchFlavours } from './checker.js';
 

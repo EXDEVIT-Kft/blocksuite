@@ -1,5 +1,5 @@
-import type { Command } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { Command } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
 export const indentBlocks: Command<
   never,

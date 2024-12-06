@@ -1,5 +1,5 @@
-import { type ListBlockModel, ListBlockSchema } from '@blocksuite/affine-model';
-import { propertyPresets } from '@blocksuite/data-view/property-presets';
+import { type ListBlockModel, ListBlockSchema } from '@algogrind/affine-model';
+import { propertyPresets } from '@algogrind/data-view/property-presets';
 
 import { richTextColumnConfig } from '../../database-block/properties/rich-text/cell-renderer.js';
 import { createBlockMeta } from './base.js';

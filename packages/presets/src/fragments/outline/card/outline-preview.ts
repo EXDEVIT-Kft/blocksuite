@@ -1,4 +1,4 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
 import type {
   AttachmentBlockModel,
   BookmarkBlockModel,
@@ -8,10 +8,10 @@ import type {
   ListBlockModel,
   ParagraphBlockModel,
   RootBlockModel,
-} from '@blocksuite/blocks';
-import type { DeltaInsert } from '@blocksuite/inline';
+} from '@algogrind/blocks';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { noop, SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { noop, SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

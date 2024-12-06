@@ -1,10 +1,10 @@
-import { HighlightSelectionExtension } from '@blocksuite/affine-shared/selection';
+import { HighlightSelectionExtension } from '@algogrind/affine-shared/selection';
 import {
   BlockViewExtension,
   CommandExtension,
   type ExtensionType,
   FlavourExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { commands } from './commands/index.js';

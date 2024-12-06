@@ -1,6 +1,6 @@
-import type { BlockSuiteFlags } from '@blocksuite/global/types';
+import type { BlockSuiteFlags } from '@algogrind/global/types';
 
-import { AffineSchemas } from '@blocksuite/blocks';
+import { AffineSchemas } from '@algogrind/blocks';
 import {
   DocCollection,
   type DocCollectionOptions,
@@ -8,13 +8,13 @@ import {
   Job,
   Schema,
   Text,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import {
   BroadcastChannelAwarenessSource,
   BroadcastChannelDocSource,
   IndexedDBBlobSource,
   IndexedDBDocSource,
-} from '@blocksuite/sync';
+} from '@algogrind/sync';
 
 import { WebSocketAwarenessSource } from '../../_common/sync/websocket/awareness';
 import { WebSocketDocSource } from '../../_common/sync/websocket/doc';

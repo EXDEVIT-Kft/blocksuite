@@ -1,8 +1,8 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@blocksuite/affine-model';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@algogrind/affine-model';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -13,7 +13,7 @@ import {
   type FromSliceSnapshotResult,
   nanoid,
   type SliceSnapshot,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 type NotionEditingStyle = {
   0: string;

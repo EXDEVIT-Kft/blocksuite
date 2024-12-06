@@ -1,9 +1,9 @@
-import { EmbedYoutubeBlockSchema } from '@blocksuite/affine-model';
+import { EmbedYoutubeBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 import { createEmbedBlockHtmlAdapterMatcher } from '../../common/adapters/html.js';
 

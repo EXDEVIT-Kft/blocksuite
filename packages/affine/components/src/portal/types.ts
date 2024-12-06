@@ -1,4 +1,4 @@
-import type { Slot } from '@blocksuite/global/utils';
+import type { Slot } from '@algogrind/global/utils';
 import type {
   AutoUpdateOptions,
   ComputePositionConfig,

@@ -1,4 +1,4 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteDisplayMode } from '@algogrind/affine-model';
 import { expect, type Locator, type Page } from '@playwright/test';
 import {
   addNote,

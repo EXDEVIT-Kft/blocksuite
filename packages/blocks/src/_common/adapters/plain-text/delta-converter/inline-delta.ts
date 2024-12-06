@@ -2,7 +2,7 @@ import {
   type InlineDeltaToPlainTextAdapterMatcher,
   type TextBuffer,
   toURLSearchParams,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const referenceDeltaMarkdownAdapterMatch: InlineDeltaToPlainTextAdapterMatcher =
   {

@@ -1,12 +1,12 @@
 import {
   EdgelessPenDarkIcon,
   EdgelessPenLightIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

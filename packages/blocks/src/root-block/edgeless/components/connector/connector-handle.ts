@@ -1,17 +1,17 @@
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
-import type { Doc } from '@blocksuite/store';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
+import type { Doc } from '@algogrind/store';
 
 import {
   type ConnectionOverlay,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type BlockStdScope,
   docContext,
   stdContext,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { DisposableGroup, Vec, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { DisposableGroup, Vec, WithDisposable } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';

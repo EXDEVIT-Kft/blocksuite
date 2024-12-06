@@ -2,10 +2,10 @@ import type {
   BrushElementModel,
   BrushProps,
   ColorScheme,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { LINE_COLORS, LineWidth } from '@blocksuite/affine-model';
-import { countBy, maxBy, WithDisposable } from '@blocksuite/global/utils';
+import { LINE_COLORS, LineWidth } from '@algogrind/affine-model';
+import { countBy, maxBy, WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { when } from 'lit/directives/when.js';

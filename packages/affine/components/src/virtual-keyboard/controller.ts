@@ -1,7 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 
-import { IS_IOS } from '@blocksuite/global/env';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { IS_IOS } from '@algogrind/global/env';
+import { DisposableGroup } from '@algogrind/global/utils';
 import { signal } from '@preact/signals-core';
 
 function notSupportedWarning() {

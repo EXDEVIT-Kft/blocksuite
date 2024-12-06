@@ -1,14 +1,14 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { HastUtils, type HtmlAST } from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { getTagColor } from '@blocksuite/data-view';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { isEqual, sha } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { HastUtils, type HtmlAST } from '@algogrind/affine-shared/adapters';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { getTagColor } from '@algogrind/data-view';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { isEqual, sha } from '@algogrind/global/utils';
 import {
   type AssetsManager,
   ASTWalker,
@@ -24,7 +24,7 @@ import {
   getAssetName,
   nanoid,
   type SliceSnapshot,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { collapseWhiteSpace } from 'collapse-white-space';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';

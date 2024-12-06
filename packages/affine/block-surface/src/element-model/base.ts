@@ -1,4 +1,4 @@
 export {
   GfxGroupLikeElementModel as SurfaceGroupLikeModel,
   GfxPrimitiveElementModel as SurfaceElementModel,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';

@@ -1,4 +1,4 @@
-import { unsafeCSSVar } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVar } from '@algogrind/affine-shared/theme';
 import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';
 
