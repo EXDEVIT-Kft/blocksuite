@@ -122,36 +122,36 @@ export class AffineLinkedDocWidget extends WidgetComponent<
     this._handleInput(true);
   };
 
-  private readonly _onKeyDown = (ctx: UIEventStateContext) => {
-    const eventState = ctx.get('keyboardState');
-    const event = eventState.raw;
-
-    const key = event.key;
-    if (
-      key === undefined || // in mac os, the key may be undefined
-      key === 'Process' ||
-      event.isComposing
-    )
-      return;
-
-    if (!this.config.triggerKeys.some(triggerKey => triggerKey.includes(key)))
-      return;
-
-    this._inlineEditor = this._getInlineEditor(event);
-    if (!this._inlineEditor) return;
-
-    const inlineRange = this._inlineEditor.getInlineRange();
-    if (!inlineRange) return;
-
-    if (inlineRange.length > 0) {
-      // When select text and press `[[` should not trigger transform,
-      // since it will break the bracket complete.
-      // Expected `[[selected text]]` instead of `@selected text]]`
-      return;
-    }
-
-    this._handleInput(false);
-  };
+  //private readonly _onKeyDown = (ctx: UIEventStateContext) => {
+  //  const eventState = ctx.get('keyboardState');
+  //  const event = eventState.raw;
+  //
+  //  const key = event.key;
+  //  if (
+  //    key === undefined || // in mac os, the key may be undefined
+  //    key === 'Process' ||
+  //    event.isComposing
+  //  )
+  //    return;
+  //
+  //  if (!this.config.triggerKeys.some(triggerKey => triggerKey.includes(key)))
+  //    return;
+  //
+  //  this._inlineEditor = this._getInlineEditor(event);
+  //  if (!this._inlineEditor) return;
+  //
+  //  const inlineRange = this._inlineEditor.getInlineRange();
+  //  if (!inlineRange) return;
+  //
+  //  if (inlineRange.length > 0) {
+  //    // When select text and press `[[` should not trigger transform,
+  //    // since it will break the bracket complete.
+  //    // Expected `[[selected text]]` instead of `@selected text]]`
+  //    return;
+  //  }
+  //
+  //  this._handleInput(false);
+  //};
 
   private readonly _renderLinkedDocMenu = () => {
     if (!this.block.rootComponent) return nothing;

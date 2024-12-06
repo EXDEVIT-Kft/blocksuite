@@ -29,7 +29,7 @@ import type {
 
 import { startDragging } from '../utils/drag.js';
 
-const compare = EdgelessFrameManager.framePresentationComparator;
+const compare = EdgelessFrameManager!.framePresentationComparator;
 
 type FrameListItem = {
   frame: FrameBlockModel;
