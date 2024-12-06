@@ -36,7 +36,7 @@ export function isImageUploading(blockId: string) {
 
 // [ALGOGRIND]
 // Implement basic blob (image) delete functionality
-export async function deleteBlobForImage(
+export function deleteBlobForImage(
   editorHost: EditorHost,
   sourceId: string | undefined
 ) {
@@ -46,8 +46,7 @@ export async function deleteBlobForImage(
 
   const doc = editorHost.doc;
 
-  const result = await doc.blobSync.delete(sourceId);
-  return result;
+  doc.blobSync.delete(sourceId).catch(console.log);
 }
 
 export async function uploadBlobForImage(

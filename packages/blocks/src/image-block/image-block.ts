@@ -86,9 +86,7 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
     // Detect image deletion, and call the helper to notify the blobSource engine.
     this._disposables.add(
       this.model.deleted.on(() => {
-        deleteBlobForImage(this.host, this.model.sourceId$.value).catch(
-          console.log
-        );
+        deleteBlobForImage(this.host, this.model.sourceId$.value);
       })
     );
   }
