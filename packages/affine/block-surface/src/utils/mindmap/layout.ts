@@ -1,12 +1,12 @@
-import type { SerializedXYWH } from '@blocksuite/global/utils';
+import type { SerializedXYWH } from '@algogrind/global/utils';
 
 import {
   LayoutType,
   type MindmapElementModel,
   type MindmapNode,
   type MindmapRoot,
-} from '@blocksuite/affine-model';
-import { Bound, last } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound, last } from '@algogrind/global/utils';
 
 export const NODE_VERTICAL_SPACING = 45;
 export const NODE_HORIZONTAL_SPACING = 110;

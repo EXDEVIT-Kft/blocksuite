@@ -3,7 +3,7 @@ import type { PhrasingContent } from 'mdast';
 import {
   type InlineDeltaToMarkdownAdapterMatcher,
   toURLSearchParams,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const boldDeltaToMarkdownAdapterMatcher: InlineDeltaToMarkdownAdapterMatcher =
   {

@@ -1,10 +1,10 @@
-import { BaseTool } from '@blocksuite/block-std/gfx';
+import { BaseTool } from '@algogrind/block-std/gfx';
 
 export class TemplateTool extends BaseTool {
   static override toolName: string = 'template';
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     template: TemplateTool;
   }

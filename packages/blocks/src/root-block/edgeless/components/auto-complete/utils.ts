@@ -1,12 +1,12 @@
-import type { GfxController, GfxModel } from '@blocksuite/block-std/gfx';
-import type { XYWH } from '@blocksuite/global/utils';
+import type { GfxController, GfxModel } from '@algogrind/block-std/gfx';
+import type { XYWH } from '@algogrind/global/utils';
 
 import {
   CommonUtils,
   type Options,
   Overlay,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type Connection,
   getShapeRadius,
@@ -16,10 +16,10 @@ import {
   ShapeElementModel,
   type ShapeName,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertType, Bound } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertType, Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../../edgeless-root-block.js';
 

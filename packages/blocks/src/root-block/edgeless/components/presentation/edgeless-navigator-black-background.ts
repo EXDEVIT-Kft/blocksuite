@@ -1,9 +1,9 @@
-import type { FrameBlockModel, RootBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel, RootBlockModel } from '@algogrind/affine-model';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { Bound } from '@blocksuite/global/utils';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { WidgetComponent } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { Bound } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { state } from 'lit/decorators.js';

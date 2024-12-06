@@ -1,7 +1,7 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 
-import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/block-std';
+import { BLOCK_ID_ATTR, type BlockComponent } from '@algogrind/block-std';
 
 const ATTR_SELECTOR = `[${BLOCK_ID_ATTR}]`;
 

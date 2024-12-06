@@ -1,15 +1,15 @@
-import type { EmbedOptions } from '@blocksuite/affine-shared/types';
-import type { InlineRange } from '@blocksuite/inline/types';
+import type { EmbedOptions } from '@algogrind/affine-shared/types';
+import type { InlineRange } from '@algogrind/inline/types';
 
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
+import { EmbedOptionProvider } from '@algogrind/affine-shared/services';
 import {
   getHostName,
   isValidUrl,
   normalizeUrl,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { BLOCK_ID_ATTR, type BlockComponent } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { computePosition, inline, offset, shift } from '@floating-ui/dom';
 import { html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';

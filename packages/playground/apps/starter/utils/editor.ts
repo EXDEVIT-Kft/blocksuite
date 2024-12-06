@@ -1,10 +1,10 @@
-import type { DocCollection } from '@blocksuite/store';
+import type { DocCollection } from '@algogrind/store';
 
 import {
   BlockServiceWatcher,
   type EditorHost,
   type ExtensionType,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import {
   CommunityCanvasTextFonts,
   FontConfigExtension,
@@ -16,13 +16,13 @@ import {
   RefNodeSlotsExtension,
   RefNodeSlotsProvider,
   SpecProvider,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import {
   AffineFormatBarWidget,
   DocModeProvider,
   toolbarDefaultConfig,
-} from '@blocksuite/blocks';
-import { AffineEditorContainer, CommentPanel } from '@blocksuite/presets';
+} from '@algogrind/blocks';
+import { AffineEditorContainer, CommentPanel } from '@algogrind/presets';
 
 import { AttachmentViewerPanel } from '../../_common/components/attachment-viewer-panel.js';
 import { CustomFramePanel } from '../../_common/components/custom-frame-panel.js';

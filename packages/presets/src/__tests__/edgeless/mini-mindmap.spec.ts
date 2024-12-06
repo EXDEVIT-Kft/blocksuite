@@ -1,12 +1,12 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import {
   type EdgelessRootBlockComponent,
   type MindmapElementModel,
   type MindmapSurfaceBlock,
   MiniMindmapPreview,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

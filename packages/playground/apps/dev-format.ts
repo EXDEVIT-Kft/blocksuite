@@ -1,6 +1,6 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import * as globalUtils from '@blocksuite/global/utils';
+import * as globalUtils from '@algogrind/global/utils';
 
 function toStyledEntry(key: string, value: unknown) {
   return [

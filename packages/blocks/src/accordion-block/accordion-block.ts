@@ -1,15 +1,15 @@
-import type { AccordionBlockModel } from '@blocksuite/affine-model';
-import type { InlineRangeProvider } from '@blocksuite/inline';
+import type { AccordionBlockModel } from '@algogrind/affine-model';
+import type { InlineRangeProvider } from '@algogrind/inline';
 
-import { SmallArrowDownIcon } from '@blocksuite/affine-components/icons';
+import { SmallArrowDownIcon } from '@algogrind/affine-components/icons';
 import {
   DefaultInlineManagerExtension,
   focusTextModel,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { NOTE_SELECTOR } from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { BlockComponent, getInlineRangeProvider } from '@blocksuite/block-std';
+} from '@algogrind/affine-components/rich-text';
+import { NOTE_SELECTOR } from '@algogrind/affine-shared/consts';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
+import { BlockComponent, getInlineRangeProvider } from '@algogrind/block-std';
 import { effect, signal } from '@preact/signals-core';
 import { html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';

@@ -1,11 +1,8 @@
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { DeltaInsert } from '@blocksuite/inline/types';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { DeltaInsert } from '@algogrind/inline/types';
 import type { PhrasingContent } from 'mdast';
 
-import {
-  createIdentifier,
-  type ServiceIdentifier,
-} from '@blocksuite/global/di';
+import { createIdentifier, type ServiceIdentifier } from '@algogrind/global/di';
 
 import type { AffineTextAttributes } from '../../types/index.js';
 import type { MarkdownAST } from './type.js';

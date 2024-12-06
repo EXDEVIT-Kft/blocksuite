@@ -3,17 +3,17 @@ import {
   getBlockComponentsExcludeSubtrees,
   getClosestBlockComponentByPoint,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   type DndEventState,
   isGfxBlockComponent,
   type UIEventHandler,
   type UIEventStateContext,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { Bound, Point } from '@blocksuite/global/utils';
-import { Job, Slice } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { Bound, Point } from '@algogrind/global/utils';
+import { Job, Slice } from '@algogrind/store';
 import { render } from 'lit';
 import * as lz from 'lz-string';
 

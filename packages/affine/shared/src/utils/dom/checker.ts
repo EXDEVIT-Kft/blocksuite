@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
 export function isInsidePageEditor(host: EditorHost) {
   return Array.from(host.children).some(

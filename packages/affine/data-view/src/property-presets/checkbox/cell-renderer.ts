@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import { CheckBoxCkeckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';

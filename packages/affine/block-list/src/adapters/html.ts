@@ -1,14 +1,14 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 import type { Element } from 'hast';
 
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
   isNullish,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
   flavour: ListBlockSchema.model.flavour,

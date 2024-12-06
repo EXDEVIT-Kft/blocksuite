@@ -1,7 +1,7 @@
-import type { AffineEditorContainer } from '@blocksuite/presets';
+import type { AffineEditorContainer } from '@algogrind/presets';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';

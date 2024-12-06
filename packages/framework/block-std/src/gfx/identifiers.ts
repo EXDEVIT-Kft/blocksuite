@@ -1,4 +1,4 @@
-import type { ServiceIdentifier } from '@blocksuite/global/di';
+import type { ServiceIdentifier } from '@algogrind/global/di';
 
 import type { GfxController } from './controller.js';
 

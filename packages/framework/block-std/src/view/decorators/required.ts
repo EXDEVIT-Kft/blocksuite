@@ -1,7 +1,7 @@
-import type { Constructor } from '@blocksuite/global/utils';
+import type { Constructor } from '@algogrind/global/utils';
 import type { LitElement } from 'lit';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 type ValidatorFunction = (value: unknown) => boolean;
 

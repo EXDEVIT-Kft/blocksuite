@@ -1,8 +1,8 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
-import type { BlockComponent, EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { RichText } from '@algogrind/affine-components/rich-text';
+import type { BlockComponent, EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { asyncGetRichText } from '@blocksuite/affine-components/rich-text';
+import { asyncGetRichText } from '@algogrind/affine-components/rich-text';
 
 export async function onModelTextUpdated(
   editorHost: EditorHost,

@@ -16,7 +16,7 @@ export {
 } from './utils/id-generator.js';
 export * as Utils from './utils/utils.js';
 export * from './yjs/index.js';
-export { Slot } from '@blocksuite/global/utils';
+export { Slot } from '@algogrind/global/utils';
 
 import type * as Y from 'yjs';
 
@@ -36,7 +36,7 @@ const importIdentifier = '__ $BLOCKSUITE_STORE$ __';
 if (env[importIdentifier] === true) {
   // https://github.com/yjs/yjs/issues/438
   console.error(
-    '@blocksuite/store was already imported. This breaks constructor checks and will lead to issues!'
+    '@algogrind/store was already imported. This breaks constructor checks and will lead to issues!'
   );
 }
 // @ts-ignore

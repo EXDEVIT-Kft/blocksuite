@@ -148,7 +148,7 @@ selection.slots.remoteChanged.on(nextSelectionMap => {
 You can create your own selection type by extending the `BaseSelection` interface.
 
 ```ts
-import { BaseSelection, PathFinder } from '@blocksuite/block-std';
+import { BaseSelection, PathFinder } from '@algogrind/block-std';
 import z from 'zod';
 
 const MySelectionSchema = z.object({

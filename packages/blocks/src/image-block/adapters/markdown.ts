@@ -1,14 +1,14 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   fetchable,
   fetchImage,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { sha } from '@blocksuite/global/utils';
-import { getAssetName, nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { sha } from '@algogrind/global/utils';
+import { getAssetName, nanoid } from '@algogrind/store';
 
 const isImageNode = (node: MarkdownAST) => node.type === 'image';
 

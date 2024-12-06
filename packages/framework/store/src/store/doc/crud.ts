@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import * as Y from 'yjs';
 
 import type { YBlock } from './index.js';

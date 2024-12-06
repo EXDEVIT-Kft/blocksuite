@@ -1,4 +1,4 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
+import type { ReferenceInfo } from '@algogrind/affine-model';
 
 import cloneDeep from 'lodash.clonedeep';
 

@@ -1,7 +1,7 @@
 import type { ReadonlySignal } from '@preact/signals-core';
 import type { ClassInfo } from 'lit-html/directives/class-map.js';
 
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { IS_MOBILE } from '@algogrind/global/env';
 import {
   CheckBoxCkeckSolidIcon,
   CheckBoxUnIcon,

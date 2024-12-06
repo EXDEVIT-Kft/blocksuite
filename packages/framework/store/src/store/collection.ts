@@ -1,7 +1,7 @@
-import type { BlockSuiteFlags } from '@blocksuite/global/types';
+import type { BlockSuiteFlags } from '@algogrind/global/types';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { type Logger, NoopLogger, Slot } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { type Logger, NoopLogger, Slot } from '@algogrind/global/utils';
 import {
   AwarenessEngine,
   type AwarenessSource,
@@ -11,7 +11,7 @@ import {
   type DocSource,
   MemoryBlobSource,
   NoopDocSource,
-} from '@blocksuite/sync';
+} from '@algogrind/sync';
 import clonedeep from 'lodash.clonedeep';
 import merge from 'lodash.merge';
 import { Awareness } from 'y-protocols/awareness.js';

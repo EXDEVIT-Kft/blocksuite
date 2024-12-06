@@ -1,5 +1,5 @@
-import { RootBlockSchema } from '@blocksuite/affine-model';
-import { Slot } from '@blocksuite/store';
+import { RootBlockSchema } from '@algogrind/affine-model';
+import { Slot } from '@algogrind/store';
 
 import type { Viewport } from '../../_common/utils/index.js';
 

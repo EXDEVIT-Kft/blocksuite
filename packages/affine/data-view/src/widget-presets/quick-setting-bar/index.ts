@@ -1,5 +1,5 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { html, nothing } from 'lit';
 
 import {

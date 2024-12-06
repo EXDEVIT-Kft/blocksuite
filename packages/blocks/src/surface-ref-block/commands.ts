@@ -1,7 +1,7 @@
-import type { SurfaceRefProps } from '@blocksuite/affine-model';
-import type { BlockCommands, Command } from '@blocksuite/block-std';
+import type { SurfaceRefProps } from '@algogrind/affine-model';
+import type { BlockCommands, Command } from '@algogrind/block-std';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 import { getSurfaceBlock } from './utils.js';
 

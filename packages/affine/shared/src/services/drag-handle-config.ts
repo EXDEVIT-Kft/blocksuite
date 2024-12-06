@@ -3,10 +3,10 @@ import type {
   DndEventState,
   EditorHost,
   ExtensionType,
-} from '@blocksuite/block-std';
-import type { Point } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import type { Point } from '@algogrind/global/utils';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 export type DropType = 'before' | 'after' | 'in';
 export type OnDragStartProps = {

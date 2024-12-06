@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@blocksuite/global/exceptions';
+import { BlockSuiteError } from '@algogrind/global/exceptions';
 
 import type { Doc } from '../store/index.js';
 import type { AssetsManager } from '../transformer/assets.js';

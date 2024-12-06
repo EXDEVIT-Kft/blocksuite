@@ -1,7 +1,7 @@
 import type {
   HtmlAST,
   HtmlASTToDeltaMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 import type { Element } from 'hast';
 
 import { collapseWhiteSpace } from 'collapse-white-space';

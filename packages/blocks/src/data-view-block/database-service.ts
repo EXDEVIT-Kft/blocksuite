@@ -1,5 +1,5 @@
-import { BlockService } from '@blocksuite/block-std';
-import { DatabaseSelection } from '@blocksuite/data-view';
+import { BlockService } from '@algogrind/block-std';
+import { DatabaseSelection } from '@algogrind/data-view';
 
 import { DataViewBlockSchema } from './data-view-model.js';
 

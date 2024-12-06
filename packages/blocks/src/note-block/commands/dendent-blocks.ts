@@ -1,7 +1,7 @@
-import type { Command } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { Command } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 export const dedentBlocks: Command<
   never,

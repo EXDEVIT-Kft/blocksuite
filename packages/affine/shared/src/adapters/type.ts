@@ -1,4 +1,4 @@
-import type { BaseTextAttributes, DeltaInsert } from '@blocksuite/inline';
+import type { BaseTextAttributes, DeltaInsert } from '@algogrind/inline';
 
 import {
   type AssetsManager,
@@ -8,7 +8,7 @@ import {
   BlockSnapshotSchema,
   type Job,
   type NodeProps,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import type { AffineTextAttributes } from '../types/index.js';
 

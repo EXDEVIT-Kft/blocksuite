@@ -1,16 +1,16 @@
-import type { Container } from '@blocksuite/global/di';
+import type { Container } from '@algogrind/global/di';
 
 import {
   type ReferenceNodeConfig,
   ReferenceNodeConfigIdentifier,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   type BlockStdScope,
   ConfigIdentifier,
   LifeCycleWatcher,
   WidgetViewMapIdentifier,
   type WidgetViewMapType,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import type { CodeBlockConfig } from '../../code-block/code-block-config.js';
 

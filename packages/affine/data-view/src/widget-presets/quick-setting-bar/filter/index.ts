@@ -1,4 +1,4 @@
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { html } from 'lit';
 
 import type { DataViewWidgetProps } from '../../../core/widget/types.js';

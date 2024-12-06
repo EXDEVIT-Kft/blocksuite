@@ -1,14 +1,14 @@
-import type { ShapeElementModel, ShapeType } from '@blocksuite/affine-model';
-import type { IBound } from '@blocksuite/global/utils';
+import type { ShapeElementModel, ShapeType } from '@algogrind/affine-model';
+import type { IBound } from '@algogrind/global/utils';
 
 import {
   DEFAULT_SHAPE_FILL_COLOR,
   DEFAULT_SHAPE_STROKE_COLOR,
   DEFAULT_SHAPE_TEXT_COLOR,
   TextAlign,
-} from '@blocksuite/affine-model';
-import { Bound } from '@blocksuite/global/utils';
-import { deltaInsertsToChunks } from '@blocksuite/inline';
+} from '@algogrind/affine-model';
+import { Bound } from '@algogrind/global/utils';
+import { deltaInsertsToChunks } from '@algogrind/inline';
 
 import type { RoughCanvas } from '../../../utils/rough/canvas.js';
 import type { CanvasRenderer } from '../../canvas-renderer.js';

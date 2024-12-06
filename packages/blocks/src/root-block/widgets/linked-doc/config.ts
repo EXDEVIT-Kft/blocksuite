@@ -1,5 +1,5 @@
-import type { BlockStdScope, EditorHost } from '@blocksuite/block-std';
-import type { InlineRange } from '@blocksuite/inline';
+import type { BlockStdScope, EditorHost } from '@algogrind/block-std';
+import type { InlineRange } from '@algogrind/inline';
 import type { TemplateResult } from 'lit';
 
 import {
@@ -7,21 +7,21 @@ import {
   LinkedDocIcon,
   LinkedEdgelessIcon,
   NewDocIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   type AffineInlineEditor,
   insertLinkedNode,
-} from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   createDefaultDoc,
   isFuzzyMatch,
   type Signal,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 import { showImportModal } from './import-doc/index.js';
 

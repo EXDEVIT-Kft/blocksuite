@@ -1,7 +1,7 @@
 import type {
   BaseElementProps,
   PointTestOptions,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
 import {
   convert,
@@ -9,7 +9,7 @@ import {
   field,
   GfxPrimitiveElementModel,
   watch,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import {
   Bound,
   getBoundFromPoints,
@@ -27,7 +27,7 @@ import {
   type SerializedXYWH,
   transformPointsToNewBound,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { Color } from '../../consts/index.js';
 

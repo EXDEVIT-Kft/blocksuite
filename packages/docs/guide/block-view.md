@@ -2,15 +2,15 @@
 
 In BlockSuite, blocks can be rendered by any UI framework. A block should be rendered to a DOM element, and we use `view` to represent the renderer.
 
-By default, we provide a [lit](https://lit.dev/) renderer called `@blocksuite/lit`. But it's still possible to use other UI frameworks. We'll introduce later about how to write custom block renderers.
+By default, we provide a [lit](https://lit.dev/) renderer called `@algogrind/lit`. But it's still possible to use other UI frameworks. We'll introduce later about how to write custom block renderers.
 
 ## Web Component Block View
 
 We provide a `BlockComponent` class to help building a lit-based block view.
 
 ```ts
-import { defineBlockSchema, type SchemaToModel } from '@blocksuite/store';
-import { BlockComponent } from '@blocksuite/lit';
+import { defineBlockSchema, type SchemaToModel } from '@algogrind/store';
+import { BlockComponent } from '@algogrind/lit';
 import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
@@ -106,4 +106,4 @@ class MyBlockView extends BlockComponent<MyBlockModel> {
 }
 ```
 
-You can get the `std` instance from `this.std` to use the full power of [`block-std`](/api/@blocksuite/block-std/).
+You can get the `std` instance from `this.std` to use the full power of [`block-std`](/api/@algogrind/block-std/).
