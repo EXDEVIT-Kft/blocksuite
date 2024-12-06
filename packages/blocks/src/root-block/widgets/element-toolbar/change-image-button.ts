@@ -43,8 +43,8 @@ export class EdgelessChangeImageButton extends WithDisposable(LitElement) {
   override render() {
     return html`
       <editor-icon-button
-        aria-label="Download"
-        .tooltip=${'Download'}
+        aria-label="Letöltés"
+        .tooltip=${'Letöltés'}
         ?disabled=${this._doc.readonly}
         @click=${this._download}
       >
@@ -54,8 +54,8 @@ export class EdgelessChangeImageButton extends WithDisposable(LitElement) {
       <editor-toolbar-separator></editor-toolbar-separator>
 
       <editor-icon-button
-        aria-label="Add caption"
-        .tooltip=${'Add caption'}
+        aria-label="Felirat hozzáadása"
+        .tooltip=${'Felirat hozzáadása'}
         class="change-image-button caption"
         ?disabled=${this._doc.readonly}
         @click=${this._showCaption}

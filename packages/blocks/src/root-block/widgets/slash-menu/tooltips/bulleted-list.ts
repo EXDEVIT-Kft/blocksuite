@@ -7,9 +7,9 @@ export const BulletedListTooltip = html`<svg width="170" height="68" viewBox="0 
 </mask>
 <g mask="url(#mask0_16460_934)">
 <circle cx="14" cy="26" r="1.5" fill="#1C81D9"/>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="22" y="29.6364">Here&#39;s an example of a bulleted list.</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="22" y="29.6364">Ez egy példa szöveg, amely bemutatja</tspan></text>
 <circle cx="14" cy="42" r="1.5" fill="#1C81D9"/>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="22" y="45.6364">You can list your plans such as this</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="22" y="45.6364">a blokkok elrendezését és formázását a szerkesztőben.</tspan></text>
 </g>
 </svg>
 `;

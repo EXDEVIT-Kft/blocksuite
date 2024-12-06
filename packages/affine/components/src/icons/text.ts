@@ -330,6 +330,11 @@ export const ArrowDownSmallIcon = icons.ArrowDownSmallIcon({
   height: '24',
 });
 
+export const ArrowUpSmallIcon = icons.ArrowUpSmallIcon({
+  width: '24',
+  height: '24',
+});
+
 export const AddCursorIcon = icons.PlusIcon({
   width: '24',
   height: '24',

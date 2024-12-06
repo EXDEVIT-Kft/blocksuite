@@ -69,7 +69,7 @@ export class EdgelessShapeToolButton extends EdgelessToolbarToolMixin(
     return html`
       <edgeless-toolbar-button
         class="edgeless-shape-button"
-        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Shape', 'S')}
+        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Alakzat', 'S')}
         .tooltipOffset=${5}
         .active=${active}
       >

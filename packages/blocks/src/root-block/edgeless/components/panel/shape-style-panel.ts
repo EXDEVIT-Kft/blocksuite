@@ -10,10 +10,12 @@ import { repeat } from 'lit/directives/repeat.js';
 const SHAPE_STYLE_LIST = [
   {
     value: ShapeStyle.General,
+    name: 'Letisztult',
     icon: GeneralStyleIcon,
   },
   {
     value: ShapeStyle.Scribbled,
+    name: 'Rajzolt',
     icon: ScribbledStyleIcon,
   },
 ];
@@ -39,12 +41,12 @@ export class EdgelessShapeStylePanel extends LitElement {
     return repeat(
       SHAPE_STYLE_LIST,
       item => item.value,
-      ({ value, icon }) =>
+      ({ value, icon, name }) =>
         html`<edgeless-tool-icon-button
           .tipPosition=${'top'}
           .activeMode=${'background'}
-          aria-label=${value}
-          .tooltip=${value}
+          aria-label=${name}
+          .tooltip=${name}
           .active=${this.value === value}
           @click=${() => this._onSelect(value)}
         >

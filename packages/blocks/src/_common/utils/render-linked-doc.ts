@@ -33,12 +33,12 @@ export function promptDocTitle(host: EditorHost, autofill?: string) {
   if (!notification) return Promise.resolve(undefined);
 
   return notification.prompt({
-    title: 'Create linked doc',
-    message: 'Enter a title for the new doc.',
-    placeholder: 'Untitled',
+    title: 'Hivatkozott dokumentum létrehozása',
+    message: 'Add meg az új dokumentum címét',
+    placeholder: 'Új dokumentum',
     autofill,
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
+    confirmText: 'Létrehoz',
+    cancelText: 'Mégse',
   });
 }
 
@@ -74,12 +74,12 @@ export function notifyDocCreated(host: EditorHost, doc: Doc) {
   const disposable = host.slots.unmounted.on(closeNotify);
 
   notification.notify({
-    title: 'Linked doc created',
-    message: 'You can click undo to recovery block content',
+    title: 'Hivatkozott dokumentum létrehozva',
+    message: 'A Visszavonás gombra kattintva visszahozhatsz törölt tartalmakat',
     accent: 'info',
     duration: 10 * 1000,
     action: {
-      label: 'Undo',
+      label: 'Visszavonás',
       onClick: () => {
         doc.undo();
         clear();

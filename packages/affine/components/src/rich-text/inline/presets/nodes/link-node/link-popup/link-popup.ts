@@ -58,7 +58,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
           class="affine-link-popover-input"
           type="text"
           spellcheck="false"
-          placeholder="Paste or type a link"
+          placeholder="Írj vagy másolj be egy hivatkozást"
           @paste=${this._updateConfirmBtn}
           @input=${this._updateConfirmBtn}
         />
@@ -105,7 +105,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
             class="affine-edit-input"
             id="text-input"
             type="text"
-            placeholder="Enter text"
+            placeholder="Szöveg megadása"
             @input=${this._updateConfirmBtn}
           />
           <label class="affine-edit-label" for="text-input">Text</label>
@@ -116,7 +116,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
             class="affine-edit-input"
             type="text"
             spellcheck="false"
-            placeholder="Paste or type a link"
+            placeholder="Írj vagy másolj be egy hivatkozást"
             @input=${this._updateConfirmBtn}
           />
           <label class="affine-edit-label" for="link-input">Link</label>
@@ -173,18 +173,18 @@ export class LinkPopup extends WithDisposable(LitElement) {
         </a>
 
         <editor-icon-button
-          aria-label="Copy"
+          aria-label="Másolás"
           data-testid="copy-link"
-          .tooltip=${'Copy link'}
+          .tooltip=${'Kattints a link másolásához'}
           @click=${this._copyUrl}
         >
           ${CopyIcon}
         </editor-icon-button>
 
         <editor-icon-button
-          aria-label="Edit"
+          aria-label="Szerkesztés"
           data-testid="edit"
-          .tooltip=${'Edit'}
+          .tooltip=${'Szerkesztés'}
           @click=${this._edit}
         >
           ${EditIcon}
@@ -197,7 +197,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
         <editor-menu-button
           .contentPadding=${'8px'}
           .button=${html`
-            <editor-icon-button aria-label="More" .tooltip=${'More'}>
+            <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
               ${MoreVerticalIcon}
             </editor-icon-button>
           `}
@@ -359,21 +359,21 @@ export class LinkPopup extends WithDisposable(LitElement) {
     return renderActions([
       [
         {
-          label: 'Open',
+          label: 'Megnyitás',
           type: 'open',
           icon: OpenIcon,
           action: this._openLink,
         },
 
         {
-          label: 'Copy',
+          label: 'Másolás',
           type: 'copy',
           icon: CopyIcon,
           action: this._copyUrl,
         },
 
         {
-          label: 'Remove link',
+          label: 'Hivatkozás törlése',
           type: 'remove-link',
           icon: UnlinkIcon,
           action: this._removeLink,
@@ -382,8 +382,8 @@ export class LinkPopup extends WithDisposable(LitElement) {
 
       [
         {
+          label: 'Törlés',
           type: 'delete',
-          label: 'Delete',
           icon: DeleteIcon,
           action: this._delete,
         },
@@ -455,19 +455,19 @@ export class LinkPopup extends WithDisposable(LitElement) {
 
     buttons.push({
       type: 'inline',
-      label: 'Inline view',
+      label: 'Sorközi nézet',
     });
 
     buttons.push({
       type: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       action: () => this._convertToCardView(),
     });
 
     if (this._canConvertToEmbedView) {
       buttons.push({
         type: 'embed',
-        label: 'Embed view',
+        label: 'Beágyazott nézet',
         action: () => this._convertToEmbedView(),
       });
     }
@@ -477,12 +477,12 @@ export class LinkPopup extends WithDisposable(LitElement) {
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Switch view"
+            aria-label="Nézet váltása"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
             .iconContainerWidth=${'110px'}
           >
-            <div class="label">Inline view</div>
+            <div class="label">Sorközi nézet</div>
             ${SmallArrowDownIcon}
           </editor-icon-button>
         `}

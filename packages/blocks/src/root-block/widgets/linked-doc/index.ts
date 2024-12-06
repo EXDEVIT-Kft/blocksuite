@@ -306,7 +306,7 @@ export class AffineLinkedDocWidget extends WidgetComponent<
 
   override connectedCallback() {
     super.connectedCallback();
-    this.handleEvent('keyDown', this._onKeyDown);
+    //this.handleEvent('keyDown', this._onKeyDown); // Disable the link doc popover when @ or [[ written in editor
     this.handleEvent('compositionEnd', this._onCompositionEnd);
   }
 

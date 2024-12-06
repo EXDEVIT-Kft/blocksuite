@@ -40,7 +40,7 @@ export class EdgelessFrameToolButton extends QuickToolMixin(LitElement) {
     return html`
       <edgeless-tool-icon-button
         class="edgeless-frame-button"
-        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Frame', 'F')}
+        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Keret', 'F')}
         .tooltipOffset=${17}
         .active=${type === 'frame'}
         .iconContainerPadding=${6}

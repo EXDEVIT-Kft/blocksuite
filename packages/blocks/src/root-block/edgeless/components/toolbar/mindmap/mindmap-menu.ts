@@ -158,7 +158,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
         ${importMindMapIcon}
       </button>
       <affine-tooltip tip-position="top" .offset=${12}>
-        ${getTooltipWithShortcut('Support import of FreeMind,OPML.')}
+        ${getTooltipWithShortcut('FreeMind, OPML sablon importálása')}
       </affine-tooltip>
     </div>`;
   }
@@ -270,7 +270,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
             ${textItem.icon}
           </button>
           <affine-tooltip tip-position="top" .offset=${12}>
-            ${getTooltipWithShortcut('Edgeless Text', 'T')}
+            ${getTooltipWithShortcut('Egyszerű Szöveg', 'T')}
           </affine-tooltip>
         </div>
         <div class="thin-divider"></div>
@@ -313,7 +313,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
                 ${mindMap.icon}
               </button>
               <affine-tooltip tip-position="top" .offset=${12}>
-                ${getTooltipWithShortcut('Mind Map', 'M')}
+                ${getTooltipWithShortcut('Gondolattérkép', 'M')}
               </affine-tooltip>
             </div>
           `;

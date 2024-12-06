@@ -248,7 +248,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
     const title = this.customTitle
       ? this.customTitle(this)
       : isDeleted
-        ? 'Deleted doc'
+        ? 'Dokumentum törlése'
         : reference?.title || refMeta.title || DEFAULT_DOC_NAME;
 
     const icon = choose(

@@ -103,12 +103,12 @@ export class OutlinePanelHeader extends WithDisposable(LitElement) {
   override render() {
     return html`<div class="outline-panel-header-container">
         <div class="note-setting-container">
-          <span class="outline-panel-header-label">Table of Contents</span>
+          <span class="outline-panel-header-label">Tartalomjegyzék</span>
           <edgeless-tool-icon-button
             class="note-setting-button ${this._settingPopperShow
               ? 'active'
               : ''}"
-            .tooltip=${this._settingPopperShow ? '' : 'Preview Settings'}
+            .tooltip=${this._settingPopperShow ? '' : 'Beállítások'}
             .tipPosition=${'bottom'}
             .active=${this._settingPopperShow}
             .activeMode=${'background'}
@@ -119,7 +119,7 @@ export class OutlinePanelHeader extends WithDisposable(LitElement) {
         </div>
         <edgeless-tool-icon-button
           class="note-sorting-button ${this.enableNotesSorting ? 'active' : ''}"
-          .tooltip=${'Visibility and sort'}
+          .tooltip=${'Láthatóság és rendezés'}
           .tipPosition=${'left'}
           .iconContainerPadding=${0}
           .active=${this.enableNotesSorting}

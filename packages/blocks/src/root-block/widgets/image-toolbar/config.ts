@@ -7,12 +7,14 @@ import {
   DeleteIcon,
   DownloadIcon,
   DuplicateIcon,
+  PlusIcon,
 } from '@blocksuite/affine-components/icons';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import type { ImageToolbarContext } from './context.js';
 
+import { insertNewlineAfterCurrent } from '../../../utils/insert-newline-after-current.js';
 import { duplicate } from './utils.js';
 
 export const PRIMARY_GROUPS: MenuItemGroup<ImageToolbarContext>[] = [
@@ -21,7 +23,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<ImageToolbarContext>[] = [
     items: [
       {
         type: 'download',
-        label: 'Download',
+        label: 'Letöltés',
         icon: DownloadIcon,
         generate: ({ blockComponent }) => {
           return {
@@ -47,7 +49,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<ImageToolbarContext>[] = [
       },
       {
         type: 'caption',
-        label: 'Caption',
+        label: 'Felirat',
         icon: CaptionIcon,
         when: ({ doc }) => !doc.readonly,
         generate: ({ blockComponent }) => {
@@ -82,7 +84,7 @@ export const clipboardGroup: MenuItemGroup<ImageToolbarContext> = {
   items: [
     {
       type: 'copy',
-      label: 'Copy',
+      label: 'Másolás',
       icon: CopyIcon,
       action: ({ blockComponent, close }) => {
         blockComponent.copy();
@@ -91,11 +93,20 @@ export const clipboardGroup: MenuItemGroup<ImageToolbarContext> = {
     },
     {
       type: 'duplicate',
-      label: 'Duplicate',
+      label: 'Duplikálás',
       icon: DuplicateIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ blockComponent, abortController }) => {
         duplicate(blockComponent, abortController);
+      },
+    },
+    {
+      type: 'newline',
+      label: 'Új sor utána',
+      icon: PlusIcon,
+      when: ({ doc }) => !doc.readonly,
+      action: ({ blockComponent, doc, std }) => {
+        insertNewlineAfterCurrent(blockComponent.model, doc, std);
       },
     },
   ],
@@ -106,7 +117,7 @@ export const conversionsGroup: MenuItemGroup<ImageToolbarContext> = {
   type: 'conversions',
   items: [
     {
-      label: 'Turn into card view',
+      label: 'Átváltás kártya nézetre',
       type: 'turn-into-card-view',
       icon: BookmarkIcon,
       when: ({ doc, blockComponent }) => {
@@ -129,7 +140,7 @@ export const deleteGroup: MenuItemGroup<ImageToolbarContext> = {
   items: [
     {
       type: 'delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ doc, blockComponent, close }) => {

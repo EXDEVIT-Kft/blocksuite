@@ -129,6 +129,11 @@ export class AffineEditorContainer
     this._doc.value = doc;
   }
 
+  // [ALGOGRIND] Expose the _doc signal
+  get doc$() {
+    return this._doc;
+  }
+
   set edgelessSpecs(specs: ExtensionType[]) {
     this._edgelessSpecs.value = specs;
   }
@@ -153,6 +158,11 @@ export class AffineEditorContainer
     this._mode.value = mode;
   }
 
+  // [ALGOGRIND] Expose the _mode signal
+  get mode$() {
+    return this._mode;
+  }
+
   set pageSpecs(specs: ExtensionType[]) {
     this._pageSpecs.value = specs;
   }
@@ -167,6 +177,11 @@ export class AffineEditorContainer
 
   get std() {
     return this._std.value;
+  }
+
+  // [ALGOGRIND] Expose the _std computed signal
+  get std$() {
+    return this._std;
   }
 
   /**

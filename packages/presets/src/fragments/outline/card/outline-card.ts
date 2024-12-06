@@ -278,13 +278,13 @@ export class OutlineNoteCard extends SignalWatcher(WithDisposable(LitElement)) {
   private _getCurrentModeLabel(mode: NoteDisplayMode) {
     switch (mode) {
       case NoteDisplayMode.DocAndEdgeless:
-        return 'Both';
+        return 'Mindenhol';
       case NoteDisplayMode.EdgelessOnly:
-        return 'Edgeless';
+        return 'Rajztáblán';
       case NoteDisplayMode.DocOnly:
-        return 'Page';
+        return 'Szövegben';
       default:
-        return 'Both';
+        return 'Mindenhol';
     }
   }
 
@@ -334,9 +334,9 @@ export class OutlineNoteCard extends SignalWatcher(WithDisposable(LitElement)) {
           }
           <span class="card-divider"></span>
           <div class="display-mode-button-group">
-            <span class="display-mode-button-label">Show in</span>
+            <span class="display-mode-button-label">Megjelenítés</span>
             <edgeless-tool-icon-button
-              .tooltip=${this._showPopper ? '' : 'Display Mode'}
+              .tooltip=${this._showPopper ? '' : 'Megjelenítés Módja'}
               .tipPosition=${'left-start'}
               .iconContainerPadding=${0}
               @click=${(e: MouseEvent) => {

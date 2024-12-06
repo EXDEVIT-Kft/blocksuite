@@ -66,10 +66,10 @@ export class OutlineNotePreviewSettingMenu extends WithDisposable(LitElement) {
       @click=${(e: MouseEvent) => e.stopPropagation()}
     >
       <div class="note-preview-setting-menu-item">
-        <div class="setting-label">Settings</div>
+        <div class="setting-label">Beállítások</div>
       </div>
       <div class="note-preview-setting-menu-item action">
-        <div class="action-label">Show type icon</div>
+        <div class="action-label">Típus megjelenítése</div>
         <div class="toggle-button">
           <toggle-switch
             .on=${this.showPreviewIcon}

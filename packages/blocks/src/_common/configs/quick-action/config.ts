@@ -3,22 +3,22 @@ import type { TemplateResult } from 'lit';
 
 import {
   CopyIcon,
-  DatabaseTableViewIcon20,
-  LinkedDocIcon,
+  //DatabaseTableViewIcon20,
+  //LinkedDocIcon,
 } from '@blocksuite/affine-components/icons';
 import { toast } from '@blocksuite/affine-components/toast';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { tableViewMeta } from '@blocksuite/data-view/view-presets';
-import { assertExists } from '@blocksuite/global/utils';
-
-import { convertToDatabase } from '../../../database-block/data-source.js';
-import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils/block-utils.js';
-import {
-  convertSelectedBlocksToLinkedDoc,
-  getTitleFromSelectedModels,
-  notifyDocCreated,
-  promptDocTitle,
-} from '../../utils/render-linked-doc.js';
+//import { matchFlavours } from '@blocksuite/affine-shared/utils';
+//import { tableViewMeta } from '@blocksuite/data-view/view-presets';
+//import { assertExists } from '@blocksuite/global/utils';
+//
+//import { convertToDatabase } from '../../../database-block/data-source.js';
+//import { DATABASE_CONVERT_WHITE_LIST } from '../../../database-block/utils/block-utils.js';
+//import {
+//  convertSelectedBlocksToLinkedDoc,
+//  getTitleFromSelectedModels,
+//  notifyDocCreated,
+//  promptDocTitle,
+//} from '../../utils/render-linked-doc.js';
 
 export interface QuickActionConfig {
   id: string;
@@ -54,7 +54,7 @@ export const quickActionConfig: QuickActionConfig[] = [
         .run();
     },
   },
-  {
+  /*{
     id: 'convert-to-database',
     name: 'Group as Table',
     disabledToolTip:
@@ -149,5 +149,5 @@ export const quickActionConfig: QuickActionConfig[] = [
         notifyDocCreated(host, doc);
       });
     },
-  },
+  },*/
 ];

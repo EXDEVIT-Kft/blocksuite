@@ -102,6 +102,17 @@ export class EditorHost extends SignalWatcher(
     )}`;
   };
 
+  renderChildrenArray = (
+    children: BlockModel[],
+    filter?: (model: BlockModel) => boolean
+  ): TemplateResult => {
+    return html`${repeat(
+      children.filter(filter ?? (() => true)),
+      child => child.id,
+      child => this._renderModel(child)
+    )}`;
+  };
+
   readonly slots = {
     unmounted: new Slot(),
   };

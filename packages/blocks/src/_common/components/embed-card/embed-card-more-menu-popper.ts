@@ -87,7 +87,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
   private async _copyBlock() {
     const slice = Slice.fromModels(this._doc, [this._model]);
     await this._std.clipboard.copySlice(slice);
-    toast(this.block.host, 'Copied link to clipboard');
+    toast(this.block.host, 'Hivatkozás a vágólapra másolva');
     this.abortController.abort();
   }
 
@@ -138,7 +138,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
             width="126px"
             height="32px"
             class="menu-item open"
-            text="Open"
+            text="Megnyitás"
             @click=${() => this._open()}
             ?disabled=${this._openButtonDisabled}
           >
@@ -149,7 +149,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
             ? html`<icon-button
                 width="126px"
                 height="32px"
-                text="Open in center peek"
+                text="Bepillantás"
                 class="menu-item center-peek"
                 @click=${() => this._peek()}
               >
@@ -161,7 +161,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
             width="126px"
             height="32px"
             class="menu-item copy"
-            text="Copy"
+            text="Másolás"
             @click=${() => this._copyBlock()}
           >
             ${CopyIcon}
@@ -171,7 +171,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
             width="126px"
             height="32px"
             class="menu-item duplicate"
-            text="Duplicate"
+            text="Duplikálás"
             ?disabled=${this._doc.readonly}
             @click=${() => this._duplicateBlock()}
           >
@@ -185,7 +185,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
                 width="126px"
                 height="32px"
                 class="menu-item reload"
-                text="Reload"
+                text="Újratöltés"
                 ?disabled=${this._doc.readonly}
                 @click=${() => this._refreshData()}
               >
@@ -198,7 +198,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
             width="126px"
             height="32px"
             class="menu-item delete"
-            text="Delete"
+            text="Törlés"
             ?disabled=${this._doc.readonly}
             @click=${() => this._doc.deleteBlock(this._model)}
           >

@@ -164,7 +164,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
       [
         {
           type: 'delete',
-          label: 'Delete',
+          label: 'Törlés',
           icon: DeleteIcon,
           disabled: this.doc.readonly,
           action: () => this._delete(),
@@ -182,7 +182,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
   private _openMenuButton() {
     const buttons: MenuItem[] = [
       {
-        label: 'Open this doc',
+        label: 'Dokumentum megnyitása',
         type: 'open-this-doc',
         icon: ExpandFullSmallIcon,
         action: () => this._openDoc(),
@@ -194,7 +194,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
 
     if (isPeekable(this.target)) {
       buttons.push({
-        label: 'Open in center peek',
+        label: 'Bepillantás a dokumentumba',
         type: 'open-in-center-peek',
         icon: CenterPeekIcon,
         action: () => peek(this.target),
@@ -212,7 +212,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Open doc"
+            aria-label="Dokumentum megnyitása"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
           >
@@ -261,12 +261,12 @@ export class ReferencePopup extends WithDisposable(LitElement) {
 
     buttons.push({
       type: 'inline',
-      label: 'Inline view',
+      label: 'Sorközi nézet',
     });
 
     buttons.push({
       type: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       action: () => this._convertToCardView(),
       disabled: this.doc.readonly,
     });
@@ -274,7 +274,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
     if (isSyncedDocEnabled) {
       buttons.push({
         type: 'embed',
-        label: 'Embed view',
+        label: 'Beágyazott nézet',
         action: () => this._convertToEmbedView(),
         disabled:
           this.doc.readonly ||
@@ -288,12 +288,12 @@ export class ReferencePopup extends WithDisposable(LitElement) {
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Switch view"
+            aria-label="Nézet váltása"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
             .iconContainerWidth=${'110px'}
           >
-            <span class="label">Inline view</span>
+            <span class="label">Sorközi nézet</span>
             ${SmallArrowDownIcon}
           </editor-icon-button>
         `}
@@ -386,7 +386,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
         <editor-menu-button
           .contentPadding=${'8px'}
           .button=${html`
-            <editor-icon-button aria-label="More" .tooltip=${'More'}>
+            <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
               ${MoreVerticalIcon}
             </editor-icon-button>
           `}

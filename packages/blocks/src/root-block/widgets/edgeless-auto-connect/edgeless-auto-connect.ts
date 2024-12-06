@@ -247,7 +247,10 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
         return html`<div style=${style} class="edgeless-only-index-label">
           ${HiddenIcon}
           <affine-tooltip tip-position="bottom">
-            ${getIndexLabelTooltip(SmallDocIcon, 'Hidden on page')}
+            ${getIndexLabelTooltip(
+              SmallDocIcon,
+              'Szöveges nézet elől elrejtve'
+            )}
           </affine-tooltip>
         </div>`;
       }
@@ -455,7 +458,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
             >
               ${index}
               <affine-tooltip tip-position="bottom">
-                ${getIndexLabelTooltip(SmallDocIcon, 'Page mode index')}
+                ${getIndexLabelTooltip(SmallDocIcon, 'Szöveges nézet sorrend')}
               </affine-tooltip>
             </div>
           `);

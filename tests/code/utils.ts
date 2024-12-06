@@ -21,19 +21,21 @@ export function getCodeBlock(page: Page) {
 
   const codeToolbar = page.locator('affine-code-toolbar');
 
-  const copyButton = codeToolbar.getByRole('button', { name: 'Copy code' });
-  const captionButton = codeToolbar.getByRole('button', { name: 'Caption' });
-  const moreButton = codeToolbar.getByRole('button', { name: 'More' });
+  const copyButton = codeToolbar.getByRole('button', { name: 'Kód másolása' });
+  const captionButton = codeToolbar.getByRole('button', { name: 'Felirat' });
+  const moreButton = codeToolbar.getByRole('button', { name: 'Továbbiak' });
 
   const menu = page.locator('.more-popup-menu');
 
   const openMore = async () => {
     await moreButton.click();
 
-    const wrapButton = menu.getByRole('button', { name: 'Wrap' });
-    const cancelWrapButton = menu.getByRole('button', { name: 'Cancel wrap' });
-    const duplicateButton = menu.getByRole('button', { name: 'Duplicate' });
-    const deleteButton = menu.getByRole('button', { name: 'Delete' });
+    const wrapButton = menu.getByRole('button', { name: 'Tördelés' });
+    const cancelWrapButton = menu.getByRole('button', {
+      name: 'Tördelés kikapcsolása',
+    });
+    const duplicateButton = menu.getByRole('button', { name: 'Duplikálás' });
+    const deleteButton = menu.getByRole('button', { name: 'Törlés' });
 
     return {
       menu,

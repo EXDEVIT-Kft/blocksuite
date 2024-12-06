@@ -138,7 +138,7 @@ export class BlockCaptionEditor<
 
     return html`<textarea
       .disabled=${this.doc.readonly}
-      placeholder="Write a caption"
+      placeholder="Felirat megadása..."
       class="block-caption-editor"
       .value=${this.caption ?? ''}
       @input=${this._onInputChange}
