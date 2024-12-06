@@ -9,9 +9,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import type { ImageBlockComponent } from '../image-block.js';
 
 import { ImageResizeManager } from '../image-resize-manager.js';
-// [ALGOGRIND]
-// deleteBlobForImage => used for image deletion
-import { deleteBlobForImage, shouldResizeImage } from '../utils.js';
+import { shouldResizeImage } from '../utils.js';
 import { ImageSelectedRect } from './image-selected-rect.js';
 
 export class ImageBlockPageComponent extends WithDisposable(ShadowlessElement) {
@@ -188,16 +186,6 @@ export class ImageBlockPageComponent extends WithDisposable(ShadowlessElement) {
     this._disposables.add(
       this._model.propsUpdated.on(() => {
         this.requestUpdate();
-      })
-    );
-
-    // [ALGOGRIND]
-    // Detect image deletion, and call the helper to notify the blobSource engine.
-    this._disposables.add(
-      this._model.deleted.on(() => {
-        deleteBlobForImage(this._host, this._model.sourceId$.value).catch(
-          console.log
-        );
       })
     );
 

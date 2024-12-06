@@ -13,6 +13,9 @@ import type { ImageBlockService } from './image-service.js';
 
 import {
   copyImageBlob,
+  // [ALGOGRIND]
+  // deleteBlobForImage => used for image deletion
+  deleteBlobForImage,
   downloadImageBlob,
   fetchImageBlob,
   turnImageIntoCardView,
@@ -76,6 +79,16 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
         if (key === 'sourceId') {
           this.refreshData();
         }
+      })
+    );
+
+    // [ALGOGRIND]
+    // Detect image deletion, and call the helper to notify the blobSource engine.
+    this._disposables.add(
+      this.model.deleted.on(() => {
+        deleteBlobForImage(this.host, this.model.sourceId$.value).catch(
+          console.log
+        );
       })
     );
   }
