@@ -124,18 +124,34 @@ export const accordionBlockStyles = css`
   }
 
   .algogrind-accordion-block-head {
+    position: relative;
     display: flex;
     gap: 0.75rem;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid red;
   }
 
-  .algogrind-accordion-block-body {
+   {
     display: grid;
     grid-template-rows: 0fr;
-    border-bottom: 1px solid green;
+    border-bottom: 1px dashed var(--affine-divider-color);
     transition: grid-template-rows 0.15s ease-in-out;
+  }
+
+      .algogrind-accordion-block-body::after,
+  .algogrind-accordion-block-head::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--affine-divider-color) 0,
+      var(--affine-divider-color) 5px,
+      transparent 5px,
+      transparent 10px
+    );
   }
 
   .algogrind-accordion-block-body > div {
