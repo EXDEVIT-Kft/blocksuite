@@ -1,13 +1,13 @@
 import {
   VirtualKeyboardController,
   type VirtualKeyboardControllerConfig,
-} from '@blocksuite/affine-components/virtual-keyboard';
+} from '@algogrind/affine-components/virtual-keyboard';
 import {
   PropTypes,
   requiredProperties,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { ArrowLeftBigIcon, KeyboardIcon } from '@blocksuite/icons/lit';
 import { batch, effect, signal } from '@preact/signals-core';
 import { html } from 'lit';

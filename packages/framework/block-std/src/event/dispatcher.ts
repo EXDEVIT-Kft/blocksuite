@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import { LifeCycleWatcher } from '../extension/index.js';
 import { KeymapIdentifier } from '../identifier.js';

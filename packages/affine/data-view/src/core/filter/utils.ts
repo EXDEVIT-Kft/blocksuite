@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { Variable, VariableRef } from '../expression/types.js';
 import type { FilterGroup, SingleFilter } from './types.js';

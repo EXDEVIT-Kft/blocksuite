@@ -1,39 +1,39 @@
-import type { Connection, ReferenceParams } from '@blocksuite/affine-model';
+import type { Connection, ReferenceParams } from '@algogrind/affine-model';
 import type {
   BlockStdScope,
   EditorHost,
   SurfaceSelection,
   UIEventStateContext,
-} from '@blocksuite/block-std';
-import type { IBound, IVec, SerializedXYWH } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import type { IBound, IVec, SerializedXYWH } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
   SurfaceGroupLikeModel,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   BookmarkStyles,
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EmbedOptionProvider,
   ParseDocUrlProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   isInsidePageEditor,
   isUrlInClipboard,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   compareLayer,
   type GfxCompatibleProps,
   type SerializedElement,
   SortOrder,
-} from '@blocksuite/block-std/gfx';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/block-std/gfx';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   assertExists,
   assertType,
@@ -42,7 +42,7 @@ import {
   getCommonBound,
   nToLast,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import {
   type BlockSnapshot,
   BlockSnapshotSchema,
@@ -50,7 +50,7 @@ import {
   fromJSON,
   Job,
   type SliceSnapshot,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import DOMPurify from 'dompurify';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';

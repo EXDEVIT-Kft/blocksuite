@@ -1,7 +1,7 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { state } from 'lit/decorators.js';

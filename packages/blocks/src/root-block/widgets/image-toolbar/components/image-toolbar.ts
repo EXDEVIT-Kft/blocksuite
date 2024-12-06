@@ -1,12 +1,12 @@
 import type {
   EditorIconButton,
   MenuItemGroup,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 
-import { MoreVerticalIcon } from '@blocksuite/affine-components/icons';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import { renderGroups } from '@blocksuite/affine-components/toolbar';
-import { assertExists, noop } from '@blocksuite/global/utils';
+import { MoreVerticalIcon } from '@algogrind/affine-components/icons';
+import { createLitPortal } from '@algogrind/affine-components/portal';
+import { renderGroups } from '@algogrind/affine-components/toolbar';
+import { assertExists, noop } from '@algogrind/global/utils';
 import { flip, offset } from '@floating-ui/dom';
 import { html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

@@ -1,7 +1,7 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 
 export function insertNewlineAfterCurrent(
   model: BlockModel,

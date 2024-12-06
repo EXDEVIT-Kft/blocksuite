@@ -1,4 +1,4 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   embedFigmaBlockMarkdownAdapterMatcher,
@@ -13,15 +13,15 @@ import {
   EmbedSyncedDocMarkdownAdapterExtension,
   embedYoutubeBlockMarkdownAdapterMatcher,
   EmbedYoutubeMarkdownAdapterExtension,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   ListBlockMarkdownAdapterExtension,
   listBlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-block-list';
+} from '@algogrind/affine-block-list';
 import {
   ParagraphBlockMarkdownAdapterExtension,
   paragraphBlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-block-paragraph';
+} from '@algogrind/affine-block-paragraph';
 
 import {
   BookmarkBlockMarkdownAdapterExtension,

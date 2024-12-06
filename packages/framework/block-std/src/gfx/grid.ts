@@ -1,12 +1,12 @@
-import type { IBound } from '@blocksuite/global/utils';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { IBound } from '@algogrind/global/utils';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   Bound,
   getBoundWithRotation,
   intersects,
   isPointIn,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { GfxModel } from './model/model.js';
 

@@ -1,6 +1,6 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 
-import { nanoid } from '@blocksuite/store';
+import { nanoid } from '@algogrind/store';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 
 import type { DataSource } from '../data-source/base.js';

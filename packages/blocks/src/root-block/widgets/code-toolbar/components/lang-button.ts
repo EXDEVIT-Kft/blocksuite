@@ -1,6 +1,6 @@
-import { ArrowDownIcon } from '@blocksuite/affine-components/icons';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { noop, SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ArrowDownIcon } from '@algogrind/affine-components/icons';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { noop, SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { css, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

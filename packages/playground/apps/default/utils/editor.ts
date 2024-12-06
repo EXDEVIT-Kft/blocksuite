@@ -1,5 +1,5 @@
-import type { EditorHost, ExtensionType } from '@blocksuite/block-std';
-import type { DocCollection } from '@blocksuite/store';
+import type { EditorHost, ExtensionType } from '@algogrind/block-std';
+import type { DocCollection } from '@algogrind/store';
 
 import {
   CommunityCanvasTextFonts,
@@ -14,8 +14,8 @@ import {
   RefNodeSlotsExtension,
   RefNodeSlotsProvider,
   SpecProvider,
-} from '@blocksuite/blocks';
-import { AffineEditorContainer } from '@blocksuite/presets';
+} from '@algogrind/blocks';
+import { AffineEditorContainer } from '@algogrind/presets';
 
 import { AttachmentViewerPanel } from '../../_common/components/attachment-viewer-panel.js';
 import { CollabDebugMenu } from '../../_common/components/collab-debug-menu.js';

@@ -3,7 +3,7 @@ import {
   getCommonBound,
   inflateBound,
   transformPointsToNewBound,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { describe, expect, it } from 'vitest';
 
 describe('bound utils', () => {

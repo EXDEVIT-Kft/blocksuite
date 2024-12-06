@@ -1,18 +1,18 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
 
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import {
   type BlockComponent,
   type BlockStdScope,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import {
   type DeltaInsert,
   type InlineEditor,
   ZERO_WIDTH_NON_JOINER,
   ZERO_WIDTH_SPACE,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { effect, signal } from '@preact/signals-core';
 import katex from 'katex';
 import { css, html, render } from 'lit';

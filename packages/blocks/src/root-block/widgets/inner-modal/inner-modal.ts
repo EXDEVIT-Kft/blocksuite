@@ -1,4 +1,4 @@
-import { WidgetComponent } from '@blocksuite/block-std';
+import { WidgetComponent } from '@algogrind/block-std';
 import {
   autoUpdate,
   computePosition,

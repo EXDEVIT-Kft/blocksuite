@@ -1,6 +1,6 @@
-import type { BlockCommands } from '@blocksuite/block-std';
+import type { BlockCommands } from '@algogrind/block-std';
 
-import { getTextSelectionCommand } from '@blocksuite/affine-shared/commands';
+import { getTextSelectionCommand } from '@algogrind/affine-shared/commands';
 
 import { deleteTextCommand } from './delete-text.js';
 export { textFormatConfigs } from './config.js';

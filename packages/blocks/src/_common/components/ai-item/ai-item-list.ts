@@ -1,10 +1,10 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+import { createLitPortal } from '@algogrind/affine-components/portal';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { flip, offset } from '@floating-ui/dom';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';

@@ -1,5 +1,5 @@
-import type { SurfaceBlockModel } from '@blocksuite/blocks';
-import type { PointLocation } from '@blocksuite/global/utils';
+import type { SurfaceBlockModel } from '@algogrind/blocks';
+import type { PointLocation } from '@algogrind/global/utils';
 
 import { beforeEach, expect, test } from 'vitest';
 

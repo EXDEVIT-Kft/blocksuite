@@ -1,9 +1,9 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedLinkedDocBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   toURLSearchParams,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const embedLinkedDocBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
   {

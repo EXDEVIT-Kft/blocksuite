@@ -1,6 +1,6 @@
-import type { Text } from '@blocksuite/store';
+import type { Text } from '@algogrind/store';
 
-import { propertyType, t } from '@blocksuite/data-view';
+import { propertyType, t } from '@algogrind/data-view';
 
 import { HostContextKey } from '../../context/host-context.js';
 import { isLinkedDoc } from '../../utils/title-doc.js';

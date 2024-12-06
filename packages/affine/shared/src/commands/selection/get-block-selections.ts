@@ -1,4 +1,4 @@
-import type { BlockSelection, Command } from '@blocksuite/block-std';
+import type { BlockSelection, Command } from '@algogrind/block-std';
 
 export const getBlockSelectionsCommand: Command<
   never,

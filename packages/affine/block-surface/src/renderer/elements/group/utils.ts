@@ -1,7 +1,7 @@
-import type { GroupElementModel } from '@blocksuite/affine-model';
+import type { GroupElementModel } from '@algogrind/affine-model';
 
-import { FontWeight } from '@blocksuite/affine-model';
-import { Bound } from '@blocksuite/global/utils';
+import { FontWeight } from '@algogrind/affine-model';
+import { Bound } from '@algogrind/global/utils';
 
 import {
   getFontString,

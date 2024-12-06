@@ -1,11 +1,11 @@
-import type { EdgelessTextBlockModel } from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { EdgelessTextBlockModel } from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { TextUtils } from '@blocksuite/affine-block-surface';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { GfxBlockComponent } from '@blocksuite/block-std';
-import { Bound } from '@blocksuite/global/utils';
+import { TextUtils } from '@algogrind/affine-block-surface';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { GfxBlockComponent } from '@algogrind/block-std';
+import { Bound } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { type StyleInfo, styleMap } from 'lit/directives/style-map.js';

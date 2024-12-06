@@ -1,6 +1,6 @@
-import type { EditorHost, TextSelection } from '@blocksuite/block-std';
+import type { EditorHost, TextSelection } from '@algogrind/block-std';
 
-import { DocCollection, type Y } from '@blocksuite/store';
+import { DocCollection, type Y } from '@algogrind/store';
 
 export interface CommentMeta {
   id: string;

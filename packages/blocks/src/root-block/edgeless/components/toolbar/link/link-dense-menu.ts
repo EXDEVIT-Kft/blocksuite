@@ -1,6 +1,6 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
-import { LinkIcon } from '@blocksuite/affine-components/icons';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { menu } from '@algogrind/affine-components/context-menu';
+import { LinkIcon } from '@algogrind/affine-components/icons';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 
 import type { DenseMenuBuilder } from '../common/type.js';
 

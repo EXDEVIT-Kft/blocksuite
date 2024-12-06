@@ -1,7 +1,7 @@
-import type { Boxed, Y } from '@blocksuite/store';
+import type { Boxed, Y } from '@algogrind/store';
 
-import { assertType, type Constructor, Slot } from '@blocksuite/global/utils';
-import { BlockModel, DocCollection, nanoid } from '@blocksuite/store';
+import { assertType, type Constructor, Slot } from '@algogrind/global/utils';
+import { BlockModel, DocCollection, nanoid } from '@algogrind/store';
 
 import type { GfxGroupModel, GfxModel } from '../model.js';
 

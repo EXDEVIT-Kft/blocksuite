@@ -1,5 +1,5 @@
-import { IS_IPAD } from '@blocksuite/global/env';
-import { Vec } from '@blocksuite/global/utils';
+import { IS_IPAD } from '@algogrind/global/env';
+import { Vec } from '@algogrind/global/utils';
 
 import type { UIEventDispatcher } from '../dispatcher.js';
 

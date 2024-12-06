@@ -1,14 +1,14 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { DeltaInsert, InlineRange } from '@blocksuite/inline';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { DeltaInsert, InlineRange } from '@algogrind/inline';
 
-import { FONT_XS, PANEL_BASE } from '@blocksuite/affine-shared/styles';
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { FONT_XS, PANEL_BASE } from '@algogrind/affine-shared/styles';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   assertExists,
   SignalWatcher,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { DoneIcon, ResetIcon } from '@blocksuite/icons/lit';
 import { computePosition, inline, offset, shift } from '@floating-ui/dom';
 import { signal } from '@preact/signals-core';

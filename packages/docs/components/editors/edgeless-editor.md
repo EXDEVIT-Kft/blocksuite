@@ -25,7 +25,7 @@ Notably, the BlockSuite framework allows runtime compatibility between the page 
 ## Usage
 
 ```ts
-import { EdgelessEditor } from '@blocksuite/presets';
+import { EdgelessEditor } from '@algogrind/presets';
 
 const editor = new EdgelessEditor();
 ```
@@ -46,9 +46,9 @@ To integrate and customize this editor, you can:
 
 ## Reference
 
-- [`EdgelessEditor`](/api/@blocksuite/presets/classes/EdgelessEditor.html)
-- [`EdgelessRootService`](/api/@blocksuite/blocks/classes/EdgelessRootService.html)
-- [`SurfaceBlockModel`](/api/@blocksuite/blocks/classes/SurfaceBlockModel.html)
-- [`SurfaceBlockService`](/api/@blocksuite/blocks/classes/SurfaceBlockService.html)
+- [`EdgelessEditor`](/api/@algogrind/presets/classes/EdgelessEditor.html)
+- [`EdgelessRootService`](/api/@algogrind/blocks/classes/EdgelessRootService.html)
+- [`SurfaceBlockModel`](/api/@algogrind/blocks/classes/SurfaceBlockModel.html)
+- [`SurfaceBlockService`](/api/@algogrind/blocks/classes/SurfaceBlockService.html)
 
 Since `EdgelessEditor` is a native web component, all DOM-related properties are inherited.

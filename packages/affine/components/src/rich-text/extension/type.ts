@@ -5,8 +5,8 @@ import type {
   InlineEditor,
   InlineRange,
   KeyboardBindingHandler,
-} from '@blocksuite/inline';
-import type { Y } from '@blocksuite/store';
+} from '@algogrind/inline';
+import type { Y } from '@algogrind/store';
 import type { ZodTypeAny } from 'zod';
 
 export type InlineSpecs<

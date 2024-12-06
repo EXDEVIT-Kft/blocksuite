@@ -2,7 +2,7 @@ import {
   defineBlockSchema,
   type SchemaToModel,
   type Text,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 interface CodeBlockProps {
   text: Text;

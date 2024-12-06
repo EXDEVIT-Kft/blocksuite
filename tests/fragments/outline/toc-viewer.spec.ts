@@ -1,6 +1,6 @@
-import type { OutlineViewer } from '@blocksuite/presets';
+import type { OutlineViewer } from '@algogrind/presets';
 
-import { noop } from '@blocksuite/global/utils';
+import { noop } from '@algogrind/global/utils';
 import { expect, type Page } from '@playwright/test';
 import { addNote, switchEditorMode } from 'utils/actions/edgeless.js';
 import { pressEnter, type } from 'utils/actions/keyboard.js';

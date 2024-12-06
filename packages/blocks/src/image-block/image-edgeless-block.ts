@@ -1,8 +1,8 @@
-import type { BlockCaptionEditor } from '@blocksuite/affine-components/caption';
-import type { ImageBlockModel } from '@blocksuite/affine-model';
+import type { BlockCaptionEditor } from '@algogrind/affine-components/caption';
+import type { ImageBlockModel } from '@algogrind/affine-model';
 
-import { Peekable } from '@blocksuite/affine-components/peek';
-import { GfxBlockComponent } from '@blocksuite/block-std';
+import { Peekable } from '@algogrind/affine-components/peek';
+import { GfxBlockComponent } from '@algogrind/block-std';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

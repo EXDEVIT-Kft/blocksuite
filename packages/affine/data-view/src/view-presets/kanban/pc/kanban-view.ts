@@ -2,7 +2,7 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { css } from 'lit';

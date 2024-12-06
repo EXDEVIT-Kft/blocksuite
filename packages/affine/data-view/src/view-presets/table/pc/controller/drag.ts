@@ -1,6 +1,6 @@
 // related component
 
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 import type { ReactiveController } from 'lit';
 
 import type { DataViewTable } from '../table-view.js';

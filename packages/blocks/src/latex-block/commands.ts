@@ -1,7 +1,7 @@
-import type { LatexProps } from '@blocksuite/affine-model';
-import type { BlockCommands, Command } from '@blocksuite/block-std';
+import type { LatexProps } from '@algogrind/affine-model';
+import type { BlockCommands, Command } from '@algogrind/block-std';
 
-import { assertInstanceOf } from '@blocksuite/global/utils';
+import { assertInstanceOf } from '@algogrind/global/utils';
 
 import { LatexBlockComponent } from './latex-block.js';
 

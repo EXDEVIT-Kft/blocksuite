@@ -1,6 +1,6 @@
 // https://www.w3.org/TR/css-color-4/
 
-import type { Color, ColorScheme } from '@blocksuite/affine-model';
+import type { Color, ColorScheme } from '@algogrind/affine-model';
 
 import type {
   Hsv,

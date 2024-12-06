@@ -1,9 +1,9 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedLinkedDocBlockSchema } from '@algogrind/affine-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
   toURLSearchParams,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const embedLinkedDocBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {

@@ -1,4 +1,4 @@
-import { DocCollection, Text } from '@blocksuite/store';
+import { DocCollection, Text } from '@algogrind/store';
 
 import type { InitFn } from './utils.js';
 

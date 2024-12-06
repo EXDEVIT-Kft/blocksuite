@@ -1,4 +1,4 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 export const focusBlockEnd: Command<'focusBlock'> = (ctx, next) => {
   const { focusBlock, std } = ctx;

@@ -1,6 +1,6 @@
-import type { IVec, IVec3 } from '@blocksuite/global/utils';
+import type { IVec, IVec3 } from '@algogrind/global/utils';
 
-import { almostEqual } from '@blocksuite/global/utils';
+import { almostEqual } from '@algogrind/global/utils';
 import { describe, expect, it } from 'vitest';
 
 import { AStarRunner } from '../utils/a-star.js';

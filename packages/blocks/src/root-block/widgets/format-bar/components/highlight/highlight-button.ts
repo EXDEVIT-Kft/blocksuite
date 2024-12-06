@@ -1,14 +1,14 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { EditorHost } from '@blocksuite/block-std';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { whenHover } from '@blocksuite/affine-components/hover';
+import { whenHover } from '@algogrind/affine-components/hover';
 import {
   ArrowDownIcon,
   HighLightDuotoneIcon,
   TextBackgroundDuotoneIcon,
   TextForegroundDuotoneIcon,
-} from '@blocksuite/affine-components/icons';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { assertExists } from '@algogrind/global/utils';
 import { computePosition, flip, offset, shift } from '@floating-ui/dom';
 import { html } from 'lit';
 import { ref, type RefOrCallback } from 'lit/directives/ref.js';

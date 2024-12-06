@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { isGfxBlockComponent, ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { isGfxBlockComponent, ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { html, nothing } from 'lit';
 import { property, queryAsync } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

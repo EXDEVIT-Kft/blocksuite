@@ -1,5 +1,5 @@
-import type { MenuConfig } from '@blocksuite/affine-components/context-menu';
-import type { GfxToolsMap } from '@blocksuite/block-std/gfx';
+import type { MenuConfig } from '@algogrind/affine-components/context-menu';
+import type { GfxToolsMap } from '@algogrind/block-std/gfx';
 
 import { html, type TemplateResult } from 'lit';
 

@@ -1,5 +1,5 @@
-import { isAbortError } from '@blocksuite/affine-shared/utils';
-import { assertExists } from '@blocksuite/global/utils';
+import { isAbortError } from '@algogrind/affine-shared/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { BookmarkBlockComponent } from './bookmark-block.js';
 

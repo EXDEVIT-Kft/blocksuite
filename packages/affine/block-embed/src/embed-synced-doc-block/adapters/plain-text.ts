@@ -1,8 +1,8 @@
-import { EmbedSyncedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedSyncedDocBlockSchema } from '@algogrind/affine-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const embedSyncedDocBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {
