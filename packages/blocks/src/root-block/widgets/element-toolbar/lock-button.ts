@@ -124,7 +124,7 @@ export class EdgelessLockButton extends SignalWatcher(
     >
       ${icon({ width: '20px', height: '20px' })}
       ${hasLocked
-        ? html`<span class="label medium">Click to unlock</span>`
+        ? html`<span class="label medium">Kattints a feloldáshoz</span>`
         : nothing}
     </editor-icon-button>`;
   }

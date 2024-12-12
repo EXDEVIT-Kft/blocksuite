@@ -99,7 +99,7 @@ export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBloc
         items: [
           menu.input({
             initialValue: this.model.title,
-            placeholder: 'Untitled',
+            placeholder: 'Új dokumentum',
             onChange: text => {
               this.model.title = text;
             },

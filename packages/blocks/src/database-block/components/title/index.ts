@@ -60,7 +60,7 @@ export class DatabaseTitle extends WithDisposable(ShadowlessElement) {
     }
 
     .affine-database-title [data-title-empty='true']::before {
-      content: 'Untitled';
+      content: 'Új dokumentum';
       position: absolute;
       pointer-events: none;
       color: var(--affine-text-primary-color);
@@ -140,7 +140,7 @@ export class DatabaseTitle extends WithDisposable(ShadowlessElement) {
       data-title-empty="${isEmpty}"
       data-title-focus="${this.isFocus}"
     >
-      <div class="text" style="${untitledStyle}">Untitled</div>
+      <div class="text" style="${untitledStyle}">Új dokumentum</div>
       <div class="text">${this.text}</div>
       <textarea
         .disabled="${this.readonly}"
