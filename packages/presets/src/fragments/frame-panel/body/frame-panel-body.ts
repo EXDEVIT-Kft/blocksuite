@@ -255,7 +255,7 @@ export class FramePanelBody extends SignalWatcher(
   private _renderEmptyContent() {
     const emptyContent = html` <div class="no-frame-container">
       <div class="no-frame-placeholder">
-        Add frames to organize and present your Edgeless
+        Adj a vászonhoz kereteket, amiket utána prezentálhatsz
       </div>
     </div>`;
 
