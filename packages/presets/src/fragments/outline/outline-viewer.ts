@@ -33,12 +33,15 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       max-height: 100%;
       box-sizing: border-box;
       display: flex;
+
+      position: absolute;
+      top: 33%;
+      left: -2.25rem;
     }
 
     .outline-viewer-indicators-container {
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: relative;
+      height: min-content;
       max-height: 100%;
       display: flex;
       flex-direction: column;
@@ -70,6 +73,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       position: relative;
       display: flex;
       width: 0px;
+      left: -200px;
       max-height: 100%;
       box-sizing: border-box;
       flex-direction: column;
