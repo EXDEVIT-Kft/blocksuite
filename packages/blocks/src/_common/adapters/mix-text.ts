@@ -200,7 +200,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
       type: 'page',
       meta: {
         id: nanoid(),
-        title: 'Untitled',
+        title: 'Új dokumentum',
         createDate: Date.now(),
         tags: [],
       },
@@ -213,7 +213,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
             '$blocksuite:internal:text$': true,
             delta: [
               {
-                insert: 'Untitled',
+                insert: 'Új dokumentum',
               },
             ],
           },

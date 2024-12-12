@@ -21,7 +21,7 @@ import { readImageSize } from '../root-block/edgeless/components/utils.js';
 import { transformModel } from '../root-block/utils/operations/model.js';
 
 const MAX_RETRY_COUNT = 3;
-const DEFAULT_ATTACHMENT_NAME = 'affine-attachment';
+const DEFAULT_ATTACHMENT_NAME = 'AlgoGrind melléklet';
 
 const imageUploads = new Set<string>();
 export function setImageUploading(blockId: string) {
@@ -32,6 +32,21 @@ export function setImageUploaded(blockId: string) {
 }
 export function isImageUploading(blockId: string) {
   return imageUploads.has(blockId);
+}
+
+// [ALGOGRIND]
+// Implement basic blob (image) delete functionality
+export function deleteBlobForImage(
+  editorHost: EditorHost,
+  sourceId: string | undefined
+) {
+  if (!sourceId || sourceId === '') {
+    return;
+  }
+
+  const doc = editorHost.doc;
+
+  doc.blobSync.delete(sourceId).catch(console.log);
 }
 
 export async function uploadBlobForImage(
@@ -162,7 +177,7 @@ export async function downloadImageBlob(
 ) {
   const { host, downloading } = block;
   if (downloading) {
-    toast(host, 'Download in progress...');
+    toast(host, 'Letöltés folyamatban...');
     return;
   }
 
@@ -170,11 +185,11 @@ export async function downloadImageBlob(
 
   const blob = await getImageBlob(block.model);
   if (!blob) {
-    toast(host, `Unable to download image!`);
+    toast(host, `A képet nem sikerült letölteni!`);
     return;
   }
 
-  toast(host, `Downloading image...`);
+  toast(host, `Kép letöltése folyamatban...`);
 
   downloadBlob(blob, 'image');
 
@@ -274,7 +289,7 @@ export async function copyImageBlob(
       ]);
     }
 
-    toast(host, 'Copied image to clipboard');
+    toast(host, 'Kép a vágólapra másolva');
   } catch (error) {
     console.error(error);
   }
@@ -305,11 +320,11 @@ export function addSiblingImageBlock(
   if (isSizeExceeded) {
     toast(
       editorHost,
-      `You can only upload files less than ${humanFileSize(
+      `Csak ${humanFileSize(
         maxFileSize,
         true,
         0
-      )}`
+      )}-nál kisebb fájlokat tölthetsz fel`
     );
     return;
   }
@@ -347,11 +362,11 @@ export function addImageBlocks(
   if (isSizeExceeded) {
     toast(
       editorHost,
-      `You can only upload files less than ${humanFileSize(
+      `Csak ${humanFileSize(
         maxFileSize,
         true,
         0
-      )}`
+      )}-nál kisebb fájlokat tölthetsz fel`
     );
     return;
   }

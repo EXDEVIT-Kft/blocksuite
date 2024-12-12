@@ -65,7 +65,7 @@ export const getMindmapRender =
 
     const root: MindMapNode = {
       children: [],
-      text: 'Mind Map',
+      text: 'Gondolattérkép',
       xywh: `[${rootX},${rootY},${rootW},${rootH}]`,
     };
 
@@ -74,7 +74,7 @@ export const getMindmapRender =
       const nodeY = centerVertical - nodeH / 2 + (i - 1) * 50;
       root.children.push({
         children: [],
-        text: 'Text',
+        text: 'Szöveg',
         xywh: `[${nodeX},${nodeY},${nodeW},${nodeH}]`,
       });
     }

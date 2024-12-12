@@ -4,7 +4,7 @@ import type { TemplateResult } from 'lit';
 
 export const DOC_BLOCK_CHILD_PADDING = 24;
 
-export const DEFAULT_DOC_NAME = 'Untitled';
+export const DEFAULT_DOC_NAME = 'Új dokumentum';
 
 export type BackLink = {
   pageId: string;

@@ -14,6 +14,9 @@ import type { ImageBlockService } from './image-service.js';
 
 import {
   copyImageBlob,
+  // [ALGOGRIND]
+  // deleteBlobForImage => used for image deletion
+  deleteBlobForImage,
   downloadImageBlob,
   fetchImageBlob,
   turnImageIntoCardView,
@@ -26,6 +29,14 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
   ImageBlockModel,
   ImageBlockService
 > {
+  // [ALGOGRIND]
+  // Image lazy loading helper
+  private hasFetchedBlob = false;
+
+  // [ALGOGRIND]
+  // Image lazy loading IntersectionObserver
+  private intersectionObserver?: IntersectionObserver;
+
   convertToCardView = () => {
     turnImageIntoCardView(this).catch(console.error);
   };
@@ -62,7 +73,9 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
   override connectedCallback() {
     super.connectedCallback();
 
-    this.refreshData();
+    // [ALGOGRIND]
+    // Commented original next line to allow IntersectionObserver to lazy-load images
+    // this.refreshData();
     this.contentEditable = 'false';
     this._disposables.add(
       this.model.propsUpdated.on(({ key }) => {
@@ -71,18 +84,55 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
         }
       })
     );
+
+    // [ALGOGRIND]
+    // Detect image deletion, and call the helper to notify the blobSource engine.
+    this._disposables.add(
+      this.model.deleted.on(() => {
+        deleteBlobForImage(this.host, this.model.sourceId$.value);
+      })
+    );
   }
 
   override disconnectedCallback() {
     if (this.blobUrl) {
       URL.revokeObjectURL(this.blobUrl);
     }
+
+    // [ALGOGRIND]
+    // Image lazy loading: disconnect the IntersectionObserver
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
+    }
+
     super.disconnectedCallback();
   }
 
   override firstUpdated() {
     // lazy bindings
     this.disposables.addFromEvent(this, 'click', this._handleClick);
+
+    // [ALGOGRIND]
+    // Set up the IntersectionObserver once the component is updated and `imageContainer` is rendered.
+    if (this.imageContainer) {
+      this.intersectionObserver = new IntersectionObserver(
+        entries => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !this.hasFetchedBlob) {
+              // The image is in about to be in view AND was not loaded previously
+              // => fetch blob now
+              this.refreshData();
+              this.hasFetchedBlob = true;
+            }
+          }
+        },
+        { rootMargin: '300px' }
+      );
+
+      // [ALGOGRIND]
+      // Observing the image container
+      this.intersectionObserver.observe(this.imageContainer);
+    }
   }
 
   override renderBlock() {
@@ -129,6 +179,11 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
 
   @query('affine-image-fallback-card')
   accessor fallbackCard: ImageBlockFallbackCard | null = null;
+
+  // [ALGOGRIND]
+  // This query is necessary to properly implement image lazy loading with IntersectionObservers
+  @query('.affine-image-container')
+  accessor imageContainer: HTMLElement | null = null;
 
   @state()
   accessor lastSourceId!: string;

@@ -289,8 +289,8 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
           <editor-menu-button
             .button=${html`
               <editor-icon-button
-                aria-label="Switch type"
-                .tooltip=${'Switch type'}
+                aria-label="Alakzat módosítása"
+                .tooltip=${'Alakzat módosítása'}
               >
                 ${ChangeShapeIcon}${SmallArrowDownIcon}
               </editor-icon-button>
@@ -307,7 +307,7 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
         html`
           <editor-menu-button
             .button=${html`
-              <editor-icon-button aria-label="Style" .tooltip=${'Style'}>
+              <editor-icon-button aria-label="Stílus" .tooltip=${'Stílus'}>
                 ${cache(
                   selectedShapeStyle === ShapeStyle.General
                     ? GeneralStyleIcon
@@ -337,7 +337,7 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
             return html`
               <edgeless-color-picker-button
                 class="fill-color"
-                .label=${'Fill color'}
+                .label=${'Kitöltés'}
                 .pick=${this.#pickColor('fillColor')}
                 .color=${selectedFillColor}
                 .colors=${colors}
@@ -352,8 +352,8 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
               .contentPadding=${'8px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Fill color"
-                  .tooltip=${'Fill color'}
+                  aria-label="Kitöltés"
+                  .tooltip=${'Kitöltés'}
                 >
                   <edgeless-color-button
                     .color=${selectedFillColor}
@@ -363,7 +363,7 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
             >
               <edgeless-color-panel
                 role="listbox"
-                aria-label="Fill colors"
+                aria-label="Kitöltés"
                 .value=${selectedFillColor}
                 .options=${SHAPE_FILL_COLORS}
                 @select=${(e: ColorEvent) => this._setShapeFillColor(e.detail)}
@@ -385,7 +385,7 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
             return html`
               <edgeless-color-picker-button
                 class="border-style"
-                .label=${'Border style'}
+                .label=${'Szegély'}
                 .pick=${this.#pickColor('strokeColor')}
                 .color=${selectedStrokeColor}
                 .colors=${colors}
@@ -421,10 +421,7 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
             <editor-menu-button
               .contentPadding=${'8px'}
               .button=${html`
-                <editor-icon-button
-                  aria-label="Border style"
-                  .tooltip=${'Border style'}
-                >
+                <editor-icon-button aria-label="Szegély" .tooltip=${'Szegély'}>
                   <edgeless-color-button
                     .color=${selectedStrokeColor}
                     .hollowCircle=${true}
@@ -454,8 +451,8 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
               'button',
               () => html`
                 <editor-icon-button
-                  aria-label="Add text"
-                  .tooltip=${'Add text'}
+                  aria-label="Szöveg hozzáadása"
+                  .tooltip=${'Szöveg hozzáadása'}
                   @click=${this._addText}
                 >
                   ${AddTextIcon}

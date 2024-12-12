@@ -6,8 +6,8 @@ export const Heading6Tooltip = html`<svg width="170" height="68" viewBox="0 0 17
 <rect width="170" height="68" rx="2" fill="white"/>
 </mask>
 <g mask="url(#mask0_16460_908)">
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="18" font-weight="600" letter-spacing="0.24px"><tspan x="8" y="25.5455">Heading 6</tspan></text>
-<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="8" y="41.6364">In a decentralized system, we can have a kaleidoscopic </tspan><tspan x="8" y="53.6364">complexity to our data.&#10;</tspan><tspan x="8" y="69.6364">Any user may have a different perspective on what data they </tspan><tspan x="8" y="81.6364">either have, choose to share, or accept.&#10;</tspan><tspan x="8" y="97.6364">For example, one user&#x2019;s edits to a document might be on </tspan><tspan x="8" y="109.636">their laptop on an airplane; when the plane lands and the </tspan><tspan x="8" y="121.636">computer reconnects, those changes are distributed to </tspan><tspan x="8" y="133.636">other users.&#10;</tspan><tspan x="8" y="149.636">Other users might choose to accept all, some, or none of </tspan><tspan x="8" y="161.636">those changes to their version of the document.</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="18" font-weight="600" letter-spacing="0.24px"><tspan x="8" y="25.5455">Címsor 6</tspan></text>
+<text fill="#121212" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" letter-spacing="0px"><tspan x="8" y="41.6364">Ez egy példa szöveg, amely bemutatja </tspan><tspan x="8" y="53.6364">a blokkok elrendezését és formázását&#10;</tspan></text>
 </g>
 </svg>
 `;

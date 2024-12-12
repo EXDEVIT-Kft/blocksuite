@@ -62,14 +62,14 @@ const FONT_SIZE_LIST = [
 ] as const;
 
 const FONT_WEIGHT_CHOOSE: [FontWeight, () => string][] = [
-  [FontWeight.Light, () => 'Light'],
-  [FontWeight.Regular, () => 'Regular'],
-  [FontWeight.SemiBold, () => 'Semibold'],
+  [FontWeight.Light, () => 'Vékony'],
+  [FontWeight.Regular, () => 'Normál'],
+  [FontWeight.SemiBold, () => 'Vastag'],
 ] as const;
 
 const FONT_STYLE_CHOOSE: [FontStyle, () => string | typeof nothing][] = [
   [FontStyle.Normal, () => nothing],
-  [FontStyle.Italic, () => 'Italic'],
+  [FontStyle.Italic, () => 'Dőlt'],
 ] as const;
 
 const TEXT_ALIGN_CHOOSE: [TextAlign, () => TemplateResult<1>][] = [
@@ -347,8 +347,8 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
             .contentPadding=${'8px'}
             .button=${html`
               <editor-icon-button
-                aria-label="Font"
-                .tooltip=${'Font'}
+                aria-label="Betűtípus"
+                .tooltip=${'Betűtípus'}
                 .justify=${'space-between'}
                 .labelHeight=${'20px'}
                 .iconContainerWidth=${'40px'}
@@ -382,7 +382,7 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
             return html`
               <edgeless-color-picker-button
                 class="text-color"
-                .label=${'Text color'}
+                .label=${'Szövegszín'}
                 .pick=${this.pickColor}
                 .isText=${true}
                 .color=${selectedColor}
@@ -398,8 +398,8 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
               .contentPadding=${'8px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Text color"
-                  .tooltip=${'Text color'}
+                  aria-label="Szövegszín"
+                  .tooltip=${'Szövegszín'}
                 >
                   <edgeless-text-color-icon
                     .color=${selectedColor}
@@ -420,8 +420,8 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
             .contentPadding=${'8px'}
             .button=${html`
               <editor-icon-button
-                aria-label="Font style"
-                .tooltip=${'Font style'}
+                aria-label="Betűstílus"
+                .tooltip=${'Betűstílus'}
                 .justify=${'space-between'}
                 .labelHeight=${'20px'}
                 .iconContainerWidth=${'90px'}
@@ -451,8 +451,8 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
                 .contentPadding=${'8px'}
                 .button=${html`
                   <editor-icon-button
-                    aria-label="Font size"
-                    .tooltip=${'Font size'}
+                    aria-label="Betűméret"
+                    .tooltip=${'Betűméret'}
                     .justify=${'space-between'}
                     .labelHeight=${'20px'}
                     .iconContainerWidth=${'60px'}
@@ -474,10 +474,7 @@ export class EdgelessChangeTextMenu extends WithDisposable(LitElement) {
         html`
           <editor-menu-button
             .button=${html`
-              <editor-icon-button
-                aria-label="Alignment"
-                .tooltip=${'Alignment'}
-              >
+              <editor-icon-button aria-label="Igazítás" .tooltip=${'Igazítás'}>
                 ${choose(selectedAlign, TEXT_ALIGN_CHOOSE)}${SmallArrowDownIcon}
               </editor-icon-button>
             `}

@@ -4,6 +4,7 @@ import {
   CopyIcon,
   DeleteIcon,
   DuplicateIcon,
+  PlusIcon,
   RefreshIcon,
 } from '@blocksuite/affine-components/icons';
 import { toast } from '@blocksuite/affine-components/toast';
@@ -12,6 +13,7 @@ import { Slice } from '@blocksuite/store';
 
 import type { EmbedCardToolbarContext } from './context.js';
 
+import { insertNewlineAfterCurrent } from '../../../utils/insert-newline-after-current.js';
 import {
   isAttachmentBlock,
   isBookmarkBlock,
@@ -25,7 +27,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
     items: [
       {
         type: 'copy',
-        label: 'Copy',
+        label: 'Másolás',
         icon: CopyIcon,
         disabled: ({ doc }) => doc.readonly,
         action: async ({ host, doc, std, blockComponent, close }) => {
@@ -37,7 +39,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
       },
       {
         type: 'duplicate',
-        label: 'Duplicate',
+        label: 'Duplikálás',
         icon: DuplicateIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ doc, blockComponent, close }) => {
@@ -59,7 +61,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
       },
       {
         type: 'reload',
-        label: 'Reload',
+        label: 'Újratöltés',
         icon: RefreshIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ blockComponent, close }) => {
@@ -78,6 +80,15 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
           );
         },
       },
+      {
+        type: 'newline',
+        label: 'Új sor utána',
+        icon: PlusIcon,
+        when: ({ doc }) => !doc.readonly,
+        action: ({ blockComponent, doc, std }) => {
+          insertNewlineAfterCurrent(blockComponent.model, doc, std);
+        },
+      },
     ],
   },
   {
@@ -85,7 +96,7 @@ export const BUILT_IN_GROUPS: MenuItemGroup<EmbedCardToolbarContext>[] = [
     items: [
       {
         type: 'delete',
-        label: 'Delete',
+        label: 'Törlés',
         icon: DeleteIcon,
         disabled: ({ doc }) => doc.readonly,
         action: ({ doc, blockComponent, close }) => {

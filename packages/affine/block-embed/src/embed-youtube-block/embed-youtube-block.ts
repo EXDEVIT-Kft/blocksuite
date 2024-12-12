@@ -154,6 +154,24 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
           ></object>`
         : nothing;
 
+    // [ALGOGRIND]
+    // In readonly mode we only want to display the iframe (youtube player)
+    if (this.doc.readonly) {
+      return html`
+        <div class="affine-embed-youtube-video-iframe-container readonly">
+          <iframe
+            id="ytplayer"
+            type="text/html"
+            src=${`https://www.youtube.com/embed/${videoId}`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      `;
+    }
+
     return this.renderEmbed(
       () => html`
         <div

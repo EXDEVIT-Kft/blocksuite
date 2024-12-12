@@ -10,6 +10,7 @@ import {
   AdapterFactoryExtensions,
   BlockAdapterMatcherExtensions,
 } from '../_common/adapters/extension.js';
+import { AccordionBlockSpec } from '../accordion-block/accordion-spec.js';
 import { AttachmentBlockSpec } from '../attachment-block/attachment-spec.js';
 import { BookmarkBlockSpec } from '../bookmark-block/bookmark-spec.js';
 import { CodeBlockSpec } from '../code-block/code-block-spec.js';
@@ -23,6 +24,7 @@ import {
 } from '../note-block/note-spec.js';
 
 export const CommonFirstPartyBlockSpecs: ExtensionType[] = [
+  // === blocksuite / affine
   RichTextExtensions,
   EditPropsStore,
   ListBlockSpec,
@@ -38,9 +40,12 @@ export const CommonFirstPartyBlockSpecs: ExtensionType[] = [
   EmbedExtensions,
   BlockAdapterMatcherExtensions,
   AdapterFactoryExtensions,
+  // === algogrind
+  AccordionBlockSpec,
 ].flat();
 
 export const EdgelessFirstPartyBlockSpecs: ExtensionType[] = [
+  // blocksuite / affine
   RichTextExtensions,
   EditPropsStore,
   ListBlockSpec,
@@ -56,4 +61,6 @@ export const EdgelessFirstPartyBlockSpecs: ExtensionType[] = [
   EmbedExtensions,
   BlockAdapterMatcherExtensions,
   AdapterFactoryExtensions,
+  // === algogrind
+  AccordionBlockSpec,
 ].flat();

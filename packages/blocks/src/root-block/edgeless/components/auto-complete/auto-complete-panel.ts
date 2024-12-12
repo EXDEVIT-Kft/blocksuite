@@ -157,7 +157,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
     const id = service.addBlock(
       'affine:frame',
       {
-        title: new DocCollection.Y.Text(`Frame ${frameIndex}`),
+        title: new DocCollection.Y.Text(`Keret ${frameIndex}`),
         xywh: serializeXYWH(...xywh),
         presentationIndex: frameMgr.generatePresentationIndex(),
       },
@@ -601,7 +601,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       ${shapeButtons}
 
       <edgeless-tool-icon-button
-        .tooltip=${'Text'}
+        .tooltip=${'Szöveg'}
         @pointerenter=${() => this._showOverlay('text')}
         @pointerleave=${() => this._removeOverlay()}
         @click=${() => this._autoComplete('text')}
@@ -609,7 +609,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         ${FontFamilyIcon}
       </edgeless-tool-icon-button>
       <edgeless-tool-icon-button
-        .tooltip=${'Note'}
+        .tooltip=${'Jegyzet'}
         @pointerenter=${() => this._showOverlay('note')}
         @pointerleave=${() => this._removeOverlay()}
         @click=${() => this._autoComplete('note')}
@@ -617,7 +617,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         ${SmallNoteIcon}
       </edgeless-tool-icon-button>
       <edgeless-tool-icon-button
-        .tooltip=${'Frame'}
+        .tooltip=${'Keret'}
         @pointerenter=${() => this._showOverlay('frame')}
         @pointerleave=${() => this._removeOverlay()}
         @click=${() => this._autoComplete('frame')}
@@ -632,7 +632,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         @pointerleave=${() => this._removeOverlay()}
         @click=${() => this._autoComplete(currentSourceType)}
       >
-        <div class="row-button">Add a same object</div>
+        <div class="row-button">Ugyanilyen elem hozzáadása</div>
       </edgeless-tool-icon-button>
     </div>`;
   }

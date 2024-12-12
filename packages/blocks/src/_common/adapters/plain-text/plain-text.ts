@@ -195,7 +195,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
       type: 'page',
       meta: {
         id: nanoid(),
-        title: 'Untitled',
+        title: 'Új dokumentum',
         createDate: Date.now(),
         tags: [],
       },
@@ -208,7 +208,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
             '$blocksuite:internal:text$': true,
             delta: [
               {
-                insert: 'Untitled',
+                insert: 'Új dokumentum',
               },
             ],
           },

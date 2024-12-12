@@ -47,7 +47,7 @@ export function attachmentViewToggleMenu({
   const viewActions = [
     {
       type: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       disabled: readonly || !embedded,
       action: () => {
         const style = defaultAttachmentProps.style!;
@@ -66,7 +66,7 @@ export function attachmentViewToggleMenu({
     },
     {
       type: 'embed',
-      label: 'Embed view',
+      label: 'Beágyazott nézet',
       disabled: readonly || embedded || !block.embedded(),
       action: () => {
         block.convertTo();
@@ -141,8 +141,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Rename"
-            .tooltip=${'Rename'}
+            aria-label="Átnevezés"
+            .tooltip=${'Átnevezés'}
             @click=${() => {
               abortController.abort();
               const renameAbortController = new AbortController();
@@ -176,8 +176,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Download"
-            .tooltip=${'Download'}
+            aria-label="Letöltés"
+            .tooltip=${'Letöltés'}
             @click=${() => block.download()}
           >
             ${DownloadIcon}
@@ -188,8 +188,8 @@ export function AttachmentOptionsTemplate({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Caption"
-            .tooltip=${'Caption'}
+            aria-label="Felirat"
+            .tooltip=${'Felirat'}
             @click=${() => block.captionEditor?.show()}
           >
             ${CaptionIcon}
@@ -200,7 +200,7 @@ export function AttachmentOptionsTemplate({
       <editor-menu-button
         .contentPadding=${'8px'}
         .button=${html`
-          <editor-icon-button aria-label="More" .tooltip=${'More'}>
+          <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
             ${MoreVerticalIcon}
           </editor-icon-button>
         `}

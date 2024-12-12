@@ -35,10 +35,10 @@ export function getFormatBar(page: Page) {
   const bulletedBtn = formatBar.getByTestId('affine:list/bulleted');
   const codeBlockBtn = formatBar.getByTestId('affine:code/');
 
-  const moreBtn = formatBar.getByRole('button', { name: 'More' });
-  const copyBtn = formatBar.getByRole('button', { name: 'Copy' });
-  const duplicateBtn = formatBar.getByRole('button', { name: 'Duplicate' });
-  const deleteBtn = formatBar.getByRole('button', { name: 'Delete' });
+  const moreBtn = formatBar.getByRole('button', { name: 'Továbbiak' });
+  const copyBtn = formatBar.getByRole('button', { name: 'Másolás' });
+  const duplicateBtn = formatBar.getByRole('button', { name: 'Duplikálás' });
+  const deleteBtn = formatBar.getByRole('button', { name: 'Törlés' });
   const openMoreMenu = async () => {
     await expect(formatBar).toBeVisible();
     await moreBtn.click();
@@ -92,10 +92,10 @@ export function getEmbedCardToolbar(page: Page) {
   const moreButton = createButtonLocator('more');
 
   const cardStyleHorizontalButton = embedCardToolbar.getByRole('button', {
-    name: 'Large horizontal style',
+    name: 'Nagy vízszintes elrendezés',
   });
   const cardStyleListButton = embedCardToolbar.getByRole('button', {
-    name: 'Small horizontal style',
+    name: 'Kicsi vízszintes elrendezés',
   });
 
   const openCardStyleMenu = async () => {

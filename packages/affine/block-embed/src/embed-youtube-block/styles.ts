@@ -45,10 +45,22 @@ export const styles = css`
     height: 100%;
   }
 
+  /* [ALGOGRIND] */
+  /* In readonly mode we only want to display the iframe */
+  .affine-embed-youtube-video-iframe-container.readonly {
+    aspect-ratio: ${EMBED_CARD_WIDTH.video} / ${EMBED_CARD_HEIGHT.video - 116};
+  }
+
   .affine-embed-youtube-video-iframe-container > iframe {
     width: 100%;
     height: 100%;
     border-radius: 4px 4px var(--1, 0px) var(--1, 0px);
+  }
+
+  /* [ALGOGRIND] */
+  /* In readonly mode we need all corners to be rounded */
+  .affine-embed-youtube-video-iframe-container.readonly > iframe {
+    border-radius: 4px;
   }
 
   .affine-embed-youtube-video-iframe-overlay {

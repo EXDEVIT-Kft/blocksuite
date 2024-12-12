@@ -96,7 +96,7 @@ export class OutlineNotice extends WithDisposable(LitElement) {
 
     return html`<div class="outline-notice-container">
       <div class="outline-notice-header">
-        <span class="outline-notice-label">SOME CONTENTS HIDDEN</span>
+        <span class="outline-notice-label">NÉHÁNY TARTALOM EL VAN REJTVE</span>
         <span
           class="outline-notice-close-button"
           @click=${() => this.setNoticeVisibility(false)}
@@ -105,15 +105,14 @@ export class OutlineNotice extends WithDisposable(LitElement) {
       </div>
       <div class="outline-notice-body">
         <div class="outline-notice-item notice">
-          Some contents are not visible on edgeless.
+          Egyes tartalmak nem láthatók a Rajztábla nézetben.
         </div>
         <div
           class="outline-notice-item button"
           @click=${this._handleNoticeButtonClick}
         >
-          <span>Click here or</span>
+          <span>Kattints ide a tartalmak rendszerezéséhez.</span>
           <span>${SortingIcon}</span>
-          <span>to organize content.</span>
         </div>
       </div>
     </div>`;

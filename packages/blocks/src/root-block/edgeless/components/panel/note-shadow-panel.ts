@@ -16,7 +16,7 @@ const SHADOWS = [
       light: '',
       dark: '',
     },
-    tooltip: 'No shadow',
+    tooltip: 'Nincs árnyék',
   },
   {
     type: NoteShadow.Box,
@@ -25,7 +25,7 @@ const SHADOWS = [
         '0px 0.2px 4.8px 0px rgba(66, 65, 73, 0.2), 0px 0px 1.6px 0px rgba(66, 65, 73, 0.2)',
       dark: '0px 0.2px 6px 0px rgba(0, 0, 0, 0.44), 0px 0px 2px 0px rgba(0, 0, 0, 0.66)',
     },
-    tooltip: 'Box shadow',
+    tooltip: 'Keretes árnyék',
   },
   {
     type: NoteShadow.Sticker,
@@ -34,7 +34,7 @@ const SHADOWS = [
         '0px 9.6px 10.4px -4px rgba(66, 65, 73, 0.07), 0px 10.4px 7.2px -8px rgba(66, 65, 73, 0.22)',
       dark: '0px 9.6px 10.4px -4px rgba(0, 0, 0, 0.66), 0px 10.4px 7.2px -8px rgba(0, 0, 0, 0.44)',
     },
-    tooltip: 'Sticker shadow',
+    tooltip: 'Matrica árnyék',
   },
   {
     type: NoteShadow.Paper,
@@ -43,7 +43,7 @@ const SHADOWS = [
         '0px 0px 0px 4px rgba(255, 255, 255, 1), 0px 1.2px 2.4px 4.8px rgba(66, 65, 73, 0.16)',
       dark: '0px 1.2px 2.4px 4.8px rgba(0, 0, 0, 0.36), 0px 0px 0px 3.4px rgba(75, 75, 75, 1)',
     },
-    tooltip: 'Paper shadow',
+    tooltip: 'Papír árnyék',
   },
   {
     type: NoteShadow.Float,
@@ -52,7 +52,7 @@ const SHADOWS = [
         '0px 5.2px 12px 0px rgba(66, 65, 73, 0.13), 0px 0px 0.4px 1px rgba(0, 0, 0, 0.06)',
       dark: '0px 5.2px 12px 0px rgba(0, 0, 0, 0.66), 0px 0px 0.4px 1px rgba(0, 0, 0, 0.44)',
     },
-    tooltip: 'Floation shadow',
+    tooltip: 'Lebegő árnyég',
   },
   {
     type: NoteShadow.Film,
@@ -61,7 +61,7 @@ const SHADOWS = [
         '0px 0px 0px 1.4px rgba(0, 0, 0, 1), 2.4px 2.4px 0px 1px rgba(0, 0, 0, 1)',
       dark: '0px 0px 0px 1.4px rgba(178, 178, 178, 1), 2.4px 2.4px 0px 1px rgba(178, 178, 178, 1)',
     },
-    tooltip: 'Film shadow',
+    tooltip: 'Film árnyék',
   },
 ];
 

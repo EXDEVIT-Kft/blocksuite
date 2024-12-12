@@ -1,5 +1,7 @@
 import type { TemplateResult } from 'lit';
 
+import { AccordionTooltip } from './accordion.js';
+import { AccordionTextTooltip } from './accordion-text.js';
 import { AttachmentTooltip } from './attachment.js';
 import { BoldTextTooltip } from './bold-text.js';
 import { BulletedListTooltip } from './bulleted-list.js';
@@ -8,6 +10,7 @@ import { CopyTooltip } from './copy.js';
 import { DeleteTooltip } from './delete.js';
 import { DividerTooltip } from './divider.js';
 import { EdgelessTooltip } from './edgeless.js';
+import { EquationTooltip } from './equation.js';
 import { FigmaTooltip } from './figma.js';
 import { GithubRepoTooltip } from './github-repo.js';
 import { Heading1Tooltip } from './heading-1.js';
@@ -18,6 +21,7 @@ import { Heading5Tooltip } from './heading-5.js';
 import { Heading6Tooltip } from './heading-6.js';
 import { ItalicTooltip } from './italic.js';
 import { KanbanViewTooltip } from './kanban-view.js';
+import { LineEquationTooltip } from './line-equation.js';
 import { LinearTooltip } from './linear.js';
 import { LinkTooltip } from './link.js';
 import { LinkDocTooltip } from './link-doc.js';
@@ -45,109 +49,114 @@ export type SlashMenuTooltip = {
 };
 
 export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
-  Text: {
+  Szöveg: {
     figure: TextTooltip,
-    caption: 'Text',
+    caption: 'Egyszerű szöveg',
   },
 
-  'Heading 1': {
+  'Címsor 1': {
     figure: Heading1Tooltip,
-    caption: 'Heading #1',
+    caption: 'Címsor #1',
   },
 
-  'Heading 2': {
+  'Címsor 2': {
     figure: Heading2Tooltip,
-    caption: 'Heading #2',
+    caption: 'Címsor #2',
   },
 
-  'Heading 3': {
+  'Címsor 3': {
     figure: Heading3Tooltip,
-    caption: 'Heading #3',
+    caption: 'Címsor #3',
   },
 
-  'Heading 4': {
+  'Címsor 4': {
     figure: Heading4Tooltip,
-    caption: 'Heading #4',
+    caption: 'Címsor #4',
   },
 
-  'Heading 5': {
+  'Címsor 5': {
     figure: Heading5Tooltip,
-    caption: 'Heading #5',
+    caption: 'Címsor #5',
   },
 
-  'Heading 6': {
+  'Címsor 6': {
     figure: Heading6Tooltip,
-    caption: 'Heading #6',
+    caption: 'Címsor #6',
   },
 
-  'Code Block': {
+  'Kód Blokk': {
     figure: CodeBlockTooltip,
-    caption: 'Code Block',
+    caption: 'Formázott Kód Blokk',
   },
 
-  Quote: {
+  Idézet: {
     figure: QuoteTooltip,
-    caption: 'Quote',
+    caption: 'Idézet',
   },
 
-  Divider: {
+  Elválasztó: {
     figure: DividerTooltip,
-    caption: 'Divider',
+    caption: 'Elválasztó',
   },
 
-  'Bulleted List': {
+  Felsorolás: {
     figure: BulletedListTooltip,
-    caption: 'Bulleted List',
+    caption: 'Felsorolás',
   },
 
-  'Numbered List': {
+  'Számozott Felsorolás': {
     figure: NumberedListTooltip,
-    caption: 'Numbered List',
+    caption: 'Számozott Felsorolás',
   },
 
-  'To-do List': {
+  'To-do Lista': {
     figure: ToDoListTooltip,
-    caption: 'To-do List',
+    caption: 'To-do Lista',
   },
 
-  Bold: {
+  Félkövér: {
     figure: BoldTextTooltip,
-    caption: 'Bold Text',
+    caption: 'Félkövér Szöveg',
   },
 
-  Italic: {
+  Dőlt: {
     figure: ItalicTooltip,
-    caption: 'Italic',
+    caption: 'Dőlt Szöveg',
   },
 
-  Underline: {
+  Aláhúzott: {
     figure: UnderlineTooltip,
-    caption: 'Underline',
+    caption: 'Aláhúzott Szöveg',
   },
 
-  Strikethrough: {
+  Áthúzott: {
     figure: StrikethroughTooltip,
-    caption: 'Strikethrough',
+    caption: 'Áthúzott Szöveg',
   },
 
-  'New Doc': {
+  'Új Dokumentum': {
     figure: NewDocTooltip,
-    caption: 'New Doc',
+    caption: 'Új Dokumentum',
   },
 
-  'Linked Doc': {
+  Hivatkozás: {
     figure: LinkDocTooltip,
-    caption: 'Link Doc',
+    caption: 'Hivatkozás Dokumentumra',
   },
 
-  Link: {
+  Kép: {
+    figure: PhotoTooltip,
+    caption: 'Kép beszúrása',
+  },
+
+  Weboldal: {
     figure: LinkTooltip,
-    caption: 'Link',
+    caption: 'Weboldal hivatkozása',
   },
 
-  Attachment: {
+  Fájl: {
     figure: AttachmentTooltip,
-    caption: 'Attachment',
+    caption: 'Fájl beszúrása',
   },
 
   Github: {
@@ -157,12 +166,7 @@ export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
 
   YouTube: {
     figure: YoutubeVideoTooltip,
-    caption: 'YouTube Video',
-  },
-
-  Image: {
-    figure: PhotoTooltip,
-    caption: 'Photo',
+    caption: 'YouTube Videó',
   },
 
   'X (Twitter)': {
@@ -180,58 +184,82 @@ export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
     caption: 'Linear',
   },
 
-  Today: {
+  Ma: {
     figure: TodayTooltip,
-    caption: 'Today',
+    caption: 'Mai dátum',
   },
 
-  Tomorrow: {
+  Holnap: {
     figure: TomorrowTooltip,
-    caption: 'Tomorrow',
+    caption: 'Holnapi dátum',
   },
 
-  Yesterday: {
+  Tegnap: {
     figure: YesterdayTooltip,
-    caption: 'Yesterday',
+    caption: 'Tegnapi dátum',
   },
 
-  Now: {
+  Most: {
     figure: NowTooltip,
-    caption: 'Now',
+    caption: 'Jelenlegi idő',
   },
 
-  'Table View': {
+  'Táblázat Nézet': {
     figure: TableViewTooltip,
-    caption: 'Table View',
+    caption: 'Táblázat Nézet',
   },
 
-  'Kanban View': {
+  'Kanban Nézet': {
     figure: KanbanViewTooltip,
-    caption: 'Kanban View',
+    caption: 'Kanban Nézet',
   },
 
-  'Move Up': {
+  'Felfele Mozgatás': {
     figure: MoveUpTooltip,
-    caption: 'Move Up',
+    caption: 'Felfele Mozgatás',
   },
 
-  'Move Down': {
+  'Lefele Mozgatás': {
     figure: MoveDownTooltip,
-    caption: 'Move Down',
+    caption: 'Lefele Mozgatás',
   },
 
-  Copy: {
+  Másolás: {
     figure: CopyTooltip,
-    caption: 'Copy / Duplicate',
+    caption: 'Másolás',
   },
 
-  Delete: {
+  Duplikálás: {
+    figure: CopyTooltip,
+    caption: 'Duplikálás',
+  },
+
+  Törlés: {
     figure: DeleteTooltip,
-    caption: 'Delete',
+    caption: 'Törlés',
   },
 
-  'Group & Frame': {
+  'Csoport & Keret': {
     figure: EdgelessTooltip,
-    caption: 'Edgeless',
+    caption: 'Vászon eszközök',
+  },
+
+  Egyenlet: {
+    figure: EquationTooltip,
+    caption: 'Egyenlet',
+  },
+  'Sorközi Egyenlet': {
+    figure: LineEquationTooltip,
+    caption: 'Sorközi Egyenlet',
+  },
+
+  'Összecsukható Címsor': {
+    figure: AccordionTooltip,
+    caption: 'Összecsukható Címsor',
+  },
+
+  'Összecsukható Szöveg': {
+    figure: AccordionTextTooltip,
+    caption: 'Összecsukható Szöveg',
   },
 };

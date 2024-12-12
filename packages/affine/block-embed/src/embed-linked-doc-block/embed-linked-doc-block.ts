@@ -201,7 +201,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
   }
 
   get docTitle() {
-    return this.model.title || this.linkedDoc?.meta?.title || 'Untitled';
+    return this.model.title || this.linkedDoc?.meta?.title || 'Új dokumentum';
   }
 
   get editorMode() {
@@ -383,20 +383,20 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
     const titleText = isError
       ? title
       : isLoading
-        ? 'Loading...'
+        ? 'Betöltés...'
         : isDeleted
-          ? `Deleted doc`
+          ? `Törölt dokumentum`
           : title;
 
     const showDefaultNoteContent = isError || isLoading || isDeleted || isEmpty;
     const defaultNoteContent = isError
-      ? 'This linked doc failed to load.'
+      ? 'A hivatkozott dokumentumot nem sikerült betölteni.'
       : isLoading
         ? ''
         : isDeleted
-          ? 'This linked doc is deleted.'
+          ? 'A hivatkozott dokumentum törölve lett.'
           : isEmpty
-            ? 'Preview of the doc will be displayed here.'
+            ? 'A dokumentum előnézete itt fog megjelenni.'
             : '';
 
     const dateText =
@@ -466,13 +466,13 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
                       class="affine-embed-linked-doc-card-content-reload-button"
                       @click=${this.refreshData}
                     >
-                      ${ReloadIcon} <span>Reload</span>
+                      ${ReloadIcon} <span>Frissítés</span>
                     </div>
                   </div>
                 `
               : html`
                   <div class="affine-embed-linked-doc-content-date">
-                    <span>Updated</span>
+                    <span>Frissült</span>
 
                     <span>${dateText}</span>
                   </div>

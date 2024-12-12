@@ -39,8 +39,8 @@ import {
 } from './utils.js';
 
 const TABS: NavTab<NavType>[] = [
-  { type: 'colors', name: 'Colors' },
-  { type: 'custom', name: 'Custom' },
+  { type: 'colors', name: 'Színek' },
+  { type: 'custom', name: 'Egyedi' },
 ];
 
 export class EdgelessColorPicker extends SignalWatcher(

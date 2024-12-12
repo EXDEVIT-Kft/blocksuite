@@ -160,7 +160,7 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
         @pointerdown=${stopPropagation}
       >
         <edgeless-tool-icon-button
-          .tooltip=${'Fit to screen'}
+          .tooltip=${'Tartalom Középre'}
           .tipPosition=${this._isVerticalBar() ? 'right' : 'top-end'}
           .arrow=${!this._isVerticalBar()}
           @click=${() => this.edgelessService.zoomToFit()}
@@ -170,7 +170,7 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
           ${ViewBarIcon}
         </edgeless-tool-icon-button>
         <edgeless-tool-icon-button
-          .tooltip=${'Zoom out'}
+          .tooltip=${'Kicsinyítés'}
           .tipPosition=${this._isVerticalBar() ? 'right' : 'top'}
           .arrow=${!this._isVerticalBar()}
           @click=${() => this.edgelessService.setZoomByStep(-ZOOM_STEP)}
@@ -187,7 +187,7 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
           ${formattedZoom}
         </button>
         <edgeless-tool-icon-button
-          .tooltip=${'Zoom in'}
+          .tooltip=${'Nagyítás'}
           .tipPosition=${this._isVerticalBar() ? 'right' : 'top'}
           .arrow=${!this._isVerticalBar()}
           @click=${() => this.edgelessService.setZoomByStep(ZOOM_STEP)}

@@ -190,12 +190,12 @@ export class FramePanelHeader extends WithDisposable(LitElement) {
   override render() {
     return html`<div class="frame-panel-header">
       <div class="all-frames-setting">
-        <span class="all-frames-setting-label">All frames</span>
+        <span class="all-frames-setting-label">Minden keret</span>
         <edgeless-tool-icon-button
           class="all-frames-setting-button ${this._settingPopperShow
             ? 'active'
             : ''}"
-          .tooltip=${this._settingPopperShow ? '' : 'All Frames Settings'}
+          .tooltip=${this._settingPopperShow ? '' : 'Prezentáció beállításai'}
           .tipPosition=${'top'}
           .active=${this._settingPopperShow}
           .activeMode=${'background'}
