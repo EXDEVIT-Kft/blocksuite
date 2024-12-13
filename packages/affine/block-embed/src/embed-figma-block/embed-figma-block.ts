@@ -1,9 +1,9 @@
 import type {
   EmbedFigmaModel,
   EmbedFigmaStyles,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { OpenIcon } from '@blocksuite/affine-components/icons';
+import { OpenIcon } from '@algogrind/affine-components/icons';
 import { html } from 'lit';
 import { state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 import type {
   EdgelessRootBlockComponent,
   GroupElementModel,
   NoteBlockModel,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { type BlockModel, type Doc, DocCollection } from '@blocksuite/store';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { type BlockModel, type Doc, DocCollection } from '@algogrind/store';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

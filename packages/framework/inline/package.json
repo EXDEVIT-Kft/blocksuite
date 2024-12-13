@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/inline",
+  "name": "@algogrind/inline",
   "version": "0.18.7",
   "description": "A micro editor.",
   "type": "module",
@@ -66,7 +66,7 @@
     }
   },
   "dependencies": {
-    "@blocksuite/global": "workspace:*",
+    "@algogrind/global": "workspace:*",
     "@preact/signals-core": "^1.8.0",
     "zod": "^3.23.8"
   }

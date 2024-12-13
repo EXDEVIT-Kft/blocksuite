@@ -1,21 +1,21 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { NoteBlockModel } from '@algogrind/affine-model';
 
-import { DndApiExtensionIdentifier } from '@blocksuite/affine-shared/services';
+import { DndApiExtensionIdentifier } from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   getBlockComponentsExcludeSubtrees,
   getClosestBlockComponentByPoint,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   type DndEventState,
   isGfxBlockComponent,
   type UIEventHandler,
   type UIEventStateContext,
-} from '@blocksuite/block-std';
-import { Bound, Point } from '@blocksuite/global/utils';
-import { Job, Slice, type SliceSnapshot } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { Bound, Point } from '@algogrind/global/utils';
+import { Job, Slice, type SliceSnapshot } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../../../edgeless/index.js';
 import type { AffineDragHandleWidget } from '../drag-handle.js';

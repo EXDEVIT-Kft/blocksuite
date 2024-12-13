@@ -1,13 +1,13 @@
-import { AttachmentBlockSchema } from '@blocksuite/affine-model';
+import { AttachmentBlockSchema } from '@algogrind/affine-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   FetchUtils,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { sha } from '@blocksuite/global/utils';
-import { getAssetName, nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { sha } from '@algogrind/global/utils';
+import { getAssetName, nanoid } from '@algogrind/store';
 
 export const attachmentBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatcher =
   {

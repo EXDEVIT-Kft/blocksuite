@@ -3,12 +3,12 @@ import {
   ConnectorMode,
   type LocalConnectorElementModel,
   type PointStyle,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   getBezierParameters,
   type PointLocation,
-} from '@blocksuite/global/utils';
-import { deltaInsertsToChunks } from '@blocksuite/inline';
+} from '@algogrind/global/utils';
+import { deltaInsertsToChunks } from '@algogrind/inline';
 
 import type { RoughCanvas } from '../../../utils/rough/canvas.js';
 import type { CanvasRenderer } from '../../canvas-renderer.js';

@@ -1,9 +1,9 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 import type {
   Chain,
   //CommandKeyToData,
   InitCommandCtx,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import {
   BoldIcon,
@@ -29,13 +29,13 @@ import {
   StrikethroughIcon,
   TextIcon,
   UnderlineIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { renderGroups } from '@blocksuite/affine-components/toolbar';
-//import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-//import { tableViewMeta } from '@blocksuite/data-view/view-presets';
-import { assertExists } from '@blocksuite/global/utils';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { renderGroups } from '@algogrind/affine-components/toolbar';
+//import { TelemetryProvider } from '@algogrind/affine-shared/services';
+//import { tableViewMeta } from '@algogrind/data-view/view-presets';
+import { assertExists } from '@algogrind/global/utils';
+import { Slice } from '@algogrind/store';
 import { html, type TemplateResult } from 'lit';
 
 import type { AffineFormatBarWidget } from './format-bar.js';

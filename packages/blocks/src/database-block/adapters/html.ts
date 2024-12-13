@@ -1,19 +1,19 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 import type { Element } from 'hast';
 
 import {
   type Column,
   DatabaseBlockSchema,
   type SerializedCells,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
   type InlineHtmlAST,
   TextUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { type BlockSnapshot, nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { type BlockSnapshot, nanoid } from '@algogrind/store';
 import { format } from 'date-fns/format';
 
 const DATABASE_NODE_TYPES = ['table', 'thead', 'tbody', 'th', 'tr'];

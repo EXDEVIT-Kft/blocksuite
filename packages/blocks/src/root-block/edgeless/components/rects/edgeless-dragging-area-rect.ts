@@ -1,6 +1,6 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@algogrind/affine-model';
 
-import { WidgetComponent } from '@blocksuite/block-std';
+import { WidgetComponent } from '@algogrind/block-std';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Bound } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Bound } from '@algogrind/global/utils';
 import { nothing } from 'lit';
 
 import type { BlockService } from '../../extension/index.js';

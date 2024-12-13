@@ -2,9 +2,9 @@ import type {
   Connection,
   ConnectorElementModel,
   ConnectorMode,
-} from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IBound, IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IBound, IVec } from '@algogrind/global/utils';
 
 import {
   calculateNearestLocation,
@@ -13,15 +13,15 @@ import {
   ConnectorEndpointLocations,
   ConnectorEndpointLocationsOnTriangle,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   GroupElementModel,
   ShapeElementModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { Bound } from '@algogrind/global/utils';
 
 enum ConnectorToolMode {
   // Dragging connect
@@ -221,7 +221,7 @@ export class ConnectorTool extends BaseTool<ConnectorToolOptions> {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     connector: ConnectorTool;
   }

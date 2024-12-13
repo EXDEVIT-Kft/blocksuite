@@ -1,6 +1,6 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { isEqual } from '@blocksuite/global/utils';
+import { isEqual } from '@algogrind/global/utils';
 
 const mergeDeltas = (
   acc: DeltaInsert[],

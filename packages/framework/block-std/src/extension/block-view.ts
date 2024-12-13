@@ -13,7 +13,7 @@ import { BlockViewIdentifier } from '../identifier.js';
  *
  * @example
  * ```ts
- * import { BlockViewExtension } from '@blocksuite/block-std';
+ * import { BlockViewExtension } from '@algogrind/block-std';
  *
  * const MyListBlockViewExtension = BlockViewExtension(
  *   'affine:list',

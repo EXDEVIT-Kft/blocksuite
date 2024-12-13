@@ -1,6 +1,6 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { SignalWatcher } from '@blocksuite/global/utils';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { css, LitElement, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 

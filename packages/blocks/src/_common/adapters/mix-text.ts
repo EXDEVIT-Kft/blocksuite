@@ -1,10 +1,10 @@
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { DeltaInsert } from '@algogrind/inline';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type AssetsManager,
   ASTWalker,
@@ -23,7 +23,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { MarkdownAdapter } from './markdown/index.js';
 import { AdapterFactoryIdentifier } from './type.js';

@@ -1,20 +1,20 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+import type { ParagraphBlockModel } from '@algogrind/affine-model';
 
-import { referenceToNode } from '@blocksuite/affine-components/rich-text';
+import { referenceToNode } from '@algogrind/affine-components/rich-text';
 import {
   ParseDocUrlProvider,
   type ParseDocUrlService,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type EditorHost,
   type TextRangePoint,
   type TextSelection,
-} from '@blocksuite/block-std';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists } from '@algogrind/global/utils';
 import {
   type BlockModel,
   type BlockSnapshot,
@@ -24,7 +24,7 @@ import {
   type JobMiddleware,
   type SliceSnapshot,
   type Text,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { matchFlavours } from '../../../_common/utils/index.js';
 import { extractSearchParams } from '../../../_common/utils/url.js';

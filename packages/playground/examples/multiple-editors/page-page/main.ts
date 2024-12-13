@@ -1,4 +1,4 @@
-import { createEmptyDoc, PageEditor } from '@blocksuite/presets';
+import { createEmptyDoc, PageEditor } from '@algogrind/presets';
 
 import '../../../style.css';
 

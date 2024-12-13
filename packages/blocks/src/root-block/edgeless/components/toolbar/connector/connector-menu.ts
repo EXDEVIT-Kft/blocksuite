@@ -1,19 +1,19 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
 import {
   ConnectorCWithArrowIcon,
   ConnectorLWithArrowIcon,
   ConnectorXWithArrowIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   ConnectorMode,
   DEFAULT_CONNECTOR_COLOR,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

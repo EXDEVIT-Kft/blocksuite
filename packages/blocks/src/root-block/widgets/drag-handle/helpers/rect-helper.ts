@@ -1,7 +1,7 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { getCurrentNativeRange } from '@blocksuite/affine-shared/utils';
-import { Rect } from '@blocksuite/global/utils';
+import { getCurrentNativeRange } from '@algogrind/affine-shared/utils';
+import { Rect } from '@algogrind/global/utils';
 
 import type { AffineDragHandleWidget } from '../drag-handle.js';
 

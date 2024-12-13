@@ -1,5 +1,5 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { Bound, IVec } from '@blocksuite/global/utils';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { Bound, IVec } from '@algogrind/global/utils';
 
 import {
   MindmapUtils,
@@ -7,17 +7,17 @@ import {
   NODE_VERTICAL_SPACING,
   OverlayIdentifier,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type LayoutType,
   type LocalConnectorElementModel,
   MindmapElementModel,
   type MindmapNode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type GfxModel,
   isGfxGroupCompatibleModel,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
 import type { MindMapIndicatorOverlay } from './indicator-overlay.js';
 

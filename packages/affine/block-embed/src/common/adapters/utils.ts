@@ -1,6 +1,6 @@
-import type { ReferenceParams } from '@blocksuite/affine-model';
+import type { ReferenceParams } from '@algogrind/affine-model';
 
-import { TextUtils } from '@blocksuite/affine-shared/adapters';
+import { TextUtils } from '@algogrind/affine-shared/adapters';
 
 export function generateDocUrl(
   docBaseUrl: string,

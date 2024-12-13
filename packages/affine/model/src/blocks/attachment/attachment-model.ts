@@ -1,10 +1,10 @@
 import type {
   GfxCommonBlockProps,
   GfxElementGeometry,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
-import { GfxCompatible } from '@blocksuite/block-std/gfx';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { GfxCompatible } from '@algogrind/block-std/gfx';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 import type { EmbedCardStyle } from '../../utils/index.js';
 

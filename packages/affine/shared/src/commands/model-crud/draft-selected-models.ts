@@ -1,10 +1,10 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 import {
   type BlockModel,
   type DraftModel,
   toDraftModel,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 export const draftSelectedModelsCommand: Command<
   'selectedModels',

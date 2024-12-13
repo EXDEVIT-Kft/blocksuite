@@ -1,4 +1,4 @@
-import type { BlockSelection, BlockStdScope } from '@blocksuite/block-std';
+import type { BlockSelection, BlockStdScope } from '@algogrind/block-std';
 
 const getSelection = (std: BlockStdScope) => std.selection;
 

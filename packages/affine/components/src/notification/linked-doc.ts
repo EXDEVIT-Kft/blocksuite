@@ -1,6 +1,6 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { NotificationProvider } from '@blocksuite/affine-shared/services';
+import { NotificationProvider } from '@algogrind/affine-shared/services';
 
 import { toast } from '../toast/toast.js';
 

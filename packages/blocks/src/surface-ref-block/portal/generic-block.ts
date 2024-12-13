@@ -9,11 +9,11 @@ import type {
   EmbedSyncedDocModel,
   EmbedYoutubeModel,
   ImageBlockModel,
-} from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { css, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

@@ -1,7 +1,7 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { IS_MOBILE } from '@blocksuite/global/env';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { IS_MOBILE } from '@algogrind/global/env';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import {
   ArrowLeftBigIcon,
   ArrowLeftSmallIcon,

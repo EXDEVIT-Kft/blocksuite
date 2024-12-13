@@ -1,12 +1,12 @@
-import type { MindmapElementModel } from '@blocksuite/affine-model';
+import type { MindmapElementModel } from '@algogrind/affine-model';
 
 import {
   type EdgelessRootBlockComponent,
   type GroupElementModel,
   LayoutType,
   NoteDisplayMode,
-} from '@blocksuite/blocks';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { DocCollection } from '@algogrind/store';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

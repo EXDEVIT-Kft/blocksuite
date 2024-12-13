@@ -2,10 +2,10 @@ import type {
   BlockSelection,
   Command,
   TextSelection,
-} from '@blocksuite/block-std';
-import type { RoleType } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import type { RoleType } from '@algogrind/store';
 
-import { BlockComponent } from '@blocksuite/block-std';
+import { BlockComponent } from '@algogrind/block-std';
 
 import type { ImageSelection } from '../../selection/index.js';
 

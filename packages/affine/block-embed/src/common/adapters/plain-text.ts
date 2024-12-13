@@ -1,4 +1,4 @@
-import type { BlockPlainTextAdapterMatcher } from '@blocksuite/affine-shared/adapters';
+import type { BlockPlainTextAdapterMatcher } from '@algogrind/affine-shared/adapters';
 
 export function createEmbedBlockPlainTextAdapterMatcher(
   flavour: string,

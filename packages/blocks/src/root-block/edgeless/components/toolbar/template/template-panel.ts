@@ -1,20 +1,16 @@
-import type { IBound } from '@blocksuite/global/utils';
+import type { IBound } from '@algogrind/global/utils';
 
 import {
   darkToolbarStyles,
   EditPropsStore,
   lightToolbarStyles,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   requestConnectedFrame,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import {
-  Bound,
-  getCommonBound,
-  WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { Bound, getCommonBound, WithDisposable } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';

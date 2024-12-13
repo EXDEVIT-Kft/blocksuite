@@ -1,8 +1,8 @@
-import type { BlockComponent, BlockSelection } from '@blocksuite/block-std';
+import type { BlockComponent, BlockSelection } from '@algogrind/block-std';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { IS_MAC, IS_WINDOWS } from '@blocksuite/global/env';
-import { assertExists } from '@blocksuite/global/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { IS_MAC, IS_WINDOWS } from '@algogrind/global/env';
+import { assertExists } from '@algogrind/global/utils';
 
 import {
   convertSelectedBlocksToLinkedDoc,

@@ -1,20 +1,20 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
-import { generateKeyBetweenV2 } from '@blocksuite/block-std/gfx';
+import { type EditorHost, ShadowlessElement } from '@algogrind/block-std';
+import { generateKeyBetweenV2 } from '@algogrind/block-std/gfx';
 import {
   DocModeProvider,
   EdgelessFrameManager,
   EdgelessRootService,
   EditPropsStore,
   type FrameBlockModel,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import {
   Bound,
   DisposableGroup,
   SignalWatcher,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { keyed } from 'lit/directives/keyed.js';

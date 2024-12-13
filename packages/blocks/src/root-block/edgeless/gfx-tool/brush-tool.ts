@@ -1,11 +1,11 @@
-import type { BrushElementModel } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+import type { BrushElementModel } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
-import { CanvasElementType } from '@blocksuite/affine-block-surface';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { assertExists } from '@blocksuite/global/utils';
+import { CanvasElementType } from '@algogrind/affine-block-surface';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { assertExists } from '@algogrind/global/utils';
 
 export class BrushTool extends BaseTool {
   static BRUSH_POP_GAP = 20;
@@ -172,7 +172,7 @@ export class BrushTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     brush: BrushTool;
   }

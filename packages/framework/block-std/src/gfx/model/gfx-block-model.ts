@@ -3,9 +3,9 @@ import type {
   IVec,
   SerializedXYWH,
   XYWH,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   Bound,
   deserializeXYWH,
@@ -16,8 +16,8 @@ import {
   polygonGetPointTangent,
   polygonNearestPoint,
   rotatePoints,
-} from '@blocksuite/global/utils';
-import { BlockModel } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { BlockModel } from '@algogrind/store';
 
 import type { EditorHost } from '../../view/index.js';
 import type { GfxCompatibleInterface, PointTestOptions } from './base.js';

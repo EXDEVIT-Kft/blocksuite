@@ -1,6 +1,6 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { getDocContentWithMaxLength } from '@blocksuite/affine-block-embed';
+import { getDocContentWithMaxLength } from '@algogrind/affine-block-embed';
 import {
   CaptionIcon,
   CenterPeekIcon,
@@ -10,16 +10,16 @@ import {
   OpenIcon,
   PaletteIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { notifyLinkedDocSwitchedToEmbed } from '@blocksuite/affine-components/notification';
-import { isPeekable, peek } from '@blocksuite/affine-components/peek';
-import { referenceToNode } from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/icons';
+import { notifyLinkedDocSwitchedToEmbed } from '@algogrind/affine-components/notification';
+import { isPeekable, peek } from '@algogrind/affine-components/peek';
+import { referenceToNode } from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   type MenuItem,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
-import { type AliasInfo, BookmarkStyles } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/toolbar';
+import { type AliasInfo, BookmarkStyles } from '@algogrind/affine-model';
 import {
   EmbedOptionProvider,
   type EmbedOptions,
@@ -29,9 +29,9 @@ import {
   type TelemetryEvent,
   TelemetryProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { getHostName } from '@blocksuite/affine-shared/utils';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { getHostName } from '@algogrind/affine-shared/utils';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

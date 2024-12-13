@@ -2,28 +2,28 @@ import type {
   EdgelessTextBlockModel,
   FrameBlockModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
 import {
   ConnectorUtils,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-block-surface';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 import {
   ConnectorElementModel,
   GroupElementModel,
   MindmapElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import {
   clamp,
   handleNativeRangeAtPoint,
   resetNativeSelection,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   BaseTool,
   getTopElements,
@@ -32,7 +32,7 @@ import {
   type GfxPrimitiveElementModel,
   isGfxGroupCompatibleModel,
   type PointTestOptions,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import {
   Bound,
   DisposableGroup,
@@ -40,7 +40,7 @@ import {
   last,
   noop,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 
 import type { GfxBlockModel } from '../block-model.js';
@@ -1032,7 +1032,7 @@ export class DefaultTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     default: DefaultTool;
   }

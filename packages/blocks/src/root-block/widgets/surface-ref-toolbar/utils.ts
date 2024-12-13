@@ -1,7 +1,7 @@
-import type { CanvasRenderer } from '@blocksuite/affine-block-surface';
-import type { EditorHost } from '@blocksuite/block-std';
+import type { CanvasRenderer } from '@algogrind/affine-block-surface';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { assertExists, Bound } from '@blocksuite/global/utils';
+import { assertExists, Bound } from '@algogrind/global/utils';
 
 import type { SurfaceRefBlockComponent } from '../../../surface-ref-block/surface-ref-block.js';
 

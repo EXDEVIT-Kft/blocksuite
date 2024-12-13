@@ -1,6 +1,6 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
-import { FrameNavigatorIcon } from '@blocksuite/affine-components/icons';
+import { FrameNavigatorIcon } from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 
 import { QuickToolMixin } from '../mixins/quick-tool.mixin.js';

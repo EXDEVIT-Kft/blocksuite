@@ -1,11 +1,8 @@
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import {
-  createIdentifier,
-  type ServiceIdentifier,
-} from '@blocksuite/global/di';
-import { isEqual } from '@blocksuite/global/utils';
+import { createIdentifier, type ServiceIdentifier } from '@algogrind/global/di';
+import { isEqual } from '@algogrind/global/utils';
 
 import type { AffineTextAttributes } from '../../types/index.js';
 import type { HtmlAST, InlineHtmlAST } from '../types/hast.js';

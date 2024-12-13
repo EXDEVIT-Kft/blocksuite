@@ -1,4 +1,4 @@
-import type { JobMiddleware } from '@blocksuite/store';
+import type { JobMiddleware } from '@algogrind/store';
 
 export const copyEmbedDoc: JobMiddleware = ({ slots, collection }) => {
   slots.beforeImport.on(payload => {

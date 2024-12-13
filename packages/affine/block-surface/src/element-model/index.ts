@@ -4,7 +4,7 @@ import {
   GroupElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import { LayoutableMindmapElementModel } from '../utils/mindmap/utils.js';
 import { SurfaceElementModel } from './base.js';

@@ -1,4 +1,4 @@
-import type { BrushElementModel } from '@blocksuite/affine-model';
+import type { BrushElementModel } from '@algogrind/affine-model';
 
 import type { CanvasRenderer } from '../../canvas-renderer.js';
 

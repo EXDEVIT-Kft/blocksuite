@@ -1,7 +1,7 @@
-import type { Constructor } from '@blocksuite/global/utils';
+import type { Constructor } from '@algogrind/global/utils';
 import type { LitElement, TemplateResult } from 'lit';
 
-import { isInsideEdgelessEditor } from '@blocksuite/affine-shared/utils';
+import { isInsideEdgelessEditor } from '@algogrind/affine-shared/utils';
 
 import type { PeekableClass, PeekableOptions } from './type.js';
 

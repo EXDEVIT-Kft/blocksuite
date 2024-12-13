@@ -1,8 +1,8 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@algogrind/affine-model';
 
-import { FrameOrderAdjustmentIcon } from '@blocksuite/affine-components/icons';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { FrameOrderAdjustmentIcon } from '@algogrind/affine-components/icons';
+import { createButtonPopper } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

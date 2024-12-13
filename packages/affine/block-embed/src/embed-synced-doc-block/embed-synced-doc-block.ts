@@ -1,39 +1,39 @@
 import {
   EmbedEdgelessIcon,
   EmbedPageIcon,
-} from '@blocksuite/affine-components/icons';
-import { Peekable } from '@blocksuite/affine-components/peek';
+} from '@algogrind/affine-components/icons';
+import { Peekable } from '@algogrind/affine-components/peek';
 import {
   cloneReferenceInfo,
   REFERENCE_NODE,
   RefNodeSlotsProvider,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   type AliasInfo,
   type DocMode,
   type EmbedSyncedDocModel,
   NoteDisplayMode,
   type ReferenceInfo,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   DocModeProvider,
   ThemeExtensionIdentifier,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { SpecProvider } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/services';
+import { SpecProvider } from '@algogrind/affine-shared/utils';
 import {
   BlockServiceWatcher,
   BlockStdScope,
   type EditorHost,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { assertExists, Bound, getCommonBound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { assertExists, Bound, getCommonBound } from '@algogrind/global/utils';
 import {
   BlockViewType,
   DocCollection,
   type GetDocOptions,
   type Query,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { html, type PropertyValues } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

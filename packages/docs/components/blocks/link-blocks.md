@@ -8,7 +8,7 @@ These are blocks used to display link content in various ways.
 
 ## Reference
 
-- [`BookmarkBlockSchema`](/api/@blocksuite/blocks/variables/BookmarkBlockSchema.html)
-- [`BookmarkBlockService`](/api/@blocksuite/blocks/classes/BookmarkBlockService.html)
-- [`EmbedLinkedDocBlockProps`](/api/@blocksuite/blocks/type-aliases/EmbedLinkedDocBlockProps.html)
-- [`EmbedSyncedDocBlockProps`](/api/@blocksuite/blocks/type-aliases/EmbedSyncedDocBlockProps.html)
+- [`BookmarkBlockSchema`](/api/@algogrind/blocks/variables/BookmarkBlockSchema.html)
+- [`BookmarkBlockService`](/api/@algogrind/blocks/classes/BookmarkBlockService.html)
+- [`EmbedLinkedDocBlockProps`](/api/@algogrind/blocks/type-aliases/EmbedLinkedDocBlockProps.html)
+- [`EmbedSyncedDocBlockProps`](/api/@algogrind/blocks/type-aliases/EmbedSyncedDocBlockProps.html)

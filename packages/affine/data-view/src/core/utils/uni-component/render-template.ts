@@ -1,7 +1,7 @@
 import type { TemplateResult } from 'lit';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { property } from 'lit/decorators.js';
 
 export class AnyRender<T> extends SignalWatcher(ShadowlessElement) {

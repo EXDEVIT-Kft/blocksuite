@@ -1,10 +1,10 @@
 import {
   VirtualKeyboardController,
   type VirtualKeyboardControllerConfig,
-} from '@blocksuite/affine-components/virtual-keyboard';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
-import { PropTypes, requiredProperties } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/virtual-keyboard';
+import { getViewportElement } from '@algogrind/affine-shared/utils';
+import { PropTypes, requiredProperties } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import { html, LitElement, nothing } from 'lit';

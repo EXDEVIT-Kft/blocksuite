@@ -1,4 +1,4 @@
-import type { MindmapElementModel } from '@blocksuite/affine-model';
+import type { MindmapElementModel } from '@algogrind/affine-model';
 
 import { expect } from '@playwright/test';
 import { clickView } from 'utils/actions/click.js';

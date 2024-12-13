@@ -1,5 +1,5 @@
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
-import type { GfxModel } from '@blocksuite/block-std/gfx';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
+import type { GfxModel } from '@algogrind/block-std/gfx';
 
 import type { SurfaceBlockModel, SurfaceMiddleware } from '../surface-model.js';
 

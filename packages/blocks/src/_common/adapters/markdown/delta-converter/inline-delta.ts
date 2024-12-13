@@ -1,7 +1,7 @@
-import type { InlineDeltaToMarkdownAdapterMatcher } from '@blocksuite/affine-shared/adapters';
+import type { InlineDeltaToMarkdownAdapterMatcher } from '@algogrind/affine-shared/adapters';
 import type { PhrasingContent } from 'mdast';
 
-import { generateDocUrl } from '@blocksuite/affine-block-embed';
+import { generateDocUrl } from '@algogrind/affine-block-embed';
 
 export const boldDeltaToMarkdownAdapterMatcher: InlineDeltaToMarkdownAdapterMatcher =
   {

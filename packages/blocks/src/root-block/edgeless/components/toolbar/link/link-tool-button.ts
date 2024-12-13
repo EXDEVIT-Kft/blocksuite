@@ -1,5 +1,5 @@
-import { LinkIcon } from '@blocksuite/affine-components/icons';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { LinkIcon } from '@algogrind/affine-components/icons';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import { css, html, LitElement } from 'lit';
 
 import { getTooltipWithShortcut } from '../../utils.js';

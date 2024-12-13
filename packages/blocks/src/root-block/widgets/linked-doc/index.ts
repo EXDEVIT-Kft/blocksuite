@@ -1,17 +1,17 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { SelectionRect } from '@blocksuite/affine-shared/commands';
-import type { UIEventStateContext } from '@blocksuite/block-std';
-import type { Disposable } from '@blocksuite/global/utils';
+import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { SelectionRect } from '@algogrind/affine-shared/commands';
+import type { UIEventStateContext } from '@algogrind/block-std';
+import type { Disposable } from '@algogrind/global/utils';
 
-import { getInlineEditorByModel } from '@blocksuite/affine-components/rich-text';
+import { getInlineEditorByModel } from '@algogrind/affine-components/rich-text';
 import {
   getViewportElement,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { IS_MOBILE } from '@blocksuite/global/env';
-import { InlineEditor, type InlineRange } from '@blocksuite/inline';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { IS_MOBILE } from '@algogrind/global/env';
+import { InlineEditor, type InlineRange } from '@algogrind/inline';
 import { signal } from '@preact/signals-core';
 import { html, nothing } from 'lit';
 import { state } from 'lit/decorators.js';
@@ -122,36 +122,36 @@ export class AffineLinkedDocWidget extends WidgetComponent<
     this._handleInput(true);
   };
 
-  private readonly _onKeyDown = (ctx: UIEventStateContext) => {
-    const eventState = ctx.get('keyboardState');
-    const event = eventState.raw;
-
-    const key = event.key;
-    if (
-      key === undefined || // in mac os, the key may be undefined
-      key === 'Process' ||
-      event.isComposing
-    )
-      return;
-
-    if (!this.config.triggerKeys.some(triggerKey => triggerKey.includes(key)))
-      return;
-
-    this._inlineEditor = this._getInlineEditor(event);
-    if (!this._inlineEditor) return;
-
-    const inlineRange = this._inlineEditor.getInlineRange();
-    if (!inlineRange) return;
-
-    if (inlineRange.length > 0) {
-      // When select text and press `[[` should not trigger transform,
-      // since it will break the bracket complete.
-      // Expected `[[selected text]]` instead of `@selected text]]`
-      return;
-    }
-
-    this._handleInput(false);
-  };
+  //private readonly _onKeyDown = (ctx: UIEventStateContext) => {
+  //  const eventState = ctx.get('keyboardState');
+  //  const event = eventState.raw;
+  //
+  //  const key = event.key;
+  //  if (
+  //    key === undefined || // in mac os, the key may be undefined
+  //    key === 'Process' ||
+  //    event.isComposing
+  //  )
+  //    return;
+  //
+  //  if (!this.config.triggerKeys.some(triggerKey => triggerKey.includes(key)))
+  //    return;
+  //
+  //  this._inlineEditor = this._getInlineEditor(event);
+  //  if (!this._inlineEditor) return;
+  //
+  //  const inlineRange = this._inlineEditor.getInlineRange();
+  //  if (!inlineRange) return;
+  //
+  //  if (inlineRange.length > 0) {
+  //    // When select text and press `[[` should not trigger transform,
+  //    // since it will break the bracket complete.
+  //    // Expected `[[selected text]]` instead of `@selected text]]`
+  //    return;
+  //  }
+  //
+  //  this._handleInput(false);
+  //};
 
   private readonly _renderLinkedDocMenu = () => {
     if (!this.block.rootComponent) return nothing;

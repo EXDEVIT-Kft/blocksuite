@@ -1,4 +1,4 @@
-import type { PointTestOptions } from '@blocksuite/block-std/gfx';
+import type { PointTestOptions } from '@algogrind/block-std/gfx';
 
 import {
   clamp,
@@ -10,8 +10,8 @@ import {
   pointInPolygon,
   rotatePoints,
   toRadian,
-} from '@blocksuite/global/utils';
-import { Bound, PointLocation, Vec } from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
+import { Bound, PointLocation, Vec } from '@algogrind/global/utils';
 
 import type { ShapeElementModel } from '../shape.js';
 

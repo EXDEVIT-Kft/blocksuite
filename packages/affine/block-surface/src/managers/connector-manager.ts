@@ -1,5 +1,5 @@
-import type { GfxController, GfxModel } from '@blocksuite/block-std/gfx';
-import type { IBound, IVec, IVec3 } from '@blocksuite/global/utils';
+import type { GfxController, GfxModel } from '@algogrind/block-std/gfx';
+import type { IBound, IVec, IVec3 } from '@algogrind/global/utils';
 
 import {
   type BrushElementModel,
@@ -8,7 +8,7 @@ import {
   ConnectorMode,
   GroupElementModel,
   type LocalConnectorElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   almostEqual,
   assertEquals,
@@ -30,7 +30,7 @@ import {
   sign,
   toRadian,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import { Overlay } from '../renderer/overlay.js';
 import { AStarRunner } from '../utils/a-star.js';
