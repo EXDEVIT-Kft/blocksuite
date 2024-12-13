@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-block-surface",
-  "version": "0.18.9",
+  "version": "0.18.10",
   "description": "Surface block for BlockSuite.",
   "type": "module",
   "repository": {

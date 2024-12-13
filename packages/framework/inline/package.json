@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/inline",
-  "version": "0.18.9",
+  "version": "0.18.10",
   "description": "A micro editor.",
   "type": "module",
   "repository": {

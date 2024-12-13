@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-shared",
-  "version": "0.18.9",
+  "version": "0.18.10",
   "description": "Default BlockSuite editable blocks.",
   "type": "module",
   "repository": {
