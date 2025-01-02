@@ -94,8 +94,8 @@ export class EdgelessDefaultToolButton extends QuickToolMixin(LitElement) {
       <edgeless-tool-icon-button
         class="edgeless-default-button ${type} ${active ? 'active' : ''}"
         .tooltip=${type === 'pan'
-          ? getTooltipWithShortcut('Hand', 'H')
-          : getTooltipWithShortcut('Select', 'V')}
+          ? getTooltipWithShortcut('Mozgat', 'H')
+          : getTooltipWithShortcut('Kiválaszt', 'V')}
         .tooltipOffset=${17}
         .active=${active}
         .iconContainerPadding=${6}

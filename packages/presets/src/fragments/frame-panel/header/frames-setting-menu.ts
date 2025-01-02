@@ -129,10 +129,10 @@ export class FramesSettingMenu extends WithDisposable(LitElement) {
       }}
     >
       <div class="frames-setting-menu-item">
-        <div class="setting-label">Preview Settings</div>
+        <div class="setting-label">Előnézet</div>
       </div>
       <div class="frames-setting-menu-item action">
-        <div class="action-label">Fill Screen</div>
+        <div class="action-label">Teljes kijelző</div>
         <div class="toggle-button">
           <toggle-switch
             .on=${this.fillScreen}
@@ -144,10 +144,10 @@ export class FramesSettingMenu extends WithDisposable(LitElement) {
       <menu-divider></menu-divider>
 
       <div class="frames-setting-menu-item">
-        <div class="setting-label">Playback Settings</div>
+        <div class="setting-label">Vetítés</div>
       </div>
       <div class="frames-setting-menu-item action">
-        <div class="action-label">Dark background</div>
+        <div class="action-label">Sötét háttér</div>
         <div class="toggle-button">
           <toggle-switch
             .on=${this.blackBackground}
@@ -156,7 +156,7 @@ export class FramesSettingMenu extends WithDisposable(LitElement) {
         </div>
       </div>
       <div class="frames-setting-menu-item action">
-        <div class="action-label">Hide toolbar</div>
+        <div class="action-label">Menüsáv elrejtése</div>
         <div class="toggle-button">
           <toggle-switch
             .on=${this.hideToolbar}

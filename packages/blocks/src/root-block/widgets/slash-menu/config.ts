@@ -15,47 +15,48 @@ import {
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
+  ArrowUpSmallIcon,
   CopyIcon,
-  DatabaseKanbanViewIcon20,
-  DatabaseTableViewIcon20,
+  //DatabaseKanbanViewIcon20,
+  //DatabaseTableViewIcon20,
   DeleteIcon,
   FileIcon,
   FrameIcon,
   HeadingIcon,
   ImageIcon20,
-  LinkedDocIcon,
+  //LinkedDocIcon,
   LinkIcon,
-  NewDocIcon,
+  //NewDocIcon,
   NowIcon,
   TodayIcon,
   TomorrowIcon,
   YesterdayIcon,
 } from '@blocksuite/affine-components/icons';
 import {
-  getInlineEditorByModel,
+  //getInlineEditorByModel,
   insertContent,
-  REFERENCE_NODE,
+  //REFERENCE_NODE,
   textFormatConfigs,
 } from '@blocksuite/affine-components/rich-text';
 import { toast } from '@blocksuite/affine-components/toast';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
 import {
-  createDefaultDoc,
+  //createDefaultDoc,
   openFileOrFiles,
 } from '@blocksuite/affine-shared/utils';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
-import { assertType } from '@blocksuite/global/utils';
+//import { viewPresets } from '@blocksuite/data-view/view-presets';
+//import { assertType } from '@blocksuite/global/utils';
 import { DualLinkIcon, GroupingIcon, TeXIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
 
-import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
+//import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
 import type { RootBlockComponent } from '../../types.js';
-import type { AffineLinkedDocWidget } from '../linked-doc/index.js';
+//import type { AffineLinkedDocWidget } from '../linked-doc/index.js';
 
 import { toggleEmbedCardCreateModal } from '../../../_common/components/embed-card/modal/embed-card-create-modal.js';
 import { textConversionConfigs } from '../../../_common/configs/text-conversion.js';
 import { addSiblingAttachmentBlocks } from '../../../attachment-block/utils.js';
 import { getSurfaceBlock } from '../../../surface-ref-block/utils.js';
+import { onModelTextUpdated } from '../../utils/callback.js';
 import { formatDate, formatTime } from '../../utils/misc.js';
 import { type SlashMenuTooltip, slashMenuToolTips } from './tooltips/index.js';
 import {
@@ -126,15 +127,15 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
   tooltipTimeout: 800,
   items: [
     // ---------------------------------------------------------
-    { groupName: 'Basic' },
+    { groupName: 'Alapvető' },
     ...textConversionConfigs
       .filter(i => i.type && ['h1', 'h2', 'h3', 'text'].includes(i.type))
       .map(createConversionItem),
     {
-      name: 'Other Headings',
+      name: 'Egyéb Címsorok',
       icon: HeadingIcon,
       subMenu: [
-        { groupName: 'Headings' },
+        { groupName: 'Címsorok' },
         ...textConversionConfigs
           .filter(i => i.type && ['h4', 'h5', 'h6'].includes(i.type))
           .map<SlashMenuActionItem>(createConversionItem),
@@ -154,13 +155,14 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       })),
 
     {
-      name: 'Inline equation',
-      description: 'Create a equation block.',
+      name: 'Sorközi Egyenlet',
+      description: 'Szúrj be egy új sorközi egyenletet.',
       icon: TeXIcon({
         width: '20',
         height: '20',
       }),
-      alias: ['inlineMath, inlineEquation', 'inlineLatex'],
+      tooltip: slashMenuToolTips['Sorközi Egyenlet'],
+      alias: ['matematika', 'számolás', 'latex'],
       action: ({ rootComponent }) => {
         rootComponent.std.command
           .chain()
@@ -170,29 +172,377 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
 
+    { groupName: 'Elrendezés' },
+    {
+      name: 'Összecsukható Címsor 1',
+      description: 'Összecsukható tartalmú Címsor 1.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 1',
+      ],
+      icon: ArrowUpSmallIcon,
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h1', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'Összecsukható Címsor 2',
+      description: 'Összecsukható tartalmú Címsor 2.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 2',
+      ],
+      icon: ArrowUpSmallIcon,
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h2', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'Összecsukható Címsor 3',
+      description: 'Összecsukható tartalmú Címsor 3.',
+      alias: [
+        'accordion',
+        'accordion heading',
+        'legördülő',
+        'legördülő címsor 3',
+      ],
+      icon: ArrowUpSmallIcon,
+      tooltip: slashMenuToolTips['Összecsukható Címsor'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'h3', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+    {
+      name: 'További Címsorok',
+      icon: ArrowUpSmallIcon,
+      subMenu: [
+        { groupName: 'Összecsukható Címsorok' },
+        {
+          name: 'Összecsukható Címsor 4',
+          description: 'Összecsukható tartalmú Címsor 4.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 4',
+          ],
+          icon: ArrowUpSmallIcon,
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h4', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+        {
+          name: 'Összecsukható Címsor 5',
+          description: 'Összecsukható tartalmú Címsor 5.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 5',
+          ],
+          icon: ArrowUpSmallIcon,
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h5', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+        {
+          name: 'Összecsukható Címsor 6',
+          description: 'Összecsukható tartalmú Címsor 6.',
+          alias: [
+            'accordion',
+            'accordion heading',
+            'legördülő',
+            'legördülő címsor 6',
+          ],
+          icon: ArrowUpSmallIcon,
+          tooltip: slashMenuToolTips['Összecsukható Címsor'],
+          showWhen: ({ model }) =>
+            model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+          action: ({ rootComponent, model }) => {
+            const parentModel = rootComponent.doc.getParent(model);
+            if (!parentModel) {
+              return;
+            }
+
+            rootComponent.host.std.command
+              .chain()
+              .updateBlockType({
+                flavour: 'algogrind:accordion',
+                props: { type: 'h6', text: new Text('') },
+              })
+              .inline((ctx, next) => {
+                const newModels = ctx.updatedBlocks;
+                if (!newModels) return false;
+
+                if (newModels.length !== 1) {
+                  console.error(
+                    "Failed to reset selection! New model length isn't 1"
+                  );
+                  return false;
+                }
+                const codeModel = newModels[0];
+                onModelTextUpdated(rootComponent.host, codeModel, richText => {
+                  const inlineEditor = richText.inlineEditor;
+                  if (!inlineEditor) return;
+                  inlineEditor.focusEnd();
+                }).catch(console.error);
+
+                return next();
+              })
+              .run();
+
+            tryRemoveEmptyLine(model);
+          },
+        },
+      ],
+    },
+    {
+      name: 'Összecsukható Szöveg',
+      description: 'Összecsukható Szöveg elem.',
+      alias: ['accordion', 'accordion text', 'legördülő', 'legördülő szöveg'],
+      icon: ArrowUpSmallIcon,
+      tooltip: slashMenuToolTips['Összecsukható Szöveg'],
+      showWhen: ({ model }) =>
+        model.doc.schema.flavourSchemaMap.has('algogrind:accordion'),
+      action: ({ rootComponent, model }) => {
+        const parentModel = rootComponent.doc.getParent(model);
+        if (!parentModel) {
+          return;
+        }
+
+        rootComponent.host.std.command
+          .chain()
+          .updateBlockType({
+            flavour: 'algogrind:accordion',
+            props: { type: 'text', text: new Text('') },
+          })
+          .inline((ctx, next) => {
+            const newModels = ctx.updatedBlocks;
+            if (!newModels) return false;
+
+            if (newModels.length !== 1) {
+              console.error(
+                "Failed to reset selection! New model length isn't 1"
+              );
+              return false;
+            }
+            const codeModel = newModels[0];
+            onModelTextUpdated(rootComponent.host, codeModel, richText => {
+              const inlineEditor = richText.inlineEditor;
+              if (!inlineEditor) return;
+              inlineEditor.focusEnd();
+            }).catch(console.error);
+
+            return next();
+          })
+          .run();
+
+        tryRemoveEmptyLine(model);
+      },
+    },
+
     // ---------------------------------------------------------
-    { groupName: 'List' },
+    { groupName: 'Felsorolások' },
     ...textConversionConfigs
       .filter(i => i.flavour === 'affine:list')
       .map(createConversionItem),
 
     // ---------------------------------------------------------
-    { groupName: 'Style' },
+    { groupName: 'Stílusok' },
     ...textFormatConfigs
-      .filter(i => !['Code', 'Link'].includes(i.name))
+      .filter(i => !['Kód', 'Link'].includes(i.name))
       .map<SlashMenuActionItem>(createTextFormatItem),
 
     // ---------------------------------------------------------
-    {
-      groupName: 'Page',
+    /*{
+      groupName: 'Oldalak',
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
     },
     {
-      name: 'New Doc',
-      description: 'Start a new document.',
+      name: 'Új Dokumentum',
+      description: 'Hozz létre egy új dokumentumot.',
       icon: NewDocIcon,
-      tooltip: slashMenuToolTips['New Doc'],
+      tooltip: slashMenuToolTips['Új Dokumentum'],
+      alias: ['new doc', 'oldal'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
       action: ({ rootComponent, model }) => {
@@ -206,11 +556,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Linked Doc',
-      description: 'Link to another document.',
+      name: 'Hivatkozás',
+      description: 'Meglévő dokumentumra hivatkozás.',
       icon: LinkedDocIcon,
-      tooltip: slashMenuToolTips['Linked Doc'],
-      alias: ['dual link'],
+      tooltip: slashMenuToolTips['Hivatkozás'],
+      alias: ['link doc'],
       showWhen: ({ rootComponent, model }) => {
         const { std } = rootComponent;
         const linkedDocWidget = std.view.getWidget(
@@ -241,15 +591,16 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           linkedDocWidget.show();
         });
       },
-    },
+    },*/
 
     // ---------------------------------------------------------
-    { groupName: 'Content & Media' },
+    { groupName: 'Tartalom & Média' },
     {
-      name: 'Image',
-      description: 'Insert an image.',
+      name: 'Kép',
+      description: 'Szúrj be egy képet.',
       icon: ImageIcon20,
-      tooltip: slashMenuToolTips['Image'],
+      tooltip: slashMenuToolTips['Kép'],
+      alias: ['image', 'picture', 'gif', 'grafika'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:image'),
       action: async ({ rootComponent }) => {
@@ -263,10 +614,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Link',
-      description: 'Add a bookmark for reference.',
+      name: 'Weboldal',
+      description: 'Hivatkozz egy külső weboldalra elegánsan.',
       icon: LinkIcon,
-      tooltip: slashMenuToolTips['Link'],
+      tooltip: slashMenuToolTips['Weboldal'],
+      alias: ['hivatkozás', 'link', 'bookmark', 'website'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:bookmark'),
       action: async ({ rootComponent, model }) => {
@@ -277,19 +629,19 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         const index = parentModel.children.indexOf(model) + 1;
         await toggleEmbedCardCreateModal(
           rootComponent.host,
-          'Links',
-          'The added link will be displayed as a card view.',
+          'Weboldal hivatkozása',
+          'A hozzáadott weboldal kártya nézetben lesz megjelenítve.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
       },
     },
     {
-      name: 'Attachment',
-      description: 'Attach a file to document.',
+      name: 'Fájl',
+      description: 'Mellékelj egy tetszőleges fájlt.',
       icon: FileIcon,
-      tooltip: slashMenuToolTips['Attachment'],
-      alias: ['file'],
+      tooltip: slashMenuToolTips['Fájl'],
+      alias: ['file', 'attachment', 'melléklet', 'forrás'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:attachment'),
       action: async ({ rootComponent, model }) => {
@@ -312,9 +664,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'YouTube',
-      description: 'Embed a YouTube video.',
+      description: 'Ágyazz be egy YouTube videót.',
       icon: YoutubeIcon,
       tooltip: slashMenuToolTips['YouTube'],
+      alias: ['videó', 'video', 'embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-youtube'),
       action: async ({ rootComponent, model }) => {
@@ -326,7 +679,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'YouTube',
-          'The added YouTube video link will be displayed as an embed view.',
+          'A hozzáadott YouTube videó link beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -334,9 +687,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'GitHub',
-      description: 'Link to a GitHub repository.',
+      description: 'Hivatkozz egy GitHub forrásra.',
       icon: GithubIcon,
       tooltip: slashMenuToolTips['Github'],
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-github'),
       action: async ({ rootComponent, model }) => {
@@ -348,7 +702,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'GitHub',
-          'The added GitHub issue or pull request link will be displayed as a card view.',
+          'A hozzáadott GitHub issue vagy Pull Request hivatkozás kártyanézetben lesz megjelenítve.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -358,9 +712,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
     {
       name: 'Figma',
-      description: 'Embed a Figma document.',
+      description: 'Ágyazz be egy Figma dokumentumot.',
       icon: FigmaIcon,
       tooltip: slashMenuToolTips['Figma'],
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-figma'),
       action: async ({ rootComponent, model }) => {
@@ -372,7 +727,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         await toggleEmbedCardCreateModal(
           rootComponent.host,
           'Figma',
-          'The added Figma link will be displayed as an embed view.',
+          'A hozzáadott Figma hivatkozás beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -380,8 +735,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Loom',
+      name: 'Loom Videó',
       icon: LoomIcon,
+      description: 'Ágyazz be egy Loom videót.',
+      alias: ['embed', 'beágyaz'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:embed-loom'),
       action: async ({ rootComponent, model }) => {
@@ -392,8 +749,8 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         const index = parentModel.children.indexOf(model) + 1;
         await toggleEmbedCardCreateModal(
           rootComponent.host,
-          'Loom',
-          'The added Loom video link will be displayed as an embed view.',
+          'Loom Videó',
+          'A hozzáadott Loom videó hivatkozás beágyazott nézetben fog megjelenni.',
           { mode: 'page', parentModel, index }
         );
         tryRemoveEmptyLine(model);
@@ -401,13 +758,14 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Equation',
-      description: 'Create a equation block.',
+      name: 'Egyenlet',
+      description: 'Hozz létre egy új egyenlet blokkot.',
       icon: TeXIcon({
         width: '20',
         height: '20',
       }),
-      alias: ['mathBlock, equationBlock', 'latexBlock'],
+      tooltip: slashMenuToolTips['Egyenlet'],
+      alias: ['equation', 'matematika', 'latex'],
       action: ({ rootComponent }) => {
         rootComponent.std.command
           .chain()
@@ -437,7 +795,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         .map(block => block.model as FrameBlockModel);
 
       const frameItems = frameModels.map<SlashMenuActionItem>(frameModel => ({
-        name: 'Frame: ' + frameModel.title,
+        name: 'Keret: ' + frameModel.title,
         icon: FrameIcon,
         action: ({ rootComponent }) => {
           rootComponent.std.command
@@ -454,7 +812,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
       const groupElements = surfaceModel.getElementsByType('group');
       const groupItems = groupElements.map(group => ({
-        name: 'Group: ' + group.title.toString(),
+        name: 'Csoport: ' + group.title.toString(),
         icon: GroupingIcon(),
         action: () => {
           rootComponent.std.command
@@ -473,7 +831,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       if (items.length !== 0) {
         return [
           {
-            groupName: 'Document Group & Frame',
+            groupName: 'Dokumentum Csoport & Keret',
           },
           ...items,
         ];
@@ -483,7 +841,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Date' },
+    { groupName: 'Dátumok' },
     () => {
       const now = new Date();
       const tomorrow = new Date();
@@ -494,18 +852,18 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
       return [
         {
-          name: 'Today',
+          name: 'Ma',
           icon: TodayIcon,
-          tooltip: slashMenuToolTips['Today'],
+          alias: ['today'],
           description: formatDate(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatDate(now));
           },
         },
         {
-          name: 'Tomorrow',
+          name: 'Holnap',
           icon: TomorrowIcon,
-          tooltip: slashMenuToolTips['Tomorrow'],
+          alias: ['tomorrow'],
           description: formatDate(tomorrow),
           action: ({ rootComponent, model }) => {
             const tomorrow = new Date();
@@ -514,9 +872,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           },
         },
         {
-          name: 'Yesterday',
+          name: 'Tegnap',
           icon: YesterdayIcon,
-          tooltip: slashMenuToolTips['Yesterday'],
+          alias: ['yesterday'],
           description: formatDate(yesterday),
           action: ({ rootComponent, model }) => {
             const yesterday = new Date();
@@ -525,9 +883,9 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           },
         },
         {
-          name: 'Now',
+          name: 'Most',
           icon: NowIcon,
-          tooltip: slashMenuToolTips['Now'],
+          alias: ['now'],
           description: formatTime(now),
           action: ({ rootComponent, model }) => {
             insertContent(rootComponent.host, model, formatTime(now));
@@ -537,13 +895,14 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    { groupName: 'Database' },
+    /*
+    { groupName: 'Adatbázis' },
     {
-      name: 'Table View',
-      description: 'Display items in a table format.',
+      name: 'Táblázat Nézet',
+      description: 'Jelenítsd meg az elemeket táblázatban.',
       alias: ['database'],
       icon: DatabaseTableViewIcon20,
-      tooltip: slashMenuToolTips['Table View'],
+      tooltip: slashMenuToolTips['Táblázat Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideEdgelessText(model),
@@ -569,10 +928,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Todo',
+      name: 'Todo Nézet',
       alias: ['todo view'],
       icon: DatabaseTableViewIcon20,
-      tooltip: slashMenuToolTips['Todo'],
+      tooltip: slashMenuToolTips['Todo Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideEdgelessText(model) &&
@@ -600,11 +959,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Kanban View',
-      description: 'Visualize data in a dashboard.',
+      name: 'Kanban Nézet',
+      description: 'Vizualizáld az elvégzendő feladatokat.',
       alias: ['database'],
       icon: DatabaseKanbanViewIcon20,
-      tooltip: slashMenuToolTips['Kanban View'],
+      tooltip: slashMenuToolTips['Kanban Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideEdgelessText(model),
@@ -628,15 +987,16 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           })
           .run();
       },
-    },
+    },*/
 
     // ---------------------------------------------------------
-    { groupName: 'Actions' },
+    { groupName: 'Műveletek' },
     {
-      name: 'Move Up',
-      description: 'Shift this line up.',
+      name: 'Felfele Mozgatás',
+      description: 'Jelenlegi sor feljebb mozgatása.',
       icon: ArrowUpBigIcon,
-      tooltip: slashMenuToolTips['Move Up'],
+      tooltip: slashMenuToolTips['Felfele Mozgatás'],
+      alias: ['move up', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const previousSiblingModel = doc.getPrev(model);
@@ -649,10 +1009,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Move Down',
-      description: 'Shift this line down.',
+      name: 'Lefele Mozgatás',
+      description: 'Jelenlegi sor lejjebb mozgatása.',
       icon: ArrowDownBigIcon,
-      tooltip: slashMenuToolTips['Move Down'],
+      tooltip: slashMenuToolTips['Lefele Mozgatás'],
+      alias: ['move down', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const nextSiblingModel = doc.getNext(model);
@@ -665,17 +1026,18 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Copy',
-      description: 'Copy this line to clipboard.',
+      name: 'Másolás',
+      description: 'Jelenlegi sor vágólapra másolása.',
       icon: CopyIcon,
-      tooltip: slashMenuToolTips['Copy'],
+      tooltip: slashMenuToolTips['Másolás'],
+      alias: ['copy', 'operation'],
       action: ({ rootComponent, model }) => {
         const slice = Slice.fromModels(rootComponent.std.doc, [model]);
 
         rootComponent.std.clipboard
           .copy(slice)
           .then(() => {
-            toast(rootComponent.host, 'Copied to clipboard');
+            toast(rootComponent.host, 'Tartalom a vágólapra másolva');
           })
           .catch(e => {
             console.error(e);
@@ -683,10 +1045,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Duplicate',
-      description: 'Create a duplicate of this line.',
+      name: 'Duplikálás',
+      description: 'Jelenlegi sor duplikálása.',
       icon: DualLinkIcon({ width: '20', height: '20' }),
-      tooltip: slashMenuToolTips['Copy'],
+      tooltip: slashMenuToolTips['Duplikálás'],
+      alias: ['duplicate', 'operation'],
       action: ({ rootComponent, model }) => {
         if (!model.text || !(model.text instanceof Text)) {
           console.error("Can't duplicate a block without text");
@@ -721,11 +1084,11 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Delete',
-      description: 'Remove this line permanently.',
-      alias: ['remove'],
+      name: 'Törlés',
+      description: 'Jelenlegi sor törlése.',
       icon: DeleteIcon,
-      tooltip: slashMenuToolTips['Delete'],
+      tooltip: slashMenuToolTips['Törlés'],
+      alias: ['remove', 'operation'],
       action: ({ rootComponent, model }) => {
         rootComponent.doc.deleteBlock(model);
       },

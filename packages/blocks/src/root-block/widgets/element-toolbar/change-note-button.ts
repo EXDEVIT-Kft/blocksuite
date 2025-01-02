@@ -52,17 +52,17 @@ import {
 import { getTooltipWithShortcut } from '../../edgeless/components/utils.js';
 
 const SIZE_LIST = [
-  { name: 'None', value: 0 },
-  { name: 'Small', value: 8 },
-  { name: 'Medium', value: 16 },
-  { name: 'Large', value: 24 },
-  { name: 'Huge', value: 32 },
+  { name: 'Nincs', value: 0 },
+  { name: 'Kicsi', value: 8 },
+  { name: 'Közepes', value: 16 },
+  { name: 'Nagy', value: 24 },
+  { name: 'Óriási', value: 32 },
 ] as const;
 
 const DisplayModeMap = {
-  [NoteDisplayMode.DocAndEdgeless]: 'Both',
-  [NoteDisplayMode.EdgelessOnly]: 'Edgeless',
-  [NoteDisplayMode.DocOnly]: 'Page',
+  [NoteDisplayMode.DocAndEdgeless]: 'Mindenhol',
+  [NoteDisplayMode.EdgelessOnly]: 'Rajztáblán',
+  [NoteDisplayMode.DocOnly]: 'Szövegként',
 } as const satisfies Record<NoteDisplayMode, string>;
 
 function getMostCommonBackground(
@@ -271,13 +271,13 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
     const buttons = [
       onlyOne && this._advancedVisibilityEnabled
         ? html`
-            <span class="display-mode-button-label">Show in</span>
+            <span class="display-mode-button-label">Megjelenítés</span>
             <editor-menu-button
               .contentPadding=${'8px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Mode"
-                  .tooltip=${'Display mode'}
+                  aria-label="Megjelenítés módja"
+                  .tooltip=${'Megjelenítés módja'}
                   .justify=${'space-between'}
                   .labelHeight=${'20px'}
                 >
@@ -310,7 +310,7 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
               return html`
                 <edgeless-color-picker-button
                   class="background"
-                  .label=${'Background'}
+                  .label=${'Háttér'}
                   .pick=${this.pickColor}
                   .color=${background}
                   .colorType=${type}
@@ -324,10 +324,7 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
               <editor-menu-button
                 .contentPadding=${'8px'}
                 .button=${html`
-                  <editor-icon-button
-                    aria-label="Background"
-                    .tooltip=${'Background'}
-                  >
+                  <editor-icon-button aria-label="Háttér" .tooltip=${'Háttér'}>
                     <edgeless-color-button
                       .color=${background}
                     ></edgeless-color-button>
@@ -351,8 +348,8 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
               .contentPadding=${'6px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Shadow style"
-                  .tooltip=${'Shadow style'}
+                  aria-label="Árnyék stílusa"
+                  .tooltip=${'Árnyék stílusa'}
                 >
                   ${NoteShadowIcon}${SmallArrowDownIcon}
                 </editor-icon-button>
@@ -370,8 +367,8 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
             <editor-menu-button
               .button=${html`
                 <editor-icon-button
-                  aria-label="Border style"
-                  .tooltip=${'Border style'}
+                  aria-label="Szegély stílusa"
+                  .tooltip=${'Szegély stílusa'}
                 >
                   ${LineStyleIcon}${SmallArrowDownIcon}
                 </editor-icon-button>
@@ -390,7 +387,7 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
               ${ref(this._cornersPanelRef)}
               .contentPadding=${'8px'}
               .button=${html`
-                <editor-icon-button aria-label="Corners" .tooltip=${'Corners'}>
+                <editor-icon-button aria-label="Sarkok" .tooltip=${'Sarkok'}>
                   ${NoteCornerIcon}${SmallArrowDownIcon}
                 </editor-icon-button>
               `}
@@ -409,8 +406,8 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
       onlyOne && this._advancedVisibilityEnabled
         ? html`
             <editor-icon-button
-              aria-label="Slicer"
-              .tooltip=${getTooltipWithShortcut('Cutting mode', '-')}
+              aria-label="Vágás"
+              .tooltip=${getTooltipWithShortcut('Vágás módja', '-')}
               .active=${this.enableNoteSlicer}
               @click=${() => this._handleNoteSlicerButtonClick()}
             >
@@ -424,7 +421,7 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
       html`
         <editor-icon-button
           aria-label="Size"
-          .tooltip=${collapse ? 'Auto height' : 'Customized height'}
+          .tooltip=${collapse ? 'Automatikus magasság' : 'Egyedi magasság'}
           @click=${() => this._setCollapse()}
         >
           ${collapse ? ExpandIcon : ShrinkIcon}
@@ -435,8 +432,8 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
           .contentPadding=${'8px'}
           .button=${html`
             <editor-icon-button
-              aria-label="Scale"
-              .tooltip=${'Scale'}
+              aria-label="Méret"
+              .tooltip=${'Méret'}
               .justify=${'space-between'}
               .labelHeight=${'20px'}
               .iconContainerWidth=${'65px'}

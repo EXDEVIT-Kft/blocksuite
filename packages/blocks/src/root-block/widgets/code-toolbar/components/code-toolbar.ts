@@ -115,8 +115,8 @@ export class AffineCodeToolbar extends WithDisposable(LitElement) {
         <editor-icon-button
           class="code-toolbar-button more"
           data-testid="more"
-          aria-label="More"
-          .tooltip=${'More'}
+          aria-label="Továbbiak"
+          .tooltip=${'Továbbiak'}
           .tooltipOffset=${4}
           .iconSize=${'16px'}
           .iconContainerPadding=${4}

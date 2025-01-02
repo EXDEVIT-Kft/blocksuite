@@ -37,7 +37,7 @@ function ConnectorModeButtonGroup(
       <edgeless-tool-icon-button
         .active=${mode === ConnectorMode.Curve}
         .activeMode=${'background'}
-        .tooltip=${'Curve'}
+        .tooltip=${'Íves'}
         @click=${() => setConnectorMode({ mode: ConnectorMode.Curve })}
       >
         ${ConnectorCWithArrowIcon}
@@ -45,7 +45,7 @@ function ConnectorModeButtonGroup(
       <edgeless-tool-icon-button
         .active=${mode === ConnectorMode.Orthogonal}
         .activeMode=${'background'}
-        .tooltip=${'Elbowed'}
+        .tooltip=${'Szögletes'}
         @click=${() => setConnectorMode({ mode: ConnectorMode.Orthogonal })}
       >
         ${ConnectorXWithArrowIcon}
@@ -53,7 +53,7 @@ function ConnectorModeButtonGroup(
       <edgeless-tool-icon-button
         .active=${mode === ConnectorMode.Straight}
         .activeMode=${'background'}
-        .tooltip=${'Straight'}
+        .tooltip=${'Egyenes'}
         @click=${() => setConnectorMode({ mode: ConnectorMode.Straight })}
       >
         ${ConnectorLWithArrowIcon}

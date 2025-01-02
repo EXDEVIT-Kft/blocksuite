@@ -15,6 +15,7 @@ export interface TextFormatConfig {
   name: string;
   icon: TemplateResult<1>;
   hotkey?: string;
+  alias?: string[];
   activeWhen: (host: EditorHost) => boolean;
   action: (host: EditorHost) => void;
 }
@@ -22,9 +23,10 @@ export interface TextFormatConfig {
 export const textFormatConfigs: TextFormatConfig[] = [
   {
     id: 'bold',
-    name: 'Bold',
+    name: 'Félkövér',
     icon: BoldIcon,
     hotkey: 'Mod-b',
+    alias: ['bold', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()
@@ -38,9 +40,10 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'italic',
-    name: 'Italic',
+    name: 'Dőlt',
     icon: ItalicIcon,
     hotkey: 'Mod-i',
+    alias: ['italic', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()
@@ -54,9 +57,10 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'underline',
-    name: 'Underline',
+    name: 'Aláhúzott',
     icon: UnderlineIcon,
     hotkey: 'Mod-u',
+    alias: ['underline', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()
@@ -70,9 +74,10 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'strike',
-    name: 'Strikethrough',
+    name: 'Áthúzott',
     icon: StrikethroughIcon,
     hotkey: 'Mod-shift-s',
+    alias: ['strike', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()
@@ -86,9 +91,10 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'code',
-    name: 'Code',
+    name: 'Kód',
     icon: CodeIcon,
     hotkey: 'Mod-e',
+    alias: ['code', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()
@@ -105,6 +111,7 @@ export const textFormatConfigs: TextFormatConfig[] = [
     name: 'Link',
     icon: LinkIcon,
     hotkey: 'Mod-k',
+    alias: ['link', 'style', 'stílus'],
     activeWhen: host => {
       const [result] = host.std.command
         .chain()

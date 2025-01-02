@@ -303,7 +303,7 @@ export class EdgelessMindmapToolButton extends EdgelessToolbarToolMixin(
     return html`<edgeless-toolbar-button
       class="edgeless-mindmap-button"
       ?withHover=${true}
-      .tooltip=${popper ? '' : 'Others'}
+      .tooltip=${popper ? '' : 'Egyebek'}
       .tooltipOffset=${4}
       @click=${this._toggleMenu}
       style="width: 100%; height: 100%; display: inline-block"

@@ -36,7 +36,7 @@ export const SHAPE_OVERLAY_OPTIONS = {
 
 export const DEFAULT_NOTE_CHILD_FLAVOUR = 'affine:paragraph';
 export const DEFAULT_NOTE_CHILD_TYPE = 'text';
-export const DEFAULT_NOTE_TIP = 'Text';
+export const DEFAULT_NOTE_TIP = 'Szöveg';
 
 export const FIT_TO_SCREEN_PADDING = 100;
 

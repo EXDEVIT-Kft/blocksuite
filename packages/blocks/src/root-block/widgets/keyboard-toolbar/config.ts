@@ -363,7 +363,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Links',
-          'The added link will be displayed as a card view.',
+          'A hozzáadott link kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index }
         );
         if (model.text?.length === 0) {
@@ -413,7 +413,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'YouTube',
-          'The added YouTube video link will be displayed as an embed view.',
+          'A hozzáadott YouTube videó kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index }
         );
         if (model.text?.length === 0) {
@@ -438,7 +438,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'GitHub',
-          'The added GitHub issue or pull request link will be displayed as a card view.',
+          'A hozzáadott GitHub beágyazott elem kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index }
         );
         if (model.text?.length === 0) {
@@ -464,7 +464,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Figma',
-          'The added Figma link will be displayed as an embed view.',
+          'A beágyazott Figma dokumentum kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index }
         );
         if (model.text?.length === 0) {
@@ -489,7 +489,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Loom',
-          'The added Loom video link will be displayed as an embed view.',
+          'A beágyazott Loom videó kártya nézetben került megjelenítésre..',
           { mode: 'page', parentModel, index }
         );
         if (model.text?.length === 0) {

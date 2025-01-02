@@ -134,6 +134,10 @@ export class BlockComponent<
     return this.host.renderChildren.bind(this);
   }
 
+  get renderChildrenArray() {
+    return this.host.renderChildrenArray.bind(this);
+  }
+
   get rootComponent(): BlockComponent | null {
     const rootId = this.doc.root?.id;
     if (!rootId) {

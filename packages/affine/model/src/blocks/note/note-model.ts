@@ -55,6 +55,7 @@ export const NoteBlockSchema = defineBlockSchema({
       'affine:surface-ref',
       'affine:embed-*',
       'affine:latex',
+      'algogrind:accordion',
     ],
   },
   toModel: () => {

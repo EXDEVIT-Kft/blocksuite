@@ -25,6 +25,148 @@ And this would build the BlockSuite packages:
 yarn build
 ```
 
+## Build és publish:
+
+1. Új branch létrehozása:
+
+```
+git checkout algogrind
+git checkout -b algogrind-publish
+```
+
+-> A buildhez minden blocksuite org előfordulást algogrind-al kell helyettesíteni
+-> VSCode replace, regex módban:
+_mit_: @blocksuite\/(?!icons)
+_mire_: @algogrind/
+_excluded files_: node*modules, dist, *.spec.ts, \_.js
+
+-> `package.json` fájlokban a verziók ellenőrzése (hiszen a blocksuite ezt tőlünk függetlenül módosítja) -> nem lehet hátrébb, mint a mi package verziónk
+-> `yarn.lock` törlése majd `yarn install`
+-> minden fájl commitolása
+-> `yarn build`
+-> ha szükséges akkor a build hibák javítása egy külön commitban
+
+2. Publikálás
+
+```sh
+lerna publish --no-private --message "chore: bump version numbers"
+```
+
+-> verziószámok elfogadása
+-> végén "yes"
+
+3. Cleanup
+
+-> Ezen a ponton a package-k fel vannak töltve
+-> mivel itt a publish egy egyirányú művelet, ezért utána a branch merge nélkül eldobható (így nem kell interactive rebase-el szívni mint a sync esetében).
+
+## Az upstream sync-től a privát package publish-ig
+
+1. Sync az upstream-mel:
+
+```
+git checkout master
+git remote add upstream https://github.com/toeverything/blocksuite.git
+git fetch upstream
+git merge upstream/master
+```
+
+-> ezen a ponton a saját master branch-ünkön a legfrissebb módosításoknak, merge conflict nélkül jelen kell lennie.
+
+2. Branch a merge-hez:
+
+-> egy új branchen próbáljuk közös nevezőre hozni a mi fejlesztéseinket a blocksuite fejlesztéseivel
+
+```
+git checkout master
+git checkout -b algogrind-sync
+```
+
+Figyelem! Itt az origin alatt kell az új branch!
+
+3. Cherry pick / merge:
+
+-> az "algogrind-xxx-xxx" branch-en történik az aktív fejlesztés.
+
+-> jobb esetben (ha lényegében minimális módosítás történt a mi oldalunkon) egy merge is meg fogja tenni
+
+```
+git merge algogrind-
+```
+
+-> rosszabb esetben innen egyesével cherry-pickeljük a commitokat át az új algogrind-sync branch-re
+(Én itt -> Cherry pick módja: cherry pick without committing (--no-commit)-ot használtam hogy jobban át tudjam rendezni mit milyen sorrenben akarok commitolni)
+-> idő közben lehet el kell majd dobni a `yarn.lock` fájlt és egy `yarn install`-al megoldani a fennálló merge conflictokat
+-> ezt legjobb vscode vizuális felületén keresztül megtenni
+
+4. Új branch a publishoz
+
+-> az `algogrind-sync` branchen van minden "értelmes" módosítás
+-> a publikáláshoz módosítani kell package importokat, de a további fejlesztéshez ezek nem használhatóak fel
+-> ezeket a módosításokat egy eldobható branchen végezzük el
+
+```
+git checkout algogrind-sync
+git checkout -b algogrind-publish
+```
+
+5. Build
+
+-> A buildhez minden blocksuite org előfordulást algogrind-al kell helyettesíteni
+-> VSCode replace, regex módban:
+_mit_: @blocksuite\/(?!icons)
+_mire_: @algogrind/
+_excluded files_: node_modules, dist, \*.js
+
+-> `package.json` fájlokban a verziók ellenőrzése (hiszen a blocksuite ezt tőlünk függetlenül módosítja) -> nem lehet hátrébb, mint a mi package verziónk
+-> `yarn.lock` törlése majd `yarn install`
+-> minden fájl commitolása
+-> `yarn build`
+-> ha szükséges akkor a build hibák javítása egy külön commitban
+
+6. Publikálás
+
+```sh
+lerna publish --no-private --message "chore: bump version numbers"
+```
+
+-> verziószámok elfogadása
+-> végén "yes"
+
+7. Cleanup
+
+OPCIÓ 1: amennyiben a 4 / 5-ös pont egy külön `algogrind-publish` branchen történt:
+
+Publish branch eldobása bármilyen merge nélkül
+
+```
+git branch -d algogrind-publish
++ törlés githubról is
+```
+
+OPCIÓ 2: amennyiben a 4 / 5-ös pont NEM egy külön `algogrind-publish` branchen történt:
+
+-> Ezen a ponton a package-k fel vannak töltve, de muszáj feltakarítani a publishhoz kötődő, de fejlesztéshez nem használható commitokat:
+
+-> ki kell keresni azt a commit hash-t, ami az utolsó "értelmes" módosítás volt -> commit hash másolása
+-> `git rebase -i [hash]`
+-> "o" billentyű lenyomása az edit módhoz
+-> azok elé a commitok elé "drop" szót írjunk, amik nem kellenek, el akarjuk dobni
+-> tartsuk meg az olyan commitokat, amik esetleg build hibákat javítottak (pl.: hiányzó import, stb...)
+-> "Esc" -> ":wq" -> "Enter"
+-> `git push origin algogrind-sync --force` -> Figyelem! Ez felülírja a history-t!
+
+8. Fejlesztés folytatása
+
+-> vissza mergeljük a sync-re létrehozott branchet a fejlesztésre használt branchbe:
+
+```
+git checkout algogrind
+git merge algogrind-sync
+```
+
+-> ha minden rendben az algogrind-sync branch törölhető
+
 ## Testing
 
 ### Test Locally

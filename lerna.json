@@ -1,0 +1,5 @@
+{
+  "version": "independent",
+  "useNx": true,
+  "packages": ["packages/*", "packages/*/*"]
+}

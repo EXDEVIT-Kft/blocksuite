@@ -233,7 +233,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
     if (!url) return;
 
     navigator.clipboard.writeText(url).catch(console.error);
-    toast(this.std.host, 'Copied link to clipboard');
+    toast(this.std.host, 'Hivatkozás a vágólapra másolva');
     this.edgeless.service.selection.clear();
 
     track(this.std, this.model, this._viewType, 'CopiedLink', {
@@ -446,22 +446,22 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
       {
         style: 'horizontal',
         Icon: EmbedCardHorizontalIcon,
-        tooltip: 'Large horizontal style',
+        tooltip: 'Nagy vízszintes elrendezés',
       },
       {
         style: 'list',
         Icon: EmbedCardListIcon,
-        tooltip: 'Small horizontal style',
+        tooltip: 'Kicsi vízszintes elrendezés',
       },
       {
         style: 'vertical',
         Icon: EmbedCardVerticalIcon,
-        tooltip: 'Large vertical style',
+        tooltip: 'Nagy függőleges elrendezés',
       },
       {
         style: 'cube',
         Icon: EmbedCardCubeIcon,
-        tooltip: 'Small vertical style',
+        tooltip: 'Kicsi függőleges elrendezés',
       },
     ];
   }
@@ -510,7 +510,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
       ? this.std.collection.getDoc(model.pageId)
       : null;
 
-    return doc?.meta?.title || 'Untitled';
+    return doc?.meta?.title || 'Új dokumentum';
   }
 
   private get _viewType(): 'inline' | 'embed' | 'card' {
@@ -539,7 +539,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
     ) {
       buttons.push({
         type: 'open-this-doc',
-        label: 'Open this doc',
+        label: 'Dokumentum megnyitása',
         icon: ExpandFullSmallIcon,
         action: this._open,
         disabled: this._openButtonDisabled,
@@ -547,7 +547,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
     } else if (this._canShowFullScreenButton) {
       buttons.push({
         type: 'open-this-doc',
-        label: 'Open this doc',
+        label: 'Dokumentum megnyitása',
         icon: ExpandFullSmallIcon,
         action: this._open,
       });
@@ -558,7 +558,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
     if (this._blockComponent && isPeekable(this._blockComponent)) {
       buttons.push({
         type: 'open-in-center-peek',
-        label: 'Open in center peek',
+        label: 'Bepillantás a dokumentumba',
         icon: CenterPeekIcon,
         action: () => this._peek(),
       });
@@ -575,7 +575,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Open"
+            aria-label="Megnyitás"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
           >
@@ -615,13 +615,13 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
       const buttons = [
         {
           type: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           action: () => this._convertToCardView(),
           disabled: this.model.doc.readonly,
         },
         {
           type: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           action: () => this._convertToEmbedView(),
           disabled: this.model.doc.readonly || this._embedViewButtonDisabled,
         },
@@ -632,16 +632,16 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
           .contentPadding=${'8px'}
           .button=${html`
             <editor-icon-button
-              aria-label="Switch view"
+              aria-label="Nézet váltása"
               .justify=${'space-between'}
               .labelHeight=${'20px'}
               .iconContainerWidth=${'110px'}
             >
               <div class="label">
                 <span style="text-transform: capitalize"
-                  >${this._viewType}</span
+                  >${this._viewType === 'embed' ? 'Beágyazott' : 'Kártya'}</span
                 >
-                view
+                nlzet
               </div>
               ${SmallArrowDownIcon}
             </editor-icon-button>
@@ -711,7 +711,7 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
         ? html`
             <editor-icon-button
               class="doc-title"
-              aria-label="Doc title"
+              aria-label="Dokumentum címe"
               .hover=${false}
               .labelHeight=${'20px'}
               .tooltip=${this._originalDocTitle}
@@ -726,8 +726,8 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
         ? nothing
         : html`
             <editor-icon-button
-              aria-label="Click link"
-              .tooltip=${'Click link'}
+              aria-label="Kattints a hivatkozás másolásához"
+              .tooltip=${'Kattints a hivatkozás másolásához'}
               class="change-embed-card-button copy"
               ?disabled=${this._doc.readonly}
               @click=${this._copyUrl}
@@ -736,8 +736,8 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
             </editor-icon-button>
 
             <editor-icon-button
-              aria-label="Edit"
-              .tooltip=${'Edit'}
+              aria-label="Szerkesztés"
+              .tooltip=${'Szerkesztés'}
               class="change-embed-card-button edit"
               ?disabled=${this._doc.readonly}
               @click=${this._openEditPopup}
@@ -754,8 +754,8 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
               .contentPadding=${'8px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Card style"
-                  .tooltip=${'Card style'}
+                  aria-label="Kártya stílusa"
+                  .tooltip=${'Kártya stílusa'}
                 >
                   ${PaletteIcon}
                 </editor-icon-button>
@@ -775,8 +775,8 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
       'caption' in model
         ? html`
             <editor-icon-button
-              aria-label="Add caption"
-              .tooltip=${'Add caption'}
+              aria-label="Felirat hozzáadása"
+              .tooltip=${'Felirat hozzáadása'}
               class="change-embed-card-button caption"
               ?disabled=${this._doc.readonly}
               @click=${this._showCaption}
@@ -795,8 +795,8 @@ export class EdgelessChangeEmbedCardButton extends WithDisposable(LitElement) {
               .contentPadding=${'8px'}
               .button=${html`
                 <editor-icon-button
-                  aria-label="Scale"
-                  .tooltip=${'Scale'}
+                  aria-label="Méret"
+                  .tooltip=${'Méret'}
                   .justify=${'space-between'}
                   .iconContainerWidth=${'65px'}
                   .labelHeight=${'20px'}

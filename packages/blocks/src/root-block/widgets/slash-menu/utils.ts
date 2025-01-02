@@ -93,12 +93,13 @@ export function tryRemoveEmptyLine(model: BlockModel) {
 export function createConversionItem(
   config: TextConversionConfig
 ): SlashMenuActionItem {
-  const { name, description, icon, flavour, type } = config;
+  const { name, description, icon, flavour, type, alias } = config;
   return {
     name,
     description,
     icon,
     tooltip: slashMenuToolTips[name],
+    alias,
     showWhen: ({ model }) => model.doc.schema.flavourSchemaMap.has(flavour),
     action: ({ rootComponent }) => {
       rootComponent.std.command

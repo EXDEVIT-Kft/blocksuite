@@ -198,7 +198,7 @@ export class EmbedCardEditModal extends SignalWatcher(
 
     const title = this.title$.value.trim();
     if (title.length === 0) {
-      toast(this.host, 'Title can not be empty');
+      toast(this.host, 'A cím nem lehet üres');
       return;
     }
 
@@ -257,15 +257,15 @@ export class EmbedCardEditModal extends SignalWatcher(
   get placeholders() {
     if (this.isInternalEmbedModel) {
       return {
-        title: 'Add title alias',
+        title: 'Adj meg egy megjelenített címet',
         description:
-          'Add description alias (empty to inherit document content)',
+          'Adj meg egy megjelenített leírást (vagy hagy üresen az automatikus örökléshez)',
       };
     }
 
     return {
-      title: 'Write a title',
-      description: 'Write a description...',
+      title: 'Adj meg egy címet',
+      description: 'Leírás...',
     };
   }
 
@@ -346,7 +346,7 @@ export class EmbedCardEditModal extends SignalWatcher(
                   .disabled=${this.resetButtonDisabled$.value}
                   @click=${this._onReset}
                 >
-                  Reset
+                  Visszaállít
                 </button>
               `,
             ],
@@ -360,7 +360,7 @@ export class EmbedCardEditModal extends SignalWatcher(
                   })}
                   @click=${this._hide}
                 >
-                  Cancel
+                  Mégse
                 </button>
               `,
             ],

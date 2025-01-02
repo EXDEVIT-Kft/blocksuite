@@ -134,12 +134,12 @@ interface EndpointStyle {
 
 const STYLE_LIST = [
   {
-    name: 'General',
+    name: 'Letisztult',
     value: false,
     icon: GeneralStyleIcon,
   },
   {
-    name: 'Scribbled',
+    name: 'Rajzolt',
     value: true,
     icon: ScribbledStyleIcon,
   },
@@ -198,17 +198,17 @@ const REAR_ENDPOINT_STYLE_LIST: EndpointStyle[] = [
 
 const MODE_LIST = [
   {
-    name: 'Curve',
+    name: 'Íves',
     icon: ConnectorCWithArrowIcon,
     value: ConnectorMode.Curve,
   },
   {
-    name: 'Elbowed',
+    name: 'Szögletes',
     icon: ConnectorXWithArrowIcon,
     value: ConnectorMode.Orthogonal,
   },
   {
-    name: 'Straight',
+    name: 'Egyenes',
     icon: ConnectorLWithArrowIcon,
     value: ConnectorMode.Straight,
   },
@@ -425,7 +425,7 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
         html`
           <editor-menu-button
             .button=${html`
-              <editor-icon-button aria-label="Style" .tooltip=${'Style'}>
+              <editor-icon-button aria-label="Stílus" .tooltip=${'Stílus'}>
                 ${choose(selectedRough, STYLE_CHOOSE)}${SmallArrowDownIcon}
               </editor-icon-button>
             `}

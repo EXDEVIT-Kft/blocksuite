@@ -279,11 +279,11 @@ export function locatorEdgelessComponentToolButton(
   innerContainer = true
 ) {
   const text = {
-    shape: 'Shape',
-    brush: 'Color',
-    thin: 'Thin',
-    thick: 'Thick',
-    more: 'More',
+    shape: 'Alakzat',
+    brush: 'Szín',
+    thin: 'Vékony',
+    thick: 'Vastag',
+    more: 'Továbbiak',
   }[type];
   const button = page
     .locator('edgeless-element-toolbar-widget editor-icon-button')
@@ -299,8 +299,8 @@ export function locatorPresentationToolbarButton(
   type: PresentationToolType
 ) {
   const text = {
-    previous: 'Previous',
-    next: 'Next',
+    previous: 'Előző',
+    next: 'Következő',
   }[type];
   const button = page
     .locator('presentation-toolbar edgeless-tool-icon-button')
@@ -809,7 +809,7 @@ export async function clickComponentToolbarMoreMenuButton(
   button: 'delete'
 ) {
   const text = {
-    delete: 'Delete',
+    delete: 'Törlés',
   }[button];
 
   const btn = locatorComponentToolbarMoreButton(page)
@@ -1071,7 +1071,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Bring to Front',
+          hasText: 'Előrehozás',
         });
       await actionButton.click();
       break;
@@ -1083,7 +1083,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Bring Forward',
+          hasText: 'Előbbre hozás',
         });
       await actionButton.click();
       break;
@@ -1095,7 +1095,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Send Backward',
+          hasText: 'Hátraküldés',
         });
       await actionButton.click();
       break;
@@ -1107,7 +1107,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Send to Back',
+          hasText: 'Hátrébb küldés',
         });
       await actionButton.click();
       break;
@@ -1119,7 +1119,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Copy as PNG',
+          hasText: 'Másolás PNG képként',
         });
       await actionButton.click();
       break;
@@ -1131,7 +1131,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Frame Section',
+          hasText: 'Keret Létrehozása',
         });
       await actionButton.click();
       break;
@@ -1143,7 +1143,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Duplicate',
+          hasText: 'Duplikálás',
         });
       await actionButton.click();
       break;
@@ -1151,49 +1151,49 @@ export async function triggerComponentToolbarAction(
     case 'changeShapeFillColor': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-shape-button')
-        .getByRole('button', { name: 'Fill color' });
+        .getByRole('button', { name: 'Kitöltés színe' });
       await button.click();
       break;
     }
     case 'changeShapeStrokeColor': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-shape-button')
-        .getByRole('button', { name: 'Border style' });
+        .getByRole('button', { name: 'Szegély stílusa' });
       await button.click();
       break;
     }
     case 'changeShapeStrokeStyles': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-shape-button')
-        .getByRole('button', { name: 'Border style' });
+        .getByRole('button', { name: 'Szegély stílusa' });
       await button.click();
       break;
     }
     case 'changeShapeStyle': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-shape-button')
-        .getByRole('button', { name: /^Style$/ });
+        .getByRole('button', { name: 'Kinézet' });
       await button.click();
       break;
     }
     case 'changeConnectorStrokeColor': {
       const button = page
         .locator('edgeless-change-connector-button')
-        .getByRole('button', { name: 'Stroke style' });
+        .getByRole('button', { name: 'Szegély stílusa' });
       await button.click();
       break;
     }
     case 'changeConnectorStrokeStyles': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-connector-button')
-        .getByRole('button', { name: 'Stroke style' });
+        .getByRole('button', { name: 'Szegély stílusa' });
       await button.click();
       break;
     }
     case 'changeConnectorShape': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-connector-button')
-        .getByRole('button', { name: 'Shape' });
+        .getByRole('button', { name: 'Alakzat' });
       await button.click();
       break;
     }
@@ -1225,7 +1225,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Group Section',
+          hasText: 'Csoportosítás',
         });
       await actionButton.click();
       break;
@@ -1233,14 +1233,14 @@ export async function triggerComponentToolbarAction(
     case 'ungroup': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-group-button')
-        .getByRole('button', { name: 'Ungroup' });
+        .getByRole('button', { name: 'Csoportbontás' });
       await button.click();
       break;
     }
     case 'renameGroup': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-group-button')
-        .getByRole('button', { name: 'Rename' });
+        .getByRole('button', { name: 'Átnevezés' });
       await button.click();
       break;
     }
@@ -1254,48 +1254,48 @@ export async function triggerComponentToolbarAction(
     case 'changeNoteColor': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Background' });
+        .getByRole('button', { name: 'Háttér' });
       await button.click();
       break;
     }
     case 'changeNoteDisplayMode': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Mode' });
+        .getByRole('button', { name: 'Mód' });
       await button.click();
       break;
     }
     case 'changeNoteSlicerSetting': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Slicer' });
+        .getByRole('button', { name: 'Vágás' });
       await button.click();
       break;
     }
     case 'changeNoteScale': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Scale' });
+        .getByRole('button', { name: 'Méret' });
       await button.click();
       break;
     }
     case 'autoSize': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Size' });
+        .getByRole('button', { name: 'Méret' });
       await button.click();
       break;
     }
     case 'addText': {
       const button = locatorComponentToolbar(page).getByRole('button', {
-        name: 'Add text',
+        name: 'Szöveg beszúrása',
       });
       await button.click();
       break;
     }
     case 'quickConnect': {
       const button = locatorComponentToolbar(page).getByRole('button', {
-        name: 'Draw connector',
+        name: 'Összekötés rajzolása',
       });
       await button.click();
       break;
@@ -1307,7 +1307,7 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Turn into linked doc',
+          hasText: 'Hivatkozott dokumentummá konvertálás',
         });
       await actionButton.click();
       break;
@@ -1319,19 +1319,19 @@ export async function triggerComponentToolbarAction(
       const actionButton = moreButton
         .locator('.more-actions-container editor-menu-action')
         .filter({
-          hasText: 'Create linked doc',
+          hasText: 'Hivatkozott dokumentum létrehozása',
         });
       await actionButton.click();
       break;
     }
     case 'openLinkedDoc': {
       const openButton = locatorComponentToolbar(page).getByRole('button', {
-        name: 'Open',
+        name: 'Megnyitás',
       });
       await openButton.click();
 
       const button = locatorComponentToolbar(page).getByRole('button', {
-        name: 'Open this doc',
+        name: 'A Dokumentum megnyitása',
       });
       await button.click();
       break;
@@ -1340,7 +1340,7 @@ export async function triggerComponentToolbarAction(
       const button = locatorComponentToolbar(page)
         .locator('edgeless-tool-icon-button')
         .filter({
-          hasText: 'Card view',
+          hasText: 'Kártya nézet',
         });
       await button.click();
       break;
@@ -1349,7 +1349,7 @@ export async function triggerComponentToolbarAction(
       const button = locatorComponentToolbar(page)
         .locator('edgeless-tool-icon-button')
         .filter({
-          hasText: 'Embed view',
+          hasText: 'Beágyazott nézet',
         });
       await button.click();
       break;

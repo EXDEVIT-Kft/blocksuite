@@ -81,6 +81,7 @@ export const AttachmentBlockSchema = defineBlockSchema({
       'affine:edgeless-text',
       'affine:paragraph',
       'affine:list',
+      'algogrind:accordion',
     ],
   },
   transformer: () => new AttachmentBlockTransformer(),
@@ -89,7 +90,23 @@ export const AttachmentBlockSchema = defineBlockSchema({
 
 export class AttachmentBlockModel
   extends GfxCompatible<AttachmentBlockProps>(BlockModel)
-  implements GfxElementGeometry {}
+  implements GfxElementGeometry
+{
+  // [ALGOGRIND]
+  // Added method to be able to call the blobEngine delete,
+  // when an attachment of any kind gets deleted from the document
+  constructor() {
+    super();
+
+    this.deleted.once(() => {
+      if (!this.sourceId$.value || this.sourceId$.value === '') {
+        return;
+      }
+
+      this.doc.blobSync.delete(this.sourceId$.value).catch(console.log);
+    });
+  }
+}
 
 declare global {
   namespace BlockSuite {

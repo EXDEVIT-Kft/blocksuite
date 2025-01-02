@@ -32,6 +32,7 @@ export const ParagraphBlockSchema = defineBlockSchema({
       'affine:paragraph',
       'affine:list',
       'affine:edgeless-text',
+      'algogrind:accordion',
     ],
   },
   toModel: () => new ParagraphBlockModel(),

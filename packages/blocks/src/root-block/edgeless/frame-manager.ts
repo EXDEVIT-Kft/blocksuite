@@ -199,7 +199,7 @@ export class EdgelessFrameManager extends GfxExtension {
       'affine:frame',
       {
         title: new Text(
-          new DocCollection.Y.Text(`Frame ${this.frames.length + 1}`)
+          new DocCollection.Y.Text(`Keret ${this.frames.length + 1}`)
         ),
         xywh: bound.serialize(),
         index: this.gfx.layer.generateIndex(true),

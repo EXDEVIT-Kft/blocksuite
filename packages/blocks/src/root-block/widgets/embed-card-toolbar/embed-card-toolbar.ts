@@ -283,7 +283,7 @@ export class EmbedCardToolbar extends WidgetComponent<
       ? this.std.collection.getDoc(model.pageId)
       : null;
 
-    return doc?.meta?.title || 'Untitled';
+    return doc?.meta?.title || 'Új dokumentum';
   }
 
   private get _selection() {
@@ -329,12 +329,12 @@ export class EmbedCardToolbar extends WidgetComponent<
     const buttons = [
       {
         type: 'horizontal',
-        label: 'Large horizontal style',
+        label: 'Nagy vízszintes elrendezés',
         icon: EmbedCardHorizontalIcon,
       },
       {
         type: 'list',
-        label: 'Small horizontal style',
+        label: 'Kicsi vízszintes elrendezés',
         icon: EmbedCardListIcon,
       },
     ] as {
@@ -504,7 +504,7 @@ export class EmbedCardToolbar extends WidgetComponent<
     ) {
       buttons.push({
         type: 'open-this-doc',
-        label: 'Open this doc',
+        label: 'Dokumentum megnyitása',
         icon: ExpandFullSmallIcon,
         action: () => this.focusBlock?.open(),
       });
@@ -516,7 +516,7 @@ export class EmbedCardToolbar extends WidgetComponent<
     if (element && isPeekable(element)) {
       buttons.push({
         type: 'open-in-center-peek',
-        label: 'Open in center peek',
+        label: 'Bepillantás a dokumentumba',
         icon: CenterPeekIcon,
         action: () => peek(element),
       });
@@ -533,7 +533,7 @@ export class EmbedCardToolbar extends WidgetComponent<
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Open"
+            aria-label="Megnyitás"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
           >
@@ -635,14 +635,14 @@ export class EmbedCardToolbar extends WidgetComponent<
 
     buttons.push({
       type: 'inline',
-      label: 'Inline view',
+      label: 'Sorközi nézet',
       action: () => this._turnIntoInlineView(),
       disabled: this.doc.readonly,
     });
 
     buttons.push({
       type: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       action: () => this._convertToCardView(),
       disabled: this.doc.readonly,
     });
@@ -650,7 +650,7 @@ export class EmbedCardToolbar extends WidgetComponent<
     if (this._canConvertToEmbedView || this._isEmbedView) {
       buttons.push({
         type: 'embed',
-        label: 'Embed view',
+        label: 'Beágyazott nézet',
         action: () => this._convertToEmbedView(),
         disabled: this.doc.readonly || this._embedViewButtonDisabled,
       });
@@ -661,14 +661,16 @@ export class EmbedCardToolbar extends WidgetComponent<
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Switch view"
+            aria-label="Nézet váltása"
             .justify=${'space-between'}
             .labelHeight=${'20px'}
             .iconContainerWidth=${'110px'}
           >
             <div class="label">
-              <span style="text-transform: capitalize">${this._viewType}</span>
-              view
+              <span style="text-transform: capitalize"
+                >${this._viewType === 'embed' ? 'Beágyazott' : 'Kártya'}</span
+              >
+              nézet
             </div>
             ${SmallArrowDownIcon}
           </editor-icon-button>
@@ -765,7 +767,7 @@ export class EmbedCardToolbar extends WidgetComponent<
         ? html`
             <editor-icon-button
               class="doc-title"
-              aria-label="Doc title"
+              aria-label="Dokumentum címe"
               .hover=${false}
               .labelHeight=${'20px'}
               .tooltip=${this._originalDocTitle}
@@ -780,18 +782,18 @@ export class EmbedCardToolbar extends WidgetComponent<
         ? nothing
         : html`
             <editor-icon-button
-              aria-label="Copy link"
+              aria-label="Másolás"
               data-testid="copy-link"
-              .tooltip=${'Copy link'}
+              .tooltip=${'Kattints a link másolásához'}
               @click=${this._copyUrl}
             >
               ${CopyIcon}
             </editor-icon-button>
 
             <editor-icon-button
-              aria-label="Edit"
+              aria-label="Szerkesztés"
               data-testid="edit"
-              .tooltip=${'Edit'}
+              .tooltip=${'Szerkesztés'}
               ?disabled=${this.doc.readonly}
               @click=${this._openEditPopup}
             >
@@ -805,8 +807,8 @@ export class EmbedCardToolbar extends WidgetComponent<
 
       html`
         <editor-icon-button
-          aria-label="Caption"
-          .tooltip=${'Add Caption'}
+          aria-label="Felirat hozzáadása"
+          .tooltip=${'Felirat hozzáadása'}
           ?disabled=${this.doc.readonly}
           @click=${this._showCaption}
         >
@@ -818,7 +820,7 @@ export class EmbedCardToolbar extends WidgetComponent<
         <editor-menu-button
           .contentPadding=${'8px'}
           .button=${html`
-            <editor-icon-button aria-label="More" .tooltip=${'More'}>
+            <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
               ${MoreVerticalIcon}
             </editor-icon-button>
           `}

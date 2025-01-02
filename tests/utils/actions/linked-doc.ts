@@ -33,7 +33,7 @@ export function getLinkedDocPopover(page: Page) {
     if (pageName) {
       await type(page, pageName);
     } else {
-      pageName = 'Untitled';
+      pageName = 'Új dokumentum';
     }
 
     await page.keyboard.press('ArrowUp');
