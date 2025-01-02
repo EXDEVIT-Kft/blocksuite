@@ -256,6 +256,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
             'affine-paragraph-rich-text-wrapper': true,
             [type$.value]: true,
             [TOGGLE_BUTTON_PARENT_CLASS]: true,
+            'heading-collapsed': collapsed,
           })}
         >
           ${this.model.type.startsWith('h') && collapsedSiblings.length > 0
