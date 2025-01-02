@@ -15,7 +15,7 @@ import {
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
-  ArrowUpSmallIcon,
+  //ArrowUpSmallIcon,
   CopyIcon,
   //DatabaseKanbanViewIcon20,
   //DatabaseTableViewIcon20,
@@ -56,7 +56,7 @@ import { toggleEmbedCardCreateModal } from '../../../_common/components/embed-ca
 import { textConversionConfigs } from '../../../_common/configs/text-conversion.js';
 import { addSiblingAttachmentBlocks } from '../../../attachment-block/utils.js';
 import { getSurfaceBlock } from '../../../surface-ref-block/utils.js';
-import { onModelTextUpdated } from '../../utils/callback.js';
+//import { onModelTextUpdated } from '../../utils/callback.js';
 import { formatDate, formatTime } from '../../utils/misc.js';
 import { type SlashMenuTooltip, slashMenuToolTips } from './tooltips/index.js';
 import {
@@ -172,6 +172,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
     },
 
+    /*
     { groupName: 'Elrendezés' },
     {
       name: 'Összecsukható Címsor 1',
@@ -518,6 +519,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         tryRemoveEmptyLine(model);
       },
     },
+    */
 
     // ---------------------------------------------------------
     { groupName: 'Felsorolások' },
