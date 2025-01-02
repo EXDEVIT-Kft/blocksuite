@@ -1,4 +1,4 @@
-import type { IVec, SerializedXYWH, XYWH } from '@blocksuite/global/utils';
+import type { IVec, SerializedXYWH, XYWH } from '@algogrind/global/utils';
 
 import {
   Bound,
@@ -9,7 +9,7 @@ import {
   polygonGetPointTangent,
   polygonNearestPoint,
   rotatePoints,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { mutex } from 'lib0';
 
 import type { EditorHost } from '../../../view/index.js';

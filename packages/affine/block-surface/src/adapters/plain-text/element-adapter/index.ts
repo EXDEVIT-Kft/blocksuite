@@ -1,4 +1,4 @@
-import type { TextBuffer } from '@blocksuite/affine-shared/adapters';
+import type { TextBuffer } from '@algogrind/affine-shared/adapters';
 
 import type { ElementModelToPlainTextAdapterMatcher } from './type.js';
 

@@ -1,19 +1,19 @@
-import type { GroupElementModel } from '@blocksuite/affine-model';
+import type { GroupElementModel } from '@algogrind/affine-model';
 
 import {
   NoteIcon,
   RenameIcon,
   UngroupButtonIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
-import { DEFAULT_NOTE_HEIGHT, NoteDisplayMode } from '@blocksuite/affine-model';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
+import { DEFAULT_NOTE_HEIGHT, NoteDisplayMode } from '@algogrind/affine-model';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 import {
   deserializeXYWH,
   serializeXYWH,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

@@ -1,22 +1,22 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { InlineRange } from '@blocksuite/inline';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { InlineRange } from '@algogrind/inline';
 
 import {
   GenerateDocUrlProvider,
   type LinkEventType,
   type TelemetryEvent,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   cloneReferenceInfoWithoutAliases,
   isInsideBlockByFlavour,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type BlockStdScope,
-} from '@blocksuite/block-std';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import { computePosition, inline, offset, shift } from '@floating-ui/dom';
 import { effect } from '@preact/signals-core';
 import { html, LitElement, nothing } from 'lit';

@@ -1,10 +1,10 @@
-import type { AliasInfo, ReferenceParams } from '@blocksuite/affine-model';
-import type { Disposable } from '@blocksuite/global/utils';
-import type { Doc } from '@blocksuite/store';
+import type { AliasInfo, ReferenceParams } from '@algogrind/affine-model';
+import type { Disposable } from '@algogrind/global/utils';
+import type { Doc } from '@algogrind/store';
 import type { TemplateResult } from 'lit';
 
-import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/block-std';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
+import { LifeCycleWatcher, StdIdentifier } from '@algogrind/block-std';
+import { type Container, createIdentifier } from '@algogrind/global/di';
 import {
   AliasIcon,
   BlockLinkIcon,

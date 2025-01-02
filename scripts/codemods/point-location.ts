@@ -27,7 +27,7 @@ export default function (fileInfo: FileInfo, api: API) {
 
       const newImport = j.importDeclaration(
         [j.importSpecifier(j.identifier('PointLocation'))],
-        j.literal('@blocksuite/global/utils')
+        j.literal('@algogrind/global/utils')
       );
 
       // Insert the new import statement at the beginning of the file

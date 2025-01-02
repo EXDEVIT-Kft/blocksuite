@@ -1,20 +1,20 @@
 import {
   EdgelessSurfaceBlockSpec,
   PageSurfaceBlockSpec,
-} from '@blocksuite/affine-block-surface';
-import { RefNodeSlotsExtension } from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-block-surface';
+import { RefNodeSlotsExtension } from '@algogrind/affine-components/rich-text';
 import {
   DocDisplayMetaService,
   DocModeService,
   EmbedOptionService,
   FontLoaderService,
   ThemeService,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   BlockViewExtension,
   type ExtensionType,
   FlavourExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { EdgelessTextBlockSpec } from '../../edgeless-text-block/index.js';

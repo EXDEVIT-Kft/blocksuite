@@ -5,7 +5,7 @@ import {
   MindmapElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import { SurfaceElementModel } from './base.js';
 

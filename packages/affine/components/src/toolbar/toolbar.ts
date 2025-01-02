@@ -1,6 +1,6 @@
-import { PANEL_BASE } from '@blocksuite/affine-shared/styles';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { PANEL_BASE } from '@algogrind/affine-shared/styles';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 
 export class EditorToolbar extends WithDisposable(LitElement) {

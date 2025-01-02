@@ -1,14 +1,14 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
+import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
 
-import { ArrowDownIcon } from '@blocksuite/affine-components/icons';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import { getInlineEditorByModel } from '@blocksuite/affine-components/rich-text';
+import { ArrowDownIcon } from '@algogrind/affine-components/icons';
+import { createLitPortal } from '@algogrind/affine-components/portal';
+import { getInlineEditorByModel } from '@algogrind/affine-components/rich-text';
 import {
   isControlledKeyboardEvent,
   isFuzzyMatch,
   substringMatchScore,
-} from '@blocksuite/affine-shared/utils';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

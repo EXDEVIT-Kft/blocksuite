@@ -3,7 +3,7 @@ import {
   Job,
   type JobMiddleware,
   Schema,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { defaultImageProxyMiddleware } from '../../_common/transformers/middlewares.js';
 import { AffineSchemas } from '../../schemas.js';

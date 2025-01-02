@@ -1,6 +1,6 @@
-import type { SurfaceRefBlockModel } from '@blocksuite/affine-model';
+import type { SurfaceRefBlockModel } from '@algogrind/affine-model';
 
-import { BlockComponent } from '@blocksuite/block-std';
+import { BlockComponent } from '@algogrind/block-std';
 import { nothing } from 'lit';
 
 export class EdgelessSurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockModel> {

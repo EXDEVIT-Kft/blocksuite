@@ -1,7 +1,7 @@
-import type { ReferenceParams } from '@blocksuite/affine-model';
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ReferenceParams } from '@algogrind/affine-model';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 export interface QuickSearchService {
   openQuickSearch: () => Promise<QuickSearchResult>;

@@ -1,4 +1,4 @@
-import { BlockModel, defineBlockSchema, type Text } from '@blocksuite/store';
+import { BlockModel, defineBlockSchema, type Text } from '@algogrind/store';
 
 export type ParagraphType =
   | 'text'

@@ -1,9 +1,9 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
 import {
   ArrowUpIcon,
   LargeFrameIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { css, html, LitElement } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

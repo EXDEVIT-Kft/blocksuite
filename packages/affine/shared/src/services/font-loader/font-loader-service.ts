@@ -1,6 +1,6 @@
-import { type ExtensionType, LifeCycleWatcher } from '@blocksuite/block-std';
-import { createIdentifier } from '@blocksuite/global/di';
-import { IS_FIREFOX } from '@blocksuite/global/env';
+import { type ExtensionType, LifeCycleWatcher } from '@algogrind/block-std';
+import { createIdentifier } from '@algogrind/global/di';
+import { IS_FIREFOX } from '@algogrind/global/env';
 
 import type { FontConfig } from './config.js';
 

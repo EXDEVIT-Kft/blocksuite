@@ -1,8 +1,8 @@
 import type {
   DragHandleOption,
   DropType,
-} from '@blocksuite/affine-shared/services';
-import type { Disposable, Rect } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import type { Disposable, Rect } from '@algogrind/global/utils';
 
 export const DRAG_HANDLE_CONTAINER_HEIGHT = 24;
 export const DRAG_HANDLE_CONTAINER_WIDTH = 16;

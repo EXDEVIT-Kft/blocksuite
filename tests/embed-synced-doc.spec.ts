@@ -1,6 +1,6 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
+import type { DatabaseBlockModel } from '@algogrind/affine-model';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { expect, type Page } from '@playwright/test';
 import { switchEditorMode } from 'utils/actions/edgeless.js';
 import { getLinkedDocPopover } from 'utils/actions/linked-doc.js';

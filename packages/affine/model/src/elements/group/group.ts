@@ -2,9 +2,9 @@ import type {
   BaseElementProps,
   GfxModel,
   SerializedElement,
-} from '@blocksuite/block-std/gfx';
-import type { IVec, PointLocation } from '@blocksuite/global/utils';
-import type { Y } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import type { IVec, PointLocation } from '@algogrind/global/utils';
+import type { Y } from '@algogrind/store';
 
 import {
   canSafeAddToContainer,
@@ -12,9 +12,9 @@ import {
   GfxGroupLikeElementModel,
   local,
   observe,
-} from '@blocksuite/block-std/gfx';
-import { Bound, keys, linePolygonIntersects } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { Bound, keys, linePolygonIntersects } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 type GroupElementProps = BaseElementProps & {
   children: Y.Map<boolean>;

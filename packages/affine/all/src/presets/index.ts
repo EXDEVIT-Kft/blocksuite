@@ -1,1 +1,1 @@
-export * from '@blocksuite/presets';
+export * from '@algogrind/presets';

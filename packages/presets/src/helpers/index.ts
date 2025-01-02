@@ -1,5 +1,5 @@
-import { AffineSchemas } from '@blocksuite/blocks/schemas';
-import { DocCollection, Schema } from '@blocksuite/store';
+import { AffineSchemas } from '@algogrind/blocks/schemas';
+import { DocCollection, Schema } from '@algogrind/store';
 
 export function createEmptyDoc() {
   const schema = new Schema().register(AffineSchemas);

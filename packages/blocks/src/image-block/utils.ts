@@ -2,17 +2,17 @@ import type {
   AttachmentBlockProps,
   ImageBlockModel,
   ImageBlockProps,
-} from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   downloadBlob,
   humanFileSize,
   withTempBlobData,
-} from '@blocksuite/affine-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/affine-shared/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { ImageBlockComponent } from './image-block.js';
 import type { ImageEdgelessBlockComponent } from './image-edgeless-block.js';

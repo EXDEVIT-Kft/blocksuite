@@ -3,10 +3,10 @@ import type {
   ShapeElementModel,
   TextAlign,
   TextVerticalAlign,
-} from '@blocksuite/affine-model';
-import type { Bound, SerializedXYWH } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { Bound, SerializedXYWH } from '@algogrind/global/utils';
 
-import { deltaInsertsToChunks } from '@blocksuite/inline';
+import { deltaInsertsToChunks } from '@algogrind/inline';
 
 import type { CanvasRenderer } from '../../canvas-renderer.js';
 

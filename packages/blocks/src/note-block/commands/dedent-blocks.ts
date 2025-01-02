@@ -1,9 +1,9 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 import {
   calculateCollapsedSiblings,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export const dedentBlocks: Command<
   never,

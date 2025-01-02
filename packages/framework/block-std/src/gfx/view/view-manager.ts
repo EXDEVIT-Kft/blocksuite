@@ -1,4 +1,4 @@
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import type { GfxController } from '../controller.js';
 import type { GfxModel } from '../model/model.js';

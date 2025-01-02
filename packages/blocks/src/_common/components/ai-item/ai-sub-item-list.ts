@@ -1,10 +1,10 @@
-import { EnterIcon } from '@blocksuite/affine-components/icons';
+import { EnterIcon } from '@algogrind/affine-components/icons';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

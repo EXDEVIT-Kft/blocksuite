@@ -81,7 +81,7 @@ import {
   sign,
   toDegree,
   toRadian,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { generateKeyBetween } from 'fractional-indexing';
 
 import { generateElementId, normalizeWheelDeltaY } from './utils/index.js';

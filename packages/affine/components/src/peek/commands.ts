@@ -1,9 +1,9 @@
-/// <reference types="@blocksuite/affine-shared/commands" />
+/// <reference types="@algogrind/affine-shared/commands" />
 import type {
   BlockComponent,
   Command,
   InitCommandCtx,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import { isPeekable, peek } from './peekable.js';
 

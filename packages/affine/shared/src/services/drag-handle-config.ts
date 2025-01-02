@@ -1,4 +1,4 @@
-import type { Point } from '@blocksuite/global/utils';
+import type { Point } from '@algogrind/global/utils';
 
 import {
   type BlockComponent,
@@ -8,9 +8,9 @@ import {
   Extension,
   type ExtensionType,
   StdIdentifier,
-} from '@blocksuite/block-std';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { Job, Slice, type SliceSnapshot } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { type Container, createIdentifier } from '@algogrind/global/di';
+import { Job, Slice, type SliceSnapshot } from '@algogrind/store';
 
 export type DropType = 'before' | 'after' | 'in';
 export type OnDragStartProps = {

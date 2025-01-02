@@ -1,5 +1,5 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+import type { ParagraphBlockModel } from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 
 import { matchFlavours } from '../model/checker.js';
 

@@ -3,21 +3,21 @@ import type {
   IPoint,
   IVec,
   PointLocation,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import {
   EMBED_HTML_MIN_HEIGHT,
   EMBED_HTML_MIN_WIDTH,
   SYNCED_MIN_HEIGHT,
   SYNCED_MIN_WIDTH,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   CanvasElementType,
   CommonUtils,
   normalizeShapeBound,
   OverlayIdentifier,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type BookmarkBlockModel,
   ConnectorElementModel,
@@ -31,28 +31,28 @@ import {
   type RootBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-model';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import {
   clamp,
   requestThrottledConnectedFrame,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
 import {
   type CursorType,
   getTopElements,
   GfxControllerIdentifier,
   GfxExtensionIdentifier,
   type GfxModel,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import {
   assertType,
   Bound,
   deserializeXYWH,
   pickValues,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

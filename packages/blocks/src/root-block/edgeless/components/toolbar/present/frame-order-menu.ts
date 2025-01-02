@@ -1,9 +1,9 @@
-import { generateKeyBetweenV2 } from '@blocksuite/block-std/gfx';
+import { generateKeyBetweenV2 } from '@algogrind/block-std/gfx';
 import {
   DisposableGroup,
   SignalWatcher,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

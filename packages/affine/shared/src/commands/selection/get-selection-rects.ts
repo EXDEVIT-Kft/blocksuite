@@ -2,7 +2,7 @@ import type {
   BlockSelection,
   Command,
   TextSelection,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import { getViewportElement } from '../../utils/index.js';
 

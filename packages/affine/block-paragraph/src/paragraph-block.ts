@@ -1,24 +1,24 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
-import type { InlineRangeProvider } from '@blocksuite/inline';
+import type { ParagraphBlockModel } from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
+import type { InlineRangeProvider } from '@algogrind/inline';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@algogrind/affine-components/caption';
 import {
   DefaultInlineManagerExtension,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { TOGGLE_BUTTON_PARENT_CLASS } from '@blocksuite/affine-components/toggle-button';
+} from '@algogrind/affine-components/rich-text';
+import { TOGGLE_BUTTON_PARENT_CLASS } from '@algogrind/affine-components/toggle-button';
 import {
   BLOCK_CHILDREN_CONTAINER_PADDING_LEFT,
   NOTE_SELECTOR,
-} from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/consts';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
 import {
   calculateCollapsedSiblings,
   getNearestHeadingBefore,
   getViewportElement,
-} from '@blocksuite/affine-shared/utils';
-import { getInlineRangeProvider } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { getInlineRangeProvider } from '@algogrind/block-std';
 import { effect, signal } from '@preact/signals-core';
 import { html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';

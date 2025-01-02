@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { GroupBy, GroupProperty } from '../../core/common/types.js';
 import type { FilterGroup } from '../../core/filter/types.js';

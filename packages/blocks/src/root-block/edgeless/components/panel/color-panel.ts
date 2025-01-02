@@ -1,11 +1,11 @@
-import { TransparentIcon } from '@blocksuite/affine-components/icons';
+import { TransparentIcon } from '@algogrind/affine-components/icons';
 import {
   ColorScheme,
   LINE_COLORS,
   LineColor,
   NoteBackgroundColor,
   ShapeFillColor,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -1,6 +1,6 @@
-import type { ViewMeta } from '@blocksuite/data-view';
+import type { ViewMeta } from '@algogrind/data-view';
 
-import { viewConverts, viewPresets } from '@blocksuite/data-view/view-presets';
+import { viewConverts, viewPresets } from '@algogrind/data-view/view-presets';
 
 export const databaseBlockViews: ViewMeta[] = [
   viewPresets.tableViewMeta,

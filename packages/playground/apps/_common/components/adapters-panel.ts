@@ -1,7 +1,7 @@
-import type { AffineEditorContainer } from '@blocksuite/presets';
+import type { AffineEditorContainer } from '@algogrind/presets';
 import type SlTabPanel from '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
 import {
   defaultImageProxyMiddleware,
@@ -14,9 +14,9 @@ import {
   type PlainTextAdapter,
   PlainTextAdapterFactoryIdentifier,
   titleMiddleware,
-} from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
-import { type DocSnapshot, Job } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
+import { type DocSnapshot, Job } from '@algogrind/store';
 import { effect } from '@preact/signals-core';
 import { css, html, type PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';

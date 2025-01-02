@@ -1,7 +1,7 @@
 import type {
   LocalShapeElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import type { RoughCanvas } from '../../../utils/rough/canvas.js';
 import type { CanvasRenderer } from '../../canvas-renderer.js';

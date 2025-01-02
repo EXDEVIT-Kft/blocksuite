@@ -8,13 +8,13 @@ import {
   type NodeDetail,
   type NodeType,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   generateKeyBetween,
   type SurfaceBlockModel,
-} from '@blocksuite/block-std/gfx';
-import { assertType, isEqual, type IVec, last } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { assertType, isEqual, type IVec, last } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import { fitContent } from '../../renderer/elements/shape/utils.js';
 import { layout } from './layout.js';

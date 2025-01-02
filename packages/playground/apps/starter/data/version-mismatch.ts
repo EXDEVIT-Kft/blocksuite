@@ -1,6 +1,6 @@
-import type { Y } from '@blocksuite/store';
+import type { Y } from '@algogrind/store';
 
-import { DocCollection } from '@blocksuite/store';
+import { DocCollection } from '@algogrind/store';
 
 import type { InitFn } from './utils.js';
 

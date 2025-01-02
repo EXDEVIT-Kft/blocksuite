@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/docs",
+  "name": "@algogrind/docs",
   "version": "0.19.5",
   "description": "BlockSuite documentation",
   "private": true,
@@ -24,9 +24,9 @@
     "preview": "yarn run typedoc && vitepress preview"
   },
   "dependencies": {
-    "@blocksuite/blocks": "workspace:*",
-    "@blocksuite/presets": "workspace:*",
-    "@blocksuite/store": "workspace:*",
+    "@algogrind/blocks": "workspace:*",
+    "@algogrind/presets": "workspace:*",
+    "@algogrind/store": "workspace:*",
     "date-fns": "^4.0.0",
     "markdown-it-container": "^4.0.0",
     "vitepress-plugin-sandpack": "^1.1.4"

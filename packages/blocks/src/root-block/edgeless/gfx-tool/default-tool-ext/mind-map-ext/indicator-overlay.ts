@@ -3,14 +3,14 @@ import {
   NODE_VERTICAL_SPACING,
   Overlay,
   PathGenerator,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   ConnectorMode,
   LayoutType,
   type MindmapElementModel,
   type MindmapNode,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import {
   type Bound,
   isVecZero,
@@ -19,7 +19,7 @@ import {
   PointLocation,
   toRadian,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 export class MindMapIndicatorOverlay extends Overlay {
   static INDICATOR_SIZE = [48, 22];

@@ -1,8 +1,8 @@
-import type { CursorType, StandardCursor } from '@blocksuite/block-std/gfx';
-import type { IVec } from '@blocksuite/global/utils';
+import type { CursorType, StandardCursor } from '@algogrind/block-std/gfx';
+import type { IVec } from '@algogrind/global/utils';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { assertExists, Bound, Vec } from '@blocksuite/global/utils';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { assertExists, Bound, Vec } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 
 import {

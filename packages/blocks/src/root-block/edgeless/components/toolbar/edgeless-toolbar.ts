@@ -2,26 +2,26 @@ import {
   type MenuHandler,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
   MoreHorizontalIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   darkToolbarStyles,
   lightToolbarStyles,
-} from '@blocksuite/affine-components/toolbar';
-import { ColorScheme, type RootBlockModel } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/toolbar';
+import { ColorScheme, type RootBlockModel } from '@algogrind/affine-model';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { debounce } from '@blocksuite/global/utils';
-import { Slot } from '@blocksuite/store';
+} from '@algogrind/affine-shared/services';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { debounce } from '@algogrind/global/utils';
+import { Slot } from '@algogrind/store';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { ContextProvider } from '@lit/context';
 import { baseTheme, cssVar } from '@toeverything/theme';

@@ -1,5 +1,5 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { menu } from '@algogrind/affine-components/context-menu';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import { CheckBoxCkeckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 

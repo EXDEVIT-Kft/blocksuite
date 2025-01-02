@@ -1,6 +1,6 @@
 import type { TemplateResult } from 'lit';
 
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { computed, signal } from '@preact/signals-core';
 
 import type { MenuComponentInterface, MenuItemRender } from './types.js';

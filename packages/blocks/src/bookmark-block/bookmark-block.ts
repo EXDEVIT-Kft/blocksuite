@@ -1,10 +1,10 @@
-import type { BookmarkBlockModel } from '@blocksuite/affine-model';
+import type { BookmarkBlockModel } from '@algogrind/affine-model';
 
 import {
   CaptionedBlockComponent,
   SelectedStyle,
-} from '@blocksuite/affine-components/caption';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-components/caption';
+import { DocModeProvider } from '@algogrind/affine-shared/services';
 import { html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

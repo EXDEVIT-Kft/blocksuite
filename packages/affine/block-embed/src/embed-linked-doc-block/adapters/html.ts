@@ -1,8 +1,8 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedLinkedDocBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 import { generateDocUrl } from '../../common/adapters/utils.js';
 

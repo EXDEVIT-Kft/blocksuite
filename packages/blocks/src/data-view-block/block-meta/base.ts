@@ -1,6 +1,6 @@
-import type { PropertyMetaConfig } from '@blocksuite/data-view';
-import type { Disposable } from '@blocksuite/global/utils';
-import type { Block, BlockModel } from '@blocksuite/store';
+import type { PropertyMetaConfig } from '@algogrind/data-view';
+import type { Disposable } from '@algogrind/global/utils';
+import type { Block, BlockModel } from '@algogrind/store';
 
 type PropertyMeta<
   T extends BlockModel = BlockModel,

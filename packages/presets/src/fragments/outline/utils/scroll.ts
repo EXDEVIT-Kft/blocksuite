@@ -1,7 +1,7 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { NoteDisplayMode } from '@blocksuite/blocks';
-import { clamp, DisposableGroup } from '@blocksuite/global/utils';
+import { NoteDisplayMode } from '@algogrind/blocks';
+import { clamp, DisposableGroup } from '@algogrind/global/utils';
 
 import type { AffineEditorContainer } from '../../../editors/editor-container.js';
 

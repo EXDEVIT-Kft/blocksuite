@@ -1,12 +1,12 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
+import { ParagraphBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 const paragraphBlockMatchTags = [
   'p',

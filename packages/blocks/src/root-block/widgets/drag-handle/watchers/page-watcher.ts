@@ -1,4 +1,4 @@
-import { getScrollContainer } from '@blocksuite/affine-shared/utils';
+import { getScrollContainer } from '@algogrind/affine-shared/utils';
 
 import type { PageRootBlockComponent } from '../../../page/page-root-block.js';
 import type { AffineDragHandleWidget } from '../drag-handle.js';

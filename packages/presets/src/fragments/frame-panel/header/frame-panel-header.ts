@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
 import {
   createButtonPopper,
@@ -6,8 +6,8 @@ import {
   EdgelessRootService,
   EditPropsStore,
   type NavigatorMode,
-} from '@blocksuite/blocks';
-import { DisposableGroup, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/blocks';
+import { DisposableGroup, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

@@ -1,10 +1,10 @@
-import { Extension } from '@blocksuite/block-std';
+import { Extension } from '@algogrind/block-std';
 import {
   type GfxController,
   GfxControllerIdentifier,
-} from '@blocksuite/block-std/gfx';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/block-std/gfx';
+import { type Container, createIdentifier } from '@algogrind/global/di';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { RoughCanvas } from '../utils/rough/canvas.js';
 import type { CanvasRenderer } from './canvas-renderer.js';

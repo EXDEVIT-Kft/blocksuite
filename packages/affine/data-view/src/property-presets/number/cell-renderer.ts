@@ -1,4 +1,4 @@
-import { IS_MAC } from '@blocksuite/global/env';
+import { IS_MAC } from '@algogrind/global/env';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, unsafeCSS } from 'lit';
 import { query } from 'lit/decorators.js';

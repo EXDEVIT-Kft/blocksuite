@@ -9,31 +9,31 @@ import type {
   NoteBlockModel,
   RootBlockModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
-import { ConnectorCWithArrowIcon } from '@blocksuite/affine-components/icons';
+import { CommonUtils } from '@algogrind/affine-block-surface';
+import { ConnectorCWithArrowIcon } from '@algogrind/affine-components/icons';
 import {
   cloneGroups,
   darkToolbarStyles,
   lightToolbarStyles,
   type MenuItemGroup,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   ConnectorMode,
   GroupElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { requestConnectedFrame } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
 import {
   atLeastNMatches,
   getCommonBoundWithRotation,
   groupBy,
   pickValues,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing, type TemplateResult, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

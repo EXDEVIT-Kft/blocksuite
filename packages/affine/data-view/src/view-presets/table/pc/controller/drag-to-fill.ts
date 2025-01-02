@@ -1,6 +1,6 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { assertEquals } from '@blocksuite/global/utils';
-import { DocCollection, type Text } from '@blocksuite/store';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { assertEquals } from '@algogrind/global/utils';
+import { DocCollection, type Text } from '@algogrind/store';
 import { css, html } from 'lit';
 import { state } from 'lit/decorators.js';
 import { createRef, ref } from 'lit/directives/ref.js';

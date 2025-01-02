@@ -1,17 +1,17 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+import type { ParagraphBlockModel } from '@algogrind/affine-model';
 import type {
   BaseSelection,
   BlockComponent,
   EditorHost,
-} from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
-import { BLOCK_CHILDREN_CONTAINER_PADDING_LEFT } from '@blocksuite/affine-shared/consts';
+import { ParagraphBlockComponent } from '@algogrind/affine-block-paragraph';
+import { BLOCK_CHILDREN_CONTAINER_PADDING_LEFT } from '@algogrind/affine-shared/consts';
 import {
   DocModeProvider,
   type DropType,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   findClosestBlockComponent,
   getBlockProps,
@@ -19,8 +19,8 @@ import {
   getClosestBlockComponentByPoint,
   getRectByBlockComponent,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { Point, Rect } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { Point, Rect } from '@algogrind/global/utils';
 
 import {
   getDropRectByPoint,

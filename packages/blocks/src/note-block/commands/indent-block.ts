@@ -1,10 +1,10 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import type { Command } from '@blocksuite/block-std';
+import type { ListBlockModel } from '@algogrind/affine-model';
+import type { Command } from '@algogrind/block-std';
 
 import {
   calculateCollapsedSiblings,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 /**
  * @example

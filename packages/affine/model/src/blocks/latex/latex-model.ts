@@ -2,8 +2,8 @@ import {
   type GfxCommonBlockProps,
   GfxCompatible,
   type GfxElementGeometry,
-} from '@blocksuite/block-std/gfx';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 export type LatexProps = {
   latex: string;

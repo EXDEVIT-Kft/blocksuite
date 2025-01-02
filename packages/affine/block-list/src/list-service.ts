@@ -1,9 +1,9 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { ListBlockSchema } from '@blocksuite/affine-model';
-import { DragHandleConfigExtension } from '@blocksuite/affine-shared/services';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { BlockService } from '@blocksuite/block-std';
+import { ListBlockSchema } from '@algogrind/affine-model';
+import { DragHandleConfigExtension } from '@algogrind/affine-shared/services';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { BlockService } from '@algogrind/block-std';
 
 import { correctNumberedListsOrderToPrev } from './commands/utils.js';
 

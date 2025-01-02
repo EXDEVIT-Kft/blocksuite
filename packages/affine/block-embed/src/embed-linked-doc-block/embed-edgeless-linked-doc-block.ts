@@ -1,9 +1,9 @@
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { cloneReferenceInfoWithoutAliases } from '@blocksuite/affine-shared/utils';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/consts';
+import { cloneReferenceInfoWithoutAliases } from '@algogrind/affine-shared/utils';
+import { Bound } from '@algogrind/global/utils';
 
 import { toEdgelessEmbedBlock } from '../common/to-edgeless-embed-block.js';
 import { EmbedLinkedDocBlockComponent } from './embed-linked-doc-block.js';

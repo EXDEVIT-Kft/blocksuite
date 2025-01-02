@@ -1,11 +1,11 @@
 import {
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { DatePicker } from '@blocksuite/affine-components/date-picker';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { IS_MOBILE } from '@blocksuite/global/env';
+} from '@algogrind/affine-components/context-menu';
+import { DatePicker } from '@algogrind/affine-components/date-picker';
+import { createLitPortal } from '@algogrind/affine-components/portal';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { flip, offset } from '@floating-ui/dom';
 import { signal } from '@preact/signals-core';
 import { baseTheme } from '@toeverything/theme';

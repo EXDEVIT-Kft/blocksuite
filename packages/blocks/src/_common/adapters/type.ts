@@ -1,6 +1,6 @@
-import type { BaseAdapter, Job } from '@blocksuite/store';
+import type { BaseAdapter, Job } from '@algogrind/store';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 export type AdapterFactory = {
   // TODO(@chen): Make it return the specific adapter type

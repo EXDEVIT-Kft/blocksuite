@@ -1,16 +1,16 @@
-import type { ColorScheme } from '@blocksuite/affine-model';
+import type { ColorScheme } from '@algogrind/affine-model';
 import type {
   GfxToolsFullOption,
   GfxToolsFullOptionValue,
   ToolController,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import type { LitElement } from 'lit';
 
 import {
   type Constructor,
   type DisposableClass,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { effect } from '@preact/signals-core';
 import { cssVar } from '@toeverything/theme';

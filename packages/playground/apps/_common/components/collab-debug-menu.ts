@@ -1,16 +1,16 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { DeltaInsert } from '@blocksuite/inline';
-import type { AffineEditorContainer } from '@blocksuite/presets';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { DeltaInsert } from '@algogrind/inline';
+import type { AffineEditorContainer } from '@algogrind/presets';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   ColorScheme,
   type DocMode,
   DocModeProvider,
   ExportManager,
-} from '@blocksuite/blocks';
-import { EdgelessRootService, printToPdf } from '@blocksuite/blocks';
-import { type SerializedXYWH, SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/blocks';
+import { EdgelessRootService, printToPdf } from '@algogrind/blocks';
+import { type SerializedXYWH, SignalWatcher } from '@algogrind/global/utils';
 import '@shoelace-style/shoelace/dist/components/alert/alert.js';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 import '@shoelace-style/shoelace/dist/components/button-group/button-group.js';
@@ -28,7 +28,7 @@ import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
 import '@shoelace-style/shoelace/dist/components/tooltip/tooltip.js';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace/dist/themes/dark.css';
-import { type DocCollection, Text } from '@blocksuite/store';
+import { type DocCollection, Text } from '@algogrind/store';
 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
 import { css, html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';

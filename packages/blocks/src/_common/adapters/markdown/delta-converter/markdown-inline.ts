@@ -1,4 +1,4 @@
-import type { MarkdownASTToDeltaMatcher } from '@blocksuite/affine-shared/adapters';
+import type { MarkdownASTToDeltaMatcher } from '@algogrind/affine-shared/adapters';
 
 export const markdownTextToDeltaMatcher: MarkdownASTToDeltaMatcher = {
   name: 'text',

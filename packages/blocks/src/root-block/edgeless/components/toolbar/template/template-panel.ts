@@ -1,16 +1,16 @@
 import {
   darkToolbarStyles,
   lightToolbarStyles,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   requestConnectedFrame,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { type Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { type Bound, WithDisposable } from '@algogrind/global/utils';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';

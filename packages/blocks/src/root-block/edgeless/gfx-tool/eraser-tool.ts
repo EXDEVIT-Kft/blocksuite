@@ -1,12 +1,12 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
 import {
   CommonUtils,
   Overlay,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { Bound, type IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-block-surface';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { Bound, type IVec } from '@algogrind/global/utils';
 
 import { deleteElementsV2 } from '../utils/crud.js';
 import { isTopLevelBlock } from '../utils/query.js';
@@ -158,7 +158,7 @@ export class EraserTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     eraser: EraserTool;
   }

@@ -1,6 +1,6 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@algogrind/affine-model';
 
-import { WidgetComponent } from '@blocksuite/block-std';
+import { WidgetComponent } from '@algogrind/block-std';
 import { effect } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { state } from 'lit/decorators.js';

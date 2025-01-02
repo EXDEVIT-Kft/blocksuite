@@ -1,30 +1,30 @@
-import type { EmbedCardStyle, NoteBlockModel } from '@blocksuite/affine-model';
+import type { EmbedCardStyle, NoteBlockModel } from '@algogrind/affine-model';
 
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   DndApiExtensionIdentifier,
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   captureEventTarget,
   getBlockComponentsExcludeSubtrees,
   getClosestBlockComponentByPoint,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   type DndEventState,
   isGfxBlockComponent,
   type UIEventHandler,
   type UIEventStateContext,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { Bound, Point } from '@blocksuite/global/utils';
-import { Job, Slice, type SliceSnapshot } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { Bound, Point } from '@algogrind/global/utils';
+import { Job, Slice, type SliceSnapshot } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../../../edgeless/index.js';
 import type { AffineDragHandleWidget } from '../drag-handle.js';

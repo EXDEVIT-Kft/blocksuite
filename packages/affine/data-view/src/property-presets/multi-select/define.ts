@@ -1,4 +1,4 @@
-import { nanoid } from '@blocksuite/store';
+import { nanoid } from '@algogrind/store';
 
 import type { SelectPropertyData } from '../select/define.js';
 

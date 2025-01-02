@@ -1,6 +1,6 @@
-import type { Viewport } from '@blocksuite/block-std/gfx';
+import type { Viewport } from '@algogrind/block-std/gfx';
 
-import { MindmapElementModel } from '@blocksuite/affine-model';
+import { MindmapElementModel } from '@algogrind/affine-model';
 
 export function isMindmapNode(el: BlockSuite.EdgelessModel) {
   return (

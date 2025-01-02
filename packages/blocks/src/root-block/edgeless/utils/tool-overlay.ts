@@ -1,12 +1,12 @@
-import type { GfxController, GfxToolsMap } from '@blocksuite/block-std/gfx';
-import type { XYWH } from '@blocksuite/global/utils';
+import type { GfxController, GfxToolsMap } from '@algogrind/block-std/gfx';
+import type { XYWH } from '@algogrind/global/utils';
 
 import {
   type Options,
   Overlay,
   type RoughCanvas,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   type Color,
   DEFAULT_NOTE_BACKGROUND_COLOR,
@@ -14,15 +14,15 @@ import {
   DEFAULT_SHAPE_STROKE_COLOR,
   shapeMethods,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import {
   assertType,
   Bound,
   DisposableGroup,
   noop,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 
 import type { ShapeTool } from '../gfx-tool/shape-tool.js';

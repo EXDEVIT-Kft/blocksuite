@@ -1,15 +1,15 @@
-import type { AliasInfo } from '@blocksuite/affine-model';
+import type { AliasInfo } from '@algogrind/affine-model';
 
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   ThemeExtensionIdentifier,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { BlockStdScope } from '@blocksuite/block-std';
-import { assertExists, Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { BlockStdScope } from '@algogrind/block-std';
+import { assertExists, Bound } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { choose } from 'lit/directives/choose.js';
 import { classMap } from 'lit/directives/class-map.js';

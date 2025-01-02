@@ -1,8 +1,8 @@
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { assertExists, Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { assertExists, Bound } from '@algogrind/global/utils';
 import {
   type ReactiveController,
   type ReactiveControllerHost,

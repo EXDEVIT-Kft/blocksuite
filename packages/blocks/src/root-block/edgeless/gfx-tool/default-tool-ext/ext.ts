@@ -1,5 +1,5 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { GfxModel } from '@blocksuite/block-std/gfx';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { GfxModel } from '@algogrind/block-std/gfx';
 
 import type { DefaultTool } from '../default-tool.js';
 

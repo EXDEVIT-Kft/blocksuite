@@ -1,10 +1,10 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { SerializedXYWH } from '@blocksuite/global/utils';
-import type { DeltaInsert } from '@blocksuite/inline/types';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { SerializedXYWH } from '@algogrind/global/utils';
+import type { DeltaInsert } from '@algogrind/inline/types';
 import type { SlDropdown } from '@shoelace-style/shoelace';
 import type { Pane } from 'tweakpane';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   ColorScheme,
   ColorVariables,
@@ -31,8 +31,8 @@ import {
   titleMiddleware,
   toast,
   ZipTransformer,
-} from '@blocksuite/blocks';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/blocks';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 import '@shoelace-style/shoelace/dist/components/button-group/button-group.js';
 import '@shoelace-style/shoelace/dist/components/color-picker/color-picker.js';
@@ -48,8 +48,8 @@ import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
 import '@shoelace-style/shoelace/dist/components/tooltip/tooltip.js';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace/dist/themes/dark.css';
-import { AffineEditorContainer, type CommentPanel } from '@blocksuite/presets';
-import { type DocCollection, Job, Text } from '@blocksuite/store';
+import { AffineEditorContainer, type CommentPanel } from '@algogrind/presets';
+import { type DocCollection, Job, Text } from '@algogrind/store';
 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
 import { css, html } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';

@@ -1,13 +1,13 @@
 import {
   ParagraphBlockModel,
   ParagraphBlockSchema,
-} from '@blocksuite/affine-model';
-import { DragHandleConfigExtension } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { DragHandleConfigExtension } from '@algogrind/affine-shared/services';
 import {
   calculateCollapsedSiblings,
   captureEventTarget,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export const ParagraphDragHandleOption = DragHandleConfigExtension({
   flavour: ParagraphBlockSchema.model.flavour,

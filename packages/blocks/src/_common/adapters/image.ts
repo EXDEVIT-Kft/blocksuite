@@ -1,7 +1,7 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { sha } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { sha } from '@algogrind/global/utils';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -18,7 +18,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { AdapterFactoryIdentifier } from './type.js';
 
