@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/sync",
-  "version": "0.19.5",
+  "version": "0.19.6",
   "description": "BlockSuite data synchronization engine abstraction and implementation.",
   "type": "module",
   "repository": {

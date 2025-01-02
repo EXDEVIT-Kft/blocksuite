@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-widget-scroll-anchoring",
-  "version": "0.19.5",
+  "version": "0.19.6",
   "description": "Affine scroll anchoring widget.",
   "type": "module",
   "repository": {
