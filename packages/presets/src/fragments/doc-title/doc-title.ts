@@ -13,11 +13,9 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     .doc-title-container {
       box-sizing: border-box;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
-      font-size: 40px;
+      font-family: var(--algogrind-text-doc-title-family);
+      color: var(--algogrind-text-doc-title-color);
+      font-size: var(--algogrind-text-doc-title-size);
       line-height: 50px;
       font-weight: 700;
       outline: none;
@@ -50,7 +48,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
 
     .doc-title-container-empty::before {
       content: 'Cím';
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
       position: absolute;
       opacity: 0.5;
       pointer-events: none;

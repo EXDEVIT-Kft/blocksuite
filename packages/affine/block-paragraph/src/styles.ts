@@ -4,7 +4,7 @@ export const paragraphBlockStyles = css`
   affine-paragraph {
     box-sizing: border-box;
     display: block;
-    font-size: var(--affine-font-base);
+    font-size: var(--algogrind-text-paragraph-size);
   }
 
   .affine-paragraph-block-container {
@@ -21,12 +21,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h1 {
-    font-size: var(--affine-font-h-1);
+    font-size: var(--algogrind-text-heading-1-size);
+    font-family: var(--algogrind-text-heading-1-family);
+    color: var(----algogrind-text-heading-1-color);
     font-weight: 700;
-    letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
-    margin-top: 18px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   .h1 code {
@@ -35,12 +36,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h2 {
-    font-size: var(--affine-font-h-2);
+    font-size: var(--algogrind-text-heading-2-size);
+    font-family: var(--algogrind-text-heading-2-family);
+    color: var(----algogrind-text-heading-2-color);
     font-weight: 600;
-    letter-spacing: -0.02em;
     line-height: calc(1em + 10px);
-    margin-top: 14px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   .h2 code {
@@ -49,12 +51,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h3 {
-    font-size: var(--affine-font-h-3);
+    font-size: var(--algogrind-text-heading-3-size);
+    font-family: var(--algogrind-text-heading-3-family);
+    color: var(----algogrind-text-heading-3-color);
     font-weight: 600;
-    letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   .h3 code {
@@ -63,12 +66,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h4 {
-    font-size: var(--affine-font-h-4);
+    font-size: var(--algogrind-text-heading-4-size);
+    font-family: var(--algogrind-text-heading-4-family);
+    color: var(----algogrind-text-heading-4-color);
     font-weight: 600;
-    letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
   .h4 code {
     font-size: calc(var(--affine-font-base) + 4px);
@@ -76,12 +80,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h5 {
-    font-size: var(--affine-font-h-5);
+    font-size: var(--algogrind-text-heading-5-size);
+    font-family: var(--algogrind-text-heading-5-family);
+    color: var(----algogrind-text-heading-5-color);
     font-weight: 600;
-    letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
   .h5 code {
     font-size: calc(var(--affine-font-base) + 2px);
@@ -89,12 +94,13 @@ export const paragraphBlockStyles = css`
   }
 
   .h6 {
-    font-size: var(--affine-font-h-6);
+    font-size: var(--algogrind-text-heading-6-size);
+    font-family: var(--algogrind-text-heading-6-family);
+    color: var(----algogrind-text-heading-6-color);
     font-weight: 600;
-    letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   .h6 code {
@@ -129,8 +135,8 @@ export const paragraphBlockStyles = css`
     left: 0;
     bottom: 0;
     pointer-events: none;
-    color: var(--affine-black-30);
-    fill: var(--affine-black-30);
+    color: var(--algogrind-text-placeholder-color);
+    fill: var(--algogrind-text-placeholder-color);
   }
   @media print {
     .affine-paragraph-placeholder {
@@ -155,8 +161,8 @@ export const paragraphBlockStyles = css`
     bottom: 0;
     background-image: repeating-linear-gradient(
       to right,
-      var(--affine-divider-color) 0,
-      var(--affine-divider-color) 5px,
+      var(--algogrind-divider-color) 0,
+      var(--algogrind-divider-color) 5px,
       transparent 5px,
       transparent 10px
     );
