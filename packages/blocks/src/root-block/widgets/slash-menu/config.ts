@@ -1005,7 +1005,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor feljebb mozgatása.',
       icon: ArrowUpBigIcon,
       tooltip: slashMenuToolTips['Felfele Mozgatás'],
-      alias: ['move up', 'operation'],
+      alias: ['művelet', 'fel', 'move up', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const previousSiblingModel = doc.getPrev(model);
@@ -1022,7 +1022,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor lejjebb mozgatása.',
       icon: ArrowDownBigIcon,
       tooltip: slashMenuToolTips['Lefele Mozgatás'],
-      alias: ['move down', 'operation'],
+      alias: ['művelet', 'le', 'move down', 'operation'],
       action: ({ rootComponent, model }) => {
         const doc = rootComponent.doc;
         const nextSiblingModel = doc.getNext(model);
@@ -1039,7 +1039,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor vágólapra másolása.',
       icon: CopyIcon,
       tooltip: slashMenuToolTips['Másolás'],
-      alias: ['copy', 'operation'],
+      alias: ['művelet', 'copy', 'operation'],
       action: ({ rootComponent, model }) => {
         const slice = Slice.fromModels(rootComponent.std.doc, [model]);
 
@@ -1058,7 +1058,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor duplikálása.',
       icon: DuplicateIcon({ width: '20', height: '20' }),
       tooltip: slashMenuToolTips['Duplikálás'],
-      alias: ['duplicate', 'operation'],
+      alias: ['művelet', 'duplicate', 'operation'],
       action: ({ rootComponent, model }) => {
         if (!model.text || !(model.text instanceof Text)) {
           console.error("Can't duplicate a block without text");
@@ -1097,7 +1097,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       description: 'Jelenlegi sor törlése.',
       icon: DeleteIcon,
       tooltip: slashMenuToolTips['Törlés'],
-      alias: ['remove', 'operation'],
+      alias: ['művelet', 'remove', 'operation'],
       action: ({ rootComponent, model }) => {
         rootComponent.doc.deleteBlock(model);
       },
