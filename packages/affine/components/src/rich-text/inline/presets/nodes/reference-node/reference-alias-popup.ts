@@ -47,7 +47,7 @@ export class ReferenceAliasPopup extends SignalWatcher(
       ${PANEL_BASE};
       position: absolute;
       display: flex;
-      width: 321px;
+      width: min(50ch, calc(100% - 2rem));
       height: 37px;
       gap: 8px;
       box-sizing: content-box;

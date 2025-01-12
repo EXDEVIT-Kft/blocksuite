@@ -49,7 +49,7 @@ import {
 } from '@blocksuite/editor-icons';
 //import { viewPresets } from '@blocksuite/data-view/view-presets';
 //import { assertType } from '@blocksuite/global/utils';
-import { DualLinkIcon, GroupingIcon } from '@blocksuite/icons/lit';
+import { DuplicateIcon, GroupingIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
 
 //import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
@@ -1056,7 +1056,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Duplikálás',
       description: 'Jelenlegi sor duplikálása.',
-      icon: DualLinkIcon({ width: '20', height: '20' }),
+      icon: DuplicateIcon({ width: '20', height: '20' }),
       tooltip: slashMenuToolTips['Duplikálás'],
       alias: ['duplicate', 'operation'],
       action: ({ rootComponent, model }) => {

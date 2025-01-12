@@ -14,6 +14,7 @@ export const embedCardModalStyles = css`
 
   .embed-card-modal-wrapper {
     ${PANEL_BASE};
+    width: min(50ch, calc(100% - 2rem));
     flex-direction: column;
     position: absolute;
     left: 0;
@@ -23,7 +24,7 @@ export const embedCardModalStyles = css`
     margin: auto;
     z-index: 2;
     height: max-content;
-    padding: 12px;
+    padding: 16px;
     gap: 12px;
     border-radius: 8px;
     font-size: var(--algogrind-text-paragraph-size);
@@ -55,6 +56,11 @@ export const embedCardModalStyles = css`
     font-family: var(--algogrind-text-small-family);
     font-weight: 500;
   }
+
+  .embed-card-modal-input:not(:placeholder-shown) {
+    color: var(--algogrind-text-small-color);
+  }
+
   input.embed-card-modal-input {
     padding-top: 4px;
     padding-bottom: 4px;
