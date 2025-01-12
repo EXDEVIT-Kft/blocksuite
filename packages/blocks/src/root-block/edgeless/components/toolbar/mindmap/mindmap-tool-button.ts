@@ -66,6 +66,8 @@ export class EdgelessMindmapToolButton extends EdgelessToolbarToolMixin(
     }
 
     .basket {
+      /* [ALGOGRIND] Disable basket, becuase it looks weird. */
+      display: none;
       bottom: 0;
       height: 17px;
       width: 76px;
@@ -303,7 +305,7 @@ export class EdgelessMindmapToolButton extends EdgelessToolbarToolMixin(
     return html`<edgeless-toolbar-button
       class="edgeless-mindmap-button"
       ?withHover=${true}
-      .tooltip=${popper ? '' : 'Egyebek'}
+      .tooltip=${popper ? '' : 'Szöveg & Gondolattérkép'}
       .tooltipOffset=${4}
       @click=${this._toggleMenu}
       style="width: 100%; height: 100%; display: inline-block"

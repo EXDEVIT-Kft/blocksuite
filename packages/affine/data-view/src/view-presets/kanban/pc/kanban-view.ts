@@ -68,11 +68,11 @@ const styles = css`
 
   .affine-data-view-kanban-groups:hover::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background-color: var(--affine-black-30);
+    background-color: var(--algogrind-scroll-thumb-hover-color);
   }
 
   .affine-data-view-kanban-groups:hover::-webkit-scrollbar-track {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .add-group-icon {
@@ -84,14 +84,14 @@ const styles = css`
   }
 
   .add-group-icon:hover {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .add-group-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 `;
 

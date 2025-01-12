@@ -29,16 +29,16 @@ const styles = css`
   :host {
     display: block;
     width: 100%;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-heading-6-family);
   }
 
   :host(:hover) {
     cursor: pointer;
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   :host(.active) {
-    color: var(--affine-text-emphasis-color);
+    color: var(--algogrind-link-color);
   }
 
   .outline-block-preview {
@@ -62,7 +62,7 @@ const styles = css`
     padding: 4px;
     background: var(--affine-background-secondary-color);
     border-radius: 4px;
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .icon.disabled {
@@ -75,7 +75,7 @@ const styles = css`
     text-overflow: ellipsis;
     flex: 1;
 
-    font-size: var(--affine-font-sm);
+    font-size: var(--algogrind-text-small-size);
     line-height: 22px;
     height: 22px;
   }
@@ -139,17 +139,17 @@ const styles = css`
 
   .linked-doc-text {
     font-size: inherit;
-    border-bottom: 0.5px solid var(--affine-divider-color);
+    box-shadow: var(--algogrind-ring);
     white-space: break-spaces;
     margin-right: 2px;
   }
 
   .linked-doc-preview.unavailable svg {
-    color: var(--affine-text-disable-color);
+    color: var(--algogrind-text-disabled-color);
   }
 
   .linked-doc-preview.unavailable .linked-doc-text {
-    color: var(--affine-text-disable-color);
+    color: var(--algogrind-text-disabled-color);
     text-decoration: line-through;
   }
 `;

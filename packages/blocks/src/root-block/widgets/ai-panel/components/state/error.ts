@@ -1,8 +1,7 @@
 import type { EditorHost } from '@blocksuite/block-std';
 
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';
 
@@ -22,7 +21,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
       flex-direction: column;
       gap: 8px;
       padding: 0;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
     }
 
     .error {
@@ -82,9 +81,9 @@ export class AIPanelError extends WithDisposable(LitElement) {
         align-items: center;
         gap: 4px;
         border-radius: 8px;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--algogrind-border-color);
         background: var(--affine-white);
-        color: var(--affine-text-primary-color);
+        color: var(--algogrind-text-paragraph-color);
         /* light/xsMedium */
         font-size: var(--affine-font-xs);
         font-style: normal;
@@ -96,7 +95,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
       }
       .action-button.primary {
         border: 1px solid var(--affine-black-10);
-        background: var(--affine-primary-color);
+        background: var(--algogrind-primary-color);
         color: var(--affine-pure-white);
       }
       .action-button > span {
@@ -106,7 +105,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
         padding: 0 4px;
       }
       .action-button:not(.primary):hover {
-        background: var(--affine-hover-color);
+        background: var(--algogrind-hover-color);
       }
     }
 
@@ -125,7 +124,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
     .response-list-container ai-item-list {
       --item-padding: 4px;
       --item-icon-color: var(--affine-icon-secondary);
-      --item-icon-hover-color: var(--affine-icon-color);
+      --item-icon-hover-color: var(--algogrind-text-paragraph-color);
     }
   `;
 

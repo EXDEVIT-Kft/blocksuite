@@ -15,9 +15,9 @@ export class NewRecordPreview extends ShadowlessElement {
           left: 0;
           height: 32px;
           width: 32px;
-          border: 1px solid var(--affine-border-color);
+          border: 1px solid var(--algogrind-border-color);
           border-radius: 50%;
-          background: var(--affine-blue-100);
+          background: var(--algogrind-primary-color-100);
           box-shadow:
             0px 0px 10px rgba(0, 0, 0, 0.05),
             0px 0px 0px 0.5px var(--affine-black-10);
@@ -34,7 +34,7 @@ export class NewRecordPreview extends ShadowlessElement {
         }
 
         affine-database-new-record-preview path {
-          fill: var(--affine-brand-color);
+          fill: var(--algogrind-primary-color);
         }
       </style>
       ${PlusIcon()}

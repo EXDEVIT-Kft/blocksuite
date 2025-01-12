@@ -24,8 +24,13 @@ const paragraphButtonStyle = css`
 
   .highligh-panel-heading {
     display: flex;
-    color: var(--affine-text-secondary-color);
-    padding: 4px;
+    padding: 8px 8px 0;
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
+    font-weight: 600;
+    line-height: var(--algogrind-line-height);
+    text-align: left;
+    color: var(--algogrind-text-caption-color);
   }
 
   editor-menu-content {

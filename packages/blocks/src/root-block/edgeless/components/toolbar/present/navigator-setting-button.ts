@@ -15,9 +15,9 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       border-radius: 8px;
       font-size: 12px;
       font-weight: 500;
-      background-color: var(--affine-background-overlay-panel-color);
+      background-color: var(--algogrind-overlay-panel-background-color);
       box-shadow: var(--affine-menu-shadow);
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .navigator-setting-menu[data-show] {
@@ -43,7 +43,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       padding: 0px 4px;
       line-height: 22px;
       font-size: var(--affine-font-sm);
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .text.title {
@@ -63,7 +63,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       content: '';
       width: 100%;
       height: 1px;
-      background: var(--affine-border-color);
+      background: var(--algogrind-border-color);
     }
   `;
 
@@ -126,11 +126,11 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         }}
       >
         <div class="item-container header">
-          <div class="text title">Playback Settings</div>
+          <div class="text title">Vetítés beállíátsai</div>
         </div>
 
         <div class="item-container">
-          <div class="text">Black background</div>
+          <div class="text">Fekete háttér</div>
 
           <toggle-switch
             .on=${this.blackBackground}
@@ -140,7 +140,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         </div>
 
         <div class="item-container">
-          <div class="text">Hide toolbar</div>
+          <div class="text">Menüsáv elrejtése</div>
 
           <toggle-switch
             .on=${this.hideToolbar}
@@ -154,7 +154,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         ${this.includeFrameOrder
           ? html` <div class="divider"></div>
               <div class="item-container header">
-                <div class="text title">Frame Order</div>
+                <div class="text title">Keretek sorrendje</div>
               </div>
 
               <edgeless-frame-order-menu

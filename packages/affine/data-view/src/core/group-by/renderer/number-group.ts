@@ -17,7 +17,7 @@ export class NumberGroupView extends BaseGroup<NonNullable<unknown>, number> {
     }
 
     .data-view-group-title-number-view:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -45,7 +45,7 @@ export class NumberGroupView extends BaseGroup<NonNullable<unknown>, number> {
 
   protected override render(): unknown {
     if (this.value == null) {
-      return html` <div>Ungroups</div>`;
+      return html` <div>Csoportbontás</div>`;
     }
     if (this.value >= 10) {
       return html` <div

@@ -42,7 +42,7 @@ export const blockStyles = css`
     height: calc(${EMBED_CARD_HEIGHT.syncedDoc}px + 36px);
   }
   .edgeless-block-portal-embed .affine-embed-synced-doc-container.surface {
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
   }
 
   affine-embed-synced-doc-block[data-nested-editor],
@@ -99,7 +99,7 @@ export const blockStyles = css`
     width: 100%;
     height: 100%;
     padding: 0 var(--embed-padding);
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
   .affine-embed-synced-doc-header svg {
     flex-shrink: 0;
@@ -128,7 +128,7 @@ export const blockStyles = css`
     cursor: pointer;
   }
   .affine-embed-synced-doc-editor-overlay:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .affine-embed-synced-doc-editor-empty {
@@ -147,11 +147,11 @@ export const blockStyles = css`
   }
 
   .affine-embed-synced-doc-editor-empty > span {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
     font-feature-settings:
       'clig' off,
       'liga' off;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -159,7 +159,7 @@ export const blockStyles = css`
   }
 
   .affine-embed-synced-doc-container.surface {
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
   }
 
   .affine-embed-synced-doc-container
@@ -200,7 +200,7 @@ export const cardStyles = css`
     border-radius: 8px;
     border: 1px solid var(--affine-background-tertiary-color);
     opacity: var(--add, 1);
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -237,7 +237,7 @@ export const cardStyles = css`
   .affine-embed-synced-doc-card-content-title-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-synced-doc-card-content-title-text {
@@ -247,8 +247,8 @@ export const cardStyles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-paragraph-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -271,8 +271,8 @@ export const cardStyles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-placeholder-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-placeholder-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -300,7 +300,7 @@ export const cardStyles = css`
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--affine-text-secondary-color);
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -317,7 +317,7 @@ export const cardStyles = css`
   .affine-embed-synced-doc-card-content-reload-button svg {
     width: 12px;
     height: 12px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
   .affine-embed-synced-doc-card-content-reload-button > span {
     display: -webkit-box;
@@ -327,8 +327,8 @@ export const cardStyles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-brand-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-primary-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 500;

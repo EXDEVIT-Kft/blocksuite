@@ -71,14 +71,14 @@ export class MiniMindmapPreview extends WithDisposable(LitElement) {
 
     .template-item {
       box-sizing: border-box;
-      border: 2px solid var(--affine-border-color);
+      border: 2px solid var(--algogrind-border-color);
       border-radius: 4px;
       padding: 4px 6px;
     }
 
     .template-item.active,
     .template-item:hover {
-      border-color: var(--affine-brand-color);
+      border-color: var(--algogrind-primary-color);
     }
 
     .template-item > svg {
@@ -180,7 +180,7 @@ export class MiniMindmapPreview extends WithDisposable(LitElement) {
       <div
         style=${styleMap({
           height: this.height + 'px',
-          border: '1px solid var(--affine-border-color)',
+          border: '1px solid var(--algogrind-border-color)',
           borderRadius: '4px',
         })}
       >

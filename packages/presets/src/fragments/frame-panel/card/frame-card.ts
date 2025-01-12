@@ -52,15 +52,15 @@ const styles = css`
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-background-primary-color);
-    box-shadow: 0px 0px 12px 0px rgba(66, 65, 73, 0.18);
+    border: 1px solid var(--algogrind-border-color);
+    background: var(--algogrind-background-color);
+    box-shadow: var(--algogrind-shadow-small);
     cursor: pointer;
     position: relative;
   }
 
   .frame-card-container.selected .frame-card-body {
-    border: 2px solid var(--light-brand-color, #1e96eb);
+    border: 2px solid var(--algogrind-primary-color);
   }
 
   .frame-card-container.dragging {

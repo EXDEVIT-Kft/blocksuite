@@ -14,7 +14,7 @@ export class NoteBlockComponent extends BlockComponent<
       display: flow-root;
     }
     .affine-note-block-container.selected {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 

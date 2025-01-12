@@ -3,7 +3,7 @@ import { WithDisposable } from '@blocksuite/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
-import { SettingsIcon, SortingIcon } from '../../_common/icons.js';
+import { SortingIcon } from '../../_common/icons.js';
 
 const styles = css`
   :host {
@@ -35,10 +35,11 @@ const styles = css`
   .outline-panel-header-label {
     width: 119px;
     height: 22px;
-    font-size: 14px;
     font-weight: 500;
     line-height: 22px;
-    color: var(--affine-text-secondary-color, #8e8d91);
+    color: var(--algogrind-text-heading-6-color);
+    font-family: var(--algogrind-text-heading-6-family);
+    font-size: var(--algogrind-text-heading-6-size);
   }
 
   .note-sorting-button {
@@ -47,25 +48,25 @@ const styles = css`
 
   .note-setting-button svg,
   .note-sorting-button svg {
-    color: var(--affine-icon-secondary);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .note-setting-button:hover svg,
   .note-setting-button.active svg,
   .note-sorting-button:hover svg {
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .note-sorting-button.active svg {
-    color: var(--affine-primary-color);
+    color: var(--algogrind-primary-color);
   }
 
   .note-preview-setting-container {
     display: none;
     justify-content: center;
     align-items: center;
-    background: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-shadow-2);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-shadow-small);
     border-radius: 8px;
   }
 
@@ -104,18 +105,20 @@ export class OutlinePanelHeader extends WithDisposable(LitElement) {
     return html`<div class="outline-panel-header-container">
         <div class="note-setting-container">
           <span class="outline-panel-header-label">Tartalomjegyzék</span>
+          <!--
           <edgeless-tool-icon-button
-            class="note-setting-button ${this._settingPopperShow
-              ? 'active'
-              : ''}"
-            .tooltip=${this._settingPopperShow ? '' : 'Beállítások'}
-            .tipPosition=${'bottom'}
-            .active=${this._settingPopperShow}
-            .activeMode=${'background'}
-            @click=${() => this._notePreviewSettingMenuPopper?.toggle()}
+            class="note-setting-button {this._settingPopperShow
+            ? 'active'
+            : ''}"
+            .tooltip={this._settingPopperShow ? '' : 'Beállítások'}
+            .tipPosition={'bottom'}
+            .active={this._settingPopperShow}
+            .activeMode={'background'}
+            @click={() => this._notePreviewSettingMenuPopper?.toggle()}
           >
-            ${SettingsIcon}
+            {SettingsIcon}
           </edgeless-tool-icon-button>
+          -->
         </div>
         <edgeless-tool-icon-button
           class="note-sorting-button ${this.enableNotesSorting ? 'active' : ''}"

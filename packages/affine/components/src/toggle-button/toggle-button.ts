@@ -13,9 +13,9 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
     .toggle-icon {
       display: flex;
       align-items: start;
-      margin-top: 0.45em;
+      margin-top: 0.35em;
       position: absolute;
-      left: 0;
+      left: -4px;
       transform: translateX(-100%);
       border-radius: 4px;
       cursor: pointer;
@@ -23,7 +23,7 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
       transition: opacity 0.2s ease-in-out;
     }
     .toggle-icon:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .toggle-icon[data-collapsed='true'] {

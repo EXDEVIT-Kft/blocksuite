@@ -86,7 +86,7 @@ export class SelectGroupView extends BaseGroup<
     const tag = this.tag;
     if (!tag) {
       return html` <div
-        style="font-size: 14px;color: var(--affine-text-primary-color);line-height: 22px;"
+        style="font-size: 14px;color: var(--algogrind-text-paragraph-color);line-height: 22px;"
       >
         Ungroups
       </div>`;

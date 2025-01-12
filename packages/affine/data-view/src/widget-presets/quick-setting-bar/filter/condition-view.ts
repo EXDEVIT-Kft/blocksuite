@@ -51,7 +51,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-condition-delete:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-condition-delete svg {
@@ -69,7 +69,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-condition-function-name:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-condition-arg {

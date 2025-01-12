@@ -36,7 +36,7 @@ export const multiEditor: InitFn = (collection: DocCollection, id: string) => {
         target.load();
         editor.doc = target;
       });
-    editor.style.borderRight = '1px solid var(--affine-border-color)';
+    editor.style.borderRight = '1px solid var(--algogrind-border-color)';
 
     app.append(editor);
     app.style.display = 'flex';
@@ -82,7 +82,7 @@ export const multiEditorVertical: InitFn = (
         target.load();
         editor.doc = target;
       });
-    editor.style.borderBottom = '1px solid var(--affine-border-color)';
+    editor.style.borderBottom = '1px solid var(--algogrind-border-color)';
 
     app.append(editor);
     app.style.display = 'flex';

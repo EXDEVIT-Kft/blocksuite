@@ -41,7 +41,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       font-size: 14px;
       font-weight: 600;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-root-op {
@@ -59,7 +59,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-op-clickable:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-root-container {
@@ -91,13 +91,13 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-button:hover {
-      background-color: var(--affine-hover-color);
-      color: var(--affine-text-primary-color);
+      background-color: var(--algogrind-hover-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-root-button:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-root-item {
@@ -114,7 +114,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       display: flex;
       align-items: center;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       gap: 6px;
     }
 
@@ -128,7 +128,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-item-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-root-item-ops svg {
@@ -139,15 +139,15 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-item-ops:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-root-grabber {
       cursor: grab;
       width: 4px;
       height: 12px;
-      background-color: var(--affine-placeholder-color);
+      background-color: var(--algogrind-text-placeholder-color);
       border-radius: 1px;
     }
 

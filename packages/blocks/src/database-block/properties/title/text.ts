@@ -80,8 +80,8 @@ const styles = css`
   .data-view-header-area-icon svg {
     width: 14px;
     height: 14px;
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 `;
 

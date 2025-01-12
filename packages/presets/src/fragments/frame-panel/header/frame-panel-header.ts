@@ -11,7 +11,7 @@ import { DisposableGroup, WithDisposable } from '@blocksuite/global/utils';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
-import { SettingsIcon, SmallFrameNavigatorIcon } from '../../_common/icons.js';
+import { SmallFrameNavigatorIcon } from '../../_common/icons.js';
 
 const styles = css`
   :host {
@@ -22,9 +22,8 @@ const styles = css`
 
   .frame-panel-header {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 36px;
-    align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     padding: 0 8px;
@@ -45,24 +44,25 @@ const styles = css`
 
   .all-frames-setting-button:hover svg,
   .all-frames-setting-button.active svg {
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .all-frames-setting-label {
     width: 68px;
     height: 22px;
-    font-size: var(--affine-font-sm);
     font-weight: 500;
     line-height: 22px;
-    color: var(--light-text-color-text-secondary-color, #8e8d91);
+    color: var(--algogrind-text-heading-6-color);
+    font-family: var(--algogrind-text-heading-6-family);
+    font-size: var(--algogrind-text-heading-6-size);
   }
 
   .frames-setting-container {
     display: none;
     justify-content: center;
     align-items: center;
-    background: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-shadow-2);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-shadow-medium);
     border-radius: 8px;
   }
 
@@ -75,27 +75,29 @@ const styles = css`
     align-items: center;
     gap: 4px;
     box-sizing: border-box;
-    width: 117px;
-    height: 28px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    margin: 4px 0;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-white);
+    justify-content: center;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid var(--algogrind-border-color);
+    background: var(--algogrind-overlay-panel-background-color);
+    transition: 0.1s ease-in background-color;
+    font-family: var(--algogrind-text-small-family);
+    font-size: var(--algogrind-text-small-size);
+    color: var(--algogrind-text-small-color);
   }
 
   .presentation-button:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
     cursor: pointer;
   }
 
   .presentation-button svg {
-    fill: var(--affine-icon-color);
     margin-right: 4px;
   }
 
   .presentation-button-label {
-    font-size: 12px;
+    font-size: var(--algogrind-text-small-size);
     font-weight: 500;
     line-height: 20px;
   }
@@ -191,18 +193,20 @@ export class FramePanelHeader extends WithDisposable(LitElement) {
     return html`<div class="frame-panel-header">
       <div class="all-frames-setting">
         <span class="all-frames-setting-label">Keretek</span>
+        <!--
         <edgeless-tool-icon-button
-          class="all-frames-setting-button ${this._settingPopperShow
+          class="all-frames-setting-button {this._settingPopperShow
             ? 'active'
             : ''}"
-          .tooltip=${this._settingPopperShow ? '' : 'Prezentáció beállításai'}
-          .tipPosition=${'top'}
-          .active=${this._settingPopperShow}
-          .activeMode=${'background'}
-          @click=${() => this._framesSettingMenuPopper?.toggle()}
+          .tooltip={this._settingPopperShow ? '' : 'Prezentáció beállításai'}
+          .tipPosition={'top'}
+          .active={this._settingPopperShow}
+          .activeMode={'background'}
+          @click={() => this._framesSettingMenuPopper?.toggle()}
         >
-          ${SettingsIcon}
+          {SettingsIcon}
         </edgeless-tool-icon-button>
+        -->
       </div>
       <div class="frames-setting-container">
         <affine-frames-setting-menu

@@ -21,7 +21,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
       max-height: 281px;
       border-radius: 8px;
       padding: 8px;
-      background: var(--affine-background-overlay-panel-color);
+      background: var(--algogrind-overlay-panel-background-color);
       box-shadow: var(--affine-menu-shadow);
       overflow: auto;
       display: flex;
@@ -47,7 +47,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
     }
 
     .draggable:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .item:hover .drag-indicator {
@@ -60,7 +60,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
       height: 12px;
       border-radius: 1px;
       opacity: 0.2;
-      background: var(--affine-placeholder-color);
+      background: var(--algogrind-text-placeholder-color);
       margin-right: 2px;
     }
 
@@ -69,7 +69,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
       font-weight: 400;
       height: 22px;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -81,7 +81,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
       z-index: 1;
       left: 8px;
       height: 30px;
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
       box-shadow: var(--affine-menu-shadow);
       background-color: var(--affine-white);
       pointer-events: none;
@@ -92,7 +92,7 @@ export class EdgelessFrameOrderMenu extends SignalWatcher(
       position: absolute;
       z-index: 1;
       left: 8px;
-      background-color: var(--affine-primary-color);
+      background-color: var(--algogrind-primary-color);
       height: 1px;
       width: 90%;
     }

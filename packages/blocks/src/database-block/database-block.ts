@@ -68,13 +68,13 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
     affine-database {
       display: block;
       border-radius: 8px;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       padding: 8px;
       margin: 8px -8px -8px;
     }
 
     .database-block-selected {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
       border-radius: 4px;
     }
 
@@ -90,11 +90,11 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
     .database-ops svg {
       width: 16px;
       height: 16px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .database-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     @media print {
@@ -403,7 +403,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
     return html`
       <div
         contenteditable="false"
-        style="position: relative;background-color: var(--affine-background-primary-color);border-radius: 4px"
+        style="position: relative;background-color: var(--algogrind-background-color);border-radius: 4px"
       >
         ${this.dataView.render({
           virtualPadding$: this.virtualPadding$,

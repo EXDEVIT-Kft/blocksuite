@@ -16,7 +16,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       font-family: var(--algogrind-text-doc-title-family);
       color: var(--algogrind-text-doc-title-color);
       font-size: var(--algogrind-text-doc-title-size);
-      line-height: 50px;
+      line-height: 1.25;
       font-weight: 700;
       outline: none;
       resize: none;

@@ -264,7 +264,7 @@ export class EdgelessRootService extends RootService implements SurfaceContext {
         },
         {} as Record<string, true>
       ),
-      title: `Group ${groups.length + 1}`,
+      title: `Csoport ${groups.length + 1}`,
     });
 
     return groupId;

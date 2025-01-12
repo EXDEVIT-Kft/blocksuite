@@ -6,18 +6,45 @@ export const codeBlockStyles = css`
   }
 
   .affine-code-block-container {
-    font-size: var(--affine-font-xs);
-    line-height: var(--affine-line-height);
+    font-size: var(--algogrind-text-code-block-size);
+    line-height: var(--algogrind-line-height);
     position: relative;
     padding: 12px;
-    background: var(--affine-background-code-block);
+    background: var(--algogrind-code-background-color);
     border-radius: 10px;
     box-sizing: border-box;
   }
 
   .affine-code-block-container .inline-editor {
-    font-family: var(--affine-font-code-family);
+    font-family: var(--algogrind-text-code-block-family);
     font-variant-ligatures: none;
+  }
+
+  .affine-code-block-container > rich-text {
+    scrollbar-gutter: stable;
+  }
+
+  .affine-code-block-container > rich-text::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: block;
+  }
+
+  .affine-code-block-container > rich-text::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .affine-code-block-container > rich-text::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: transparent;
+  }
+
+  .affine-code-block-container > rich-text:hover::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: var(--algogrind-scroll-thumb-hover-color);
+  }
+
+  .affine-code-block-container > rich-text:hover::-webkit-scrollbar-track {
+    background-color: var(--algogrind-hover-color);
   }
 
   .affine-code-block-container v-line {
@@ -39,10 +66,10 @@ export const codeBlockStyles = css`
     white-space: nowrap;
     left: -0.5px;
     z-index: 1;
-    background: var(--affine-background-code-block);
-    font-size: var(--affine-font-xs);
-    line-height: var(--affine-line-height);
-    color: var(--affine-text-secondary);
+    background: var(--algogrind-code-background-color);
+    font-size: var(--algogrind-text-code-block-size);
+    line-height: var(--algogrind-line-height);
+    color: var(--algogrind-text-code-block-color);
     box-sizing: border-box;
     user-select: none;
   }

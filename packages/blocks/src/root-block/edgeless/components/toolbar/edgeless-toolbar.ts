@@ -24,7 +24,6 @@ import { debounce } from '@blocksuite/global/utils';
 import { Slot } from '@blocksuite/store';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { ContextProvider } from '@lit/context';
-import { baseTheme, cssVar } from '@toeverything/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { cache } from 'lit/directives/cache.js';
@@ -59,7 +58,7 @@ export class EdgelessToolbarWidget extends WidgetComponent<
 > {
   static override styles = css`
     :host {
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       position: absolute;
       z-index: 1;
       left: calc(50%);
@@ -141,7 +140,7 @@ export class EdgelessToolbarWidget extends WidgetComponent<
       display: block;
       width: 1px;
       height: 100%;
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
     }
     .brush-and-eraser {
       display: flex;
@@ -634,12 +633,12 @@ export class EdgelessToolbarWidget extends WidgetComponent<
         >
           <smooth-corner
             class="edgeless-toolbar-smooth-corner"
-            .borderRadius=${16}
-            .smooth=${0.7}
+            .borderRadius=${12}
+            .smooth=${0.5}
             .borderWidth=${1}
-            .bgColor=${'var(--affine-background-overlay-panel-color)'}
-            .borderColor=${'var(--affine-border-color)'}
-            style="filter: drop-shadow(${cssVar('toolbarShadow')})"
+            .bgColor=${'var(--algogrind-overlay-panel-background-color)'}
+            .borderColor=${'var(--algogrind-border-color)'}
+            style="filter: drop-shadow(var(--algogrind-shadow-medium))"
           >
             <div
               class="edgeless-toolbar-container"

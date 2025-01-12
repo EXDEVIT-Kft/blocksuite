@@ -29,7 +29,7 @@ const styles = css`
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     padding: 4px 8px;
-    border-bottom: 1px solid var(--affine-border-color);
+    border-bottom: 1px solid var(--algogrind-border-color);
   }
 
   .data-view-table-group-add-row-button {

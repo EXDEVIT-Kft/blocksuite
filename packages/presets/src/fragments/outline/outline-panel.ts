@@ -1,6 +1,5 @@
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 
 import type { AffineEditorContainer } from '../../editors/editor-container.js';
@@ -15,7 +14,7 @@ const styles = css`
   }
 
   .outline-panel-container {
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
     box-sizing: border-box;
 
     display: flex;
@@ -23,7 +22,7 @@ const styles = css`
     align-items: stretch;
 
     height: 100%;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-family: var(--algogrind-text-paragraph-family);
     padding-top: 8px;
     position: relative;
   }
@@ -41,7 +40,7 @@ const styles = css`
     border-radius: 2px;
   }
   .outline-panel-body:hover::-webkit-scrollbar-thumb {
-    background-color: var(--affine-black-30);
+    background-color: var(--algogrind-scroll-thumb-hover-color);
   }
   .outline-panel-body::-webkit-scrollbar-track {
     background-color: transparent;

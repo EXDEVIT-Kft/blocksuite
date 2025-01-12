@@ -6,8 +6,7 @@ import {
 } from '@blocksuite/block-std';
 import { WithDisposable } from '@blocksuite/global/utils';
 import { flip, offset } from '@floating-ui/dom';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
@@ -27,7 +26,7 @@ export class AIItemList extends WithDisposable(LitElement) {
       flex-direction: column;
       gap: 2px;
       width: 100%;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       user-select: none;
     }
     .group-name {

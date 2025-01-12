@@ -444,11 +444,11 @@ export class ExportManager {
     if (edgelessBackground) {
       await this._drawEdgelessBackground(ctx, {
         backgroundColor: containerComputedStyle.getPropertyValue(
-          '--affine-background-primary-color'
+          '--algogrind-background-color'
         ),
         size: getBackgroundGrid(edgelessBackground.zoom, true).gap,
         gridColor: containerComputedStyle.getPropertyValue(
-          '--affine-edgeless-grid-color'
+          '--algogrind-grid-color'
         ),
       });
     }

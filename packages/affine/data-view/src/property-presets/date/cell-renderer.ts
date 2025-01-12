@@ -8,9 +8,8 @@ import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { flip, offset } from '@floating-ui/dom';
 import { signal } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
 import { format } from 'date-fns/format';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 
 import { BaseCellRenderer } from '../../core/property/index.js';
 import { createFromBaseCellRenderer } from '../../core/property/renderer.js';
@@ -29,8 +28,8 @@ export class DateCell extends BaseCellRenderer<number> {
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
       font-size: var(--data-view-cell-text-size);

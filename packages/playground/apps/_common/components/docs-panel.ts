@@ -23,7 +23,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
       flex-direction: column;
       width: 100%;
       background-color: var(--affine-background-secondary-color);
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       height: 100%;
       padding: 12px;
       gap: 4px;
@@ -32,7 +32,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
       display: flex;
     }
     .doc-item {
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
     .delete-doc-icon {
       display: none;
@@ -40,7 +40,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
       border-radius: 4px;
     }
     .delete-doc-icon:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
     .delete-doc-icon svg {
       width: 14px;
@@ -50,17 +50,17 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
     }
     .new-doc-button {
       margin-bottom: 16px;
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
       border-radius: 4px;
       height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
     .new-doc-button:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -128,7 +128,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
           const style = styleMap({
             backgroundColor:
               this.editor.doc.id === doc.id
-                ? 'var(--affine-hover-color)'
+                ? 'var(--algogrind-hover-color)'
                 : undefined,
             padding: '4px 4px 4px 8px',
             borderRadius: '4px',

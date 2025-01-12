@@ -15,7 +15,7 @@ export class Loader extends LitElement {
     .load-container .load {
       width: 8px;
       height: 8px;
-      background-color: var(--affine-text-primary-color);
+      background-color: var(--algogrind-text-paragraph-color);
 
       border-radius: 100%;
       display: inline-block;

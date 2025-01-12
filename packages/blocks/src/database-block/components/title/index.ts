@@ -19,7 +19,7 @@ export class DatabaseTitle extends WithDisposable(ShadowlessElement) {
       font-size: 20px;
       line-height: 28px;
       font-weight: 600;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       overflow: hidden;
     }
 
@@ -63,11 +63,11 @@ export class DatabaseTitle extends WithDisposable(ShadowlessElement) {
       content: 'Új dokumentum';
       position: absolute;
       pointer-events: none;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .affine-database-title [data-title-focus='true']::before {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   `;
 

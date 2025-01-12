@@ -15,7 +15,7 @@ export const styles = css`
     border-radius: 8px;
     border: 1px solid var(--affine-background-tertiary-color);
     opacity: var(--add, 1);
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
     user-select: none;
     position: relative;
   }
@@ -60,7 +60,7 @@ export const styles = css`
   .affine-embed-linked-doc-content-title-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-linked-doc-content-title-text {
@@ -70,8 +70,8 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-paragraph-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -98,8 +98,8 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-placeholder-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-placeholder-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -107,7 +107,7 @@ export const styles = css`
   }
 
   .affine-embed-linked-doc-content-note.alias {
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .affine-embed-linked-doc-card-content-reload,
@@ -132,7 +132,7 @@ export const styles = css`
   .affine-embed-linked-doc-card-content-reload-button svg {
     width: 12px;
     height: 12px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
   .affine-embed-linked-doc-card-content-reload-button > span {
     display: -webkit-box;
@@ -142,8 +142,8 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-brand-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-primary-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 500;
@@ -159,7 +159,7 @@ export const styles = css`
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--affine-text-secondary-color);
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;

@@ -1,6 +1,5 @@
 import { IS_MAC } from '@blocksuite/global/env';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 
 import type { NumberPropertyDataType } from './types.js';
@@ -34,10 +33,10 @@ export class NumberCell extends BaseCellRenderer<
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--data-view-cell-text-size);
       line-height: var(--data-view-cell-text-line-height);
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
       word-break: break-all;
@@ -81,10 +80,10 @@ export class NumberCellEditing extends BaseCellRenderer<
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--data-view-cell-text-size);
       line-height: var(--data-view-cell-text-line-height);
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
       text-align: right;

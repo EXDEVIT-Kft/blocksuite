@@ -68,11 +68,11 @@ export class PageRootBlockComponent extends BlockComponent<
       flex-direction: column;
       width: 100%;
       height: 100%;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
-      font-weight: 400;
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
+      color: var(--algogrind-text-paragraph-color);
+      font-weight: 500;
       max-width: var(--affine-editor-width);
       margin: 0 auto;
 

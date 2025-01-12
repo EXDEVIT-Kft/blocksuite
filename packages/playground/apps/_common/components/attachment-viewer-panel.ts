@@ -34,7 +34,7 @@ export class AttachmentViewerPanel extends SignalWatcher(
       dialog {
         padding: 0;
         top: 50px;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--algogrind-border-color);
         border-radius: 8px;
         background: var(--affine-v2-dialog-background-primary);
         box-shadow: var(--affine-overlay-shadow);

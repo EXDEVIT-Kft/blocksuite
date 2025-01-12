@@ -89,11 +89,11 @@ const styles = css`
 
   .affine-database-block-table:hover::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background-color: var(--affine-black-30);
+    background-color: var(--algogrind-scroll-thumb-hover-color);
   }
 
   .affine-database-block-table:hover::-webkit-scrollbar-track {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .affine-database-table-container {
@@ -120,7 +120,7 @@ const styles = css`
   .cell-divider {
     width: 1px;
     height: 100%;
-    background-color: var(--affine-border-color);
+    background-color: var(--algogrind-border-color);
   }
 
   .data-view-table-left-bar {

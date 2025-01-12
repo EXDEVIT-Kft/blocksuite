@@ -20,16 +20,16 @@ import { repeat } from 'lit/directives/repeat.js';
 import type { EdgelessRootBlockComponent } from '../../edgeless/edgeless-root-block.js';
 
 const enum Alignment {
-  AutoArrange = 'Auto arrange',
-  AutoResize = 'Resize & Align',
-  Bottom = 'Align bottom',
-  DistributeHorizontally = 'Distribute horizontally',
-  DistributeVertically = 'Distribute vertically',
-  Horizontally = 'Align horizontally',
-  Left = 'Align left',
-  Right = 'Align right',
-  Top = 'Align top',
-  Vertically = 'Align vertically',
+  AutoArrange = 'Automatikus elrendezés',
+  AutoResize = 'Átméretezés & Elrendezés',
+  Bottom = 'Alulra igazítás',
+  DistributeHorizontally = 'Elosztás vízszintesen',
+  DistributeVertically = 'Elosztás függőlegesen',
+  Horizontally = 'Középre vízszitnesen igazítás',
+  Left = 'Balra igazítás',
+  Right = 'Jobbra igazítás',
+  Top = 'Felülre igazítás',
+  Vertically = 'Középre függőlegesen igazítás ',
 }
 
 interface AlignmentIcon {
@@ -304,10 +304,7 @@ export class EdgelessAlignButton extends WithDisposable(LitElement) {
     return html`
       <editor-menu-button
         .button=${html`
-          <editor-icon-button
-            aria-label="Align objects"
-            .tooltip=${'Align objects'}
-          >
+          <editor-icon-button aria-label="Igazítás" .tooltip=${'Igazítás'}>
             ${AlignLeftIcon}${SmallArrowDownIcon}
           </editor-icon-button>
         `}

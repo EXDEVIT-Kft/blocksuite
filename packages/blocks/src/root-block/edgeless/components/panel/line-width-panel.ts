@@ -60,7 +60,7 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
     }
 
     .line-width-button:nth-child(1) {
@@ -79,7 +79,7 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
       height: 8px;
       transform: translateY(-50%) translateX(4px);
       border-radius: 50%;
-      background-color: var(--affine-icon-color);
+      background-color: var(--algogrind-text-paragraph-color);
       z-index: 3;
     }
 
@@ -89,18 +89,18 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
       top: 50%;
       transform: translateY(-50%);
       height: 1px;
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
       position: absolute;
     }
 
     .bottom-line {
       width: calc(100% - 16px);
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
     }
 
     .line-width-overlay {
       width: 0;
-      background-color: var(--affine-icon-color);
+      background-color: var(--algogrind-text-paragraph-color);
       z-index: 1;
     }
   `;
@@ -202,10 +202,11 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
     }
 
     leftIcons.forEach(
-      icon => (icon.style.backgroundColor = 'var(--affine-icon-color)')
+      icon =>
+        (icon.style.backgroundColor = 'var(--algogrind-text-paragraph-color)')
     );
     rightIcons.forEach(
-      icon => (icon.style.backgroundColor = 'var(--affine-border-color)')
+      icon => (icon.style.backgroundColor = 'var(--algogrind-border-color)')
     );
   };
 

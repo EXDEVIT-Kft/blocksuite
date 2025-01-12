@@ -17,7 +17,7 @@ export class StringGroupView extends BaseGroup<NonNullable<unknown>, string> {
     }
 
     .data-view-group-title-string-view:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -41,7 +41,7 @@ export class StringGroupView extends BaseGroup<NonNullable<unknown>, string> {
 
   protected override render(): unknown {
     if (!this.value) {
-      return html` <div>Ungroups</div>`;
+      return html` <div>Csoportbontás</div>`;
     }
     return html` <div
       @click="${this._click}"

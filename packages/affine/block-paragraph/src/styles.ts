@@ -5,6 +5,7 @@ export const paragraphBlockStyles = css`
     box-sizing: border-box;
     display: block;
     font-size: var(--algogrind-text-paragraph-size);
+    font-family: var(--algogrind-text-paragraph-family);
   }
 
   .affine-paragraph-block-container {
@@ -15,117 +16,168 @@ export const paragraphBlockStyles = css`
     position: relative;
   }
 
+  .readonly .h1 .inline-editor.readonly,
+  .readonly .h2 .inline-editor.readonly,
+  .readonly .h3 .inline-editor.readonly,
+  .readonly .h4 .inline-editor.readonly,
+  .readonly .h5 .inline-editor.readonly,
+  .readonly .h6 .inline-editor.readonly {
+    cursor: pointer !important;
+  }
+
+  .readonly .h1 .toggle-icon,
+  .readonly .h2 .toggle-icon,
+  .readonly .h3 .toggle-icon,
+  .readonly .h4 .toggle-icon,
+  .readonly .h5 .toggle-icon,
+  .readonly .h6 .toggle-icon {
+    opacity: 1 !important;
+  }
+
   affine-paragraph code {
-    font-size: calc(var(--affine-font-base) - 3px);
-    padding: 0px 4px 2px;
+    font-size: var(--algogrind-text-code-size);
+    padding: 2px 6px;
   }
 
   .h1 {
     font-size: var(--algogrind-text-heading-1-size);
     font-family: var(--algogrind-text-heading-1-family);
-    color: var(----algogrind-text-heading-1-color);
+    color: var(--algogrind-text-heading-1-color);
     font-weight: 700;
-    line-height: calc(1em + 8px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
 
   .h1 code {
-    font-size: calc(var(--affine-font-base) + 10px);
-    padding: 0px 4px;
+    font-size: calc(var(--algogrind-text-heading-1-size) - 4px);
+    font-family: var(--algogrind-text-heading-1-family);
+    padding: 2px 6px;
+  }
+
+  .h1 .toggle-icon {
+    margin-top: 1.05rem;
   }
 
   .h2 {
     font-size: var(--algogrind-text-heading-2-size);
     font-family: var(--algogrind-text-heading-2-family);
-    color: var(----algogrind-text-heading-2-color);
+    color: var(--algogrind-text-heading-2-color);
     font-weight: 600;
-    line-height: calc(1em + 10px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
 
   .h2 code {
-    font-size: calc(var(--affine-font-base) + 8px);
-    padding: 0px 4px;
+    font-size: calc(var(--algogrind-text-heading-2-size) - 4px);
+    font-family: var(--algogrind-text-heading-2-family);
+    padding: 2px 6px;
+  }
+
+  .h2 .toggle-icon {
+    margin-top: 0.8rem;
   }
 
   .h3 {
     font-size: var(--algogrind-text-heading-3-size);
     font-family: var(--algogrind-text-heading-3-family);
-    color: var(----algogrind-text-heading-3-color);
+    color: var(--algogrind-text-heading-3-color);
     font-weight: 600;
-    line-height: calc(1em + 8px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
 
   .h3 code {
-    font-size: calc(var(--affine-font-base) + 6px);
-    padding: 0px 4px;
+    font-size: calc(var(--algogrind-text-heading-3-size) - 4px);
+    font-family: var(--algogrind-text-heading-3-family);
+    padding: 2px 6px;
+  }
+
+  .h3 .toggle-icon {
+    margin-top: 0.6rem;
   }
 
   .h4 {
     font-size: var(--algogrind-text-heading-4-size);
     font-family: var(--algogrind-text-heading-4-family);
-    color: var(----algogrind-text-heading-4-color);
+    color: var(--algogrind-text-heading-4-color);
     font-weight: 600;
-    line-height: calc(1em + 8px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
   .h4 code {
-    font-size: calc(var(--affine-font-base) + 4px);
-    padding: 0px 4px;
+    font-size: calc(var(--algogrind-text-heading-4-size) - 2px);
+    font-family: var(--algogrind-text-heading-4-family);
+    padding: 2px 6px;
+  }
+
+  .h4 .toggle-icon {
+    margin-top: 0.4rem;
   }
 
   .h5 {
     font-size: var(--algogrind-text-heading-5-size);
     font-family: var(--algogrind-text-heading-5-family);
-    color: var(----algogrind-text-heading-5-color);
+    color: var(--algogrind-text-heading-5-color);
     font-weight: 600;
-    line-height: calc(1em + 8px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
   .h5 code {
-    font-size: calc(var(--affine-font-base) + 2px);
-    padding: 0px 4px;
+    font-size: calc(var(--algogrind-text-heading-5-size) - 2px);
+    font-family: var(--algogrind-text-heading-5-family);
+    padding: 2px 6px;
+  }
+
+  .h5 .toggle-icon {
+    margin-top: 0.1rem;
   }
 
   .h6 {
     font-size: var(--algogrind-text-heading-6-size);
     font-family: var(--algogrind-text-heading-6-family);
-    color: var(----algogrind-text-heading-6-color);
+    color: var(--algogrind-text-heading-6-color);
     font-weight: 600;
-    line-height: calc(1em + 8px);
+    line-height: 1.25;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
   }
 
   .h6 code {
-    font-size: var(--affine-font-base);
-    padding: 0px 4px 2px;
+    font-size: calc(var(--algogrind-text-heading-6-size) - 2px);
+    font-family: var(--algogrind-text-heading-6-family);
+    padding: 2px 6px;
+  }
+
+  .h6 .toggle-icon {
+    margin-top: 0;
   }
 
   .quote {
     line-height: 26px;
     padding-left: 17px;
-    margin-top: var(--affine-paragraph-space);
+    font-size: var(--algogrind-text-quote-size);
+    font-family: var(--algogrind-text-quote-family);
+    color: var(--algogrind-text-quote-color);
+    margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
   }
   .quote::after {
     content: '';
-    width: 2px;
+    width: 4px;
     height: calc(100% - 20px);
     margin-top: 10px;
     margin-bottom: 10px;
     position: absolute;
     left: 0;
     top: 0;
-    background: var(--affine-quote-color);
+    background: var(--algogrind-quote-line-color);
     border-radius: 18px;
   }
 

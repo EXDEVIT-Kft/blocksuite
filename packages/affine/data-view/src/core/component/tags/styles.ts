@@ -1,17 +1,15 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { css, unsafeCSS } from 'lit';
+import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { css } from 'lit';
 
 export const styles = css`
   affine-multi-tag-select {
     position: absolute;
     z-index: 2;
-    color: ${unsafeCSSVarV2('text/primary')};
-    border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/blackBorder')};
+    color: var(--algogrind-text-paragraph-color);
     border-radius: 8px;
-    background: ${unsafeCSSVarV2('layer/background/primary')};
-    box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
-    font-family: var(--affine-font-family);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
+    font-family: var(--algogrind-text-paragraph-family);
     max-width: 400px;
     padding: 8px;
     display: flex;
@@ -36,8 +34,8 @@ export const styles = css`
   .tag-select-input {
     flex: 1 1 0;
     border: none;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-    color: ${unsafeCSSVarV2('text/primary')};
+    font-family: var(--algogrind-text-paragraph-family);
+    color: var(--algogrind-text-paragraph-color);
     background-color: transparent;
     line-height: 22px;
     font-size: 14px;
@@ -45,12 +43,12 @@ export const styles = css`
   }
 
   .tag-select-input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
 
   .select-options-tips {
     padding: 4px;
-    color: ${unsafeCSSVarV2('text/secondary')};
+    color: var(--algogrind-text-placeholder-color);
     font-size: 14px;
     font-weight: 500;
     line-height: 22px;
@@ -84,7 +82,7 @@ export const styles = css`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    border: 1px solid ${unsafeCSSVarV2('database/border')};
+    border: 1px solid var(--algogrind-border-color);
     user-select: none;
   }
 
@@ -194,7 +192,7 @@ export const styles = css`
   //   align-items: center;
   //   gap: 6px;
   //   height: 28px;
-  //   color: var(--affine-text-primary-color);
+  //   color: var(--algogrind-text-paragraph-color);
   //   margin-right: 8px;
   // }
   //
@@ -215,7 +213,7 @@ export const styles = css`
   // }
   //
   // .select-option.selected {
-  //   background: var(--affine-hover-color);
+  //   background: var(--algogrind-hover-color);
   // }
   //
   // .select-option-text-container {
@@ -240,7 +238,7 @@ export const styles = css`
   //
   //
   // .select-option-icon:hover {
-  //   background: var(--affine-hover-color);
+  //   background: var(--algogrind-hover-color);
   // }
   //
   // .select-option-icon svg {

@@ -41,12 +41,12 @@ export class AffineScrollAnchoringWidget extends WidgetComponent {
           border-color: ${unsafeCSS(
             cssVarV2('layer/insideBorder/primaryBorder')
           )};
-          box-shadow: var(--affine-active-shadow);
+          box-shadow: var(--algogrind-shadow-active);
         }
 
         &.page {
           border-radius: 5px;
-          background-color: var(--affine-hover-color);
+          background-color: var(--algogrind-hover-color);
         }
       }
     }

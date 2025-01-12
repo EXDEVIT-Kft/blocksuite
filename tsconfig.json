@@ -38,6 +38,9 @@
       "path": "./packages/playground"
     },
     {
+      "path": "./packages/editor-icons"
+    },
+    {
       "path": "./packages/framework/store"
     },
     {

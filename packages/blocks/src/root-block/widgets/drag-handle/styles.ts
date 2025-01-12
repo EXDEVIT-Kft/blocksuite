@@ -28,10 +28,10 @@ export const styles = css`
   }
 
   .affine-drag-handle-grabber {
-    width: 4px;
+    width: 4px !important;
     height: 100%;
     border-radius: 1px;
-    background: var(--affine-placeholder-color);
+    background: var(--algogrind-text-placeholder-color);
     transition: width 0.25s ease;
   }
 
@@ -45,7 +45,7 @@ export const styles = css`
     top: 0;
     left: 0;
     border-radius: 6px;
-    background: var(--affine-hover-color);
+    background: var(--algogrind-selection-color);
     pointer-events: none;
     z-index: 2;
     animation: expand 0.25s forwards;

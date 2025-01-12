@@ -85,7 +85,7 @@ export class NoteRenderer
   protected override render(): unknown {
     return html`
       <div
-        style="height: 1px;max-width: var(--affine-editor-width);background-color: var(--affine-border-color);margin: auto;margin-bottom: 16px"
+        style="height: 1px;max-width: var(--affine-editor-width);background-color: var(--algogrind-border-color);margin: auto;margin-bottom: 16px"
       ></div>
       ${this.renderNote()}
     `;
@@ -96,7 +96,7 @@ export class NoteRenderer
       return html` <div>
         <div
           @click="${this.addNote}"
-          style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--affine-text-disable-color)"
+          style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--algogrind-text-disabled-color)"
         >
           Click to create a linked doc in center peek.
         </div>

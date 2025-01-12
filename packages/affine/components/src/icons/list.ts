@@ -62,9 +62,11 @@ const Level4Icon = html`
 `;
 
 const toggleSVG = svg`
-  <path
-    d="M16.5 11.134C17.1667 11.5189 17.1667 12.4811 16.5 12.866L9 17.1962C8.33333 17.5811 7.5 17.0999 7.5 16.3301L7.5 7.66989C7.5 6.90009 8.33333 6.41896 9 6.80386L16.5 11.134Z"
-    fill="#77757D"
+  <path 
+    fill-rule="evenodd" 
+    clip-rule="evenodd" 
+    d="M8.71304 5.30711C8.99329 5.19103 9.31588 5.25519 9.53038 5.46969L15.5303 11.4697C15.8232 11.7626 15.8232 12.2375 15.5303 12.5304L9.53033 18.5304C9.31583 18.7449 8.99324 18.809 8.71299 18.6929C8.43273 18.5768 8.25 18.3034 8.25 18L8.25005 6.00002C8.25005 5.69667 8.43278 5.4232 8.71304 5.30711Z" 
+    fill="var(--algogrind-text-paragraph-color)"
   />
 `;
 
@@ -104,7 +106,7 @@ export const checkboxChecked = () => {
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M3.25 6C3.25 4.48122 4.48122 3.25 6 3.25H18C19.5188 3.25 20.75 4.48122 20.75 6V18C20.75 19.5188 19.5188 20.75 18 20.75H6C4.48122 20.75 3.25 19.5188 3.25 18V6ZM16.5303 9.53033C16.8232 9.23744 16.8232 8.76256 16.5303 8.46967C16.2374 8.17678 15.7626 8.17678 15.4697 8.46967L10.5 13.4393L9.03033 11.9697C8.73744 11.6768 8.26256 11.6768 7.96967 11.9697C7.67678 12.2626 7.67678 12.7374 7.96967 13.0303L9.96967 15.0303C10.2626 15.3232 10.7374 15.3232 11.0303 15.0303L16.5303 9.53033Z"
-        fill="#1E96EB"
+        fill="var(--algogrind-primary-color)"
       />
     </svg>
   `;
@@ -151,7 +153,7 @@ export const playCheckAnimation = async (
     [
       {
         boxShadow:
-          '0 -18px 0 -8px #1e96eb, 16px -8px 0 -8px #1e96eb, 16px 8px 0 -8px #1e96eb, 0 18px 0 -8px #1e96eb, -16px 8px 0 -8px #1e96eb, -16px -8px 0 -8px #1e96eb',
+          '0 -18px 0 -8px var(--algogrind-primary-color), 16px -8px 0 -8px var(--algogrind-primary-color), 16px 8px 0 -8px var(--algogrind-primary-color), 0 18px 0 -8px var(--algogrind-primary-color), -16px 8px 0 -8px var(--algogrind-primary-color), -16px -8px 0 -8px var(--algogrind-primary-color)',
       },
     ],
     { duration: 240, easing: 'ease', fill: 'forwards' }

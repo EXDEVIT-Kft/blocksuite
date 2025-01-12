@@ -134,13 +134,13 @@ function initStyleDebugMenu(
   fontFamilyFolder
     .addBinding(
       {
-        '--affine-font-family':
+        '--algogrind-text-paragraph-family':
           'Roboto Mono, apple-system, BlinkMacSystemFont,Helvetica Neue, Tahoma, PingFang SC, Microsoft Yahei, Arial,Hiragino Sans GB, sans-serif, Apple Color Emoji, Segoe UI Emoji,Segoe UI Symbol, Noto Color Emoji',
       },
-      '--affine-font-family'
+      '--algogrind-text-paragraph-family'
     )
     .on('change', e => {
-      writer.setProperty('--affine-font-family', e.value);
+      writer.setProperty('--algogrind-text-paragraph-family', e.value);
     });
   ColorVariables.forEach(name => {
     const value = reader.getPropertyValue(name);

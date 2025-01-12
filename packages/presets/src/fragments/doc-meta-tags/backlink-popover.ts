@@ -1,7 +1,6 @@
 import { DualLinkIcon16, scrollbarStyle } from '@blocksuite/blocks';
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { state } from 'lit/decorators.js';
 
 import { type BacklinkData, DEFAULT_DOC_NAME } from './utils.js';
@@ -27,7 +26,7 @@ export class BacklinkButton extends WithDisposable(LitElement) {
 
       user-select: none;
       font-size: var(--affine-font-sm);
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       fill: var(--affine-text-secondary-color);
       color: var(--affine-text-secondary-color);
       pointer-events: auto;
@@ -40,11 +39,11 @@ export class BacklinkButton extends WithDisposable(LitElement) {
     }
 
     .btn:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .btn:active {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .backlink-popover {

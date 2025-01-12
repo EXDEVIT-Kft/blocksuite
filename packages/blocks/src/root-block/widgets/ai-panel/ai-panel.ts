@@ -44,8 +44,8 @@ export class AffineAIPanelWidget extends WidgetComponent {
       display: flex;
       outline: none;
       border-radius: var(--8, 8px);
-      border: 1px solid var(--affine-border-color);
-      background: var(--affine-background-overlay-panel-color);
+      border: 1px solid var(--algogrind-border-color);
+      background: var(--algogrind-overlay-panel-background-color);
       box-shadow: var(--affine-overlay-shadow);
 
       position: absolute;

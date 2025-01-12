@@ -260,7 +260,7 @@ export function getBackgroundGrid(zoom: number, showGrid: boolean) {
   return {
     gap,
     grid: showGrid
-      ? 'radial-gradient(var(--affine-edgeless-grid-color) 1px, var(--affine-background-primary-color) 1px)'
+      ? 'radial-gradient(var(--algogrind-grid-color) 1px, var(--algogrind-background-color) 1px)'
       : 'unset',
   };
 }

@@ -45,8 +45,7 @@ import {
 } from '@blocksuite/global/utils';
 import { DocCollection } from '@blocksuite/store';
 import { consume } from '@lit/context';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -92,8 +91,8 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       padding: 8px 0;
       gap: 8px;
       border-radius: 8px;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--algogrind-overlay-panel-background-color);
+      box-shadow: var(--algogrind-shadow-small);
       z-index: 1;
     }
 
@@ -106,11 +105,11 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       padding: 4px 0;
       text-align: center;
       border-radius: 8px;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: 12px;
       font-style: normal;
       font-weight: 500;
-      border: 1px solid var(--affine-border-color, #e3e2e4);
+      border: 1px solid var(--algogrind-border-color, #e3e2e4);
       box-sizing: border-box;
     }
   `;
@@ -455,7 +454,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
 
     const strokeColor = this.std
       .get(ThemeProvider)
-      .getCssVariableColor('--affine-black-30');
+      .getCssVariableColor('--algogrind-scroll-thumb-hover-color');
     this._overlay = new AutoCompleteFrameOverlay(this.gfx, xywh, strokeColor);
     this.edgeless.surface.renderer.addOverlay(this._overlay);
   }

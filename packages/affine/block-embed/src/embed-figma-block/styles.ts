@@ -16,7 +16,7 @@ export const styles = css`
     border: 1px solid var(--affine-background-tertiary-color);
 
     opacity: var(--add, 1);
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
     user-select: none;
 
     aspect-ratio: ${EMBED_CARD_WIDTH.figma} / ${EMBED_CARD_HEIGHT.figma};
@@ -95,7 +95,7 @@ export const styles = css`
   .affine-embed-figma-content-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-figma-content-title-text {
@@ -108,9 +108,9 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -126,9 +126,9 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -140,7 +140,7 @@ export const styles = css`
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
   }
 
   .affine-embed-figma-content-url {
@@ -163,17 +163,17 @@ export const styles = css`
     text-overflow: ellipsis;
     color: var(--affine-text-secondary-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
   .affine-embed-figma-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-embed-figma-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-embed-figma-content-url-icon {
@@ -191,10 +191,10 @@ export const styles = css`
 
   .affine-embed-figma-block.selected {
     .affine-embed-figma-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-embed-figma-content-url .open-icon {
-      fill: var(--affine-link-color);
+      fill: var(--algogrind-link-color);
     }
   }
 `;

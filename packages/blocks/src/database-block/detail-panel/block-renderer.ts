@@ -23,9 +23,9 @@ export class BlockRenderer
       flex-direction: column;
       gap: 16px;
       margin-bottom: 12px;
-      border-bottom: 1px solid var(--affine-border-color);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
+      border-bottom: 1px solid var(--algogrind-border-color);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
     }
 
     database-datasource-block-renderer .tips-placeholder {
@@ -40,7 +40,7 @@ export class BlockRenderer
     database-datasource-block-renderer.empty rich-text::before {
       content: 'Új dokumentum';
       position: absolute;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
       font-size: 15px;
       line-height: 24px;
       user-select: none;

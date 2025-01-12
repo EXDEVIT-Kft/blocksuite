@@ -406,8 +406,8 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
       onlyOne && this._advancedVisibilityEnabled
         ? html`
             <editor-icon-button
-              aria-label="Vágás"
-              .tooltip=${getTooltipWithShortcut('Vágás módja', '-')}
+              aria-label="Feldarabolás"
+              .tooltip=${getTooltipWithShortcut('Feldarabolás', '-')}
               .active=${this.enableNoteSlicer}
               @click=${() => this._handleNoteSlicerButtonClick()}
             >
@@ -420,7 +420,7 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
 
       html`
         <editor-icon-button
-          aria-label="Size"
+          aria-label="Méret"
           .tooltip=${collapse ? 'Automatikus magasság' : 'Egyedi magasság'}
           @click=${() => this._setCollapse()}
         >

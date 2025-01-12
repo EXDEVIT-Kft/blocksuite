@@ -1,13 +1,5 @@
-import { baseTheme } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
-import {
-  css,
-  html,
-  LitElement,
-  nothing,
-  type TemplateResult,
-  unsafeCSS,
-} from 'lit';
+import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 
 /**
@@ -43,8 +35,8 @@ export class IconButton extends LitElement {
       background: transparent;
       cursor: pointer;
       user-select: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
       pointer-events: auto;
       padding: 4px;
     }
@@ -52,7 +44,7 @@ export class IconButton extends LitElement {
     // This media query can detect if the device has a hover capability
     @media (hover: hover) {
       :host(:hover) {
-        background: var(--affine-hover-color);
+        background: var(--algogrind-hover-color);
       }
     }
 
@@ -63,13 +55,13 @@ export class IconButton extends LitElement {
     :host([disabled]),
     :host(:disabled) {
       background: transparent;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
       cursor: not-allowed;
     }
 
     /* You can add a 'hover' attribute to the button to show the hover style */
     :host([hover='true']) {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
     :host([hover='false']) {
       background: transparent;
@@ -94,18 +86,20 @@ export class IconButton extends LitElement {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      font-size: var(--affine-font-sm);
-      line-height: var(--affine-line-height);
+      font-size: var(--algogrind-text-small-size);
+      color: var(--algogrind-text-heading-1-color);
+      font-family: var(--algogrind-text-small-family);
+      line-height: var(--algogrind-line-height);
+      font-weight: 500;
     }
 
     :host .sub-text {
-      font-size: var(--affine-font-xs);
-      color: var(
-        --light-textColor-textSecondaryColor,
-        var(--textColor-textSecondaryColor, #8e8d91)
-      );
-      line-height: var(--affine-line-height);
+      font-size: var(--algogrind-text-caption-size);
+      color: var(--algogrind-text-placeholder-color);
+      font-family: var(--algogrind-text-caption-family);
+      line-height: var(--algogrind-line-height);
       white-space: nowrap;
+      font-weight: 500;
       text-overflow: ellipsis;
       overflow: hidden;
       margin-top: -2px;

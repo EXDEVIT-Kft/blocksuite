@@ -30,10 +30,10 @@ export const pieMenuStyles = css`
 export const pieNodeStyles = css`
   .pie-node {
     position: absolute;
-    background: var(--affine-background-overlay-panel-color);
+    background: var(--algogrind-overlay-panel-background-color);
     user-select: none;
-    box-shadow: var(--affine-shadow-2);
-    border: 2px solid var(--affine-border-color);
+    box-shadow: var(--algogrind-shadow-small);
+    border: 2px solid var(--algogrind-border-color);
     border-radius: 50%;
     display: flex;
     font-size: 0.8rem;

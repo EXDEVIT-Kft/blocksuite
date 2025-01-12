@@ -110,7 +110,7 @@ export class FrameOverlay extends Overlay {
 
   override render(ctx: CanvasRenderingContext2D): void {
     ctx.beginPath();
-    ctx.strokeStyle = '#1E96EB';
+    ctx.strokeStyle = 'var(--algogrind-primary-color)';
     ctx.lineWidth = 2 / this.gfx.viewport.zoom;
     const radius = 2 / this.gfx.viewport.zoom;
 

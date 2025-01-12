@@ -12,8 +12,7 @@ import {
   createIcon,
 } from '@blocksuite/data-view';
 import { EditIcon } from '@blocksuite/icons/lit';
-import { baseTheme } from '@toeverything/theme';
-import { css, nothing, unsafeCSS } from 'lit';
+import { css, nothing } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { html } from 'lit/static-html.js';
 
@@ -67,7 +66,7 @@ export class LinkCell extends BaseCellRenderer<string> {
     }
 
     .affine-database-link-icon:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .data-view-link-column-linked-doc {
@@ -78,7 +77,7 @@ export class LinkCell extends BaseCellRenderer<string> {
     }
 
     .data-view-link-column-linked-doc:hover {
-      text-decoration-color: var(--affine-icon-color);
+      text-decoration-color: var(--algogrind-text-paragraph-color);
     }
   `;
 
@@ -185,8 +184,8 @@ export class LinkCellEditing extends BaseCellRenderer<string> {
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
       font-size: var(--data-view-cell-text-size);

@@ -59,7 +59,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
       width: 1px;
       transform: scaleX(0.5);
       height: 48px;
-      background: var(--affine-border-color);
+      background: var(--algogrind-border-color);
     }
     .text-item {
       width: 60px;
@@ -89,7 +89,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
     .text-item:hover,
     .mindmap-item[data-is-active='true'],
     .mindmap-item:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
     .text-item > button.next,
     .mindmap-item > button.next {

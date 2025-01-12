@@ -27,7 +27,7 @@ const styles = css`
 
   .affine-database-sort-button:hover,
   .affine-database-sort-button.active {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .affine-database-sort-button {

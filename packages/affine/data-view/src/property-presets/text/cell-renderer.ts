@@ -1,5 +1,4 @@
-import { baseTheme } from '@toeverything/theme';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 
 import { BaseCellRenderer } from '../../core/property/index.js';
@@ -25,10 +24,10 @@ export class TextCell extends BaseCellRenderer<string> {
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
     }
@@ -57,10 +56,10 @@ export class TextCellEditing extends BaseCellRenderer<string> {
       width: 100%;
       padding: 0;
       border: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
       background-color: transparent;
     }

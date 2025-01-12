@@ -48,7 +48,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       content: '';
       width: 1px;
       height: 100%;
-      background: var(--affine-border-color);
+      background: var(--algogrind-border-color);
       transform: scaleX(0.5);
     }
     .config-buttons {
@@ -101,7 +101,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       border-radius: inherit;
     }
     .edgeless-frame-navigator-stop:hover::before {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
   `;
 
@@ -207,7 +207,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     const min = 0;
     const max = frames.length - 1;
     if (this._currentFrameIndex === frames.length - 1) {
-      toast(this.host, 'You have reached the last frame');
+      toast(this.host, 'Elértél az utolsó diához');
     } else {
       this._currentFrameIndex = clamp(this._currentFrameIndex + 1, min, max);
     }
@@ -218,7 +218,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     const min = 0;
     const max = frames.length - 1;
     if (this._currentFrameIndex === 0) {
-      toast(this.host, 'You have reached the first frame');
+      toast(this.host, 'Elértél az első diához');
     } else {
       this._currentFrameIndex = clamp(this._currentFrameIndex - 1, min, max);
     }

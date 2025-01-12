@@ -23,7 +23,7 @@ const styles = css`
     font-size: 12px;
     flex-direction: column;
     border-radius: 8px;
-    background-color: var(--affine-background-overlay-panel-color);
+    background-color: var(--algogrind-overlay-panel-background-color);
   }
   .outline-notice-header {
     display: flex;
@@ -44,7 +44,7 @@ const styles = css`
     width: 20px;
     height: 20px;
     cursor: pointer;
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
   }
   .outline-notice-body {
     display: flex;
@@ -57,7 +57,7 @@ const styles = css`
     height: 20px;
     align-items: center;
     line-height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
   .outline-notice-item.notice {
     font-weight: 400;

@@ -81,7 +81,7 @@ export class EdgelessBrushToolButton extends EdgelessToolbarToolMixin(
     return html`
       <edgeless-toolbar-button
         class="edgeless-brush-button"
-        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Toll', 'P')}
+        .tooltip=${this.popper ? '' : getTooltipWithShortcut('Ceruza', 'P')}
         .tooltipOffset=${4}
         .active=${active}
         .withHover=${true}

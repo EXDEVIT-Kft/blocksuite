@@ -28,8 +28,8 @@ export class AdaptersPanel extends WithDisposable(ShadowlessElement) {
       width: 36vw;
     }
     .adapters-container {
-      border: 1px solid var(--affine-border-color, #e3e2e4);
-      background-color: var(--affine-background-primary-color);
+      border: 1px solid var(--algogrind-border-color, #e3e2e4);
+      background-color: var(--algogrind-background-color);
       box-sizing: border-box;
       position: relative;
     }
@@ -38,7 +38,7 @@ export class AdaptersPanel extends WithDisposable(ShadowlessElement) {
       width: 100%;
       height: calc(100vh - 80px);
       white-space: pre-wrap;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       overflow: auto;
     }
     .update-button {
@@ -50,13 +50,13 @@ export class AdaptersPanel extends WithDisposable(ShadowlessElement) {
       font-size: 12px;
       font-weight: 500;
       cursor: pointer;
-      border: 1px solid var(--affine-border-color);
-      font-family: var(--affine-font-family);
-      color: var(--affine-text-primary-color);
-      background-color: var(--affine-background-primary-color);
+      border: 1px solid var(--algogrind-border-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
+      background-color: var(--algogrind-background-color);
     }
     .update-button:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
     .html-panel {
       display: flex;
@@ -69,7 +69,7 @@ export class AdaptersPanel extends WithDisposable(ShadowlessElement) {
       flex: 1;
       border: none;
       box-sizing: border-box;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       overflow: auto;
     }
     .html-panel-footer {
@@ -83,14 +83,14 @@ export class AdaptersPanel extends WithDisposable(ShadowlessElement) {
         padding: 4px 8px;
         font-size: 12px;
         font-weight: 500;
-        border: 1px solid var(--affine-border-color);
-        font-family: var(--affine-font-family);
-        color: var(--affine-text-primary-color);
-        background-color: var(--affine-background-primary-color);
+        border: 1px solid var(--algogrind-border-color);
+        font-family: var(--algogrind-text-paragraph-family);
+        color: var(--algogrind-text-paragraph-color);
+        background-color: var(--algogrind-background-color);
         line-height: 20px;
       }
       span[active] {
-        background-color: var(--affine-hover-color);
+        background-color: var(--algogrind-hover-color);
       }
     }
   `;

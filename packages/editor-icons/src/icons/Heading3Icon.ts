@@ -1,0 +1,35 @@
+import { html } from 'lit';
+const Heading3Icon = ({
+  width = '1em',
+  height = '1em',
+  strokeWidth = '1.5',
+  style = '',
+}: {
+  width?: string;
+  height?: string;
+  strokeWidth?: string;
+  style?: string;
+} = {}) => html`
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width=${width}
+    height=${height}
+    fill="none"
+    stroke="currentColor"
+    stroke-width=${strokeWidth}
+    style=${'user-select:none;flex-shrink:0;' + style}
+  >
+    <path
+      d="M16 12.7778C16 11.6391 16.9588 11 18 11C19.1046 11 20 11.8954 20 13C20 14.5 18.5 15 18.5 15C18.5 15 20 15.5 20 17C20 18.1046 19.1046 19 18 19C16.9588 19 16 18.3609 16 17.2222"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M4 12H13M4 19V5M13 19V5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+`;
+export default Heading3Icon;

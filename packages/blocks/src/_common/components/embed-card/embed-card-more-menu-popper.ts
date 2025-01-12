@@ -31,8 +31,8 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
     .embed-card-more-menu-container {
       border-radius: 8px;
       padding: 8px;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--algogrind-overlay-panel-background-color);
+      box-shadow: var(--algogrind-shadow-small);
     }
 
     .embed-card-more-menu-container > .menu-item {
@@ -43,7 +43,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
     }
 
     .embed-card-more-menu-container > .menu-item:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .embed-card-more-menu-container > .menu-item:hover.delete {
@@ -62,7 +62,7 @@ export class EmbedCardMoreMenu extends WithDisposable(LitElement) {
       width: 148px;
       height: 1px;
       margin: 8px;
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
     }
   `;
 

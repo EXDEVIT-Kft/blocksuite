@@ -15,8 +15,6 @@ import { CommonUtils } from '@blocksuite/affine-block-surface';
 import { ConnectorCWithArrowIcon } from '@blocksuite/affine-components/icons';
 import {
   cloneGroups,
-  darkToolbarStyles,
-  lightToolbarStyles,
   type MenuItemGroup,
   renderToolbarSeparator,
 } from '@blocksuite/affine-components/toolbar';
@@ -34,7 +32,7 @@ import {
   groupBy,
   pickValues,
 } from '@blocksuite/global/utils';
-import { css, html, nothing, type TemplateResult, unsafeCSS } from 'lit';
+import { css, html, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';
 
@@ -102,15 +100,15 @@ export class EdgelessElementToolbarWidget extends WidgetComponent<
       position: absolute;
       z-index: 3;
       transform: translateZ(0);
-      will-change: transform;
       -webkit-user-select: none;
       user-select: none;
     }
-    editor-toolbar[data-app-theme='light'] {
-      ${unsafeCSS(lightToolbarStyles.join('\n'))}
+
+    .edgeless-toolbar-wrapper[data-app-theme='light'] {
+      {unsafeCSS(lightToolbarStyles.join('\n'))}
     }
-    editor-toolbar[data-app-theme='dark'] {
-      ${unsafeCSS(darkToolbarStyles.join('\n'))}
+    .edgeless-toolbar-wrapper[data-app-theme='dark'] {
+      {unsafeCSS(darkToolbarStyles.join('\n'))}
     }
   `;
 

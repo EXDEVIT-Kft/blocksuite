@@ -31,7 +31,7 @@ export class EdgelessConnectorHandle extends WithDisposable(LitElement) {
       box-sizing: border-box;
       border-radius: 50%;
       border: 2px solid var(--affine-text-emphasis-color);
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       cursor: pointer;
       z-index: 10;
       pointer-events: all;

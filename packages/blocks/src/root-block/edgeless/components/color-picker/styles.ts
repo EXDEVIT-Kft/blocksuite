@@ -18,7 +18,7 @@ export const COLOR_PICKER_STYLE = css`
     gap: 4px;
     align-self: stretch;
     border-radius: 8px;
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   nav button {
@@ -39,9 +39,9 @@ export const COLOR_PICKER_STYLE = css`
   }
 
   nav button[active] {
-    color: var(--affine-text-primary-color, #121212);
-    background: var(--affine-background-primary-color);
-    box-shadow: var(--affine-shadow-1);
+    color: var(--algogrind-text-paragraph-color, #121212);
+    background: var(--algogrind-background-color);
+    box-shadow: var(--algogrind-shadow-xsmall);
     pointer-events: none;
   }
 
@@ -72,7 +72,7 @@ export const COLOR_PICKER_STYLE = css`
     gap: 4px;
     align-self: stretch;
     border-radius: 8px;
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
     box-sizing: border-box;
 
     ${FONT_XS};
@@ -95,7 +95,7 @@ export const COLOR_PICKER_STYLE = css`
   }
   .modes .mode button[active] {
     pointer-events: none;
-    outline: 2px solid var(--affine-brand-color, #1e96eb);
+    outline: 2px solid var(--algogrind-primary-color);
   }
 
   .content {
@@ -254,8 +254,8 @@ export const COLOR_PICKER_STYLE = css`
     align-items: center;
     gap: 4px;
     border-radius: 8px;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-background-primary-color);
+    border: 1px solid var(--algogrind-border-color);
+    background: var(--algogrind-background-color);
     box-sizing: border-box;
   }
 
@@ -277,7 +277,7 @@ export const COLOR_PICKER_STYLE = css`
     outline: none;
     ${FONT_SM};
     font-weight: 400;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   /* Chrome, Safari, Edge, Opera */

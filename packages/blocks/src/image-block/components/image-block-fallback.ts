@@ -39,13 +39,13 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
       text-align: justify;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-sm);
       font-style: normal;
       font-weight: 600;
-      line-height: var(--affine-line-height);
+      line-height: var(--algogrind-line-height);
       user-select: none;
     }
 

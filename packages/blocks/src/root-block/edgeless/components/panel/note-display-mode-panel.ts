@@ -35,11 +35,11 @@ export class NoteDisplayModePanel extends WithDisposable(LitElement) {
       justify-content: center;
       align-items: center;
       gap: 4px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
     .item:hover,
     .item.selected {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 

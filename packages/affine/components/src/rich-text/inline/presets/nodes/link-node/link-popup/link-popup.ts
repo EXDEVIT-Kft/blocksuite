@@ -206,7 +206,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
         <editor-icon-button
           aria-label="Másolás"
           data-testid="copy-link"
-          .tooltip=${'Kattints a link másolásához'}
+          .tooltip=${'Link másolása'}
           @click=${this._copyUrl}
         >
           ${CopyIcon}

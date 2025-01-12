@@ -23,17 +23,17 @@ export class FilterableListComponent<Props = unknown> extends WithDisposable(
 
   private _buildContent(items: FilterableListItem<Props>[]) {
     return items.map((item, idx) => {
-      const focussed = this._curFocusIndex === idx;
+      const focused = this._curFocusIndex === idx;
 
       return html`
         <icon-button
           class=${classMap({
             'filterable-item': true,
-            focussed,
+            focused,
           })}
           @mouseover=${() => (this._curFocusIndex = idx)}
           @click=${() => this._select(item)}
-          hover=${focussed}
+          hover=${focused}
           width="100%"
           height="32px"
         >
@@ -70,7 +70,7 @@ export class FilterableListComponent<Props = unknown> extends WithDisposable(
   private _scrollFocusedItemIntoView() {
     this.updateComplete
       .then(() => {
-        this._focussedItem?.scrollIntoView({
+        this._focusedItem?.scrollIntoView({
           block: 'nearest',
           inline: 'start',
         });
@@ -160,8 +160,8 @@ export class FilterableListComponent<Props = unknown> extends WithDisposable(
   @state()
   private accessor _filterText = '';
 
-  @query('.filterable-item.focussed')
-  private accessor _focussedItem!: HTMLElement | null;
+  @query('.filterable-item.focused')
+  private accessor _focusedItem!: HTMLElement | null;
 
   @property({ attribute: false })
   accessor abortController: AbortController | null = null;

@@ -135,7 +135,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
       user-select: none;
 
       border-radius: 25px;
-      background: var(--affine-primary-color);
+      background: var(--algogrind-primary-color);
     }
 
     .navigator {
@@ -164,7 +164,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
     }
 
     .navigator div:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .navigator.show {
@@ -232,7 +232,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
           height: `${EDGELESS_ONLY_INDEX_LABEL_HEIGHT}px`,
           borderRadius: '50%',
           backgroundColor: 'var(--affine-text-secondary-color)',
-          border: '1px solid var(--affine-border-color)',
+          border: '1px solid var(--algogrind-border-color)',
           color: 'var(--affine-white)',
           position: 'absolute',
           transform: `translate(${

@@ -42,7 +42,7 @@ const styles = css`
   .stats-cell:hover,
   affine-database-column-stats-cell.active .stats-cell {
     opacity: 1;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
     cursor: pointer;
   }
 
@@ -64,7 +64,7 @@ const styles = css`
   }
 
   .value {
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 `;
 

@@ -63,7 +63,10 @@ export class EdgelessChangeGroupButton extends WithDisposable(LitElement) {
       targetParent
     );
 
-    toast(this.edgeless.host, 'Group has been inserted into page');
+    toast(
+      this.edgeless.host,
+      'A csoport már a Szöveges nézetben is megjelenik.'
+    );
   }
 
   protected override render() {
@@ -75,14 +78,14 @@ export class EdgelessChangeGroupButton extends WithDisposable(LitElement) {
         onlyOne
           ? html`
               <editor-icon-button
-                aria-label="Insert into Page"
-                .tooltip=${'Insert into Page'}
+                aria-label="Beszúrás a Dokumentumba"
+                .tooltip=${'Beszúrás a Dokumentumba'}
                 .iconSize=${'20px'}
                 .labelHeight=${'20px'}
                 @click=${this._insertIntoPage}
               >
                 ${NoteIcon}
-                <span class="label">Insert into Page</span>
+                <span class="label">Beszúrás a Dokumentumba</span>
               </editor-icon-button>
             `
           : nothing,
@@ -90,8 +93,8 @@ export class EdgelessChangeGroupButton extends WithDisposable(LitElement) {
         onlyOne
           ? html`
               <editor-icon-button
-                aria-label="Rename"
-                .tooltip=${'Rename'}
+                aria-label="Átnevezés"
+                .tooltip=${'Átnevezés'}
                 .iconSize=${'20px'}
                 @click=${() => mountGroupTitleEditor(groups[0], this.edgeless)}
               >
@@ -102,8 +105,8 @@ export class EdgelessChangeGroupButton extends WithDisposable(LitElement) {
 
         html`
           <editor-icon-button
-            aria-label="Ungroup"
-            .tooltip=${'Ungroup'}
+            aria-label="Csoportbontás"
+            .tooltip=${'Csoportbontás'}
             .iconSize=${'20px'}
             @click=${() =>
               groups.forEach(group => this.edgeless.service.ungroup(group))}

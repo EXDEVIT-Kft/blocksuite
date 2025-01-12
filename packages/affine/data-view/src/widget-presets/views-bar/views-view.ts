@@ -69,8 +69,8 @@ export class DataViewHeaderViews extends WidgetBase {
     }
 
     .database-view-button.selected {
-      color: var(--affine-text-primary-color);
-      background-color: var(--affine-hover-color-filled);
+      color: var(--algogrind-text-paragraph-color);
+      background-color: var(--algogrind-hover-color-filled);
     }
   `;
 

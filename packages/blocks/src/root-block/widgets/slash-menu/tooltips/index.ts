@@ -56,32 +56,32 @@ export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
 
   'Címsor 1': {
     figure: Heading1Tooltip,
-    caption: 'Címsor #1',
+    caption: 'Címsor 1',
   },
 
   'Címsor 2': {
     figure: Heading2Tooltip,
-    caption: 'Címsor #2',
+    caption: 'Címsor 2',
   },
 
   'Címsor 3': {
     figure: Heading3Tooltip,
-    caption: 'Címsor #3',
+    caption: 'Címsor 3',
   },
 
   'Címsor 4': {
     figure: Heading4Tooltip,
-    caption: 'Címsor #4',
+    caption: 'Címsor 4',
   },
 
   'Címsor 5': {
     figure: Heading5Tooltip,
-    caption: 'Címsor #5',
+    caption: 'Címsor 5',
   },
 
   'Címsor 6': {
     figure: Heading6Tooltip,
-    caption: 'Címsor #6',
+    caption: 'Címsor 6',
   },
 
   'Kód Blokk': {

@@ -131,15 +131,15 @@ html[class='dark'] {
   --affine-font-h-4: 22px;
   --affine-font-h-5: 20px;
   --affine-font-h-6: 18px;
-  --affine-font-base: 16px;
+  --algogrind-text-paragraph-size: 16px;
   --affine-font-sm: 14px;
   --affine-font-xs: 12px;
   --affine-line-height: calc(1em + 8px);
   --affine-z-index-modal: 1000;
   --affine-z-index-popover: 1000;
-  --affine-font-family: Avenir Next, Poppins, apple-system, BlinkMacSystemFont,
-    Helvetica Neue, Tahoma, PingFang SC, Microsoft Yahei, Arial,
-    Hiragino Sans GB, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+  --algogrind-text-paragraph-family: Avenir Next, Poppins, apple-system,
+    BlinkMacSystemFont, Helvetica Neue, Tahoma, PingFang SC, Microsoft Yahei,
+    Arial, Hiragino Sans GB, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol, Noto Color Emoji;
   --affine-font-number-family: Roboto Mono, apple-system, BlinkMacSystemFont,
     Helvetica Neue, Tahoma, PingFang SC, Microsoft Yahei, Arial,
@@ -154,24 +154,24 @@ html[class='dark'] {
   --affine-zoom: 1;
   --affine-scale: calc(1 / var(--affine-zoom));
 
-  --affine-brand-color: rgb(84, 56, 255);
+  --algogrind-primary-color: rgb(84, 56, 255);
   --affine-primary-color: rgb(118, 95, 254);
   --affine-secondary-color: rgb(144, 150, 245);
   --affine-tertiary-color: rgb(30, 30, 30);
-  --affine-hover-color: rgba(255, 255, 255, 0.1);
-  --affine-icon-color: rgb(168, 168, 160);
+  --algogrind-hover-color: rgba(255, 255, 255, 0.1);
+  --algogrind-text-paragraph-color: rgb(168, 168, 160);
   --affine-border-color: rgb(57, 57, 57);
   --affine-divider-color: rgb(114, 114, 114);
   --affine-placeholder-color: rgb(62, 62, 63);
   --affine-quote-color: rgb(100, 95, 130);
-  --affine-link-color: rgb(185, 191, 227);
-  --affine-edgeless-grid-color: rgb(49, 49, 49);
+  --algogrind-link-color: rgb(185, 191, 227);
+  --algogrind-grid-color: rgb(49, 49, 49);
   --affine-success-color: rgb(77, 213, 181);
   --affine-warning-color: rgb(255, 123, 77);
   --affine-error-color: rgb(212, 140, 130);
   --affine-processing-color: rgb(195, 215, 255);
   --affine-text-emphasis-color: rgb(208, 205, 220);
-  --affine-text-primary-color: rgb(234, 234, 234);
+  --algogrind-text-paragraph-color: rgb(234, 234, 234);
   --affine-text-secondary-color: rgb(156, 156, 160);
   --affine-text-disable-color: rgb(119, 117, 125);
   --affine-black-10: rgba(255, 255, 255, 0.1);

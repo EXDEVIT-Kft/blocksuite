@@ -17,7 +17,7 @@ import { openDetail, popRowMenu } from '../menu.js';
 export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
   static override styles = css`
     .affine-database-block-row:has(.row-select-checkbox.selected) {
-      background: var(--affine-primary-color-04);
+      background: var(--algogrind-primary-color-04);
     }
     .affine-database-block-row:has(.row-select-checkbox.selected)
       .row-selected-bg {
@@ -31,13 +31,13 @@ export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       right: 0;
       top: 0;
       bottom: 0;
-      background: var(--affine-primary-color-04);
+      background: var(--algogrind-primary-color-04);
     }
     .affine-database-block-row {
       width: 100%;
       display: flex;
       flex-direction: row;
-      border-bottom: 1px solid var(--affine-border-color);
+      border-bottom: 1px solid var(--algogrind-border-color);
       position: relative;
     }
 
@@ -83,7 +83,7 @@ export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       padding: 4px;
       border-radius: 4px;
       box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       position: relative;
     }
 
@@ -95,12 +95,12 @@ export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       right: 0;
       top: 0;
       bottom: 0;
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .row-op svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 16px;
       height: 16px;
     }
@@ -111,7 +111,7 @@ export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       align-items: center;
       justify-content: center;
       cursor: grab;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
     }
   `;
 
@@ -183,7 +183,7 @@ export class TableRow extends SignalWatcher(WithDisposable(ShadowlessElement)) {
                   style="width: 4px;
                   border-radius: 2px;
                   height: 12px;
-                  background-color: var(--affine-placeholder-color);"
+                  background-color: var(--algogrind-text-placeholder-color);"
                 ></div>
               </div>
               <row-select-checkbox

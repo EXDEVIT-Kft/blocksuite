@@ -18,7 +18,7 @@ const styles = css`
     display: flex;
     position: relative;
     flex-direction: column;
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     transition: background-color 100ms ease-in-out;
@@ -26,7 +26,7 @@ const styles = css`
   }
 
   affine-data-view-kanban-card:hover {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   affine-data-view-kanban-card .card-header {
@@ -41,7 +41,7 @@ const styles = css`
   }
 
   .card-header.has-divider {
-    border-bottom: 0.5px solid var(--affine-border-color);
+    border-bottom: 1px solid var(--algogrind-border-color);
   }
 
   affine-data-view-kanban-card .card-header-title {
@@ -61,8 +61,8 @@ const styles = css`
   affine-data-view-kanban-card .card-header-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   affine-data-view-kanban-card .card-body {
@@ -99,7 +99,7 @@ const styles = css`
     padding: 4px;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
   }
 
   .card-op:hover:before {
@@ -110,12 +110,12 @@ const styles = css`
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .card-op svg {
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
     width: 16px;
     height: 16px;
   }
@@ -305,7 +305,7 @@ export class KanbanCard extends SignalWatcher(
       v => !this.view.isInHeader(v.id)
     );
     this.style.border = this.isFocus
-      ? '1px solid var(--affine-primary-color)'
+      ? '1px solid var(--algogrind-primary-color)'
       : '';
     return html`
       ${this.renderHeader(columns)} ${this.renderBody(columns)}

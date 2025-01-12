@@ -1,7 +1,6 @@
 import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 const styles = css`
@@ -12,7 +11,7 @@ const styles = css`
   }
 
   .frame-panel-container {
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
     box-sizing: border-box;
 
     display: flex;
@@ -20,19 +19,17 @@ const styles = css`
     align-items: stretch;
 
     height: 100%;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-family: var(--algogrind-text-paragraph-family);
     padding: 8px;
   }
 
   .frame-panel-body {
-    padding-top: 12px;
+    padding-block: 12px;
     flex-grow: 1;
     width: 100%;
 
     overflow: auto;
     overflow-x: hidden;
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: transparent transparent; /* For Firefox */
   }
 
   .frame-panel-body::-webkit-scrollbar {
@@ -44,7 +41,7 @@ const styles = css`
   }
 
   .frame-panel-body:hover::-webkit-scrollbar-thumb {
-    background-color: var(--affine-black-30);
+    background-color: var(--algogrind-scroll-thumb-hover-color);
   }
 
   .frame-panel-body::-webkit-scrollbar-track {

@@ -348,7 +348,10 @@ export class EmbedCardToolbar extends WidgetComponent<
         class="card-style-select"
         .contentPadding=${'8px'}
         .button=${html`
-          <editor-icon-button aria-label="Card style" .tooltip=${'Card style'}>
+          <editor-icon-button
+            aria-label="Kártya megjelenése"
+            .tooltip=${'Kártya megjelenése'}
+          >
             ${PaletteIcon}
           </editor-icon-button>
         `}
@@ -784,7 +787,7 @@ export class EmbedCardToolbar extends WidgetComponent<
             <editor-icon-button
               aria-label="Másolás"
               data-testid="copy-link"
-              .tooltip=${'Kattints a link másolásához'}
+              .tooltip=${'Link másolása'}
               @click=${this._copyUrl}
             >
               ${CopyIcon}

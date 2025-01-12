@@ -49,10 +49,10 @@ export class EdgelessRootPreviewBlockComponent extends BlockComponent<
 
     affine-edgeless-root-preview .edgeless-background {
       height: 100%;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       background-image: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--algogrind-grid-color) 1px,
+        var(--algogrind-background-color) 1px
       );
     }
 

@@ -61,7 +61,7 @@ function TransparentColor(hollowCircle = false) {
     left: '3px',
     top: '3.5px',
     borderRadius: '50%',
-    background: 'var(--affine-background-overlay-panel-color)',
+    background: 'var(--algogrind-overlay-panel-background-color)',
   };
 
   const mask = hollowCircle
@@ -78,7 +78,7 @@ function BorderedHollowCircle(color: string) {
   const strokeWidth = valid && isSameColorWithBackground(color) ? 1 : 0;
   const style = {
     fill: valid ? `var(${color})` : color,
-    stroke: 'var(--affine-border-color)',
+    stroke: 'var(--algogrind-border-color)',
   };
   return html`
     <svg
@@ -127,7 +127,7 @@ export function ColorUnit(
   const borderStyle =
     isSameColorWithBackground(color) && !hollowCircle
       ? {
-          border: '0.5px solid var(--affine-border-color)',
+          border: '0.5px solid var(--algogrind-border-color)',
         }
       : {};
 
@@ -184,7 +184,7 @@ export class EdgelessColorButton extends LitElement {
     if (!hollowCircle) {
       style.background = this.preprocessColor;
       if (isSameColorWithBackground(color)) {
-        style.border = '0.5px solid var(--affine-border-color)';
+        style.border = '0.5px solid var(--algogrind-border-color)';
       }
     }
     return html`<div
@@ -232,7 +232,7 @@ export const colorContainerStyles = css`
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 0.5px solid var(--affine-primary-color);
+    border: 0.5px solid var(--algogrind-primary-color);
     border-radius: 50%;
     box-sizing: border-box;
     content: attr(data-letter);

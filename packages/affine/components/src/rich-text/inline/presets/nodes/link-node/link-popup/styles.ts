@@ -20,7 +20,7 @@ const editLinkStyle = css`
 
   .affine-link-edit-popover label {
     box-sizing: border-box;
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
     ${FONT_XS};
     font-weight: 400;
   }
@@ -30,18 +30,18 @@ const editLinkStyle = css`
     padding: 0;
     border: none;
     background: transparent;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
     ${FONT_XS};
   }
   .affine-link-edit-popover input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
   input:focus {
     outline: none;
   }
   .affine-link-edit-popover input:focus ~ label,
   .affine-link-edit-popover input:active ~ label {
-    color: var(--affine-primary-color);
+    color: var(--algogrind-primary-color);
   }
 
   .affine-edit-area {
@@ -55,7 +55,7 @@ const editLinkStyle = css`
     user-select: none;
     box-sizing: border-box;
 
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
     box-sizing: border-box;
 
     outline: none;
@@ -63,8 +63,8 @@ const editLinkStyle = css`
     background: transparent;
   }
   .affine-edit-area:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
   }
 
   .affine-edit-area.text {
@@ -136,11 +136,11 @@ export const linkPopupStyle = css`
     user-select: none;
     cursor: pointer;
 
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
     font-feature-settings:
       'clig' off,
       'liga' off;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 400;
@@ -163,7 +163,7 @@ export const linkPopupStyle = css`
     gap: 12px;
     padding: 12px;
 
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .affine-link-popover-input {
@@ -175,16 +175,16 @@ export const linkPopupStyle = css`
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--affine-border-color);
-    color: var(--affine-text-primary-color);
+    border-color: var(--algogrind-border-color);
+    color: var(--algogrind-text-paragraph-color);
     ${FONT_XS};
   }
   .affine-link-popover-input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
   .affine-link-popover-input:focus {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
   }
 
   ${editLinkStyle}

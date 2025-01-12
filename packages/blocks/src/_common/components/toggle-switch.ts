@@ -18,7 +18,7 @@ const styles = css`
     text-indent: -9999px;
     width: 38px;
     height: 20px;
-    background: var(--affine-icon-color);
+    background: var(--algogrind-text-paragraph-color);
     border: 1px solid var(--affine-black-10);
     display: block;
     border-radius: 20px;
@@ -39,7 +39,7 @@ const styles = css`
   }
 
   label.on {
-    background: var(--affine-primary-color);
+    background: var(--algogrind-primary-color);
   }
 
   label.on:after {

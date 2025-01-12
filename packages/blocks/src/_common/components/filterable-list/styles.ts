@@ -34,11 +34,11 @@ export const filterableListStyles = css`
   .items-container {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
     flex: 1;
     overflow-y: scroll;
-    padding-top: 5px;
-    padding-left: 4px;
+    padding-block: 5px;
+    padding-left: 2px;
     padding-right: 4px;
   }
 
@@ -54,12 +54,12 @@ export const filterableListStyles = css`
     gap: 4px;
     border-width: 1px;
     border-style: solid;
-    border-color: transparent;
+    border-color: var(--algogrind-border-color);
   }
 
   .input-wrapper:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
   }
 
   ${scrollbarStyle('.items-container')}
@@ -68,7 +68,9 @@ export const filterableListStyles = css`
     display: flex;
     justify-content: space-between;
     gap: 4px;
-    padding: 12px;
+    padding-block: 4px;
+    padding-inline: 8px;
+    height: unset;
   }
 
   .filterable-item > div[slot='suffix'] {
@@ -81,9 +83,9 @@ export const filterableListStyles = css`
     height: 20px;
   }
 
-  .filterable-item.focussed {
-    color: var(--affine-blue-700);
-    background: var(--affine-hover-color-filled);
+  .filterable-item.focused {
+    color: var(--algogrind-primary-color);
+    background: var(--algogrind-hover-color-filled);
   }
 
   #filter-input {
@@ -103,7 +105,9 @@ export const filterableListStyles = css`
   }
 
   #filter-input::placeholder {
-    color: var(--affine-placeholder-color);
-    font-size: var(--affine-font-sm);
+    color: var(--algogrind-text-placeholder-color);
+    font-size: var(--algogrind-text-small-size);
+    font-family: var(--algogrind-text-small-family);
+    font-weight: 500;
   }
 `;

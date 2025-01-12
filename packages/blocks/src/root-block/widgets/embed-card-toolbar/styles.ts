@@ -19,16 +19,17 @@ export const embedCardToolbarStyle = css`
     user-select: none;
     cursor: pointer;
 
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
     font-feature-settings:
       'clig' off,
       'liga' off;
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--algogrind-text-small-family);
+    font-size: var(--algogrind-text-small-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
     text-wrap: nowrap;
+    padding-left: 2px;
   }
 
   .affine-link-preview > span {
@@ -42,7 +43,7 @@ export const embedCardToolbarStyle = css`
   }
 
   .card-style-select icon-button.selected {
-    border: 1px solid var(--affine-brand-color);
+    border: 1px solid var(--algogrind-primary-color);
   }
 
   editor-icon-button.doc-title .label {
@@ -53,11 +54,11 @@ export const embedCardToolbarStyle = css`
     white-space: nowrap;
     user-select: none;
     cursor: pointer;
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
     font-feature-settings:
       'clig' off,
       'liga' off;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 400;

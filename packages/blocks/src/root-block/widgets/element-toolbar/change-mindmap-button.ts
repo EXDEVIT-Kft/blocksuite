@@ -57,7 +57,7 @@ const MINDMAP_LAYOUT_LIST: LayoutItem[] = [
     icon: MindmapLeftLayoutIcon,
   },
   {
-    name: 'Körkörös',
+    name: 'Kiegyensúlyozott',
     value: LayoutType.BALANCE,
     icon: MindmapBalanceLayoutIcon,
   },
@@ -76,7 +76,7 @@ export class EdgelessChangeMindmapStylePanel extends LitElement {
       justify-content: center;
       flex-direction: row;
       gap: 8px;
-      background: var(--affine-background-overlay-panel-color);
+      background: var(--algogrind-overlay-panel-background-color);
     }
 
     .style-item {
@@ -90,7 +90,7 @@ export class EdgelessChangeMindmapStylePanel extends LitElement {
     .style-item.active,
     .style-item:hover {
       cursor: pointer;
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 

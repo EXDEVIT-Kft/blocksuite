@@ -64,7 +64,7 @@ export class EdgelessTemplateButton extends EdgelessToolbarToolMixin(
       align-items: center;
     }
     .arrow-icon > svg {
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
       fill: currentColor;
       width: 20px;
       height: 20px;

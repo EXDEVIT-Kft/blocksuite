@@ -129,7 +129,7 @@ function highlightBlock(editor: AffineEditorContainer, blockId: string) {
     left: `${left - offsetX + scrollLeft}px`,
     width: `${width}px`,
     height: `${height}px`,
-    background: 'var(--affine-hover-color)',
+    background: 'var(--algogrind-hover-color)',
     borderRadius: '4px',
     display: 'block',
   });

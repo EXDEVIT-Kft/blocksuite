@@ -250,7 +250,23 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
 
     return html`
       ${style}
-      <div class="affine-paragraph-block-container">
+      <div
+        class=${classMap({
+          'affine-paragraph-block-container': true,
+          readonly: this.doc.readonly,
+        })}
+        @click=${() => {
+          if (
+            !this.doc.readonly ||
+            this.model.type === 'text' ||
+            collapsedSiblings.length === 0
+          ) {
+            return;
+          }
+
+          this._readonlyCollapsed = !this._readonlyCollapsed;
+        }}
+      >
         <div
           class=${classMap({
             'affine-paragraph-rich-text-wrapper': true,

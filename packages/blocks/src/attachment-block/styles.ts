@@ -14,10 +14,10 @@ export const styles = css`
 
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid var(--affine-background-tertiary-color);
+    border: 1px solid var(--algogrind-border-color);
 
     opacity: var(--add, 1);
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -56,7 +56,7 @@ export const styles = css`
   .affine-attachment-content-title-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-text-heading-6-color);
   }
 
   .affine-attachment-content-title-text {
@@ -67,10 +67,10 @@ export const styles = css`
     word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-heading-6-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
@@ -84,13 +84,13 @@ export const styles = css`
 
     word-break: break-all;
     overflow: hidden;
-    color: var(--affine-text-secondary-color);
     text-overflow: ellipsis;
+    color: var(--algogrind-text-caption-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
 
@@ -109,7 +109,7 @@ export const styles = css`
     background: var(--affine-background-secondary-color);
 
     .affine-attachment-content-title-text {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 

@@ -342,9 +342,11 @@ export class AffinePageDraggingAreaWidget extends WidgetComponent<
       <style>
         .affine-page-dragging-area {
           position: absolute;
-          background: var(--affine-hover-color);
+          background: var(--algogrind-selection-color);
           z-index: 1;
           pointer-events: none;
+          border-radius: 4px;
+          border: 1px solid var(--algogrind-selection-border-color);
         }
       </style>
       <div class="affine-page-dragging-area" style=${styleMap(style)}></div>

@@ -32,12 +32,12 @@ export class EdgelessAddFrameButton extends WithDisposable(LitElement) {
   protected override render() {
     return html`
       <editor-icon-button
-        aria-label="Frame"
-        .tooltip=${'Frame'}
+        aria-label="Keret"
+        .tooltip=${'Keret'}
         .labelHeight=${'20px'}
         @click=${this._createFrame}
       >
-        ${FrameIcon}<span class="label medium">Frame</span>
+        ${FrameIcon}<span class="label medium">Keret</span>
       </editor-icon-button>
     `;
   }

@@ -19,7 +19,7 @@ const styles = css`
     display: flex;
     position: relative;
     flex-direction: column;
-    border: 0.5px solid var(--affine-border-color);
+    border: 0.5px solid var(--algogrind-border-color);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     background-color: var(--affine-background-kanban-card-color);
@@ -37,7 +37,7 @@ const styles = css`
   }
 
   .mobile-card-header.has-divider {
-    border-bottom: 0.5px solid var(--affine-border-color);
+    border-bottom: 0.5px solid var(--algogrind-border-color);
   }
 
   .mobile-card-header-title {
@@ -81,7 +81,7 @@ const styles = css`
     padding: 4px;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
     font-size: 16px;
     color: ${unsafeCSSVarV2('icon/primary')};
   }

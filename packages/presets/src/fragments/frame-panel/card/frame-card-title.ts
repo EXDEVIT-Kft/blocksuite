@@ -19,7 +19,8 @@ const styles = css`
     height: 20px;
     box-sizing: border-box;
     gap: 6px;
-    font-size: var(--affine-font-sm);
+    font-size: var(--algogrind-text-small-size);
+    font-family: var(--algogrind-text-heading-6-family);
     cursor: default;
     position: relative;
   }
@@ -32,11 +33,11 @@ const styles = css`
     min-width: 18px;
     height: 18px;
     box-sizing: border-box;
-    border-radius: 2px;
-    background: var(--affine-black);
+    border-radius: 4px;
+    background: var(--algogrind-text-heading-6-color);
     margin-left: 2px;
 
-    color: var(--affine-white);
+    color: var(--algogrind-overlay-panel-background-color);
     text-align: center;
     font-weight: 500;
     line-height: 18px;
@@ -44,7 +45,7 @@ const styles = css`
 
   .frame-card-title-container .card-title {
     height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-heading-6-color);
     font-weight: 400;
     line-height: 20px;
 

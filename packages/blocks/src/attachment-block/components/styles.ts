@@ -21,12 +21,12 @@ export const renameStyles = css`
     padding: 4px 10px;
     background: var(--affine-white-10);
     border-radius: 4px;
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
   }
 
   .affine-attachment-rename-input-wrapper:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
   }
 
   .affine-attachment-rename-input-wrapper input {
@@ -34,12 +34,12 @@ export const renameStyles = css`
     border: none;
     outline: none;
     background: transparent;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
     ${FONT_XS};
   }
 
   .affine-attachment-rename-input-wrapper input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
 
   .affine-attachment-rename-extension {
@@ -67,12 +67,12 @@ export const moreMenuStyles = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
     border-radius: 8px;
     padding: 8px;
-    background: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-shadow-2);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-shadow-small);
   }
 
   .affine-attachment-options-more-container > icon-button {

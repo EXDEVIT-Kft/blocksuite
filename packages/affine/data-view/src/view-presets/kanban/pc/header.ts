@@ -27,7 +27,7 @@ const styles = css`
   }
 
   .select-group:hover {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 `;
 

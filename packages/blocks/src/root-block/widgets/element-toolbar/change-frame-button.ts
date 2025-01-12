@@ -162,8 +162,8 @@ export class EdgelessChangeFrameButton extends WithDisposable(LitElement) {
 
         html`
           <editor-icon-button
-            aria-label="Ungroup"
-            .tooltip=${'Ungroup'}
+            aria-label="Csoportbontás"
+            .tooltip=${'Csoportbontás'}
             .iconSize=${'20px'}
             @click=${() => {
               this.edgeless.doc.captureSync();

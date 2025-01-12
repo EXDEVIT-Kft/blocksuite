@@ -38,7 +38,7 @@ export class AffineCustomModal extends LitElement {
       min-width: 500px;
       height: 80%;
       overflow-y: scroll;
-      background-color: var(--affine-background-overlay-panel-color);
+      background-color: var(--algogrind-overlay-panel-background-color);
       border-radius: 12px;
       box-shadow: var(--affine-shadow-3);
       position: relative;
@@ -63,9 +63,9 @@ export class AffineCustomModal extends LitElement {
       align-items: center;
       background: var(--affine-white);
       border: 1px solid;
-      border-color: var(--affine-border-color);
+      border-color: var(--algogrind-border-color);
       border-radius: 8px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       cursor: pointer;
       display: inline-flex;
       font-size: var(--affine-font-sm);
@@ -79,7 +79,7 @@ export class AffineCustomModal extends LitElement {
     }
 
     .modal-footer .primary {
-      background: var(--affine-primary-color);
+      background: var(--algogrind-primary-color);
       border-color: var(--affine-black-10);
       box-shadow: var(--affine-button-inner-shadow);
       color: var(--affine-pure-white);

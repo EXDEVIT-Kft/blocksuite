@@ -85,7 +85,7 @@ export class EdgelessLassoToolButton extends QuickToolMixin(
     return html`
       <edgeless-tool-icon-button
         class="edgeless-lasso-button ${mode}"
-        .tooltip=${getTooltipWithShortcut('Lasso', 'L')}
+        .tooltip=${getTooltipWithShortcut('Lasszó', 'L')}
         .tooltipOffset=${17}
         .active=${type === 'lasso'}
         .iconContainerPadding=${6}

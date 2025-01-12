@@ -21,11 +21,11 @@ export class RowSelectCheckbox extends SignalWatcher(
     .row-select-checkbox {
       display: flex;
       align-items: center;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       opacity: 0;
       cursor: pointer;
       font-size: 20px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
     .row-select-checkbox:hover {
       opacity: 1;
@@ -74,7 +74,9 @@ export class RowSelectCheckbox extends SignalWatcher(
     return html`
       <div class="${classString}">
         ${this.isSelected$.value
-          ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
+          ? CheckBoxCheckSolidIcon({
+              style: `color:var(--algogrind-primary-color)`,
+            })
           : CheckBoxUnIcon()}
       </div>
     `;

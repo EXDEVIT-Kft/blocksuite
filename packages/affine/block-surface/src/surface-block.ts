@@ -62,10 +62,10 @@ export class SurfaceBlockComponent extends BlockComponent<
       overflow: hidden;
       display: block;
       height: 100%;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 400;
     }
 
@@ -81,10 +81,10 @@ export class SurfaceBlockComponent extends BlockComponent<
        * https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
        */
       touch-action: none;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       background-image: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--algogrind-grid-color) 1px,
+        var(--algogrind-background-color) 1px
       );
       z-index: 0;
     }

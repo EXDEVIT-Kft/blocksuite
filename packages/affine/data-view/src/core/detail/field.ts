@@ -53,7 +53,7 @@ export class RecordField extends SignalWatcher(
     }
 
     .field-left:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     affine-data-view-record-field .icon {
@@ -66,7 +66,7 @@ export class RecordField extends SignalWatcher(
     affine-data-view-record-field .icon svg {
       width: 16px;
       height: 16px;
-      fill: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
     }
 
     .filed-name {
@@ -91,7 +91,7 @@ export class RecordField extends SignalWatcher(
     }
 
     .field-content:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .field-content.is-editing {
@@ -99,12 +99,12 @@ export class RecordField extends SignalWatcher(
     }
 
     .field-content.is-focus {
-      border: 1px solid var(--affine-primary-color);
+      border: 1px solid var(--algogrind-primary-color);
     }
 
     .field-content.empty::before {
       content: 'Empty';
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
       font-size: 14px;
       line-height: 22px;
     }

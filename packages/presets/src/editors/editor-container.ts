@@ -32,7 +32,7 @@ export class AffineEditorContainer
       overflow-y: auto;
       container-name: viewport;
       container-type: inline-size;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
     }
     .affine-page-viewport * {
       box-sizing: border-box;
@@ -46,7 +46,7 @@ export class AffineEditorContainer
 
     .playground-page-editor-container {
       flex-grow: 1;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       display: block;
     }
 
@@ -61,8 +61,8 @@ export class AffineEditorContainer
     }
 
     .edgeless-editor-container {
-      font-family: var(--affine-font-family);
-      background: var(--affine-background-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      background: var(--algogrind-background-color);
       display: block;
       height: 100%;
       position: relative;
@@ -71,6 +71,7 @@ export class AffineEditorContainer
 
     .edgeless-editor-container * {
       box-sizing: border-box;
+      font-weight: 500;
     }
 
     @media print {

@@ -18,7 +18,9 @@ export class BooleanGroupView extends BaseGroup<NonNullable<unknown>, boolean> {
   protected override render(): unknown {
     return html` <div class="data-view-group-title-boolean-view">
       ${this.value
-        ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
+        ? CheckBoxCheckSolidIcon({
+            style: `color:var(--algogrind-primary-color)`,
+          })
         : CheckBoxUnIcon()}
     </div>`;
   }

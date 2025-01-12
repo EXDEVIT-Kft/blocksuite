@@ -1,8 +1,7 @@
 import type { EditorHost } from '@blocksuite/block-std';
 
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import type { AIPanelAnswerConfig, CopyConfig } from '../../type.js';
@@ -27,7 +26,7 @@ export class AIPanelAnswer extends WithDisposable(LitElement) {
       align-items: flex-start;
       gap: 4px;
       align-self: stretch;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       padding: 0 12px;
     }
 
@@ -47,7 +46,7 @@ export class AIPanelAnswer extends WithDisposable(LitElement) {
     .answer-body {
       align-self: stretch;
 
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-feature-settings:
         'clig' off,
         'liga' off;
@@ -79,7 +78,7 @@ export class AIPanelAnswer extends WithDisposable(LitElement) {
 
     .response-list-container ai-item-list {
       --item-icon-color: var(--affine-icon-secondary);
-      --item-icon-hover-color: var(--affine-icon-color);
+      --item-icon-hover-color: var(--algogrind-text-paragraph-color);
     }
   `;
 

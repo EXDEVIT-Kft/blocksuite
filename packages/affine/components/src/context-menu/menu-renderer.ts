@@ -1,4 +1,4 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { ShadowlessElement } from '@blocksuite/block-std';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
@@ -33,20 +33,19 @@ export class MenuComponent
 {
   static override styles = css`
     affine-menu {
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       display: flex;
       flex-direction: column;
       user-select: none;
       min-width: 276px;
-      box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
+      box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
       border-radius: 4px;
-      background-color: ${unsafeCSSVarV2('layer/background/overlayPanel')};
+      background-color: var(--algogrind-overlay-panel-background-color);
       padding: 8px;
       position: absolute;
       z-index: 999;
       gap: 8px;
-      border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .affine-menu-search-container {
@@ -55,7 +54,7 @@ export class MenuComponent
       align-items: center;
       padding: 4px 10px;
       gap: 8px;
-      border: 1px solid ${unsafeCSSVarV2('input/border/default')};
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .affine-menu-search {
@@ -76,7 +75,7 @@ export class MenuComponent
     .no-results {
       font-size: 12px;
       line-height: 20px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-paragraph-color);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -221,7 +220,7 @@ export class MenuComponent
             </div>`
           : nothing}
         <div
-          style="flex:1;font-weight:500;font-size: 14px;line-height: 22px;color: var(--affine-text-primary-color)"
+          style="flex:1;font-weight:500;font-size: 14px;line-height: 22px;color: var(--algogrind-text-paragraph-color)"
         >
           ${title.text}
         </div>
@@ -256,7 +255,7 @@ export class MobileMenuComponent
   static override styles = css`
     mobile-menu {
       height: 100%;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       display: flex;
       flex-direction: column;
       user-select: none;
@@ -339,7 +338,7 @@ export class MobileMenuComponent
           font-style: normal;
           font-weight: 500;
           line-height: 22px;
-          color: var(--affine-text-primary-color);
+          color: var(--algogrind-text-paragraph-color);
           display: flex;
           justify-content: center;
 "
@@ -391,7 +390,7 @@ export const createModal = (container: HTMLElement = document.body) => {
   div.style.width = '100%';
   div.style.height = '100%';
   div.style.zIndex = '1001';
-  div.style.fontFamily = 'var(--affine-font-family)';
+  div.style.fontFamily = 'var(--algogrind-text-paragraph-family)';
   container.append(div);
   return div;
 };

@@ -1,8 +1,7 @@
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { CloseIcon, SearchIcon } from '@blocksuite/icons/lit';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -31,7 +30,7 @@ const styles = css`
   .search-container-expand {
     overflow: visible;
     width: 138px;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .search-input-container {
@@ -62,7 +61,7 @@ const styles = css`
   }
 
   .affine-database-search-input-icon:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .search-container-expand .affine-database-search-input-icon {
@@ -75,7 +74,7 @@ const styles = css`
     width: 100%;
     padding: 0 2px 0 30px;
     border: none;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     box-sizing: border-box;
     color: inherit;
@@ -84,7 +83,7 @@ const styles = css`
   }
 
   .affine-database-search-input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
     font-size: var(--affine-font-sm);
   }
 `;

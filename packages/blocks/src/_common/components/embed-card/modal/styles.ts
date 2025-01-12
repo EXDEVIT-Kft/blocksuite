@@ -1,4 +1,4 @@
-import { FONT_XS, PANEL_BASE } from '@blocksuite/affine-shared/styles';
+import { PANEL_BASE } from '@blocksuite/affine-shared/styles';
 import { css } from 'lit';
 
 export const embedCardModalStyles = css`
@@ -22,13 +22,14 @@ export const embedCardModalStyles = css`
     bottom: 0;
     margin: auto;
     z-index: 2;
-    width: 305px;
     height: max-content;
     padding: 12px;
     gap: 12px;
     border-radius: 8px;
-    font-size: var(--affine-font-xs);
-    line-height: 20px;
+    font-size: var(--algogrind-text-paragraph-size);
+    color: var(--algogrind-text-paragraph-color);
+    font-family: var(--algogrind-text-paragraph-family);
+    line-height: var(--algogrind-line-height);
   }
 
   .embed-card-modal-row {
@@ -39,18 +40,20 @@ export const embedCardModalStyles = css`
 
   .embed-card-modal-row label {
     padding: 0px 2px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-paragraph-color);
     font-weight: 600;
   }
   .embed-card-modal-input {
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-white-10);
-    color: var(--affine-text-primary-color);
-    ${FONT_XS};
+    border-radius: 4px;
+    border: 1px solid var(--algogrind-border-color);
+    background: var(--algogrind-overlay-panel-background-color);
+    color: var(--algogrind-text-placeholder-color);
+    font-size: var(--algogrind-text-small-size);
+    font-family: var(--algogrind-text-small-family);
+    font-weight: 500;
   }
   input.embed-card-modal-input {
     padding-top: 4px;
@@ -63,12 +66,12 @@ export const embedCardModalStyles = css`
     max-width: 100%;
   }
   .embed-card-modal-input:focus {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
     outline: none;
   }
   .embed-card-modal-input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
 
   .embed-card-modal-row:has(.embed-card-modal-button) {
@@ -81,40 +84,43 @@ export const embedCardModalStyles = css`
   }
 
   .embed-card-modal-button {
-    padding: 4px 18px;
-    border-radius: 8px;
+    padding: 6px 18px;
+    border-radius: 4px;
     box-sizing: border-box;
+    font-family: var(--algogrind-text-small-family);
+    font-weight: 500;
   }
   .embed-card-modal-button.save {
-    border: 1px solid var(--affine-black-10);
-    background: var(--affine-primary-color);
-    color: var(--affine-pure-white);
+    background: var(--algogrind-primary-color);
+    color: var(--algogrind-primary-background-text-color);
+    border: 1px solid transparent;
   }
   .embed-card-modal-button[disabled] {
     pointer-events: none;
     cursor: not-allowed;
-    color: var(--affine-text-disable-color);
+    color: var(--algogrind-text-disabled-color);
     background: transparent;
+    border: 1px solid var(--algogrind-border-color);
   }
   .embed-card-modal-button.reset {
     padding: 4px 0;
     border: none;
     background: transparent;
     text-decoration: underline;
-    color: var(--affine-secondary-color);
+    color: var(--algogrind-text-paragraph-color);
     user-select: none;
   }
 
   .embed-card-modal-title {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 26px;
+    font-size: var(--algogrind-text-heading-5-size);
+    font-family: var(--algogrind-text-heading-5-family);
+    color: var(--algogrind-text-heading-5-color);
+    line-height: var(--algogrind-line-height);
     user-select: none;
   }
   .embed-card-modal-description {
-    font-size: 15px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: var(--algogrind-line-height);
     user-select: none;
   }
 `;

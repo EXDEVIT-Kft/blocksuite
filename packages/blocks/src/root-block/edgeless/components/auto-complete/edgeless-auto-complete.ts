@@ -122,22 +122,22 @@ export class EdgelessAutoComplete extends WithDisposable(LitElement) {
 
     .edgeless-auto-complete-arrow-wrapper:hover
       > .edgeless-auto-complete-arrow {
-      border: 1px solid var(--affine-border-color);
-      box-shadow: var(--affine-shadow-1);
+      border: 1px solid var(--algogrind-border-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       background: var(--affine-white);
     }
 
     .edgeless-auto-complete-arrow-wrapper
       > .edgeless-auto-complete-arrow:hover {
       border: 1px solid var(--affine-white-10);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-primary-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
+      background: var(--algogrind-primary-color);
     }
 
     .edgeless-auto-complete-arrow-wrapper.mindmap
       > .edgeless-auto-complete-arrow {
-      border: 1px solid var(--affine-border-color);
-      box-shadow: var(--affine-shadow-1);
+      border: 1px solid var(--algogrind-border-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       background: var(--affine-white);
 
       transition:
@@ -148,8 +148,8 @@ export class EdgelessAutoComplete extends WithDisposable(LitElement) {
     .edgeless-auto-complete-arrow-wrapper.mindmap
       > .edgeless-auto-complete-arrow:hover {
       border: 1px solid var(--affine-white-10);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-primary-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
+      background: var(--algogrind-primary-color);
     }
 
     .edgeless-auto-complete-arrow svg {

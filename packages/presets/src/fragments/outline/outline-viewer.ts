@@ -66,7 +66,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
 
     .outline-viewer-indicator.active {
       width: 24px;
-      background: var(--affine-text-primary-color);
+      background: var(--algogrind-text-paragraph-color);
     }
 
     .outline-viewer-panel {
@@ -82,8 +82,8 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       border-radius: 8px;
       border-width: 0px;
       border-style: solid;
-      border-color: var(--affine-border-color);
-      background: var(--affine-background-overlay-panel-color);
+      border-color: var(--algogrind-border-color);
+      background: var(--algogrind-overlay-panel-background-color);
       box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.14);
 
       overflow-y: auto;
@@ -113,7 +113,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
         color: var(--affine-text-secondary-color);
         text-overflow: ellipsis;
 
-        font-family: var(--affine-font-family);
+        font-family: var(--algogrind-text-paragraph-family);
         font-size: 12px;
         font-style: normal;
         font-weight: 500;

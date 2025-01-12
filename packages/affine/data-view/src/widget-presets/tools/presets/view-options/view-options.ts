@@ -51,7 +51,7 @@ const styles = css`
   }
 
   .affine-database-toolbar-item.more-action:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .affine-database-toolbar-item.more-action {
@@ -60,7 +60,7 @@ const styles = css`
   }
 
   .more-action.active {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 `;
 

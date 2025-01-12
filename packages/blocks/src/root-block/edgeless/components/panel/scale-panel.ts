@@ -29,18 +29,18 @@ export class EdgelessScalePanel extends LitElement {
     .scale-input {
       display: flx;
       align-self: stretch;
-      border: 0.5px solid var(--affine-border-color);
-      border-radius: 8px;
+      border: 0.5px solid var(--algogrind-border-color);
+      border-radius: 4px;
       padding: 4px 8px;
       box-sizing: border-box;
     }
 
     .scale-input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
 
     .scale-input:focus {
-      outline-color: var(--affine-primary-color);
+      outline-color: var(--algogrind-primary-color);
       outline-width: 0.5px;
     }
   `;

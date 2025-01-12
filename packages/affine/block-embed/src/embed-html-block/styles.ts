@@ -18,7 +18,7 @@ export const styles = css`
     border: 1px solid var(--affine-background-tertiary-color);
 
     opacity: var(--add, 1);
-    background: var(--affine-background-primary-color);
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -42,7 +42,7 @@ export const styles = css`
     width: 100%;
     height: 100%;
     border-radius: 4px 4px 0px 0px;
-    box-shadow: var(--affine-shadow-1);
+    box-shadow: var(--algogrind-shadow-xsmall);
     overflow: hidden;
   }
 
@@ -113,7 +113,7 @@ export const styles = css`
   .affine-embed-html-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-html-title-text {
@@ -124,9 +124,9 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;

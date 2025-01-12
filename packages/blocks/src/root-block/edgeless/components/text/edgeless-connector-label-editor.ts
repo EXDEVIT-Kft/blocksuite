@@ -36,8 +36,8 @@ export class EdgelessConnectorLabelEditor extends WithDisposable(
       transform-origin: center;
       z-index: 10;
       padding: ${VERTICAL_PADDING}px ${HORIZONTAL_PADDING}px;
-      border: ${BORDER_WIDTH}px solid var(--affine-primary-color, #1e96eb);
-      background: var(--affine-background-primary-color, #fff);
+      border: ${BORDER_WIDTH}px solid var(--algogrind-primary-color);
+      background: var(--algogrind-background-color, #fff);
       border-radius: 2px;
       box-shadow: 0px 0px 0px 2px rgba(30, 150, 235, 0.3);
       box-sizing: border-box;
@@ -55,7 +55,7 @@ export class EdgelessConnectorLabelEditor extends WithDisposable(
 
       .edgeless-connector-label-editor-placeholder {
         pointer-events: none;
-        color: var(--affine-text-disable-color);
+        color: var(--algogrind-text-disabled-color);
         white-space: nowrap;
       }
     }

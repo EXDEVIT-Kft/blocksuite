@@ -70,11 +70,11 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
 
     filter-bar:hover::-webkit-scrollbar-thumb {
       border-radius: 16px;
-      background-color: var(--affine-black-30);
+      background-color: var(--algogrind-scroll-thumb-hover-color);
     }
 
     filter-bar:hover::-webkit-scrollbar-track {
-      //background-color: var(--affine-hover-color);
+      //background-color: var(--algogrind-hover-color);
     }
   `;
 

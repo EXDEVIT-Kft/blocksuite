@@ -19,19 +19,19 @@ export class LanguageListButton extends WithDisposable(
 ) {
   static override styles = css`
     .lang-button {
-      background-color: var(--affine-background-primary-color);
-      box-shadow: var(--affine-shadow-1);
+      background-color: var(--algogrind-background-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       display: flex;
       gap: 4px;
       padding: 2px 4px;
     }
 
     .lang-button:hover {
-      background: var(--affine-hover-color-filled);
+      background: var(--algogrind-hover-color-filled);
     }
 
     .lang-button[hover] {
-      background: var(--affine-hover-color-filled);
+      background: var(--algogrind-hover-color-filled);
     }
 
     .lang-button-icon {
@@ -63,7 +63,7 @@ export class LanguageListButton extends WithDisposable(
     this.onActiveStatusChange(true);
 
     const options: FilterableListOptions = {
-      placeholder: 'Keress rá egy nyelvre',
+      placeholder: 'Keress rá egy nyelvre...',
       onSelect: item => {
         const sortedBundledLanguages = this._sortedBundledLanguages;
         const index = sortedBundledLanguages.indexOf(item);
@@ -119,10 +119,11 @@ export class LanguageListButton extends WithDisposable(
 
   override render() {
     const textStyles = styleMap({
-      fontFamily: 'Inter',
-      fontSize: 'var(--affine-font-xs)',
+      fontFamily: 'var(--algogrind-text-caption-family)',
+      fontSize: 'var(--algogrind-text-caption-size)',
+      color: 'var(--algogrind-text-caption-color)',
       fontStyle: 'normal',
-      fontWeight: '500',
+      fontWeight: '600',
       lineHeight: '20px',
       padding: '0 4px',
     });

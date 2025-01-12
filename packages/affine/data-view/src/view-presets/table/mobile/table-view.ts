@@ -43,7 +43,7 @@ export class MobileDataViewTable extends DataViewBase<
     .cell-divider {
       width: 1px;
       height: 100%;
-      background-color: var(--affine-border-color);
+      background-color: var(--algogrind-border-color);
     }
   `;
 

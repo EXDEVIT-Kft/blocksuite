@@ -128,6 +128,7 @@ function notEqual<
 }
 
 interface EndpointStyle {
+  name: string;
   value: PointStyle;
   icon: TemplateResult<1>;
 }
@@ -152,22 +153,27 @@ const STYLE_CHOOSE: [boolean, () => TemplateResult<1>][] = [
 
 const FRONT_ENDPOINT_STYLE_LIST: EndpointStyle[] = [
   {
+    name: 'Nincs',
     value: PointStyle.None,
     icon: ConnectorEndpointNoneIcon,
   },
   {
+    name: 'Nyíl',
     value: PointStyle.Arrow,
     icon: FrontEndpointArrowIcon,
   },
   {
+    name: 'Háromszög',
     value: PointStyle.Triangle,
     icon: FrontEndpointTriangleIcon,
   },
   {
+    name: 'Kör',
     value: PointStyle.Circle,
     icon: FrontEndpointCircleIcon,
   },
   {
+    name: 'Gyémánt',
     value: PointStyle.Diamond,
     icon: FrontEndpointDiamondIcon,
   },
@@ -175,24 +181,29 @@ const FRONT_ENDPOINT_STYLE_LIST: EndpointStyle[] = [
 
 const REAR_ENDPOINT_STYLE_LIST: EndpointStyle[] = [
   {
-    value: PointStyle.Diamond,
-    icon: RearEndpointDiamondIcon,
+    name: 'Nincs',
+    value: PointStyle.None,
+    icon: ConnectorEndpointNoneIcon,
   },
   {
-    value: PointStyle.Circle,
-    icon: RearEndpointCircleIcon,
-  },
-  {
-    value: PointStyle.Triangle,
-    icon: RearEndpointTriangleIcon,
-  },
-  {
+    name: 'Nyíl',
     value: PointStyle.Arrow,
     icon: RearEndpointArrowIcon,
   },
   {
-    value: PointStyle.None,
-    icon: ConnectorEndpointNoneIcon,
+    name: 'Háromszög',
+    value: PointStyle.Triangle,
+    icon: RearEndpointTriangleIcon,
+  },
+  {
+    name: 'Kör',
+    value: PointStyle.Circle,
+    icon: RearEndpointCircleIcon,
+  },
+  {
+    name: 'Gyémánt',
+    value: PointStyle.Diamond,
+    icon: RearEndpointDiamondIcon,
   },
 ] as const;
 
@@ -362,7 +373,7 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
             return html`
               <edgeless-color-picker-button
                 class="stroke-color"
-                .label=${'Stroke style'}
+                .label=${'Szín'}
                 .pick=${this.pickColor}
                 .color=${selectedColor}
                 .colors=${colors}
@@ -398,10 +409,7 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
             <editor-menu-button
               .contentPadding=${'8px'}
               .button=${html`
-                <editor-icon-button
-                  aria-label="Stroke style"
-                  .tooltip=${'Stroke style'}
-                >
+                <editor-icon-button aria-label="Szín" .tooltip=${'Szín'}>
                   <edgeless-color-button
                     .color=${selectedColor}
                   ></edgeless-color-button>
@@ -454,8 +462,8 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
           <editor-menu-button
             .button=${html`
               <editor-icon-button
-                aria-label="Start point style"
-                .tooltip=${'Start point style'}
+                aria-label="Kezdőpont stílusa"
+                .tooltip=${'Kezdőpont stílusa'}
               >
                 ${this._getEndpointIcon(
                   FRONT_ENDPOINT_STYLE_LIST,
@@ -468,10 +476,10 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
               ${repeat(
                 FRONT_ENDPOINT_STYLE_LIST,
                 item => item.value,
-                ({ value, icon }) => html`
+                ({ name, value, icon }) => html`
                   <editor-icon-button
-                    aria-label=${value}
-                    .tooltip=${value}
+                    aria-label=${name}
+                    .tooltip=${name}
                     .active=${selectedStartPointStyle === value}
                     .activeMode=${'background'}
                     @click=${() =>
@@ -488,8 +496,8 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
           </editor-menu-button>
 
           <editor-icon-button
-            aria-label="Flip direction"
-            .tooltip=${'Flip direction'}
+            aria-label="Irányváltás"
+            .tooltip=${'Irányváltás'}
             .disabled=${false}
             @click=${() =>
               this._flipEndpointStyle(
@@ -503,8 +511,8 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
           <editor-menu-button
             .button=${html`
               <editor-icon-button
-                aria-label="End point style"
-                .tooltip=${'End point style'}
+                aria-label="Végpont stílusa"
+                .tooltip=${'Végpont stílusa'}
               >
                 ${this._getEndpointIcon(
                   REAR_ENDPOINT_STYLE_LIST,
@@ -517,10 +525,10 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
               ${repeat(
                 REAR_ENDPOINT_STYLE_LIST,
                 item => item.value,
-                ({ value, icon }) => html`
+                ({ name, value, icon }) => html`
                   <editor-icon-button
-                    aria-label=${value}
-                    .tooltip=${value}
+                    aria-label=${name}
+                    .tooltip=${name}
                     .active=${selectedEndPointStyle === value}
                     .activeMode=${'background'}
                     @click=${() =>
@@ -538,10 +546,7 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
 
           <editor-menu-button
             .button=${html`
-              <editor-icon-button
-                aria-label="Shape"
-                .tooltip=${'Connector shape'}
-              >
+              <editor-icon-button aria-label="Forma" .tooltip=${'Forma'}>
                 ${choose(selectedMode, MODE_CHOOSE)}${SmallArrowDownIcon}
               </editor-icon-button>
             `}
@@ -573,8 +578,8 @@ export class EdgelessChangeConnectorButton extends WithDisposable(LitElement) {
               'button',
               () => html`
                 <editor-icon-button
-                  aria-label="Add text"
-                  .tooltip=${'Add text'}
+                  aria-label="Szöveg hozzáadása"
+                  .tooltip=${'Szöveg hozzáadása'}
                   @click=${this._addLabel}
                 >
                   ${AddTextIcon}

@@ -7,8 +7,8 @@ export class LinkNode extends ShadowlessElement {
   static override styles = css`
     .link-node {
       word-break: break-all;
-      color: var(--affine-link-color);
-      fill: var(--affine-link-color);
+      color: var(--algogrind-link-color);
+      fill: var(--algogrind-link-color);
       cursor: pointer;
       font-weight: normal;
       font-style: normal;

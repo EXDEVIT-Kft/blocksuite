@@ -53,12 +53,12 @@ export class AIFinishTip extends WithDisposable(LitElement) {
           user-select: none;
         }
         .copy:hover {
-          color: var(--affine-icon-color);
-          background: var(--affine-hover-color);
+          color: var(--algogrind-text-paragraph-color);
+          background: var(--algogrind-hover-color);
           cursor: pointer;
         }
         .copied {
-          color: var(--affine-brand-color);
+          color: var(--algogrind-primary-color);
         }
       }
     }

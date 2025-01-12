@@ -176,14 +176,14 @@ export class EditorMenuAction extends LitElement {
       text-overflow: ellipsis;
       cursor: pointer;
       gap: 8px;
-      color: var(--affine-text-primary-color);
-      font-weight: 400;
+      color: var(--algogrind-text-paragraph-color);
+      font-weight: 500;
       min-height: 30px; // 22 + 8
     }
 
     :host(:hover),
     :host([data-selected]) {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     :host([data-selected]) {
@@ -199,11 +199,11 @@ export class EditorMenuAction extends LitElement {
     :host([disabled]) {
       pointer-events: none;
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
     }
 
     ::slotted(svg) {
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
   `;
 

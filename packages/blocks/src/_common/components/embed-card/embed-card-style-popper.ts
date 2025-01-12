@@ -28,8 +28,8 @@ export class EmbedCardStyleMenu extends WithDisposable(LitElement) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--algogrind-overlay-panel-background-color);
+      box-shadow: var(--algogrind-shadow-small);
     }
 
     .embed-card-style-menu-container > icon-button {
@@ -37,7 +37,7 @@ export class EmbedCardStyleMenu extends WithDisposable(LitElement) {
     }
 
     .embed-card-style-menu-container > icon-button.selected {
-      border: 1px solid var(--affine-brand-color);
+      border: 1px solid var(--algogrind-primary-color);
     }
   `;
 

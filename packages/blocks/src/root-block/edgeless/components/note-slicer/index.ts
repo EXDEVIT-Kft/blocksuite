@@ -46,9 +46,9 @@ const styles = css`
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    color: var(--affine-icon-color);
-    border: 1px solid var(--affine-border-color);
-    background-color: var(--affine-background-overlay-panel-color);
+    color: var(--algogrind-text-paragraph-color);
+    border: 1px solid var(--algogrind-border-color);
+    background-color: var(--algogrind-overlay-panel-background-color);
     box-shadow: var(--affine-menu-shadow);
     cursor: pointer;
     width: 24px;

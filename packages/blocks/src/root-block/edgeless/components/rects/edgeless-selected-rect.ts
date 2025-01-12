@@ -146,7 +146,7 @@ export class EdgelessSelectedRectWidget extends WidgetComponent<
       pointer-events: none;
       box-sizing: border-box;
       z-index: 1;
-      border-color: var(--affine-blue);
+      border-color: var(--algogrind-primary-color);
       border-width: 2px;
       border-style: solid;
       transform: translate(0, 0) rotate(0);
@@ -186,7 +186,7 @@ export class EdgelessSelectedRectWidget extends WidgetComponent<
       height: 12px;
       box-sizing: border-box;
       border-radius: 50%;
-      border: 2px var(--affine-blue) solid;
+      border: 2px var(--algogrind-primary-color) solid;
       background: white;
     }
 
@@ -258,7 +258,7 @@ export class EdgelessSelectedRectWidget extends WidgetComponent<
     .affine-edgeless-selected-rect .handle[aria-label='right'] {
       border: 0;
       background: transparent;
-      border-color: var('--affine-blue');
+      border-color: var('--algogrind-primary-color');
     }
 
     .affine-edgeless-selected-rect .handle[aria-label='left'],
@@ -410,11 +410,11 @@ export class EdgelessSelectedRectWidget extends WidgetComponent<
       content: attr(data-scale-percent);
       display: none;
       position: absolute;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
       font-feature-settings:
         'clig' off,
         'liga' off;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: 12px;
       font-style: normal;
       font-weight: 400;
@@ -1439,7 +1439,7 @@ export class EdgelessSelectedRectWidget extends WidgetComponent<
                 width: `${w * this.zoom}px`,
                 height: `${h * this.zoom}px`,
                 transform: `rotate(${element.rotate}deg)`,
-                border: `1px solid var(--affine-primary-color)`,
+                border: `1px solid var(--algogrind-primary-color)`,
               };
               return html`<div
                 class="element-handle"

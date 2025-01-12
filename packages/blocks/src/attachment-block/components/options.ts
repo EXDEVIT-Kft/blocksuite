@@ -80,14 +80,16 @@ export function attachmentViewToggleMenu({
       .contentPadding=${'8px'}
       .button=${html`
         <editor-icon-button
-          aria-label="Switch view"
+          aria-label="Nézet váltása"
           .justify=${'space-between'}
           .labelHeight=${'20px'}
           .iconContainerWidth=${'110px'}
         >
           <div class="label">
-            <span style="text-transform: capitalize">${viewType}</span>
-            view
+            <span style="text-transform: capitalize"
+              >${viewType === 'embed' ? 'Beágyazott' : 'Kártya'}</span
+            >
+            nézet
           </div>
           ${SmallArrowDownIcon}
         </editor-icon-button>

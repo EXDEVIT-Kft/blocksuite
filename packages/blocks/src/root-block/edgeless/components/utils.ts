@@ -29,7 +29,7 @@ export function getCommonRectStyle(
     width: `${rect.width}px`,
     height: `${rect.height}px`,
     transform: `translate(${rect.x}px, ${rect.y}px) rotate(${rotate}deg)`,
-    backgroundColor: !active && selected ? 'var(--affine-hover-color)' : '',
+    backgroundColor: !active && selected ? 'var(--algogrind-hover-color)' : '',
   };
 }
 
@@ -44,10 +44,12 @@ export function getTooltipWithShortcut(
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .tooltip__shortcut {
-      font-size: 12px;
+      font-size: var(--algogrind-text-caption-size);
+      font-family: var(--algogrind-text-caption-family);
+      color: var(--algogrind-text-caption-color);
       position: relative;
 
       display: flex;
@@ -55,14 +57,15 @@ export function getTooltipWithShortcut(
       justify-content: center;
       height: 16px;
       min-width: 16px;
+      z-index: 1;
     }
     .tooltip__shortcut::before {
       content: '';
       border-radius: 4px;
       position: absolute;
       inset: 0;
-      background: currentColor;
-      opacity: 0.2;
+      background: var(--algogrind-shortcut-background-color);
+      z-index: -1;
     }
     .tooltip__label {
       white-space: pre;

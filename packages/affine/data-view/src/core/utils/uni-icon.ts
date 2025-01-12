@@ -15,7 +15,7 @@ export class AffineLitIcon extends ShadowlessElement {
     }
 
     affine-lit-icon svg {
-      fill: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
     }
   `;
 

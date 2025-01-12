@@ -17,7 +17,7 @@ export class DataViewColumnPreview extends SignalWatcher(
       pointer-events: none;
       display: block;
       position: fixed;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
     }
   `;
 
@@ -29,7 +29,7 @@ export class DataViewColumnPreview extends SignalWatcher(
     const columnIndex = this.tableViewManager.propertyIndexGet(this.column.id);
     return html`
       <div
-        style="background-color: var(--affine-background-primary-color);border-top: 1px solid var(--affine-border-color);box-shadow: var(--affine-shadow-2);"
+        style="background-color: var(--algogrind-background-color);border-top: 1px solid var(--algogrind-border-color);box-shadow: var(--algogrind-shadow-small);"
       >
         <affine-database-header-column
           .tableViewManager="${this.tableViewManager}"
@@ -43,7 +43,7 @@ export class DataViewColumnPreview extends SignalWatcher(
             height: height + 'px',
           });
           return html`<div
-            style="border-top: 1px solid var(--affine-border-color)"
+            style="border-top: 1px solid var(--algogrind-border-color)"
           >
             <div style="${style}">
               <affine-database-cell-container

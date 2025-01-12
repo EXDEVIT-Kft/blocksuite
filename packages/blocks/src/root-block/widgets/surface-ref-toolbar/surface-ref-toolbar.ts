@@ -124,7 +124,7 @@ function SurfaceRefToolbarOptions({
   if (hasValidReference) {
     openMenuActions.push({
       type: 'open-in-edgeless',
-      label: 'Open in edgeless',
+      label: 'Megnyitás Rajztáblán',
       icon: EdgelessModeIcon,
       action: () => blockComponent.viewInEdgeless(),
       disabled: readonly,
@@ -133,7 +133,7 @@ function SurfaceRefToolbarOptions({
     if (isPeekable(blockComponent)) {
       openMenuActions.push({
         type: 'open-in-center-peek',
-        label: 'Open in center peek',
+        label: 'Bepillantás',
         icon: CenterPeekIcon,
         action: () => peek(blockComponent),
       });
@@ -149,7 +149,7 @@ function SurfaceRefToolbarOptions({
             .contentPadding=${'8px'}
             .button=${html`
               <editor-icon-button
-                aria-label="Open doc"
+                aria-label="Dokumentum megnyitása"
                 .justify=${'space-between'}
                 .labelHeight=${'20px'}
               >
@@ -180,8 +180,8 @@ function SurfaceRefToolbarOptions({
       ? nothing
       : html`
           <editor-icon-button
-            aria-label="Caption"
-            .tooltip=${'Add Caption'}
+            aria-label="Felirat hozzáadása"
+            .tooltip=${'Felirat hozzáadása'}
             @click=${() => {
               abortController.abort();
               blockComponent.captionElement.show();

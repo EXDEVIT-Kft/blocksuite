@@ -90,7 +90,7 @@ export class EdgelessNoteShadowPanel extends WithDisposable(LitElement) {
     }
 
     .item:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -112,7 +112,7 @@ export class EdgelessNoteShadowPanel extends WithDisposable(LitElement) {
             style=${styleMap({
               border:
                 this.value === shadow.type
-                  ? '1px solid var(--affine-brand-color)'
+                  ? '1px solid var(--algogrind-primary-color)'
                   : 'none',
             })}
           >

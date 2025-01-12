@@ -11,7 +11,6 @@ import {
   stopPropagation,
 } from '@blocksuite/affine-shared/utils';
 import { type Bound, WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -30,7 +29,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
   static override styles = css`
     :host {
       position: absolute;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
       z-index: 1;
     }
 
@@ -38,7 +37,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 467px;
       height: 568px;
       border-radius: 12px;
-      background-color: var(--affine-background-overlay-panel-color);
+      background-color: var(--algogrind-overlay-panel-background-color);
       box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.2);
 
       display: flex;
@@ -62,7 +61,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
 
     .search-input {
       border: 0;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-size: 20px;
       background-color: inherit;
       outline: none;
@@ -83,7 +82,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     }
 
     .category-entry {
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-size: 12px;
       font-weight: 600;
       line-height: 20px;
@@ -97,7 +96,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
 
     .category-entry.selected,
     .category-entry:hover {
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       background-color: var(--affine-background-tertiary-color);
     }
 
@@ -126,7 +125,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 135px;
       height: 80px;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.02);
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       border-radius: 4px;
       cursor: pointer;
     }
@@ -136,7 +135,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       margin: 0 auto;
       width: 135px;
       height: 80px;
-      color: var(--affine-background-primary-color);
+      color: var(--algogrind-background-color);
     }
 
     /* .template-item:hover::before {
@@ -154,7 +153,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       text-align: center;
       font-size: 12px;
 
-      background-color: var(--affine-primary-color);
+      background-color: var(--algogrind-primary-color);
       color: var(--affine-white);
     } */
 
@@ -168,7 +167,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       box-sizing: border-box;
       border: 1px solid var(--affine-black-10);
       border-radius: 4px;
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .template-item.loading::before {
@@ -193,7 +192,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       bottom: 0;
       position: absolute;
       transform: translateY(20px);
-      color: var(--affine-background-overlay-panel-color);
+      color: var(--algogrind-overlay-panel-background-color);
     }
   `;
 

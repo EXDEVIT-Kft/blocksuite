@@ -25,7 +25,6 @@ import {
   HeadingIcon,
   ImageIcon20,
   //LinkedDocIcon,
-  LinkIcon,
   //NewDocIcon,
   NowIcon,
   TodayIcon,
@@ -43,9 +42,14 @@ import {
   //createDefaultDoc,
   openFileOrFiles,
 } from '@blocksuite/affine-shared/utils';
+import {
+  EquationBlockIcon,
+  EquationInlineIcon,
+  WebIcon,
+} from '@blocksuite/editor-icons';
 //import { viewPresets } from '@blocksuite/data-view/view-presets';
 //import { assertType } from '@blocksuite/global/utils';
-import { DualLinkIcon, GroupingIcon, TeXIcon } from '@blocksuite/icons/lit';
+import { DualLinkIcon, GroupingIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
 
 //import type { DataViewBlockComponent } from '../../../data-view-block/index.js';
@@ -157,7 +161,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Sorközi Egyenlet',
       description: 'Szúrj be egy új sorközi egyenletet.',
-      icon: TeXIcon({
+      icon: EquationInlineIcon({
         width: '20',
         height: '20',
       }),
@@ -618,7 +622,10 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Weboldal',
       description: 'Hivatkozz egy külső weboldalra elegánsan.',
-      icon: LinkIcon,
+      icon: WebIcon({
+        width: '20',
+        height: '20',
+      }),
       tooltip: slashMenuToolTips['Weboldal'],
       alias: ['hivatkozás', 'link', 'bookmark', 'website'],
       showWhen: ({ model }) =>
@@ -762,7 +769,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Egyenlet',
       description: 'Hozz létre egy új egyenlet blokkot.',
-      icon: TeXIcon({
+      icon: EquationBlockIcon({
         width: '20',
         height: '20',
       }),

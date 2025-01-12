@@ -23,12 +23,12 @@ export class EdgelessAddGroupButton extends WithDisposable(LitElement) {
   protected override render() {
     return html`
       <editor-icon-button
-        aria-label="Group"
-        .tooltip=${'Group'}
+        aria-label="Csoportosítás"
+        .tooltip=${'Csoportosítás'}
         .labelHeight=${'20px'}
         @click=${this._createGroup}
       >
-        ${GroupIcon}<span class="label medium">Group</span>
+        ${GroupIcon}<span class="label medium">Csoportosítás</span>
       </editor-icon-button>
     `;
   }

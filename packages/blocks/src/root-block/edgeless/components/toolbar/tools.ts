@@ -7,6 +7,7 @@ import type { EdgelessRootBlockComponent } from '../../edgeless-root-block.js';
 
 import { buildConnectorDenseMenu } from './connector/connector-dense-menu.js';
 import { buildFrameDenseMenu } from './frame/frame-dense-menu.js';
+import { buildLassoDenseMenu } from './lasso/lasso-dense-menu.js';
 //import { buildLinkDenseMenu } from './link/link-dense-menu.js';
 
 export interface QuickTool {
@@ -46,15 +47,13 @@ export const getQuickTools = ({
   });
 
   // 🔧 Lasso
-  // if (doc.awarenessStore.getFlag('enable_lasso_tool')) {
-  //   quickTools.push({
-  //     type: 'lasso',
-  //     content: html`<edgeless-lasso-tool-button
-  //       .edgeless=${edgeless}
-  //     ></edgeless-lasso-tool-button>`,
-  //     menu: buildLassoDenseMenu(edgeless),
-  //   });
-  // }
+  quickTools.push({
+    type: 'lasso',
+    content: html`<edgeless-lasso-tool-button
+      .edgeless=${edgeless}
+    ></edgeless-lasso-tool-button>`,
+    menu: buildLassoDenseMenu(edgeless),
+  });
 
   // 🔧 Frame
   if (!doc.readonly) {
@@ -126,7 +125,7 @@ export const getSeniorTools = ({
 
   // Brush / Eraser
   tools.push({
-    name: 'Toll',
+    name: 'Ceruza',
     content: html`<div class="brush-and-eraser">
       <edgeless-brush-tool-button
         .edgeless=${edgeless}

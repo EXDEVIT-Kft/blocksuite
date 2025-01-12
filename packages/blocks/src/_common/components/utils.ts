@@ -251,7 +251,7 @@ export const scrollbarStyle = (container: string) => {
     }
     ${unsafeCSS(container)}::-webkit-scrollbar-thumb {
       border-radius: 2px;
-      background-color: #b1b1b1;
+      background-color: var(--algogrind-scroll-thumb-color);
     }
     ${unsafeCSS(container)}::-webkit-scrollbar-corner {
       display: none;

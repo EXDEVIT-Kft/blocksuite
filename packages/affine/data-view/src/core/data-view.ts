@@ -60,7 +60,7 @@ export class DataViewRenderer extends SignalWatcher(
   static override styles = css`
     ${unsafeCSS(dataViewCommonStyle('affine-data-view-renderer'))}
     affine-data-view-renderer {
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       display: contents;
     }
   `;

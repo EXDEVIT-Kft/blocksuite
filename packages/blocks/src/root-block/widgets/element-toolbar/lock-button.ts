@@ -121,6 +121,8 @@ export class EdgelessLockButton extends SignalWatcher(
 
     return html`<editor-icon-button
       @click=${hasLocked ? this._unlock : this._lock}
+      aria-label=${hasLocked ? '' : 'Zárolás'}
+      .tooltip=${hasLocked ? '' : 'Zárolás'}
     >
       ${icon({ width: '20px', height: '20px' })}
       ${hasLocked

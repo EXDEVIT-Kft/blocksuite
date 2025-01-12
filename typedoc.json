@@ -4,6 +4,7 @@
     "packages/framework/store",
     "packages/framework/inline",
     "packages/blocks",
+    "packages/icons",
     "packages/presets",
     "packages/affine/block-list",
     "packages/affine/block-paragraph",

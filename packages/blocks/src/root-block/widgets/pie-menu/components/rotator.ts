@@ -8,9 +8,9 @@ import { getPosition } from '../utils.js';
 const styles = css`
   .rotator {
     position: absolute;
-    background: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-shadow-2);
-    border: 2px solid var(--affine-primary-color);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-shadow-small);
+    border: 2px solid var(--algogrind-primary-color);
     border-radius: 50%;
     width: 7px;
     height: 7px;

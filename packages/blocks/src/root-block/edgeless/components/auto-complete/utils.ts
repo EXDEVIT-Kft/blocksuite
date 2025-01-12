@@ -68,7 +68,7 @@ export class AutoCompleteTextOverlay extends AutoCompleteTargetOverlay {
     const [x, y, w, h] = this.xywh;
 
     ctx.globalAlpha = 0.4;
-    ctx.strokeStyle = '#1e96eb';
+    ctx.strokeStyle = 'var(--algogrind-primary-color)';
     ctx.lineWidth = 1;
     ctx.strokeRect(x, y, w, h);
 

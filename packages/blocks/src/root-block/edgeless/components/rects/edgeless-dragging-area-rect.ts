@@ -1,8 +1,7 @@
 import type { RootBlockModel } from '@blocksuite/affine-model';
 
 import { WidgetComponent } from '@blocksuite/block-std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, nothing, unsafeCSS } from 'lit';
+import { css, html, nothing } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 
 import type { EdgelessRootBlockComponent } from '../../edgeless-root-block.js';
@@ -19,15 +18,12 @@ export class EdgelessDraggingAreaRectWidget extends WidgetComponent<
   static override styles = css`
     .affine-edgeless-dragging-area {
       position: absolute;
-      background: ${unsafeCSS(
-        cssVarV2('edgeless/selection/selectionMarqueeBackground', '#1E96EB14')
-      )};
+      background: var(--algogrind-selection-color);
       box-sizing: border-box;
       border-width: 1px;
       border-style: solid;
-      border-color: ${unsafeCSS(
-        cssVarV2('edgeless/selection/selectionMarqueeBorder', '#1E96EB')
-      )};
+      border-color: var(--algogrind-selection-border-color);
+      border-radius: 4px;
 
       z-index: 1;
       pointer-events: none;

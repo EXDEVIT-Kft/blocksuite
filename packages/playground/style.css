@@ -1,4 +1,80 @@
 @import '@toeverything/theme/style.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+:root {
+  --algogrind-text-doc-title-size: 2.986rem;
+  --algogrind-text-heading-1-size: 2.488rem;
+  --algogrind-text-heading-2-size: 2.074rem;
+  --algogrind-text-heading-3-size: 1.728rem;
+  --algogrind-text-heading-4-size: 1.44rem;
+  --algogrind-text-heading-5-size: 1.2rem;
+  --algogrind-text-heading-6-size: 1rem;
+  --algogrind-text-paragraph-size: 1rem;
+  --algogrind-text-small-size: 0.833rem;
+  --algogrind-text-caption-size: 0.694rem;
+  --algogrind-text-quote-size: 1rem;
+  --algogrind-text-code-size: 0.875rem;
+  --algogrind-text-code-block-size: 1rem;
+  --algogrind-text-doc-title-color: black;
+  --algogrind-text-heading-1-color: #0f172a;
+  --algogrind-text-heading-2-color: #0f172a;
+  --algogrind-text-heading-3-color: #1e293b;
+  --algogrind-text-heading-4-color: #1e293b;
+  --algogrind-text-heading-5-color: #1e293b;
+  --algogrind-text-heading-6-color: #1e293b;
+  --algogrind-text-paragraph-color: #334155;
+  --algogrind-text-small-color: #334155;
+  --algogrind-text-caption-color: #334155;
+  --algogrind-text-quote-color: #334155;
+  --algogrind-text-placeholder-color: #94a3b8;
+  --algogrind-text-code-color: #ff2d55;
+  --algogrind-text-code-block-color: #334155;
+  --algogrind-text-doc-title-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-1-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-2-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-3-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-4-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-5-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-heading-6-family: 'Gotham Rounded', 'Quicksand', Arial,
+    sans-serif;
+  --algogrind-text-paragraph-family: 'Quicksand', Arial, sans-serif;
+  --algogrind-text-small-family: 'Quicksand', Arial, sans-serif;
+  --algogrind-text-caption-family: 'Quicksand', Arial, sans-serif;
+  --algogrind-text-quote-family: 'Quicksand', Arial, sans-serif;
+  --algogrind-text-code-family: 'Quicksand', Arial, sans-serif;
+  --algogrind-text-code-block-family: monospace;
+  --algogrind-divider-color: #e2e8f0;
+  --algogrind-quote-line-color: #94a3b8;
+  --algogrind-code-background-color: #f1f5f9;
+  --algogrind-text-disabled-color: #64748b;
+  --algogrind-hover-color: #3341550a;
+  --algogrind-hover-color-filled: #f8fafc;
+  --algogrind-selection-color: #4b4ded10;
+  --algogrind-selection-border-color: #4b4ded35;
+  --algogrind-primary-color: #4b4ded;
+  --algogrind-primary-background-text-color: white;
+  --algogrind-border-color: #e2e8f0;
+  --algogrind-link-color: #4b4ded;
+  --algogrind-shortcut-background-color: #f1f5f9;
+  --algogrind-scroll-thumb-color: #cbd5e1;
+  --algogrind-scroll-thumb-hover-color: #94a3b8;
+
+  --algogrind-line-height: calc(1em + 8px);
+  --algogrind-grid-color: #e2e8f0;
+  --algogrind-background-color: white;
+  --algogrind-overlay-panel-background-color: white;
+  --algogrind-ring: 0 0 0 1px #e2e8f0;
+  --algogrind-shadow-xsmall: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  --algogrind-shadow-small: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --algogrind-shadow-medium: 0px 4px 14px rgba(0, 0, 0, 0.1);
+  --algogrind-shadow-active: 0px 0px 0px 2px #4b4ded30;
+}
 
 @font-face {
   font-family: 'color-emoji';

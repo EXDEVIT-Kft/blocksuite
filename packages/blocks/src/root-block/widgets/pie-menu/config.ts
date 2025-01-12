@@ -73,12 +73,12 @@ const pie = new PieMenuBuilder({
 });
 
 pie.expandableCommand({
-  label: 'Toll',
+  label: 'Ceruza',
   icon: EdgelessPenLightIcon,
   action: setEdgelessToolAction(tool => tool.setTool('brush')),
   submenus: pie => {
     pie.colorPicker({
-      label: 'Toll Színe',
+      label: 'Ceruza Színe',
       active: getActiveConnectorStrokeColor,
       onChange: (color: string, { rootComponent }: PieMenuContext) => {
         rootComponent.std.get(EditPropsStore).recordLastProps('brush', {

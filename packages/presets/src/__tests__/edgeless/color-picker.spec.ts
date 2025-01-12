@@ -3,7 +3,6 @@ import {
   type EdgelessRootBlockComponent,
   ThemeProvider,
 } from '@blocksuite/blocks';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import '@toeverything/theme/style.css';
 import { beforeEach, describe, expect, test } from 'vitest';
 
@@ -41,8 +40,8 @@ describe('theme service', () => {
     const themeService = edgeless.gfx.std.get(ThemeProvider);
     expect(themeService.theme).toBe(ColorScheme.Light);
 
-    expect(themeService.generateColorProperty('--affine-hover-color')).toBe(
-      'var(--affine-hover-color)'
+    expect(themeService.generateColorProperty('--algogrind-hover-color')).toBe(
+      'var(--algogrind-hover-color)'
     );
 
     expect(themeService.generateColorProperty('--affine-transparent')).toBe(
@@ -81,7 +80,7 @@ describe('theme service', () => {
       themeService.getColorValue('--affine-transparent', 'transparent', true)
     ).toBe('transparent');
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--algogrind-hover-color', 'transparent', true)
     ).toBe('rgba(0, 0, 0, 0.04)');
     expect(
       themeService.getColorValue('--affine-tooltip', undefined, true)
@@ -105,7 +104,7 @@ describe('theme service', () => {
     expect(themeService.theme).toBe(ColorScheme.Dark);
 
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--algogrind-hover-color', 'transparent', true)
     ).toEqual('rgba(255, 255, 255, 0.1)');
     expect(
       themeService.getColorValue('--affine-tooltip', undefined, true)

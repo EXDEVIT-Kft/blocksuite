@@ -97,8 +97,8 @@ export class EdgelessChangeAttachmentButton extends WithDisposable(LitElement) {
                 .contentPadding=${'8px'}
                 .button=${html`
                   <editor-icon-button
-                    aria-label="Kártya stílusa"
-                    .tooltip=${'Kártya stílusa'}
+                    aria-label="Kártya megjelenése"
+                    .tooltip=${'Kártya megjelenése'}
                   >
                     ${PaletteIcon}
                   </editor-icon-button>

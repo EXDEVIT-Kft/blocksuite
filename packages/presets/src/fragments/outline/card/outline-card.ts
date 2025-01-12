@@ -9,8 +9,7 @@ import {
   once,
 } from '@blocksuite/blocks';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
@@ -45,7 +44,7 @@ const styles = css`
   }
 
   .card-preview.edgeless:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .card-header-container {
@@ -64,9 +63,9 @@ const styles = css`
 
   .card-header-container .card-number {
     text-align: center;
-    font-size: var(--affine-font-sm);
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-    color: var(--affine-brand-color, #1e96eb);
+    font-size: var(--algogrind-text-paragraph-size);
+    font-family: var(--algogrind-text-paragraph-family);
+    color: var(--algogrind-primary-color);
     font-weight: 500;
     line-height: 14px;
     line-height: 20px;
@@ -81,7 +80,7 @@ const styles = css`
   .card-header-container .card-divider {
     height: 1px;
     flex: 1;
-    border-top: 1px dashed var(--affine-border-color);
+    border-top: 1px dashed var(--algogrind-border-color);
     transform: translateY(50%);
   }
 
@@ -91,12 +90,17 @@ const styles = css`
     right: 8px;
     top: -6px;
     padding-top: 8px;
+    padding-left: 2px;
     padding-bottom: 8px;
     align-items: center;
     gap: 4px;
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
+    font-size: var(--algogrind-text-small-size);
+    font-family: var(--algogrind-text-small-family);
+    color: var(--algogrind-text-small-color);
+    background-color: var(--algogrind-overlay-panel-background-color);
   }
 
   .card-preview:hover .display-mode-button-group {
@@ -104,13 +108,13 @@ const styles = css`
   }
 
   .display-mode-button-label {
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .display-mode-button {
     display: flex;
     border-radius: 4px;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
     align-items: center;
   }
 
@@ -123,16 +127,16 @@ const styles = css`
   note-display-mode-panel {
     position: absolute;
     display: none;
-    background: var(--affine-background-overlay-panel-color);
+    background: var(--algogrind-overlay-panel-background-color);
     border-radius: 8px;
-    box-shadow: var(--affine-shadow-2);
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
     box-sizing: border-box;
     padding: 8px;
-    font-size: var(--affine-font-sm);
-    color: var(--affine-text-primary-color);
+    font-size: var(--algogrind-text-small-size);
+    color: var(--algogrind-text-small-color);
+    font-family: var(--algogrind-text-small-family);
     line-height: 22px;
-    font-weight: 400;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-weight: 500;
   }
 
   note-display-mode-panel[data-show] {
@@ -140,9 +144,10 @@ const styles = css`
   }
 
   .card-content {
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-size: var(--algogrind-text-small-size);
+    color: var(--algogrind-text-small-color);
+    font-family: var(--algogrind-text-small-family);
     user-select: none;
-    color: var(--affine-text-primary-color);
   }
 
   .card-preview.edgeless .card-content:hover {
@@ -159,11 +164,11 @@ const styles = css`
   }
 
   .card-container.selected .card-preview.edgeless {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .card-container.placeholder .card-preview.edgeless {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
     opacity: 0.9;
   }
 
@@ -176,12 +181,12 @@ const styles = css`
     .card-header-container
     .card-header-icon,
   .card-container[data-invisible='true'] .card-preview .card-content {
-    color: var(--affine-text-disable-color);
+    color: var(--algogrind-text-disabled-color);
     pointer-events: none;
   }
 
   .card-preview.page outline-block-preview:hover {
-    color: var(--affine-brand-color);
+    color: var(--algogrind-primary-color);
   }
 `;
 
@@ -336,7 +341,7 @@ export class OutlineNoteCard extends SignalWatcher(WithDisposable(LitElement)) {
           <div class="display-mode-button-group">
             <span class="display-mode-button-label">Megjelenítés</span>
             <edgeless-tool-icon-button
-              .tooltip=${this._showPopper ? '' : 'Megjelenítés Módja'}
+              .tooltip=${this._showPopper ? '' : 'Megjelenítés módja'}
               .tipPosition=${'left-start'}
               .iconContainerPadding=${0}
               @click=${(e: MouseEvent) => {

@@ -30,9 +30,9 @@ export class AffineCodeToolbar extends WithDisposable(LitElement) {
     }
 
     .code-toolbar-button {
-      color: var(--affine-icon-color);
-      background-color: var(--affine-background-primary-color);
-      box-shadow: var(--affine-shadow-1);
+      color: var(--algogrind-text-paragraph-color);
+      background-color: var(--algogrind-background-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       border-radius: 4px;
     }
   `;

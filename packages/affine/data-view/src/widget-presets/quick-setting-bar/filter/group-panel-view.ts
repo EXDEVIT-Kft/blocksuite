@@ -79,7 +79,7 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
       font-style: normal;
       font-weight: 400;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-op-clickable {
@@ -88,7 +88,7 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-op-clickable:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-group-container {
@@ -117,13 +117,13 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-button:hover {
-      background-color: var(--affine-hover-color);
-      color: var(--affine-text-primary-color);
+      background-color: var(--algogrind-hover-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-button:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-item {
@@ -143,7 +143,7 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-item-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-group-item-ops svg {
@@ -154,8 +154,8 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-item-ops:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .delete-style {
@@ -163,21 +163,21 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-border {
-      border: 1px dashed var(--affine-border-color);
+      border: 1px dashed var(--algogrind-border-color);
     }
 
     .filter-group-bg-1 {
       background-color: var(--affine-background-secondary-color);
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .filter-group-bg-2 {
       background-color: var(--affine-background-tertiary-color);
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .hover-style {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .delete-style {

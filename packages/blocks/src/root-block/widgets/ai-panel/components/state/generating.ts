@@ -5,8 +5,7 @@ import {
   AIStopIcon,
 } from '@blocksuite/affine-components/icons';
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import type { AIPanelGeneratingConfig } from '../../type.js';
@@ -17,7 +16,7 @@ export class AIPanelGenerating extends WithDisposable(LitElement) {
       width: 100%;
       padding: 0 12px;
       box-sizing: border-box;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      font-family: var(--algogrind-text-paragraph-family);
     }
 
     .generating-tip {
@@ -27,7 +26,7 @@ export class AIPanelGenerating extends WithDisposable(LitElement) {
       align-items: center;
       gap: 8px;
 
-      color: var(--affine-brand-color);
+      color: var(--algogrind-primary-color);
 
       .text {
         display: flex;

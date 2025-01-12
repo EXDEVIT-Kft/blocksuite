@@ -19,12 +19,14 @@ const styles = css`
     box-sizing: border-box;
     max-width: 280px;
     min-height: 32px;
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-weight: 500;
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-small);
     border-radius: 4px;
     padding: 6px 12px;
-    color: var(--affine-white);
-    background: var(--affine-tooltip);
+    color: var(--algogrind-text-paragraph-color);
+    background: var(--algogrind-overlay-panel-background-color);
 
     display: flex;
     justify-content: center;
@@ -35,7 +37,6 @@ const styles = css`
 
   .arrow {
     position: absolute;
-
     width: 0;
     height: 0;
   }
@@ -48,25 +49,29 @@ const triangleMap = {
     bottom: '-6px',
     borderStyle: 'solid',
     borderWidth: '6px 5px 0 5px',
-    borderColor: 'var(--affine-tooltip) transparent transparent transparent',
+    borderColor:
+      'var(--algogrind-overlay-panel-background-color) transparent transparent transparent',
   },
   right: {
     left: '-6px',
     borderStyle: 'solid',
     borderWidth: '5px 6px 5px 0',
-    borderColor: 'transparent var(--affine-tooltip) transparent transparent',
+    borderColor:
+      'transparent var(--algogrind-overlay-panel-background-color) transparent transparent',
   },
   bottom: {
     top: '-6px',
     borderStyle: 'solid',
     borderWidth: '0 5px 6px 5px',
-    borderColor: 'transparent transparent var(--affine-tooltip) transparent',
+    borderColor:
+      'transparent transparent var(--algogrind-overlay-panel-background-color) transparent',
   },
   left: {
     right: '-6px',
     borderStyle: 'solid',
     borderWidth: '5px 0 5px 6px',
-    borderColor: 'transparent transparent transparent var(--affine-tooltip)',
+    borderColor:
+      'transparent transparent transparent var(--algogrind-overlay-panel-background-color)',
   },
 };
 

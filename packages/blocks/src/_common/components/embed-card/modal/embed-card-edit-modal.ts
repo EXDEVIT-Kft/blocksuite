@@ -74,7 +74,7 @@ export class EmbedCardEditModal extends SignalWatcher(
       gap: 12px;
       width: 421px;
 
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
       box-shadow: var(--affine-overlay-shadow);
       background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
       border-radius: 4px;
@@ -98,11 +98,11 @@ export class EmbedCardEditModal extends SignalWatcher(
       user-select: none;
       background: transparent;
       border: 1px solid ${unsafeCSSVarV2('input/border/default')};
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       ${FONT_SM};
     }
     .input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
     .input:focus {
       border-color: ${unsafeCSSVarV2('input/border/active')};

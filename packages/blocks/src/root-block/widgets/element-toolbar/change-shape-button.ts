@@ -73,7 +73,7 @@ const changeShapeButtonStyles = [
 
     .edgeless-component-line-size-button div {
       border-radius: 50%;
-      background-color: var(--affine-icon-color);
+      background-color: var(--algogrind-text-paragraph-color);
     }
 
     .edgeless-component-line-size-button.size-s div {

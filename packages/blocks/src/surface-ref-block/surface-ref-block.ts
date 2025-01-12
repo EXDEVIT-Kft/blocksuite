@@ -100,7 +100,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
       font-size: 28px;
       font-weight: 600;
       line-height: 36px;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
     }
 
     .placeholder-action {
@@ -118,9 +118,9 @@ export class SurfaceRefBlockComponent extends BlockComponent<
       gap: 4px;
 
       border-radius: 8px;
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
 
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: 12px;
       font-weight: 500;
       line-height: 20px;
@@ -130,7 +130,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
     }
 
     .delete-button > .icon > svg {
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 16px;
       height: 16px;
       display: block;
@@ -142,7 +142,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
 
       text-align: center;
       font-size: 12px;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       line-height: 20px;
 
       color: var(--affine-warning-color);
@@ -152,10 +152,10 @@ export class SurfaceRefBlockComponent extends BlockComponent<
     .ref-content {
       position: relative;
       padding: 20px;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
       background: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--algogrind-grid-color) 1px,
+        var(--algogrind-background-color) 1px
       );
     }
 
@@ -202,10 +202,10 @@ export class SurfaceRefBlockComponent extends BlockComponent<
 
       width: 100%;
       padding: 8px 16px;
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--algogrind-border-color);
       gap: 14px;
 
-      background: var(--affine-background-primary-color);
+      background: var(--algogrind-background-color);
 
       font-size: 12px;
 
@@ -215,7 +215,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
     .ref-label .title {
       display: inline-block;
       font-weight: 600;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       line-height: 20px;
 
       color: var(--affine-text-secondary-color);
@@ -233,7 +233,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
     .ref-label .suffix {
       display: inline-block;
       font-weight: 400;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
       line-height: 20px;
     }
   `;
@@ -625,7 +625,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
         @click=${this._focusBlock}
         style=${styleMap({
           outline: this._focused
-            ? '2px solid var(--affine-primary-color)'
+            ? '2px solid var(--algogrind-primary-color)'
             : undefined,
         })}
       >

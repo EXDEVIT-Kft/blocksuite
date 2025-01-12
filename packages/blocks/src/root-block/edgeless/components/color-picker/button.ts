@@ -41,7 +41,7 @@ export class EdgelessColorPickerButton extends WithDisposable(LitElement) {
     let b = 'transparent';
     let c = 'transparent';
     if (!this.isCSSVariable) {
-      b = 'var(--affine-background-overlay-panel-color)';
+      b = 'var(--algogrind-overlay-panel-background-color)';
       c = keepColor(this.color);
     }
     return { '--b': b, '--c': c };

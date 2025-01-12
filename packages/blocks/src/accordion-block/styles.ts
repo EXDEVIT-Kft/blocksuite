@@ -49,7 +49,7 @@ export const accordionBlockStyles = css`
   }
 
   .h1-accordion.algogrind-accordion-block-head code {
-    font-size: calc(var(--affine-font-base) + 10px);
+    font-size: calc(var(--algogrind-text-paragraph-size) + 10px);
     padding: 0px 4px;
   }
 
@@ -63,7 +63,7 @@ export const accordionBlockStyles = css`
   }
 
   .h2-accordion.algogrind-accordion-block-head code {
-    font-size: calc(var(--affine-font-base) + 8px);
+    font-size: calc(var(--algogrind-text-paragraph-size) + 8px);
     padding: 0px 4px;
   }
 
@@ -77,7 +77,7 @@ export const accordionBlockStyles = css`
   }
 
   .h3-accordion.algogrind-accordion-block-head code {
-    font-size: calc(var(--affine-font-base) + 6px);
+    font-size: calc(var(--algogrind-text-paragraph-size) + 6px);
     padding: 0px 4px;
   }
 
@@ -91,7 +91,7 @@ export const accordionBlockStyles = css`
   }
 
   .h4-accordion.algogrind-accordion-block-head code {
-    font-size: calc(var(--affine-font-base) + 4px);
+    font-size: calc(var(--algogrind-text-paragraph-size) + 4px);
     padding: 0px 4px;
   }
 
@@ -105,7 +105,7 @@ export const accordionBlockStyles = css`
   }
 
   .h5-accordion.algogrind-accordion-block-head code {
-    font-size: calc(var(--affine-font-base) + 2px);
+    font-size: calc(var(--algogrind-text-paragraph-size) + 2px);
     padding: 0px 4px;
   }
 
@@ -119,7 +119,7 @@ export const accordionBlockStyles = css`
   }
 
   .h6-accordion.algogrind-accordion-block-head code {
-    font-size: var(--affine-font-base);
+    font-size: var(--algogrind-text-paragraph-size);
     padding: 0px 4px 2px;
   }
 

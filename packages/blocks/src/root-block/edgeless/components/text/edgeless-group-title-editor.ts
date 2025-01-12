@@ -118,14 +118,14 @@ export class EdgelessGroupTitleEditor extends WithDisposable(
       left: x + 'px',
       top: `${y - GROUP_TITLE_OFFSET + 2}px`,
       minWidth: '8px',
-      fontFamily: 'var(--affine-font-family)',
-      color: 'var(--affine-text-primary-color)',
+      fontFamily: 'var(--algogrind-text-paragraph-family)',
+      color: 'var(--algogrind-text-paragraph-color)',
       background: 'var(--affine-white-10)',
       outline: 'none',
       zIndex: '1',
       border: `1px solid
-        var(--affine-primary-color)`,
-      boxShadow: 'var(--affine-active-shadow)',
+        var(--algogrind-primary-color)`,
+      boxShadow: 'var(--algogrind-shadow-active)',
     });
     return html`<rich-text
       .yText=${this.group.title}

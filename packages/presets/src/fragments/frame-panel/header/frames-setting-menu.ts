@@ -41,7 +41,7 @@ const styles = css`
     width: 100%;
     height: 1px;
     box-sizing: border-box;
-    background: var(--affine-border-color);
+    background: var(--algogrind-border-color);
     margin: 8px 0;
   }
 
@@ -56,7 +56,7 @@ const styles = css`
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .frames-setting-menu-item .toggle-button {

@@ -54,7 +54,7 @@ const styles = css`
     border-radius: 2px;
     opacity: 1;
     cursor: ew-resize;
-    background: var(--affine-primary-color);
+    background: var(--algogrind-primary-color);
     transition: opacity 0.2s ease-in-out;
   }
 
@@ -90,7 +90,7 @@ export class ProgressCell extends BaseCellRenderer<number> {
     });
     const bgStyles = styleMap({
       backgroundColor:
-        progress === 0 ? progressColors.empty : 'var(--affine-hover-color)',
+        progress === 0 ? progressColors.empty : 'var(--algogrind-hover-color)',
     });
 
     return html` <div class="affine-database-progress">
@@ -188,7 +188,7 @@ export class ProgressCellEditing extends BaseCellRenderer<number> {
     });
     const bgStyles = styleMap({
       backgroundColor:
-        progress === 0 ? progressColors.empty : 'var(--affine-hover-color)',
+        progress === 0 ? progressColors.empty : 'var(--algogrind-hover-color)',
     });
     const handleStyles = styleMap({
       left: `calc(${progress}% - 3px)`,

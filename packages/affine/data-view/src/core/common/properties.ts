@@ -56,7 +56,7 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .properties-group-op:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .properties-group {
@@ -90,8 +90,8 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-icon svg {
-      color: var(--affine-icon-color);
-      fill: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
+      fill: var(--algogrind-text-paragraph-color);
       width: 20px;
       height: 20px;
     }
@@ -103,7 +103,7 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-op-icon:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .property-item-op-icon.disabled:hover {
@@ -111,15 +111,15 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-op-icon svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 20px;
       height: 20px;
     }
 
     .property-item-op-icon.disabled svg {
-      fill: var(--affine-text-disable-color);
-      color: var(--affine-text-disable-color);
+      fill: var(--algogrind-text-disabled-color);
+      color: var(--algogrind-text-disabled-color);
     }
 
     .property-item-name {

@@ -14,15 +14,15 @@ export const menuItemStyles = css`
     box-sizing: border-box;
   }
   .menu-item:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
     cursor: pointer;
   }
   .item-icon {
     display: flex;
-    color: var(--item-icon-color, var(--affine-brand-color));
+    color: var(--item-icon-color, var(--algogrind-primary-color));
   }
   .menu-item:hover .item-icon {
-    color: var(--item-icon-hover-color, var(--affine-brand-color));
+    color: var(--item-icon-hover-color, var(--algogrind-primary-color));
   }
   .menu-item.discard:hover {
     background: var(--affine-background-error-color);
@@ -37,7 +37,7 @@ export const menuItemStyles = css`
     padding: 0px 4px;
     align-items: baseline;
     flex: 1 0 0;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
     text-align: start;
     white-space: nowrap;
     font-feature-settings:
@@ -58,7 +58,7 @@ export const menuItemStyles = css`
 
   .enter-icon,
   .arrow-right-icon {
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
     display: flex;
   }
   .enter-icon {

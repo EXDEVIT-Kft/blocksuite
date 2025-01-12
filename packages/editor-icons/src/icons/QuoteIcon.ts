@@ -1,0 +1,42 @@
+import { html } from 'lit';
+const QuoteIcon = ({
+  width = '1em',
+  height = '1em',
+  strokeWidth = '1.5',
+  style = '',
+}: {
+  width?: string;
+  height?: string;
+  strokeWidth?: string;
+  style?: string;
+} = {}) => html`
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width=${width}
+    height=${height}
+    fill="none"
+    stroke="currentColor"
+    stroke-width=${strokeWidth}
+    style=${'user-select:none;flex-shrink:0;' + style}
+  >
+    <path
+      d="M10 18V14C10 12.8954 9.10457 12 8 12H4C2.89543 12 2 12.8954 2 14V18C2 19.1046 2.89543 20 4 20H8C9.10457 20 10 19.1046 10 18Z"
+    />
+    <path
+      d="M2 14.5V10C2 6.68629 4.68629 4 8 4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M22 18V14C22 12.8954 21.1046 12 20 12H16C14.8954 12 14 12.8954 14 14V18C14 19.1046 14.8954 20 16 20H20C21.1046 20 22 19.1046 22 18Z"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M14 14.5V10C14 6.68629 16.6863 4 20 4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+`;
+export default QuoteIcon;

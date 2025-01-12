@@ -5,8 +5,7 @@ import {
   requiredProperties,
 } from '@blocksuite/block-std';
 import { WithDisposable } from '@blocksuite/global/utils';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import type { AIItemConfig, AISubItemConfig } from './types.js';
@@ -27,12 +26,12 @@ export class AISubItemList extends WithDisposable(LitElement) {
       min-width: 240px;
       max-height: 320px;
       overflow-y: auto;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--algogrind-overlay-panel-background-color);
+      box-shadow: var(--algogrind-shadow-small);
       border-radius: 8px;
       z-index: var(--affine-z-index-popover);
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      color: var(--affine-text-primary-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
       text-align: justify;
       font-feature-settings:
         'clig' off,

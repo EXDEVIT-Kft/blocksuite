@@ -1268,7 +1268,7 @@ export async function triggerComponentToolbarAction(
     case 'changeNoteSlicerSetting': {
       const button = locatorComponentToolbar(page)
         .locator('edgeless-change-note-button')
-        .getByRole('button', { name: 'Vágás' });
+        .getByRole('button', { name: 'Feldarabolás' });
       await button.click();
       break;
     }
@@ -1360,7 +1360,7 @@ export async function triggerComponentToolbarAction(
       );
       await button.click();
       const arrange = button.locator('editor-icon-button').filter({
-        hasText: 'Auto arrange',
+        hasText: 'Automatikus elrendezés',
       });
       await arrange.click();
       break;
@@ -1371,7 +1371,7 @@ export async function triggerComponentToolbarAction(
       );
       await button.click();
       const resize = button.locator('editor-icon-button').filter({
-        hasText: 'Resize & Align',
+        hasText: 'Méret & Pozíció',
       });
       await resize.click();
       break;

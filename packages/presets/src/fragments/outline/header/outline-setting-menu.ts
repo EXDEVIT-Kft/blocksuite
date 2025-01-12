@@ -46,7 +46,7 @@ const styles = css`
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .note-preview-setting-menu-item .toggle-button {

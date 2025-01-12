@@ -262,12 +262,12 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
     const containerStyle: StyleInfo = {
       transform: `rotate(${rotate}deg)`,
       transformOrigin: 'center',
-      border: `1px solid ${editing ? 'var(--affine—primary—color, #1e96eb)' : 'transparent'}`,
+      border: `1px solid ${editing ? 'var(--affine—primary—color, var(--algogrind-primary-color))' : 'transparent'}`,
       borderRadius: '4px',
       boxSizing: 'border-box',
       boxShadow: editing ? '0px 0px 0px 2px rgba(30, 150, 235, 0.3)' : 'none',
       fontWeight: '400',
-      lineHeight: 'var(--affine-line-height)',
+      lineHeight: 'var(--algogrind-line-height)',
     };
 
     return html`

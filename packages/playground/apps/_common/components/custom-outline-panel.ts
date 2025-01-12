@@ -11,8 +11,8 @@ export class CustomOutlinePanel extends WithDisposable(LitElement) {
       position: absolute;
       top: 0;
       right: 16px;
-      border: 1px solid var(--affine-border-color, #e3e2e4);
-      background: var(--affine-background-overlay-panel-color);
+      border: 1px solid var(--algogrind-border-color, #e3e2e4);
+      background: var(--algogrind-overlay-panel-background-color);
       height: 100vh;
       width: 320px;
       box-sizing: border-box;

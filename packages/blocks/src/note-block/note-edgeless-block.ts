@@ -192,9 +192,9 @@ export class EdgelessNoteBlockComponent extends toGfxBlockComponent(
           background: 'var(--affine-white)',
           opacity: 0.5,
           pointerEvents: 'none',
-          borderLeft: '2px var(--affine-blue) solid',
-          borderBottom: '2px var(--affine-blue) solid',
-          borderRight: '2px var(--affine-blue) solid',
+          borderLeft: '2px var(--algogrind-primary-color) solid',
+          borderBottom: '2px var(--algogrind-primary-color) solid',
+          borderRight: '2px var(--algogrind-primary-color) solid',
           borderRadius: '0 0 8px 8px',
         })}
       ></div>
@@ -400,7 +400,7 @@ export class EdgelessNoteBlockComponent extends toGfxBlockComponent(
       transformOrigin: '0 0',
       transform: `scale(${scale})`,
       fontWeight: '400',
-      lineHeight: 'var(--affine-line-height)',
+      lineHeight: 'var(--algogrind-line-height)',
     };
 
     const extra = this._editing ? ACTIVE_NOTE_EXTRA_PADDING : 0;
@@ -423,7 +423,7 @@ export class EdgelessNoteBlockComponent extends toGfxBlockComponent(
         borderStyle === StrokeStyle.Dash ? 'dashed' : borderStyle
       } var(--affine-black-10)`,
       boxShadow: this._editing
-        ? 'var(--affine-active-shadow)'
+        ? 'var(--algogrind-shadow-active)'
         : !shadowType
           ? 'none'
           : `var(${shadowType})`,

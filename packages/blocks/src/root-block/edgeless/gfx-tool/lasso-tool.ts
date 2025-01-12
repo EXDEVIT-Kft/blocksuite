@@ -31,7 +31,7 @@ class LassoOverlay extends Overlay {
     ctx.save();
     const primaryColor = this.gfx.std
       .get(ThemeProvider)
-      .getCssVariableColor('--affine-primary-color');
+      .getCssVariableColor('--algogrind-primary-color');
     const strokeColor = this.gfx.std
       .get(ThemeProvider)
       .getCssVariableColor('--affine-secondary-color');

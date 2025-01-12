@@ -37,6 +37,8 @@ export class ParagraphHeadingIcon extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     affine-paragraph-heading-icon .heading-icon {
       display: flex;
+      /* [ALGOGRIND] disabled heading icons becuase I find them annoying */
+      display: none;
       align-items: start;
       margin-top: 0.3em;
       position: absolute;

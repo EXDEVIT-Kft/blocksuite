@@ -17,7 +17,7 @@ export class AIPanelInput extends WithDisposable(LitElement) {
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      background: var(--affine-background-overlay-panel-color);
+      background: var(--algogrind-overlay-panel-background-color);
     }
 
     .icon {
@@ -43,10 +43,10 @@ export class AIPanelInput extends WithDisposable(LitElement) {
         overflow: hidden;
         padding: 0px;
 
-        color: var(--affine-text-primary-color);
+        color: var(--algogrind-text-paragraph-color);
 
         /* light/sm */
-        font-family: var(--affine-font-family);
+        font-family: var(--algogrind-text-paragraph-family);
         font-size: var(--affine-font-sm);
         font-style: normal;
         font-weight: 400;
@@ -54,11 +54,11 @@ export class AIPanelInput extends WithDisposable(LitElement) {
       }
 
       textarea::placeholder {
-        color: var(--affine-placeholder-color);
+        color: var(--algogrind-text-placeholder-color);
       }
 
       textarea::-moz-placeholder {
-        color: var(--affine-placeholder-color);
+        color: var(--algogrind-text-placeholder-color);
       }
     }
 
@@ -77,7 +77,10 @@ export class AIPanelInput extends WithDisposable(LitElement) {
       }
     }
     .arrow[data-active] {
-      background: var(--affine-brand-color, #1e96eb);
+      background: var(
+        --algogrind-primary-color,
+        var(--algogrind-primary-color)
+      );
     }
     .arrow[data-active]:hover {
       cursor: pointer;

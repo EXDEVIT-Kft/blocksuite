@@ -21,7 +21,7 @@ export class CardStylePanel extends WithDisposable(LitElement) {
     }
 
     icon-button.selected {
-      border: 1px solid var(--affine-brand-color);
+      border: 1px solid var(--algogrind-primary-color);
     }
   `;
 

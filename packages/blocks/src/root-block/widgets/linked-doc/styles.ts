@@ -1,6 +1,5 @@
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
 import { scrollbarStyle } from '../../../_common/components/utils.js';
 
@@ -23,8 +22,8 @@ export const linkedDocPopoverStyles = css`
     left: 0;
     top: 0;
     box-sizing: border-box;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-    font-size: var(--affine-font-base);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
     padding: 8px;
     display: flex;
     flex-direction: column;

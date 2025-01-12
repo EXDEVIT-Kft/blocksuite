@@ -161,8 +161,8 @@ export class AffineLink extends ShadowlessElement {
 
   override render() {
     const linkStyle = {
-      color: 'var(--affine-link-color)',
-      fill: 'var(--affine-link-color)',
+      color: 'var(--algogrind-link-color)',
+      fill: 'var(--algogrind-link-color)',
       'text-decoration': 'none',
       cursor: 'pointer',
     };

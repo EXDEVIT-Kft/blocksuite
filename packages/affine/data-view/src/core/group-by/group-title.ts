@@ -177,19 +177,19 @@ export const GroupTitle = (
       .group-header-icon svg {
         width: 16px;
         height: 16px;
-        color: var(--affine-icon-color);
-        fill: var(--affine-icon-color);
+        color: var(--algogrind-text-paragraph-color);
+        fill: var(--algogrind-text-paragraph-color);
       }
 
       .group-header-op:hover {
-        background-color: var(--affine-hover-color);
+        background-color: var(--algogrind-hover-color);
       }
 
       .group-header-op svg {
         width: 16px;
         height: 16px;
-        fill: var(--affine-icon-color);
-        color: var(--affine-icon-color);
+        fill: var(--algogrind-text-paragraph-color);
+        color: var(--algogrind-text-paragraph-color);
       }
     </style>
     <div

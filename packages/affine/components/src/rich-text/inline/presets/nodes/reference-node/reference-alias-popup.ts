@@ -74,11 +74,11 @@ export class ReferenceAliasPopup extends SignalWatcher(
       padding: 0;
       border: none;
       background: transparent;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       ${FONT_XS};
     }
     input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
     input:focus {
       outline: none;
