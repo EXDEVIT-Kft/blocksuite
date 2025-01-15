@@ -5,7 +5,7 @@ import {
   type InlineRange,
   KEYBOARD_ALLOW_DEFAULT,
   KEYBOARD_PREVENT_DEFAULT,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 
 interface MarkdownMatch {
   name: string;

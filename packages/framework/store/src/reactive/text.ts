@@ -1,6 +1,6 @@
-import type { BaseTextAttributes, DeltaInsert } from '@blocksuite/inline';
+import type { BaseTextAttributes, DeltaInsert } from '@algogrind/inline';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import { type Signal, signal } from '@preact/signals-core';
 import * as Y from 'yjs';
 

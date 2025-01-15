@@ -1,8 +1,8 @@
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
-} from '@blocksuite/affine-model';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { assertExists } from '@algogrind/global/utils';
 import { expect } from '@playwright/test';
 
 import {

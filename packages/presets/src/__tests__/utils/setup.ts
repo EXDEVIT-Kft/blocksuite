@@ -1,6 +1,6 @@
-import type { BlockCollection } from '@blocksuite/store';
+import type { BlockCollection } from '@algogrind/store';
 
-import { effects as blocksEffects } from '@blocksuite/blocks/effects';
+import { effects as blocksEffects } from '@algogrind/blocks/effects';
 
 import { effects } from '../../effects.js';
 
@@ -11,15 +11,10 @@ import {
   CommunityCanvasTextFonts,
   type DocMode,
   FontConfigExtension,
-} from '@blocksuite/blocks';
-import { AffineSchemas } from '@blocksuite/blocks/schemas';
-import { assertExists } from '@blocksuite/global/utils';
-import {
-  DocCollection,
-  IdGeneratorType,
-  Schema,
-  Text,
-} from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { AffineSchemas } from '@algogrind/blocks/schemas';
+import { assertExists } from '@algogrind/global/utils';
+import { DocCollection, IdGeneratorType, Schema, Text } from '@algogrind/store';
 
 import { AffineEditorContainer } from '../../index.js';
 

@@ -1,5 +1,5 @@
-import { createButtonPopper } from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { createButtonPopper } from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

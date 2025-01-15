@@ -1,1 +1,1 @@
-export * from '@blocksuite/global/types';
+export * from '@algogrind/global/types';

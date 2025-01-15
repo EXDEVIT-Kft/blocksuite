@@ -1,8 +1,8 @@
-import type { ImageBlockModel } from '@blocksuite/affine-model';
+import type { ImageBlockModel } from '@algogrind/affine-model';
 
-import { humanFileSize } from '@blocksuite/affine-shared/utils';
-import { modelContext, ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { humanFileSize } from '@algogrind/affine-shared/utils';
+import { modelContext, ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

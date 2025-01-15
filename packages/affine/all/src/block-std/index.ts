@@ -1,1 +1,1 @@
-export * from '@blocksuite/block-std';
+export * from '@algogrind/block-std';

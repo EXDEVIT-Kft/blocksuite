@@ -1,7 +1,7 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { getLastNoteBlock } from '@blocksuite/affine-shared/utils';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { getLastNoteBlock } from '@algogrind/affine-shared/utils';
 
 /**
  * Append a paragraph block at the end of the whole page.

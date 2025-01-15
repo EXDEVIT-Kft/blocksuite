@@ -1,6 +1,6 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { Slice } from '@blocksuite/store';
+import { Slice } from '@algogrind/store';
 
 export const duplicateSelectedModelsCommand: Command<
   'draftedModels' | 'selectedModels'

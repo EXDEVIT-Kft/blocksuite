@@ -1,8 +1,8 @@
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
-import type { EditorHost } from '@blocksuite/block-std';
+import type { AttachmentBlockModel } from '@algogrind/affine-model';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { ConfirmIcon } from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
+import { ConfirmIcon } from '@algogrind/affine-components/icons';
+import { toast } from '@algogrind/affine-components/toast';
 import { html } from 'lit';
 import { createRef, ref } from 'lit/directives/ref.js';
 

@@ -1,12 +1,12 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import type { IndentContext } from '@blocksuite/affine-shared/types';
-import type { Command } from '@blocksuite/block-std';
+import type { ListBlockModel } from '@algogrind/affine-model';
+import type { IndentContext } from '@algogrind/affine-shared/types';
+import type { Command } from '@algogrind/block-std';
 
 import {
   calculateCollapsedSiblings,
   getNearestHeadingBefore,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export const canIndentParagraphCommand: Command<
   never,

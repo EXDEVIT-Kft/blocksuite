@@ -1,12 +1,12 @@
 import type {
   EmbedCardStyle,
   EmbedSyncedDocModel,
-} from '@blocksuite/affine-model';
-import type { BlockComponent } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { BlockComponent } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { assertExists, Bound } from '@blocksuite/global/utils';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { assertExists, Bound } from '@algogrind/global/utils';
 
 import type { OnDragEndProps } from '../../services/index.js';
 

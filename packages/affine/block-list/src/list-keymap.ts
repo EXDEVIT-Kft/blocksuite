@@ -1,10 +1,10 @@
 import {
   markdownInput,
   textKeymap,
-} from '@blocksuite/affine-components/rich-text';
-import { ListBlockSchema } from '@blocksuite/affine-model';
-import { KeymapExtension } from '@blocksuite/block-std';
-import { IS_MAC } from '@blocksuite/global/env';
+} from '@algogrind/affine-components/rich-text';
+import { ListBlockSchema } from '@algogrind/affine-model';
+import { KeymapExtension } from '@algogrind/block-std';
+import { IS_MAC } from '@algogrind/global/env';
 
 import { forwardDelete } from './utils/forward-delete.js';
 

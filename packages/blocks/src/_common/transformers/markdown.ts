@@ -1,8 +1,8 @@
-import type { Doc, DocCollection } from '@blocksuite/store';
+import type { Doc, DocCollection } from '@algogrind/store';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists, sha } from '@blocksuite/global/utils';
-import { extMimeMap, Job } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists, sha } from '@algogrind/global/utils';
+import { extMimeMap, Job } from '@algogrind/store';
 
 import { MarkdownAdapter } from '../adapters/markdown/index.js';
 import {

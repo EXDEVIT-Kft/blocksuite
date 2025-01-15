@@ -1,5 +1,5 @@
-import { effects as blocksEffects } from '@blocksuite/blocks/effects';
-import { effects as presetsEffects } from '@blocksuite/presets/effects';
+import { effects as blocksEffects } from '@algogrind/blocks/effects';
+import { effects as presetsEffects } from '@algogrind/presets/effects';
 
 import '../../style.css';
 import { setupEdgelessTemplate } from '../_common/setup.js';

@@ -35,22 +35,22 @@ export default defineConfig(_configEnv =>
         web: ['src/__tests__/**/*.spec.ts'],
       },
       alias: {
-        '@blocksuite/blocks': path.resolve(
+        '@algogrind/blocks': path.resolve(
           fileURLToPath(new URL('../blocks/src', import.meta.url))
         ),
-        '@blocksuite/blocks/*': path.resolve(
+        '@algogrind/blocks/*': path.resolve(
           fileURLToPath(new URL('../blocks/src/*', import.meta.url))
         ),
-        '@blocksuite/global/*': path.resolve(
+        '@algogrind/global/*': path.resolve(
           fileURLToPath(new URL('../framework/global/src/*', import.meta.url))
         ),
-        '@blocksuite/store': path.resolve(
+        '@algogrind/store': path.resolve(
           fileURLToPath(new URL('../framework/store/src', import.meta.url))
         ),
-        '@blocksuite/inline': path.resolve(
+        '@algogrind/inline': path.resolve(
           fileURLToPath(new URL('../framework/inline/src', import.meta.url))
         ),
-        '@blocksuite/inline/*': path.resolve(
+        '@algogrind/inline/*': path.resolve(
           fileURLToPath(new URL('../framework/inline/src/*', import.meta.url))
         ),
       },

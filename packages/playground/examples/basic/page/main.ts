@@ -1,5 +1,5 @@
-import { createEmptyDoc, PageEditor } from '@blocksuite/presets';
-import { Text } from '@blocksuite/store';
+import { createEmptyDoc, PageEditor } from '@algogrind/presets';
+import { Text } from '@algogrind/store';
 
 import '../../../style.css';
 

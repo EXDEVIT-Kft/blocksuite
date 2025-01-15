@@ -1,6 +1,6 @@
-import { createEmbedBlockMarkdownAdapterMatcher } from '@blocksuite/affine-block-embed';
-import { BookmarkBlockSchema } from '@blocksuite/affine-model';
-import { BlockMarkdownAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { createEmbedBlockMarkdownAdapterMatcher } from '@algogrind/affine-block-embed';
+import { BookmarkBlockSchema } from '@algogrind/affine-model';
+import { BlockMarkdownAdapterExtension } from '@algogrind/affine-shared/adapters';
 
 export const bookmarkBlockMarkdownAdapterMatcher =
   createEmbedBlockMarkdownAdapterMatcher(BookmarkBlockSchema.model.flavour);

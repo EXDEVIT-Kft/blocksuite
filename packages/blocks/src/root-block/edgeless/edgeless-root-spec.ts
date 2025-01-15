@@ -4,16 +4,16 @@ import {
   DocModeService,
   EmbedOptionService,
   ThemeService,
-} from '@blocksuite/affine-shared/services';
-import { AFFINE_SCROLL_ANCHORING_WIDGET } from '@blocksuite/affine-widget-scroll-anchoring';
+} from '@algogrind/affine-shared/services';
+import { AFFINE_SCROLL_ANCHORING_WIDGET } from '@algogrind/affine-widget-scroll-anchoring';
 import {
   BlockViewExtension,
   CommandExtension,
   type ExtensionType,
   WidgetViewMapExtension,
-} from '@blocksuite/block-std';
-import { BlockServiceWatcher, FlavourExtension } from '@blocksuite/block-std';
-import { ToolController } from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std';
+import { BlockServiceWatcher, FlavourExtension } from '@algogrind/block-std';
+import { ToolController } from '@algogrind/block-std/gfx';
 import { literal, unsafeStatic } from 'lit/static-html.js';
 
 import { ExportManagerExtension } from '../../_common/export-manager/export-manager.js';

@@ -1,38 +1,38 @@
-import { Peekable } from '@blocksuite/affine-components/peek';
+import { Peekable } from '@algogrind/affine-components/peek';
 import {
   REFERENCE_NODE,
   RefNodeSlotsProvider,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   type AliasInfo,
   type DocMode,
   type EmbedSyncedDocModel,
   NoteDisplayMode,
   type ReferenceInfo,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   DocDisplayMetaProvider,
   DocModeProvider,
   ThemeExtensionIdentifier,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   cloneReferenceInfo,
   SpecProvider,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import {
   BlockServiceWatcher,
   BlockStdScope,
   type EditorHost,
-} from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
-import { assertExists, Bound, getCommonBound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
+import { assertExists, Bound, getCommonBound } from '@algogrind/global/utils';
 import {
   BlockViewType,
   DocCollection,
   type GetDocOptions,
   type Query,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import { computed } from '@preact/signals-core';
 import { html, type PropertyValues } from 'lit';
 import { query, state } from 'lit/decorators.js';

@@ -1,10 +1,10 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { Text } from '@blocksuite/store';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { Text } from '@algogrind/store';
 
 import {
   getNextContentBlock,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 // When deleting at line end of a list block,
 // check current block's children and siblings

@@ -2,15 +2,15 @@ import type {
   BaseElementProps,
   PointTestOptions,
   SerializedElement,
-} from '@blocksuite/block-std/gfx';
-import type { IVec, SerializedXYWH, XYWH } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import type { IVec, SerializedXYWH, XYWH } from '@algogrind/global/utils';
 
 import {
   derive,
   field,
   GfxPrimitiveElementModel,
   local,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import {
   Bound,
   curveIntersects,
@@ -23,8 +23,8 @@ import {
   Polyline,
   polyLineNearestPoint,
   Vec,
-} from '@blocksuite/global/utils';
-import { DocCollection, type Y } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { DocCollection, type Y } from '@algogrind/store';
 
 import {
   type Color,

@@ -1,4 +1,4 @@
-import type { BlobSource } from '@blocksuite/sync';
+import type { BlobSource } from '@algogrind/sync';
 
 /**
  * @internal just for test

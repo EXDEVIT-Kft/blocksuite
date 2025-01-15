@@ -1,11 +1,11 @@
-/*import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
+/*import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
 
-// import { createLitPortal } from '@blocksuite/affine-components/portal';
+// import { createLitPortal } from '@algogrind/affine-components/portal';
 import {
   isFuzzyMatch,
   substringMatchScore,
-} from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

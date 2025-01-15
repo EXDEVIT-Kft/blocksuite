@@ -1,12 +1,12 @@
 import type { ThematicBreak } from 'mdast';
 
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 const isDividerNode = (node: MarkdownAST): node is ThematicBreak =>
   node.type === 'thematicBreak';

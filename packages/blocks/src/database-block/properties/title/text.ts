@@ -1,19 +1,16 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import type { DeltaInsert } from '@blocksuite/inline';
-import type { BlockSnapshot, Text } from '@blocksuite/store';
+import type { RootBlockModel } from '@algogrind/affine-model';
+import type { DeltaInsert } from '@algogrind/inline';
+import type { BlockSnapshot, Text } from '@algogrind/store';
 
 import {
   DefaultInlineManagerExtension,
   type RichText,
-} from '@blocksuite/affine-components/rich-text';
-import { ParseDocUrlProvider } from '@blocksuite/affine-shared/services';
-import {
-  getViewportElement,
-  isValidUrl,
-} from '@blocksuite/affine-shared/utils';
-import { BaseCellRenderer } from '@blocksuite/data-view';
-import { IS_MAC } from '@blocksuite/global/env';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/rich-text';
+import { ParseDocUrlProvider } from '@algogrind/affine-shared/services';
+import { getViewportElement, isValidUrl } from '@algogrind/affine-shared/utils';
+import { BaseCellRenderer } from '@algogrind/data-view';
+import { IS_MAC } from '@algogrind/global/env';
+import { assertExists } from '@algogrind/global/utils';
 import { LinkedPageIcon } from '@blocksuite/icons/lit';
 import { computed, effect, signal } from '@preact/signals-core';
 import { css, type TemplateResult } from 'lit';

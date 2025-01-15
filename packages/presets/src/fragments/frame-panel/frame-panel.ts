@@ -1,5 +1,5 @@
-import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { type EditorHost, ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

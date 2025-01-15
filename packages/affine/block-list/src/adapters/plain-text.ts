@@ -1,10 +1,10 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@algogrind/affine-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const listBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher = {
   flavour: ListBlockSchema.model.flavour,

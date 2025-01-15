@@ -1,4 +1,4 @@
-import { BaseCellRenderer } from '@blocksuite/data-view';
+import { BaseCellRenderer } from '@algogrind/data-view';
 import { css, html } from 'lit';
 
 export class IconCell extends BaseCellRenderer<string> {

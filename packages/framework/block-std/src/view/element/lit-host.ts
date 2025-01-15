@@ -4,10 +4,10 @@ import {
   BlockSuiteError,
   ErrorCode,
   handleError,
-} from '@blocksuite/global/exceptions';
-import { SignalWatcher, Slot, WithDisposable } from '@blocksuite/global/utils';
-import { Doc } from '@blocksuite/store';
-import { type BlockModel, BlockViewType } from '@blocksuite/store';
+} from '@algogrind/global/exceptions';
+import { SignalWatcher, Slot, WithDisposable } from '@algogrind/global/utils';
+import { Doc } from '@algogrind/store';
+import { type BlockModel, BlockViewType } from '@algogrind/store';
 import { createContext, provide } from '@lit/context';
 import { css, LitElement, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';

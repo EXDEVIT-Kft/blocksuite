@@ -2,7 +2,7 @@ import {
   defineBlockSchema,
   type SchemaToModel,
   type Text,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 export type AccordionType = 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 

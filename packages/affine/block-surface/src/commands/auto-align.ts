@@ -1,4 +1,4 @@
-import type { GfxModel } from '@blocksuite/block-std/gfx';
+import type { GfxModel } from '@algogrind/block-std/gfx';
 
 import {
   ConnectorElementModel,
@@ -6,15 +6,15 @@ import {
   EmbedSyncedDocModel,
   MindmapElementModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound } from '@algogrind/global/utils';
 import chunk from 'lodash.chunk';
 
 const ALIGN_HEIGHT = 200;
 const ALIGN_PADDING = 20;
 
-import type { Command } from '@blocksuite/block-std';
-import type { BlockModel, BlockProps } from '@blocksuite/store';
+import type { Command } from '@algogrind/block-std';
+import type { BlockModel, BlockProps } from '@algogrind/store';
 
 import { updateXYWH } from '../utils/update-xywh.js';
 

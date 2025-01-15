@@ -1,8 +1,8 @@
-import { WebIcon16 } from '@blocksuite/affine-components/icons';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { getHostName } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { WebIcon16 } from '@algogrind/affine-components/icons';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { getHostName } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { OpenInNewIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';

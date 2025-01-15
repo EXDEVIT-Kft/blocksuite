@@ -1,4 +1,4 @@
-import { isEqual, last } from '@blocksuite/global/utils';
+import { isEqual, last } from '@algogrind/global/utils';
 
 import type { MindmapNode } from './mindmap.js';
 
