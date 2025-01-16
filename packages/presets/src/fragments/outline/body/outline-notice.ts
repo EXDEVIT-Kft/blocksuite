@@ -1,8 +1,8 @@
 import { WithDisposable } from '@blocksuite/global/utils';
-import { css, html, LitElement, nothing } from 'lit';
+import { css, /* html,*/ LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 
-import { SmallCloseIcon, SortingIcon } from '../../_common/icons.js';
+// import { SmallCloseIcon, SortingIcon } from '../../_common/icons.js';
 
 const styles = css`
   :host {
@@ -84,38 +84,40 @@ export const AFFINE_OUTLINE_NOTICE = 'affine-outline-notice';
 export class OutlineNotice extends WithDisposable(LitElement) {
   static override styles = styles;
 
-  private _handleNoticeButtonClick() {
-    this.toggleNotesSorting();
-    this.setNoticeVisibility(false);
-  }
+  //private _handleNoticeButtonClick() {
+  //  this.toggleNotesSorting();
+  //  this.setNoticeVisibility(false);
+  //}
 
   override render() {
     if (!this.noticeVisible) {
       return nothing;
     }
 
-    return html`<div class="outline-notice-container">
-      <div class="outline-notice-header">
-        <span class="outline-notice-label">NÉHÁNY TARTALOM EL VAN REJTVE</span>
-        <span
-          class="outline-notice-close-button"
-          @click=${() => this.setNoticeVisibility(false)}
-          >${SmallCloseIcon}</span
-        >
-      </div>
-      <div class="outline-notice-body">
-        <div class="outline-notice-item notice">
-          Egyes tartalmak nem láthatók a Rajztábla nézetben.
-        </div>
-        <div
-          class="outline-notice-item button"
-          @click=${this._handleNoticeButtonClick}
-        >
-          <span>Kattints ide a tartalmak rendszerezéséhez.</span>
-          <span>${SortingIcon}</span>
-        </div>
-      </div>
-    </div>`;
+    return nothing;
+
+    //return html`<div class="outline-notice-container">
+    //  <div class="outline-notice-header">
+    //    <span class="outline-notice-label">NÉHÁNY TARTALOM EL VAN REJTVE</span>
+    //    <span
+    //      class="outline-notice-close-button"
+    //      @click=${() => this.setNoticeVisibility(false)}
+    //      >${SmallCloseIcon}</span
+    //    >
+    //  </div>
+    //  <div class="outline-notice-body">
+    //    <div class="outline-notice-item notice">
+    //      Egyes tartalmak nem láthatók a Rajztábla nézetben.
+    //    </div>
+    //    <div
+    //      class="outline-notice-item button"
+    //      @click=${this._handleNoticeButtonClick}
+    //    >
+    //      <span>Kattints ide a tartalmak rendszerezéséhez.</span>
+    //      <span>${SortingIcon}</span>
+    //    </div>
+    //  </div>
+    //</div>`;
   }
 
   @property({ attribute: false })
