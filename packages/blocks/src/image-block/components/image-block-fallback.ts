@@ -29,9 +29,9 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: var(--affine-background-secondary-color, #f4f4f5);
+      background-color: var(--algogrind-image-loading-background-color);
       border-radius: 8px;
-      border: 1px solid var(--affine-background-tertiary-color, #eee);
+      border: 1px solid var(--algogrind-border-color);
       padding: 12px;
     }
 
@@ -39,10 +39,10 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--algogrind-text-placeholder-color);
+      color: var(--algogrind-text-paragraph-color);
       text-align: justify;
       font-family: var(--algogrind-text-paragraph-family);
-      font-size: var(--affine-font-sm);
+      font-size: var(--algogrind-text-paragraph-size);
       font-style: normal;
       font-weight: 600;
       line-height: var(--algogrind-line-height);
@@ -52,11 +52,12 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
     .affine-image-card-size {
       overflow: hidden;
       padding-top: 12px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-paragraph-color);
+      font-family: var(--algogrind-text-paragraph-family);
       text-overflow: ellipsis;
       font-size: 10px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 20px;
       user-select: none;
     }
@@ -92,7 +93,7 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
       ? 'Kép betöltése...'
       : error
         ? 'Kép betöltése sikertelen.'
-        : 'Image';
+        : 'Kép';
 
     const size =
       !!model.size && model.size > 0
