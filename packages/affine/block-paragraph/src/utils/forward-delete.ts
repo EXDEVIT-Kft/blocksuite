@@ -1,10 +1,10 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { EMBED_BLOCK_FLAVOUR_LIST } from '@blocksuite/affine-shared/consts';
+import { EMBED_BLOCK_FLAVOUR_LIST } from '@algogrind/affine-shared/consts';
 import {
   getNextContentBlock,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export function forwardDelete(std: BlockStdScope) {
   const { doc, host } = std;

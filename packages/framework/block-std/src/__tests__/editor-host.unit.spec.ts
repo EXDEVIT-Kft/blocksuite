@@ -1,4 +1,4 @@
-import { DocCollection, IdGeneratorType, Schema } from '@blocksuite/store';
+import { DocCollection, IdGeneratorType, Schema } from '@algogrind/store';
 import { describe, expect, test } from 'vitest';
 
 import { effects } from '../effects.js';

@@ -1,21 +1,21 @@
-import type { CanvasRenderer } from '@blocksuite/affine-block-surface';
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { CanvasRenderer } from '@algogrind/affine-block-surface';
+import type { NoteBlockModel } from '@algogrind/affine-model';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
   NoteShadow,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { SpecProvider } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { SpecProvider } from '@algogrind/affine-shared/utils';
 import {
   BlockStdScope,
   type EditorHost,
   RANGE_QUERY_EXCLUDE_ATTR,
-} from '@blocksuite/block-std';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { deserializeXYWH, WithDisposable } from '@blocksuite/global/utils';
-import { type BlockModel, BlockViewType, type Query } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { deserializeXYWH, WithDisposable } from '@algogrind/global/utils';
+import { type BlockModel, BlockViewType, type Query } from '@algogrind/store';
 import { css, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

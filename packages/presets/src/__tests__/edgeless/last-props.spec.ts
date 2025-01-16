@@ -1,4 +1,4 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 
 import {
   type BrushElementModel,
@@ -24,7 +24,7 @@ import {
   ShapeFillColor,
   ShapeType,
   type TextElementModel,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { getDocRootBlock } from '../utils/edgeless.js';

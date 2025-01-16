@@ -1,13 +1,13 @@
-import type { IVec } from '@blocksuite/global/utils';
+import type { IVec } from '@algogrind/global/utils';
 
-import { CommonUtils } from '@blocksuite/affine-block-surface';
+import { CommonUtils } from '@algogrind/affine-block-surface';
 import {
   assertEquals,
   assertExists,
   Slot,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

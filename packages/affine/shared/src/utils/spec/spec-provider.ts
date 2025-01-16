@@ -1,6 +1,6 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import { SpecBuilder } from './spec-builder.js';
 

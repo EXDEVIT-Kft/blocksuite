@@ -8,5 +8,5 @@ This is a block used to model list content with nesting support.
 
 ## Reference
 
-- [`ListBlockSchema`](/api/@blocksuite/blocks/variables/ListBlockSchema.html)
-- [`ListBlockService`](/api/@blocksuite/blocks/classes/ListBlockService.html)
+- [`ListBlockSchema`](/api/@algogrind/blocks/variables/ListBlockSchema.html)
+- [`ListBlockService`](/api/@algogrind/blocks/classes/ListBlockService.html)

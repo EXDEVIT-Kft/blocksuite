@@ -1,6 +1,6 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { on, once } from '@blocksuite/blocks';
+import { on, once } from '@algogrind/blocks';
 
 import type { OutlinePanelBody } from '../body/outline-panel-body.js';
 import type { OutlineNoteCard } from '../card/outline-card.js';

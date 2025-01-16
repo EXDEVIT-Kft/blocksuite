@@ -1,6 +1,6 @@
-import type { Text } from '@blocksuite/store';
+import type { Text } from '@algogrind/store';
 
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 export type RootBlockProps = {
   title: Text;

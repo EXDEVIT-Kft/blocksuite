@@ -2,7 +2,7 @@ import {
   BlockViewExtension,
   CommandExtension,
   type ExtensionType,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { commands } from './commands.js';

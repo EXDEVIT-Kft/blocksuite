@@ -13,8 +13,8 @@ import {
   EmbedCardLightListIcon,
   EmbedCardLightVerticalIcon,
   LightLoadingIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/icons';
+import { ColorScheme } from '@algogrind/affine-model';
 
 type EmbedCardIcons = {
   LoadingIcon: TemplateResult<1>;

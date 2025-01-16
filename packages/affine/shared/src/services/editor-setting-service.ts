@@ -1,9 +1,9 @@
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { DeepPartial } from '@blocksuite/global/utils';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { DeepPartial } from '@algogrind/global/utils';
 import type { Signal } from '@preact/signals-core';
 import type { z } from 'zod';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 import { NodePropsSchema } from '../utils/index.js';
 

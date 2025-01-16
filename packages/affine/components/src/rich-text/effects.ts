@@ -1,4 +1,4 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
 
 import type { deleteTextCommand } from './format/delete-text.js';
 import type { formatBlockCommand } from './format/format-block.js';

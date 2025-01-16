@@ -139,7 +139,7 @@ Embracing the document-centric philosophy, we created the [BlockSuite](https://g
 In BlockSuite, documents are modeled as `doc` objects. Each doc holds a tree of blocks. Some editor presets can be used upon connecting to a doc as following:
 
 ```ts
-import { createEmptyDoc, PageEditor } from '@blocksuite/presets';
+import { createEmptyDoc, PageEditor } from '@algogrind/presets';
 
 // Initialize a `doc` document
 const doc = createEmptyDoc().init();
@@ -151,7 +151,7 @@ editor.doc = doc;
 document.body.appendChild(editor);
 ```
 
-BlockSuite advocates for assembling the top-level `PageEditor` component from smaller editable components, as all editable components can connect to different nodes in the block tree document. For example, instead of using existing complex rich text editors, BlockSuite implemented a `@blocksuite/inline` rich text component that only supports rendering linear text sequences. Complex rich text content can be assembled from atomic inline editor components, as illustrated:
+BlockSuite advocates for assembling the top-level `PageEditor` component from smaller editable components, as all editable components can connect to different nodes in the block tree document. For example, instead of using existing complex rich text editors, BlockSuite implemented a `@algogrind/inline` rich text component that only supports rendering linear text sequences. Complex rich text content can be assembled from atomic inline editor components, as illustrated:
 
 ![inline-example](../images/inline-example.png)
 

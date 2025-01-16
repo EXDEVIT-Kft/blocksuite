@@ -1,9 +1,9 @@
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
-import type { SurfaceBlockProps } from '@blocksuite/block-std/gfx';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
+import type { SurfaceBlockProps } from '@algogrind/block-std/gfx';
 
-import { SurfaceBlockModel as BaseSurfaceModel } from '@blocksuite/block-std/gfx';
-import { DisposableGroup } from '@blocksuite/global/utils';
-import { defineBlockSchema, DocCollection } from '@blocksuite/store';
+import { SurfaceBlockModel as BaseSurfaceModel } from '@algogrind/block-std/gfx';
+import { DisposableGroup } from '@algogrind/global/utils';
+import { defineBlockSchema, DocCollection } from '@algogrind/store';
 
 import { elementsCtorMap } from './element-model/index.js';
 import { SurfaceBlockTransformer } from './surface-transformer.js';

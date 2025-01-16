@@ -2,8 +2,8 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-components/context-menu';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';

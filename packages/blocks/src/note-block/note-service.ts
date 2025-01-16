@@ -1,8 +1,8 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { NoteBlockModel } from '@algogrind/affine-model';
 
-import { NoteBlockSchema } from '@blocksuite/affine-model';
-import { DragHandleConfigExtension } from '@blocksuite/affine-shared/services';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { NoteBlockSchema } from '@algogrind/affine-model';
+import { DragHandleConfigExtension } from '@algogrind/affine-shared/services';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 import {
   type BaseSelection,
   type BlockComponent,
@@ -10,7 +10,7 @@ import {
   BlockService,
   type UIEventHandler,
   type UIEventStateContext,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import { moveBlockConfigs } from '../_common/configs/move-block.js';
 import { quickActionConfig } from '../_common/configs/quick-action/config.js';

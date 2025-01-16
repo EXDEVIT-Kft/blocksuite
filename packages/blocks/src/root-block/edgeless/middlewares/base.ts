@@ -1,8 +1,8 @@
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 import {
   type SurfaceMiddleware,
   SurfaceMiddlewareBuilder,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
 import { getLastPropsKey } from '../utils/get-last-props-key.js';
 

@@ -1,6 +1,6 @@
-import { TextUtils } from '@blocksuite/affine-block-surface';
-import { CheckIcon } from '@blocksuite/affine-components/icons';
-import { FontFamily, FontFamilyList } from '@blocksuite/affine-model';
+import { TextUtils } from '@algogrind/affine-block-surface';
+import { CheckIcon } from '@algogrind/affine-components/icons';
+import { FontFamily, FontFamilyList } from '@algogrind/affine-model';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

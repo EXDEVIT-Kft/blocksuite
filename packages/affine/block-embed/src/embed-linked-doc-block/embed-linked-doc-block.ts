@@ -2,30 +2,30 @@ import type {
   DocMode,
   EmbedLinkedDocModel,
   EmbedLinkedDocStyles,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { isPeekable, Peekable } from '@blocksuite/affine-components/peek';
+import { isPeekable, Peekable } from '@algogrind/affine-components/peek';
 import {
   REFERENCE_NODE,
   RefNodeSlotsProvider,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@algogrind/affine-shared/consts';
 import {
   DocDisplayMetaProvider,
   DocModeProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   cloneReferenceInfo,
   cloneReferenceInfoWithoutAliases,
   matchFlavours,
   referenceToNode,
-} from '@blocksuite/affine-shared/utils';
-import { Bound } from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/affine-shared/utils';
+import { Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 import { computed } from '@preact/signals-core';
 import { html, nothing } from 'lit';
 import { property, queryAsync, state } from 'lit/decorators.js';

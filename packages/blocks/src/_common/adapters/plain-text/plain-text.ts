@@ -1,9 +1,9 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type AdapterContext,
   type BlockPlainTextAdapterMatcher,
@@ -11,7 +11,7 @@ import {
   type PlainText,
   PlainTextDeltaConverter,
   type TextBuffer,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 import {
   type AssetsManager,
   ASTWalker,
@@ -30,7 +30,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { AdapterFactoryIdentifier } from '../type.js';
 import { defaultBlockPlainTextAdapterMatchers } from './block-matcher.js';

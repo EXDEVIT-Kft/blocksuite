@@ -1,11 +1,11 @@
 import type {
   GfxCompatibleProps,
   GfxElementGeometry,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
-import { GfxCompatible } from '@blocksuite/block-std/gfx';
-import { Bound } from '@blocksuite/global/utils';
-import { BlockModel, defineBlockSchema } from '@blocksuite/store';
+import { GfxCompatible } from '@algogrind/block-std/gfx';
+import { Bound } from '@algogrind/global/utils';
+import { BlockModel, defineBlockSchema } from '@algogrind/store';
 
 import {
   type Color,

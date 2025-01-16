@@ -1,10 +1,10 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { RootBlockSchema } from '@blocksuite/affine-model';
+import { RootBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 export const rootBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
   flavour: RootBlockSchema.model.flavour,

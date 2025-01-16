@@ -1,14 +1,14 @@
-import { MoreHorizontalIcon } from '@blocksuite/affine-components/icons';
+import { MoreHorizontalIcon } from '@algogrind/affine-components/icons';
 import {
   getCurrentNativeRange,
   getViewportElement,
-} from '@blocksuite/affine-shared/utils';
-import { PropTypes, requiredProperties } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { PropTypes, requiredProperties } from '@algogrind/block-std';
 import {
   SignalWatcher,
   throttle,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property, query, queryAll, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

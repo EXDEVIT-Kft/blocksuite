@@ -1,4 +1,4 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 import type { ImageSelection } from '../../selection/index.js';
 

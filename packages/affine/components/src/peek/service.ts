@@ -1,6 +1,6 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 import type { PeekViewService } from './type.js';
 

@@ -1,4 +1,4 @@
-import { nanoid } from '@blocksuite/store';
+import { nanoid } from '@algogrind/store';
 
 import { getTagColor } from '../../core/component/tags/colors.js';
 import { type SelectTag, t } from '../../core/index.js';

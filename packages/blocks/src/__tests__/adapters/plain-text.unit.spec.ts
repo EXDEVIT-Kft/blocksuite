@@ -2,12 +2,12 @@ import type {
   BlockSnapshot,
   DocSnapshot,
   JobMiddleware,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import { describe, expect, test } from 'vitest';
 
 import { PlainTextAdapter } from '../../_common/adapters/plain-text/plain-text.js';

@@ -1,4 +1,4 @@
-import type { BlockModel, BlockProps } from '@blocksuite/store';
+import type { BlockModel, BlockProps } from '@algogrind/store';
 
 import {
   ConnectorElementModel,
@@ -6,13 +6,13 @@ import {
   NOTE_MIN_HEIGHT,
   NOTE_MIN_WIDTH,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type GfxGroupCompatibleInterface,
   type GfxModel,
   isGfxGroupCompatibleModel,
-} from '@blocksuite/block-std/gfx';
-import { Bound, clamp } from '@blocksuite/global/utils';
+} from '@algogrind/block-std/gfx';
+import { Bound, clamp } from '@algogrind/global/utils';
 
 function updatChildElementsXYWH(
   container: GfxGroupCompatibleInterface,

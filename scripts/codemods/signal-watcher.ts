@@ -22,7 +22,7 @@ export default function (fileInfo: FileInfo, api: API) {
       return true;
     });
 
-    if (path.node.source.value === '@blocksuite/block-std') {
+    if (path.node.source.value === '@algogrind/block-std') {
       stdImportPath = path;
     }
   });
@@ -39,7 +39,7 @@ export default function (fileInfo: FileInfo, api: API) {
     } else {
       const newImport = j.importDeclaration(
         [j.importSpecifier(j.identifier('SignalWatcher'))],
-        j.literal('@blocksuite/block-std')
+        j.literal('@algogrind/block-std')
       );
 
       // Insert the new import statement at the beginning of the file

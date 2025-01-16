@@ -1,11 +1,11 @@
-import type { MenuOptions } from '@blocksuite/affine-components/context-menu';
+import type { MenuOptions } from '@algogrind/affine-components/context-menu';
 
 import {
   type DatabaseBlockModel,
   DatabaseBlockSchema,
-} from '@blocksuite/affine-model';
-import { DragHandleConfigExtension } from '@blocksuite/affine-shared/services';
-import { captureEventTarget } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-model';
+import { DragHandleConfigExtension } from '@algogrind/affine-shared/services';
+import { captureEventTarget } from '@algogrind/affine-shared/utils';
 
 export interface DatabaseOptionsConfig {
   configure: (model: DatabaseBlockModel, options: MenuOptions) => MenuOptions;

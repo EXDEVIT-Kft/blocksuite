@@ -1,4 +1,4 @@
-import { IS_FIREFOX } from '@blocksuite/global/env';
+import { IS_FIREFOX } from '@algogrind/global/env';
 
 declare global {
   interface Document {

@@ -49,7 +49,7 @@ Use `tryAll` when you want to ensure that multiple strategies or operations are 
 Commands are defined as pure functions.
 
 ```ts
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 export const myCommand: Command = (ctx, next) => {
   if (fail) {
     return;
@@ -81,7 +81,7 @@ When a list of commands are executed, they share a context object.
 This object is standalone for each command execution, and you can use it to store temporary data.
 
 ```ts
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 export const myCommand: Command<never, 'myCommandData'> = (ctx, next) => {
   if (fail) {
     return;
@@ -117,7 +117,7 @@ export const myCommand: Command<'myCommandData'> = (ctx, next) => {
 You can pass options to a command when calling it:
 
 ```ts
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 type MyCommandOptions = {
   configA: number;

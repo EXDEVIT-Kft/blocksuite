@@ -1,6 +1,6 @@
-import type { FontFamily } from '@blocksuite/affine-model';
+import type { FontFamily } from '@algogrind/affine-model';
 
-import { IS_FIREFOX } from '@blocksuite/global/env';
+import { IS_FIREFOX } from '@algogrind/global/env';
 
 export function wrapFontFamily(fontFamily: FontFamily | string): string {
   return `"${fontFamily}"`;

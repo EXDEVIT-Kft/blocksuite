@@ -2,23 +2,19 @@ import type {
   ConnectorElementModel,
   FrameBlockModel,
   GroupElementModel,
-} from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
   type IModelCoord,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
-import { ShapeElementModel, TextElementModel } from '@blocksuite/affine-model';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import {
-  assertExists,
-  assertInstanceOf,
-  Bound,
-} from '@blocksuite/global/utils';
-import { DocCollection } from '@blocksuite/store';
+} from '@algogrind/affine-block-surface';
+import { ShapeElementModel, TextElementModel } from '@algogrind/affine-model';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists, assertInstanceOf, Bound } from '@algogrind/global/utils';
+import { DocCollection } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 
