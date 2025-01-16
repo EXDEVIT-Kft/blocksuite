@@ -279,9 +279,9 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         text: new DocCollection.Y.Text(),
         textAlign: 'left',
         fontSize: 24,
-        fontFamily: FontFamily.Inter,
+        fontFamily: FontFamily.Quicksand,
         color: DEFAULT_TEXT_COLOR,
-        fontWeight: FontWeight.Regular,
+        fontWeight: FontWeight.SemiBold,
         fontStyle: FontStyle.Normal,
       });
       const textElement = edgelessService.getElementById(textId);

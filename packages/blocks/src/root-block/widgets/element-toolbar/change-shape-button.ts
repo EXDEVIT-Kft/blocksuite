@@ -225,7 +225,9 @@ export class EdgelessChangeShapeButton extends WithDisposable(LitElement) {
 
   private _setShapeStyle(shapeStyle: ShapeStyle) {
     const fontFamily =
-      shapeStyle === ShapeStyle.General ? FontFamily.Inter : FontFamily.Kalam;
+      shapeStyle === ShapeStyle.General
+        ? FontFamily.Quicksand
+        : FontFamily.Kalam;
 
     this.elements.forEach(ele => {
       this.service.updateElement(ele.id, { shapeStyle, fontFamily });

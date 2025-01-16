@@ -147,13 +147,13 @@ export class EdgelessFontWeightAndStylePanel extends LitElement {
   }
 
   @property({ attribute: false })
-  accessor fontFamily = FontFamily.Inter;
+  accessor fontFamily = FontFamily.Quicksand;
 
   @property({ attribute: false })
   accessor fontStyle = FontStyle.Normal;
 
   @property({ attribute: false })
-  accessor fontWeight = FontWeight.Regular;
+  accessor fontWeight = FontWeight.SemiBold;
 
   @property({ attribute: false })
   accessor onSelect:

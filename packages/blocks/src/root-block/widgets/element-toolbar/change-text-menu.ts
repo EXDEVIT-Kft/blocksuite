@@ -133,7 +133,7 @@ function getMostCommonColor(
 
 function getMostCommonFontFamily(elements: BlockSuite.EdgelessTextModelType[]) {
   const max = getMostCommonValue(elements, 'fontFamily');
-  return max ? (max[0] as FontFamily) : FontFamily.Inter;
+  return max ? (max[0] as FontFamily) : FontFamily.Quicksand;
 }
 
 function getMostCommonFontSize(elements: BlockSuite.EdgelessTextModelType[]) {

@@ -116,12 +116,6 @@ export const AffineCanvasTextFonts: FontConfig[] = [
   },
   {
     font: FontFamily.Poppins,
-    url: 'https://cdn.affine.pro/fonts/Poppins-Medium.woff',
-    weight: FontWeight.Medium,
-    style: FontStyle.Normal,
-  },
-  {
-    font: FontFamily.Poppins,
     url: 'https://cdn.affine.pro/fonts/Poppins-SemiBold.woff',
     weight: FontWeight.SemiBold,
     style: FontStyle.Normal,
@@ -187,6 +181,19 @@ export const AffineCanvasTextFonts: FontConfig[] = [
     font: FontFamily.OrelegaOne,
     url: 'https://cdn.affine.pro/fonts/OrelegaOne-Regular.woff',
     weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  // Quicksand, https://fonts.cdnfonts.com/css/quicksand
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.SemiBold,
     style: FontStyle.Normal,
   },
 ];
@@ -300,12 +307,6 @@ export const CommunityCanvasTextFonts: FontConfig[] = [
   },
   {
     font: FontFamily.Poppins,
-    url: 'https://fonts.cdnfonts.com/s/16009/Poppins-Medium.woff',
-    weight: FontWeight.Medium,
-    style: FontStyle.Normal,
-  },
-  {
-    font: FontFamily.Poppins,
     url: 'https://fonts.cdnfonts.com/s/16009/Poppins-SemiBold.woff',
     weight: FontWeight.SemiBold,
     style: FontStyle.Normal,
@@ -371,6 +372,19 @@ export const CommunityCanvasTextFonts: FontConfig[] = [
     font: FontFamily.OrelegaOne,
     url: 'https://fonts.cdnfonts.com/s/93179/OrelegaOne-Regular.woff',
     weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  // Quicksand, https://fonts.cdnfonts.com/css/quicksand
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.SemiBold,
     style: FontStyle.Normal,
   },
 ];

@@ -436,10 +436,10 @@ export class ConnectorElementModel extends GfxPrimitiveElementModel<ConnectorEle
    */
   @field({
     color: '#000000',
-    fontFamily: FontFamily.Inter,
+    fontFamily: FontFamily.Quicksand,
     fontSize: 16,
     fontStyle: FontStyle.Normal,
-    fontWeight: FontWeight.Regular,
+    fontWeight: FontWeight.SemiBold,
     textAlign: TextAlign.Center,
   } as TextStyleProps)
   accessor labelStyle!: TextStyleProps;

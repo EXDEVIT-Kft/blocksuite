@@ -14,32 +14,34 @@ export enum LineWidth {
 }
 
 export enum LineColor {
-  Black = '--affine-palette-line-black',
-  Blue = '--affine-palette-line-blue',
-  Green = '--affine-palette-line-green',
-  Grey = '--affine-palette-line-grey',
-  Magenta = '--affine-palette-line-magenta',
-  Orange = '--affine-palette-line-orange',
-  Purple = '--affine-palette-line-purple',
-  Red = '--affine-palette-line-red',
-  Teal = '--affine-palette-line-teal',
-  White = '--affine-palette-line-white',
-  Yellow = '--affine-palette-line-yellow',
+  Black = '--algogrind-palette-line-black',
+  Blue = '--algogrind-palette-line-blue',
+  Green = '--algogrind-palette-line-green',
+  Grey = '--algogrind-palette-line-grey',
+  Lime = '--algogrind-palette-line-lime',
+  Magenta = '--algogrind-palette-line-pink',
+  Orange = '--algogrind-palette-line-orange',
+  Purple = '--algogrind-palette-line-purple',
+  Red = '--algogrind-palette-line-red',
+  Teal = '--algogrind-palette-line-teal',
+  White = '--algogrind-palette-line-white',
+  Yellow = '--algogrind-palette-line-yellow',
 }
 
 export const LineColorMap = createEnumMap(LineColor);
 
 export const LINE_COLORS = [
-  LineColor.Yellow,
-  LineColor.Orange,
   LineColor.Red,
-  LineColor.Magenta,
-  LineColor.Purple,
-  LineColor.Blue,
-  LineColor.Teal,
+  LineColor.Orange,
+  LineColor.Yellow,
+  LineColor.Lime,
   LineColor.Green,
-  LineColor.Black,
+  LineColor.Teal,
+  LineColor.Blue,
+  LineColor.Purple,
+  LineColor.Magenta,
   LineColor.Grey,
+  LineColor.Black,
   LineColor.White,
 ] as const;
 

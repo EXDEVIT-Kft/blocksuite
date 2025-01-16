@@ -154,8 +154,8 @@ export class StyleOne extends MindmapStyleGetter {
 
         color: '--affine-white',
 
-        fontFamily: FontFamily.Inter,
-        fontWeight: FontWeight.Bold,
+        fontFamily: FontFamily.Quicksand,
+        fontWeight: FontWeight.SemiBold,
         fontSize: 15,
       },
       node: {
@@ -264,8 +264,8 @@ export class StyleTwo extends MindmapStyleGetter {
 
         color: '--affine-white',
 
-        fontFamily: FontFamily.Inter,
-        fontWeight: FontWeight.Bold,
+        fontFamily: FontFamily.Quicksand,
+        fontWeight: FontWeight.SemiBold,
         fontSize: 15,
       },
       node: {
@@ -386,8 +386,8 @@ export class StyleThree extends MindmapStyleGetter {
 
         color: '#fff',
 
-        fontFamily: FontFamily.Inter,
-        fontWeight: FontWeight.Bold,
+        fontFamily: FontFamily.Quicksand,
+        fontWeight: FontWeight.SemiBold,
         fontSize: 15,
       },
       connector: {
@@ -472,8 +472,8 @@ export class StyleFour extends MindmapStyleGetter {
 
         color: '--affine-white',
 
-        fontFamily: FontFamily.Inter,
-        fontWeight: FontWeight.Bold,
+        fontFamily: FontFamily.Quicksand,
+        fontWeight: FontWeight.SemiBold,
         fontSize: 15,
       },
       node: {

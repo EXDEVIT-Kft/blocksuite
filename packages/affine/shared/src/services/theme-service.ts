@@ -13,6 +13,10 @@ import {
   combinedLightCssVariables,
 } from '@toeverything/theme';
 
+import {
+  algogrindEdgelessDarkColors,
+  algogrindEdgelessLightColors,
+} from '../theme/algogrind-edgeless-colors.js';
 import { isInsideEdgelessEditor } from '../utils/index.js';
 
 const TRANSPARENT = 'transparent';
@@ -161,10 +165,23 @@ export class ThemeService extends Extension {
         return TRANSPARENT;
       }
       const key = property as keyof AffineCssVariables;
-      const color =
+      let color =
         theme === ColorScheme.Dark
           ? combinedDarkCssVariables[key]
           : combinedLightCssVariables[key];
+
+      // [ALGOGRIND]
+      // If we fail to find the css var's color value within the affine palette,
+      // check the algogrind override values
+      if (color === undefined) {
+        color =
+          theme === ColorScheme.Dark
+            ? // @ts-expect-error no ts for theme override
+              algogrindEdgelessDarkColors[key]
+            : // @ts-expect-error no ts for theme override
+              algogrindEdgelessLightColors[key];
+      }
+
       return color;
     }
     return property;

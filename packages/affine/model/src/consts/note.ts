@@ -9,32 +9,32 @@ export const DEFAULT_NOTE_WIDTH = NOTE_MIN_WIDTH;
 export const DEFAULT_NOTE_HEIGHT = NOTE_MIN_HEIGHT;
 
 export enum NoteBackgroundColor {
-  Black = '--affine-note-background-black',
-  Blue = '--affine-note-background-blue',
-  Green = '--affine-note-background-green',
-  Grey = '--affine-note-background-grey',
-  Magenta = '--affine-note-background-magenta',
-  Orange = '--affine-note-background-orange',
-  Purple = '--affine-note-background-purple',
-  Red = '--affine-note-background-red',
-  Teal = '--affine-note-background-teal',
-  White = '--affine-note-background-white',
-  Yellow = '--affine-note-background-yellow',
+  Black = '--algogrind-note-background-black',
+  Blue = '--algogrind-note-background-blue',
+  Green = '--algogrind-note-background-green',
+  Grey = '--algogrind-note-background-grey',
+  Magenta = '--algogrind-note-background-pink',
+  Orange = '--algogrind-note-background-orange',
+  Purple = '--algogrind-note-background-purple',
+  Red = '--algogrind-note-background-red',
+  Teal = '--algogrind-note-background-teal',
+  White = '--algogrind-note-background-white',
+  Yellow = '--algogrind-note-background-yellow',
 }
 
 export const NoteBackgroundColorMap = createEnumMap(NoteBackgroundColor);
 
 export const NOTE_BACKGROUND_COLORS = [
-  NoteBackgroundColor.Yellow,
-  NoteBackgroundColor.Orange,
   NoteBackgroundColor.Red,
-  NoteBackgroundColor.Magenta,
-  NoteBackgroundColor.Purple,
-  NoteBackgroundColor.Blue,
-  NoteBackgroundColor.Teal,
+  NoteBackgroundColor.Orange,
+  NoteBackgroundColor.Yellow,
   NoteBackgroundColor.Green,
-  NoteBackgroundColor.Black,
+  NoteBackgroundColor.Teal,
+  NoteBackgroundColor.Blue,
+  NoteBackgroundColor.Purple,
+  NoteBackgroundColor.Magenta,
   NoteBackgroundColor.Grey,
+  NoteBackgroundColor.Black,
   NoteBackgroundColor.White,
 ] as const;
 

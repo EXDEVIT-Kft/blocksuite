@@ -70,5 +70,5 @@ export const ShapeComponentConfigMap = ShapeComponentConfig.reduce(
   {} as Record<Config['name'], Config>
 );
 
-export const SHAPE_COLOR_PREFIX = '--affine-palette-shape-';
-export const LINE_COLOR_PREFIX = '--affine-palette-line-';
+export const SHAPE_COLOR_PREFIX = '--algogrind-palette-shape-';
+export const LINE_COLOR_PREFIX = '--algogrind-palette-line-';

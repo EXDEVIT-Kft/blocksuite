@@ -53,6 +53,7 @@ export enum FontFamily {
   Lora = 'blocksuite:surface:Lora',
   OrelegaOne = 'blocksuite:surface:OrelegaOne',
   Poppins = 'blocksuite:surface:Poppins',
+  Quicksand = 'blocksuite:surface:Quicksand',
   Satoshi = 'blocksuite:surface:Satoshi',
 }
 

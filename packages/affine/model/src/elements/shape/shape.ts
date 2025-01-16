@@ -110,7 +110,7 @@ export class ShapeElementModel extends GfxPrimitiveElementModel<ShapeProps> {
   @field()
   accessor filled: boolean = false;
 
-  @field(FontFamily.Inter as string)
+  @field(FontFamily.Quicksand as string)
   accessor fontFamily!: string;
 
   @field(ShapeTextFontSize.MEDIUM)
@@ -119,7 +119,7 @@ export class ShapeElementModel extends GfxPrimitiveElementModel<ShapeProps> {
   @field(FontStyle.Normal as FontStyle)
   accessor fontStyle!: FontStyle;
 
-  @field(FontWeight.Regular as FontWeight)
+  @field(FontWeight.SemiBold as FontWeight)
   accessor fontWeight!: FontWeight;
 
   @field(false as false | number)
@@ -212,7 +212,7 @@ export class LocalShapeElementModel extends GfxLocalElementModel {
   accessor filled: boolean = false;
 
   @prop()
-  accessor fontFamily: string = FontFamily.Inter;
+  accessor fontFamily: string = FontFamily.Quicksand;
 
   @prop()
   accessor fontSize: number = 16;
@@ -221,7 +221,7 @@ export class LocalShapeElementModel extends GfxLocalElementModel {
   accessor fontStyle: FontStyle = FontStyle.Normal;
 
   @prop()
-  accessor fontWeight: FontWeight = FontWeight.Regular;
+  accessor fontWeight: FontWeight = FontWeight.SemiBold;
 
   @prop()
   accessor padding: [number, number] = [
