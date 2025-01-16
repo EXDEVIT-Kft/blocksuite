@@ -207,16 +207,9 @@ export const paragraphBlockStyles = css`
   .heading-collapsed::after {
     content: '';
     position: absolute;
-    height: 2px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: repeating-linear-gradient(
-      to right,
-      var(--algogrind-divider-color) 0,
-      var(--algogrind-divider-color) 5px,
-      transparent 5px,
-      transparent 10px
-    );
+    inset: -2px -4px;
+    border-radius: 8px;
+    background-color: var(--algogrind-text-heading-collapsed-background-color);
+    z-index: -1;
   }
 `;
