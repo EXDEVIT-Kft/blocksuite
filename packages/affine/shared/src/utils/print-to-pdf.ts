@@ -40,8 +40,11 @@ export async function printToPdf(
                 display: none;
               }
               :root {
-                --affine-note-shadow-box: none !important;
-                --affine-note-shadow-sticker: none !important;
+                --algogrind-note-shadow-box: none !important;
+                --algogrind-note-shadow-sticker: none !important;
+                --algogrind-note-shadow-paper: none !important;
+                --algogrind-note-shadow-float: none !important;
+                --algogrind-note-shadow-film:  none !important;
               }
             }</style></head><body></body></html>`);
 
