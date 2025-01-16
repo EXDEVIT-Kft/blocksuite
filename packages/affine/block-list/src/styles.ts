@@ -42,6 +42,11 @@ export const listBlockStyles = css`
     font-size: var(--algogrind-text-paragraph-size);
   }
 
+  affine-list code {
+    font-size: var(--algogrind-text-code-size);
+    padding: 2px 6px;
+  }
+
   .affine-list-block-container {
     box-sizing: border-box;
     border-radius: 4px;
