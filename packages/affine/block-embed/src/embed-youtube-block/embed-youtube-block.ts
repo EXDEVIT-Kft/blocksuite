@@ -160,7 +160,6 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
       return html`
         <div class="affine-embed-youtube-video-iframe-container readonly">
           <iframe
-            id="ytplayer"
             type="text/html"
             src=${`https://www.youtube.com/embed/${videoId}`}
             frameborder="0"
@@ -192,7 +191,6 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
               ? html`
                   <div class="affine-embed-youtube-video-iframe-container">
                     <iframe
-                      id="ytplayer"
                       type="text/html"
                       src=${`https://www.youtube.com/embed/${videoId}`}
                       frameborder="0"

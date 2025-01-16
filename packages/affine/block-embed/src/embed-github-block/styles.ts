@@ -6,6 +6,7 @@ import { css, html } from 'lit';
 
 export const styles = css`
   .affine-embed-github-block {
+    container: affine-embed-github-block / inline-size;
     box-sizing: border-box;
     display: flex;
     width: 100%;
@@ -17,6 +18,15 @@ export const styles = css`
     opacity: var(--add, 1);
     background: var(--algogrind-background-color);
     user-select: none;
+  }
+
+  @container affine-embed-github-block (max-width: 375px) {
+    .affine-embed-github-content {
+      width: 100%;
+    }
+    .affine-embed-github-banner {
+      display: none;
+    }
   }
 
   .affine-embed-github-content {
@@ -280,7 +290,6 @@ export const styles = css`
   }
 
   .affine-embed-github-block.horizontal {
-    width: ${EMBED_CARD_WIDTH.horizontal}px;
     height: ${EMBED_CARD_HEIGHT.horizontal}px;
   }
 

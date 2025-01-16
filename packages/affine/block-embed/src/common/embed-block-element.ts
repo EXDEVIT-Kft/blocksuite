@@ -116,8 +116,6 @@ export class EmbedBlockComponent<
           'selected-style': selected,
         })}
         style=${styleMap({
-          height: `${this._cardHeight}px`,
-          width: '100%',
           ...this.embedContainerStyle,
         })}
       >
