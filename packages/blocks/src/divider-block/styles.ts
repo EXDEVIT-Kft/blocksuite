@@ -13,7 +13,7 @@ export const dividerBlockStyles = css`
   }
   .affine-divider-block-container hr {
     border: none;
-    border-top: 1px solid var(--affine-divider-color);
+    border-top: 1px solid var(--algogrind-border-color);
     width: 100%;
   }
 `;

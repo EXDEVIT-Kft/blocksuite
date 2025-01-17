@@ -54,7 +54,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       padding: 21px 24px;
       font-size: 18px;
       color: var(--affine-secondary);
-      border-bottom: 1px solid var(--affine-divider-color);
+      border-bottom: 1px solid var(--algogrind-border-color);
 
       flex-shrink: 0;
     }

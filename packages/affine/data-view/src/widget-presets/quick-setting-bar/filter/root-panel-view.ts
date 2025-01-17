@@ -153,7 +153,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
 
     .divider {
       height: 1px;
-      background-color: var(--affine-divider-color);
+      background-color: var(--algogrind-border-color);
       flex-shrink: 0;
       margin: 8px 0;
     }

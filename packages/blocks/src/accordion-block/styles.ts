@@ -134,7 +134,7 @@ export const accordionBlockStyles = css`
    {
     display: grid;
     grid-template-rows: 0fr;
-    border-bottom: 1px dashed var(--affine-divider-color);
+    border-bottom: 1px dashed var(--algogrind-border-color);
     transition: grid-template-rows 0.15s ease-in-out;
   }
 
@@ -147,8 +147,8 @@ export const accordionBlockStyles = css`
     height: 1px;
     background-image: repeating-linear-gradient(
       to right,
-      var(--affine-divider-color) 0,
-      var(--affine-divider-color) 5px,
+      var(--algogrind-border-color) 0,
+      var(--algogrind-border-color) 5px,
       transparent 5px,
       transparent 10px
     );

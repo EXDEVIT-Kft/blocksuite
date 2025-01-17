@@ -71,7 +71,7 @@ export class LinkCell extends BaseCellRenderer<string> {
 
     .data-view-link-column-linked-doc {
       text-decoration: underline;
-      text-decoration-color: var(--affine-divider-color);
+      text-decoration-color: var(--algogrind-border-color);
       transition: text-decoration-color 0.2s ease-out;
       cursor: pointer;
     }

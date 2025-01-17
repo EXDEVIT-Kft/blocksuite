@@ -161,7 +161,7 @@ html[class='dark'] {
   --algogrind-hover-color: rgba(255, 255, 255, 0.1);
   --algogrind-text-paragraph-color: rgb(168, 168, 160);
   --affine-border-color: rgb(57, 57, 57);
-  --affine-divider-color: rgb(114, 114, 114);
+  --algogrind-border-color: rgb(114, 114, 114);
   --affine-placeholder-color: rgb(62, 62, 63);
   --affine-quote-color: rgb(100, 95, 130);
   --algogrind-link-color: rgb(185, 191, 227);

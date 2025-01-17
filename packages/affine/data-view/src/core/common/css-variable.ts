@@ -57,7 +57,7 @@ export const dataViewCommonStyle = (selector: string) => `
   }
   .dv-divider-h{
     height: 1px;
-    background-color: var(--affine-divider-color);
+    background-color: var(--algogrind-border-color);
     margin: 8px 0;
   }
 `;

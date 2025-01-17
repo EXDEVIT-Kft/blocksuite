@@ -14,7 +14,7 @@ const toolbarColorKeys: Array<keyof AffineCssVariables> = [
   //'--algogrind-text-paragraph-color',
   '--affine-icon-secondary',
   //'--algogrind-border-color',
-  '--affine-divider-color',
+  '--algogrind-border-color',
   //'--algogrind-text-paragraph-color',
   //'--algogrind-hover-color',
   //'--algogrind-hover-color-filled',

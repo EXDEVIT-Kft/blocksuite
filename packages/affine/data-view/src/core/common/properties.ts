@@ -34,7 +34,7 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--affine-divider-color);
+      border-bottom: 1px solid var(--algogrind-border-color);
     }
 
     .properties-group-title {

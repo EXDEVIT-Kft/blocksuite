@@ -62,7 +62,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
 
     .affine-reference-title {
       margin-left: 4px;
-      border-bottom: 0.5px solid var(--affine-divider-color);
+      border-bottom: 0.5px solid var(--algogrind-border-color);
       transition: border 0.2s ease-out;
     }
     .affine-reference-title:hover {
