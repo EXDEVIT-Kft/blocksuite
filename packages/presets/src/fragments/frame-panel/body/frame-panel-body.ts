@@ -57,13 +57,11 @@ const styles = css`
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 300px;
   }
 
   .no-frame-placeholder {
     margin-top: 240px;
     align-self: center;
-    width: 230px;
     color: var(--algogrind-text-placeholder-color);
     text-align: center;
 

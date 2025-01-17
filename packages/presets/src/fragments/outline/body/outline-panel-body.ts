@@ -103,7 +103,6 @@ const styles = css`
   .note-placeholder {
     margin-top: 240px;
     align-self: center;
-    width: 190px;
     color: var(--algogrind-text-placeholder-color);
     text-align: center;
     /* light/base */
