@@ -1,5 +1,5 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { BlockModel } from '@blocksuite/store';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   BLOCK_ID_ATTR,
@@ -8,14 +8,14 @@ import {
   type CommandKeyToData,
   type EditorHost,
   type InitCommandCtx,
-} from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 import {
   INLINE_ROOT_ATTR,
   type InlineEditor,
   type InlineRange,
   type InlineRootElement,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 import { effect } from '@preact/signals-core';
 
 import type { AffineInlineEditor } from '../inline/index.js';

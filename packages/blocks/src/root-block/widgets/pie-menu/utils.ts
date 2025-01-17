@@ -1,7 +1,7 @@
-import type { ToolController } from '@blocksuite/block-std/gfx';
-import type { IVec } from '@blocksuite/global/utils';
+import type { ToolController } from '@algogrind/block-std/gfx';
+import type { IVec } from '@algogrind/global/utils';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 
 import type {
   ActionFunction,

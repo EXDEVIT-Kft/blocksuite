@@ -4,7 +4,7 @@ Adapter works as a bridge between different formats of data and the BlockSuite [
 
 ## Base Adapter
 
-[`BaseAdapter`](/api/@blocksuite/store/classes/BaseAdapter) provides you with a skeleton to build your own adapter. It is an abstract class that you can extend and implement the following methods:
+[`BaseAdapter`](/api/@algogrind/store/classes/BaseAdapter) provides you with a skeleton to build your own adapter. It is an abstract class that you can extend and implement the following methods:
 
 ```ts
 export abstract class BaseAdapter<AdapterTarget = unknown> {
@@ -68,14 +68,14 @@ const markdownResult = await adapter.fromDocSnapshot({
 
 ## AST Walker
 
-[ASTWalker](/api/@blocksuite/store/classes/ASTWalker) is a helper class that helps you to transform from and to different ASTs (Abstract Syntax Trees). For example, you can use it to transform from BlockSuite Snapshot (which can be treated as AST) to Markdown AST and then export to Markdown. Unlike other AST walkers, it does not only traverse the AST, but also gives you the ability to build a new AST with the data from the original AST.
+[ASTWalker](/api/@algogrind/store/classes/ASTWalker) is a helper class that helps you to transform from and to different ASTs (Abstract Syntax Trees). For example, you can use it to transform from BlockSuite Snapshot (which can be treated as AST) to Markdown AST and then export to Markdown. Unlike other AST walkers, it does not only traverse the AST, but also gives you the ability to build a new AST with the data from the original AST.
 
 It is recommended to use ASTWalker to build text-based adapters.
 
 ### Sample AST Walker
 
 ```ts
-import { ASTWalker } from '@blocksuite/store';
+import { ASTWalker } from '@algogrind/store';
 
 //                           ONode          TNode
 const walker = new ASTWalker<BlockSnapshot, MarkdownAST>();

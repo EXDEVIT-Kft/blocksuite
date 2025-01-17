@@ -1,5 +1,5 @@
-/*import type { InlineEditor, InlineRange } from '@blocksuite/inline';
-import type { BlockModel } from '@blocksuite/store';
+/*import type { InlineEditor, InlineRange } from '@algogrind/inline';
+import type { BlockModel } from '@algogrind/store';
 
 import type {
   EmojiMenuActionItem,

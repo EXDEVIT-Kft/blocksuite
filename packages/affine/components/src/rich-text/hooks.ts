@@ -1,11 +1,11 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
 import type {
   BeforeinputHookCtx,
   CompositionEndHookCtx,
   HookContext,
-} from '@blocksuite/inline';
+} from '@algogrind/inline';
 
-import { isStrictUrl } from '@blocksuite/affine-shared/utils';
+import { isStrictUrl } from '@algogrind/affine-shared/utils';
 
 const EDGE_IGNORED_ATTRIBUTES = ['code', 'link'] as const;
 const GLOBAL_IGNORED_ATTRIBUTES = [] as const;

@@ -1,10 +1,10 @@
+import type { BlockComponent, EditorHost } from '@algogrind/block-std';
 import type {
   AffineInlineEditor,
   NoteBlockModel,
   RichText,
   RootBlockModel,
 } from '@blocks/index.js';
-import type { BlockComponent, EditorHost } from '@blocksuite/block-std';
 import type { InlineRootElement } from '@inline/inline-editor.js';
 import type { BlockModel } from '@store/index.js';
 import type { JSXElement } from '@store/utils/jsx.js';
@@ -12,9 +12,9 @@ import type { JSXElement } from '@store/utils/jsx.js';
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
-} from '@blocksuite/affine-model';
-import { BLOCK_ID_ATTR } from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { BLOCK_ID_ATTR } from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 import { expect, type Locator, type Page } from '@playwright/test';
 import { COLLECTION_VERSION, PAGE_VERSION } from '@store/consts.js';
 import {

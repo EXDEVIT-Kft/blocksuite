@@ -1,9 +1,9 @@
 import type {
   InlineDeltaToPlainTextAdapterMatcher,
   TextBuffer,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
-import { generateDocUrl } from '@blocksuite/affine-block-embed';
+import { generateDocUrl } from '@algogrind/affine-block-embed';
 
 export const referenceDeltaMarkdownAdapterMatch: InlineDeltaToPlainTextAdapterMatcher =
   {

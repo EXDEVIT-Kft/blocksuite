@@ -1,12 +1,12 @@
 import type {
   PeekOptions,
   PeekViewService,
-} from '@blocksuite/affine-components/peek';
-import type { AffineEditorContainer } from '@blocksuite/presets';
+} from '@algogrind/affine-components/peek';
+import type { AffineEditorContainer } from '@algogrind/presets';
 import type { TemplateResult } from 'lit';
 
-import { PeekViewExtension } from '@blocksuite/affine-components/peek';
-import { BlockComponent } from '@blocksuite/block-std';
+import { PeekViewExtension } from '@algogrind/affine-components/peek';
+import { BlockComponent } from '@algogrind/block-std';
 import {
   ColorScheme,
   type DocMode,
@@ -18,8 +18,8 @@ import {
   type ReferenceParams,
   type ThemeExtension,
   toast,
-} from '@blocksuite/blocks';
-import { type DocCollection, Slot } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { type DocCollection, Slot } from '@algogrind/store';
 import { signal } from '@preact/signals-core';
 
 import type { AttachmentViewerPanel } from './components/attachment-viewer-panel.js';

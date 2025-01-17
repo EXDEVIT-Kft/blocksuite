@@ -1,6 +1,6 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
 
 /**
  * Add a paragraph next to the current block.

@@ -1,10 +1,10 @@
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { CodeBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 import { bundledLanguagesInfo, codeToHast } from 'shiki';
 
 export const codeBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {

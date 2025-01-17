@@ -2,8 +2,8 @@ import {
   type ExtensionType,
   WidgetViewMapExtension,
   WidgetViewMapIdentifier,
-} from '@blocksuite/block-std';
-import * as blocks from '@blocksuite/blocks';
+} from '@algogrind/block-std';
+import * as blocks from '@algogrind/blocks';
 import {
   CommunityCanvasTextFonts,
   DocModeProvider,
@@ -12,12 +12,12 @@ import {
   QuickSearchProvider,
   RefNodeSlotsExtension,
   RefNodeSlotsProvider,
-} from '@blocksuite/blocks';
-import { effects as blocksEffects } from '@blocksuite/blocks/effects';
-import * as globalUtils from '@blocksuite/global/utils';
-import * as editor from '@blocksuite/presets';
-import { effects as presetsEffects } from '@blocksuite/presets/effects';
-import * as store from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { effects as blocksEffects } from '@algogrind/blocks/effects';
+import * as globalUtils from '@algogrind/global/utils';
+import * as editor from '@algogrind/presets';
+import { effects as presetsEffects } from '@algogrind/presets/effects';
+import * as store from '@algogrind/store';
 
 import '../../style.css';
 import { mockDocModeService } from '../_common/mock-services.js';

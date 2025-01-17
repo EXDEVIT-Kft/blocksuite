@@ -1,4 +1,4 @@
-import type { Disposable } from '@blocksuite/global/utils';
+import type { Disposable } from '@algogrind/global/utils';
 
 import { autoUpdate } from '@floating-ui/dom';
 import {

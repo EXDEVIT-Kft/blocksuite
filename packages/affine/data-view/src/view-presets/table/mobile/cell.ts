@@ -1,5 +1,5 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { computed, effect } from '@preact/signals-core';
 import { css } from 'lit';
 import { property, state } from 'lit/decorators.js';

@@ -1,8 +1,8 @@
-import type { UIEventStateContext } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
+import type { UIEventStateContext } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
 
-import { WidgetComponent } from '@blocksuite/block-std';
-import { noop } from '@blocksuite/global/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { noop } from '@algogrind/global/utils';
 import { nothing } from 'lit';
 import { state } from 'lit/decorators.js';
 

@@ -1,6 +1,6 @@
 /* eslint-disable perfectionist/sort-classes */
 /* eslint-disable @stylistic/ts/lines-between-class-members */
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import * as Y from 'yjs';
 

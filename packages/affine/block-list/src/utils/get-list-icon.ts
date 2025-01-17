@@ -1,4 +1,4 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
+import type { ListBlockModel } from '@algogrind/affine-model';
 
 import {
   BulletIcons,
@@ -6,7 +6,7 @@ import {
   checkboxUnchecked,
   toggleDown,
   toggleRight,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { html } from 'lit';
 
 import { getNumberPrefix } from './get-number-prefix.js';

@@ -2,7 +2,7 @@ import {
   BlockViewExtension,
   type ExtensionType,
   FlavourExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { EmbedFigmaBlockService } from './embed-figma-service.js';

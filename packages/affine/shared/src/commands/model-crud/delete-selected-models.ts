@@ -1,4 +1,4 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
 export const deleteSelectedModelsCommand: Command<'selectedModels'> = (
   ctx,

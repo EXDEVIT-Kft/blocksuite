@@ -1,6 +1,6 @@
 import type { ReactiveController, ReactiveElement } from 'lit';
 
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import type { HoverOptions } from './types.js';
 

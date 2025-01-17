@@ -1,11 +1,11 @@
-import type { Command } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { Command } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   asyncSetInlineRange,
   focusTextModel,
-} from '@blocksuite/affine-components/rich-text';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-components/rich-text';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 import { onModelTextUpdated } from '../../root-block/utils/callback.js';
 import {

@@ -1,4 +1,4 @@
-import type { Point } from '@blocksuite/global/utils';
+import type { Point } from '@algogrind/global/utils';
 
 export function wait(time: number = 0) {
   return new Promise(resolve => {

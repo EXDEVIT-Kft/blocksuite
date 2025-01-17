@@ -1,13 +1,13 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IPoint, IVec } from '@blocksuite/global/utils';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IPoint, IVec } from '@algogrind/global/utils';
 
 import {
   CommonUtils,
   Overlay,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { BaseTool } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-block-surface';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { BaseTool } from '@algogrind/block-std/gfx';
 import {
   Bound,
   getBoundFromPoints,
@@ -16,7 +16,7 @@ import {
   pointInPolygon,
   rotatePoints,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import { LassoMode } from '../../../_common/types.js';
 
@@ -317,7 +317,7 @@ export class LassoTool extends BaseTool<LassoToolOption> {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     lasso: LassoTool;
   }

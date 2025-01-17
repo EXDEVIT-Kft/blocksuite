@@ -1,4 +1,4 @@
-# `@blocksuite/blocks`
+# `@algogrind/blocks`
 
 Default BlockSuite editable blocks. Used in [AFFiNE](https://affine.pro/).
 

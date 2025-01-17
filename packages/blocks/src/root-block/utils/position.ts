@@ -1,4 +1,4 @@
-import { clamp } from '@blocksuite/affine-shared/utils';
+import { clamp } from '@algogrind/affine-shared/utils';
 
 type CollisionBox = {
   /**

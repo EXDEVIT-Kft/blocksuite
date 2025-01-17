@@ -6,8 +6,8 @@ import {
   EmbedPageIcon,
   LightLoadingIcon,
   ReloadIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/icons';
+import { ColorScheme } from '@algogrind/affine-model';
 
 import {
   DarkSyncedDocDeletedBanner,

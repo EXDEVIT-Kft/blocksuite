@@ -1,16 +1,16 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IPoint, IVec } from '@blocksuite/global/utils';
+import type { FrameBlockModel } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IPoint, IVec } from '@algogrind/global/utils';
 
-import { OverlayIdentifier } from '@blocksuite/affine-block-surface';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { OverlayIdentifier } from '@algogrind/affine-block-surface';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import {
   BaseTool,
   getTopElements,
   GfxExtensionIdentifier,
-} from '@blocksuite/block-std/gfx';
-import { Bound, Vec } from '@blocksuite/global/utils';
-import { DocCollection, Text } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { Bound, Vec } from '@algogrind/global/utils';
+import { DocCollection, Text } from '@algogrind/store';
 
 import type { EdgelessFrameManager, FrameOverlay } from '../frame-manager.js';
 
@@ -109,7 +109,7 @@ export class FrameTool extends BaseTool {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     frame: FrameTool;
   }

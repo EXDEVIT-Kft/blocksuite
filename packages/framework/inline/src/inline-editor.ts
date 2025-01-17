@@ -3,8 +3,8 @@ import { signal, type Signal } from '@preact/signals-core';
 /* eslint-disable perfectionist/sort-classes */
 import type * as Y from 'yjs';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists, DisposableGroup, Slot } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists, DisposableGroup, Slot } from '@algogrind/global/utils';
 import { nothing, render, type TemplateResult } from 'lit';
 
 import type { VLine } from './components/v-line.js';

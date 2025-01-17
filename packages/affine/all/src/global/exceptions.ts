@@ -1,1 +1,1 @@
-export * from '@blocksuite/global/exceptions';
+export * from '@algogrind/global/exceptions';

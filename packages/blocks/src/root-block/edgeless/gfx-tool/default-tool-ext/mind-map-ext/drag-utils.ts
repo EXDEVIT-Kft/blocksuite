@@ -1,14 +1,14 @@
 import {
   NODE_HORIZONTAL_SPACING,
   NODE_VERTICAL_SPACING,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   LayoutType,
   type MindmapElementModel,
   type MindmapNode,
   type MindmapRoot,
-} from '@blocksuite/affine-model';
-import { Bound, last } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { Bound, last } from '@algogrind/global/utils';
 
 const isOnEdge = (node: MindmapNode, direction: 'tail' | 'head') => {
   let current = node;

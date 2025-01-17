@@ -1,14 +1,14 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 import type { List } from 'mdast';
 
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
   TextUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 const LIST_MDAST_TYPE = ['list', 'listItem'];
 const isListMDASTType = (node: MarkdownAST) =>

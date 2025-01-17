@@ -1,29 +1,29 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
-import type { BlockComponent, EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { NoteBlockModel } from '@algogrind/affine-model';
+import type { BlockComponent, EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { MoreIndicatorIcon } from '@blocksuite/affine-components/icons';
+import { MoreIndicatorIcon } from '@algogrind/affine-components/icons';
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
   StrokeStyle,
-} from '@blocksuite/affine-model';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-model';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@algogrind/affine-shared/consts';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
 import {
   getClosestBlockComponentByPoint,
   handleNativeRangeAtPoint,
   matchFlavours,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement, toGfxBlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { ShadowlessElement, toGfxBlockComponent } from '@algogrind/block-std';
 import {
   almostEqual,
   Bound,
   clamp,
   Point,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

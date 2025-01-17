@@ -1,9 +1,9 @@
-import { GroupIcon } from '@blocksuite/affine-components/icons';
+import { GroupIcon } from '@algogrind/affine-components/icons';
 import {
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

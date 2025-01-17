@@ -1,4 +1,4 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import { EmbedDragHandleOption } from './common/embed-block-element.js';
 import { EmbedFigmaBlockSpec } from './embed-figma-block/index.js';

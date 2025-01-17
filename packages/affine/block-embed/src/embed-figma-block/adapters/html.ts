@@ -1,5 +1,5 @@
-import { EmbedFigmaBlockSchema } from '@blocksuite/affine-model';
-import { BlockHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedFigmaBlockSchema } from '@algogrind/affine-model';
+import { BlockHtmlAdapterExtension } from '@algogrind/affine-shared/adapters';
 
 import { createEmbedBlockHtmlAdapterMatcher } from '../../common/adapters/html.js';
 

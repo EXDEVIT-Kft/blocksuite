@@ -4,22 +4,22 @@ import {
   EditIcon,
   MoreVerticalIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+} from '@algogrind/affine-components/icons';
+import { createLitPortal } from '@algogrind/affine-components/portal';
 import {
   cloneGroups,
   renderGroups,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   type AttachmentBlockModel,
   defaultAttachmentProps,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/consts';
+import { Bound } from '@algogrind/global/utils';
 import { flip, offset } from '@floating-ui/dom';
 import { html, nothing } from 'lit';
 import { join } from 'lit/directives/join.js';

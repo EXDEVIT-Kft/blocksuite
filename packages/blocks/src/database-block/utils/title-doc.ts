@@ -1,5 +1,5 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { DeltaOperation, Text } from '@blocksuite/store';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { DeltaOperation, Text } from '@algogrind/store';
 
 export const getSingleDocIdFromText = (text?: Text) => {
   const deltas = text?.deltas$.value;

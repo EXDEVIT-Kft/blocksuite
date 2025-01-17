@@ -1,9 +1,9 @@
-import type { DocModeProvider } from '@blocksuite/blocks';
-import type { AffineEditorContainer } from '@blocksuite/presets';
-import type { BlockCollection, Doc, DocCollection } from '@blocksuite/store';
+import type { DocModeProvider } from '@algogrind/blocks';
+import type { AffineEditorContainer } from '@algogrind/presets';
+import type { BlockCollection, Doc, DocCollection } from '@algogrind/store';
 import type { LitElement } from 'lit';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 export function getDocFromUrlParams(collection: DocCollection, url: URL) {
   let doc: Doc | null = null;

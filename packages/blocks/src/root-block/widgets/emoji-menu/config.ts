@@ -1,4 +1,4 @@
-/*import type { BlockModel } from '@blocksuite/store';
+/*import type { BlockModel } from '@algogrind/store';
 
 import type { RootBlockComponent } from '../../index.js';
 

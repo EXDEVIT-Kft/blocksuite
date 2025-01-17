@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const external = [/^@radix-ui/, /^@blocksuite/, /^lit$/];
+const external = [/^@radix-ui/, /^@algogrind/, /^lit$/];
 
 export default defineConfig({
   plugins: [],

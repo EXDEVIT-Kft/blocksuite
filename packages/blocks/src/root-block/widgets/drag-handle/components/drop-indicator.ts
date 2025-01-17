@@ -1,4 +1,4 @@
-import type { Rect } from '@blocksuite/global/utils';
+import type { Rect } from '@algogrind/global/utils';
 
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

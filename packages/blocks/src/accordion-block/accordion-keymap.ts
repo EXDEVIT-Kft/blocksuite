@@ -1,12 +1,12 @@
-import { mergeWithPrev } from '@blocksuite/affine-block-paragraph';
+import { mergeWithPrev } from '@algogrind/affine-block-paragraph';
 import {
   getInlineEditorByModel,
   markdownInput,
   textKeymap,
-} from '@blocksuite/affine-components/rich-text';
-import { AccordionBlockSchema } from '@blocksuite/affine-model';
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
-import { KeymapExtension } from '@blocksuite/block-std';
+} from '@algogrind/affine-components/rich-text';
+import { AccordionBlockSchema } from '@algogrind/affine-model';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
+import { KeymapExtension } from '@algogrind/block-std';
 
 export const AccordionKeymapExtension = KeymapExtension(
   std => {

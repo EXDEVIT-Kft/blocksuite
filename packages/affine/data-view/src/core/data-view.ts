@@ -1,11 +1,11 @@
 import type {
   DatabaseAllEvents,
   EventTraceFn,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { IS_MOBILE } from '@blocksuite/global/env';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { IS_MOBILE } from '@algogrind/global/env';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { css, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';

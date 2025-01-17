@@ -1,6 +1,6 @@
-import type { Command } from '@blocksuite/block-std';
+import type { Command } from '@algogrind/block-std';
 
-import { QuickSearchProvider } from '@blocksuite/affine-shared/services';
+import { QuickSearchProvider } from '@algogrind/affine-shared/services';
 
 export type InsertedLinkType = {
   flavour?: 'affine:bookmark' | 'affine:embed-linked-doc';

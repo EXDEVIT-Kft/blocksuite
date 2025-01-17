@@ -1,6 +1,6 @@
-import type { TextElementModel } from '@blocksuite/affine-model';
+import type { TextElementModel } from '@algogrind/affine-model';
 
-import { deltaInsertsToChunks } from '@blocksuite/inline';
+import { deltaInsertsToChunks } from '@algogrind/inline';
 
 import type { CanvasRenderer } from '../../canvas-renderer.js';
 

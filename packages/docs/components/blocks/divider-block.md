@@ -4,4 +4,4 @@ This is a block used to display a divider line. It can be quickly obtained by ty
 
 ## Reference
 
-- [`DividerBlockSchema`](/api/@blocksuite/blocks/variables/DividerBlockSchema.html)
+- [`DividerBlockSchema`](/api/@algogrind/blocks/variables/DividerBlockSchema.html)
