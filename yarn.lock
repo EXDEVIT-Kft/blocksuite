@@ -5449,9 +5449,9 @@ __metadata:
   linkType: hard
 
 "@toeverything/theme@npm:^1.1.1":
-  version: 1.1.6
-  resolution: "@toeverything/theme@npm:1.1.6"
-  checksum: 10/9f6cfe6f09ec9aeec1cc85b16f1087170f27664166eb4f2b2c9dec0e191d03f6f0e5c427437e952d9eaaf6bd6ae4193b7632342ebce5fb74c6ca87c06a37c754
+  version: 1.1.7
+  resolution: "@toeverything/theme@npm:1.1.7"
+  checksum: 10/0760e6fe40ab597a34ac6e7cc2b74be508ec9754585dfe769185769ea9f9979d9bf6f52b9eda5cc24c15cb40fe96b60a02506d0f5adf1098a323b2ae0ef5c322
   languageName: node
   linkType: hard
 
@@ -5927,9 +5927,9 @@ __metadata:
   linkType: hard
 
 "@types/ms@npm:*":
-  version: 0.7.34
-  resolution: "@types/ms@npm:0.7.34"
-  checksum: 10/f38d36e7b6edecd9badc9cf50474159e9da5fa6965a75186cceaf883278611b9df6669dc3a3cc122b7938d317b68a9e3d573d316fcb35d1be47ec9e468c6bd8a
+  version: 2.1.0
+  resolution: "@types/ms@npm:2.1.0"
+  checksum: 10/532d2ebb91937ccc4a89389715e5b47d4c66e708d15942fe6cc25add6dc37b2be058230a327dd50f43f89b8b6d5d52b74685a9e8f70516edfc9bdd6be910eff4
   languageName: node
   linkType: hard
 
@@ -9989,14 +9989,14 @@ __metadata:
   linkType: hard
 
 "fdir@npm:^6.4.2":
-  version: 6.4.2
-  resolution: "fdir@npm:6.4.2"
+  version: 6.4.3
+  resolution: "fdir@npm:6.4.3"
   peerDependencies:
     picomatch: ^3 || ^4
   peerDependenciesMeta:
     picomatch:
       optional: true
-  checksum: 10/5ff80d1d2034e75cc68be175401c9f64c4938a6b2c1e9a0c27f2d211ffbe491fd86d29e4576825d9da8aff9bd465f0283427c2dddc11653457906c46d3bbc448
+  checksum: 10/8e6d20f4590dc168de1374a9cadaa37e20ca6e0b822aa247c230e7ea1d9e9674a68cd816146435e4ecc98f9285091462ab7e5e56eebc9510931a1794e4db68b2
   languageName: node
   linkType: hard
 
@@ -10181,9 +10181,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.259.0
-  resolution: "flow-parser@npm:0.259.0"
-  checksum: 10/4a5275752d66455c118189fd31c44cb9648be2d93129680a4ce2accaa64181b4d691dad8dc52dff42901123afaf94b8e8635858f4f7d1171aad625e1a6cfa284
+  version: 0.259.1
+  resolution: "flow-parser@npm:0.259.1"
+  checksum: 10/a92a17cedce15f844b1541a12fba8d6b4cbbdcf583b9dc223d4652d83dcd780e7535d82091cffa28837425f176f41a5242c0f6cf24638d36a5b99790d3318bff
   languageName: node
   linkType: hard
 
@@ -12335,8 +12335,8 @@ __metadata:
   linkType: hard
 
 "lint-staged@npm:^15.2.9":
-  version: 15.4.0
-  resolution: "lint-staged@npm:15.4.0"
+  version: 15.4.1
+  resolution: "lint-staged@npm:15.4.1"
   dependencies:
     chalk: "npm:~5.4.1"
     commander: "npm:~12.1.0"
@@ -12350,7 +12350,7 @@ __metadata:
     yaml: "npm:~2.6.1"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10/1fed6a273643f93da27c6152d37f30dd9a79338b8cb0a1f6673ba829f3a73362ca48e3fe2561c8cc6cbc39987d60ca9f51e6665d110d7d3b71640236a8d03444
+  checksum: 10/615a1f0a66c6cb35fda928745fec9864498853d5aab49785840b12643e40c6518daf01218b5255a727d32ef9a3738e3766103679cfdcd6f1b320e272920f3b68
   languageName: node
   linkType: hard
 
@@ -14489,13 +14489,13 @@ __metadata:
   linkType: hard
 
 "oniguruma-to-es@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "oniguruma-to-es@npm:2.0.0"
+  version: 2.1.0
+  resolution: "oniguruma-to-es@npm:2.1.0"
   dependencies:
     emoji-regex-xs: "npm:^1.0.0"
     regex: "npm:^5.1.1"
     regex-recursion: "npm:^5.1.1"
-  checksum: 10/b22ef1342c7bf8d7049e21cb6d2ecf7840d446b4f05b9cdbef6706a1f4215cbbca6a7a0d969c2e82a4db0f0ddfb2a4b2c3db24e808a5a360246645164e022396
+  checksum: 10/8cfe3d462375cebacd914759eef84d8a3b182628d9ade5a0f0846866c269f82b2ef30f89415e244fae4c32562e92a834c7a8b1dd8a42aa40969e0b86381354c0
   languageName: node
   linkType: hard
 

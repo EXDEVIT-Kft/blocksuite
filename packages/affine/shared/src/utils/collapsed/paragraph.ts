@@ -12,7 +12,19 @@ export function calculateCollapsedSiblings(
   const index = children.indexOf(model);
   if (index === -1) return [];
 
+  let nextDividerFound = false;
+
   const collapsedEdgeIndex = children.findIndex((child, i) => {
+    if (i > index && matchFlavours(child, ['affine:divider'])) {
+      nextDividerFound = true;
+      return false;
+    }
+
+    if (nextDividerFound) {
+      nextDividerFound = false;
+      return true;
+    }
+
     if (
       i > index &&
       matchFlavours(child, ['affine:paragraph']) &&
