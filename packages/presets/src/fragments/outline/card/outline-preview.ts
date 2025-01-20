@@ -29,6 +29,7 @@ const styles = css`
   :host {
     display: block;
     width: 100%;
+    border-radius: 4px;
     font-family: var(--algogrind-text-heading-6-family);
   }
 
@@ -94,7 +95,7 @@ const styles = css`
   .subtype.h4,
   .subtype.h5,
   .subtype.h6 {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .subtype.title {
