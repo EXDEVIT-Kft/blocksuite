@@ -40,6 +40,7 @@ const styles = css`
 
   :host(.active) {
     color: var(--algogrind-link-color);
+    background: var(--algogrind-hover-color);
   }
 
   .outline-block-preview {
