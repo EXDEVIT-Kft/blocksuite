@@ -20,12 +20,12 @@ const styles = css`
     max-width: 280px;
     min-height: 32px;
     font-weight: 500;
-    font-family: var(--algogrind-text-paragraph-family);
-    font-size: var(--algogrind-text-paragraph-size);
+    font-family: var(--algogrind-text-small-family);
+    font-size: var(--algogrind-text-small-size);
     box-shadow: var(--algogrind-ring), var(--algogrind-shadow-small);
     border-radius: 4px;
     padding: 6px 12px;
-    color: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-small-color);
     background: var(--algogrind-overlay-panel-background-color);
 
     display: flex;
