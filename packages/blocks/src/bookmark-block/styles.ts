@@ -148,12 +148,16 @@ export const styles = css`
     max-width: 100%;
     opacity: var(--add, 1);
     flex-shrink: 0;
+    display: flex;
+    justify-content: end;
+}
   }
 
   .affine-bookmark-banner img,
   .affine-bookmark-banner object,
   .affine-bookmark-banner svg {
     max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     border-radius: 0 8px 8px 0;
   }
