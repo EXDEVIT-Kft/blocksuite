@@ -179,6 +179,7 @@ export const components: DefaultTheme.NavItem[] = [
     text: 'Widgets 🚧',
     items: [
       { text: 'Slash Menu', link: 'components/widgets/slash-menu' },
+      { text: 'Emoji Menu', link: 'components/widgets/emoji-menu' },
       { text: 'Format Bar', link: 'components/widgets/format-bar' },
       { text: 'Drag Handle', link: 'components/widgets/drag-handle' },
     ],

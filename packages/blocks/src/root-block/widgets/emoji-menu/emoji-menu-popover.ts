@@ -1,94 +1,100 @@
-/*import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
+import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
 
-// import { createLitPortal } from '@blocksuite/affine-components/portal';
-import {
-  isFuzzyMatch,
-  substringMatchScore,
-} from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/utils';
-import { html, LitElement, nothing, type PropertyValues } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 
-import type {
-  EmojiMenuActionItem,
-  EmojiMenuCategory,
-  EmojiMenuContext,
-  // EmojiMenuItem,
-  EmojiMenuStaticConfig,
-} from './config.js';
+import type { EmojiCategory, EmojiItem, EmojiMenuContext } from './config.js';
 
-import { emojiMenuStyles } from './styles.js';
-import {
-  cleanTailForEmoji,
-  createKeydownObserverForEmoji,
-  emojiItemClassName,
-  getEmojiQuery,
-  // getFirstFocusableEmoji,
-} from './utils.js';
+import { createKeydownObserver } from '../../../_common/components/utils.js';
+
+import '@blocksuite/affine-components/toolbar';
+
+import { styles } from './styles.js';
 
 export class EmojiMenu extends WithDisposable(LitElement) {
-  static override styles = emojiMenuStyles;
+  static override styles = styles;
 
-  private _filteredItems: EmojiMenuActionItem[] = [];
+  private _currentCategory = 0;
 
-  @state()
-  private _position: { x: string; y: string; height: number } | null = null;
+  private _handleEmojiSelect = async (emoji: EmojiItem) => {
+    try {
+      const range = this.inlineEditor.getInlineRange();
+      if (!range || !this._startRange) return;
+
+      const textPoint = this.inlineEditor.getTextPoint(range.index);
+      if (!textPoint) return;
+
+      const [leafStart, offsetStart] = textPoint;
+      const text = leafStart.textContent
+        ? leafStart.textContent.slice(0, offsetStart)
+        : '';
+
+      const match = text.match(/:(?!\s)([\p{L}0-9_+-]*)$/iu);
+      if (!match) return;
+
+      await emoji.action(this.context);
+
+      const startOffset = offsetStart - match[0].length;
+      const deleteRange = {
+        index: startOffset,
+        length: match[0].length,
+      };
+
+      this.inlineEditor.deleteText(deleteRange);
+      this.abortController.abort();
+    } catch (error) {
+      console.error('Error handling emoji select:', error);
+    }
+  };
 
   private _queryState: 'off' | 'on' | 'no_result' = 'off';
+
+  private _selectedIndex = 0;
 
   private _startRange = this.inlineEditor.getInlineRange();
 
   private _updateFilteredItems = () => {
-    const query = this._query;
-    if (query === null) {
+    const range = this.inlineEditor.getInlineRange();
+    if (!range || !this._startRange) {
       this.abortController.abort();
       return;
     }
-    if (query.length < 2) {
-      this._filteredItems = [];
-      this._queryState = 'off';
+
+    const textPoint = this.inlineEditor.getTextPoint(range.index);
+    if (!textPoint) {
+      this.abortController.abort();
       return;
     }
 
-    const searchStr = query.toLowerCase();
-    const allEmojis = this.config.items
-      .flatMap((cat: EmojiMenuCategory) => cat.emojis)
-      .filter((e: EmojiMenuActionItem) =>
-        e.shortcodes?.some((s: string) => isFuzzyMatch(s, searchStr))
-      );
+    const [leafStart, offsetStart] = textPoint;
+    const text = leafStart.textContent
+      ? leafStart.textContent.slice(0, offsetStart)
+      : '';
 
-    const scored = allEmojis
-      .map(e => {
-        const bestScore = e.shortcodes.reduce((acc, s) => {
-          const score = substringMatchScore(s, searchStr);
-          return score > acc ? score : acc;
-        }, 0);
-        return { e, score: bestScore };
-      })
-      .sort((a, b) => b.score - a.score)
-      .map(x => x.e);
+    const match = text.match(/:([a-z0-9_+-]*)$/i);
+    if (!match) {
+      this.abortController.abort();
+      return;
+    }
 
-    this._filteredItems = scored;
-    this._queryState = this._filteredItems.length > 0 ? 'on' : 'no_result';
+    const query = match[1].toLowerCase();
+    this._searchText = query;
+
+    const allEmojis = this._getAllFilteredEmojis();
+    if (allEmojis.length === 0) {
+      this._queryState = 'no_result';
+    } else {
+      this._queryState = 'on';
+    }
+    this.requestUpdate();
   };
-
-  @property({ attribute: false })
-  config!: EmojiMenuStaticConfig;
-
-  @property({ attribute: false })
-  context!: EmojiMenuContext;
-
-  @query('inner-emoji-menu')
-  emojiMenuElement!: HTMLElement;
 
   updatePosition = (position: { x: string; y: string; height: number }) => {
     this._position = position;
+    this.requestUpdate();
   };
-
-  private get _query() {
-    return getEmojiQuery(this.inlineEditor, this._startRange);
-  }
 
   constructor(
     private inlineEditor: AffineInlineEditor,
@@ -97,28 +103,266 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     super();
   }
 
+  private _filterEmojis(emojis: EmojiItem[], searchText: string): EmojiItem[] {
+    console.log(searchText);
+
+    const query = searchText.toLowerCase();
+    if (!query) return emojis;
+
+    return emojis.filter(
+      emoji =>
+        emoji.name.toLowerCase().includes(query) ||
+        emoji.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+  }
+
+  private _getAllFilteredEmojis(): EmojiItem[] {
+    return this.config.categories
+      .flatMap(category =>
+        this._filterEmojis(category.emojis, this._searchText)
+      )
+      .filter(Boolean);
+  }
+
+  private _handleKeyNavigation(key: string) {
+    const allEmojis = this._getAllFilteredEmojis();
+    const GRID_COLUMNS = 8;
+
+    // Get current category info
+    const categories = this.config.categories;
+    let currentCategoryIndex = 0;
+    let currentIndexInCategory = 0;
+    let accumulatedEmojis = 0;
+    const categoryStartIndices: number[] = [0];
+
+    // Calculate category start indices
+    for (let i = 0; i < categories.length; i++) {
+      const categoryEmojis = this._filterEmojis(
+        categories[i].emojis,
+        this._searchText
+      );
+      accumulatedEmojis += categoryEmojis.length;
+      categoryStartIndices.push(accumulatedEmojis);
+    }
+
+    // Reset accumulated emojis for current category calculation
+    accumulatedEmojis = 0;
+
+    // Find current category and index within it
+    for (let i = 0; i < categories.length; i++) {
+      if (
+        this._selectedIndex >= categoryStartIndices[i] &&
+        this._selectedIndex < categoryStartIndices[i + 1]
+      ) {
+        currentCategoryIndex = i;
+        currentIndexInCategory = this._selectedIndex - categoryStartIndices[i];
+        break;
+      }
+    }
+
+    const currentCategory = categories[currentCategoryIndex];
+    const currentCategoryEmojis = this._filterEmojis(
+      currentCategory.emojis,
+      this._searchText
+    );
+
+    // Calculate current position in grid
+    const currentRow = Math.floor(currentIndexInCategory / GRID_COLUMNS);
+    const currentCol = currentIndexInCategory % GRID_COLUMNS;
+    const currentCategoryRows = Math.ceil(
+      currentCategoryEmojis.length / GRID_COLUMNS
+    );
+
+    switch (key) {
+      case 'ArrowUp': {
+        if (currentRow > 0) {
+          // Stay in same category, move up one row
+          this._selectedIndex -= GRID_COLUMNS;
+        } else if (currentCategoryIndex > 0) {
+          // Move to previous category's last row at same column
+          const prevCategory = categories[currentCategoryIndex - 1];
+          const prevCategoryEmojis = this._filterEmojis(
+            prevCategory.emojis,
+            this._searchText
+          );
+          const prevCategoryRows = Math.ceil(
+            prevCategoryEmojis.length / GRID_COLUMNS
+          );
+          const lastRowColumns =
+            prevCategoryEmojis.length % GRID_COLUMNS || GRID_COLUMNS;
+
+          // Calculate target column (limited by last row width)
+          const targetCol = Math.min(currentCol, lastRowColumns - 1);
+          const targetIndex = (prevCategoryRows - 1) * GRID_COLUMNS + targetCol;
+
+          // Update selected index
+          this._selectedIndex =
+            categoryStartIndices[currentCategoryIndex - 1] + targetIndex;
+          this._currentCategory = currentCategoryIndex - 1;
+        }
+        break;
+      }
+      case 'ArrowDown': {
+        if (currentRow < currentCategoryRows - 1) {
+          // Stay in same category, move down one row
+          const targetIndex = Math.min(
+            this._selectedIndex + GRID_COLUMNS,
+            categoryStartIndices[currentCategoryIndex + 1] - 1
+          );
+          this._selectedIndex = targetIndex;
+        } else if (currentCategoryIndex < categories.length - 1) {
+          // Move to next category's first row at same column
+          const nextCategoryEmojis = this._filterEmojis(
+            categories[currentCategoryIndex + 1].emojis,
+            this._searchText
+          );
+
+          // Calculate target column (limited by first row width)
+          const targetCol = Math.min(currentCol, nextCategoryEmojis.length - 1);
+          this._selectedIndex =
+            categoryStartIndices[currentCategoryIndex + 1] + targetCol;
+          this._currentCategory = currentCategoryIndex + 1;
+        }
+        break;
+      }
+      case 'ArrowLeft': {
+        if (currentCol > 0 || this._selectedIndex > 0) {
+          this._selectedIndex = Math.max(0, this._selectedIndex - 1);
+        }
+        break;
+      }
+      case 'ArrowRight': {
+        if (this._selectedIndex < allEmojis.length - 1) {
+          this._selectedIndex = this._selectedIndex + 1;
+        }
+        break;
+      }
+      case 'Enter': {
+        const selectedEmoji = allEmojis[this._selectedIndex];
+        if (selectedEmoji) {
+          void this._handleEmojiSelect(selectedEmoji);
+        }
+        break;
+      }
+    }
+
+    this._scrollToSelectedEmoji();
+    this.requestUpdate();
+  }
+
+  private _renderCategory(category: EmojiCategory, _index: number) {
+    const filteredEmojis = this._filterEmojis(
+      category.emojis,
+      this._searchText
+    );
+    if (filteredEmojis.length === 0) return nothing;
+
+    const startIndex = this._getAllFilteredEmojis().findIndex(
+      emoji => emoji === filteredEmojis[0]
+    );
+
+    return html`
+      <div class="emoji-category">
+        <div class="category-name">${category.name}</div>
+        <div class="emoji-grid">
+          ${filteredEmojis.map(
+            (emoji, i) => html`
+              <div
+                class="emoji-item ${startIndex + i === this._selectedIndex
+                  ? 'selected'
+                  : ''}"
+                @click=${() => this._handleEmojiSelect(emoji)}
+                @mouseenter=${() => (this._selectedIndex = startIndex + i)}
+              >
+                ${emoji.emoji}
+                <affine-tooltip .offset=${4}>${emoji.name}</affine-tooltip>
+              </div>
+            `
+          )}
+        </div>
+      </div>
+    `;
+  }
+
+  private _scrollToCategory(index: number) {
+    const container = this.shadowRoot?.querySelector('.emoji-menu-content');
+    const categories = container?.querySelectorAll('.emoji-category');
+    if (!container || !categories) return;
+
+    const category = categories[index];
+    if (!category) return;
+
+    const scrollOffset = 12;
+    const targetPosition = (category as HTMLElement).offsetTop - scrollOffset;
+
+    container.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+    this._currentCategory = index;
+    this.requestUpdate();
+  }
+
+  private _scrollToSelectedEmoji() {
+    const container = this.shadowRoot?.querySelector('.emoji-menu-content');
+    const selectedEmoji = this.shadowRoot?.querySelector(
+      '.emoji-item.selected'
+    );
+
+    if (container && selectedEmoji) {
+      const containerRect = container.getBoundingClientRect();
+      const emojiRect = selectedEmoji.getBoundingClientRect();
+
+      if (emojiRect.top < containerRect.top) {
+        container.scrollTop -= containerRect.top - emojiRect.top + 8;
+      } else if (emojiRect.bottom > containerRect.bottom) {
+        container.scrollTop += emojiRect.bottom - containerRect.bottom + 8;
+      }
+    }
+  }
+
   override connectedCallback() {
     super.connectedCallback();
 
-    this._disposables.addFromEvent(this, 'mousedown', e => e.preventDefault());
+    this._disposables.addFromEvent(this, 'mousedown', e => {
+      e.preventDefault();
+    });
 
-    if (!this.inlineEditor || !this.inlineEditor.eventSource) return;
+    const inlineEditor = this.inlineEditor;
+    if (!inlineEditor?.eventSource) return;
 
-    createKeydownObserverForEmoji({
-      target: this.inlineEditor.eventSource,
+    createKeydownObserver({
+      target: inlineEditor.eventSource,
       signal: this.abortController.signal,
       interceptor: (event, next) => {
-        const { key, code, isComposing } = event;
-        if (key === 'Process' && !isComposing && code === 'Slash') {
+        const { key } = event;
+
+        if (
+          key === 'ArrowUp' ||
+          key === 'ArrowDown' ||
+          key === 'ArrowLeft' ||
+          key === 'ArrowRight' ||
+          key === 'Enter'
+        ) {
+          event.preventDefault();
+          this._handleKeyNavigation(key);
           return;
         }
-        if (this._queryState === 'no_result' && key !== 'Backspace') {
+
+        if (key === 'Escape') {
           this.abortController.abort();
           return;
         }
+
+        if (key !== 'Backspace' && this._queryState === 'no_result') {
+          this.abortController.abort();
+          return;
+        }
+
         next();
       },
       onInput: isComposition => {
+        console.log('isComposition', isComposition);
         if (isComposition) {
           this._updateFilteredItems();
         } else {
@@ -127,18 +371,13 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           );
         }
       },
-      onPaste: () => {
-        setTimeout(() => {
-          this._updateFilteredItems();
-        }, 50);
-      },
       onDelete: () => {
         const curRange = this.inlineEditor.getInlineRange();
-        if (!this._startRange || !curRange) {
-          return;
-        }
+        if (!this._startRange || !curRange) return;
+
         if (curRange.index < this._startRange.index) {
           this.abortController.abort();
+          return;
         }
         this.inlineEditor.slots.renderComplete.once(this._updateFilteredItems);
       },
@@ -147,327 +386,68 @@ export class EmojiMenu extends WithDisposable(LitElement) {
   }
 
   override render() {
-    const overlay =
-      this._queryState !== 'no_result'
-        ? html`<div
-            class="overlay-mask"
-            @click="${() => this.abortController.abort()}"
-          ></div>`
-        : nothing;
-
-    const styleObject = this._position
+    const menuStyles = this._position
       ? {
           transform: `translate(${this._position.x}, ${this._position.y})`,
-          maxHeight: `${Math.min(
-            this._position.height,
-            this.config.maxHeight
-          )}px`,
+          maxHeight: `${Math.min(this._position.height, 350)}px`,
         }
-      : { visibility: 'hidden' };
+      : {
+          visibility: 'hidden',
+        };
 
-    const panel = html`<inner-emoji-menu
-      .menuStyle=${styleObject}
-      .allCategories=${this.config.items}
-      .filteredItems=${this._filteredItems}
-      .abortController=${this.abortController}
-      .context=${this.context}
-    ></inner-emoji-menu>`;
-
-    return html`${overlay}${panel}`;
+    return html`
+      <div class="overlay-mask" @click=${() => this.abortController.abort()}>
+        <div
+          class="emoji-menu"
+          style=${styleMap(menuStyles)}
+          @click=${(e: MouseEvent) => e.stopPropagation()}
+        >
+          <div class="emoji-menu-content">
+            ${this.config.categories.map((category, i) =>
+              this._renderCategory(category, i)
+            )}
+          </div>
+          <div class="category-nav">
+            ${this.config.categories.map(
+              (category, i) => html`
+                <div
+                  class="nav-item ${this._currentCategory === i
+                    ? 'active'
+                    : ''}"
+                  @click=${() => this._scrollToCategory(i)}
+                >
+                  ${category.icon}
+                </div>
+              `
+            )}
+          </div>
+        </div>
+      </div>
+    `;
   }
-}
 
-export class InnerEmojiMenu extends WithDisposable(LitElement) {
-  static override styles = emojiMenuStyles;
+  @state()
+  private accessor _position: {
+    x: string;
+    y: string;
+    height: number;
+  } | null = null;
 
-  private _activeCategoryIndex = 0;
+  @state()
+  accessor _searchText = '';
 
-  private _activeEmojiIndex = -1;
-
-  private _allEmojisForActiveCategory: EmojiMenuActionItem[] = [];
-
-  private _handleKeydown = (event: KeyboardEvent) => {
-    const { key, ctrlKey, metaKey, altKey, shiftKey } = event;
-    const notControlShift = !(ctrlKey || metaKey || altKey || shiftKey);
-
-    if (key === 'Escape' && notControlShift) {
-      this.abortController.abort();
-      event.preventDefault();
-      event.stopPropagation();
-      return;
-    }
-
-    if (key === 'Enter' && notControlShift && this._activeEmojiIndex >= 0) {
-      const item = this._allEmojisForActiveCategory[this._activeEmojiIndex];
-      if (item) {
-        cleanTailForEmoji(
-          this.context.rootComponent.host,
-          this.context.model,
-          item.shortcodes[0]
-        );
-        this.context.rootComponent.std.command
-          .chain()
-          .getSelectedModels()
-          .insertTextBlock({ content: item.char, place: 'replace' })
-          .run();
-        this.abortController.abort();
-      }
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    if (key === 'ArrowDown' && notControlShift) {
-      if (
-        this._activeEmojiIndex <
-        this._allEmojisForActiveCategory.length - 1
-      ) {
-        this._activeEmojiIndex++;
-        this._scrollIntoView();
-      }
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    if (key === 'ArrowUp' && notControlShift) {
-      if (this._activeEmojiIndex > 0) {
-        this._activeEmojiIndex--;
-        this._scrollIntoView();
-      }
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    if (
-      key === 'ArrowRight' &&
-      notControlShift &&
-      this.filteredItems.length === 0
-    ) {
-      if (this._activeCategoryIndex < this.allCategories.length - 1) {
-        this._activeCategoryIndex++;
-        this._activeEmojiIndex = 0;
-        this._allEmojisForActiveCategory =
-          this.allCategories[this._activeCategoryIndex]?.emojis ?? [];
-        this._scrollIntoView();
-      }
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    if (
-      key === 'ArrowLeft' &&
-      notControlShift &&
-      this.filteredItems.length === 0
-    ) {
-      if (this._activeCategoryIndex > 0) {
-        this._activeCategoryIndex--;
-        this._activeEmojiIndex = 0;
-        this._allEmojisForActiveCategory =
-          this.allCategories[this._activeCategoryIndex]?.emojis ?? [];
-        this._scrollIntoView();
-      }
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  @property({ attribute: false })
+  accessor config!: {
+    categories: EmojiCategory[];
+    maxHeight: number;
   };
 
-  private _subMenuAbortController: AbortController | null = null;
+  @property({ attribute: false })
+  accessor context!: EmojiMenuContext;
+
+  @query('.emoji-menu')
+  accessor emojiMenuElement!: HTMLElement;
 
   @property({ attribute: false })
-  abortController!: AbortController;
-
-  @property({ attribute: false })
-  allCategories: EmojiMenuCategory[] = [];
-
-  @property({ attribute: false })
-  context!: EmojiMenuContext;
-
-  @property({ attribute: false })
-  filteredItems: EmojiMenuActionItem[] = [];
-
-  @property({ attribute: false })
-  menuStyle: Record<string, string> | null = null;
-
-  private _renderCategoryButtons() {
-    return html`
-      <div class="emoji-category-buttons">
-        ${this.allCategories.map((cat, i) => {
-          const active = i === this._activeCategoryIndex ? 'active' : '';
-          return html`
-            <button
-              class="emoji-category-button ${active}"
-              @click=${() => {
-                this._activeCategoryIndex = i;
-                this._activeEmojiIndex = 0;
-                this._allEmojisForActiveCategory = cat.emojis;
-                this.filteredItems = [];
-                this.requestUpdate();
-              }}
-            >
-              ${cat.icon}
-            </button>
-          `;
-        })}
-      </div>
-    `;
-  }
-
-  private _renderEmojis() {
-    if (this._allEmojisForActiveCategory.length === 0) return nothing;
-    return html`
-      <div class="emoji-grid">
-        ${this._allEmojisForActiveCategory.map((item, i) => {
-          const selected = i === this._activeEmojiIndex;
-          return html`
-            <div
-              class="emoji-item ${emojiItemClassName(item)} ${selected
-                ? 'emoji-item-selected'
-                : ''}"
-              @mousemove=${() => {
-                this._activeEmojiIndex = i;
-              }}
-              @click=${() => {
-                cleanTailForEmoji(
-                  this.context.rootComponent.host,
-                  this.context.model,
-                  item.shortcodes[0]
-                );
-                this.context.rootComponent.std.command
-                  .chain()
-                  .getSelectedModels()
-                  .({ content: item.char, place: 'replace' })
-                  .run();
-                this.abortController.abort();
-              }}
-            >
-              ${item.char}
-            </div>
-          `;
-        })}
-      </div>
-    `;
-  }
-
-  private _renderFiltered() {
-    return html`
-      <div class="emoji-grid">
-        ${this.filteredItems.map((item, i) => {
-          const selected = i === this._activeEmojiIndex;
-          return html`
-            <div
-              class="emoji-item ${emojiItemClassName(item)} ${selected
-                ? 'emoji-item-selected'
-                : ''}"
-              @mousemove=${() => {
-                this._activeEmojiIndex = i;
-              }}
-              @click=${() => {
-                cleanTailForEmoji(
-                  this.context.rootComponent.host,
-                  this.context.model,
-                  item.shortcodes[0]
-                );
-                this.context.rootComponent.std.command
-                  .chain()
-                  .getSelectedModels()
-                  .insertTextBlock({ content: item.char, place: 'replace' })
-                  .run();
-                this.abortController.abort();
-              }}
-            >
-              ${item.char}
-            </div>
-          `;
-        })}
-      </div>
-    `;
-  }
-
-  private _scrollIntoView() {
-    const activeItem = this.renderRoot.querySelector(
-      `.${emojiItemClassName(
-        this._allEmojisForActiveCategory[this._activeEmojiIndex]
-      )}`
-    );
-    if (!activeItem) return;
-    (activeItem as HTMLElement).scrollIntoView({ block: 'nearest' });
-    this.requestUpdate();
-  }
-
-  override connectedCallback() {
-    super.connectedCallback();
-
-    this.abortController?.signal?.addEventListener('abort', () => {
-      this._subMenuAbortController?.abort();
-    });
-
-    const inlineEditor = this.context.rootComponent.std.view.getWidget(
-      'affine-emoji-menu-widget',
-      this.context.rootComponent.model.id
-    );
-    if (!inlineEditor) {
-      // fallback
-    }
-
-    window.addEventListener('keydown', this._handleKeydown, {
-      capture: true,
-      signal: this.abortController.signal,
-    });
-  }
-
-  override disconnectedCallback() {
-    this.abortController.abort();
-  }
-
-  override firstUpdated() {
-    if (this.filteredItems.length === 0) {
-      this._allEmojisForActiveCategory =
-        this.allCategories[this._activeCategoryIndex]?.emojis ?? [];
-      if (this._allEmojisForActiveCategory.length > 0) {
-        this._activeEmojiIndex = 0;
-      }
-    } else {
-      this._allEmojisForActiveCategory = this.filteredItems;
-      this._activeEmojiIndex = 0;
-    }
-    this.requestUpdate();
-  }
-
-  override render() {
-    const style = styleMap(this.menuStyle ?? { position: 'relative' });
-
-    return html`
-      <div class="emoji-menu" style=${style}>
-        ${this.filteredItems.length === 0
-          ? html` ${this._renderCategoryButtons()} ${this._renderEmojis()} `
-          : html`
-              <div class="emoji-filter-notice">Filter Results</div>
-              ${this._renderFiltered()}
-            `}
-      </div>
-    `;
-  }
-
-  override updated(changedProperties: PropertyValues<this>) {
-    if (
-      changedProperties.has('filteredItems') ||
-      changedProperties.has('allCategories')
-    ) {
-      if (this.filteredItems.length === 0) {
-        this._allEmojisForActiveCategory =
-          this.allCategories[this._activeCategoryIndex]?.emojis ?? [];
-      } else {
-        this._allEmojisForActiveCategory = this.filteredItems;
-      }
-      if (this._allEmojisForActiveCategory.length > 0) {
-        this._activeEmojiIndex = 0;
-      } else {
-        this._activeEmojiIndex = -1;
-      }
-      this._subMenuAbortController?.abort();
-      this.requestUpdate();
-    }
-  }
+  accessor triggerKey!: string;
 }
-*/
-
-console.log('.');

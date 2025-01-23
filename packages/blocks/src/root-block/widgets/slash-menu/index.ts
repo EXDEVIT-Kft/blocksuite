@@ -172,6 +172,7 @@ export class AffineSlashMenuWidget extends WidgetComponent {
       const matchedKey = this.config.triggerKeys.find(triggerKey =>
         text.endsWith(triggerKey)
       );
+
       if (!matchedKey) return;
 
       const config: SlashMenuStaticConfig = {
