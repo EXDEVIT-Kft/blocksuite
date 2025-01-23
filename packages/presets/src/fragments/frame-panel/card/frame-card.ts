@@ -34,10 +34,13 @@ const styles = css`
     display: block;
   }
 
+  affine-frame-card {
+    width: calc(100% - 0.875rem);
+  }
+
   .frame-card-container {
     display: flex;
     flex-direction: column;
-    width: 284px;
     height: 198px;
     gap: 8px;
 
