@@ -354,15 +354,9 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           return;
         }
 
-        if (key !== 'Backspace' && this._queryState === 'no_result') {
-          this.abortController.abort();
-          return;
-        }
-
         next();
       },
       onInput: isComposition => {
-        console.log('isComposition', isComposition);
         if (isComposition) {
           this._updateFilteredItems();
         } else {
