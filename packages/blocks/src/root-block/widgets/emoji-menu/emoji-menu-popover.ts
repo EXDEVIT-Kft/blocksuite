@@ -49,7 +49,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     }
   };
 
-  private _queryState: 'off' | 'on' | 'no_result' = 'off';
+  //private _queryState: 'off' | 'on' | 'no_result' = 'off';
 
   private _selectedIndex = 0;
 
@@ -84,9 +84,9 @@ export class EmojiMenu extends WithDisposable(LitElement) {
 
     const allEmojis = this._getAllFilteredEmojis();
     if (allEmojis.length === 0) {
-      this._queryState = 'no_result';
+      //this._queryState = 'no_result';
     } else {
-      this._queryState = 'on';
+      //this._queryState = 'on';
     }
     this.requestUpdate();
   };
