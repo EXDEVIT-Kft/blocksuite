@@ -5,6 +5,9 @@
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/dist"],
       "cache": true
+    },
+    "before-publish": {
+      "dependsOn": []
     }
   },
   "defaultBase": "master",

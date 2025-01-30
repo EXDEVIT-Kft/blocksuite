@@ -48,6 +48,12 @@ _excluded files_: node*modules, dist, *.spec.ts, \_.js
 
 2. Publikálás
 
+-> a package.json export konfigurációjának módosítása, mert az AFFiNE máshogy buildeli / használja a package-okat, mint ahogy mi az algogrind monorepo-ban fel szeretnénk használni (ők az AFFiNE monorepo buildelésekor újrabuildelik a teljes blocksuite monorepo-t, amit mi szeretnénk elkerülni)
+
+```sh
+nx before-publish
+```
+
 ```sh
 lerna publish --no-private --message "chore: bump version numbers"
 ```
@@ -125,6 +131,12 @@ _excluded files_: node_modules, dist, \*.js
 -> ha szükséges akkor a build hibák javítása egy külön commitban
 
 6. Publikálás
+
+-> a package.json export konfigurációjának módosítása, mert az AFFiNE máshogy buildeli / használja a package-okat, mint ahogy mi az algogrind monorepo-ban fel szeretnénk használni (ők az AFFiNE monorepo buildelésekor újrabuildelik a teljes blocksuite monorepo-t, amit mi szeretnénk elkerülni)
+
+```sh
+nx before-publish
+```
 
 ```sh
 lerna publish --no-private --message "chore: bump version numbers"
