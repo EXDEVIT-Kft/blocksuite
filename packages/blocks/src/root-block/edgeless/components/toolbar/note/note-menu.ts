@@ -1,7 +1,7 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
-import { AttachmentIcon, LinkIcon } from '@blocksuite/affine-components/icons';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { AttachmentIcon, LinkIcon } from '@algogrind/affine-components/icons';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';

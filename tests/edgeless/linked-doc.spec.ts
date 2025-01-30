@@ -1,4 +1,4 @@
-import { assertNotExists } from '@blocksuite/global/utils';
+import { assertNotExists } from '@algogrind/global/utils';
 import { expect } from '@playwright/test';
 
 import {

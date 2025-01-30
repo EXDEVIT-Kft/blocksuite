@@ -1,12 +1,12 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@algogrind/affine-model';
 
 import {
   getScrollContainer,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BLOCK_ID_ATTR, type PointerEventState } from '@blocksuite/block-std';
-import { BlockComponent, WidgetComponent } from '@blocksuite/block-std';
-import { assertInstanceOf } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { BLOCK_ID_ATTR, type PointerEventState } from '@algogrind/block-std';
+import { BlockComponent, WidgetComponent } from '@algogrind/block-std';
+import { assertInstanceOf } from '@algogrind/global/utils';
 import { html, nothing } from 'lit';
 import { state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

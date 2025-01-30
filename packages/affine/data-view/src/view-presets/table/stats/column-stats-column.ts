@@ -3,11 +3,11 @@ import {
   type MenuConfig,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
+import { Text } from '@algogrind/store';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
-import { Text } from '@blocksuite/store';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { computed, signal } from '@preact/signals-core';
 import { css, html } from 'lit';

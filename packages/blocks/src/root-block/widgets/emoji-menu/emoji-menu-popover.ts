@@ -1,6 +1,6 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
+import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
 
-import { WithDisposable } from '@blocksuite/global/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -9,7 +9,7 @@ import type { EmojiCategory, EmojiItem, EmojiMenuContext } from './config.js';
 
 import { createKeydownObserver } from '../../../_common/components/utils.js';
 
-import '@blocksuite/affine-components/toolbar';
+import '@algogrind/affine-components/toolbar';
 
 import { styles } from './styles.js';
 

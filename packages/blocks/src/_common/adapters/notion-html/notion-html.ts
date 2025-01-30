@@ -1,9 +1,9 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type AdapterContext,
   type BlockNotionHtmlAdapterMatcher,
@@ -12,8 +12,8 @@ import {
   type HtmlAST,
   type NotionHtml,
   NotionHtmlDeltaConverter,
-} from '@blocksuite/affine-shared/adapters';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+} from '@algogrind/affine-shared/adapters';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   type AssetsManager,
   ASTWalker,
@@ -29,7 +29,7 @@ import {
   type Job,
   nanoid,
   type SliceSnapshot,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
 

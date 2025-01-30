@@ -1,6 +1,6 @@
-import { getScrollContainer } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { getScrollContainer } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { autoUpdate } from '@floating-ui/dom';
 import { nothing, type TemplateResult } from 'lit';

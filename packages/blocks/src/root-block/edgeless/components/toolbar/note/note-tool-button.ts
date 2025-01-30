@@ -1,6 +1,6 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
-import { ArrowUpIcon, NoteIcon } from '@blocksuite/affine-components/icons';
+import { ArrowUpIcon, NoteIcon } from '@algogrind/affine-components/icons';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { state } from 'lit/decorators.js';

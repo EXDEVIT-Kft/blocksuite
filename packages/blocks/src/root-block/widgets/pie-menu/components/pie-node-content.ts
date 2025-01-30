@@ -1,4 +1,4 @@
-import { assertEquals } from '@blocksuite/global/utils';
+import { assertEquals } from '@algogrind/global/utils';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

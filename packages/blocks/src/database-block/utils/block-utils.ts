@@ -4,14 +4,14 @@ import type {
   ColumnUpdater,
   DatabaseBlockModel,
   ViewBasicDataType,
-} from '@blocksuite/affine-model';
-import type { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   arrayMove,
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export function addProperty(
   model: DatabaseBlockModel,

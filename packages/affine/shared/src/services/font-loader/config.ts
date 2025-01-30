@@ -1,4 +1,4 @@
-import { FontFamily, FontStyle, FontWeight } from '@blocksuite/affine-model';
+import { FontFamily, FontStyle, FontWeight } from '@algogrind/affine-model';
 
 export interface FontConfig {
   font: string;

@@ -1,23 +1,23 @@
-import type { ShapeElementModel, ShapeName } from '@blocksuite/affine-model';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { IBound } from '@blocksuite/global/utils';
+import type { ShapeElementModel, ShapeName } from '@algogrind/affine-model';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { IBound } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   DEFAULT_SHAPE_FILL_COLOR,
   DEFAULT_SHAPE_STROKE_COLOR,
   getShapeType,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EditPropsStore,
   TelemetryProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { Bound } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 
 import { hasClassNameInList } from '../../../_common/utils/index.js';
@@ -338,7 +338,7 @@ export class ShapeTool extends BaseTool<ShapeToolOption> {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     shape: ShapeTool;
   }

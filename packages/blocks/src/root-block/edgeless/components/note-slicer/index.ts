@@ -1,16 +1,16 @@
-import { SmallScissorsIcon } from '@blocksuite/affine-components/icons';
-import { DEFAULT_NOTE_HEIGHT } from '@blocksuite/affine-model';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { getRectByBlockComponent } from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+import { SmallScissorsIcon } from '@algogrind/affine-components/icons';
+import { DEFAULT_NOTE_HEIGHT } from '@algogrind/affine-model';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@algogrind/affine-shared/consts';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { getRectByBlockComponent } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import {
   deserializeXYWH,
   DisposableGroup,
   Point,
   serializeXYWH,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

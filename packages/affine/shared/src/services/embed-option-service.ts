@@ -1,8 +1,8 @@
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
-import type { Container } from '@blocksuite/global/di';
+import type { EmbedCardStyle } from '@algogrind/affine-model';
+import type { Container } from '@algogrind/global/di';
 
-import { Extension } from '@blocksuite/block-std';
-import { createIdentifier } from '@blocksuite/global/di';
+import { Extension } from '@algogrind/block-std';
+import { createIdentifier } from '@algogrind/global/di';
 
 export type EmbedOptions = {
   flavour: string;

@@ -5,7 +5,7 @@ import type {
   PointLocation,
   SerializedXYWH,
   XYWH,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { EditorHost } from '../../view/element/lit-host.js';
 import type { GfxGroupModel, GfxModel } from './model.js';

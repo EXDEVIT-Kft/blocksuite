@@ -1,4 +1,4 @@
-import { clamp, stopPropagation } from '@blocksuite/affine-shared/utils';
+import { clamp, stopPropagation } from '@algogrind/affine-shared/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -1,6 +1,6 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import { insertContent } from '@blocksuite/affine-components/rich-text';
+import { insertContent } from '@algogrind/affine-components/rich-text';
 
 import type { RootBlockComponent } from '../../types.js';
 

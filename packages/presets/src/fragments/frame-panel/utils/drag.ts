@@ -1,4 +1,4 @@
-import { type FrameBlockModel, on, once } from '@blocksuite/blocks';
+import { type FrameBlockModel, on, once } from '@algogrind/blocks';
 
 import type { FramePanelBody } from '../body/frame-panel-body.js';
 

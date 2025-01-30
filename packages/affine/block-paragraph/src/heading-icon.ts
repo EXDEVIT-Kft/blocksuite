@@ -1,4 +1,4 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+import type { ParagraphBlockModel } from '@algogrind/affine-model';
 
 import {
   Heading1Icon,
@@ -7,9 +7,9 @@ import {
   Heading4Icon,
   Heading5Icon,
   Heading6Icon,
-} from '@blocksuite/affine-components/icons';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,4 +1,4 @@
-import { PresentationIcon } from '@blocksuite/editor-icons';
+import { PresentationIcon } from '@algogrind/editor-icons';
 import { html } from 'lit';
 
 export const SmallFrameNavigatorIcon = PresentationIcon({

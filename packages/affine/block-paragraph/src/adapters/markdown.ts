@@ -1,13 +1,13 @@
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { DeltaInsert } from '@algogrind/inline';
 import type { Heading } from 'mdast';
 
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
+import { ParagraphBlockSchema } from '@algogrind/affine-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
-import { nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { nanoid } from '@algogrind/store';
 
 const PARAGRAPH_MDAST_TYPE = ['paragraph', 'html', 'heading', 'blockquote'];
 

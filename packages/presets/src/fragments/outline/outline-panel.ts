@@ -1,4 +1,4 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

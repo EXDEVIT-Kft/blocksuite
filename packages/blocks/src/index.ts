@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./effects.ts" />
-import { deserializeXYWH, Point } from '@blocksuite/global/utils';
+import { deserializeXYWH, Point } from '@algogrind/global/utils';
 
 import { matchFlavours } from './_common/utils/index.js';
 import { splitElements } from './root-block/edgeless/utils/clipboard-utils.js';
@@ -54,15 +54,12 @@ export {
   MiniMindmapPreview,
 } from './surface-block/mini-mindmap/index.js';
 export * from './surface-ref-block/index.js';
-export * from '@blocksuite/affine-block-embed';
-export * from '@blocksuite/affine-block-list';
-export * from '@blocksuite/affine-block-paragraph';
-export * from '@blocksuite/affine-block-surface';
-export { type MenuOptions } from '@blocksuite/affine-components/context-menu';
-export {
-  HoverController,
-  whenHover,
-} from '@blocksuite/affine-components/hover';
+export * from '@algogrind/affine-block-embed';
+export * from '@algogrind/affine-block-list';
+export * from '@algogrind/affine-block-paragraph';
+export * from '@algogrind/affine-block-surface';
+export { type MenuOptions } from '@algogrind/affine-components/context-menu';
+export { HoverController, whenHover } from '@algogrind/affine-components/hover';
 export {
   ArrowDownSmallIcon,
   CloseIcon,
@@ -71,15 +68,15 @@ export {
   LinkedDocIcon,
   PlusIcon,
   TagsIcon,
-} from '@blocksuite/affine-components/icons';
-export * from '@blocksuite/affine-components/icons';
-export * from '@blocksuite/affine-components/peek';
+} from '@algogrind/affine-components/icons';
+export * from '@algogrind/affine-components/icons';
+export * from '@algogrind/affine-components/peek';
 export {
   createLitPortal,
   createSimplePortal,
-} from '@blocksuite/affine-components/portal';
-export * from '@blocksuite/affine-components/rich-text';
-export { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/portal';
+export * from '@algogrind/affine-components/rich-text';
+export { toast } from '@algogrind/affine-components/toast';
 export {
   type AdvancedMenuItem,
   type FatMenuItems,
@@ -90,16 +87,16 @@ export {
   renderGroups,
   renderToolbarSeparator,
   Tooltip,
-} from '@blocksuite/affine-components/toolbar';
-export * from '@blocksuite/affine-model';
-export * from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-components/toolbar';
+export * from '@algogrind/affine-model';
+export * from '@algogrind/affine-shared/services';
 
 export {
   ColorVariables,
   FontFamilyVariables,
   SizeVariables,
   StyleVariables,
-} from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-shared/theme';
 export {
   createButtonPopper,
   createDefaultDoc,
@@ -111,7 +108,7 @@ export {
   once,
   openFileOrFiles,
   printToPdf,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 export const BlocksUtils = {
   splitElements,
@@ -136,7 +133,7 @@ const importIdentifier = '__ $BLOCKSUITE_BLOCKS$ __';
 if (env[importIdentifier] === true) {
   // https://github.com/yjs/yjs/issues/438
   console.error(
-    '@blocksuite/blocks was already imported. This breaks constructor checks and will lead to issues!'
+    '@algogrind/blocks was already imported. This breaks constructor checks and will lead to issues!'
   );
 }
 

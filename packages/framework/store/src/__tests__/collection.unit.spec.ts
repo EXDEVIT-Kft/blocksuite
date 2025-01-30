@@ -1,6 +1,6 @@
 // checkout https://vitest.dev/guide/debugging.html for debugging tests
 
-import type { Slot } from '@blocksuite/global/utils';
+import type { Slot } from '@algogrind/global/utils';
 
 import { assert, beforeEach, describe, expect, it, vi } from 'vitest';
 import { applyUpdate, encodeStateAsUpdate } from 'yjs';

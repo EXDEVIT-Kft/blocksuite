@@ -1,12 +1,12 @@
 import type {
   SurfaceBlockComponent,
   SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
-import type { GfxController } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-block-surface';
+import type { ConnectorElementModel } from '@algogrind/affine-model';
+import type { GfxController } from '@algogrind/block-std/gfx';
 
-import { Overlay } from '@blocksuite/affine-block-surface';
-import { Bound, Point } from '@blocksuite/global/utils';
+import { Overlay } from '@algogrind/affine-block-surface';
+import { Bound, Point } from '@algogrind/global/utils';
 
 import { isConnectable } from '../utils/query.js';
 

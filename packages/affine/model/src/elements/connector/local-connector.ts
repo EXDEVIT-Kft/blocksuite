@@ -1,6 +1,6 @@
-import type { PointLocation } from '@blocksuite/global/utils';
+import type { PointLocation } from '@algogrind/global/utils';
 
-import { GfxLocalElementModel } from '@blocksuite/block-std/gfx';
+import { GfxLocalElementModel } from '@algogrind/block-std/gfx';
 
 import type { Connection } from './connector.js';
 

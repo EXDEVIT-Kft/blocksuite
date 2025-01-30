@@ -1,6 +1,6 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { NoteBlockModel } from '@algogrind/affine-model';
 
-import { BlockComponent } from '@blocksuite/block-std';
+import { BlockComponent } from '@algogrind/block-std';
 import { css, html } from 'lit';
 
 import type { NoteBlockService } from './note-service.js';

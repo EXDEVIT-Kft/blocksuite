@@ -1,18 +1,18 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@algogrind/affine-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   FetchUtils,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { sha } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/adapters';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { sha } from '@algogrind/global/utils';
 import {
   type AssetsManager,
   type ASTWalkerContext,
   type BlockSnapshot,
   nanoid,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 async function processImageNode(
   imageURL: string,

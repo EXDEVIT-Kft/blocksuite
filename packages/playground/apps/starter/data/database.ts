@@ -4,10 +4,10 @@ import {
   type ListType,
   type ParagraphType,
   type ViewBasicDataType,
-} from '@blocksuite/blocks';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
-import { assertExists } from '@blocksuite/global/utils';
-import { type DocCollection, Text } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import { viewPresets } from '@algogrind/data-view/view-presets';
+import { assertExists } from '@algogrind/global/utils';
+import { type DocCollection, Text } from '@algogrind/store';
 
 import type { InitFn } from './utils.js';
 

@@ -4,7 +4,7 @@ import type {
   GfxLocalElementModel,
   GfxModel,
   GfxPrimitiveElementModel,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
 declare global {
   namespace BlockSuite {

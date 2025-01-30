@@ -1,4 +1,4 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
 import { effect } from '@preact/signals-core';
 

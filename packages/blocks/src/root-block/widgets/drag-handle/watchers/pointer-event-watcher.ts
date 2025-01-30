@@ -1,11 +1,11 @@
-import { captureEventTarget } from '@blocksuite/affine-shared/utils';
+import { captureEventTarget } from '@algogrind/affine-shared/utils';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type PointerEventState,
   type UIEventHandler,
-} from '@blocksuite/block-std';
-import { Point, throttle } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { Point, throttle } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 
 import type { NoteBlockComponent } from '../../../../note-block/index.js';

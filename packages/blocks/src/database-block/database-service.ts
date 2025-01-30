@@ -1,11 +1,11 @@
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   type DatabaseBlockModel,
   DatabaseBlockSchema,
-} from '@blocksuite/affine-model';
-import { BlockService } from '@blocksuite/block-std';
-import { viewPresets } from '@blocksuite/data-view/view-presets';
+} from '@algogrind/affine-model';
+import { BlockService } from '@algogrind/block-std';
+import { viewPresets } from '@algogrind/data-view/view-presets';
 
 import {
   databaseViewAddView,
