@@ -208,6 +208,7 @@ import {
   AffineDocRemoteSelectionWidget,
   AffineDragHandleWidget,
   AffineEdgelessZoomToolbarWidget,
+  AffineEmojiMenuWidget,
   AffineFormatBarWidget,
   AffineImageToolbarWidget,
   AffineInnerModalWidget,
@@ -251,6 +252,8 @@ import { AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET } from './root-block/widgets/edgele
 import { ZoomBarToggleButton } from './root-block/widgets/edgeless-zoom-toolbar/zoom-bar-toggle-button.js';
 import { EdgelessZoomToolbar } from './root-block/widgets/edgeless-zoom-toolbar/zoom-toolbar.js';
 import { effects as widgetEdgelessElementToolbarEffects } from './root-block/widgets/element-toolbar/effects.js';
+import { EmojiMenu } from './root-block/widgets/emoji-menu/emoji-menu-popover.js';
+import { AFFINE_EMOJI_MENU_WIDGET } from './root-block/widgets/emoji-menu/index.js';
 import { effects as widgetFrameTitleEffects } from './root-block/widgets/frame-title/effects.js';
 import { AffineImageToolbar } from './root-block/widgets/image-toolbar/components/image-toolbar.js';
 import { AFFINE_IMAGE_TOOLBAR_WIDGET } from './root-block/widgets/image-toolbar/index.js';
@@ -401,6 +404,7 @@ export function effects() {
   customElements.define('pie-node-center', PieNodeCenter);
   customElements.define('pie-center-rotator', PieCenterRotator);
   customElements.define('affine-slash-menu', SlashMenu);
+  customElements.define('affine-emoji-menu', EmojiMenu);
   customElements.define('inner-slash-menu', InnerSlashMenu);
   customElements.define('generating-placeholder', GeneratingPlaceholder);
   customElements.define('ai-finish-tip', AIFinishTip);
@@ -583,6 +587,7 @@ export function effects() {
 
   customElements.define(AFFINE_IMAGE_TOOLBAR_WIDGET, AffineImageToolbarWidget);
   customElements.define(AFFINE_SLASH_MENU_WIDGET, AffineSlashMenuWidget);
+  customElements.define(AFFINE_EMOJI_MENU_WIDGET, AffineEmojiMenuWidget);
   customElements.define(
     AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET,
     EdgelessRemoteSelectionWidget
