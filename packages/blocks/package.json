@@ -116,5 +116,6 @@
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
     "@types/katex": "^0.16.7"
-  }
+  },
+  "main": "./dist/index.js"
 }

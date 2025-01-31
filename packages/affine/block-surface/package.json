@@ -69,5 +69,6 @@
     "dist",
     "!src/__tests__",
     "!dist/__tests__"
-  ]
+  ],
+  "main": "./dist/index.js"
 }

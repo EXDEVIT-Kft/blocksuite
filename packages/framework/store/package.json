@@ -73,5 +73,6 @@
     "!src/__tests__",
     "!dist/__tests__",
     "shim.d.ts"
-  ]
+  ],
+  "main": "./dist/index.js"
 }

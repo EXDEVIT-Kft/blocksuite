@@ -38,18 +38,29 @@ function updateExports() {
       // Read package.json
       const packageJson = JSON.parse(readFileSync(fullPath, 'utf-8'));
 
+      let madeChanges = false;
+
       // Check if publishConfig.exports exists
       if (packageJson.publishConfig?.exports) {
         // Update exports field with publishConfig.exports
         packageJson.exports = packageJson.publishConfig.exports;
-
-        // Write back to package.json with proper formatting
-        writeFileSync(fullPath, JSON.stringify(packageJson, null, 2) + '\n');
-
-        console.log(`✅ Updated exports for ${packagePath}`);
-        hasChanges = true;
+        madeChanges = true;
       } else {
         console.log(`⚠️ No publishConfig.exports found in ${packagePath}`);
+      }
+
+      // Add main field if it doesn't exist
+      if (!packageJson.main) {
+        packageJson.main = './dist/index.js';
+        madeChanges = true;
+        console.log(`✅ Added main field to ${packagePath}`);
+      }
+
+      if (madeChanges) {
+        // Write back to package.json with proper formatting
+        writeFileSync(fullPath, JSON.stringify(packageJson, null, 2) + '\n');
+        console.log(`✅ Updated ${packagePath}`);
+        hasChanges = true;
       }
     } catch (error) {
       console.error(`❌ Error processing ${packagePath}:`, error);
@@ -62,7 +73,7 @@ function updateExports() {
       // Stage and commit changes
       execSync('git add .');
       execSync(
-        'git commit -m "chore: fix export configuration before publish"'
+        'git commit -m "chore: fix export configuration and add main field before publish"'
       );
       console.log('✅ Changes committed successfully');
     } catch (error) {
