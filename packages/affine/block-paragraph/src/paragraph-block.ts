@@ -272,7 +272,6 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
             !target.closest('.toggle-icon') &&
             !(target instanceof SVGElement)
           ) {
-            console.log('clicked', event.target);
             this._readonlyCollapsed = !this._readonlyCollapsed;
           }
         }}
@@ -295,7 +294,6 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
                   .updateCollapsed=${(value: boolean) => {
                     if (this.doc.readonly) {
                       this._readonlyCollapsed = value;
-                      console.log('readonly collapsed', value);
                     } else {
                       this.doc.captureSync();
                       this.doc.updateBlock(this.model, {
