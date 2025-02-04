@@ -23,6 +23,10 @@ export const AFFINE_OUTLINE_VIEWER = 'affine-outline-viewer';
 })
 export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
   static override styles = css`
+    affine-outline-viewer {
+      height: 100%;
+    }
+
     :host {
       display: flex;
     }
@@ -30,13 +34,13 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       --duration: 120ms;
       --timing: cubic-bezier(0.42, 0, 0.58, 1);
 
-      max-height: 100%;
+      max-height: calc(100dvh - 20vh);
       box-sizing: border-box;
       display: flex;
 
       position: absolute;
-      top: 33%;
-      left: -2.25rem;
+      top: 10vh;
+      left: -1.675rem;
     }
 
     .outline-viewer-indicators-container {
@@ -57,7 +61,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
     }
 
     .outline-viewer-indicator {
-      width: 20px;
+      width: 10px;
       height: 2px;
       border-radius: 1px;
       overflow: hidden;
@@ -65,7 +69,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
     }
 
     .outline-viewer-indicator.active {
-      width: 24px;
+      width: 14px;
       background: var(--algogrind-text-paragraph-color);
     }
 
@@ -74,7 +78,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       display: flex;
       width: 0px;
       left: -200px;
-      max-height: 100%;
+      max-height: calc(100dvh - 20vh);
       box-sizing: border-box;
       flex-direction: column;
       align-items: flex-start;
@@ -141,6 +145,22 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
         transition:
           transform var(--duration) var(--timing),
           opacity var(--duration) var(--timing);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .outline-viewer-root {
+        left: -2.25rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .outline-viewer-indicator {
+        width: 20px;
+      }
+
+      .outline-viewer-indicator.active {
+        width: 24px;
       }
     }
   `;
