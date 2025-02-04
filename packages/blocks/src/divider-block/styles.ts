@@ -8,7 +8,7 @@ export const dividerBlockStyles = css`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 18px 8px;
+    padding: 6px 0;
     margin-top: var(--affine-paragraph-space);
   }
   .affine-divider-block-container hr {
