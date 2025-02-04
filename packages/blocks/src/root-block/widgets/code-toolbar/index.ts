@@ -12,7 +12,6 @@ import { html } from 'lit';
 
 import type { CodeBlockComponent } from '../../../code-block/code-block.js';
 
-import { PAGE_HEADER_HEIGHT } from '../../../_common/consts.js';
 import { getMoreMenuConfig } from '../../configs/toolbar.js';
 import { MORE_GROUPS, PRIMARY_GROUPS } from './config.js';
 import { CodeBlockToolbarContext } from './context.js';
@@ -83,7 +82,7 @@ export class AffineCodeToolbarWidget extends WidgetComponent<
               shift({
                 crossAxis: true,
                 padding: {
-                  top: PAGE_HEADER_HEIGHT + 12,
+                  top: 12,
                   bottom: 12,
                   right: 12,
                 },
