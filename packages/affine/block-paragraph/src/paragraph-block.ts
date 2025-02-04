@@ -255,7 +255,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
           'affine-paragraph-block-container': true,
           readonly: this.doc.readonly,
         })}
-        @click=${() => {
+        @click=${(event: MouseEvent) => {
           if (
             !this.doc.readonly ||
             this.model.type === 'text' ||
@@ -264,7 +264,17 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
             return;
           }
 
-          this._readonlyCollapsed = !this._readonlyCollapsed;
+          // Check if click went through any part of the toggle button structure
+          // to make sure the heading is not toggled twice
+          const target = event.target as HTMLElement;
+          if (
+            !target.closest('blocksuite-toggle-button') &&
+            !target.closest('.toggle-icon') &&
+            !(target instanceof SVGElement)
+          ) {
+            console.log('clicked', event.target);
+            this._readonlyCollapsed = !this._readonlyCollapsed;
+          }
         }}
       >
         <div
@@ -285,6 +295,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
                   .updateCollapsed=${(value: boolean) => {
                     if (this.doc.readonly) {
                       this._readonlyCollapsed = value;
+                      console.log('readonly collapsed', value);
                     } else {
                       this.doc.captureSync();
                       this.doc.updateBlock(this.model, {
