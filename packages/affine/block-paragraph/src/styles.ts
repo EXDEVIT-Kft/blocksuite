@@ -270,4 +270,108 @@ export const paragraphBlockStyles = css`
   .h6.heading-collapsed .toggle-icon {
     margin-top: 0;
   }
+
+  @media screen and (max-width: 768px) {
+    .h1 {
+      font-size: calc(var(--algogrind-text-heading-1-size) * 0.705);
+    }
+    .h1 code {
+      font-size: calc(var(--algogrind-text-heading-1-size) * 0.705 - 4px);
+    }
+    .h1.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-1-size) * 0.705) - 0.5em);
+    }
+
+    .h1 .toggle-icon {
+      margin-top: 0.7rem;
+    }
+    .h1.heading-collapsed .toggle-icon {
+      margin-top: 0.3rem;
+    }
+
+    .h2 {
+      font-size: calc(var(--algogrind-text-heading-2-size) * 0.725);
+    }
+    .h2 code {
+      font-size: calc(var(--algogrind-text-heading-2-size) * 0.725 - 4px);
+    }
+    .h2.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-2-size) * 0.725) - 0.5em);
+    }
+
+    .h2 .toggle-icon {
+      margin-top: 0.5rem;
+    }
+    .h2.heading-collapsed .toggle-icon {
+      margin-top: 0.15rem;
+    }
+
+    .h3 {
+      font-size: calc(var(--algogrind-text-heading-3-size) * 0.725);
+    }
+    .h3 code {
+      font-size: calc(var(--algogrind-text-heading-3-size) * 0.725 - 4px);
+    }
+    .h3.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-3-size) * 0.725) - 0.375em);
+    }
+
+    .h3 .toggle-icon {
+      margin-top: 0.3rem;
+    }
+    .h3.heading-collapsed .toggle-icon {
+      margin-top: 0.05rem;
+    }
+
+    .h4 {
+      font-size: calc(var(--algogrind-text-heading-4-size) * 0.825);
+    }
+    .h4 code {
+      font-size: calc(var(--algogrind-text-heading-4-size) * 0.825 - 2px);
+    }
+    .h4.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-4-size) * 0.825) - 0.25em);
+    }
+
+    .h4 .toggle-icon {
+      margin-top: 0.25rem;
+    }
+    .h4.heading-collapsed .toggle-icon {
+      margin-top: 0.05rem;
+    }
+
+    .h5 {
+      font-size: calc(var(--algogrind-text-heading-5-size) * 0.94);
+    }
+    .h5 code {
+      font-size: calc(var(--algogrind-text-heading-5-size) * 0.94 - 2px);
+    }
+    .h5.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-5-size) * 0.94) - 0.125em);
+    }
+
+    .h5 .toggle-icon {
+      margin-top: 0.25rem;
+    }
+    .h5.heading-collapsed .toggle-icon {
+      margin-top: 0.05rem;
+    }
+
+    .h6 {
+      font-size: calc(var(--algogrind-text-heading-6-size) * 1);
+    }
+    .h6 code {
+      font-size: calc(var(--algogrind-text-heading-6-size) * 1 - 2px);
+    }
+    .h6.heading-collapsed {
+      font-size: calc((var(--algogrind-text-heading-6-size) * 1) - 0.1em);
+    }
+
+    .h6 .toggle-icon {
+      margin-top: 0.25rem;
+    }
+    .h6.heading-collapsed .toggle-icon {
+      margin-top: 0.05rem;
+    }
+  }
 `;

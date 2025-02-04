@@ -46,6 +46,12 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       }
     }
 
+    @media screen and (max-width: 768px) {
+      .doc-title-container {
+        font-size: calc(var(--algogrind-text-doc-title-size) * 0.67);
+      }
+    }
+
     .doc-title-container-empty::before {
       content: 'Cím';
       color: var(--algogrind-text-placeholder-color);
