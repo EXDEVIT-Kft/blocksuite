@@ -61,7 +61,7 @@ export const codeBlockStyles = css`
     position: sticky;
     text-align: left;
     padding-right: 4px;
-    width: 24px;
+    width: 30px;
     word-break: break-word;
     white-space: nowrap;
     left: -0.5px;
@@ -72,5 +72,6 @@ export const codeBlockStyles = css`
     color: var(--algogrind-text-code-block-color);
     box-sizing: border-box;
     user-select: none;
+    opacity: 0.3;
   }
 `;
