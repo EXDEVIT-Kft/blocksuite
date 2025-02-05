@@ -12,14 +12,34 @@ export function calculateCollapsedSiblings(
   const index = children.indexOf(model);
   if (index === -1) return [];
 
+  // Just to include the divider in the collapsed siblings
   let nextDividerFound = false;
+  // Used to keep collapsing siblings if a smaller heading is found before a divider
+  // -> the divider should only stop the nearest heading's collapse
+  /**
+   * h1
+   * text
+   * h2
+   * text
+   * divider
+   * text
+   * h1
+   */
+  // -> in this example the divider should only stop the collapse of the h2 heading
+  // the h1 heading should be collapsed until the next h1 heading
+  let foundSmallerHeading = false;
 
   const collapsedEdgeIndex = children.findIndex((child, i) => {
-    if (i > index && matchFlavours(child, ['affine:divider'])) {
+    if (
+      i > index &&
+      matchFlavours(child, ['affine:divider']) &&
+      !foundSmallerHeading
+    ) {
       nextDividerFound = true;
       return false;
     }
 
+    // Ran AFTER the divider have been found -> to include the divider in the collapsed siblings
     if (nextDividerFound) {
       nextDividerFound = false;
       return true;
@@ -32,6 +52,11 @@ export function calculateCollapsedSiblings(
     ) {
       const modelLevel = parseInt(model.type.slice(1));
       const childLevel = parseInt(child.type.slice(1));
+
+      if (childLevel > modelLevel) {
+        foundSmallerHeading = true;
+      }
+
       return childLevel <= modelLevel;
     }
     return false;
