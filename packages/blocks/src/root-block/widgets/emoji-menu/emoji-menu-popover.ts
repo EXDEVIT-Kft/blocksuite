@@ -104,8 +104,6 @@ export class EmojiMenu extends WithDisposable(LitElement) {
   }
 
   private _filterEmojis(emojis: EmojiItem[], searchText: string): EmojiItem[] {
-    console.log(searchText);
-
     const query = searchText.toLowerCase();
     if (!query) return emojis;
 

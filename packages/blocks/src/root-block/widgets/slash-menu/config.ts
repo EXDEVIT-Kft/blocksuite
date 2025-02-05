@@ -150,12 +150,32 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       .map<SlashMenuActionItem>(createConversionItem),
 
     ...textConversionConfigs
-      .filter(i => i.type && ['divider', 'quote'].includes(i.type))
+      .filter(i => i.type === 'quote')
       .map<SlashMenuActionItem>(config => ({
         ...createConversionItem(config),
         showWhen: ({ model }) =>
           model.doc.schema.flavourSchemaMap.has(config.flavour) &&
           !insideEdgelessText(model),
+      })),
+
+    ...textConversionConfigs
+      .filter(i => i.type === 'divider')
+      .map<SlashMenuActionItem>(config => ({
+        ...createConversionItem(config),
+        showWhen: ({ model }) =>
+          model.doc.schema.flavourSchemaMap.has(config.flavour) &&
+          !insideEdgelessText(model),
+        action: ({ rootComponent, model }) => {
+          rootComponent.std.command
+            .chain()
+            .updateBlockType({
+              flavour: config.flavour,
+              props: {},
+            })
+            .run();
+
+          tryRemoveEmptyLine(model);
+        },
       })),
 
     {
