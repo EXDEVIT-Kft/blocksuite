@@ -21,6 +21,10 @@ export const styles = css`
     user-select: none;
   }
 
+  .affine-attachment-container-readonly {
+    cursor: pointer;
+  }
+
   .affine-attachment-content {
     height: 100%;
     display: flex;

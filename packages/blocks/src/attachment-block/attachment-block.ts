@@ -228,9 +228,17 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<
     return html`
       <div
         ${this._whenHover ? ref(this._whenHover.setReference) : nothing}
-        class="affine-attachment-container"
         draggable="${this.blockDraggable ? 'true' : 'false'}"
         style=${this.containerStyleMap}
+        class=${classMap({
+          'affine-attachment-container': true,
+          'affine-attachment-container-readonly': this.model.doc.readonly,
+        })}
+        @click=${() => {
+          if (this.model.doc.readonly) {
+            this.download();
+          }
+        }}
       >
         ${embedView
           ? html`<div class="affine-attachment-embed-container">

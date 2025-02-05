@@ -169,22 +169,22 @@ export function AttachmentOptionsTemplate({
           </editor-icon-button>
         `,
 
-    attachmentViewToggleMenu({
-      block,
-      callback: () => abortController.abort(),
-    }),
-
     readonly
       ? nothing
-      : html`
-          <editor-icon-button
-            aria-label="Letöltés"
-            .tooltip=${'Letöltés'}
-            @click=${() => block.download()}
-          >
-            ${DownloadIcon}
-          </editor-icon-button>
-        `,
+      : attachmentViewToggleMenu({
+          block,
+          callback: () => abortController.abort(),
+        }),
+
+    html`
+      <editor-icon-button
+        aria-label="Letöltés"
+        .tooltip=${'Letöltés'}
+        @click=${() => block.download()}
+      >
+        ${DownloadIcon}
+      </editor-icon-button>
+    `,
 
     readonly
       ? nothing
@@ -198,20 +198,25 @@ export function AttachmentOptionsTemplate({
           </editor-icon-button>
         `,
 
-    html`
-      <editor-menu-button
-        .contentPadding=${'8px'}
-        .button=${html`
-          <editor-icon-button aria-label="Továbbiak" .tooltip=${'Továbbiak'}>
-            ${MoreVerticalIcon}
-          </editor-icon-button>
-        `}
-      >
-        <div data-size="large" data-orientation="vertical">
-          ${moreMenuActions}
-        </div>
-      </editor-menu-button>
-    `,
+    readonly
+      ? nothing
+      : html`
+          <editor-menu-button
+            .contentPadding=${'8px'}
+            .button=${html`
+              <editor-icon-button
+                aria-label="Továbbiak"
+                .tooltip=${'Továbbiak'}
+              >
+                ${MoreVerticalIcon}
+              </editor-icon-button>
+            `}
+          >
+            <div data-size="large" data-orientation="vertical">
+              ${moreMenuActions}
+            </div>
+          </editor-menu-button>
+        `,
   ];
 
   return html`
