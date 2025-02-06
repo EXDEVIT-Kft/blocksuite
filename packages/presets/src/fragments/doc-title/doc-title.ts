@@ -149,7 +149,10 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
     };
     this._rootModel.title.yText.observe(updateMetaTitle);
     this._disposables.add(() => {
-      this._rootModel.title.yText.unobserve(updateMetaTitle);
+      try {
+        this._rootModel.title.yText.unobserve(updateMetaTitle);
+        // eslint-disable-next-line
+      } catch (e) {}
     });
   }
 
