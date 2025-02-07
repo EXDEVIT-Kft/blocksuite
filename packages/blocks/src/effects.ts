@@ -404,7 +404,7 @@ export function effects() {
   customElements.define('pie-node-center', PieNodeCenter);
   customElements.define('pie-center-rotator', PieCenterRotator);
   customElements.define('affine-slash-menu', SlashMenu);
-  customElements.define('affine-emoji-menu', EmojiMenu);
+  customElements.define('algogrind-emoji-menu', EmojiMenu);
   customElements.define('inner-slash-menu', InnerSlashMenu);
   customElements.define('generating-placeholder', GeneratingPlaceholder);
   customElements.define('ai-finish-tip', AIFinishTip);

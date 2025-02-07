@@ -5,7 +5,7 @@ import { scrollbarStyle } from '../../../_common/components/utils.js';
 export const styles = css`
   .emoji-menu {
     position: fixed;
-    left: 0;
+    left: 1rem;
     top: 0;
     box-sizing: border-box;
     width: 320px;
@@ -17,6 +17,12 @@ export const styles = css`
     display: flex;
     flex-direction: column;
     overflow: visible;
+  }
+
+  @media (max-width: 600px) {
+    .emoji-menu {
+      width: 310px;
+    }
   }
 
   .emoji-menu-content {
