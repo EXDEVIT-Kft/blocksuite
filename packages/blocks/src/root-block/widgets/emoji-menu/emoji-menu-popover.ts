@@ -7,7 +7,10 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 import type { EmojiCategory, EmojiItem, EmojiMenuContext } from './config.js';
 
-import { createKeydownObserver } from '../../../_common/components/utils.js';
+import {
+  cleanSpecifiedTail,
+  createKeydownObserver,
+} from '../../../_common/components/utils.js';
 
 import '@blocksuite/affine-components/toolbar';
 
@@ -18,32 +21,20 @@ export class EmojiMenu extends WithDisposable(LitElement) {
 
   private _currentCategory = 0;
 
-  private _handleEmojiSelect = async (emoji: EmojiItem) => {
+  private _handleEmojiSelect = (emoji: EmojiItem) => {
     try {
-      const range = this.inlineEditor.getInlineRange();
-      if (!range || !this._startRange) return;
-
-      const textPoint = this.inlineEditor.getTextPoint(range.index);
-      if (!textPoint) return;
-
-      const [leafStart, offsetStart] = textPoint;
-      const text = leafStart.textContent
-        ? leafStart.textContent.slice(0, offsetStart)
-        : '';
-
-      const match = text.match(/:(?!\s)([\p{L}0-9_+-]*)$/iu);
-      if (!match) return;
-
-      await emoji.action(this.context);
-
-      const startOffset = offsetStart - match[0].length;
-      const deleteRange = {
-        index: startOffset,
-        length: match[0].length,
-      };
-
-      this.inlineEditor.deleteText(deleteRange);
-      this.abortController.abort();
+      cleanSpecifiedTail(
+        this.host,
+        this.context.model,
+        ':' + (this._searchText || '')
+      );
+      this.inlineEditor
+        .waitForUpdate()
+        .then(() => {
+          emoji.action(this.context)?.catch(console.error);
+          this.abortController.abort();
+        })
+        .catch(console.error);
     } catch (error) {
       console.error('Error handling emoji select:', error);
     }
@@ -73,7 +64,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
       ? leafStart.textContent.slice(0, offsetStart)
       : '';
 
-    const match = text.match(/:(?!\s)([\p{L}0-9_+-]+)/iu);
+    const match = text.match(/:(?![/\s])(\S+)/u);
     if (!match) {
       this.abortController.abort();
       return;
@@ -95,6 +86,10 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     this._position = position;
     this.requestUpdate();
   };
+
+  get host() {
+    return this.context.rootComponent.host;
+  }
 
   constructor(
     private inlineEditor: AffineInlineEditor,

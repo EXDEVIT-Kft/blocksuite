@@ -127,7 +127,6 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
 
     const rootComponent = this.block;
     if (rootComponent.model.flavour !== 'affine:page') {
-      console.error('EmojiMenuWidget should be used in RootBlock');
       return;
     }
     assertType<RootBlockComponent>(rootComponent);
@@ -153,7 +152,7 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
         ? leafStart.textContent.slice(0, offsetStart)
         : '';
 
-      const match = text.match(/:(?!\s)([\p{L}0-9_+-]+)/iu);
+      const match = text.match(/:(?![/\s])(\S+)/u);
 
       if (match) {
         closeEmojiMenu();
@@ -170,7 +169,6 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
 
   private _onCompositionEnd = (ctx: UIEventStateContext) => {
     const event = ctx.get('defaultState').event as CompositionEvent;
-    console.log(event.data);
 
     const inlineEditor = this._getInlineEditor(event);
     if (!inlineEditor) return;
