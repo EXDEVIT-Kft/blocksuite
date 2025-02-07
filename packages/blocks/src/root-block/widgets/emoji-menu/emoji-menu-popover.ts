@@ -73,7 +73,9 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     const query = match[1].toLowerCase();
     this._searchText = query;
 
-    const allEmojis = this._getAllFilteredEmojis();
+    const allEmojis = this._getAllFilteredEmojis().flatMap(
+      category => category.emojis
+    );
     if (allEmojis.length === 0) {
       this._queryState = 'no_result';
     } else {
@@ -109,32 +111,31 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     );
   }
 
-  private _getAllFilteredEmojis(): EmojiItem[] {
+  private _getAllFilteredEmojis(): EmojiCategory[] {
     return this.config.categories
-      .flatMap(category =>
-        this._filterEmojis(category.emojis, this._searchText)
-      )
-      .filter(Boolean);
+      .map(category => ({
+        ...category,
+        emojis: this._filterEmojis(category.emojis, this._searchText),
+      }))
+      .filter(category => category.emojis.length > 0);
   }
 
   private _handleKeyNavigation(key: string) {
-    const allEmojis = this._getAllFilteredEmojis();
+    const filteredCategories = this._getAllFilteredEmojis();
+
+    const allEmojis = filteredCategories.flatMap(category => category.emojis);
+
     const GRID_COLUMNS = 8;
 
     // Get current category info
-    const categories = this.config.categories;
     let currentCategoryIndex = 0;
     let currentIndexInCategory = 0;
     let accumulatedEmojis = 0;
     const categoryStartIndices: number[] = [0];
 
     // Calculate category start indices
-    for (let i = 0; i < categories.length; i++) {
-      const categoryEmojis = this._filterEmojis(
-        categories[i].emojis,
-        this._searchText
-      );
-      accumulatedEmojis += categoryEmojis.length;
+    for (let i = 0; i < filteredCategories.length; i++) {
+      accumulatedEmojis += filteredCategories[i].emojis.length;
       categoryStartIndices.push(accumulatedEmojis);
     }
 
@@ -142,7 +143,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     accumulatedEmojis = 0;
 
     // Find current category and index within it
-    for (let i = 0; i < categories.length; i++) {
+    for (let i = 0; i < filteredCategories.length; i++) {
       if (
         this._selectedIndex >= categoryStartIndices[i] &&
         this._selectedIndex < categoryStartIndices[i + 1]
@@ -153,17 +154,13 @@ export class EmojiMenu extends WithDisposable(LitElement) {
       }
     }
 
-    const currentCategory = categories[currentCategoryIndex];
-    const currentCategoryEmojis = this._filterEmojis(
-      currentCategory.emojis,
-      this._searchText
-    );
+    const currentCategory = filteredCategories[currentCategoryIndex];
 
     // Calculate current position in grid
     const currentRow = Math.floor(currentIndexInCategory / GRID_COLUMNS);
     const currentCol = currentIndexInCategory % GRID_COLUMNS;
     const currentCategoryRows = Math.ceil(
-      currentCategoryEmojis.length / GRID_COLUMNS
+      currentCategory.emojis.length / GRID_COLUMNS
     );
 
     switch (key) {
@@ -173,11 +170,8 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           this._selectedIndex -= GRID_COLUMNS;
         } else if (currentCategoryIndex > 0) {
           // Move to previous category's last row at same column
-          const prevCategory = categories[currentCategoryIndex - 1];
-          const prevCategoryEmojis = this._filterEmojis(
-            prevCategory.emojis,
-            this._searchText
-          );
+          const prevCategoryEmojis =
+            filteredCategories[currentCategoryIndex - 1].emojis;
           const prevCategoryRows = Math.ceil(
             prevCategoryEmojis.length / GRID_COLUMNS
           );
@@ -203,12 +197,10 @@ export class EmojiMenu extends WithDisposable(LitElement) {
             categoryStartIndices[currentCategoryIndex + 1] - 1
           );
           this._selectedIndex = targetIndex;
-        } else if (currentCategoryIndex < categories.length - 1) {
+        } else if (currentCategoryIndex < filteredCategories.length - 1) {
           // Move to next category's first row at same column
-          const nextCategoryEmojis = this._filterEmojis(
-            categories[currentCategoryIndex + 1].emojis,
-            this._searchText
-          );
+          const nextCategoryEmojis =
+            filteredCategories[currentCategoryIndex + 1].emojis;
 
           // Calculate target column (limited by first row width)
           const targetCol = Math.min(currentCol, nextCategoryEmojis.length - 1);
@@ -250,9 +242,9 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     );
     if (filteredEmojis.length === 0) return nothing;
 
-    const startIndex = this._getAllFilteredEmojis().findIndex(
-      emoji => emoji === filteredEmojis[0]
-    );
+    const startIndex = this._getAllFilteredEmojis()
+      .flatMap(category => category.emojis)
+      .findIndex(emoji => emoji === filteredEmojis[0]);
 
     return html`
       <div class="emoji-category">
