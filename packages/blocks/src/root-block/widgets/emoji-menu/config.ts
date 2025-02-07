@@ -16,6 +16,7 @@ export type EmojiItem = {
   action: (ctx: EmojiMenuContext) => void | Promise<void>;
   content: string;
   length: number;
+  textCodes?: string[]; // Add this new property
 };
 
 export type EmojiCategory = {
@@ -35,13 +36,15 @@ export type EmojiMenuConfig = {
 const createEmojiItem = (
   emoji: string,
   name: string,
-  tags: string[]
+  tags: string[],
+  textCodes?: string[]
 ): EmojiItem => ({
   emoji,
   name,
   tags,
   content: emoji,
   length: 0,
+  textCodes,
   action: async ({ rootComponent, model }) => {
     try {
       const host = rootComponent.host;
@@ -65,219 +68,240 @@ export const emojiCategories: EmojiCategory[] = [
     name: 'Emberek & Érzelmek',
     icon: '😀',
     emojis: [
-      createEmojiItem('😀', 'vigyorgó arc', [
-        'smile',
-        'happy',
-        'mosoly',
-        'boldog',
-      ]),
-      createEmojiItem('😃', 'vigyorgó arc nagy szemekkel', [
-        'happy',
-        'joy',
-        'boldog',
-        'öröm',
-      ]),
-      createEmojiItem('😄', 'vigyorgó arc mosolygó szemekkel', [
-        'happy',
-        'laugh',
-        'boldog',
-        'nevetés',
-      ]),
-      createEmojiItem('😁', 'sugárzó arc mosolygó szemekkel', [
-        'happy',
-        'proud',
-        'boldog',
-        'büszke',
-      ]),
-      createEmojiItem('😅', 'izzadó vigyorgó arc', [
-        'hot',
-        'happy',
-        'meleg',
-        'boldog',
-      ]),
-      createEmojiItem('😂', 'örömkönnyező arc', [
-        'laugh',
-        'lol',
-        'nevetés',
-        'vicces',
-      ]),
-      createEmojiItem('🤣', 'földön fetrengve nevető', [
-        'lmao',
-        'lol',
-        'röhögés',
-        'vicces',
-      ]),
-      createEmojiItem('😊', 'mosolygó arc mosolygó szemekkel', [
-        'blush',
-        'happy',
-        'pirulós',
-        'boldog',
-      ]),
-      createEmojiItem('😇', 'mosolygó arc glóriával', [
-        'angel',
-        'innocent',
-        'angyal',
-        'ártatlan',
-      ]),
-      createEmojiItem('🙂', 'enyhén mosolygó arc', [
-        'smile',
-        'kind',
-        'mosoly',
-        'kedves',
-      ]),
-      createEmojiItem('🙃', 'fejjel lefelé arc', [
-        'silly',
-        'sarcasm',
-        'vicces',
-        'szarkasztikus',
-      ]),
-      createEmojiItem('😉', 'kacsintó arc', [
-        'wink',
-        'joke',
-        'kacsintás',
-        'vicc',
-      ]),
-      createEmojiItem('😌', 'megkönnyebbült arc', [
-        'relaxed',
-        'phew',
-        'nyugodt',
-        'megkönnyebbült',
-      ]),
-      createEmojiItem('😍', 'mosolygó arc szív szemekkel', [
-        'love',
-        'crush',
-        'szerelem',
-        'rajongás',
-      ]),
-      createEmojiItem('🥰', 'mosolygó arc szívekkel', [
-        'love',
-        'adore',
-        'szerelem',
-        'imádat',
-      ]),
-      createEmojiItem('😘', 'csókot dobó arc', [
-        'kiss',
-        'love',
-        'csók',
-        'szerelem',
-      ]),
-      createEmojiItem('😗', 'csókoló arc', [
-        'kiss',
-        'love',
-        'csók',
-        'szerelem',
-      ]),
-      createEmojiItem('😙', 'csókoló arc mosolygó szemekkel', [
-        'kiss',
-        'happy',
-        'csók',
-        'boldog',
-      ]),
-      createEmojiItem('😚', 'csókoló arc csukott szemekkel', [
-        'kiss',
-        'blush',
-        'csók',
-        'pirulós',
-      ]),
-      createEmojiItem('😋', 'nyalakodó arc', [
-        'yum',
-        'delicious',
-        'finom',
-        'ízletes',
-      ]),
-      createEmojiItem('😛', 'arc nyelvvel', [
-        'silly',
-        'playful',
-        'vicces',
-        'játékos',
-      ]),
-      createEmojiItem('😜', 'kacsintó arc nyelvvel', [
-        'silly',
-        'playful',
-        'vicces',
-        'játékos',
-      ]),
-      createEmojiItem('🤪', 'őrült arc', ['crazy', 'silly', 'őrült', 'vicces']),
-      createEmojiItem('😝', 'hunyorító arc nyelvvel', [
-        'silly',
-        'playful',
-        'vicces',
-        'játékos',
-      ]),
-      createEmojiItem('🤑', 'pénzes arc', ['rich', 'money', 'gazdag', 'pénz']),
-      createEmojiItem('🤗', 'ölelő arc', ['hug', 'happy', 'ölelés', 'boldog']),
-      createEmojiItem('🤭', 'kuncogó arc', [
-        'giggle',
-        'oops',
-        'kuncogás',
-        'hoppá',
-      ]),
-      createEmojiItem('🤫', 'csitító arc', [
-        'quiet',
-        'secret',
-        'csend',
-        'titok',
-      ]),
-      createEmojiItem('🤔', 'gondolkodó arc', [
-        'hmm',
-        'wonder',
-        'hmm',
-        'tűnődés',
-      ]),
-      createEmojiItem('🤐', 'cipzáras szájú arc', [
-        'silent',
-        'quiet',
-        'néma',
-        'csend',
-      ]),
+      createEmojiItem(
+        '😀',
+        'vigyorgó arc',
+        ['smile', 'happy', 'mosoly', 'boldog'],
+        [':D', ':-D']
+      ),
+      createEmojiItem(
+        '😃',
+        'vigyorgó arc nagy szemekkel',
+        ['happy', 'joy', 'boldog', 'öröm'],
+        [':DD']
+      ),
+      createEmojiItem(
+        '😄',
+        'vigyorgó arc mosolygó szemekkel',
+        ['happy', 'laugh', 'boldog', 'nevetés'],
+        [':)', '=)']
+      ),
+      createEmojiItem(
+        '😁',
+        'sugárzó arc mosolygó szemekkel',
+        ['happy', 'proud', 'boldog', 'büszke'],
+        [':D']
+      ),
+      createEmojiItem(
+        '😅',
+        'izzadó vigyorgó arc',
+        ['hot', 'happy', 'meleg', 'boldog'],
+        [":'D"]
+      ),
+      createEmojiItem(
+        '😂',
+        'örömkönnyező arc',
+        ['laugh', 'lol', 'nevetés', 'vicces'],
+        [":')"]
+      ),
+      createEmojiItem(
+        '🤣',
+        'földön fetrengve nevető',
+        ['lmao', 'lol', 'röhögés', 'vicces'],
+        ['xd', 'XD']
+      ),
+      createEmojiItem(
+        '😆',
+        'nevető kacagás',
+        ['lmao', 'lol', 'röhögés', 'vicces'],
+        ['xd', 'XD']
+      ),
+      createEmojiItem(
+        '😊',
+        'mosolygó arc mosolygó szemekkel',
+        ['blush', 'happy', 'pirulós', 'boldog'],
+        [':]', ':-)']
+      ),
+      createEmojiItem(
+        '😇',
+        'mosolygó arc glóriával',
+        ['angel', 'innocent', 'angyal', 'ártatlan'],
+        ['O:)', '0:-)']
+      ),
+      createEmojiItem(
+        '🙂',
+        'enyhén mosolygó arc',
+        ['smile', 'kind', 'mosoly', 'kedves'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🙃',
+        'fejjel lefelé arc',
+        ['silly', 'sarcasm', 'vicces', 'szarkasztikus'],
+        [':)']
+      ),
+      createEmojiItem(
+        '😉',
+        'kacsintó arc',
+        ['wink', 'joke', 'kacsintás', 'vicc'],
+        [';)', ';-)']
+      ),
+      createEmojiItem(
+        '😌',
+        'megkönnyebbült arc',
+        ['relaxed', 'phew', 'nyugodt', 'megkönnyebbült'],
+        [':)', '^_^', ':3']
+      ),
+      createEmojiItem(
+        '😍',
+        'mosolygó arc szív szemekkel',
+        ['love', 'crush', 'szerelem', 'rajongás'],
+        ['<3', ':-3', ':-*']
+      ),
+      createEmojiItem(
+        '🥰',
+        'mosolygó arc szívekkel',
+        ['love', 'adore', 'szerelem', 'imádat'],
+        ['<3', ':)', ':-)']
+      ),
+      createEmojiItem(
+        '😘',
+        'csókot dobó arc',
+        ['kiss', 'love', 'csók', 'szerelem'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😗',
+        'csókoló arc',
+        ['kiss', 'love', 'csók', 'szerelem'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😙',
+        'csókoló arc mosolygó szemekkel',
+        ['kiss', 'happy', 'csók', 'boldog'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😚',
+        'csókoló arc csukott szemekkel',
+        ['kiss', 'blush', 'csók', 'pirulós'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😋',
+        'nyalakodó arc',
+        ['yum', 'delicious', 'finom', 'ízletes'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😛',
+        'arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😜',
+        'kacsintó arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '🤪',
+        'őrült arc',
+        ['crazy', 'silly', 'őrült', 'vicces'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😝',
+        'hunyorító arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':X', 'xP']
+      ),
+      createEmojiItem(
+        '🤑',
+        'pénzes arc',
+        ['rich', 'money', 'gazdag', 'pénz'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '🤗',
+        'ölelő arc',
+        ['hug', 'happy', 'ölelés', 'boldog'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🤭',
+        'kuncogó arc',
+        ['giggle', 'oops', 'kuncogás', 'hoppá'],
+        [':x']
+      ),
+      createEmojiItem(
+        '🤫',
+        'csitító arc',
+        ['quiet', 'secret', 'csend', 'titok'],
+        [':-#']
+      ),
+      createEmojiItem(
+        '🤔',
+        'gondolkodó arc',
+        ['hmm', 'wonder', 'hmm', 'tűnődés'],
+        [':-/', ':/']
+      ),
+      createEmojiItem(
+        '🤐',
+        'cipzáras szájú arc',
+        ['silent', 'quiet', 'néma', 'csend'],
+        [':|', ':-#']
+      ),
       createEmojiItem('🤨', 'felvont szemöldökű arc', [
         'suspicious',
         'doubt',
         'gyanús',
         'kétség',
       ]),
-      createEmojiItem('😐', 'semleges arc', [
-        'meh',
-        'neutral',
-        'közömbös',
-        'semleges',
-      ]),
-      createEmojiItem('😑', 'kifejezéstelen arc', [
-        'blank',
-        'void',
-        'üres',
-        'kifejezéstelen',
-      ]),
+      createEmojiItem(
+        '😐',
+        'semleges arc',
+        ['meh', 'neutral', 'közömbös', 'semleges'],
+        [':|', ':-|']
+      ),
+      createEmojiItem(
+        '😑',
+        'kifejezéstelen arc',
+        ['blank', 'void', 'üres', 'kifejezéstelen'],
+        [':|']
+      ),
       createEmojiItem('😶', 'száj nélküli arc', [
         'silent',
         'speechless',
         'néma',
         'szótlan',
       ]),
-      createEmojiItem('😏', 'önelégült arc', [
-        'flirt',
-        'smug',
-        'flört',
-        'önelégült',
-      ]),
-      createEmojiItem('😒', 'unott arc', [
-        'unhappy',
-        'meh',
-        'boldogtalan',
-        'unott',
-      ]),
+      createEmojiItem(
+        '😏',
+        'önelégült arc',
+        ['flirt', 'smug', 'flört', 'önelégült'],
+        [':3']
+      ),
+      createEmojiItem(
+        '😒',
+        'unott arc',
+        ['unhappy', 'meh', 'boldogtalan', 'unott'],
+        [':(']
+      ),
       createEmojiItem('🙄', 'forgó szemű arc', [
         'whatever',
         'ugh',
         'mindegy',
         'jaj',
       ]),
-      createEmojiItem('😬', 'grimaszos arc', [
-        'awkward',
-        'eek',
-        'kínos',
-        'fúj',
-      ]),
+      createEmojiItem(
+        '😬',
+        'grimaszos arc',
+        ['awkward', 'eek', 'kínos', 'fúj'],
+        [':S']
+      ),
       createEmojiItem('🤥', 'hazudós arc', [
         'liar',
         'pinocchio',
@@ -290,12 +314,63 @@ export const emojiCategories: EmojiCategory[] = [
         'nyugodt',
         'huh',
       ]),
-      createEmojiItem('😔', 'gondterhelt arc', [
-        'sad',
-        'thoughtful',
-        'szomorú',
-        'gondolkodó',
+      createEmojiItem('🧐', 'gondolkodó arc', [
+        'curious',
+        'thinking',
+        'figyelmes',
+        'kíváncsi',
+        'kérdő',
       ]),
+      createEmojiItem('🤓', 'okos tanulós arc', [
+        'geek',
+        'nerd',
+        'intelligens',
+        'okos',
+        'tanulós',
+      ]),
+      createEmojiItem('😎', 'menő nyugodt arc', [
+        'cool',
+        'chill',
+        'menő',
+        'nyugodt',
+        'laid-back',
+      ]),
+      createEmojiItem(
+        '🥺',
+        'kérlelő szomorú arc',
+        ['puppy eyes', 'szomorú', 'aranyos', 'kérlelő', 'bájos'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😔',
+        'szomorú gondterhelt arc',
+        ['sad', 'thoughtful', 'szomorú', 'gondolkodó', 'törődő'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😟',
+        'aggódó szorongó arc',
+        ['worried', 'anxious', 'szorongó', 'aggódó', 'feszültség'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😢',
+        'síró szomorú arc',
+        ['crying', 'sad', 'szomorú', 'lehangolt', 'szomorúság'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😓',
+        'síró kétségbeesett arc',
+        ['exhausted', 'sweating', 'kimerült', 'fáradt', 'izzadós'],
+        [':(']
+      ),
+      createEmojiItem(
+        '🙁',
+        'szomorú csalódott arc',
+        ['sad', 'disappointed', 'csalódott', 'szomorú', 'boldogtalan'],
+        [':(']
+      ),
       createEmojiItem('😪', 'álmos arc', [
         'tired',
         'rest',
@@ -340,37 +415,42 @@ export const emojiCategories: EmojiCategory[] = [
         'beteg',
         'allergia',
       ]),
-      createEmojiItem('🥵', 'forró arc', [
-        'heat',
-        'sweating',
-        'meleg',
-        'izzadás',
-      ]),
-      createEmojiItem('🥶', 'fagyos arc', ['freezing', 'ice', 'fagyos', 'jég']),
-      createEmojiItem('🥴', 'kábult arc', [
-        'dizzy',
-        'drunk',
-        'szédülés',
-        'részeg',
-      ]),
-      createEmojiItem('😵', 'szédülő arc', [
-        'spin',
-        'confused',
-        'forgás',
-        'zavart',
-      ]),
-      createEmojiItem('🤯', 'robbanó fej', [
-        'mind blown',
-        'shocked',
-        'döbbenet',
-        'sokk',
-      ]),
-      createEmojiItem('🤠', 'cowboy arc', [
-        'cowboy',
-        'rodeo',
-        'cowboy',
-        'rodeó',
-      ]),
+      createEmojiItem(
+        '🥵',
+        'forró arc',
+        ['heat', 'sweating', 'meleg', 'izzadás'],
+        [':O']
+      ),
+      createEmojiItem(
+        '🥶',
+        'fagyos arc',
+        ['freezing', 'ice', 'fagyos', 'jég'],
+        [':O']
+      ),
+      createEmojiItem(
+        '🥴',
+        'kábult arc',
+        ['dizzy', 'drunk', 'szédülés', 'részeg'],
+        [':s']
+      ),
+      createEmojiItem(
+        '😵',
+        'szédülő arc',
+        ['spin', 'confused', 'forgás', 'zavart'],
+        [':o']
+      ),
+      createEmojiItem(
+        '🤯',
+        'robbanó fej',
+        ['mind blown', 'shocked', 'döbbenet', 'sokk'],
+        [':o']
+      ),
+      createEmojiItem(
+        '🤠',
+        'cowboy arc',
+        ['cowboy', 'rodeo', 'cowboy', 'rodeó'],
+        [':o']
+      ),
       createEmojiItem('🥳', 'ünneplő arc', [
         'celebration',
         'party',
@@ -378,19 +458,18 @@ export const emojiCategories: EmojiCategory[] = [
         'buli',
       ]),
 
-      createEmojiItem('😈', 'ördögi arc szarvakkal', [
-        'devil',
-        'mischievous',
-        'ördög',
-        'pajkos',
-      ]),
-      createEmojiItem('🤡', 'bohóc arc', [
-        'clown',
-        'circus',
-        'bohóc',
-        'cirkusz',
-      ]),
-      createEmojiItem('💩', 'kaki', ['poop', 'funny', 'kaki', 'vicces']),
+      createEmojiItem(
+        '😈',
+        'ördögi arc szarvakkal',
+        ['devil', 'mischievous', 'ördög', 'pajkos'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🤡',
+        'bohóc arc',
+        ['clown', 'circus', 'bohóc', 'cirkusz'],
+        [':o)']
+      ),
       createEmojiItem('👻', 'szellem', [
         'halloween',
         'spooky',
@@ -556,12 +635,6 @@ export const emojiCategories: EmojiCategory[] = [
         'up',
         'mutat',
         'fel',
-      ]),
-      createEmojiItem('🖕', 'középső ujj', [
-        'rude',
-        'angry',
-        'durva',
-        'mérges',
       ]),
       createEmojiItem('👍', 'felfelé mutató hüvelykujj', [
         'approve',
@@ -2596,12 +2669,12 @@ export const emojiCategories: EmojiCategory[] = [
         'szerelem',
         'tetszik',
       ]),
-      createEmojiItem('💔', 'törött szív', [
-        'heartbreak',
-        'sad',
-        'szívfájdalom',
-        'szomorú',
-      ]),
+      createEmojiItem(
+        '💔',
+        'törött szív',
+        ['heartbreak', 'sad', 'szívfájdalom', 'szomorú'],
+        [':(']
+      ),
       createEmojiItem('❣️', 'szív felkiáltójel', [
         'love',
         'emphasis',

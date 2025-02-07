@@ -104,7 +104,8 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     return emojis.filter(
       emoji =>
         emoji.name.toLowerCase().includes(query) ||
-        emoji.tags.some(tag => tag.toLowerCase().includes(query))
+        emoji.tags.some(tag => tag.toLowerCase().includes(query)) ||
+        emoji.textCodes?.some(code => code.toLowerCase().includes(query))
     );
   }
 
