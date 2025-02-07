@@ -51,7 +51,7 @@ _excluded files_: node*modules, dist, *.spec.ts, \_.js
 -> a package.json export konfigurációjának módosítása, mert az AFFiNE máshogy buildeli / használja a package-okat, mint ahogy mi az algogrind monorepo-ban fel szeretnénk használni (ők az AFFiNE monorepo buildelésekor újrabuildelik a teljes blocksuite monorepo-t, amit mi szeretnénk elkerülni)
 
 ```sh
-nx before-publish
+npm run before-publish
 ```
 
 ```sh
@@ -135,7 +135,7 @@ _excluded files_: node_modules, dist, \*.js
 -> a package.json export konfigurációjának módosítása, mert az AFFiNE máshogy buildeli / használja a package-okat, mint ahogy mi az algogrind monorepo-ban fel szeretnénk használni (ők az AFFiNE monorepo buildelésekor újrabuildelik a teljes blocksuite monorepo-t, amit mi szeretnénk elkerülni)
 
 ```sh
-nx before-publish
+npm run before-publish
 ```
 
 ```sh
