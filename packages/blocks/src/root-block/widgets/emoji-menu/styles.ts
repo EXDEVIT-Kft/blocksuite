@@ -52,6 +52,18 @@ export const styles = css`
     border-radius: 4px;
   }
 
+  .no-results {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.75rem;
+    margin-bottom: 8px;
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-small-size);
+    color: var(--algogrind-text-caption-color);
+    border-radius: 4px;
+  }
+
   .emoji-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -81,8 +93,8 @@ export const styles = css`
 
   .category-nav {
     display: flex;
-    justify-content: space-around;
-    padding: 8px;
+    gap: 1rem;
+    padding: 8px 2rem;
     border-top: 1px solid var(--algogrind-divider-color);
     background: var(--algogrind-background-color);
     border-radius: 0 0 8px 8px;

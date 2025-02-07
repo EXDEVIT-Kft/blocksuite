@@ -234,10 +234,8 @@ export class EmojiMenu extends WithDisposable(LitElement) {
   }
 
   private _renderCategory(category: EmojiCategory, _index: number) {
-    const filteredEmojis = this._filterEmojis(
-      category.emojis,
-      this._searchText
-    );
+    const filteredEmojis = category.emojis;
+
     if (filteredEmojis.length === 0) return nothing;
 
     const startIndex = this._getAllFilteredEmojis()
@@ -363,6 +361,8 @@ export class EmojiMenu extends WithDisposable(LitElement) {
   }
 
   override render() {
+    const filteredCategories = this._getAllFilteredEmojis();
+
     const menuStyles = this._position
       ? {
           transform: `translate(${this._position.x}, ${this._position.y})`,
@@ -379,26 +379,34 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           style=${styleMap(menuStyles)}
           @click=${(e: MouseEvent) => e.stopPropagation()}
         >
-          <div class="emoji-menu-content">
-            ${this.config.categories.map((category, i) =>
-              this._renderCategory(category, i)
-            )}
-          </div>
-          <div class="category-nav">
-            ${this.config.categories.map(
-              (category, i) => html`
-                <div
-                  class="nav-item ${this._currentCategory === i
-                    ? 'active'
-                    : ''}"
-                  @click=${() => this._scrollToCategory(i)}
-                >
-                  ${category.icon}
-                  <affine-tooltip .offset=${4}>${category.name}</affine-tooltip>
+          ${filteredCategories.length > 0
+            ? html`
+                <div class="emoji-menu-content">
+                  ${filteredCategories.map((category, i) =>
+                    this._renderCategory(category, i)
+                  )}
+                </div>
+                <div class="category-nav">
+                  ${filteredCategories.map(
+                    (category, i) => html`
+                      <div
+                        class="nav-item ${this._currentCategory === i
+                          ? 'active'
+                          : ''}"
+                        @click=${() => this._scrollToCategory(i)}
+                      >
+                        ${category.icon}
+                        <affine-tooltip .offset=${4}
+                          >${category.name}</affine-tooltip
+                        >
+                      </div>
+                    `
+                  )}
                 </div>
               `
-            )}
-          </div>
+            : html`<div class="emoji-menu-content no-results">
+                Nincs találat
+              </div>`}
         </div>
       </div>
     `;
