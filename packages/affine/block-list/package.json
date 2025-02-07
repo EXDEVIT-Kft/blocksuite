@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-block-list",
-  "version": "0.19.9",
+  "version": "0.19.11",
   "description": "List block for BlockSuite.",
   "type": "module",
   "repository": {

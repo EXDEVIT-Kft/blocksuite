@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-block-paragraph",
-  "version": "0.19.9",
+  "version": "0.19.11",
   "description": "Paragraph block for BlockSuite.",
   "type": "module",
   "repository": {
