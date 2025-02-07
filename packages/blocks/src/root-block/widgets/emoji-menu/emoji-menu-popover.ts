@@ -394,6 +394,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
                   @click=${() => this._scrollToCategory(i)}
                 >
                   ${category.icon}
+                  <affine-tooltip .offset=${4}>${category.name}</affine-tooltip>
                 </div>
               `
             )}
