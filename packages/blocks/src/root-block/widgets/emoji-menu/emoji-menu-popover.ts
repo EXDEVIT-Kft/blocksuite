@@ -36,8 +36,6 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     }
   };
 
-  private _queryState: 'off' | 'on' | 'no_result' = 'off';
-
   private _selectedIndex = 0;
 
   private _startRange = this.inlineEditor.getInlineRange();
@@ -70,14 +68,6 @@ export class EmojiMenu extends WithDisposable(LitElement) {
     const query = match[1].toLowerCase();
     this._searchText = query;
 
-    const allEmojis = this._getAllFilteredEmojis().flatMap(
-      category => category.emojis
-    );
-    if (allEmojis.length === 0) {
-      this._queryState = 'no_result';
-    } else {
-      this._queryState = 'on';
-    }
     this.requestUpdate();
   };
 
