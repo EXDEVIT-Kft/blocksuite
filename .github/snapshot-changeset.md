@@ -1,21 +1,21 @@
 ---
-'@blocksuite/affine': patch
-'@blocksuite/affine-block-embed': patch
-'@blocksuite/affine-block-list': patch
-'@blocksuite/affine-block-paragraph': patch
-'@blocksuite/affine-block-surface': patch
-'@blocksuite/affine-components': patch
-'@blocksuite/affine-model': patch
-'@blocksuite/affine-shared': patch
-'@blocksuite/affine-widget-scroll-anchoring': patch
-'@blocksuite/data-view': patch
-'@blocksuite/blocks': patch
-'@blocksuite/block-std': patch
-'@blocksuite/global': patch
-'@blocksuite/inline': patch
-'@blocksuite/store': patch
-'@blocksuite/sync': patch
-'@blocksuite/presets': patch
+'@algogrind/affine': patch
+'@algogrind/affine-block-embed': patch
+'@algogrind/affine-block-list': patch
+'@algogrind/affine-block-paragraph': patch
+'@algogrind/affine-block-surface': patch
+'@algogrind/affine-components': patch
+'@algogrind/affine-model': patch
+'@algogrind/affine-shared': patch
+'@algogrind/affine-widget-scroll-anchoring': patch
+'@algogrind/data-view': patch
+'@algogrind/blocks': patch
+'@algogrind/block-std': patch
+'@algogrind/global': patch
+'@algogrind/inline': patch
+'@algogrind/store': patch
+'@algogrind/sync': patch
+'@algogrind/presets': patch
 ---
 
 Release a snapshot version.

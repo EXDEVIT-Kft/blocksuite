@@ -1,4 +1,4 @@
-import { type Disposable, Slot } from '@blocksuite/global/utils';
+import { type Disposable, Slot } from '@algogrind/global/utils';
 import { signal } from '@preact/signals-core';
 import { uuidv4 } from 'lib0/random.js';
 import * as Y from 'yjs';

@@ -1,4 +1,4 @@
-import type { BlockStdScope, UIEventHandler } from '@blocksuite/block-std';
+import type { BlockStdScope, UIEventHandler } from '@algogrind/block-std';
 
 import {
   focusTextModel,

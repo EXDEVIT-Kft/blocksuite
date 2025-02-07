@@ -1,7 +1,7 @@
 import type {
   MindmapElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import {
   MindmapBalanceLayoutIcon,
@@ -13,11 +13,11 @@ import {
   MindmapStyleThree,
   MindmapStyleTwo,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
-import { LayoutType, MindmapStyle } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { countBy, maxBy, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
+import { LayoutType, MindmapStyle } from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { countBy, maxBy, WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

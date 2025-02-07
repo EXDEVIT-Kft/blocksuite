@@ -1,7 +1,7 @@
 import type {
   GfxBlockElementModel,
   GfxCompatibleProps,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 import type { StyleInfo } from 'lit/directives/style-map.js';
 
 import {
@@ -10,8 +10,8 @@ import {
   type GfxBlockComponent,
   GfxElementSymbol,
   toGfxBlockComponent,
-} from '@blocksuite/block-std';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { Bound } from '@algogrind/global/utils';
 
 import type { EmbedBlockComponent } from './embed-block-element.js';
 

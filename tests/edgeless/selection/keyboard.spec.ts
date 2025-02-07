@@ -1,4 +1,4 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteDisplayMode } from '@algogrind/affine-model';
 import { expect } from '@playwright/test';
 
 import * as actions from '../../utils/actions/edgeless.js';

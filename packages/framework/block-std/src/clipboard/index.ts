@@ -4,11 +4,11 @@ import type {
   Doc,
   JobMiddleware,
   Slice,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import type { RootContentMap } from 'hast';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { Job } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { Job } from '@algogrind/store';
 import * as lz from 'lz-string';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';

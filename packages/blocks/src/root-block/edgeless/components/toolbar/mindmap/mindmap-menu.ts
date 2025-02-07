@@ -1,16 +1,16 @@
-import type { MindmapStyle } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { Bound } from '@blocksuite/global/utils';
-import type { BlockModel } from '@blocksuite/store';
+import type { MindmapStyle } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { Bound } from '@algogrind/global/utils';
+import type { BlockModel } from '@algogrind/store';
 
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { modelContext, stdContext } from '@blocksuite/block-std';
-import { ErrorCode } from '@blocksuite/global/exceptions';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { modelContext, stdContext } from '@algogrind/block-std';
+import { ErrorCode } from '@algogrind/global/exceptions';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';

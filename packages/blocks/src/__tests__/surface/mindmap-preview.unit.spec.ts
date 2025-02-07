@@ -1,4 +1,4 @@
-import { DocCollection, Schema } from '@blocksuite/store';
+import { DocCollection, Schema } from '@algogrind/store';
 import { describe, expect, test } from 'vitest';
 
 import { markdownToMindmap } from '../../surface-block/mini-mindmap/mindmap-preview.js';

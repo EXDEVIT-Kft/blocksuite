@@ -1,5 +1,5 @@
-import { replaceIdMiddleware } from '@blocksuite/blocks';
-import { type DocCollection, type DocSnapshot, Job } from '@blocksuite/store';
+import { replaceIdMiddleware } from '@algogrind/blocks';
+import { type DocCollection, type DocSnapshot, Job } from '@algogrind/store';
 
 export async function importFromSnapshot(
   collection: DocCollection,

@@ -1,4 +1,4 @@
-import type { NoteBlockModel, NoteDisplayMode } from '@blocksuite/blocks';
+import type { NoteBlockModel, NoteDisplayMode } from '@algogrind/blocks';
 
 export type ReorderEvent = CustomEvent<{
   currentNumber: number;

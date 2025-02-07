@@ -1,9 +1,6 @@
-import type {
-  MindmapElementModel,
-  MindmapNode,
-} from '@blocksuite/affine-model';
-import type { GfxModel } from '@blocksuite/block-std/gfx';
-import type { IBound } from '@blocksuite/global/utils';
+import type { MindmapElementModel, MindmapNode } from '@algogrind/affine-model';
+import type { GfxModel } from '@algogrind/block-std/gfx';
+import type { IBound } from '@algogrind/global/utils';
 
 import type { RoughCanvas } from '../../utils/rough/canvas.js';
 import type { CanvasRenderer } from '../canvas-renderer.js';

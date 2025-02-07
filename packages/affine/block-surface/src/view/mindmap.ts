@@ -1,4 +1,4 @@
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { PointerEventState } from '@algogrind/block-std';
 
 import {
   LayoutType,
@@ -6,10 +6,10 @@ import {
   type MindmapElementModel,
   type MindmapNode,
   type MindmapRoot,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { requestThrottledConnectedFrame } from '@blocksuite/affine-shared/utils';
-import { GfxElementModelView } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-model';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
+import { requestThrottledConnectedFrame } from '@algogrind/affine-shared/utils';
+import { GfxElementModelView } from '@algogrind/block-std/gfx';
 
 import { handleLayout } from '../utils/mindmap/utils.js';
 

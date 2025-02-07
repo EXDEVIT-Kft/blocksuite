@@ -1,12 +1,12 @@
 import type {
   AdvancedMenuItem,
   MenuItemGroup,
-} from '@blocksuite/affine-components/toolbar';
-import type { CodeBlockModel } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/toolbar';
+import type { CodeBlockModel } from '@algogrind/affine-model';
 
-import { HoverController } from '@blocksuite/affine-components/hover';
-import { cloneGroups } from '@blocksuite/affine-components/toolbar';
-import { WidgetComponent } from '@blocksuite/block-std';
+import { HoverController } from '@algogrind/affine-components/hover';
+import { cloneGroups } from '@algogrind/affine-components/toolbar';
+import { WidgetComponent } from '@algogrind/block-std';
 import { limitShift, shift } from '@floating-ui/dom';
 import { html } from 'lit';
 

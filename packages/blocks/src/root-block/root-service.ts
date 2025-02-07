@@ -1,7 +1,7 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { RootBlockSchema } from '@blocksuite/affine-model';
-import { BlockService } from '@blocksuite/block-std';
+import { RootBlockSchema } from '@algogrind/affine-model';
+import { BlockService } from '@algogrind/block-std';
 
 import type { RootBlockComponent } from './types.js';
 

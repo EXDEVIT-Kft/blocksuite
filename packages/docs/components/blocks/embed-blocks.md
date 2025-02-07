@@ -6,6 +6,6 @@ Existing embed blocks that support BlockSuite document content include `EmbedLin
 
 ## Reference
 
-- [`EmbedYoutubeBlockProps`](/api/@blocksuite/blocks/type-aliases/EmbedYoutubeBlockProps.html)
-- [`EmbedFigmaBlockProps`](/api/@blocksuite/blocks/type-aliases/EmbedFigmaBlockProps.html)
-- [`EmbedGithubBlockProps`](/api/@blocksuite/blocks/type-aliases/EmbedGithubBlockProps.html)
+- [`EmbedYoutubeBlockProps`](/api/@algogrind/blocks/type-aliases/EmbedYoutubeBlockProps.html)
+- [`EmbedFigmaBlockProps`](/api/@algogrind/blocks/type-aliases/EmbedFigmaBlockProps.html)
+- [`EmbedGithubBlockProps`](/api/@algogrind/blocks/type-aliases/EmbedGithubBlockProps.html)

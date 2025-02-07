@@ -1,5 +1,5 @@
-import { propertyType, t } from '@blocksuite/data-view';
-import { Text } from '@blocksuite/store';
+import { propertyType, t } from '@algogrind/data-view';
+import { Text } from '@algogrind/store';
 
 import { type RichTextCellType, toYText } from '../utils.js';
 

@@ -1,7 +1,7 @@
-import type { SerializedElement } from '@blocksuite/block-std/gfx';
+import type { SerializedElement } from '@algogrind/block-std/gfx';
 
-import { Bound, getBoundWithRotation } from '@blocksuite/global/utils';
-import { type BlockSnapshot, BlockSnapshotSchema } from '@blocksuite/store';
+import { Bound, getBoundWithRotation } from '@algogrind/global/utils';
+import { type BlockSnapshot, BlockSnapshotSchema } from '@algogrind/store';
 
 export function getBoundFromSerializedElement(element: SerializedElement) {
   return Bound.from(

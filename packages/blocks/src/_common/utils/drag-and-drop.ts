@@ -1,12 +1,12 @@
-import type { BlockComponent } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockComponent } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   getClosestBlockComponentByElement,
   getRectByBlockComponent,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { type Point, Rect } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { type Point, Rect } from '@algogrind/global/utils';
 
 import type { EditingState } from '../types.js';
 

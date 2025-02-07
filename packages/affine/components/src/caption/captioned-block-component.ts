@@ -1,7 +1,7 @@
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockModel } from '@algogrind/store';
 
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { BlockComponent, type BlockService } from '@blocksuite/block-std';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { BlockComponent, type BlockService } from '@algogrind/block-std';
 import { html, nothing } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { createRef, type Ref, ref } from 'lit/directives/ref.js';

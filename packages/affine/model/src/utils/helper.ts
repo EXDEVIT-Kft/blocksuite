@@ -1,13 +1,13 @@
-import type { GfxCompatibleProps } from '@blocksuite/block-std/gfx';
-import type { Constructor } from '@blocksuite/global/utils';
+import type { GfxCompatibleProps } from '@algogrind/block-std/gfx';
+import type { Constructor } from '@algogrind/global/utils';
 
-import { GfxCompatible } from '@blocksuite/block-std/gfx';
+import { GfxCompatible } from '@algogrind/block-std/gfx';
 import {
   type BaseBlockTransformer,
   type BlockModel,
   defineBlockSchema,
   type InternalPrimitives,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 export function defineEmbedModel<
   Props extends object,

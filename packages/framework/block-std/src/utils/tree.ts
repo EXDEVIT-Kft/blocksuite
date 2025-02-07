@@ -1,4 +1,4 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
 import type { GfxGroupModel, GfxModel } from '../gfx/model/model.js';
 

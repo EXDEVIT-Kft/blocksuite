@@ -1,7 +1,7 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
-import { renderGroups } from '@blocksuite/affine-components/toolbar';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { renderGroups } from '@algogrind/affine-components/toolbar';
+import { WithDisposable } from '@algogrind/global/utils';
 import { MoreHorizontalIcon, MoreVerticalIcon } from '@blocksuite/icons/lit';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

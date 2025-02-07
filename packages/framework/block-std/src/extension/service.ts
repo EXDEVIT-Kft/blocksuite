@@ -1,7 +1,7 @@
-import type { Container } from '@blocksuite/global/di';
+import type { Container } from '@algogrind/global/di';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import type { EventName, UIEventHandler } from '../event/index.js';
 import type { BlockStdScope } from '../scope/index.js';

@@ -20,8 +20,8 @@
 
 [![Checks Status](https://img.shields.io/github/checks-status/toeverything/blocksuite/master)](https://github.com/toeverything/blocksuite/actions?query=branch%3Amaster)
 [![Issues Closed](https://img.shields.io/github/issues-closed/toeverything/blocksuite?color=6880ff)](https://github.com/toeverything/blocksuite/issues?q=is%3Aissue+is%3Aclosed)
-[![NPM Latest Release](https://img.shields.io/npm/v/@blocksuite/store.svg?maxAge=300&color=6880ff)](./packages/framework/store/package.json)
-[![NPM Canary Release](https://img.shields.io/npm/v/@blocksuite/presets/canary?color=6880ff)](https://github.com/toeverything/blocksuite/actions/workflows/canary-release.yml?query=branch%3Amaster)
+[![NPM Latest Release](https://img.shields.io/npm/v/@algogrind/store.svg?maxAge=300&color=6880ff)](./packages/framework/store/package.json)
+[![NPM Canary Release](https://img.shields.io/npm/v/@algogrind/presets/canary?color=6880ff)](https://github.com/toeverything/blocksuite/actions/workflows/canary-release.yml?query=branch%3Amaster)
 [![Open in StackBlitz](https://img.shields.io/badge/open%20in-StackBlitz-black)](https://stackblitz.com/github/toeverything/blocksuite)
 [![Join Discord](https://img.shields.io/discord/959027316334407691)](https://discord.gg/9vwSWmYYcZ)
 [![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20BlockSuite%20Guru-006BFF)](https://gurubase.io/g/blocksuite)
@@ -70,7 +70,7 @@ And under the hood, the vanilla BlockSuite framework supports:
 - Persistence of documents and compatibility with various third-party formats (such as markdown and HTML) based on block [snapshot](https://blocksuite.io/guide/data-synchronization.html#snapshot-api) and transformer.
 - State scheduling across multiple documents and reusing one document in multiple editors.
 
-To try out BlockSuite, refer to the [quick start](https://blocksuite.io/guide/quick-start.html) example and start with the preset editors in `@blocksuite/presets`.
+To try out BlockSuite, refer to the [quick start](https://blocksuite.io/guide/quick-start.html) example and start with the preset editors in `@algogrind/presets`.
 
 ## Architecture
 
@@ -88,15 +88,15 @@ To that end, the BlockSuite project is structured around key packages that are c
     <th colspan="2">Framework</th>
   </tr>
   <tr>
-    <td><code>@blocksuite/store</code></td>
+    <td><code>@algogrind/store</code></td>
     <td>Data layer for modeling collaborative document states. It is natively built on the CRDT library <a href="https://github.com/yjs/yjs">Yjs</a>, powering all BlockSuite documents with built-in real-time collaboration and time-travel capabilities.</td>
   </tr>
   <tr>
-    <td><code>@blocksuite/inline</code></td>
+    <td><code>@algogrind/inline</code></td>
     <td>Minimal rich text components for inline editing. BlockSuite allows spliting rich text content in different block nodes into different inline editors, making complex content conveniently composable. <strong>This significantly reduces the complexity required to implement traditional rich text editing features.</strong></td>
   </tr>
   <tr>
-    <td><code>@blocksuite/block-std</code></td>
+    <td><code>@algogrind/block-std</code></td>
     <td>Framework-agnostic library for modeling editable blocks. Its capabilities cover the structure of block fields, events, selection, clipboard support, etc.</td>
   </tr>
 </table>
@@ -106,11 +106,11 @@ To that end, the BlockSuite project is structured around key packages that are c
     <th colspan="2">Components</th>
   </tr>
   <tr>
-    <td><code>@blocksuite/blocks</code></td>
+    <td><code>@algogrind/blocks</code></td>
     <td>Default block implementations for composing preset editors, including widgets belonging to each block.</td>
   </tr>
   <tr>
-    <td><code>@blocksuite/presets</code></td>
+    <td><code>@algogrind/presets</code></td>
     <td>Plug-and-play editable components including <i>editors</i> (<code>PageEditor</code> / <code>EdgelessEditor</code>) and auxiliary UI components named <i>fragments</i> (<code>CopilotPanel</code>, <code>DocTitle</code>...).</td>
   </tr>
 </table>

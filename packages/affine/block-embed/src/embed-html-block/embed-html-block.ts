@@ -1,4 +1,4 @@
-import type { EmbedHtmlModel, EmbedHtmlStyles } from '@blocksuite/affine-model';
+import type { EmbedHtmlModel, EmbedHtmlStyles } from '@algogrind/affine-model';
 
 import { html } from 'lit';
 import { query, state } from 'lit/decorators.js';

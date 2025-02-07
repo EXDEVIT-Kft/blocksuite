@@ -1,12 +1,12 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
 import {
   BlockStdScope,
   EditorHost,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { PageEditorBlockSpecs, ThemeProvider } from '@blocksuite/blocks';
-import { noop, SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { PageEditorBlockSpecs, ThemeProvider } from '@algogrind/blocks';
+import { noop, SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { guard } from 'lit/directives/guard.js';

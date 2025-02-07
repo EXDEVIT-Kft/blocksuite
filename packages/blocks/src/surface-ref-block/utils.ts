@@ -1,5 +1,5 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import type { Doc } from '@blocksuite/store';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
+import type { Doc } from '@algogrind/store';
 
 import { html } from 'lit';
 

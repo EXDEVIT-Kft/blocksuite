@@ -3,20 +3,17 @@ import {
   AutoConnectRightIcon,
   HiddenIcon,
   SmallDocIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   FrameBlockModel,
   NoteBlockModel,
   type RootBlockModel,
   type SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
-import { NoteDisplayMode } from '@blocksuite/affine-model';
-import {
-  matchFlavours,
-  stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
-import { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { NoteDisplayMode } from '@algogrind/affine-model';
+import { matchFlavours, stopPropagation } from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
+import { Bound } from '@algogrind/global/utils';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

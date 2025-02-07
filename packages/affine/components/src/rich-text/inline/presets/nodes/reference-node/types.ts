@@ -1,5 +1,5 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { Slot } from '@blocksuite/global/utils';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { Slot } from '@algogrind/global/utils';
 
 export type RefNodeSlots = {
   docLinkClicked: Slot<ReferenceInfo>;
