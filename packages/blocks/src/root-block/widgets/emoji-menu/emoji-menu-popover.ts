@@ -73,7 +73,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
       ? leafStart.textContent.slice(0, offsetStart)
       : '';
 
-    const match = text.match(/:([a-z0-9_+-]*)$/i);
+    const match = text.match(/:(?!\s)([\p{L}0-9_+-]+)/iu);
     if (!match) {
       this.abortController.abort();
       return;
@@ -439,7 +439,4 @@ export class EmojiMenu extends WithDisposable(LitElement) {
 
   @query('.emoji-menu')
   accessor emojiMenuElement!: HTMLElement;
-
-  @property({ attribute: false })
-  accessor triggerKey!: string;
 }

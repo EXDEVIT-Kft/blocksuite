@@ -25,7 +25,6 @@ export type EmojiCategory = {
 };
 
 export type EmojiMenuConfig = {
-  triggerKeys: string[];
   ignoreBlockTypes: BlockSuite.Flavour[];
   categories: EmojiCategory[];
   maxHeight: number;
@@ -2911,7 +2910,6 @@ export const emojiCategories: EmojiCategory[] = [
 ];
 
 export const defaultEmojiMenuConfig: EmojiMenuConfig = {
-  triggerKeys: [':'],
   ignoreBlockTypes: ['affine:code'],
   maxHeight: 344,
   tooltipTimeout: 800,

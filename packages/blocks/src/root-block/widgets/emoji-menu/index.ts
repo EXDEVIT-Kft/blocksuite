@@ -1,85 +1,93 @@
 import type { UIEventStateContext } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
 
-import { getInlineEditorByModel } from '@blocksuite/affine-components/rich-text';
+import {
+  type AffineInlineEditor,
+  getInlineEditorByModel,
+} from '@blocksuite/affine-components/rich-text';
 import {
   getCurrentNativeRange,
   matchFlavours,
 } from '@blocksuite/affine-shared/utils';
 import { WidgetComponent } from '@blocksuite/block-std';
-import { DisposableGroup } from '@blocksuite/global/utils';
+import {
+  assertExists,
+  assertType,
+  debounce,
+  DisposableGroup,
+  throttle,
+} from '@blocksuite/global/utils';
 import { InlineEditor } from '@blocksuite/inline';
 
 import type { RootBlockComponent } from '../../types.js';
 
 import { getPopperPosition } from '../../utils/position.js';
-import { defaultEmojiMenuConfig, type EmojiMenuConfig } from './config.js';
+import {
+  defaultEmojiMenuConfig,
+  type EmojiMenuConfig,
+  type EmojiMenuContext,
+} from './config.js';
 import { EmojiMenu } from './emoji-menu-popover.js';
 
-let activeMenu: EmojiMenu | null = null;
+let globalAbortController = new AbortController();
 
-interface ShowEmojiMenuOptions {
-  context: {
-    model: BlockModel;
-    rootComponent: RootBlockComponent;
-  };
-  container?: HTMLElement;
-  abortController?: AbortController;
-  config: EmojiMenuConfig;
-  triggerKey: string;
+function closeEmojiMenu() {
+  globalAbortController.abort();
 }
 
-const showEmojiMenu = ({
-  context,
-  container = document.body,
-  abortController = new AbortController(),
-  config,
-  triggerKey,
-}: ShowEmojiMenuOptions) => {
-  const curRange = getCurrentNativeRange();
-  if (!curRange) return;
+const showEmojiMenu = debounce(
+  ({
+    context,
+    container = document.body,
+    abortController = new AbortController(),
+    config,
+  }: {
+    context: EmojiMenuContext;
+    container?: HTMLElement;
+    abortController?: AbortController;
+    config: EmojiMenuConfig;
+  }) => {
+    const curRange = getCurrentNativeRange();
+    if (!curRange) return;
 
-  if (activeMenu) {
-    return activeMenu;
-  }
+    globalAbortController = abortController;
+    const disposables = new DisposableGroup();
+    abortController.signal.addEventListener('abort', () =>
+      disposables.dispose()
+    );
 
-  const disposables = new DisposableGroup();
-  abortController.signal.addEventListener('abort', () => {
-    disposables.dispose();
-    activeMenu = null;
-  });
+    const inlineEditor = getInlineEditorByModel(
+      context.rootComponent.host,
+      context.model
+    );
+    if (!inlineEditor) return;
+    const emojiMenu = new EmojiMenu(inlineEditor, abortController);
+    disposables.add(() => emojiMenu.remove());
+    emojiMenu.context = context;
+    emojiMenu.config = config;
 
-  const inlineEditor = getInlineEditorByModel(
-    context.rootComponent.host,
-    context.model
-  );
-  if (!inlineEditor) return;
+    // Handle position
+    const updatePosition = throttle(() => {
+      const emojiMenuElement = emojiMenu.emojiMenuElement;
+      assertExists(
+        emojiMenuElement,
+        'You should render the emoji menu node even if no position'
+      );
+      const position = getPopperPosition(emojiMenuElement, curRange);
+      emojiMenu.updatePosition(position);
+    }, 10);
 
-  const emojiMenu = new EmojiMenu(inlineEditor, abortController);
-  activeMenu = emojiMenu;
+    disposables.addFromEvent(window, 'resize', updatePosition);
 
-  disposables.add(() => {
-    emojiMenu.remove();
-    activeMenu = null;
-  });
-
-  emojiMenu.context = context;
-  emojiMenu.config = config;
-  emojiMenu.triggerKey = triggerKey;
-
-  const updatePosition = () => {
-    const emojiMenuElement = emojiMenu.emojiMenuElement;
-    if (!emojiMenuElement) return;
-    const position = getPopperPosition(emojiMenuElement, curRange);
-    emojiMenu.updatePosition(position);
-  };
-
-  disposables.addFromEvent(window, 'resize', updatePosition);
-  container.append(emojiMenu);
-  setTimeout(updatePosition);
-
-  return emojiMenu;
-};
+    // FIXME(Flrande): It is not a best practice,
+    // but merely a temporary measure for reusing previous components.
+    // Mount
+    container.append(emojiMenu);
+    // Wait for the Node to be mounted
+    setTimeout(updatePosition);
+    return emojiMenu;
+  },
+  100
+);
 
 export const AFFINE_EMOJI_MENU_WIDGET = 'affine-emoji-menu-widget';
 
@@ -90,10 +98,12 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
     if (evt.target instanceof HTMLElement) {
       const editor = (
         evt.target.closest('.inline-editor') as {
-          inlineEditor?: InlineEditor;
+          inlineEditor?: AffineInlineEditor;
         }
       )?.inlineEditor;
-      if (editor instanceof InlineEditor) return editor;
+      if (editor instanceof InlineEditor) {
+        return editor;
+      }
     }
 
     const textSelection = this.host.selection.find('text');
@@ -105,53 +115,67 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
     return getInlineEditorByModel(this.host, model);
   };
 
-  private _handleInput = (inlineEditor: InlineEditor) => {
-    const textSelection = this.host.selection.find('text');
-    if (!textSelection) return;
+  private _handleInput = (
+    inlineEditor: InlineEditor,
+    isCompositionEnd: boolean
+  ) => {
+    const inlineRangeApplyCallback = (callback: () => void) => {
+      // the inline ranged updated in compositionEnd event before this event callback
+      if (isCompositionEnd) callback();
+      else inlineEditor.slots.inlineRangeSync.once(callback);
+    };
 
-    const model = this.host.doc.getBlock(textSelection.blockId)?.model;
-    if (!model) return;
-
-    if (matchFlavours(model, this.config.ignoreBlockTypes)) return;
-
-    const inlineRange = inlineEditor.getInlineRange();
-    if (!inlineRange) return;
-
-    const textPoint = inlineEditor.getTextPoint(inlineRange.index);
-    if (!textPoint) return;
-
-    const [leafStart, offsetStart] = textPoint;
-    const text = leafStart.textContent
-      ? leafStart.textContent.slice(0, offsetStart)
-      : '';
-    const match = text.match(/:(?!\s)([\p{L}0-9_+-]*)$/iu);
-
-    if (match) {
-      showEmojiMenu({
-        context: {
-          model,
-          rootComponent: this.block as RootBlockComponent,
-        },
-        config: this.config,
-        triggerKey: ':',
-      });
+    const rootComponent = this.block;
+    if (rootComponent.model.flavour !== 'affine:page') {
+      console.error('EmojiMenuWidget should be used in RootBlock');
+      return;
     }
+    assertType<RootBlockComponent>(rootComponent);
+
+    inlineRangeApplyCallback(() => {
+      const textSelection = this.host.selection.find('text');
+      if (!textSelection) return;
+
+      const model = this.host.doc.getBlock(textSelection.blockId)?.model;
+      if (!model) return;
+
+      if (matchFlavours(model, this.config.ignoreBlockTypes)) return;
+
+      const inlineRange = inlineEditor.getInlineRange();
+      if (!inlineRange) return;
+
+      const textPoint = inlineEditor.getTextPoint(inlineRange.index);
+      if (!textPoint) return;
+
+      const [leafStart, offsetStart] = textPoint;
+
+      const text = leafStart.textContent
+        ? leafStart.textContent.slice(0, offsetStart)
+        : '';
+
+      const match = text.match(/:(?!\s)([\p{L}0-9_+-]+)/iu);
+
+      if (match) {
+        closeEmojiMenu();
+        showEmojiMenu({
+          context: {
+            model,
+            rootComponent,
+          },
+          config: this.config,
+        });
+      }
+    });
   };
 
   private _onCompositionEnd = (ctx: UIEventStateContext) => {
     const event = ctx.get('defaultState').event as CompositionEvent;
-
-    if (
-      !this.config.triggerKeys.some(triggerKey =>
-        triggerKey.includes(event.data)
-      )
-    )
-      return;
+    console.log(event.data);
 
     const inlineEditor = this._getInlineEditor(event);
     if (!inlineEditor) return;
 
-    this._handleInput(inlineEditor);
+    this._handleInput(inlineEditor, true);
   };
 
   private _onKeyDown = (ctx: UIEventStateContext) => {
@@ -160,25 +184,30 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
 
     const key = event.key;
 
-    if (key === 'Process' || event.isComposing) return;
+    // check event is not composing
+    if (
+      key === undefined || // in mac os, the key may be undefined
+      key === 'Process' ||
+      event.isComposing
+    )
+      return;
 
     const inlineEditor = this._getInlineEditor(event);
     if (!inlineEditor) return;
 
-    this._handleInput(inlineEditor);
+    this._handleInput(inlineEditor, false);
   };
 
-  config: EmojiMenuConfig = AffineEmojiMenuWidget.DEFAULT_CONFIG;
+  config = AffineEmojiMenuWidget.DEFAULT_CONFIG;
 
   override connectedCallback() {
     super.connectedCallback();
-    if (this.config.triggerKeys.some(key => key.length === 0)) {
-      throw new Error('Trigger key of emoji menu should not be empty string');
-    }
+
     this.handleEvent('keyDown', this._onKeyDown);
     this.handleEvent('compositionEnd', this._onCompositionEnd);
   }
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [AFFINE_EMOJI_MENU_WIDGET]: AffineEmojiMenuWidget;
