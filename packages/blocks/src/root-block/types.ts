@@ -6,7 +6,7 @@ import type { AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET } from './widgets/edgeless
 import type { AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET } from './widgets/edgeless-zoom-toolbar/index.js';
 import type { EDGELESS_ELEMENT_TOOLBAR_WIDGET } from './widgets/element-toolbar/index.js';
 import type { AFFINE_EMBED_CARD_TOOLBAR_WIDGET } from './widgets/embed-card-toolbar/embed-card-toolbar.js';
-import type { AFFINE_EMOJI_MENU_WIDGET } from './widgets/emoji-menu/index.js';
+import type { ALGOGRIND_EMOJI_MENU_WIDGET } from './widgets/emoji-menu/index.js';
 import type { AFFINE_FORMAT_BAR_WIDGET } from './widgets/format-bar/format-bar.js';
 import type { AFFINE_FRAME_TITLE_WIDGET } from './widgets/frame-title/index.js';
 import type { AFFINE_KEYBOARD_TOOLBAR_WIDGET } from './widgets/index.js';
@@ -24,7 +24,7 @@ export type PageRootBlockWidgetName =
   | typeof AFFINE_MODAL_WIDGET
   | typeof AFFINE_INNER_MODAL_WIDGET
   | typeof AFFINE_SLASH_MENU_WIDGET
-  | typeof AFFINE_EMOJI_MENU_WIDGET
+  | typeof ALGOGRIND_EMOJI_MENU_WIDGET
   | typeof AFFINE_LINKED_DOC_WIDGET
   | typeof AFFINE_PAGE_DRAGGING_AREA_WIDGET
   | typeof AFFINE_DRAG_HANDLE_WIDGET
@@ -38,7 +38,7 @@ export type EdgelessRootBlockWidgetName =
   | typeof AFFINE_INNER_MODAL_WIDGET
   | typeof AFFINE_PIE_MENU_WIDGET
   | typeof AFFINE_SLASH_MENU_WIDGET
-  | typeof AFFINE_EMOJI_MENU_WIDGET
+  | typeof ALGOGRIND_EMOJI_MENU_WIDGET
   | typeof AFFINE_LINKED_DOC_WIDGET
   | typeof AFFINE_DRAG_HANDLE_WIDGET
   | typeof AFFINE_EMBED_CARD_TOOLBAR_WIDGET

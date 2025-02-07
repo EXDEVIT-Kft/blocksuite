@@ -24,7 +24,7 @@ export {
   AFFINE_EMBED_CARD_TOOLBAR_WIDGET,
   EmbedCardToolbar,
 } from './embed-card-toolbar/embed-card-toolbar.js';
-export { AffineEmojiMenuWidget } from './emoji-menu/index.js';
+export { AlgogrindEmojiMenuWidget } from './emoji-menu/index.js';
 export { toolbarDefaultConfig } from './format-bar/config.js';
 export {
   AFFINE_FORMAT_BAR_WIDGET,

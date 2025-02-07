@@ -20,7 +20,7 @@ import { commands } from '../commands/index.js';
 import { AFFINE_DOC_REMOTE_SELECTION_WIDGET } from '../widgets/doc-remote-selection/doc-remote-selection.js';
 import { AFFINE_DRAG_HANDLE_WIDGET } from '../widgets/drag-handle/consts.js';
 import { AFFINE_EMBED_CARD_TOOLBAR_WIDGET } from '../widgets/embed-card-toolbar/embed-card-toolbar.js';
-import { AFFINE_EMOJI_MENU_WIDGET } from '../widgets/emoji-menu/index.js';
+import { ALGOGRIND_EMOJI_MENU_WIDGET } from '../widgets/emoji-menu/index.js';
 import { AFFINE_FORMAT_BAR_WIDGET } from '../widgets/format-bar/format-bar.js';
 import { AFFINE_INNER_MODAL_WIDGET } from '../widgets/inner-modal/inner-modal.js';
 import { AFFINE_KEYBOARD_TOOLBAR_WIDGET } from '../widgets/keyboard-toolbar/index.js';
@@ -38,8 +38,8 @@ export const pageRootWidgetViewMap = {
   [AFFINE_SLASH_MENU_WIDGET]: literal`${unsafeStatic(
     AFFINE_SLASH_MENU_WIDGET
   )}`,
-  [AFFINE_EMOJI_MENU_WIDGET]: literal`${unsafeStatic(
-    AFFINE_EMOJI_MENU_WIDGET
+  [ALGOGRIND_EMOJI_MENU_WIDGET]: literal`${unsafeStatic(
+    ALGOGRIND_EMOJI_MENU_WIDGET
   )}`,
   [AFFINE_LINKED_DOC_WIDGET]: literal`${unsafeStatic(
     AFFINE_LINKED_DOC_WIDGET

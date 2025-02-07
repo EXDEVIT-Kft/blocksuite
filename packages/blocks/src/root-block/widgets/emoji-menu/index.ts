@@ -89,9 +89,9 @@ const showEmojiMenu = debounce(
   100
 );
 
-export const AFFINE_EMOJI_MENU_WIDGET = 'affine-emoji-menu-widget';
+export const ALGOGRIND_EMOJI_MENU_WIDGET = 'algogrind-emoji-menu-widget';
 
-export class AffineEmojiMenuWidget extends WidgetComponent {
+export class AlgogrindEmojiMenuWidget extends WidgetComponent {
   static DEFAULT_CONFIG = defaultEmojiMenuConfig;
 
   private _getInlineEditor = (evt: KeyboardEvent | CompositionEvent) => {
@@ -196,7 +196,7 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
     this._handleInput(inlineEditor, false);
   };
 
-  config = AffineEmojiMenuWidget.DEFAULT_CONFIG;
+  config = AlgogrindEmojiMenuWidget.DEFAULT_CONFIG;
 
   override connectedCallback() {
     super.connectedCallback();
@@ -208,6 +208,6 @@ export class AffineEmojiMenuWidget extends WidgetComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_EMOJI_MENU_WIDGET]: AffineEmojiMenuWidget;
+    [ALGOGRIND_EMOJI_MENU_WIDGET]: AlgogrindEmojiMenuWidget;
   }
 }
