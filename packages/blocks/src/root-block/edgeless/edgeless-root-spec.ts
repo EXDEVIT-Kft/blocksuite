@@ -25,6 +25,7 @@ import { AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET } from '../widgets/edgeless-rem
 import { AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET } from '../widgets/edgeless-zoom-toolbar/index.js';
 import { EDGELESS_ELEMENT_TOOLBAR_WIDGET } from '../widgets/element-toolbar/index.js';
 import { AFFINE_EMBED_CARD_TOOLBAR_WIDGET } from '../widgets/embed-card-toolbar/embed-card-toolbar.js';
+import { ALGOGRIND_EMOJI_MENU_WIDGET } from '../widgets/emoji-menu/index.js';
 import { AFFINE_FORMAT_BAR_WIDGET } from '../widgets/format-bar/format-bar.js';
 import { AFFINE_FRAME_TITLE_WIDGET } from '../widgets/frame-title/index.js';
 import { AFFINE_INNER_MODAL_WIDGET } from '../widgets/inner-modal/inner-modal.js';
@@ -46,6 +47,9 @@ export const edgelessRootWidgetViewMap = {
   [AFFINE_PIE_MENU_WIDGET]: literal`${unsafeStatic(AFFINE_PIE_MENU_WIDGET)}`,
   [AFFINE_SLASH_MENU_WIDGET]: literal`${unsafeStatic(
     AFFINE_SLASH_MENU_WIDGET
+  )}`,
+  [ALGOGRIND_EMOJI_MENU_WIDGET]: literal`${unsafeStatic(
+    ALGOGRIND_EMOJI_MENU_WIDGET
   )}`,
   [AFFINE_LINKED_DOC_WIDGET]: literal`${unsafeStatic(
     AFFINE_LINKED_DOC_WIDGET

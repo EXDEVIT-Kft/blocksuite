@@ -328,7 +328,7 @@ export const emojiCategories: EmojiCategory[] = [
         'okos',
         'tanulós',
       ]),
-      createEmojiItem('😎', 'menő nyugodt arc', [
+      createEmojiItem('😎', 'menő szemüveges arc', [
         'cool',
         'chill',
         'menő',
