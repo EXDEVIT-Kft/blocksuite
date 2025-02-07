@@ -40,11 +40,13 @@ const showEmojiMenu = debounce(
     container = document.body,
     abortController = new AbortController(),
     config,
+    searchText = '',
   }: {
     context: EmojiMenuContext;
     container?: HTMLElement;
     abortController?: AbortController;
     config: EmojiMenuConfig;
+    searchText: string;
   }) => {
     const curRange = getCurrentNativeRange();
     if (!curRange) return;
@@ -64,6 +66,7 @@ const showEmojiMenu = debounce(
     disposables.add(() => emojiMenu.remove());
     emojiMenu.context = context;
     emojiMenu.config = config;
+    emojiMenu._searchText = searchText;
 
     // Handle position
     const updatePosition = throttle(() => {
@@ -153,7 +156,7 @@ export class AlgogrindEmojiMenuWidget extends WidgetComponent {
         : '';
 
       const match = text.match(/:(?![/\s])(\S+)/u);
-
+      console.log(match);
       if (match) {
         closeEmojiMenu();
         showEmojiMenu({
@@ -162,6 +165,7 @@ export class AlgogrindEmojiMenuWidget extends WidgetComponent {
             rootComponent,
           },
           config: this.config,
+          searchText: match[1],
         });
       }
     });

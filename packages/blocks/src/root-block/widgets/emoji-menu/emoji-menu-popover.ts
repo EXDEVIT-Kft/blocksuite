@@ -23,11 +23,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
 
   private _handleEmojiSelect = (emoji: EmojiItem) => {
     try {
-      cleanSpecifiedTail(
-        this.host,
-        this.context.model,
-        ':' + (this._searchText || '')
-      );
+      cleanSpecifiedTail(this.host, this.context.model, ':' + this._searchText);
       this.inlineEditor
         .waitForUpdate()
         .then(() => {
@@ -65,6 +61,7 @@ export class EmojiMenu extends WithDisposable(LitElement) {
       : '';
 
     const match = text.match(/:(?![/\s])(\S+)/u);
+    console.log(match);
     if (!match) {
       this.abortController.abort();
       return;
