@@ -65,14 +65,32 @@ export function createStarterDocCollection() {
     schema,
     idGenerator,
     defaultFlags: {
+      // -> converting between different embed block styles
+      // gets synced across the network automatically
       enable_synced_doc_block: true,
+      // Edgeless -> shortcut: Q
       enable_pie_menu: true,
-      enable_lasso_tool: true,
-      enable_edgeless_text: true,
+      // Database --->
+      enable_database_number_formatting: false,
+      enable_database_attachment_note: false,
+      enable_database_full_width: false,
+      enable_block_query: false,
+      // <--- database
+      enable_legacy_validation: false,
+      // Edgeless extra items / config --->
+      enable_lasso_tool: false,
+      enable_edgeless_text: false,
       enable_color_picker: true,
-      enable_mind_map_import: true,
+      enable_mind_map_import: false,
+      enable_shape_shadow_blur: true,
       enable_advanced_block_visibility: true,
-      enable_shape_shadow_blur: false,
+      // <--- edgeless extra items / config
+      enable_ai_onboarding: false,
+      enable_ai_chat_block: false,
+      // updated drag and drop feature
+      enable_new_dnd: true,
+      enable_mobile_keyboard_toolbar: true,
+      enable_mobile_linked_doc_menu: false,
       ...flags,
     },
     awarenessSources: [new BroadcastChannelAwarenessSource(id)],
