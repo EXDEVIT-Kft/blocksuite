@@ -88,7 +88,6 @@ export const styles = css`
   .emoji-item:hover,
   .emoji-item.selected {
     background: var(--affine-hover-color);
-    transform: scale(1.05);
   }
 
   .category-nav {
