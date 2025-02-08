@@ -156,7 +156,7 @@ export class AlgogrindEmojiMenuWidget extends WidgetComponent {
         : '';
 
       const match = text.match(/:(?![/\s])(\S+)/u);
-      console.log(match);
+
       if (match) {
         closeEmojiMenu();
         showEmojiMenu({
