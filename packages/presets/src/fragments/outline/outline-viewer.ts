@@ -148,13 +148,13 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       }
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .outline-viewer-root {
         left: -2.25rem;
       }
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       .outline-viewer-indicator {
         width: 20px;
       }
