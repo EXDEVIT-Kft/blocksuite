@@ -89,9 +89,9 @@ const styles = css`
     position: absolute;
     right: 8px;
     top: -6px;
-    padding-top: 8px;
-    padding-left: 2px;
-    padding-bottom: 8px;
+    margin-block: 8px;
+    padding-left: 4px;
+    border-radius: 4px;
     align-items: center;
     gap: 4px;
     font-size: 12px;
