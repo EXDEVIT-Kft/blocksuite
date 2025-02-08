@@ -160,7 +160,7 @@ export class MenuComponent
       ${this.renderTitle()} ${this.renderSearch()}
       <div class="affine-menu-body">
         ${result.length === 0 && this.menu.enableSearch
-          ? html` <div class="no-results">No Results</div>`
+          ? html` <div class="no-results">Nincs találat</div>`
           : ''}
         ${result}
       </div>
@@ -357,7 +357,7 @@ export class MobileMenuComponent
           margin-right: 10px;
          "
         >
-          Done
+          Kész
         </div>
       </div>
     `;
