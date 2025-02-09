@@ -23,10 +23,6 @@ export const AFFINE_OUTLINE_VIEWER = 'affine-outline-viewer';
 })
 export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
   static override styles = css`
-    affine-outline-viewer {
-      height: 100%;
-    }
-
     :host {
       display: flex;
     }
