@@ -1,6 +1,6 @@
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockModel, Doc } from '@algogrind/store';
 
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { LitElement } from 'lit';
 

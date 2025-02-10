@@ -11,7 +11,7 @@ This guide explores several optimal ways to synchronize (in other words, save an
 Traditionally, you might expect a JSON-based API that works somewhat like `editor.load()`. For such scenarios, BlockSuite indeed conveniently fulfills this need through its built-in snapshot mechanism:
 
 ```ts
-import { Job } from '@blocksuite/store';
+import { Job } from '@algogrind/store';
 
 const { collection } = doc;
 
@@ -53,10 +53,10 @@ In BlockSuite, the data-driven synchronization strategy is implemented through p
 - Similarly, when loading an existing document, the method is to create a new empty `doc` object and connect it to the corresponding provider. At this time, the block tree data will also flow in from the provider data source:
 
 ```ts
-import { AffineSchemas } from '@blocksuite/blocks';
-import { AffineEditorContainer } from '@blocksuite/presets';
-import { Schema } from '@blocksuite/store';
-import { DocCollection, Text } from '@blocksuite/store';
+import { AffineSchemas } from '@algogrind/blocks';
+import { AffineEditorContainer } from '@algogrind/presets';
+import { Schema } from '@algogrind/store';
+import { DocCollection, Text } from '@algogrind/store';
 import { IndexeddbPersistence } from 'y-indexeddb';
 
 const schema = new Schema().register(AffineSchemas);

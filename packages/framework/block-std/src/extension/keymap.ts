@@ -20,7 +20,7 @@ let id = 1;
  *
  * @example
  * ```ts
- * import { KeymapExtension } from '@blocksuite/block-std';
+ * import { KeymapExtension } from '@algogrind/block-std';
  *
  * const MyKeymapExtension = KeymapExtension(std => {
  *   return {

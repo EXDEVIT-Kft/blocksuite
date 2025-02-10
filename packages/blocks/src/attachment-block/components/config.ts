@@ -1,4 +1,4 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
 import {
   CopyIcon,
@@ -6,7 +6,7 @@ import {
   DownloadIcon,
   DuplicateIcon,
   RefreshIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 
 import type { AttachmentToolbarMoreMenuContext } from './context.js';
 

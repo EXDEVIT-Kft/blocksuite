@@ -1,11 +1,11 @@
-import { ImageSelectionExtension } from '@blocksuite/affine-shared/selection';
+import { ImageSelectionExtension } from '@algogrind/affine-shared/selection';
 import {
   BlockViewExtension,
   CommandExtension,
   type ExtensionType,
   FlavourExtension,
   WidgetViewMapExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { commands } from './commands/index.js';

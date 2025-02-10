@@ -1,5 +1,5 @@
-import { SHAPE_STROKE_COLORS, StrokeStyle } from '@blocksuite/affine-model';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { SHAPE_STROKE_COLORS, StrokeStyle } from '@algogrind/affine-model';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

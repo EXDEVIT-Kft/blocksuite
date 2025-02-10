@@ -1,7 +1,7 @@
 /* eslint-disable perfectionist/sort-classes */
 /* eslint-disable @stylistic/ts/lines-between-class-members */
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists } from '@algogrind/global/utils';
 import { html, render } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import * as Y from 'yjs';

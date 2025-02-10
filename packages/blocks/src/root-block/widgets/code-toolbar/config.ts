@@ -1,4 +1,4 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
 
 import {
   CancelWrapIcon,
@@ -8,9 +8,9 @@ import {
   DuplicateIcon,
   PlusIcon,
   WrapIcon,
-} from '@blocksuite/affine-components/icons';
-import { isInsidePageEditor } from '@blocksuite/affine-shared/utils';
-import { noop, sleep } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { isInsidePageEditor } from '@algogrind/affine-shared/utils';
+import { noop, sleep } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 

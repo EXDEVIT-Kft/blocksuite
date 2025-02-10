@@ -2,8 +2,8 @@ import {
   BanIcon,
   DashLineIcon,
   StraightLineIcon,
-} from '@blocksuite/affine-components/icons';
-import { type LineWidth, StrokeStyle } from '@blocksuite/affine-model';
+} from '@algogrind/affine-components/icons';
+import { type LineWidth, StrokeStyle } from '@algogrind/affine-model';
 import { html } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';

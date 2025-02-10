@@ -1,6 +1,6 @@
-import { AIStarIcon } from '@blocksuite/affine-components/icons';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { AIStarIcon } from '@algogrind/affine-components/icons';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { SendIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

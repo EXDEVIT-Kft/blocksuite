@@ -1,7 +1,7 @@
-import type { BlockComponent, EditorHost } from '@blocksuite/block-std';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockComponent, EditorHost } from '@algogrind/block-std';
+import type { BlockModel, Doc } from '@algogrind/store';
 
-import { type NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
+import { type NoteBlockModel, NoteDisplayMode } from '@algogrind/affine-model';
 
 import { matchFlavours } from './checker.js';
 

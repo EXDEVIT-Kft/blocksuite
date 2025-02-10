@@ -1,6 +1,6 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 
 import { multiPlayersColor } from './color-picker.js';
 

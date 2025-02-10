@@ -1,4 +1,4 @@
-# `@blocksuite/presets`
+# `@algogrind/presets`
 
 Prebuilt editors and opt-in additional UI components built for [AFFiNE](https://affine.pro).
 

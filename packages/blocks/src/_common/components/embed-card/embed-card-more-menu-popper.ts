@@ -5,11 +5,11 @@ import {
   DuplicateIcon,
   OpenIcon,
   RefreshIcon,
-} from '@blocksuite/affine-components/icons';
-import { isPeekable, peek } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
-import { WithDisposable } from '@blocksuite/global/utils';
-import { Slice } from '@blocksuite/store';
+} from '@algogrind/affine-components/icons';
+import { isPeekable, peek } from '@algogrind/affine-components/peek';
+import { toast } from '@algogrind/affine-components/toast';
+import { WithDisposable } from '@algogrind/global/utils';
+import { Slice } from '@algogrind/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

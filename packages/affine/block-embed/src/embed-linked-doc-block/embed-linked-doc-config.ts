@@ -1,7 +1,7 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { EditorHost, ExtensionType } from '@blocksuite/block-std';
+import type { ReferenceInfo } from '@algogrind/affine-model';
+import type { EditorHost, ExtensionType } from '@algogrind/block-std';
 
-import { createIdentifier } from '@blocksuite/global/di';
+import { createIdentifier } from '@algogrind/global/di';
 
 export interface EmbedLinkedDocBlockConfig {
   handleClick?: (

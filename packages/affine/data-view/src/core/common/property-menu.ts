@@ -1,5 +1,5 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { menu } from '@algogrind/affine-components/context-menu';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { html } from 'lit/static-html.js';
 
 import type { Property } from '../view-manager/property.js';

@@ -2,7 +2,7 @@ import {
   ColorScheme,
   type EdgelessRootBlockComponent,
   ThemeProvider,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import '@toeverything/theme/style.css';
 import { beforeEach, describe, expect, test } from 'vitest';
 

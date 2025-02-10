@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 interface BlobCRUD {
   get: (key: string) => Promise<Blob | null> | Blob | null;

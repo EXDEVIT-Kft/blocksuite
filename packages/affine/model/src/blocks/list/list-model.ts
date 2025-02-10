@@ -1,6 +1,6 @@
-import type { SchemaToModel, Text } from '@blocksuite/store';
+import type { SchemaToModel, Text } from '@algogrind/store';
 
-import { defineBlockSchema } from '@blocksuite/store';
+import { defineBlockSchema } from '@algogrind/store';
 
 // `toggle` type has been deprecated, do not use it
 export type ListType = 'bulleted' | 'numbered' | 'todo' | 'toggle';

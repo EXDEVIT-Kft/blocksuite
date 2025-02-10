@@ -1,10 +1,10 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
 import {
   ArrowUpIcon,
   HandIcon,
   SelectIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { query } from 'lit/decorators.js';

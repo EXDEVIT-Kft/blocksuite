@@ -1,7 +1,7 @@
-import type { Command, TextSelection } from '@blocksuite/block-std';
-import type { Text } from '@blocksuite/store';
+import type { Command, TextSelection } from '@algogrind/block-std';
+import type { Text } from '@algogrind/store';
 
-import { matchFlavours } from '@blocksuite/affine-shared/utils';
+import { matchFlavours } from '@algogrind/affine-shared/utils';
 
 export const deleteTextCommand: Command<
   'currentTextSelection',

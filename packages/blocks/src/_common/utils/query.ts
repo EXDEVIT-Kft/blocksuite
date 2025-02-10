@@ -1,12 +1,12 @@
-import type { Point } from '@blocksuite/global/utils';
-import type { BlockModel } from '@blocksuite/store';
+import type { Point } from '@algogrind/global/utils';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   getRectByBlockComponent,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BLOCK_ID_ATTR, type EditorHost } from '@blocksuite/block-std';
-import { assertExists } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { BLOCK_ID_ATTR, type EditorHost } from '@algogrind/block-std';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { RootBlockComponent } from '../../index.js';
 
