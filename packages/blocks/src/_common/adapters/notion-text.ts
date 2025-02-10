@@ -1,9 +1,9 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { DeltaInsert } from '@blocksuite/inline';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { DeltaInsert } from '@algogrind/inline';
 
-import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@blocksuite/affine-model';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@algogrind/affine-model';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -15,7 +15,7 @@ import {
   type Job,
   nanoid,
   type SliceSnapshot,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
 import { AdapterFactoryIdentifier } from './type.js';
 

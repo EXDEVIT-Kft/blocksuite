@@ -1,4 +1,4 @@
-import type { BlockModel, Doc, DraftModel } from '@blocksuite/store';
+import type { BlockModel, Doc, DraftModel } from '@algogrind/store';
 
 import { minimatch } from 'minimatch';
 

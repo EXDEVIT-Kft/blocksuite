@@ -1,4 +1,4 @@
-# `@blocksuite/sync`
+# `@algogrind/sync`
 
 BlockSuite data synchronization engine.
 

@@ -1,5 +1,5 @@
-import { ArrowRightSmallIcon } from '@blocksuite/affine-components/icons';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { ArrowRightSmallIcon } from '@algogrind/affine-components/icons';
+import { WithDisposable } from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';

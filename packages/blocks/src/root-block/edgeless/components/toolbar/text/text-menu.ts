@@ -1,4 +1,4 @@
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
 
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

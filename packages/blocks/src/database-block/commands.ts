@@ -1,4 +1,4 @@
-import type { BlockCommands, Command } from '@blocksuite/block-std';
+import type { BlockCommands, Command } from '@algogrind/block-std';
 
 export const insertDatabaseBlockCommand: Command<
   'selectedModels',

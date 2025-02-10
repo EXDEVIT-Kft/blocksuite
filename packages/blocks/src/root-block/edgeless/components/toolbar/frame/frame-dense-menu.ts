@@ -1,5 +1,5 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
-import { FrameIcon } from '@blocksuite/affine-components/icons';
+import { menu } from '@algogrind/affine-components/context-menu';
+import { FrameIcon } from '@algogrind/affine-components/icons';
 
 import type { DenseMenuBuilder } from '../common/type.js';
 

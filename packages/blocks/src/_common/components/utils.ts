@@ -1,13 +1,13 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-components/rich-text';
-import type { EditorHost } from '@blocksuite/block-std';
-import type { InlineEditor, InlineRange } from '@blocksuite/inline';
+import type { AffineInlineEditor } from '@algogrind/affine-components/rich-text';
+import type { EditorHost } from '@algogrind/block-std';
+import type { InlineEditor, InlineRange } from '@algogrind/inline';
 
-import { getInlineEditorByModel } from '@blocksuite/affine-components/rich-text';
+import { getInlineEditorByModel } from '@algogrind/affine-components/rich-text';
 import {
   getCurrentNativeRange,
   isControlledKeyboardEvent,
-} from '@blocksuite/affine-shared/utils';
-import { BlockModel } from '@blocksuite/store';
+} from '@algogrind/affine-shared/utils';
+import { BlockModel } from '@algogrind/store';
 import { css, unsafeCSS } from 'lit';
 
 export function getQuery(

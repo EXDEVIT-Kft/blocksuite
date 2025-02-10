@@ -1,4 +1,4 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import { AttachmentAdapterFactoryExtension } from './attachment.js';
 import { BlockHtmlAdapterExtensions } from './html-adapter/block-matcher.js';

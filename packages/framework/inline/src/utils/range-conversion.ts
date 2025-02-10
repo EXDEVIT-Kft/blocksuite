@@ -1,6 +1,6 @@
 import type * as Y from 'yjs';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { InlineRange } from '../types.js';
 

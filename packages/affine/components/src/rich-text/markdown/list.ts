@@ -1,8 +1,8 @@
-import type { ListProps, ListType } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { ListProps, ListType } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { matchFlavours, toNumberedList } from '@blocksuite/affine-shared/utils';
+import { matchFlavours, toNumberedList } from '@algogrind/affine-shared/utils';
 
 import { focusTextModel } from '../dom.js';
 import { beforeConvert } from './utils.js';

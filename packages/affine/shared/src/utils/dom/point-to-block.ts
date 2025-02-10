@@ -1,6 +1,6 @@
-import type { Point, Rect } from '@blocksuite/global/utils';
+import type { Point, Rect } from '@algogrind/global/utils';
 
-import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/block-std';
+import { BLOCK_ID_ATTR, type BlockComponent } from '@algogrind/block-std';
 
 import { BLOCK_CHILDREN_CONTAINER_PADDING_LEFT } from '../../consts/index.js';
 import { clamp } from '../math.js';
@@ -37,7 +37,7 @@ function isRootOrNoteOrSurface(element: BlockComponent) {
   return matchFlavours(element.model, [
     'affine:page',
     'affine:note',
-    // @ts-ignore TODO: migrate surface model to @blocksuite/affine-model
+    // @ts-ignore TODO: migrate surface model to @algogrind/affine-model
     'affine:surface',
   ]);
 }

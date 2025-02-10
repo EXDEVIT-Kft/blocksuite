@@ -14,7 +14,7 @@ import {
   NumberedListIcon,
   QuoteIcon,
   TextIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 
 /**
  * Text primitive entries used in slash menu and format bar,

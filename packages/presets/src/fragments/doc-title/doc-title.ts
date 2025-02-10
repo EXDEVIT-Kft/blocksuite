@@ -1,9 +1,9 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { RichText, RootBlockModel } from '@blocksuite/blocks';
-import type { Doc } from '@blocksuite/store';
+import type { EditorHost } from '@algogrind/block-std';
+import type { RichText, RootBlockModel } from '@algogrind/blocks';
+import type { Doc } from '@algogrind/store';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

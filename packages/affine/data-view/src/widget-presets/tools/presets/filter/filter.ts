@@ -1,5 +1,5 @@
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { popupTargetFromElement } from '@algogrind/affine-components/context-menu';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { FilterIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { cssVarV2 } from '@toeverything/theme/v2';

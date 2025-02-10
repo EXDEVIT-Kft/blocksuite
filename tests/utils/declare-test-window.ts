@@ -3,8 +3,8 @@ import type {
   EditorHost,
   ExtensionType,
   WidgetViewMapIdentifier,
-} from '@blocksuite/block-std';
-import type { AffineEditorContainer } from '@blocksuite/presets';
+} from '@algogrind/block-std';
+import type { AffineEditorContainer } from '@algogrind/presets';
 import type { StarterDebugMenu } from '@playground/apps/_common/components/starter-debug-menu.js';
 import type { BlockModel, Doc, DocCollection, Job } from '@store/index.js';
 

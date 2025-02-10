@@ -4,7 +4,7 @@ import {
   HastUtils,
   type HtmlAST,
   type NotionHtmlASTToDeltaMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 import { collapseWhiteSpace } from 'collapse-white-space';
 
 const isElement = (ast: HtmlAST): ast is Element => {

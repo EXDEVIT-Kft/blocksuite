@@ -1,5 +1,5 @@
-import { toast } from '@blocksuite/affine-components/toast';
-import { assertExists } from '@blocksuite/global/utils';
+import { toast } from '@algogrind/affine-components/toast';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { FileSnapshot } from './adapter.js';
 

@@ -1,7 +1,7 @@
 import type {
   EdgelessRootBlockComponent,
   SurfaceBlockComponent,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
 import { beforeEach, describe, expect, test } from 'vitest';
 

@@ -1,8 +1,8 @@
 import {
   type ReferenceParams,
   ReferenceParamsSchema,
-} from '@blocksuite/affine-model';
-import { BaseSelection, SelectionExtension } from '@blocksuite/block-std';
+} from '@algogrind/affine-model';
+import { BaseSelection, SelectionExtension } from '@algogrind/block-std';
 
 export class HighlightSelection extends BaseSelection {
   static override group = 'scene';

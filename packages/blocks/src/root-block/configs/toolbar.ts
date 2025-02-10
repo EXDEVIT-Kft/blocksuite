@@ -1,7 +1,7 @@
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
-import type { BlockStdScope, EditorHost } from '@blocksuite/block-std';
-import type { GfxModel } from '@blocksuite/block-std/gfx';
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { MenuItemGroup } from '@algogrind/affine-components/toolbar';
+import type { BlockStdScope, EditorHost } from '@algogrind/block-std';
+import type { GfxModel } from '@algogrind/block-std/gfx';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 export abstract class MenuContext {
   abstract get doc(): Doc;

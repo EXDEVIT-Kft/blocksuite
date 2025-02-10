@@ -1,35 +1,35 @@
-import type { AliasInfo } from '@blocksuite/affine-model';
+import type { AliasInfo } from '@algogrind/affine-model';
 import type {
   BlockComponent,
   BlockStdScope,
   EditorHost,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 
 import {
   EmbedLinkedDocBlockComponent,
   EmbedSyncedDocBlockComponent,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   notifyLinkedDocClearedAliases,
   notifyLinkedDocSwitchedToCard,
-} from '@blocksuite/affine-components/notification';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/notification';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   EmbedLinkedDocModel,
   EmbedSyncedDocModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type LinkEventType,
   type TelemetryEvent,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { FONT_SM, FONT_XS } from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@algogrind/affine-shared/services';
+import { FONT_SM, FONT_XS } from '@algogrind/affine-shared/styles';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import {
   listenClickAway,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { autoUpdate, computePosition, flip, offset } from '@floating-ui/dom';
 import { computed, signal } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';

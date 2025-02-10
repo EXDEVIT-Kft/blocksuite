@@ -1,14 +1,14 @@
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
+import type { AttachmentBlockModel } from '@algogrind/affine-model';
 import type { TemplateResult } from 'lit';
 
 import {
   CaptionIcon,
   DownloadIcon,
   PaletteIcon,
-} from '@blocksuite/affine-components/icons';
-import { renderToolbarSeparator } from '@blocksuite/affine-components/toolbar';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { renderToolbarSeparator } from '@algogrind/affine-components/toolbar';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { join } from 'lit/directives/join.js';

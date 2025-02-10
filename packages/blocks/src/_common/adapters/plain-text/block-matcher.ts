@@ -1,5 +1,5 @@
-import type { BlockPlainTextAdapterMatcher } from '@blocksuite/affine-shared/adapters';
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { BlockPlainTextAdapterMatcher } from '@algogrind/affine-shared/adapters';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   EmbedFigmaBlockPlainTextAdapterExtension,
@@ -14,15 +14,15 @@ import {
   embedSyncedDocBlockPlainTextAdapterMatcher,
   EmbedYoutubeBlockPlainTextAdapterExtension,
   embedYoutubeBlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-block-embed';
+} from '@algogrind/affine-block-embed';
 import {
   ListBlockPlainTextAdapterExtension,
   listBlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-block-list';
+} from '@algogrind/affine-block-list';
 import {
   ParagraphBlockPlainTextAdapterExtension,
   paragraphBlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-block-paragraph';
+} from '@algogrind/affine-block-paragraph';
 
 import {
   BookmarkBlockPlainTextAdapterExtension,

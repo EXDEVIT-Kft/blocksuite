@@ -1,6 +1,6 @@
-import { PANEL_BASE } from '@blocksuite/affine-shared/styles';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { PANEL_BASE } from '@algogrind/affine-shared/styles';
+import { createButtonPopper } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import {
   css,
   html,

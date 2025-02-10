@@ -1,7 +1,7 @@
-import type { BlockSuiteFlags } from '@blocksuite/global/types';
+import type { BlockSuiteFlags } from '@algogrind/global/types';
 
-import { AffineSchemas, TestUtils } from '@blocksuite/blocks';
-import { assertExists } from '@blocksuite/global/utils';
+import { AffineSchemas, TestUtils } from '@algogrind/blocks';
+import { assertExists } from '@algogrind/global/utils';
 import {
   type BlockCollection,
   DocCollection,
@@ -9,14 +9,14 @@ import {
   IdGeneratorType,
   Job,
   Schema,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import {
   type BlobSource,
   BroadcastChannelAwarenessSource,
   BroadcastChannelDocSource,
   IndexedDBBlobSource,
   MemoryBlobSource,
-} from '@blocksuite/sync';
+} from '@algogrind/sync';
 
 import type { InitFn } from '../data/utils.js';
 

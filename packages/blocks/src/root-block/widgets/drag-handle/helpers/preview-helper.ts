@@ -1,11 +1,11 @@
-import { SpecProvider } from '@blocksuite/affine-shared/utils';
+import { SpecProvider } from '@algogrind/affine-shared/utils';
 import {
   type BlockComponent,
   BlockStdScope,
   type DndEventState,
-} from '@blocksuite/block-std';
-import { Point } from '@blocksuite/global/utils';
-import { BlockViewType, type Query } from '@blocksuite/store';
+} from '@algogrind/block-std';
+import { Point } from '@algogrind/global/utils';
+import { BlockViewType, type Query } from '@algogrind/store';
 
 import type { AffineDragHandleWidget } from '../drag-handle.js';
 

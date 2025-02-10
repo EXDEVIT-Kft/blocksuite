@@ -11,11 +11,11 @@ import type {
   ToBlockSnapshotPayload,
   ToDocSnapshotPayload,
   ToSliceSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { assertExists } from '@blocksuite/global/utils';
-import { BaseAdapter } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { assertExists } from '@algogrind/global/utils';
+import { BaseAdapter } from '@algogrind/store';
 
 import { decodeClipboardBlobs, encodeClipboardBlobs } from './utils.js';
 

@@ -1,10 +1,7 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import {
-  createIdentifier,
-  type ServiceIdentifier,
-} from '@blocksuite/global/di';
+import { createIdentifier, type ServiceIdentifier } from '@algogrind/global/di';
 
 import type { InlineMarkdownMatch } from './type.js';
 

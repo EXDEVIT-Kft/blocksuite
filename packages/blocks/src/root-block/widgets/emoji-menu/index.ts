@@ -1,22 +1,22 @@
-import type { UIEventStateContext } from '@blocksuite/block-std';
+import type { UIEventStateContext } from '@algogrind/block-std';
 
 import {
   type AffineInlineEditor,
   getInlineEditorByModel,
-} from '@blocksuite/affine-components/rich-text';
+} from '@algogrind/affine-components/rich-text';
 import {
   getCurrentNativeRange,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { WidgetComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { WidgetComponent } from '@algogrind/block-std';
 import {
   assertExists,
   assertType,
   debounce,
   DisposableGroup,
   throttle,
-} from '@blocksuite/global/utils';
-import { InlineEditor } from '@blocksuite/inline';
+} from '@algogrind/global/utils';
+import { InlineEditor } from '@algogrind/inline';
 
 import type { RootBlockComponent } from '../../types.js';
 

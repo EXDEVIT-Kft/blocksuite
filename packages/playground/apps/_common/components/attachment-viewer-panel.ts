@@ -1,8 +1,8 @@
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
+import type { AttachmentBlockModel } from '@algogrind/affine-model';
 
-import { humanFileSize } from '@blocksuite/affine-shared/utils';
-import { getAttachmentFileIcons } from '@blocksuite/blocks';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { humanFileSize } from '@algogrind/affine-shared/utils';
+import { getAttachmentFileIcons } from '@algogrind/blocks';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,

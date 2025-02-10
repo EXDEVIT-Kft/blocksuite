@@ -1,5 +1,5 @@
-import { createModal } from '@blocksuite/affine-components/context-menu';
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { createModal } from '@algogrind/affine-components/context-menu';
+import { ShadowlessElement } from '@algogrind/block-std';
 import { CloseIcon } from '@blocksuite/icons/lit';
 import { css, html, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
