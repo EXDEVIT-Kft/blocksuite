@@ -69,7 +69,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     }
 
     .search-input::placeholder {
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-placeholder-color);
     }
 
     .template-categories {
@@ -79,6 +79,27 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       overflow-x: scroll;
 
       flex-shrink: 0;
+    }
+
+    .template-categories::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    /* Track */
+    .template-categories::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+
+    /* Handle */
+    .template-categories::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 1rem;
+    }
+
+    /* Handle on hover */
+    .template-categories::-webkit-scrollbar-thumb:hover {
+      background: #cbd5e1;
     }
 
     .category-entry {
@@ -97,7 +118,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .category-entry.selected,
     .category-entry:hover {
       color: var(--algogrind-text-paragraph-color);
-      background-color: var(--affine-background-tertiary-color);
+      background-color: var(--algogrind-code-background-color);
     }
 
     .template-viewport {
@@ -124,7 +145,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       position: relative;
       width: 135px;
       height: 80px;
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.02);
+      box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.125);
       background-color: var(--algogrind-background-color);
       border-radius: 4px;
       cursor: pointer;
@@ -165,7 +186,6 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
-      border: 1px solid var(--affine-black-10);
       border-radius: 4px;
       background-color: var(--algogrind-hover-color);
     }
