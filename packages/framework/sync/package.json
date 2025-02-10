@@ -27,7 +27,11 @@
     "yjs": "^13.6.15"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "module": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
   },
   "publishConfig": {
     "access": "restricted",

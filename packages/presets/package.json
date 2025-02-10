@@ -34,8 +34,16 @@
     "zod": "^3.23.8"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./effects": "./src/effects.ts"
+    ".": {
+      "module": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./effects": {
+      "module": "./dist/effects.js",
+      "types": "./dist/effects.d.ts",
+      "import": "./dist/effects.js"
+    }
   },
   "publishConfig": {
     "access": "restricted",
