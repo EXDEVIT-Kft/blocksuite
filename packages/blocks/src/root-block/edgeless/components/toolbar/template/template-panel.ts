@@ -387,7 +387,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
           <input
             class="search-input"
             type="text"
-            placeholder="Search file or anything..."
+            placeholder="Keress rá bármire..."
             @input=${this._updateSearchKeyword}
             @cut=${stopPropagation}
             @copy=${stopPropagation}
