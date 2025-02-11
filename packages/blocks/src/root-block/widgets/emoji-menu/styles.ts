@@ -19,9 +19,9 @@ export const styles = css`
     overflow: visible;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 368px) {
     .emoji-menu {
-      width: 310px;
+      width: calc(100vw - 3rem);
     }
   }
 
