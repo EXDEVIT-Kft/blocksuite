@@ -26,6 +26,11 @@ export const ParagraphKeymapExtension = KeymapExtension(
         if (!isStart) return;
 
         const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const model = doc.getBlock(text.from.blockId)?.model;
         if (!model || !matchFlavours(model, ['affine:paragraph'])) return;
 
@@ -52,6 +57,11 @@ export const ParagraphKeymapExtension = KeymapExtension(
       },
       'Mod-Enter': ctx => {
         const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const text = std.selection.find('text');
         if (!text) return;
         const model = doc.getBlock(text.from.blockId)?.model;
@@ -79,6 +89,11 @@ export const ParagraphKeymapExtension = KeymapExtension(
       },
       Enter: ctx => {
         const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const text = std.selection.find('text');
         if (!text) return;
         const model = doc.getBlock(text.from.blockId)?.model;
