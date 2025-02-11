@@ -151,20 +151,20 @@ export class FramePreview extends WithDisposable(ShadowlessElement) {
 
   private _renderSurfaceContent() {
     if (!this._previewDoc || !this.frame) return nothing;
-    const { width, height } = this.frameViewportWH;
+    const { height } = this.frameViewportWH;
 
     const _previewSpec = this._previewSpec.value;
     return html`<div
       class="frame-preview-surface-container"
       style=${styleMap({
-        width: `${this.surfaceWidth}px`,
+        width: `100%`,
         height: `${this.surfaceHeight}px`,
       })}
     >
       <div
         class="frame-preview-viewport"
         style=${styleMap({
-          width: `${width}px`,
+          width: `100%`,
           height: `${height}px`,
         })}
       >

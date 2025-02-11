@@ -34,6 +34,10 @@ const styles = css`
     display: block;
   }
 
+  frame-preview {
+    width: 100%;
+  }
+
   affine-frame-card {
     width: calc(100% - 0.875rem);
   }
