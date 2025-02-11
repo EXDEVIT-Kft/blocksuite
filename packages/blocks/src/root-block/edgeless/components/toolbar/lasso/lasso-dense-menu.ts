@@ -21,7 +21,7 @@ export const buildLassoDenseMenu: DenseMenuBuilder = edgeless => {
   };
 
   return menu.subMenu({
-    name: 'Lasso',
+    name: 'Lasszó',
     prefix: LassoFreeHandIcon,
     select: createSelect(LassoMode.FreeHand),
     isSelected: isActive,
@@ -29,13 +29,13 @@ export const buildLassoDenseMenu: DenseMenuBuilder = edgeless => {
       items: [
         menu.action({
           prefix: LassoFreeHandIcon,
-          name: 'Free',
+          name: 'Szabadkézi',
           select: createSelect(LassoMode.FreeHand),
           // isSelected: isActive && prevMode === LassoMode.FreeHand,
         }),
         menu.action({
           prefix: LassoPolygonalIcon,
-          name: 'Polygonal',
+          name: 'Sokszögű',
           select: createSelect(LassoMode.Polygonal),
           // isSelected: isActive && prevMode === LassoMode.Polygonal,
         }),
