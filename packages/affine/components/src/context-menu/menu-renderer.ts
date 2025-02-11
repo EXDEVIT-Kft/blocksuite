@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { ShadowlessElement } from '@blocksuite/block-std';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
@@ -254,18 +253,19 @@ export class MobileMenuComponent
 {
   static override styles = css`
     mobile-menu {
+      box-sizing: border-box;
       height: 100%;
       font-family: var(--algogrind-text-paragraph-family);
       display: flex;
       flex-direction: column;
       user-select: none;
       width: 100%;
-      background-color: ${unsafeCSSVarV2('layer/background/secondary')};
+      background-color: var(--algogrind-overlay-panel-background-color);
       padding: calc(8px + env(safe-area-inset-top, 0px)) 8px
         calc(8px + env(safe-area-inset-bottom, 0px)) 8px;
       position: absolute;
       z-index: 999;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-link-color);
     }
 
     .mobile-menu-body {
@@ -351,7 +351,7 @@ export class MobileMenuComponent
           display:flex;
           font-weight: 500;
           font-size: 17px;
-          color: ${unsafeCSSVarV2('button/primary')};
+          color: var(--algogrind-link-color);
           width: 50px;
           flex-shrink: 0;
           margin-right: 10px;
