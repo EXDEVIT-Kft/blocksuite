@@ -56,12 +56,24 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
     this.rootComponent.bindHotKey(
       {
         v: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           this._setEdgelessTool('default');
         },
         t: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           this._setEdgelessTool('text');
         },
         c: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           const mode = ConnectorMode.Curve;
           rootComponent.std.get(EditPropsStore).recordLastProps('connector', {
             mode,
@@ -69,7 +81,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           this._setEdgelessTool('connector', { mode });
         },
         l: () => {
-          if (!rootComponent.doc.awarenessStore.getFlag('enable_lasso_tool')) {
+          if (
+            !rootComponent.doc.awarenessStore.getFlag('enable_lasso_tool') ||
+            rootComponent.doc.readonly
+          ) {
             return;
           }
 
@@ -78,7 +93,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           });
         },
         'Shift-l': () => {
-          if (!rootComponent.doc.awarenessStore.getFlag('enable_lasso_tool')) {
+          if (
+            !rootComponent.doc.awarenessStore.getFlag('enable_lasso_tool') ||
+            rootComponent.doc.readonly
+          ) {
             return;
           }
           // toggle between lasso modes
@@ -100,6 +118,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           });
         },
         n: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           this._setEdgelessTool('affine:note', {
             childFlavour: DEFAULT_NOTE_CHILD_FLAVOUR,
             childType: DEFAULT_NOTE_CHILD_TYPE,
@@ -107,13 +129,23 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           });
         },
         p: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           this._setEdgelessTool('brush');
         },
         e: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           this._setEdgelessTool('eraser');
         },
         k: () => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           const { selection } = rootComponent.service;
 
           if (
@@ -127,7 +159,9 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           }
         },
         f: () => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           if (
             this.rootComponent.service.selection.selectedElements.length !==
               0 &&
@@ -150,7 +184,9 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           }
         },
         '-': () => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           const { selectedElements: elements } =
             rootComponent.service.selection;
           if (
@@ -162,6 +198,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           }
         },
         '@': () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           const std = this.rootComponent.std;
           if (
             std.selection.getGroup('note').length > 0 ||
@@ -193,7 +233,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
             .catch(console.error);
         },
         'Shift-s': () => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
+
           const controller = rootComponent.gfx.tool.currentTool$.peek();
           if (
             this.rootComponent.service.selection.editing ||
@@ -210,7 +253,9 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           controller.createOverlay();
         },
         'Mod-g': ctx => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           if (
             this.rootComponent.service.selection.selectedElements.length > 1 &&
             !this.rootComponent.service.selection.editing
@@ -220,7 +265,9 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           }
         },
         'Shift-Mod-g': ctx => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           const { selection } = this.rootComponent.service;
           if (
             selection.selectedElements.length === 1 &&
@@ -232,7 +279,9 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           }
         },
         'Mod-a': ctx => {
-          if (this.rootComponent.service.locked) return;
+          if (this.rootComponent.service.locked || rootComponent.doc.readonly) {
+            return;
+          }
           if (this.rootComponent.service.selection.editing) {
             return;
           }
@@ -259,32 +308,55 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           });
         },
         'Mod-1': ctx => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           ctx.get('defaultState').event.preventDefault();
           this.rootComponent.service.setZoomByAction('fit');
         },
         'Mod--': ctx => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           ctx.get('defaultState').event.preventDefault();
           this.rootComponent.service.setZoomByAction('out');
         },
         'Mod-0': ctx => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           ctx.get('defaultState').event.preventDefault();
           this.rootComponent.service.setZoomByAction('reset');
         },
         'Mod-=': ctx => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           ctx.get('defaultState').event.preventDefault();
           this.rootComponent.service.setZoomByAction('in');
         },
         Backspace: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._delete();
         },
         Delete: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._delete();
         },
         'Control-d': () => {
-          if (!IS_MAC) return;
+          if (!IS_MAC || rootComponent.doc.readonly) {
+            return;
+          }
           this._delete();
         },
         Escape: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           const currentTool = this.rootComponent.gfx.tool.currentTool$.peek();
           if (currentTool instanceof LassoTool && currentTool.isSelecting) {
             currentTool.abort();
@@ -299,38 +371,65 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
         },
 
         ArrowUp: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowUp');
         },
 
         ArrowDown: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowDown');
         },
 
         ArrowLeft: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowLeft');
         },
 
         ArrowRight: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowRight');
         },
 
         'Shift-ArrowUp': () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowUp', true);
         },
 
         'Shift-ArrowDown': () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowDown', true);
         },
 
         'Shift-ArrowLeft': () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowLeft', true);
         },
 
         'Shift-ArrowRight': () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           this._move('ArrowRight', true);
         },
 
         Enter: () => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
           const { service } = rootComponent;
           const selection = service.selection;
           const elements = selection.selectedElements;
@@ -392,6 +491,10 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
           });
         },
         Tab: ctx => {
+          if (rootComponent.doc.readonly) {
+            return;
+          }
+
           ctx.get('defaultState').event.preventDefault();
 
           const { service } = rootComponent;
