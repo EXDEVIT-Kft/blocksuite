@@ -311,6 +311,14 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragStart', ctx => {
+        console.log(this.currentTool$.peek());
+        if (
+          this.std.doc.readonly &&
+          this.currentTool$.peek()?.toolName !== 'pan'
+        ) {
+          return;
+        }
+
         const evt = ctx.get('pointerState');
 
         if (
@@ -355,7 +363,11 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragMove', ctx => {
-        if (!this.dragging$.peek()) {
+        if (
+          !this.dragging$.peek() ||
+          (this.std.doc.readonly &&
+            this.currentTool$.peek()?.toolName !== 'pan')
+        ) {
           return;
         }
 
@@ -383,7 +395,11 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragEnd', ctx => {
-        if (!this.dragging$.peek()) {
+        if (
+          !this.dragging$.peek() ||
+          (this.std.doc.readonly &&
+            this.currentTool$.peek()?.toolName !== 'pan')
+        ) {
           return;
         }
 
