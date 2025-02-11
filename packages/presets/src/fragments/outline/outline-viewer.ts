@@ -168,9 +168,20 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
   private _lockActiveHeadingId = false;
 
   private _scrollPanel = () => {
-    this._activeItem?.scrollIntoView({
-      behavior: 'instant',
-      block: 'center',
+    if (!this._activeItem) return;
+    
+    const panel = this._activeItem.closest('.outline-viewer-panel');
+    if (!panel) return;
+
+    // Calculate scroll position to center the active item
+    const panelRect = panel.getBoundingClientRect();
+    const itemRect = this._activeItem.getBoundingClientRect();
+    
+    const scrollTop = panel.scrollTop + (itemRect.top - panelRect.top) - panelRect.height / 2 + itemRect.height / 2;
+    
+    panel.scrollTo({
+      top: scrollTop,
+      behavior: 'instant'
     });
   };
 
