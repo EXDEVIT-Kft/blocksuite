@@ -185,7 +185,7 @@ export const paragraphBlockStyles = css`
     position: absolute;
     display: none;
     left: 0;
-    bottom: 0;
+    top: 0;
     pointer-events: none;
     color: var(--algogrind-text-placeholder-color);
     fill: var(--algogrind-text-placeholder-color);
