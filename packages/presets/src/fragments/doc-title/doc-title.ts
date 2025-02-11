@@ -7,7 +7,7 @@ import { assertExists, WithDisposable } from '@blocksuite/global/utils';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
-const DOC_BLOCK_CHILD_PADDING = 24;
+const DOC_BLOCK_CHILD_PADDING = 20;
 
 export class DocTitle extends WithDisposable(ShadowlessElement) {
   static override styles = css`
