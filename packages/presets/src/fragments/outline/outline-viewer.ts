@@ -46,7 +46,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
     .outline-viewer-indicators-container {
       position: relative;
       height: min-content;
-      max-height: 100%;
+      max-height: 80dvh;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
