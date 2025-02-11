@@ -1,5 +1,9 @@
 import { PropTypes, requiredProperties } from '@blocksuite/block-std';
-import { NoteDisplayMode, scrollbarStyle } from '@blocksuite/blocks';
+import {
+  NoteDisplayMode,
+  type ParagraphBlockModel,
+  scrollbarStyle,
+} from '@blocksuite/blocks';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
 import { signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
@@ -57,15 +61,38 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
     }
 
     .outline-viewer-indicator {
-      width: 10px;
+      width: 20px;
       height: 2px;
       border-radius: 1px;
       overflow: hidden;
       background: var(--affine-black-10, rgba(0, 0, 0, 0.1));
     }
 
+    .outline-viewer-indicator[data-level='h1'] {
+      width: 20px;
+    }
+
+    .outline-viewer-indicator[data-level='h2'] {
+      width: 16px;
+    }
+
+    .outline-viewer-indicator[data-level='h3'] {
+      width: 12px;
+    }
+
+    .outline-viewer-indicator[data-level='h4'] {
+      width: 10px;
+    }
+
+    .outline-viewer-indicator[data-level='h5'] {
+      width: 8px;
+    }
+
+    .outline-viewer-indicator[data-level='h6'] {
+      width: 6px;
+    }
+
     .outline-viewer-indicator.active {
-      width: 14px;
       background: var(--algogrind-text-paragraph-color);
     }
 
@@ -149,16 +176,6 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
         left: -2.25rem;
       }
     }
-
-    @media (min-width: 1200px) {
-      .outline-viewer-indicator {
-        width: 20px;
-      }
-
-      .outline-viewer-indicator.active {
-        width: 24px;
-      }
-    }
   `;
 
   private _activeHeadingId$ = signal<string | null>(null);
@@ -169,19 +186,23 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
 
   private _scrollPanel = () => {
     if (!this._activeItem) return;
-    
+
     const panel = this._activeItem.closest('.outline-viewer-panel');
     if (!panel) return;
 
     // Calculate scroll position to center the active item
     const panelRect = panel.getBoundingClientRect();
     const itemRect = this._activeItem.getBoundingClientRect();
-    
-    const scrollTop = panel.scrollTop + (itemRect.top - panelRect.top) - panelRect.height / 2 + itemRect.height / 2;
-    
+
+    const scrollTop =
+      panel.scrollTop +
+      (itemRect.top - panelRect.top) -
+      panelRect.height / 2 +
+      itemRect.height / 2;
+
     panel.scrollTo({
       top: scrollTop,
-      behavior: 'instant'
+      behavior: 'instant',
     });
   };
 
@@ -264,6 +285,10 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
                     'outline-viewer-indicator': true,
                     active: this._activeHeadingId$.value === block.id,
                   })}
+                  data-level=${block.flavour === 'affine:paragraph' &&
+                  (block as ParagraphBlockModel).type.startsWith('h')
+                    ? (block as ParagraphBlockModel).type
+                    : 'h1'}
                 ></div>
               </div>`
           )}
