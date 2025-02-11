@@ -316,6 +316,12 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           key === 'Enter'
         ) {
           event.preventDefault();
+
+          // Do not insert newline after pressing enter
+          if (key === 'Enter') {
+            event.stopPropagation();
+          }
+
           this._handleKeyNavigation(key);
           return;
         }
