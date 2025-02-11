@@ -311,7 +311,6 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragStart', ctx => {
-        console.log(this.currentTool$.peek());
         if (
           this.std.doc.readonly &&
           this.currentTool$.peek()?.toolName !== 'pan'
