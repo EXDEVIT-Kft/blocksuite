@@ -69,14 +69,15 @@ export class ZoomBarToggleButton extends WithDisposable(LitElement) {
   override firstUpdated() {
     const { disposables } = this;
     disposables.add(
-      this.edgeless.slots.readonlyUpdated.on(() => {
-        this.requestUpdate();
-      })
+      this.edgeless.service.viewport.viewportUpdated.on(() =>
+        this.requestUpdate()
+      )
     );
   }
 
   override render() {
-    if (this.edgeless.doc.readonly) {
+    // Disable in presentation mode
+    if (this.edgeless.gfx.tool.currentToolName$.value === 'frameNavigator') {
       return nothing;
     }
 

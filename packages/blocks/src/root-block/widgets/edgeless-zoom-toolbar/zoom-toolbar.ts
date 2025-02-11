@@ -134,15 +134,11 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
         this.requestUpdate()
       )
     );
-    disposables.add(
-      this.edgeless.slots.readonlyUpdated.on(() => {
-        this.requestUpdate();
-      })
-    );
   }
 
   override render() {
-    if (this.edgeless.doc.readonly) {
+    // Disable in presentation mode
+    if (this.edgelessTool.type === 'frameNavigator') {
       return nothing;
     }
 
