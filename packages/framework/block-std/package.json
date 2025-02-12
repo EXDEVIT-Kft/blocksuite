@@ -36,9 +36,21 @@
     "zod": "^3.23.8"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./gfx": "./src/gfx/index.ts",
-    "./effects": "./src/effects.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "module": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./gfx": {
+      "types": "./dist/gfx/index.d.ts",
+      "module": "./dist/gfx/index.js",
+      "import": "./dist/gfx/index.js"
+    },
+    "./effects": {
+      "types": "./dist/effects.d.ts",
+      "module": "./dist/effects.js",
+      "import": "./dist/effects.js"
+    }
   },
   "publishConfig": {
     "access": "restricted",
