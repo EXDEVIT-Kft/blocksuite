@@ -253,7 +253,9 @@ export class FramePanelBody extends SignalWatcher(
   private _renderEmptyContent() {
     const emptyContent = html` <div class="no-frame-container">
       <div class="no-frame-placeholder">
-        Adj a vászonhoz kereteket, amiket utána prezentálhatsz.
+        ${this.editorHost.doc.readonly
+          ? 'Ehhez a dokumentumhoz nem tartozik prezentáció.'
+          : 'Adj a vászonhoz kereteket, amiket utána prezentálhatsz.'}
       </div>
     </div>`;
 

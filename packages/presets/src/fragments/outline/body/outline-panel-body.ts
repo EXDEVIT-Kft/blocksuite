@@ -248,7 +248,7 @@ export class OutlinePanelBody extends SignalWatcher(
   private _EmptyPanel() {
     return html`<div class="no-note-container">
       <div class="note-placeholder">
-        Tartalomjegyzék létrehozásához használj címsorokat.
+        ${this.doc.readonly ? 'Ehhez a dokumentumhoz nem tartozik tartalomjegyzék' : 'Tartalomjegyzék létrehozásához használj címsorokat.'}
       </div>
     </div>`;
   }
