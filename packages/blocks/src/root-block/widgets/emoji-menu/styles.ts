@@ -8,7 +8,7 @@ export const styles = css`
     left: 1rem;
     top: 0;
     box-sizing: border-box;
-    width: 320px;
+    min-width: 315px;
     background: var(--algogrind-overlay-panel-background-color);
     box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
     border-radius: 8px;
