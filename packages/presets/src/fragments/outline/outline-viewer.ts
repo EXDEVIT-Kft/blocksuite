@@ -92,6 +92,36 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       width: 6px;
     }
 
+    @media (max-width: 600px) {
+      .outline-viewer-indicator {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h1'] {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h2'] {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h3'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h4'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h5'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h6'] {
+        width: 4px;
+      }
+    }
+
     .outline-viewer-indicator.active {
       background: var(--algogrind-text-paragraph-color);
     }
