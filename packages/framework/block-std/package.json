@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/block-std",
-  "version": "0.19.13",
+  "version": "0.19.14",
   "description": "Std for blocksuite blocks",
   "type": "module",
   "repository": {
