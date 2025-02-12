@@ -2,9 +2,9 @@ import type {
   Template,
   TemplateCategory,
   TemplateManager,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 
-import { EdgelessTemplatePanel } from '@blocksuite/blocks';
+import { EdgelessTemplatePanel } from '@algogrind/blocks';
 
 export function setupEdgelessTemplate() {
   const playgroundTemplates = [

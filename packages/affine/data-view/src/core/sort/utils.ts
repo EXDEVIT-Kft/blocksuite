@@ -2,7 +2,7 @@ import type {
   DatabaseAllViewEvents,
   EventTraceFn,
   SortParams,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 

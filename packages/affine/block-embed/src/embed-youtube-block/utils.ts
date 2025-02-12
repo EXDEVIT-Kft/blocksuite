@@ -1,10 +1,10 @@
 import type {
   EmbedYoutubeBlockUrlData,
   EmbedYoutubeModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
-import { isAbortError } from '@blocksuite/affine-shared/utils';
-import { assertExists } from '@blocksuite/global/utils';
+import { isAbortError } from '@algogrind/affine-shared/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import type { LinkPreviewer } from '../common/link-previewer.js';
 import type { EmbedYoutubeBlockComponent } from './embed-youtube-block.js';

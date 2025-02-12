@@ -1,14 +1,14 @@
 import type {
   AttachmentBlockModel,
   ImageBlockProps,
-} from '@blocksuite/affine-model';
-import type { ExtensionType } from '@blocksuite/block-std';
-import type { Container } from '@blocksuite/global/di';
+} from '@algogrind/affine-model';
+import type { ExtensionType } from '@algogrind/block-std';
+import type { Container } from '@algogrind/global/di';
 import type { TemplateResult } from 'lit';
 
-import { withTempBlobData } from '@blocksuite/affine-shared/utils';
-import { Extension } from '@blocksuite/block-std';
-import { createIdentifier } from '@blocksuite/global/di';
+import { withTempBlobData } from '@algogrind/affine-shared/utils';
+import { Extension } from '@algogrind/block-std';
+import { createIdentifier } from '@algogrind/global/di';
 import { html } from 'lit';
 
 import { transformModel } from '../root-block/utils/operations/model.js';

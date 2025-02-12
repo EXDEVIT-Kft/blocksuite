@@ -1,4 +1,4 @@
-import type { BlockModel, Doc } from '@blocksuite/store';
+import type { BlockModel, Doc } from '@algogrind/store';
 
 import {
   type Cell,
@@ -8,9 +8,9 @@ import {
   NoteBlockSchema,
   ParagraphBlockSchema,
   RootBlockSchema,
-} from '@blocksuite/affine-model';
-import { propertyModelPresets } from '@blocksuite/data-view/property-pure-presets';
-import { DocCollection, IdGeneratorType, Schema } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import { propertyModelPresets } from '@algogrind/data-view/property-pure-presets';
+import { DocCollection, IdGeneratorType, Schema } from '@algogrind/store';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { databaseBlockColumns } from '../../database-block/index.js';

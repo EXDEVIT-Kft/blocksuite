@@ -1,6 +1,6 @@
-import type { PropertyMetaConfig } from '@blocksuite/data-view';
+import type { PropertyMetaConfig } from '@algogrind/data-view';
 
-import { propertyPresets } from '@blocksuite/data-view/property-presets';
+import { propertyPresets } from '@algogrind/data-view/property-presets';
 
 import { richTextColumnConfig } from '../../database-block/properties/rich-text/cell-renderer.js';
 

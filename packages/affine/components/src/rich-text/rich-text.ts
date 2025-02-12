@@ -1,8 +1,8 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import type { Y } from '@blocksuite/store';
+import type { AffineTextAttributes } from '@algogrind/affine-shared/types';
+import type { Y } from '@algogrind/store';
 
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { assertExists, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { assertExists, WithDisposable } from '@algogrind/global/utils';
 import {
   type AttributeRenderer,
   createInlineKeyDownHandler,
@@ -12,8 +12,8 @@ import {
   type InlineRangeProvider,
   type KeyboardBindingContext,
   type VLine,
-} from '@blocksuite/inline';
-import { DocCollection, Text } from '@blocksuite/store';
+} from '@algogrind/inline';
+import { DocCollection, Text } from '@algogrind/store';
 import { effect } from '@preact/signals-core';
 import { css, html, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';

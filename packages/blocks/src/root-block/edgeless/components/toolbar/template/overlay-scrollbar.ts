@@ -2,8 +2,8 @@ import {
   on,
   once,
   requestConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
-import { DisposableGroup } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { DisposableGroup } from '@algogrind/global/utils';
 import { css, html, LitElement } from 'lit';
 import { query } from 'lit/decorators.js';
 

@@ -2,12 +2,12 @@ import {
   Heading1Icon,
   LinkIcon,
   TextIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { state } from 'lit/decorators.js';
@@ -37,15 +37,16 @@ export class EdgelessNoteSeniorButton extends EdgelessToolbarToolMixin(
       --paper-foriegn-color: rgba(0, 0, 0, 0.1);
       --paper-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
       --icon-card-bg: #fff;
-      --icon-card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22),
-        inset 0px -2px 1px rgba(0, 0, 0, 0.14);
+      --icon-card-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.22), inset 0px -2px 1px rgba(0, 0, 0, 0.14);
     }
     .note-root[data-app-theme='dark'] {
       --paper-border-color: var(--algogrind-border-color);
       --paper-foriegn-color: rgba(255, 255, 255, 0.12);
       --paper-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
       --icon-card-bg: #343434;
-      --icon-card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
+      --icon-card-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.6),
         inset 0px -2px 1px rgba(255, 255, 255, 0.06);
     }
 

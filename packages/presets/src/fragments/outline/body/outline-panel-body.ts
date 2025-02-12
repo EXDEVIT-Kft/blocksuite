@@ -1,20 +1,16 @@
 import type {
   EdgelessRootBlockComponent,
   NoteBlockModel,
-} from '@blocksuite/blocks';
-import type { Doc } from '@blocksuite/store';
+} from '@algogrind/blocks';
+import type { Doc } from '@algogrind/store';
 
-import {
-  BlocksUtils,
-  NoteDisplayMode,
-  ThemeProvider,
-} from '@blocksuite/blocks';
+import { BlocksUtils, NoteDisplayMode, ThemeProvider } from '@algogrind/blocks';
 import {
   Bound,
   DisposableGroup,
   SignalWatcher,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { effect, signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
@@ -248,7 +244,9 @@ export class OutlinePanelBody extends SignalWatcher(
   private _EmptyPanel() {
     return html`<div class="no-note-container">
       <div class="note-placeholder">
-        ${this.doc.readonly ? 'Ehhez a dokumentumhoz nem tartozik tartalomjegyzék' : 'Tartalomjegyzék létrehozásához használj címsorokat.'}
+        ${this.doc.readonly
+          ? 'Ehhez a dokumentumhoz nem tartozik tartalomjegyzék'
+          : 'Tartalomjegyzék létrehozásához használj címsorokat.'}
       </div>
     </div>`;
   }

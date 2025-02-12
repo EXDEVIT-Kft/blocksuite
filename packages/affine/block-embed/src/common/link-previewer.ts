@@ -1,8 +1,8 @@
-import type { LinkPreviewData } from '@blocksuite/affine-model';
+import type { LinkPreviewData } from '@algogrind/affine-model';
 
-import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '@blocksuite/affine-shared/consts';
-import { isAbortError } from '@blocksuite/affine-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '@algogrind/affine-shared/consts';
+import { isAbortError } from '@algogrind/affine-shared/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 export type LinkPreviewResponseData = {
   url: string;

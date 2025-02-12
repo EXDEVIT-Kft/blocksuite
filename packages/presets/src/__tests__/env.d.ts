@@ -1,4 +1,4 @@
-import type { Doc, DocCollection, Job } from '@blocksuite/store';
+import type { Doc, DocCollection, Job } from '@algogrind/store';
 
 import type { AffineEditorContainer } from '../index.js';
 

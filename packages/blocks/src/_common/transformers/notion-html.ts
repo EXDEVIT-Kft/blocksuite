@@ -1,5 +1,5 @@
-import { sha } from '@blocksuite/global/utils';
-import { type DocCollection, extMimeMap, Job } from '@blocksuite/store';
+import { sha } from '@algogrind/global/utils';
+import { type DocCollection, extMimeMap, Job } from '@algogrind/store';
 
 import { NotionHtmlAdapter } from '../adapters/notion-html/notion-html.js';
 import { defaultImageProxyMiddleware } from './middlewares.js';

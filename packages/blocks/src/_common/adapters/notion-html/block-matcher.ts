@@ -1,14 +1,14 @@
-import type { BlockNotionHtmlAdapterMatcher } from '@blocksuite/affine-shared/adapters';
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { BlockNotionHtmlAdapterMatcher } from '@algogrind/affine-shared/adapters';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   ListBlockNotionHtmlAdapterExtension,
   listBlockNotionHtmlAdapterMatcher,
-} from '@blocksuite/affine-block-list';
+} from '@algogrind/affine-block-list';
 import {
   ParagraphBlockNotionHtmlAdapterExtension,
   paragraphBlockNotionHtmlAdapterMatcher,
-} from '@blocksuite/affine-block-paragraph';
+} from '@algogrind/affine-block-paragraph';
 
 import {
   AttachmentBlockNotionHtmlAdapterExtension,

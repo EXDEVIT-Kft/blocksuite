@@ -1,6 +1,6 @@
 /* CSS variables. You need to handle all places where `CSS variables` are marked. */
 
-import { LINE_COLORS, SHAPE_FILL_COLORS } from '@blocksuite/affine-model';
+import { LINE_COLORS, SHAPE_FILL_COLORS } from '@algogrind/affine-model';
 import {
   type AffineCssVariables,
   type AffineTheme,

@@ -1,5 +1,5 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { type Disposable, Slot } from '@blocksuite/global/utils';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { type Disposable, Slot } from '@algogrind/global/utils';
 import { signal } from '@preact/signals-core';
 
 import type { BlockModel, Schema } from '../../schema/index.js';

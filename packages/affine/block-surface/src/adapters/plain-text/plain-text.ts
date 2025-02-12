@@ -1,7 +1,7 @@
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
 import { getMindMapNodeMap } from '../utils/mindmap.js';
 import { PlainTextElementModelAdapter } from './element-adapter/index.js';

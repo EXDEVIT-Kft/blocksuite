@@ -1,8 +1,8 @@
 import {
   type AdvancedPortalOptions,
   createLitPortal,
-} from '@blocksuite/affine-components/portal';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/portal';
+import { WithDisposable } from '@algogrind/global/utils';
 import { DoneIcon, SearchIcon } from '@blocksuite/icons/lit';
 import { autoPlacement, offset, type Placement, size } from '@floating-ui/dom';
 import { html, LitElement, nothing } from 'lit';

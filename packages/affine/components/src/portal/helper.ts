@@ -1,4 +1,4 @@
-import { assertExists, Slot } from '@blocksuite/global/utils';
+import { assertExists, Slot } from '@algogrind/global/utils';
 import {
   autoUpdate,
   computePosition,

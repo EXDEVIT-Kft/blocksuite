@@ -1,11 +1,11 @@
-import type { BlockStdScope, EditorHost } from '@blocksuite/block-std';
-import type { InlineRange } from '@blocksuite/inline';
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockStdScope, EditorHost } from '@algogrind/block-std';
+import type { InlineRange } from '@algogrind/inline';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   asyncGetBlockComponent,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 import type { RichText } from './rich-text.js';
 
@@ -36,7 +36,7 @@ export function getInlineEditorByModel(
     typeof model === 'string'
       ? editorHost.std.doc.getBlock(model)?.model
       : model;
-  // @ts-ignore TODO: migrate database model to `@blocksuite/affine-model`
+  // @ts-ignore TODO: migrate database model to `@algogrind/affine-model`
   if (!blockModel || matchFlavours(blockModel, ['affine:database'])) {
     // Not support database model since it's may be have multiple inline editor instances.
     // Support to enter the editing state through the Enter key in the database.

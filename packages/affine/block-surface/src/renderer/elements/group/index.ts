@@ -1,6 +1,6 @@
-import type { GroupElementModel } from '@blocksuite/affine-model';
+import type { GroupElementModel } from '@algogrind/affine-model';
 
-import { Bound } from '@blocksuite/global/utils';
+import { Bound } from '@algogrind/global/utils';
 
 import type { CanvasRenderer } from '../../canvas-renderer.js';
 

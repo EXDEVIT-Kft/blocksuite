@@ -1,6 +1,6 @@
 import type { ReactiveController } from 'lit';
 
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
+import { popupTargetFromElement } from '@algogrind/affine-components/context-menu';
 
 import type { DataViewTable } from '../table-view.js';
 

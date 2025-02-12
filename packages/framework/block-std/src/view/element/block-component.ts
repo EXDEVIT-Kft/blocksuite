@@ -1,7 +1,7 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
-import { Doc } from '@blocksuite/store';
-import { type BlockModel, BlockViewType } from '@blocksuite/store';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
+import { Doc } from '@algogrind/store';
+import { type BlockModel, BlockViewType } from '@algogrind/store';
 import { consume, provide } from '@lit/context';
 import { computed } from '@preact/signals-core';
 import { nothing, type TemplateResult } from 'lit';

@@ -1,5 +1,5 @@
-import type { EditorHost } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { EditorHost } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
 import { DocModeProvider } from '../../services/doc-mode-service.js';
 import { matchFlavours } from './checker.js';

@@ -1,6 +1,6 @@
-import type { DocSource } from '@blocksuite/sync';
+import type { DocSource } from '@algogrind/sync';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import { diffUpdate, encodeStateVectorFromUpdate, mergeUpdates } from 'yjs';
 
 import type { WebSocketMessage } from './types';

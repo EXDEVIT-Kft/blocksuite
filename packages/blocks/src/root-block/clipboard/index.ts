@@ -1,7 +1,7 @@
-import type { BlockComponent, UIEventHandler } from '@blocksuite/block-std';
-import type { BlockSnapshot, Doc } from '@blocksuite/store';
+import type { BlockComponent, UIEventHandler } from '@algogrind/block-std';
+import type { BlockSnapshot, Doc } from '@algogrind/store';
 
-import { DisposableGroup } from '@blocksuite/global/utils';
+import { DisposableGroup } from '@algogrind/global/utils';
 
 import {
   AttachmentAdapter,

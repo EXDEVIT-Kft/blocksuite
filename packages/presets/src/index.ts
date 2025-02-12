@@ -1,4 +1,4 @@
-import '@blocksuite/affine-block-surface/effects';
+import '@algogrind/affine-block-surface/effects';
 
 export * from './editors/index.js';
 export * from './fragments/index.js';
@@ -20,7 +20,7 @@ const importIdentifier = '__ $BLOCKSUITE_EDITOR$ __';
 if (env[importIdentifier] === true) {
   // https://github.com/yjs/yjs/issues/438
   console.error(
-    '@blocksuite/presets was already imported. This breaks constructor checks and will lead to issues!'
+    '@algogrind/presets was already imported. This breaks constructor checks and will lead to issues!'
   );
 }
 

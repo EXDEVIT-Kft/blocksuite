@@ -1,6 +1,6 @@
-import type { FromSnapshotPayload, SnapshotNode } from '@blocksuite/store';
+import type { FromSnapshotPayload, SnapshotNode } from '@algogrind/store';
 
-import { BaseBlockTransformer } from '@blocksuite/store';
+import { BaseBlockTransformer } from '@algogrind/store';
 
 import type { ImageBlockProps } from './image-model.js';
 

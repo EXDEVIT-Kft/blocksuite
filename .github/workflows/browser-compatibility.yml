@@ -18,7 +18,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Build
-        run: yarn exec nx vite:build @blocksuite/playground
+        run: yarn exec nx vite:build @algogrind/playground
 
   main-test:
     if: github.repository == 'toeverything/blocksuite'
@@ -40,7 +40,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Build playground
-        run: yarn exec nx vite:build @blocksuite/playground
+        run: yarn exec nx vite:build @algogrind/playground
 
       - name: Install playwright browsers
         run: npx playwright install --with-deps ${{ matrix.browsers }}

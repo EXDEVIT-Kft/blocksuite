@@ -1,12 +1,12 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { BlockModel } from '@blocksuite/store';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { BlockModel } from '@algogrind/store';
 
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
 import {
   type GfxController,
   GfxControllerIdentifier,
-} from '@blocksuite/block-std/gfx';
+} from '@algogrind/block-std/gfx';
 
 import type { Connectable } from '../../../_common/utils/index.js';
 import type { EdgelessRootBlockComponent } from '../index.js';

@@ -1,4 +1,4 @@
-import { propertyType, t } from '@blocksuite/data-view';
+import { propertyType, t } from '@algogrind/data-view';
 
 export const linkColumnType = propertyType('link');
 export const linkColumnModelConfig = linkColumnType.modelConfig<string>({

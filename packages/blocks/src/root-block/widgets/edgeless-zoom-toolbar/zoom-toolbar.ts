@@ -2,9 +2,9 @@ import {
   MinusIcon,
   PlusIcon,
   ViewBarIcon,
-} from '@blocksuite/affine-components/icons';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { WithDisposable } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

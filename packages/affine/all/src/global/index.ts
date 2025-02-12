@@ -1,1 +1,1 @@
-export * from '@blocksuite/global';
+export * from '@algogrind/global';

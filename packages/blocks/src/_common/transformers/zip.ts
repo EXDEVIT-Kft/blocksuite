@@ -1,7 +1,7 @@
-import type { Doc, DocCollection, DocSnapshot } from '@blocksuite/store';
+import type { Doc, DocCollection, DocSnapshot } from '@algogrind/store';
 
-import { sha } from '@blocksuite/global/utils';
-import { extMimeMap, getAssetName, Job } from '@blocksuite/store';
+import { sha } from '@algogrind/global/utils';
+import { extMimeMap, getAssetName, Job } from '@algogrind/store';
 
 import { download, Unzip, Zip } from '../transformers/utils.js';
 import { replaceIdMiddleware, titleMiddleware } from './middlewares.js';
