@@ -3,7 +3,6 @@ import type { FrameBlockModel } from '@blocksuite/affine-model';
 import { ThemeProvider } from '@blocksuite/affine-shared/services';
 import { GfxBlockComponent } from '@blocksuite/block-std';
 import { Bound } from '@blocksuite/global/utils';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { html } from 'lit';
 import { state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -76,11 +75,11 @@ export class FrameBlockComponent extends GfxBlockComponent<FrameBlockModel> {
           backgroundColor,
           height: '100%',
           width: '100%',
-          borderRadius: '2px',
+          borderRadius: '8px',
           border:
             _isNavigator || !showBorder
               ? 'none'
-              : `1px solid ${cssVarV2('edgeless/frame/border/default')}`,
+              : `1px solid var(--algogrind-border-color)`,
         })}
       ></div>
     `;

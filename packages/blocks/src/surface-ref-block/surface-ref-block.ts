@@ -151,7 +151,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
 
     .ref-content {
       position: relative;
-      padding: 20px;
+      margin-top: 20px;
       background-color: var(--algogrind-background-color);
       background: radial-gradient(
         var(--algogrind-grid-color) 1px,
@@ -169,8 +169,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
     }
 
     .ref-viewport.frame {
-      border-radius: 2px;
-      border: 1px solid var(--affine-black-30);
+      border-radius: 8px;
     }
 
     .surface-ref-mask {
@@ -180,10 +179,16 @@ export class SurfaceRefBlockComponent extends BlockComponent<
       width: 100%;
       height: 100%;
       break-inside: avoid;
+      border: 1px solid var(--algogrind-border-color);
+      border-radius: 8px;
     }
 
     .surface-ref-mask:hover {
       background-color: rgba(211, 211, 211, 0.1);
+    }
+
+    .surface-ref-mask .ref-label {
+      display: block;
     }
 
     .surface-ref-mask:hover .ref-label {
@@ -197,44 +202,35 @@ export class SurfaceRefBlockComponent extends BlockComponent<
 
     .ref-label {
       position: absolute;
-      left: 0;
-      bottom: 0;
-
-      width: 100%;
-      padding: 8px 16px;
+      left: 4px;
+      top: 4px;
+      max-width: calc(100% - 8px);
+      padding: 2px 12px 2px 8px;
+      border-radius: 6px;
       border: 1px solid var(--algogrind-border-color);
       gap: 14px;
-
       background: var(--algogrind-background-color);
-
-      font-size: 12px;
-
+      font-size: var(--algogrind-text-caption-size);
       user-select: none;
+      box-sizing: border-box;
     }
 
     .ref-label .title {
       display: inline-block;
       font-weight: 600;
       font-family: var(--algogrind-text-paragraph-family);
-      line-height: 20px;
+      line-height: 16px;
 
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-caption-color);
     }
 
     .ref-label .title > svg {
-      color: var(--affine-icon-secondary);
+      color: var(--algogrind-text-caption-color);
       display: inline-block;
       vertical-align: baseline;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       vertical-align: bottom;
-    }
-
-    .ref-label .suffix {
-      display: inline-block;
-      font-weight: 400;
-      color: var(--algogrind-text-disabled-color);
-      line-height: 20px;
     }
   `;
 
@@ -536,7 +532,6 @@ export class SurfaceRefBlockComponent extends BlockComponent<
             REF_LABEL_ICON.DEFAULT}
             <span>${title}</span>
           </div>
-          <div class="suffix">Rajztábla nézetből</div>
         </div>
       </div>
     `;
