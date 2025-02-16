@@ -30,12 +30,11 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
   ImageBlockService
 > {
   // [ALGOGRIND]
-  // Image lazy loading helper
-  private hasFetchedBlob = false;
-
-  // [ALGOGRIND]
   // Image lazy loading IntersectionObserver
   private intersectionObserver?: IntersectionObserver;
+
+  // Add a flag to track if we're currently attempting to load
+  private isAttemptingLoad = false;
 
   convertToCardView = () => {
     turnImageIntoCardView(this).catch(console.error);
@@ -51,7 +50,14 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
 
   refreshData = () => {
     this.retryCount = 0;
-    fetchImageBlob(this).catch(console.error);
+    // Set attempting load flag
+    this.isAttemptingLoad = true;
+    fetchImageBlob(this)
+      .catch(console.error)
+      .finally(() => {
+        // Clear attempting load flag when done (success or failure)
+        this.isAttemptingLoad = false;
+      });
   };
 
   get resizableImg() {
@@ -118,11 +124,16 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
       this.intersectionObserver = new IntersectionObserver(
         entries => {
           for (const entry of entries) {
-            if (entry.isIntersecting && !this.hasFetchedBlob) {
-              // The image is in about to be in view AND was not loaded previously
-              // => fetch blob now
+            // Start loading if:
+            // 1. The image is intersecting AND
+            // 2. We're not currently attempting to load AND
+            // 3. We don't have a successful load yet (no blobUrl)
+            if (
+              entry.isIntersecting &&
+              !this.isAttemptingLoad &&
+              !this.blobUrl
+            ) {
               this.refreshData();
-              this.hasFetchedBlob = true;
             }
           }
         },
@@ -132,6 +143,18 @@ export class ImageBlockComponent extends CaptionedBlockComponent<
       // [ALGOGRIND]
       // Observing the image container
       this.intersectionObserver.observe(this.imageContainer);
+
+      // Check if already in viewport on mount
+      const rect = this.imageContainer.getBoundingClientRect();
+      const isInViewport =
+        rect.top >= -300 && // Adding the rootMargin
+        rect.left >= -300 &&
+        rect.bottom <= window.innerHeight + 300 &&
+        rect.right <= window.innerWidth + 300;
+
+      if (isInViewport && !this.blobUrl) {
+        this.refreshData();
+      }
     }
   }
 
