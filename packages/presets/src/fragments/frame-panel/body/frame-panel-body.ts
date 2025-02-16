@@ -172,7 +172,7 @@ export class FramePanelBody extends SignalWatcher(
   }
 
   private _drag(e: DragEvent) {
-    if (!this._selected.length) return;
+    if (!this._selected.length || this.editorHost.doc.readonly) return;
 
     this._dragging = true;
 
