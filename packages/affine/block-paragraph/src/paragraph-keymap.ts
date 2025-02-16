@@ -170,6 +170,12 @@ export const ParagraphKeymapExtension = KeymapExtension(
         return true;
       },
       Delete: ctx => {
+        const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const deleted = forwardDelete(std);
         if (!deleted) {
           return;
@@ -179,7 +185,9 @@ export const ParagraphKeymapExtension = KeymapExtension(
         return true;
       },
       'Control-d': ctx => {
-        if (!IS_MAC) return;
+        const { doc } = std;
+
+        if (!IS_MAC || doc.readonly) return;
         const deleted = forwardDelete(std);
         if (!deleted) {
           return;
@@ -196,6 +204,12 @@ export const ParagraphKeymapExtension = KeymapExtension(
         return true;
       },
       'Shift-Space': ctx => {
+        const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         if (!markdownInput(std)) {
           return;
         }
@@ -203,6 +217,12 @@ export const ParagraphKeymapExtension = KeymapExtension(
         return true;
       },
       Tab: ctx => {
+        const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const [success] = std.command
           .chain()
           .canIndentParagraph()
@@ -215,6 +235,12 @@ export const ParagraphKeymapExtension = KeymapExtension(
         return true;
       },
       'Shift-Tab': ctx => {
+        const { doc } = std;
+
+        if (doc.readonly) {
+          return;
+        }
+
         const [success] = std.command
           .chain()
           .canDedentParagraph()
