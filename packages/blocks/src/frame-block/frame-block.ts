@@ -1,8 +1,8 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@algogrind/affine-model';
 
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { GfxBlockComponent } from '@blocksuite/block-std';
-import { Bound } from '@blocksuite/global/utils';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { GfxBlockComponent } from '@algogrind/block-std';
+import { Bound } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

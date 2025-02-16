@@ -5,14 +5,14 @@ import type {
   FrameBlockProps,
   ImageBlockModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 
 import {
   generateKeyBetweenV2,
   type SerializedElement,
-} from '@blocksuite/block-std/gfx';
-import { getCommonBoundWithRotation, groupBy } from '@blocksuite/global/utils';
-import { type BlockSnapshot, BlockSnapshotSchema } from '@blocksuite/store';
+} from '@algogrind/block-std/gfx';
+import { getCommonBoundWithRotation, groupBy } from '@algogrind/global/utils';
+import { type BlockSnapshot, BlockSnapshotSchema } from '@algogrind/store';
 
 import type { EdgelessRootBlockComponent } from '../edgeless-root-block.js';
 

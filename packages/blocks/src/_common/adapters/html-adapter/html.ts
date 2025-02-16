@@ -1,10 +1,10 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 import type { Root } from 'hast';
 
 import {
   DEFAULT_NOTE_BACKGROUND_COLOR,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   type AdapterContext,
   type BlockHtmlAdapterMatcher,
@@ -12,7 +12,7 @@ import {
   HastUtils,
   type HtmlAST,
   HtmlDeltaConverter,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 import {
   type AssetsManager,
   ASTWalker,
@@ -31,7 +31,7 @@ import {
   type SliceSnapshot,
   type ToBlockSnapshotPayload,
   type ToDocSnapshotPayload,
-} from '@blocksuite/store';
+} from '@algogrind/store';
 import rehypeParse from 'rehype-parse';
 import rehypeStringify from 'rehype-stringify';
 import { unified } from 'unified';

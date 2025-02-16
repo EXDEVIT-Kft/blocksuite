@@ -1,4 +1,4 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import { css } from 'lit';
 
 export const latexBlockStyles = css`

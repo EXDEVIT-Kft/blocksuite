@@ -1,4 +1,4 @@
-import { FontFamily } from '@blocksuite/affine-model';
+import { FontFamily } from '@algogrind/affine-model';
 
 export const GROUP_TITLE_FONT = FontFamily.Quicksand;
 export const GROUP_TITLE_FONT_SIZE = 12;

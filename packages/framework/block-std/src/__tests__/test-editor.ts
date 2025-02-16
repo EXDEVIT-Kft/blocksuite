@@ -1,6 +1,6 @@
-import type { Doc } from '@blocksuite/store';
+import type { Doc } from '@algogrind/store';
 
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 

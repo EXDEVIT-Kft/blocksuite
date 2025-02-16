@@ -1,6 +1,6 @@
-import type { BlockComponent } from '@blocksuite/block-std';
+import type { BlockComponent } from '@algogrind/block-std';
 
-import { findNoteBlockModel } from '@blocksuite/affine-shared/utils';
+import { findNoteBlockModel } from '@algogrind/affine-shared/utils';
 
 import type { AffineDragHandleWidget } from '../drag-handle.js';
 

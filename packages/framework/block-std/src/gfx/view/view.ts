@@ -1,10 +1,10 @@
-import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { type Container, createIdentifier } from '@algogrind/global/di';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 import {
   type Bound,
   DisposableGroup,
   type IVec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { PointerEventState } from '../../event/index.js';
 import type { Extension } from '../../extension/extension.js';

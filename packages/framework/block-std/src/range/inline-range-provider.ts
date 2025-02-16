@@ -1,4 +1,4 @@
-import type { InlineRange, InlineRangeProvider } from '@blocksuite/inline';
+import type { InlineRange, InlineRangeProvider } from '@algogrind/inline';
 
 import { signal } from '@preact/signals-core';
 

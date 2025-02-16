@@ -1,11 +1,11 @@
-import type { HoverController } from '@blocksuite/affine-components/hover';
+import type { HoverController } from '@algogrind/affine-components/hover';
 
-import { AttachmentBlockStyles } from '@blocksuite/affine-model';
+import { AttachmentBlockStyles } from '@algogrind/affine-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { toGfxBlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/consts';
+import { toGfxBlockComponent } from '@algogrind/block-std';
 import { styleMap } from 'lit/directives/style-map.js';
 
 import type { EdgelessRootService } from '../root-block/index.js';

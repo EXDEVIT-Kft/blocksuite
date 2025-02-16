@@ -1,5 +1,5 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
-import { assertExists } from '@blocksuite/global/utils';
+import { NoteDisplayMode } from '@algogrind/affine-model';
+import { assertExists } from '@algogrind/global/utils';
 import { expect, type Page } from '@playwright/test';
 
 import {

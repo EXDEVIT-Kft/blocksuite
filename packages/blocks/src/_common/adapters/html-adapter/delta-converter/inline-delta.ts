@@ -1,9 +1,9 @@
 import type {
   InlineDeltaToHtmlAdapterMatcher,
   InlineHtmlAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@algogrind/affine-shared/adapters';
 
-import { generateDocUrl } from '@blocksuite/affine-block-embed';
+import { generateDocUrl } from '@algogrind/affine-block-embed';
 
 export const boldDeltaToHtmlAdapterMatcher: InlineDeltaToHtmlAdapterMatcher = {
   name: 'bold',

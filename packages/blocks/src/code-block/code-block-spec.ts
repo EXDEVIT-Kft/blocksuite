@@ -3,7 +3,7 @@ import {
   type ExtensionType,
   FlavourExtension,
   WidgetViewMapExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal, unsafeStatic } from 'lit/static-html.js';
 
 import { AFFINE_CODE_TOOLBAR_WIDGET } from '../root-block/widgets/code-toolbar/index.js';

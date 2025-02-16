@@ -1,6 +1,6 @@
-import { RefNodeSlotsProvider } from '@blocksuite/affine-components/rich-text';
-import { AffineEditorContainer } from '@blocksuite/presets';
-import { type DocCollection, Text } from '@blocksuite/store';
+import { RefNodeSlotsProvider } from '@algogrind/affine-components/rich-text';
+import { AffineEditorContainer } from '@algogrind/presets';
+import { type DocCollection, Text } from '@algogrind/store';
 
 import type { InitFn } from './utils.js';
 

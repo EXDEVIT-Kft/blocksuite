@@ -1,8 +1,8 @@
-import type { ServiceProvider } from '@blocksuite/global/di';
-import type { Doc } from '@blocksuite/store';
+import type { ServiceProvider } from '@algogrind/global/di';
+import type { Doc } from '@algogrind/store';
 
-import { Container } from '@blocksuite/global/di';
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { Container } from '@algogrind/global/di';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { BlockService, ExtensionType } from '../extension/index.js';
 

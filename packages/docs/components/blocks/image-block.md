@@ -4,5 +4,5 @@ This is a block used to display image content. It supports scaling in both the [
 
 ## Reference
 
-- [`ImageBlockSchema`](/api/@blocksuite/blocks/variables/ImageBlockSchema.html)
-- [`ImageBlockService`](/api/@blocksuite/blocks/classes/ImageBlockService.html)
+- [`ImageBlockSchema`](/api/@algogrind/blocks/variables/ImageBlockSchema.html)
+- [`ImageBlockService`](/api/@algogrind/blocks/classes/ImageBlockService.html)

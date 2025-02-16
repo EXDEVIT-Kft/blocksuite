@@ -2,8 +2,8 @@ import {
   type BlockComponent,
   Clipboard,
   type UIEventHandler,
-} from '@blocksuite/block-std';
-import { assertExists, DisposableGroup } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists, DisposableGroup } from '@algogrind/global/utils';
 
 import { HtmlAdapter, PlainTextAdapter } from '../../_common/adapters/index.js';
 import { pasteMiddleware } from '../../root-block/clipboard/middlewares/index.js';

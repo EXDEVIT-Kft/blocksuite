@@ -1,13 +1,13 @@
-import type { SurfaceBlockComponent } from '@blocksuite/affine-block-surface';
-import type { PointerEventState } from '@blocksuite/block-std';
+import type { SurfaceBlockComponent } from '@algogrind/affine-block-surface';
+import type { PointerEventState } from '@algogrind/block-std';
 
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
-} from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { BaseTool } from '@blocksuite/block-std/gfx';
-import { Point } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import { EditPropsStore } from '@algogrind/affine-shared/services';
+import { BaseTool } from '@algogrind/block-std/gfx';
+import { Point } from '@algogrind/global/utils';
 import { effect } from '@preact/signals-core';
 
 import {
@@ -202,7 +202,7 @@ export class NoteTool extends BaseTool<NoteToolOption> {
   }
 }
 
-declare module '@blocksuite/block-std/gfx' {
+declare module '@algogrind/block-std/gfx' {
   interface GfxToolsMap {
     'affine:note': NoteTool;
   }

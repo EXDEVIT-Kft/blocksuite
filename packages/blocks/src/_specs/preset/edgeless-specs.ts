@@ -1,10 +1,10 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   ConnectionOverlay,
   EdgelessSurfaceBlockSpec,
-} from '@blocksuite/affine-block-surface';
-import { FontLoaderService } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-block-surface';
+import { FontLoaderService } from '@algogrind/affine-shared/services';
 
 import { EdgelessTextBlockSpec } from '../../edgeless-text-block/edgeless-text-spec.js';
 import { FrameBlockSpec } from '../../frame-block/frame-spec.js';

@@ -1,5 +1,5 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { JobMiddleware } from '@blocksuite/store';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { JobMiddleware } from '@algogrind/store';
 
 export const surfaceRefToEmbed =
   (std: BlockStdScope): JobMiddleware =>

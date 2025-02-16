@@ -1,11 +1,11 @@
-import type { DocSnapshot } from '@blocksuite/store';
+import type { DocSnapshot } from '@algogrind/store';
 
 import {
   type EdgelessRootBlockComponent,
   EdgelessRootService,
   type FrameBlockComponent,
   type SurfaceRefBlockComponent,
-} from '@blocksuite/blocks';
+} from '@algogrind/blocks';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { wait } from '../utils/common.js';

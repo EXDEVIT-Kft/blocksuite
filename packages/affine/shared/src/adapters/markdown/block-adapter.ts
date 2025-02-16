@@ -1,9 +1,9 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
 import {
   createIdentifier,
   type ServiceIdentifier,
-} from '@blocksuite/global/di';
+} from '@algogrind/global/di';
 
 import type { BlockAdapterMatcher } from '../types/adapter.js';
 import type { MarkdownDeltaConverter } from './delta-converter.js';

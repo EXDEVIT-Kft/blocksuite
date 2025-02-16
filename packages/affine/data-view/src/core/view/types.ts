@@ -1,14 +1,14 @@
 import type {
   DatabaseAllViewEvents,
   EventTraceFn,
-} from '@blocksuite/affine-shared/services';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/services';
+import type { InsertToPosition } from '@algogrind/affine-shared/utils';
 import type {
   Clipboard,
   EventName,
   UIEventHandler,
-} from '@blocksuite/block-std';
-import type { Disposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import type { Disposable } from '@algogrind/global/utils';
 import type { ReadonlySignal } from '@preact/signals-core';
 
 import type { DataSource } from '../common/index.js';

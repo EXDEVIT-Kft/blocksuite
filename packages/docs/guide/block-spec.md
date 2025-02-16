@@ -14,12 +14,12 @@ A block spec contains the following properties:
 
 ## Example
 
-Note that in block spec, the definition of `view` is related to UI frameworks. By default, we provide a `@blocksuite/lit` package to help build a lit block view. But it's still possible to use other UI frameworks. We'll introduce later about how to write custom block renderers.
+Note that in block spec, the definition of `view` is related to UI frameworks. By default, we provide a `@algogrind/lit` package to help build a lit block view. But it's still possible to use other UI frameworks. We'll introduce later about how to write custom block renderers.
 
 Here is a example of a lit-based block spec:
 
 ```ts
-import type { BlockSpec } from '@blocksuite/block-std';
+import type { BlockSpec } from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 const MyBlockSepc: BlockSpec = {

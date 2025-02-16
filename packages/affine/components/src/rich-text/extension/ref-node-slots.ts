@@ -1,7 +1,7 @@
-import type { ExtensionType } from '@blocksuite/block-std';
+import type { ExtensionType } from '@algogrind/block-std';
 
-import { createIdentifier } from '@blocksuite/global/di';
-import { Slot } from '@blocksuite/global/utils';
+import { createIdentifier } from '@algogrind/global/di';
+import { Slot } from '@algogrind/global/utils';
 
 import type { RefNodeSlots } from '../inline/index.js';
 

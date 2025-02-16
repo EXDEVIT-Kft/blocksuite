@@ -1,6 +1,6 @@
-import type { GfxModel, Viewport } from '@blocksuite/block-std/gfx';
+import type { GfxModel, Viewport } from '@algogrind/block-std/gfx';
 
-import { Bound, getCommonBound } from '@blocksuite/global/utils';
+import { Bound, getCommonBound } from '@algogrind/global/utils';
 
 import { FIT_TO_SCREEN_PADDING } from './consts.js';
 import { ZOOM_INITIAL } from './zoom.js';

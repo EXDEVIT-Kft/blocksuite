@@ -64,7 +64,7 @@ const createNoRestrictedImports = packagePath => {
               allowTypeImports: false,
             },
             {
-              group: ['@blocksuite/affine', '@blocksuite/affine/**'],
+              group: ['@algogrind/affine', '@algogrind/affine/**'],
               message: 'Do not import shell package',
               allowTypeImports: false,
             },

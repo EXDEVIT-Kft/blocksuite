@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
+import { BlockSuiteError, ErrorCode } from '@algogrind/global/exceptions';
 
 import type { InlineEditor } from '../inline-editor.js';
 import type { DeltaInsert, InlineRange } from '../types.js';

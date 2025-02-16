@@ -1,6 +1,6 @@
 import type { CSSResult } from 'lit';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 import {
   arrow,
   type ComputePositionReturn,

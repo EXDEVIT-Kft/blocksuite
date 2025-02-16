@@ -1,15 +1,15 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@algogrind/affine-model';
 
-import { BlockServiceWatcher, BlockStdScope } from '@blocksuite/block-std';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/block-std';
+import { BlockServiceWatcher, BlockStdScope } from '@algogrind/block-std';
+import { type EditorHost, ShadowlessElement } from '@algogrind/block-std';
 import {
   Bound,
   debounce,
   deserializeXYWH,
   DisposableGroup,
   WithDisposable,
-} from '@blocksuite/global/utils';
-import { BlockViewType, type Doc, type Query } from '@blocksuite/store';
+} from '@algogrind/global/utils';
+import { BlockViewType, type Doc, type Query } from '@algogrind/store';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

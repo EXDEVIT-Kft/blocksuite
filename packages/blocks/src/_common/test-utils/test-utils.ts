@@ -1,4 +1,4 @@
-import type { BlockSnapshot, SliceSnapshot } from '@blocksuite/store';
+import type { BlockSnapshot, SliceSnapshot } from '@algogrind/store';
 
 import {
   mergeToCodeModel,

@@ -1,7 +1,7 @@
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 
 import type { FilterGroup } from '../../core/filter/types.js';

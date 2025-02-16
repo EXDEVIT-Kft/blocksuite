@@ -1,12 +1,12 @@
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { EmbedCardStyle } from '@algogrind/affine-model';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { SurfaceBlockComponent } from '@blocksuite/affine-block-surface';
+import { SurfaceBlockComponent } from '@algogrind/affine-block-surface';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { Bound, Vec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/consts';
+import { Bound, Vec } from '@algogrind/global/utils';
 
 interface EmbedCardProperties {
   flavour: string;

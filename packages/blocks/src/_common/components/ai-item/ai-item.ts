@@ -1,10 +1,10 @@
-import { ArrowRightIcon, EnterIcon } from '@blocksuite/affine-components/icons';
+import { ArrowRightIcon, EnterIcon } from '@algogrind/affine-components/icons';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

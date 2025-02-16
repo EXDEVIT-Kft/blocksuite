@@ -1,4 +1,4 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import {
   type AttributeRenderer,
   type BaseTextAttributes,
@@ -7,8 +7,8 @@ import {
   InlineEditor,
   KEYBOARD_ALLOW_DEFAULT,
   ZERO_WIDTH_NON_JOINER,
-} from '@blocksuite/inline';
-import { effects } from '@blocksuite/inline/effects';
+} from '@algogrind/inline';
+import { effects } from '@algogrind/inline/effects';
 import { effect } from '@preact/signals-core';
 import '@shoelace-style/shoelace';
 import { css, html, nothing } from 'lit';
