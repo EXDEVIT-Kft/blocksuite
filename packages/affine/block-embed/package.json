@@ -1,6 +1,6 @@
 {
   "name": "@algogrind/affine-block-embed",
-  "version": "0.19.14",
+  "version": "0.19.15",
   "description": "Embed blocks for BlockSuite.",
   "type": "module",
   "repository": {
