@@ -129,7 +129,7 @@ const chunkGroups = {
   ],
   presets: [require.resolve('@algogrind/presets')],
   common: [
-    require.resolve('@algogrind/icons/lit'),
+    require.resolve('@blocksuite/icons/lit'),
     require.resolve('@toeverything/theme'),
     require.resolve('@toeverything/y-indexeddb'),
     require.resolve('@preact/signals-core'),
