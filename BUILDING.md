@@ -41,7 +41,14 @@ _mire_: @algogrind/
 _excluded files_: node*modules, dist, *.spec.ts, \_.js
 
 -> `package.json` fájlokban a verziók ellenőrzése (hiszen a blocksuite ezt tőlünk függetlenül módosítja) -> nem lehet hátrébb, mint a mi package verziónk
--> `yarn.lock` törlése majd `yarn install`
+-> `yarn.lock` törlése majd szükség szerint a korábbi build fájlok (node_modules, dist, tsconfig.tsbuildinfo) eltávolítása:
+
+```
+Get-ChildItem -Path . -Include node_modules,dist,*.tsbuildinfo -Recurse -Directory | ForEach-Object { Remove-Item $_.FullName -Recurse -Force }
+Get-ChildItem -Path . -Include *.tsbuildinfo -Recurse -File | ForEach-Object { Remove-Item $_.FullName -Force }
+```
+
+-> `yarn install`
 -> minden fájl commitolása
 -> `yarn build`
 -> ha szükséges akkor a build hibák javítása egy külön commitban
