@@ -195,6 +195,13 @@ export class EdgelessChangeNoteButton extends WithDisposable(LitElement) {
 
     // if change note to page only, should clear the selection
     if (newMode === NoteDisplayMode.DocOnly) {
+      //[ALGOGRIND]
+      // TODO: this is a hack, we should find a better solution
+      // There was a bug, where the note was selectable even if it's in DocOnly mode.
+      // THis caused the note to be ereasable, even if it was not visible.
+      // An easy hack is to just lock the element, since the logic works properly.
+      // Disadvantage: the user has to unlock the note once changing the display mode.
+      note.lock();
       this.edgeless.service.selection.clear();
     }
   }
