@@ -47,7 +47,12 @@
     "yjs": "^13.6.18"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "module": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./shim.d.ts": "./shim.d.ts"
   },
   "publishConfig": {
     "access": "restricted",
