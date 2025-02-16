@@ -127,7 +127,6 @@ function SurfaceRefToolbarOptions({
       label: 'Megnyitás Rajztáblán',
       icon: EdgelessModeIcon,
       action: () => blockComponent.viewInEdgeless(),
-      disabled: readonly,
     });
 
     if (isPeekable(blockComponent)) {
