@@ -9,7 +9,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import type { ImageBlockComponent } from '../image-block.js';
 
 import { ImageResizeManager } from '../image-resize-manager.js';
-import { shouldResizeImage } from '../utils.js';
+import { MAX_RETRY_COUNT, shouldResizeImage } from '../utils.js';
 import { ImageSelectedRect } from './image-selected-rect.js';
 
 export class ImageBlockPageComponent extends WithDisposable(ShadowlessElement) {
@@ -170,6 +170,11 @@ export class ImageBlockPageComponent extends WithDisposable(ShadowlessElement) {
   }
 
   private _handleError() {
+    if (!this.block.blobUrl && this.block.retryCount < MAX_RETRY_COUNT) {
+      this.block.retryCount++;
+      return;
+    }
+
     this.block.error = true;
   }
 

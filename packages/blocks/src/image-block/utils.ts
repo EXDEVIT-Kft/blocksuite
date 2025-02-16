@@ -20,7 +20,10 @@ import type { ImageEdgelessBlockComponent } from './image-edgeless-block.js';
 import { readImageSize } from '../root-block/edgeless/components/utils.js';
 import { transformModel } from '../root-block/utils/operations/model.js';
 
-const MAX_RETRY_COUNT = 3;
+// Retry count is 4, because when switching the page,
+// the lazy loading will trigger the first "retry" most of the times
+// (since the blobUrl on the mount will be null, which triggers the onError event of the image)
+export const MAX_RETRY_COUNT = 4;
 const DEFAULT_ATTACHMENT_NAME = 'AlgoGrind melléklet';
 
 const imageUploads = new Set<string>();
