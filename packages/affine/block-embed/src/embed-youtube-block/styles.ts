@@ -54,13 +54,16 @@ export const styles = css`
   .affine-embed-youtube-video-iframe-container > iframe {
     width: 100%;
     height: 100%;
-    border-radius: 4px 4px var(--1, 0px) var(--1, 0px);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
   }
 
   /* [ALGOGRIND] */
   /* In readonly mode we need all corners to be rounded */
   .affine-embed-youtube-video-iframe-container.readonly > iframe {
-    border-radius: 4px;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .affine-embed-youtube-video-iframe-overlay {
