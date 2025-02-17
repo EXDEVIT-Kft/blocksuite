@@ -1,7 +1,7 @@
 import type { PointerEventState } from '@blocksuite/block-std';
 
 import { on } from '@blocksuite/affine-shared/utils';
-import { BaseTool, MouseButton } from '@blocksuite/block-std/gfx';
+import { BaseTool } from '@blocksuite/block-std/gfx';
 import { Signal } from '@preact/signals-core';
 
 export type PanToolOption = {
