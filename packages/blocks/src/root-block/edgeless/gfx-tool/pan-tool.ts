@@ -46,12 +46,6 @@ export class PanTool extends BaseTool<PanToolOption> {
 
   override mounted(): void {
     this.addHook('pointerDown', evt => {
-      const shouldPanWithMiddle = evt.raw.button === MouseButton.MIDDLE;
-
-      if (!shouldPanWithMiddle && !this.doc.readonly) {
-        return;
-      }
-
       evt.raw.preventDefault();
 
       const currentTool = this.controller.currentToolOption$.peek();
@@ -63,11 +57,9 @@ export class PanTool extends BaseTool<PanToolOption> {
         panning: true,
       });
 
-      const dispose = on(document, 'pointerup', evt => {
-        if (evt.button === MouseButton.MIDDLE || this.doc.readonly) {
-          restoreToPrevious();
-          dispose();
-        }
+      const dispose = on(document, 'pointerup', () => {
+        restoreToPrevious();
+        dispose();
       });
 
       return false;
