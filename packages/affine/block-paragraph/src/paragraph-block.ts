@@ -156,7 +156,19 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
     this.disposables.add(
       effect(() => {
         const collapsed = this.model.collapsed$.value;
-        this._readonlyCollapsed = collapsed;
+
+        // [ALGOGRIND]
+        // The effect is run every time for all headings, when a heading is collapsed
+        // OR when the initial load happens
+        // When the effect is re-run, we do not want to set back the readonlyCollapsed value
+        // to the original value, we want to keep what the user currently has
+        // return; here when doc is readonly does not work, since we have to set the values on the initial load
+
+        if (!this._readonlyCollapseLoaded) {
+          this._readonlyCollapsed = collapsed;
+        }
+
+        this._readonlyCollapseLoaded = true;
 
         // reset text selection when selected block is collapsed
         if (this.model.type.startsWith('h') && collapsed) {
@@ -255,7 +267,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
           'affine-paragraph-block-container': true,
           readonly: this.doc.readonly,
         })}
-        @click=${(event: MouseEvent) => {
+        @click=${() => {
           if (
             !this.doc.readonly ||
             this.model.type === 'text' ||
@@ -264,16 +276,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
             return;
           }
 
-          // Check if click went through any part of the toggle button structure
-          // to make sure the heading is not toggled twice
-          const target = event.target as HTMLElement;
-          if (
-            !target.closest('blocksuite-toggle-button') &&
-            !target.closest('.toggle-icon') &&
-            !(target instanceof SVGElement)
-          ) {
-            this._readonlyCollapsed = !this._readonlyCollapsed;
-          }
+          this._readonlyCollapsed = !this._readonlyCollapsed;
         }}
       >
         <div
@@ -301,6 +304,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
                       });
                     }
                   }}
+                  @click=${(e: PointerEvent) => e.stopPropagation()}
                 ></blocksuite-toggle-button>
               `
             : nothing}
@@ -341,6 +345,9 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<
 
   @state()
   private accessor _readonlyCollapsed = false;
+
+  @state()
+  private accessor _readonlyCollapseLoaded = false;
 
   @query('rich-text')
   private accessor _richTextElement: RichText | null = null;
