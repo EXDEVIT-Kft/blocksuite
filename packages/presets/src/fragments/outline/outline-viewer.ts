@@ -40,7 +40,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
 
       position: absolute;
       top: 10vh;
-      left: -1.675rem;
+      left: -1.25rem;
     }
 
     .outline-viewer-indicators-container {
