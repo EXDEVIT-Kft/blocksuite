@@ -68,6 +68,7 @@ export class EdgelessNoteMask extends WithDisposable(ShadowlessElement) {
       <div
         class="affine-note-mask"
         style=${styleMap({
+          display: `${this.model.doc.readonly ? 'none' : 'block'}`,
           position: 'absolute',
           top: `${-extra}px`,
           left: `${-extra}px`,
