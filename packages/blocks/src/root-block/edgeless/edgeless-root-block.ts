@@ -499,7 +499,7 @@ export class EdgelessRootBlockComponent extends BlockComponent<
     this._initPinchEvent();
 
     if (this.doc.readonly) {
-      this.gfx.tool.setTool('pan', { panning: true });
+      this.gfx.tool.setTool('pan', { panning: false });
     } else {
       this.gfx.tool.setTool('default');
     }

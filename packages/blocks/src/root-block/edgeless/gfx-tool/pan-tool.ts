@@ -48,7 +48,7 @@ export class PanTool extends BaseTool<PanToolOption> {
     this.addHook('pointerDown', evt => {
       const shouldPanWithMiddle = evt.raw.button === MouseButton.MIDDLE;
 
-      if (!shouldPanWithMiddle) {
+      if (!shouldPanWithMiddle && !this.doc.readonly) {
         return;
       }
 
@@ -64,7 +64,7 @@ export class PanTool extends BaseTool<PanToolOption> {
       });
 
       const dispose = on(document, 'pointerup', evt => {
-        if (evt.button === MouseButton.MIDDLE) {
+        if (evt.button === MouseButton.MIDDLE || this.doc.readonly) {
           restoreToPrevious();
           dispose();
         }
