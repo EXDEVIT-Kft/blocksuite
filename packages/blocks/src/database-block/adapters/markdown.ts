@@ -70,7 +70,7 @@ export const databaseBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                 views: [
                   {
                     id: nanoid(),
-                    name: 'Table View',
+                    name: 'Tábla Nézet',
                     mode: 'table',
                     columns: [],
                     filter: {

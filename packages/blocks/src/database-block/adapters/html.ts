@@ -86,7 +86,7 @@ export const databaseBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
               views: [
                 {
                   id: nanoid(),
-                  name: 'Table View',
+                  name: 'Tábla Nézet',
                   mode: 'table',
                   columns: [],
                   filter: {

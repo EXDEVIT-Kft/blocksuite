@@ -11,7 +11,7 @@ export const multiTagFilter = [
     vars: [tVar(optionName, t.tag.instance())] as const,
     self: ct.array.instance(tRef(optionName)),
     args: [ct.array.instance(tRef(optionName))] as const,
-    label: 'Contains one of',
+    label: 'Tartalmaz egyet',
     shortString: v =>
       v ? `: ${tagToString(v.value, v.type.element)}` : undefined,
     impl: (self, value) => {
@@ -30,9 +30,9 @@ export const multiTagFilter = [
     vars: [tVar(optionName, t.tag.instance())] as const,
     self: ct.array.instance(tRef(optionName)),
     args: [ct.array.instance(tRef(optionName))] as const,
-    label: 'Does not contains one of',
+    label: 'Nem tartalmaz egyet sem',
     shortString: v =>
-      v ? `: Not ${tagToString(v.value, v.type.element)}` : undefined,
+      v ? `: nem ${tagToString(v.value, v.type.element)}` : undefined,
     impl: (self, value) => {
       if (!value.length) {
         return true;
@@ -48,7 +48,7 @@ export const multiTagFilter = [
     vars: [tVar(optionName, t.tag.instance())] as const,
     self: ct.array.instance(tRef(optionName)),
     args: [ct.array.instance(tRef(optionName))] as const,
-    label: 'Contains all',
+    label: 'Mindet tartalmazza',
     shortString: v =>
       v ? `: ${tagToString(v.value, v.type.element)}` : undefined,
     impl: (self, value) => {
@@ -67,9 +67,9 @@ export const multiTagFilter = [
     vars: [tVar(optionName, t.tag.instance())] as const,
     self: ct.array.instance(tRef(optionName)),
     args: [ct.array.instance(tRef(optionName))] as const,
-    label: 'Does not contains all',
+    label: 'Egyiket sem tartalmazza',
     shortString: v =>
-      v ? `: Not ${tagToString(v.value, v.type.element)}` : undefined,
+      v ? `: nem ${tagToString(v.value, v.type.element)}` : undefined,
     impl: (self, value) => {
       if (!value.length) {
         return true;

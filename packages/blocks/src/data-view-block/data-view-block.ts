@@ -106,7 +106,7 @@ export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBloc
           }),
           menu.action({
             prefix: CopyIcon,
-            name: 'Copy',
+            name: 'Másolás',
             select: () => {
               const slice = Slice.fromModels(this.doc, [this.model]);
               this.std.clipboard.copySlice(slice).catch(console.error);
@@ -120,7 +120,7 @@ export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBloc
                 class: {
                   'delete-item': true,
                 },
-                name: 'Delete Database',
+                name: 'Adatbázis törlése',
                 select: () => {
                   this.model.children.slice().forEach(block => {
                     this.doc.deleteBlock(block);

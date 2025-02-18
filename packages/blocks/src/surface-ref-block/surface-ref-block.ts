@@ -576,8 +576,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<
       </div>
       <div class="placeholder-action">
         <button class="delete-button" type="button" @click=${this._deleteThis}>
-          <span class="icon">${MoreDeleteIcon}</span
-          ><span>Delete this block</span>
+          <span class="icon">${MoreDeleteIcon}</span><span>Blokk törlése</span>
         </button>
       </div>
       <div class="placeholder-reason">

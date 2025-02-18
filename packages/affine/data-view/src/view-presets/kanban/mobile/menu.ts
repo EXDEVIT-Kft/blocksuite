@@ -101,7 +101,7 @@ export const popCardMenu = (
     menu.group({
       items: [
         menu.action({
-          name: 'Delete Card',
+          name: 'Kártya törlése',
           class: {
             'delete-item': true,
           },

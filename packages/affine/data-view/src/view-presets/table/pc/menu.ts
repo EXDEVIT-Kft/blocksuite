@@ -49,7 +49,7 @@ export const popRowMenu = (
         name: '',
         items: [
           menu.action({
-            name: 'Copy',
+            name: 'Másolás',
             prefix: html` <div
               style="transform: rotate(90deg);display:flex;align-items:center;"
             >
@@ -65,7 +65,7 @@ export const popRowMenu = (
         name: '',
         items: [
           menu.action({
-            name: 'Delete Rows',
+            name: 'Sorok törlése',
             class: {
               'delete-item': true,
             },
@@ -82,7 +82,7 @@ export const popRowMenu = (
   const row = selection.rows[0];
   popFilterableSimpleMenu(ele, [
     menu.action({
-      name: 'Expand Row',
+      name: 'Sor kinagyítása',
       prefix: ExpandFullIcon(),
       select: () => {
         openDetail(dataViewEle, row.id, selectionController);
@@ -92,7 +92,7 @@ export const popRowMenu = (
       name: '',
       items: [
         menu.action({
-          name: 'Insert Before',
+          name: 'Beszúrás Előtte',
           prefix: html` <div
             style="transform: rotate(90deg);display:flex;align-items:center;"
           >
@@ -103,7 +103,7 @@ export const popRowMenu = (
           },
         }),
         menu.action({
-          name: 'Insert After',
+          name: 'Beszúrás Utána',
           prefix: html` <div
             style="transform: rotate(90deg);display:flex;align-items:center;"
           >
@@ -118,7 +118,7 @@ export const popRowMenu = (
     menu.group({
       items: [
         menu.action({
-          name: 'Delete Row',
+          name: 'Sor törlése',
           class: { 'delete-item': true },
           prefix: DeleteIcon(),
           select: () => {

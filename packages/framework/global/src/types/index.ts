@@ -26,5 +26,8 @@ export interface BlockSuiteFlags {
   enable_mobile_keyboard_toolbar: boolean;
   enable_mobile_linked_doc_menu: boolean;
   readonly: Record<string, boolean>;
+  // [ALGOGRIND] algogrind specific feature flags
+  algogrind_enable_database: boolean;
+  algogrind_enable_kanban: boolean;
 }
 export * from './virtual-keyboard.js';

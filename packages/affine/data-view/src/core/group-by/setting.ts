@@ -127,7 +127,7 @@ export class GroupSetting extends SignalWatcher(
         <div
           style="padding: 0 4px; font-size: 12px;color: var(--affine-text-secondary-color);line-height: 20px;"
         >
-          Groups
+          Csoportok
         </div>
         <div></div>
       </div>
@@ -180,7 +180,7 @@ export const selectGroupByProperty = (
   return {
     onClose: ops?.onClose,
     title: {
-      text: 'Group by',
+      text: 'Csoportosítás',
       onBack: ops?.onBack,
     },
     items: [
@@ -212,7 +212,7 @@ export const selectGroupByProperty = (
             hide: () =>
               view instanceof KanbanSingleView || group.property$.value == null,
             class: { 'delete-item': true },
-            name: 'Remove Grouping',
+            name: 'Csoportosítás törlése',
             select: () => {
               group.changeGroup(undefined);
               ops?.onSelect?.();
@@ -254,14 +254,14 @@ export const popGroupSetting = (
   const menuHandler = popMenu(target, {
     options: {
       title: {
-        text: 'Group',
+        text: 'Csoportosítás',
         onBack: onBack,
       },
       items: [
         menu.group({
           items: [
             menu.subMenu({
-              name: 'Group By',
+              name: 'Csoportosítás',
               postfix: html`
                 <div
                   style="display:flex;align-items:center;gap: 4px;font-size: 12px;line-height: 20px;color: var(--affine-text-secondary-color);margin-right: 4px;margin-left: 8px;"
@@ -272,7 +272,7 @@ export const popGroupSetting = (
               `,
               label: () => html`
                 <div style="color: var(--affine-text-secondary-color);">
-                  Group By
+                  Csoportosítás
                 </div>
               `,
               options: selectGroupByProperty(group, {
@@ -297,7 +297,7 @@ export const popGroupSetting = (
         menu.group({
           items: [
             menu.action({
-              name: 'Remove grouping',
+              name: 'Csoportosítás törlése',
               prefix: DeleteIcon(),
               class: { 'delete-item': true },
               hide: () => !(view instanceof TableSingleView),

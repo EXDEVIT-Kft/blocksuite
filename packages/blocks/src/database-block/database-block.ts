@@ -120,13 +120,13 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
         }),
         menu.action({
           prefix: CopyIcon(),
-          name: 'Copy',
+          name: 'Másolás',
           select: () => {
             const slice = Slice.fromModels(this.doc, [this.model]);
             this.std.clipboard
               .copySlice(slice)
               .then(() => {
-                toast(this.host, 'Copied to clipboard');
+                toast(this.host, 'Vágólapra másolva');
               })
               .catch(console.error);
           },
@@ -138,7 +138,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
               class: {
                 'delete-item': true,
               },
-              name: 'Delete Database',
+              name: 'Adatbázis törlése',
               select: () => {
                 this.model.children.slice().forEach(block => {
                   this.doc.deleteBlock(block);

@@ -401,7 +401,7 @@ export class ReferencePopup extends WithDisposable(LitElement) {
       ? html`
           <editor-icon-button
             class="doc-title"
-            aria-label="Doc title"
+            aria-label="Dokumentum címe"
             .hover=${false}
             .labelHeight=${'20px'}
             .tooltip=${this.docTitle}
@@ -419,9 +419,9 @@ export class ReferencePopup extends WithDisposable(LitElement) {
         ${titleButton}
 
         <editor-icon-button
-          aria-label="Copy link"
+          aria-label="Link másolása"
           data-testid="copy-link"
-          .tooltip=${'Copy link'}
+          .tooltip=${'Link másolása'}
           @click=${this._copyLink}
         >
           ${CopyIcon}

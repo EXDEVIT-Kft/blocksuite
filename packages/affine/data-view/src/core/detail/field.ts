@@ -126,7 +126,7 @@ export class RecordField extends SignalWatcher(
     popMenu(popupTargetFromElement(ele), {
       options: {
         title: {
-          text: 'Property settings',
+          text: 'Tulajdonság beállítások',
         },
         items: [
           menu.group({
@@ -183,7 +183,7 @@ export class RecordField extends SignalWatcher(
             name: 'operation',
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 hide: () =>
                   !this.column.duplicate || this.column.type$.value === 'title',
@@ -192,7 +192,7 @@ export class RecordField extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 prefix: DeleteIcon(),
                 hide: () =>
                   !this.column.delete || this.column.type$.value === 'title',

@@ -74,7 +74,7 @@ export function createStarterDocCollection() {
       enable_database_number_formatting: false,
       enable_database_attachment_note: false,
       enable_database_full_width: false,
-      enable_block_query: false,
+      enable_block_query: false, // -> speciális "todo" táblázat -> wip
       // <--- database
       enable_legacy_validation: false,
       // Edgeless extra items / config --->
@@ -91,6 +91,9 @@ export function createStarterDocCollection() {
       enable_new_dnd: true,
       enable_mobile_keyboard_toolbar: true,
       enable_mobile_linked_doc_menu: false,
+      // [ALGOGRIND] algogrind specific feature flags
+      algogrind_enable_database: true,
+      algogrind_enable_kanban: true,
       ...flags,
     },
     awarenessSources: [new BroadcastChannelAwarenessSource(id)],

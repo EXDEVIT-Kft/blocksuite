@@ -103,10 +103,10 @@ const createSettingMenus = (
   const settingItems: MenuConfig[] = [];
   settingItems.push(
     menu.action({
-      name: 'Properties',
+      name: 'Tulajdonságok',
       prefix: InfoIcon(),
       postfix: html` <div style="font-size: 14px;">
-          ${view.properties$.value.length} shown
+          ${view.properties$.value.length} látható
         </div>
         ${ArrowRightSmallIcon()}`,
       select: () => {
@@ -122,14 +122,14 @@ const createSettingMenus = (
     const filterCount = filterTrait.filter$.value.conditions.length;
     settingItems.push(
       menu.action({
-        name: 'Filter',
+        name: 'Szűrők',
         prefix: FilterIcon(),
         postfix: html` <div style="font-size: 14px;">
             ${filterCount === 0
               ? ''
               : filterCount === 1
-                ? '1 filter'
-                : `${filterCount} filters`}
+                ? '1 szűrő'
+                : `${filterCount} szűrő`}
           </div>
           ${ArrowRightSmallIcon()}`,
         select: () => {
@@ -163,14 +163,14 @@ const createSettingMenus = (
     const sortCount = sortTrait.sortList$.value.length;
     settingItems.push(
       menu.action({
-        name: 'Sort',
+        name: 'Rendezés',
         prefix: SortIcon(),
         postfix: html` <div style="font-size: 14px;">
             ${sortCount === 0
               ? ''
               : sortCount === 1
-                ? '1 sort'
-                : `${sortCount} sorts`}
+                ? '1 rendezés'
+                : `${sortCount} remdezés`}
           </div>
           ${ArrowRightSmallIcon()}`,
         select: () => {
@@ -188,7 +188,7 @@ const createSettingMenus = (
             popSortRoot(target, {
               sortUtils: sortUtils,
               title: {
-                text: 'Sort',
+                text: 'Rendezés',
                 onBack: reopen,
               },
             });
@@ -201,7 +201,7 @@ const createSettingMenus = (
   if (groupTrait) {
     settingItems.push(
       menu.action({
-        name: 'Group',
+        name: 'Csoportosítás',
         prefix: GroupingIcon(),
         postfix: html` <div style="font-size: 14px;">
             ${groupTrait.property$.value?.name$.value ?? ''}
@@ -245,11 +245,11 @@ export const popViewOptions = (
     menu.group({
       items: [
         menu.action({
-          name: 'Layout',
+          name: 'Elrendezés',
           postfix: html` <div
               style="font-size: 14px;text-transform: capitalize;"
             >
-              ${view.type}
+              ${view.type === 'table' ? 'Táblázat' : 'Kanban'}
             </div>
             ${ArrowRightSmallIcon()}`,
           select: () => {
@@ -307,7 +307,7 @@ export const popViewOptions = (
               options: {
                 title: {
                   onBack: reopen,
-                  text: 'Layout',
+                  text: 'Elrendezés',
                 },
                 items: [
                   menu => {
@@ -350,14 +350,14 @@ export const popViewOptions = (
     menu.group({
       items: [
         menu.action({
-          name: 'Duplicate',
+          name: 'Duplikálás',
           prefix: DuplicateIcon(),
           select: () => {
             view.duplicate();
           },
         }),
         menu.action({
-          name: 'Delete',
+          name: 'Törlés',
           prefix: DeleteIcon(),
           select: () => {
             view.delete();
@@ -370,7 +370,7 @@ export const popViewOptions = (
   popMenu(target, {
     options: {
       title: {
-        text: 'View settings',
+        text: 'Nézet beállításai',
       },
       items,
       onClose: onClose,

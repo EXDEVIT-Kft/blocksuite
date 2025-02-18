@@ -116,7 +116,7 @@ export class RecordDetail extends SignalWatcher(
     popMenu(popupTargetFromElement(this.addPropertyButton), {
       options: {
         title: {
-          text: 'Add property',
+          text: 'Tulajdonság hozzáadása',
         },
         items: [
           menu.group({
@@ -256,7 +256,7 @@ export class RecordDetail extends SignalWatcher(
         ${!this.readonly
           ? html` <div class="add-property" @click="${this._clickAddProperty}">
               <div class="icon">${PlusIcon()}</div>
-              Add Property
+              Tulajdonság hozzáadása
             </div>`
           : nothing}
       </div>

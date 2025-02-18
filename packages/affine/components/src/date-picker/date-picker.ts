@@ -15,18 +15,18 @@ import { arrowLeftIcon } from './icons.js';
 import { datePickerStyle } from './style.js';
 import { clamp, getMonthMatrix, toDate } from './utils.js';
 
-const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const days = ['Hé', 'Ke', 'Sz', 'Cs', 'Pé', 'Sz', 'Va'];
 const months = [
   'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
+  'Febr',
+  'Márc',
+  'Ápr',
+  'Máj',
+  'Jún',
+  'Júl',
   'Aug',
-  'Sep',
-  'Oct',
+  'Szep',
+  'Okt',
   'Nov',
   'Dec',
 ];

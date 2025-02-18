@@ -30,7 +30,7 @@ export type TableViewData = BasicViewDataType<
   DataType
 >;
 export const tableViewModel = tableViewType.createModel<TableViewData>({
-  defaultName: 'Table View',
+  defaultName: 'Tábla Nézet',
   dataViewManager: TableSingleView,
   defaultData: viewManager => {
     return {

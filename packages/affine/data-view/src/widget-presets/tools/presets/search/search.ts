@@ -148,7 +148,7 @@ export class DataViewHeaderToolsSearch extends WidgetBase<
       <label class="${searchToolClassMap}" @click="${this._clickSearch}">
         <div class="affine-database-search-input-icon">${SearchIcon()}</div>
         <input
-          placeholder="Search..."
+          placeholder="Keresés..."
           class="affine-database-search-input"
           @input="${this._onSearch}"
           @click="${(event: MouseEvent) => event.stopPropagation()}"
@@ -166,11 +166,12 @@ export class DataViewHeaderToolsSearch extends WidgetBase<
                 boxSizing: 'border-box',
                 padding: '2px 6px',
                 borderRadius: '4px',
-                background: 'var(--affine-white-10)',
+                marginRight: '2px',
+                background: 'var(--algogrind-hover-color-filled)',
               })}
               >Esc</span
             >
-            to clear all
+            a visszavonáshoz
           </affine-tooltip>
         </div>
       </label>

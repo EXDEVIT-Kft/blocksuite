@@ -17,8 +17,8 @@ import {
   ArrowUpBigIcon,
   //ArrowUpSmallIcon,
   CopyIcon,
-  //DatabaseKanbanViewIcon20,
-  //DatabaseTableViewIcon20,
+  DatabaseKanbanViewIcon20,
+  DatabaseTableViewIcon20,
   DeleteIcon,
   FileIcon,
   FrameIcon,
@@ -42,12 +42,12 @@ import {
   //createDefaultDoc,
   openFileOrFiles,
 } from '@blocksuite/affine-shared/utils';
+import { viewPresets } from '@blocksuite/data-view/view-presets';
 import {
   EquationBlockIcon,
   EquationInlineIcon,
   WebIcon,
 } from '@blocksuite/editor-icons';
-//import { viewPresets } from '@blocksuite/data-view/view-presets';
 //import { assertType } from '@blocksuite/global/utils';
 import { DuplicateIcon, GroupingIcon } from '@blocksuite/icons/lit';
 import { Slice, Text } from '@blocksuite/store';
@@ -924,17 +924,18 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     },
 
     // ---------------------------------------------------------
-    /*
+
     { groupName: 'Adatbázis' },
     {
       name: 'Táblázat Nézet',
       description: 'Jelenítsd meg az elemeket táblázatban.',
-      alias: ['database'],
+      alias: ['táblázat', 'adatbázis', 'database', 'table'],
       icon: DatabaseTableViewIcon20,
       tooltip: slashMenuToolTips['Táblázat Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
-        !insideEdgelessText(model),
+        !insideEdgelessText(model) &&
+        !!model.doc.awarenessStore.getFlag('algogrind_enable_database'),
       action: ({ rootComponent }) => {
         rootComponent.std.command
           .chain()
@@ -946,19 +947,19 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           })
           .inline(({ insertedDatabaseBlockId }) => {
             if (insertedDatabaseBlockId) {
-              const telemetry =
-                rootComponent.std.getOptional(TelemetryProvider);
-              telemetry?.track('AddDatabase', {
-                blockId: insertedDatabaseBlockId,
-              });
+              //const telemetry =
+              //  rootComponent.std.getOptional(TelemetryProvider);
+              //telemetry?.track('AddDatabase', {
+              //  blockId: insertedDatabaseBlockId,
+              //});
             }
           })
           .run();
       },
     },
-    {
+    /*{
       name: 'Todo Nézet',
-      alias: ['todo view'],
+      alias: ['táblázat', 'adatbázis', 'todo view', 'database', 'table'],
       icon: DatabaseTableViewIcon20,
       tooltip: slashMenuToolTips['Todo Nézet'],
       showWhen: ({ model }) =>
@@ -986,16 +987,17 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         });
         tryRemoveEmptyLine(model);
       },
-    },
+    },*/
     {
       name: 'Kanban Nézet',
       description: 'Vizualizáld az elvégzendő feladatokat.',
-      alias: ['database'],
+      alias: ['kanban', 'adatbázis', 'database', 'task', 'feladatok'],
       icon: DatabaseKanbanViewIcon20,
       tooltip: slashMenuToolTips['Kanban Nézet'],
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
-        !insideEdgelessText(model),
+        !insideEdgelessText(model) &&
+        !!model.doc.awarenessStore.getFlag('algogrind_enable_kanban'),
       action: ({ rootComponent }) => {
         rootComponent.std.command
           .chain()
@@ -1007,16 +1009,16 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
           })
           .inline(({ insertedDatabaseBlockId }) => {
             if (insertedDatabaseBlockId) {
-              const telemetry =
-                rootComponent.std.getOptional(TelemetryProvider);
-              telemetry?.track('AddDatabase', {
-                blockId: insertedDatabaseBlockId,
-              });
+              //const telemetry =
+              //  rootComponent.std.getOptional(TelemetryProvider);
+              //telemetry?.track('AddDatabase', {
+              //  blockId: insertedDatabaseBlockId,
+              //});
             }
           })
           .run();
       },
-    },*/
+    },
 
     // ---------------------------------------------------------
     { groupName: 'Műveletek' },

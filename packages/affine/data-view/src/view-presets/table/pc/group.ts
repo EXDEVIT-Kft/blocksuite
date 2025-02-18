@@ -112,7 +112,7 @@ export class TableGroup extends SignalWatcher(
     const ele = e.currentTarget as HTMLElement;
     popFilterableSimpleMenu(popupTargetFromElement(ele), [
       menu.action({
-        name: 'Ungroup',
+        name: 'Csoportosítás feloldása',
         hide: () => group.value == null,
         select: () => {
           group.rows.forEach(id => {
@@ -121,7 +121,7 @@ export class TableGroup extends SignalWatcher(
         },
       }),
       menu.action({
-        name: 'Delete Cards',
+        name: 'Kártyák törlése',
         select: () => {
           this.view.rowDelete(group.rows);
         },
@@ -272,7 +272,7 @@ export class TableGroup extends SignalWatcher(
               data-test-id="affine-database-add-row-button"
               role="button"
             >
-              ${PlusIcon()}<span style="font-size: 12px">New Record</span>
+              ${PlusIcon()}<span style="font-size: 12px">Új sor</span>
             </div>
           </div>`}
       <affine-database-column-stats .view="${this.view}" .group="${this.group}">

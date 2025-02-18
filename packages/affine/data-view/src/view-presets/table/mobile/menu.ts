@@ -18,7 +18,7 @@ export const popMobileRowMenu = (
     menu.group({
       items: [
         menu.action({
-          name: 'Expand Row',
+          name: 'Sor kinagyítása',
           prefix: ExpandFullIcon(),
           select: () => {
             dataViewEle.openDetailPanel({
@@ -33,7 +33,7 @@ export const popMobileRowMenu = (
       name: '',
       items: [
         menu.action({
-          name: 'Delete Row',
+          name: 'Sor törlése',
           class: { 'delete-item': true },
           prefix: DeleteIcon(),
           select: () => {

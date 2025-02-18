@@ -98,6 +98,9 @@ export async function createDefaultDocCollection() {
       enable_new_dnd: true,
       enable_mobile_keyboard_toolbar: true,
       enable_mobile_linked_doc_menu: false,
+      // [ALGOGRIND] algogrind specific feature flags
+      algogrind_enable_database: true,
+      algogrind_enable_kanban: true,
       ...flags,
     },
   };

@@ -6,8 +6,8 @@ export const unknownFilter = [
     name: 'isNotEmpty',
     self: t.unknown.instance(),
     args: [] as const,
-    label: 'Is not empty',
-    shortString: () => ': Is not empty',
+    label: 'Nem üres',
+    shortString: () => ': nem üres',
     impl: self => {
       if (Array.isArray(self)) {
         return self.length > 0;
@@ -22,8 +22,8 @@ export const unknownFilter = [
     name: 'isEmpty',
     self: t.unknown.instance(),
     args: [] as const,
-    label: 'Is empty',
-    shortString: () => ': Is empty',
+    label: 'Üres',
+    shortString: () => ': üres',
     impl: self => {
       if (Array.isArray(self)) {
         return self.length === 0;

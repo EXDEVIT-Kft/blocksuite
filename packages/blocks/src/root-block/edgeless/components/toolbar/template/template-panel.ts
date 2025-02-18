@@ -469,7 +469,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
                           style=${styleMap({
                             opacity: isBeingDragged ? '0' : '1',
                           })}
-                          data-hover-text="Add"
+                          data-hover-text="Hozzáad"
                           @mousedown=${(e: MouseEvent) =>
                             this.draggableController.onMouseDown(e, {
                               data: template,

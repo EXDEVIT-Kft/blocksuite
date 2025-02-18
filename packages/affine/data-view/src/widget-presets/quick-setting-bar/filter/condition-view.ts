@@ -129,7 +129,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
           menu.group({
             items: [
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 class: { 'delete-item': true },
                 prefix: DeleteIcon(),
                 select: () => {
@@ -278,7 +278,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
     if (!leftVar) {
       return html` <data-view-component-button
         hoverType="border"
-        .text="${html`Invalid filter rule`}"
+        .text="${html`Érvénytelen szűrés`}"
       ></data-view-component-button>`;
     }
     return html`

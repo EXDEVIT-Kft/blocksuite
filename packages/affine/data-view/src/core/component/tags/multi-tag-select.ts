@@ -200,7 +200,7 @@ export class MultiTagSelect extends SignalWatcher(
             },
           }),
           menu.action({
-            name: 'Delete',
+            name: 'Törlés',
             prefix: DeleteIcon(),
             class: {
               'delete-item': true,
@@ -316,7 +316,7 @@ export class MultiTagSelect extends SignalWatcher(
         })}
         <input
           class="tag-select-input"
-          placeholder="Type here..."
+          placeholder="Keress itt..."
           .value="${this.text.value}"
           @input="${this._onInput}"
           @keydown="${this._onInputKeydown}"
@@ -347,7 +347,9 @@ export class MultiTagSelect extends SignalWatcher(
           'layer/insideBorder/border'
         )};margin: 4px 0;"
       ></div>
-      <div class="select-options-tips">Select tag or create one</div>
+      <div class="select-options-tips">
+        Válassz címkét, vagy hozz létre egyet
+      </div>
       <div class="select-options-container">
         ${repeat(
           this.tagManager.filteredOptions$.value,
@@ -496,7 +498,7 @@ const popMobileTagSelect = (target: PopupTarget, ops: TagSelectOptions) => {
               <input
                 .value="${tagManager.text.value}"
                 @input="${onInput}"
-                placeholder="Type here..."
+                placeholder="Keress itt..."
                 type="text"
                 style="outline: none;border: none;flex:1;min-width: 10px"
               />
@@ -518,7 +520,9 @@ const popMobileTagSelect = (target: PopupTarget, ops: TagSelectOptions) => {
                     return html`
                       <div style="display: flex; align-items:center;">
                         ${option.isCreate
-                          ? html` <div style="margin-right: 8px;">Create</div>`
+                          ? html` <div style="margin-right: 8px;">
+                              Létrehozás
+                            </div>`
                           : ''}
                         <div class="tag-container" style=${style}>
                           <div class="tag-text">${option.value}</div>

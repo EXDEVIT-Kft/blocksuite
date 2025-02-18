@@ -137,7 +137,7 @@ export class KanbanGroup extends SignalWatcher(
     const ele = e.currentTarget as HTMLElement;
     popFilterableSimpleMenu(popupTargetFromElement(ele), [
       menu.action({
-        name: 'Ungroup',
+        name: 'Csoportosítás feloldása',
         hide: () => this.group.value == null,
         select: () => {
           this.group.rows.forEach(id => {
@@ -146,7 +146,7 @@ export class KanbanGroup extends SignalWatcher(
         },
       }),
       menu.action({
-        name: 'Delete Cards',
+        name: 'Kártyák törlése',
         select: () => {
           this.view.rowDelete(this.group.rows);
         },
@@ -188,7 +188,7 @@ export class KanbanGroup extends SignalWatcher(
               >
                 ${AddCursorIcon()}
               </div>
-              Add
+              Hozzáad
             </div>`}
       </div>
     `;

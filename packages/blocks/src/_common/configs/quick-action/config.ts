@@ -34,7 +34,7 @@ export interface QuickActionConfig {
 export const quickActionConfig: QuickActionConfig[] = [
   {
     id: 'copy',
-    name: 'Copy',
+    name: 'Másolás',
     disabledToolTip: undefined,
     icon: CopyIcon,
     hotkey: undefined,
@@ -46,7 +46,7 @@ export const quickActionConfig: QuickActionConfig[] = [
         .getSelectedModels()
         .with({
           onCopy: () => {
-            toast(host, 'Copied to clipboard');
+            toast(host, 'Vágólapra másolva');
           },
         })
         .draftSelectedModels()
@@ -56,9 +56,9 @@ export const quickActionConfig: QuickActionConfig[] = [
   },
   /*{
     id: 'convert-to-database',
-    name: 'Group as Table',
+    name: 'Csoportosítás Táblázatként',
     disabledToolTip:
-      'Contains Block types that cannot be converted to Database',
+      'Olyan blokkokat tartalmaz, amik nem konvertálhatók Adatbázissá',
     icon: DatabaseTableViewIcon20,
     showWhen: host => {
       const [_, ctx] = host.std.command

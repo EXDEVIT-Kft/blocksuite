@@ -128,7 +128,7 @@ export class MobileKanbanGroup extends SignalWatcher(
               >
                 ${AddCursorIcon()}
               </div>
-              Add
+              Hozzáad
             </div>`}
       </div>
     `;

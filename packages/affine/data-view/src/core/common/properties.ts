@@ -243,7 +243,7 @@ export const popPropertiesSetting = (
   popMenu(target, {
     options: {
       title: {
-        text: 'Properties',
+        text: 'Tulajdonságok',
         onBack: props.onBack,
         postfix: () => {
           const items = props.view.propertiesWithoutFilter$.value.map(id =>
@@ -261,7 +261,7 @@ export const popPropertiesSetting = (
             class="properties-group-op"
             @click="${clickChangeAll}"
           >
-            ${isAllShowed ? 'Hide All' : 'Show All'}
+            ${isAllShowed ? 'Mind elrejtése' : 'Mind megjelenítése'}
           </div>`;
         },
       },

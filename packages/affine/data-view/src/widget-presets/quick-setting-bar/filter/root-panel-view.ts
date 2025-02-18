@@ -205,7 +205,10 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     const filter = this.filterGroup.value.conditions[i];
     popFilterableSimpleMenu(popupTargetFromElement(target), [
       menu.action({
-        name: filter.type === 'filter' ? 'Turn into group' : 'Wrap in group',
+        name:
+          filter.type === 'filter'
+            ? 'Csoporttá konvertálás'
+            : 'Csoportba foglalás',
         prefix: ConvertIcon(),
         onHover: hover => {
           this.containerClass = hover
@@ -222,7 +225,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
         },
       }),
       menu.action({
-        name: 'Duplicate',
+        name: 'Duplikálás',
         prefix: DuplicateIcon(),
         onHover: hover => {
           this.containerClass = hover
@@ -243,7 +246,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
         name: '',
         items: [
           menu.action({
-            name: 'Delete',
+            name: 'Törlés',
             prefix: DeleteIcon(),
             class: { 'delete-item': true },
             onHover: hover => {
@@ -335,7 +338,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       );
     };
     const length = condition.conditions.length;
-    const text = length > 1 ? `${length} rules` : `${length} rule`;
+    const text = length > 1 ? `${length} szűrő` : `${length} szűrő`;
     return html` <data-view-component-button
       hoverType="border"
       .icon="${FilterIcon()}"
@@ -380,7 +383,7 @@ export const popFilterRoot = (
   popMenu(target, {
     options: {
       title: {
-        text: 'Filters',
+        text: 'Szűrők',
         onBack: props.onBack,
       },
       items: [
@@ -399,7 +402,7 @@ export const popFilterRoot = (
         menu.group({
           items: [
             menu.action({
-              name: 'Add',
+              name: 'Új',
               prefix: PlusIcon(),
               select: ele => {
                 const value = filterTrait.filter$.value;
