@@ -373,7 +373,7 @@ export class EmbedCardEditModal extends SignalWatcher(
             .disabled=${this.saveButtonDisabled$.value}
             @click=${this._onSave}
           >
-            Save
+            Mentés
           </button>
         </div>
       </div>

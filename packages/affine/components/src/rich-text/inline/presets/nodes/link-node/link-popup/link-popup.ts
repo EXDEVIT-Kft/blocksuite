@@ -121,7 +121,7 @@ export class LinkPopup extends WithDisposable(LitElement) {
             placeholder="Szöveg megadása"
             @input=${this._updateConfirmBtn}
           />
-          <label class="affine-edit-label" for="text-input">Text</label>
+          <label class="affine-edit-label" for="text-input">Cím</label>
         </div>
         <div class="affine-edit-area link">
           <input

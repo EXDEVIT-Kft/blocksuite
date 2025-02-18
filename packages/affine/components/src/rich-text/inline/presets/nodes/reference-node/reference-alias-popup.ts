@@ -183,28 +183,28 @@ export class ReferenceAliasPopup extends SignalWatcher(
           <input
             id="alias-title"
             type="text"
-            placeholder="Add a custom title"
+            placeholder="Egyedi cím megadása"
             .value=${live(this.title$.value)}
             @input=${this._updateTitle}
           />
           <editor-icon-button
-            aria-label="Reset"
+            aria-label="Újra"
             class="reset"
             .iconContainerPadding=${4}
-            .tooltip=${'Reset'}
+            .tooltip=${'Újra'}
             @click=${this._onReset}
           >
             ${ResetIcon({ width: '16px', height: '16px' })}
           </editor-icon-button>
           <editor-toolbar-separator></editor-toolbar-separator>
           <editor-icon-button
-            aria-label="Save"
+            aria-label="Mentés"
             class="save"
             .active=${true}
             @click=${this._onSave}
           >
             ${DoneIcon({ width: '16px', height: '16px' })}
-            <span class="label">Save</span>
+            <span class="label">Mentés</span>
           </editor-icon-button>
         </div>
       </div>
