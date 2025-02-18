@@ -108,6 +108,8 @@ export class DatabaseColumnStatsCell extends SignalWatcher(
   });
 
   openMenu = (ev: MouseEvent) => {
+    if (this.column.view.readonly$.value) return;
+
     const menus: MenuConfig[] = Object.entries(this.groups$.value).map(
       ([group, funcs]) => {
         return menu.subMenu({

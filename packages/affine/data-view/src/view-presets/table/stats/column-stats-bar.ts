@@ -2,6 +2,7 @@ import { ShadowlessElement } from '@blocksuite/block-std';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
 
 import type { GroupData } from '../../../core/group-by/trait.js';
@@ -16,6 +17,22 @@ const styles = css`
     height: ${STATS_BAR_HEIGHT}px;
     display: flex;
   }
+
+  .affine-database-column-stats.readonly {
+    margin-left: 0px;
+  }
+
+  .affine-database-column-stats.readonly .stats-cell {
+    cursor: default;
+  }
+
+  .affine-database-column-stats.readonly .stats-cell:hover {
+    background-color: var(--algogrind-background-color);
+  }
+
+  .affine-database-column-stats.readonly .stats-cell[calculated='false'] {
+    display: none;
+  }
 `;
 
 export class DataBaseColumnStats extends SignalWatcher(
@@ -27,7 +44,12 @@ export class DataBaseColumnStats extends SignalWatcher(
     const cols = this.view.properties$.value;
 
     return html`
-      <div class="affine-database-column-stats">
+      <div
+        class=${classMap({
+          'affine-database-column-stats': true,
+          readonly: this.view.readonly$.value,
+        })}
+      >
         ${repeat(
           cols,
           col => col.id,
