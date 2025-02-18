@@ -13,6 +13,10 @@ import { KanbanGroup } from '../group.js';
 
 export class KanbanDragController implements ReactiveController {
   dragStart = (ele: KanbanCard, evt: PointerEvent) => {
+    if (this.host.props.view.readonly$.value) {
+      return;
+    }
+
     const eleRect = ele.getBoundingClientRect();
     const offsetLeft = evt.x - eleRect.left;
     const offsetTop = evt.y - eleRect.top;
@@ -34,7 +38,10 @@ export class KanbanDragController implements ReactiveController {
     >(evt, {
       onDrag: () => undefined,
       onMove: evt => {
-        if (!(evt.target instanceof HTMLElement)) {
+        if (
+          !(evt.target instanceof HTMLElement) ||
+          this.host.props.view.readonly$.value
+        ) {
           return;
         }
         preview.display(evt.x - offsetLeft, evt.y - offsetTop);

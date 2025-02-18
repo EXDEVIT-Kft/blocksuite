@@ -163,6 +163,7 @@ export class DataViewKanban extends DataViewBase<
     activators: defaultActivators,
     container: this,
     onDragEnd: evt => {
+      if (this.props.view.readonly$.value) return;
       const over = evt.over;
       const activeId = evt.active.id;
       const groups = this.groupManager.groupsDataList$.value;
