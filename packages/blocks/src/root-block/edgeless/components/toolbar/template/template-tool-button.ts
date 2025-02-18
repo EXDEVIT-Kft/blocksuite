@@ -19,6 +19,8 @@ import type { EdgelessTemplatePanel } from './template-panel.js';
 import { EdgelessToolbarToolMixin } from '../mixins/tool.mixin.js';
 import { TemplateCard1, TemplateCard2, TemplateCard3 } from './icon.js';
 
+const EDGELESS_TEMPLATE_PADDING_RIGHT = 10;
+
 export class EdgelessTemplateButton extends EdgelessToolbarToolMixin(
   LitElement
 ) {
@@ -178,7 +180,7 @@ export class EdgelessTemplateButton extends EdgelessToolbarToolMixin(
           middleware: [offset(20), arrow({ element: arrowEl }), shift()],
         })
           .then(({ x, y, middlewareData }) => {
-            panel.style.left = `${x}px`;
+            panel.style.left = `${x - EDGELESS_TEMPLATE_PADDING_RIGHT}px`;
             panel.style.top = `${y}px`;
 
             arrowEl.style.left = `${

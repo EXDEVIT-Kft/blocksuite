@@ -36,6 +36,8 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .edgeless-templates-panel {
       width: 467px;
       height: 568px;
+      max-width: 95vw;
+      max-height: 50dvh;
       border-radius: 12px;
       background-color: var(--algogrind-overlay-panel-background-color);
       box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.2);
@@ -51,7 +53,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     }
 
     .search-bar {
-      padding: 21px 24px;
+      padding: 16px 16px 14px;
       font-size: 18px;
       color: var(--affine-secondary);
       border-bottom: 1px solid var(--algogrind-border-color);
@@ -62,6 +64,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .search-input {
       border: 0;
       color: var(--algogrind-text-paragraph-color);
+      font-family: var(--algogrind-text-heading-1-family);
       font-size: 20px;
       background-color: inherit;
       outline: none;
@@ -102,6 +105,26 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       background: #cbd5e1;
     }
 
+    .template-scrollcontent::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    .template-scrollcontent::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+
+    /* Handle */
+    .template-scrollcontent::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 1rem;
+    }
+
+    /* Handle on hover */
+    .template-scrollcontent::-webkit-scrollbar-thumb:hover {
+      background: #cbd5e1;
+    }
+
     .category-entry {
       color: var(--algogrind-text-paragraph-color);
       font-size: 12px;
@@ -124,10 +147,12 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .template-viewport {
       position: relative;
       flex-grow: 1;
+      overflow: hidden;
     }
 
     .template-scrollcontent {
-      overflow: hidden;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
       height: 100%;
       width: 100%;
     }
@@ -137,7 +162,8 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       display: flex;
       align-items: flex-start;
       align-content: flex-start;
-      gap: 10px 20px;
+      justify-content: center;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -500,7 +526,6 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
                   )}
             </div>
           </div>
-          <overlay-scrollbar></overlay-scrollbar>
         </div>
         <div class="arrow">${ArrowIcon}</div>
       </div>

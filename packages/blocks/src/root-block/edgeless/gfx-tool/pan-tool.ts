@@ -46,7 +46,6 @@ export class PanTool extends BaseTool<PanToolOption> {
 
   override mounted(): void {
     this.addHook('pointerDown', evt => {
-      evt.raw.preventDefault();
       const currentTool = this.controller.currentToolOption$.peek();
 
       if (
@@ -56,6 +55,8 @@ export class PanTool extends BaseTool<PanToolOption> {
       ) {
         return;
       }
+
+      evt.raw.preventDefault();
 
       const restoreToPrevious = () => {
         this.controller.setTool(currentTool);
