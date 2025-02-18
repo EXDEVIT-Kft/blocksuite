@@ -41,6 +41,10 @@ abstract class PointerControllerBase {
 
 class PointerEventForward extends PointerControllerBase {
   private _down = (event: PointerEvent) => {
+    if (event.button === 1) {
+      return;
+    }
+
     const { pointerId } = event;
 
     const pointerState = new PointerEventState({

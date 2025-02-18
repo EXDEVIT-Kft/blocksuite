@@ -472,6 +472,10 @@ export class DragEventWatcher {
     parent?: string,
     index?: number
   ) {
+    if (this._std.doc.loaded && this._std.doc.readonly) {
+      return null;
+    }
+
     try {
       const dataTransfer = state.raw.dataTransfer;
       if (!dataTransfer) throw new Error('No data transfer');

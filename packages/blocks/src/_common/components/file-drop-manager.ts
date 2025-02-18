@@ -41,6 +41,10 @@ export class FileDropManager {
   private _onDrop = (event: DragEvent) => {
     this._indicator.rect = null;
 
+    if (this.doc.readonly) {
+      return;
+    }
+
     const { onDrop } = this._fileDropOptions;
     if (!onDrop) return;
 
@@ -73,6 +77,10 @@ export class FileDropManager {
 
   onDragOver = (event: DragEvent) => {
     event.preventDefault();
+
+    if (this.doc.readonly) {
+      return;
+    }
 
     const dataTransfer = event.dataTransfer;
     if (!dataTransfer) return;
