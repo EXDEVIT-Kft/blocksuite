@@ -98,7 +98,7 @@ export class NoteRenderer
           @click="${this.addNote}"
           style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--algogrind-text-disabled-color)"
         >
-          Click to create a linked doc in center peek.
+          Kattints egy új beágyazott dokumentum létrehozásához.
         </div>
       </div>`;
     }

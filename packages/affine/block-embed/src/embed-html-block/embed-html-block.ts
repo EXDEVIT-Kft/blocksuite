@@ -76,7 +76,7 @@ export class EmbedHtmlBlockComponent extends EmbedBlockComponent<EmbedHtmlModel>
   }
 
   override renderBlock(): unknown {
-    const titleText = 'Basic HTML Page Structure';
+    const titleText = 'Alapértelmezett HTML struktúra';
 
     const htmlSrc = `
       <style>
@@ -89,7 +89,7 @@ export class EmbedHtmlBlockComponent extends EmbedBlockComponent<EmbedHtmlModel>
 
     return this.renderEmbed(() => {
       if (!this.model.html) {
-        return html` <div class="affine-html-empty">Empty</div>`;
+        return html` <div class="affine-html-empty">Üres</div>`;
       }
       return html`
         <div

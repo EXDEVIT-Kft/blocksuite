@@ -997,7 +997,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       showWhen: ({ model }) =>
         model.doc.schema.flavourSchemaMap.has('affine:database') &&
         !insideEdgelessText(model) &&
-        !!model.doc.awarenessStore.getFlag('algogrind_enable_kanban'),
+        !!model.doc.awarenessStore.getFlag('algogrind_enable_database'),
       action: ({ rootComponent }) => {
         rootComponent.std.command
           .chain()

@@ -36,7 +36,7 @@ export const typeConfig = (property: Property) => {
   return menu.group({
     items: [
       menu.subMenu({
-        name: 'Type',
+        name: 'Típus',
         hide: () => !property.typeSet || property.type$.value === 'title',
         postfix: html` <div
           class="affine-database-column-type-icon"
@@ -49,7 +49,7 @@ export const typeConfig = (property: Property) => {
         </div>`,
         options: {
           title: {
-            text: 'Property type',
+            text: 'Tulajdonság típusa',
           },
           items: [
             menu.group({

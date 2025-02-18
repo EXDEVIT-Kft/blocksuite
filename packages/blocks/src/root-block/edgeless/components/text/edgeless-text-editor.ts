@@ -31,7 +31,7 @@ export class EdgelessTextEditor extends WithDisposable(ShadowlessElement) {
 
   static PADDING_VERTICAL = 6;
 
-  static PLACEHOLDER_TEXT = 'Type from here';
+  static PLACEHOLDER_TEXT = 'Ide írhatsz...';
 
   static override styles = css`
     .edgeless-text-editor {

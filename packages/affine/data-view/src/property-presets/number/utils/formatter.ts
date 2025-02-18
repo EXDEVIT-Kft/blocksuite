@@ -7,7 +7,8 @@ export type NumberFormat =
   | 'currencyCNY'
   | 'currencyUSD'
   | 'currencyEUR'
-  | 'currencyGBP';
+  | 'currencyGBP'
+  | 'currencyHUF';
 
 const currency = (currency: string): Intl.NumberFormatOptions => ({
   style: 'currency',
@@ -28,6 +29,7 @@ const numberFormatDefaultConfig: Record<
   currencyUSD: currency('USD'),
   currencyEUR: currency('EUR'),
   currencyGBP: currency('GBP'),
+  currencyHUF: currency('HUF'),
 };
 
 export function formatNumber(

@@ -103,7 +103,7 @@ export class RecordField extends SignalWatcher(
     }
 
     .field-content.empty::before {
-      content: 'Empty';
+      content: 'Üres';
       color: var(--algogrind-text-disabled-color);
       font-size: 14px;
       line-height: 22px;

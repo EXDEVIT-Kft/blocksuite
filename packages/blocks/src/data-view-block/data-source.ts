@@ -101,10 +101,10 @@ export class BlockQueryDataSource extends DataSourceBase {
 
   private newColumnName() {
     let i = 1;
-    while (this.block.columns.some(column => column.name === `Column ${i}`)) {
+    while (this.block.columns.some(column => column.name === `Oszlop ${i}`)) {
       i++;
     }
-    return `Column ${i}`;
+    return `Oszlop ${i}`;
   }
 
   cellValueChange(rowId: string, propertyId: string, value: unknown): void {

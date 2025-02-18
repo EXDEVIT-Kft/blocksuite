@@ -123,11 +123,11 @@ export class DatabaseBlockDataSource extends DataSourceBase {
   private newPropertyName() {
     let i = 1;
     while (
-      this._model.columns$.value.some(column => column.name === `Column ${i}`)
+      this._model.columns$.value.some(column => column.name === `Oszlop ${i}`)
     ) {
       i++;
     }
-    return `Column ${i}`;
+    return `Oszlop ${i}`;
   }
 
   cellValueChange(rowId: string, propertyId: string, value: unknown): void {
@@ -427,22 +427,22 @@ export const databaseViewInitTemplate = (
   const statusId = addProperty(
     model,
     'end',
-    propertyPresets.selectPropertyConfig.create('Status', {
+    propertyPresets.selectPropertyConfig.create('Státusz', {
       options: [
         {
           id: ids[0],
           color: getTagColor(),
-          value: 'TODO',
+          value: 'Teendő',
         },
         {
           id: ids[1],
           color: getTagColor(),
-          value: 'In Progress',
+          value: 'Folyamatban',
         },
         {
           id: ids[2],
           color: getTagColor(),
-          value: 'Done',
+          value: 'Kész',
         },
       ],
     })
@@ -451,7 +451,7 @@ export const databaseViewInitTemplate = (
     const rowId = model.doc.addBlock(
       'affine:paragraph',
       {
-        text: new model.doc.Text(`Task ${i + 1}`),
+        text: new model.doc.Text(`Feladat ${i + 1}`),
       },
       model.id
     );

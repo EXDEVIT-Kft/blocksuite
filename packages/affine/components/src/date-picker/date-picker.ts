@@ -164,7 +164,7 @@ export class DatePicker extends WithDisposable(LitElement) {
               this._onChange(new Date());
             }}
           >
-            <span>TODAY</span>
+            <span>Ma</span>
           </button>`
         )}
       </div>
@@ -185,7 +185,7 @@ export class DatePicker extends WithDisposable(LitElement) {
               class="footer-button interactive"
               @click=${() => this.onClear?.()}
             >
-              Clear
+              Töröl
             </button>
           </div>`
         : nothing}`;

@@ -5,7 +5,7 @@ export const checkboxPropertyType = propertyType('checkbox');
 
 export const checkboxPropertyModelConfig =
   checkboxPropertyType.modelConfig<boolean>({
-    name: 'Checkbox',
+    name: 'Jelölőmező',
     type: () => t.boolean.instance(),
     defaultData: () => ({}),
     cellToString: ({ value }) => (value ? 'True' : 'False'),

@@ -55,7 +55,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
         menu.input({
           initialValue: value.value ?? '',
           onChange: onChange,
-          placeholder: 'Type a value...',
+          placeholder: 'Adj meg egy értéket...',
         }),
       ];
     },
@@ -66,7 +66,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
       return [
         menu.input({
           initialValue: value.value?.toString(10) ?? '',
-          placeholder: 'Type a value...',
+          placeholder: 'Adj meg egy értéket...',
           onChange: text => {
             const number = Number.parseFloat(text);
             if (Number.isNaN(number)) {

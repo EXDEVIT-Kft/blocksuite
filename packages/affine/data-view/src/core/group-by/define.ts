@@ -12,7 +12,7 @@ import { StringGroupView } from './renderer/string-group.js';
 
 const groupByMatcherCreator = new MatcherCreator<GroupByConfig>();
 const ungroups = {
-  key: 'Ungroups',
+  key: 'Csoport nélküliek',
   value: null,
 };
 export const groupByMatchers = [

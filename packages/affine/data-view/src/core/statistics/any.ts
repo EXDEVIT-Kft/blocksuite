@@ -5,9 +5,9 @@ import { createStatisticConfig } from './create.js';
 
 export const anyTypeStatsFunctions: StatisticsConfig[] = [
   createStatisticConfig({
-    group: 'Count',
-    menuName: 'Count All',
-    displayName: 'All',
+    group: 'Megszámolás',
+    menuName: 'Mind Megszámolása',
+    displayName: 'Mind',
     type: 'count-all',
     dataType: t.unknown.instance(),
     impl: data => {
@@ -15,9 +15,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Count',
-    menuName: 'Count Values',
-    displayName: 'Values',
+    group: 'Megszámolás',
+    menuName: 'Értékek Megszámolása',
+    displayName: 'Értékek',
     type: 'count-values',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {
@@ -33,9 +33,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Count',
-    menuName: 'Count Unique Values',
-    displayName: 'Unique Values',
+    group: 'Megszámolás',
+    menuName: 'Egyedi Értékek Megszámolása',
+    displayName: 'Egyedi Értékek',
     type: 'count-unique-values',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {
@@ -51,9 +51,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Count',
-    menuName: 'Count Empty',
-    displayName: 'Empty',
+    group: 'Megszámolás',
+    menuName: 'Üres Értékek Megszámolása',
+    displayName: 'Üres',
     type: 'count-empty',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {
@@ -64,9 +64,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Count',
-    menuName: 'Count Not Empty',
-    displayName: 'Not Empty',
+    group: 'Megszámolás',
+    menuName: 'Nem Üres Értékek Megszámolása',
+    displayName: 'Nem Üres',
     type: 'count-not-empty',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {
@@ -77,9 +77,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Percent',
-    menuName: 'Percent Empty',
-    displayName: 'Empty',
+    group: 'Százalék',
+    menuName: 'Százalék Üres',
+    displayName: '% Üres',
     type: 'percent-empty',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {
@@ -91,9 +91,9 @@ export const anyTypeStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'Percent',
-    menuName: 'Percent Not Empty',
-    displayName: 'Not Empty',
+    group: 'Százalék',
+    menuName: 'Százalék Nem Üres',
+    displayName: '% Nem Üres',
     type: 'percent-not-empty',
     dataType: t.unknown.instance(),
     impl: (data, { meta, dataSource }) => {

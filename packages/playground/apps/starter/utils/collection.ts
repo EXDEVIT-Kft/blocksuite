@@ -71,9 +71,9 @@ export function createStarterDocCollection() {
       // Edgeless -> shortcut: Q
       enable_pie_menu: true,
       // Database --->
-      enable_database_number_formatting: false,
-      enable_database_attachment_note: false,
-      enable_database_full_width: false,
+      enable_database_number_formatting: true,
+      enable_database_attachment_note: true,
+      enable_database_full_width: true,
       enable_block_query: false, // -> speciális "todo" táblázat -> wip
       // <--- database
       enable_legacy_validation: false,
@@ -93,7 +93,6 @@ export function createStarterDocCollection() {
       enable_mobile_linked_doc_menu: false,
       // [ALGOGRIND] algogrind specific feature flags
       algogrind_enable_database: true,
-      algogrind_enable_kanban: true,
       ...flags,
     },
     awarenessSources: [new BroadcastChannelAwarenessSource(id)],

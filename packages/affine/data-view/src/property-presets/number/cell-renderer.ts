@@ -37,7 +37,7 @@ export class NumberCell extends BaseCellRenderer<
       font-size: var(--data-view-cell-text-size);
       line-height: var(--data-view-cell-text-line-height);
       color: var(--algogrind-text-paragraph-color);
-      font-weight: 400;
+      font-weight: 500;
       background-color: transparent;
       word-break: break-all;
     }
@@ -84,7 +84,7 @@ export class NumberCellEditing extends BaseCellRenderer<
       font-size: var(--data-view-cell-text-size);
       line-height: var(--data-view-cell-text-line-height);
       color: var(--algogrind-text-paragraph-color);
-      font-weight: 400;
+      font-weight: 500;
       background-color: transparent;
       text-align: right;
     }

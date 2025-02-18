@@ -113,7 +113,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<
       items: [
         menu.input({
           initialValue: this.model.title.toString(),
-          placeholder: 'Új dokumentum',
+          placeholder: 'Új adatbázis',
           onChange: text => {
             this.model.title.replace(0, this.model.title.length, text);
           },

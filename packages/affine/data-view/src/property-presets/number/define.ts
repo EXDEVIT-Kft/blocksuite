@@ -9,7 +9,7 @@ export const numberPropertyModelConfig = numberPropertyType.modelConfig<
   number,
   NumberPropertyDataType
 >({
-  name: 'Number',
+  name: 'Szám',
   type: () => t.number.instance(),
   defaultData: () => ({ decimal: 0, format: 'number' }),
   cellToString: ({ value }) => value?.toString() ?? '',

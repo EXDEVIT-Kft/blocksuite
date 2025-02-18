@@ -18,8 +18,8 @@ export const checkboxTypeStatsFunctions: StatisticsConfig[] = [
     group: 'Count',
     type: 'count-empty',
     dataType: t.boolean.instance(),
-    menuName: 'Count Unchecked',
-    displayName: 'Unchecked',
+    menuName: 'Darab Nem Elvégzett',
+    displayName: 'Nem Elvégzett',
     impl: data => {
       const emptyList = data.filter(value => !value);
       return emptyList.length.toString();
@@ -29,8 +29,8 @@ export const checkboxTypeStatsFunctions: StatisticsConfig[] = [
     group: 'Count',
     type: 'count-not-empty',
     dataType: t.boolean.instance(),
-    menuName: 'Count Checked',
-    displayName: 'Checked',
+    menuName: 'Darab Elvégzett',
+    displayName: 'Elvégzett',
     impl: data => {
       const notEmptyList = data.filter(value => !!value);
       return notEmptyList.length.toString();
@@ -40,8 +40,8 @@ export const checkboxTypeStatsFunctions: StatisticsConfig[] = [
     group: 'Percent',
     type: 'percent-empty',
     dataType: t.boolean.instance(),
-    menuName: 'Percent Unchecked',
-    displayName: 'Unchecked',
+    menuName: 'Százalék Nem Elvégzett',
+    displayName: '% Nem Elvégzett',
     impl: data => {
       if (data.length === 0) return '';
       const emptyList = data.filter(value => !value);
@@ -52,8 +52,8 @@ export const checkboxTypeStatsFunctions: StatisticsConfig[] = [
     group: 'Percent',
     type: 'percent-not-empty',
     dataType: t.boolean.instance(),
-    menuName: 'Percent Checked',
-    displayName: 'Checked',
+    menuName: 'Százalék Elvégzett',
+    displayName: '',
     impl: data => {
       if (data.length === 0) return '';
       const notEmptyList = data.filter(value => !!value);

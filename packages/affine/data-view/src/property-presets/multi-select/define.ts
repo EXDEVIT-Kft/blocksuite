@@ -9,7 +9,7 @@ import { propertyType } from '../../core/property/property-config.js';
 export const multiSelectPropertyType = propertyType('multi-select');
 export const multiSelectPropertyModelConfig =
   multiSelectPropertyType.modelConfig<string[], SelectPropertyData>({
-    name: 'Multi-select',
+    name: 'Több címke',
     type: ({ data }) => t.array.instance(t.tag.instance(data.options)),
     defaultData: () => ({
       options: [],

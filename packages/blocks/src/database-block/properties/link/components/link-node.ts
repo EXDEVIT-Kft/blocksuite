@@ -14,6 +14,9 @@ export class LinkNode extends ShadowlessElement {
       font-style: normal;
       text-decoration: none;
     }
+    .link-node-text {
+      font-weight: 500;
+    }
   `;
 
   protected override render() {

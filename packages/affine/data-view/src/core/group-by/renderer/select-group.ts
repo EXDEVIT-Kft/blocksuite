@@ -88,7 +88,7 @@ export class SelectGroupView extends BaseGroup<
       return html` <div
         style="font-size: 14px;color: var(--algogrind-text-paragraph-color);line-height: 22px;"
       >
-        Ungroups
+        Csoport nélküliek
       </div>`;
     }
     const style = styleMap({

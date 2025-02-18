@@ -51,26 +51,26 @@ export const previewIconMap = {
 };
 
 const paragraphPlaceholderMap: Record<ParagraphBlockModel['type'], string> = {
-  quote: 'Quote',
-  text: 'Text Block',
-  h1: 'Heading 1',
-  h2: 'Heading 2',
-  h3: 'Heading 3',
-  h4: 'Heading 4',
-  h5: 'Heading 5',
-  h6: 'Heading 6',
+  quote: 'Idézet',
+  text: 'Szöveg',
+  h1: 'Címsor 1',
+  h2: 'Címsor 2',
+  h3: 'Címsor 3',
+  h4: 'Címsor 4',
+  h5: 'Címsor 5',
+  h6: 'Címsor 6',
 };
 
 export const placeholderMap = {
-  code: 'Code Block',
-  bulleted: 'Bulleted List',
-  numbered: 'Numbered List',
-  toggle: 'Toggle List',
+  code: 'Kód blokk',
+  bulleted: 'Felsorolás',
+  numbered: 'Számozott Felsorolás',
+  toggle: 'Összecsukható Lista',
   todo: 'Todo',
-  bookmark: 'Bookmark',
-  image: 'Image',
-  database: 'Database',
-  attachment: 'Attachment',
+  bookmark: 'Hivatkozás',
+  image: 'Kép',
+  database: 'Adatbázis',
+  attachment: 'Fájl',
   ...paragraphPlaceholderMap,
 };
 

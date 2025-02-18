@@ -37,8 +37,8 @@ export class DataViewHeaderToolsAddRow extends WidgetBase {
       .onClick="${this._onAddNewRecord}"
       .icon="${PlusIcon()}"
       .text="${IS_MOBILE
-        ? html`<span style="font-weight: 500">New</span>`
-        : html`<span style="font-weight: 500">New Record</span>`}"
+        ? html`<span style="font-weight: 500">Új</span>`
+        : html`<span style="font-weight: 500">Új sor</span>`}"
     >
     </data-view-component-button>`;
   }

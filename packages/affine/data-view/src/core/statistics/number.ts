@@ -5,15 +5,15 @@ import { createStatisticConfig } from './create.js';
 
 export const numberStatsFunctions: StatisticsConfig[] = [
   createStatisticConfig({
-    group: 'More options',
-    menuName: 'Sum',
+    group: 'További opciók',
+    menuName: 'Összegzés',
     type: 'sum',
-    displayName: 'Sum',
+    displayName: 'Összegzés',
     dataType: t.number.instance(),
     impl: data => {
       const numbers = withoutNull(data);
       if (numbers.length === 0) {
-        return 'None';
+        return 'Üres';
       }
       return parseFloat(
         numbers.reduce((a, b) => a + b, 0).toFixed(2)
@@ -21,23 +21,23 @@ export const numberStatsFunctions: StatisticsConfig[] = [
     },
   }),
   createStatisticConfig({
-    group: 'More options',
-    menuName: 'Average',
-    displayName: 'Average',
+    group: 'További opciók',
+    menuName: 'Átlag',
+    displayName: 'Átlag',
     type: 'average',
     dataType: t.number.instance(),
     impl: data => {
       const numbers = withoutNull(data);
       if (numbers.length === 0) {
-        return 'None';
+        return 'Üres';
       }
       return (numbers.reduce((a, b) => a + b, 0) / numbers.length).toString();
     },
   }),
   createStatisticConfig({
-    group: 'More options',
-    menuName: 'Median',
-    displayName: 'Median',
+    group: 'További opciók',
+    menuName: 'Medián',
+    displayName: 'Medián',
     type: 'median',
     dataType: t.number.instance(),
     impl: data => {
@@ -49,11 +49,11 @@ export const numberStatsFunctions: StatisticsConfig[] = [
         const index = arr.length / 2;
         result = (arr[index] + arr[index - 1]) / 2;
       }
-      return result?.toString() ?? 'None';
+      return result?.toString() ?? 'Üres';
     },
   }),
   createStatisticConfig({
-    group: 'More options',
+    group: 'További opciók',
     menuName: 'Min',
     displayName: 'Min',
     type: 'min',
@@ -69,11 +69,11 @@ export const numberStatsFunctions: StatisticsConfig[] = [
           }
         }
       }
-      return min?.toString() ?? 'None';
+      return min?.toString() ?? 'Üres';
     },
   }),
   createStatisticConfig({
-    group: 'More options',
+    group: 'További opciók',
     menuName: 'Max',
     displayName: 'Max',
     type: 'max',
@@ -89,13 +89,13 @@ export const numberStatsFunctions: StatisticsConfig[] = [
           }
         }
       }
-      return max?.toString() ?? 'None';
+      return max?.toString() ?? 'Üres';
     },
   }),
   createStatisticConfig({
-    group: 'More options',
-    menuName: 'Range',
-    displayName: 'Range',
+    group: 'További opciók',
+    menuName: 'Terjedelem',
+    displayName: 'Terjedelem',
     type: 'range',
     dataType: t.number.instance(),
     impl: data => {
@@ -116,7 +116,7 @@ export const numberStatsFunctions: StatisticsConfig[] = [
         }
       }
       if (min == null || max == null) {
-        return 'None';
+        return 'Üres';
       }
       return (max - min).toString();
     },
