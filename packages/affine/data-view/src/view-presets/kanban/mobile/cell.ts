@@ -1,6 +1,5 @@
 // related component
 
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { ShadowlessElement } from '@blocksuite/block-std';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
 import { computed, effect } from '@preact/signals-core';

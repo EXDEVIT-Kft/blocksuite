@@ -2,7 +2,6 @@ import { popupTargetFromElement } from '@blocksuite/affine-components/context-me
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { SortIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 
