@@ -35,12 +35,30 @@
     "zod": "^3.23.8"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./property-presets": "./src/property-presets/index.ts",
-    "./property-pure-presets": "./src/property-presets/pure-index.ts",
-    "./view-presets": "./src/view-presets/index.ts",
-    "./widget-presets": "./src/widget-presets/index.ts",
-    "./effects": "./src/effects.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./property-presets": {
+      "import": "./dist/property-presets/index.js",
+      "types": "./dist/property-presets/index.d.ts"
+    },
+    "./property-pure-presets": {
+      "import": "./dist/property-presets/pure-index.js",
+      "types": "./dist/property-presets/pure-index.d.ts"
+    },
+    "./view-presets": {
+      "import": "./dist/view-presets/index.js",
+      "types": "./dist/view-presets/index.d.ts"
+    },
+    "./widget-presets": {
+      "import": "./dist/widget-presets/index.js",
+      "types": "./dist/widget-presets/index.d.ts"
+    },
+    "./effects": {
+      "import": "./dist/effects.js",
+      "types": "./dist/effects.d.ts"
+    }
   },
   "publishConfig": {
     "access": "restricted",

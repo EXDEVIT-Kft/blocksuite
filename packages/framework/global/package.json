@@ -16,12 +16,30 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "./src/index.ts",
-    "./utils": "./src/utils/index.ts",
-    "./env": "./src/env/index.ts",
-    "./exceptions": "./src/exceptions/index.ts",
-    "./di": "./src/di/index.ts",
-    "./types": "./src/types/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.js"
+    },
+    "./env": {
+      "types": "./dist/env/index.d.ts",
+      "import": "./dist/env/index.js"
+    },
+    "./exceptions": {
+      "types": "./dist/exceptions/index.d.ts",
+      "import": "./dist/exceptions/index.js"
+    },
+    "./di": {
+      "types": "./dist/di/index.d.ts",
+      "import": "./dist/di/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js"
+    }
   },
   "typesVersions": {
     "*": {
