@@ -64,7 +64,7 @@ const styles = css`
     align-items: center;
     height: 18px;
     width: 25px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-size: 14px;
   }
 `;

@@ -33,7 +33,7 @@ export class MenuInput extends MenuFocusable {
       padding: 4px 6px;
       border: 1px solid var(--algogrind-border-color);
       width: 100%;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-primary-color);
       background-color: transparent;
     }
 
@@ -138,7 +138,7 @@ export class MobileMenuInput extends MenuFocusable {
       line-height: 22px;
       border: none;
       width: 100%;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-primary-color);
     }
   `;
 

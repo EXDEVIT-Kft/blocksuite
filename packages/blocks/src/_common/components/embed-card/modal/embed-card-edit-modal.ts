@@ -78,7 +78,7 @@ export class EmbedCardEditModal extends SignalWatcher(
       box-shadow: var(--affine-overlay-shadow);
       background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
       border-radius: 4px;
-      border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+      border: 0.5px solid var(--algogrind-border-color);
     }
 
     .row {
@@ -127,7 +127,7 @@ export class EmbedCardEditModal extends SignalWatcher(
       border: 1px solid ${unsafeCSSVarV2('button/innerBlackBorder')};
       background: ${unsafeCSSVarV2('button/secondary')};
       ${FONT_XS};
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-primary-color);
     }
     .row.actions .button[disabled],
     .row.actions .button:disabled {

@@ -69,7 +69,7 @@ const styles = css`
     visibility: hidden;
     opacity: 0;
     transition: all 150ms cubic-bezier(0.42, 0, 1, 1);
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   affine-data-view-kanban-group:hover .add-card {

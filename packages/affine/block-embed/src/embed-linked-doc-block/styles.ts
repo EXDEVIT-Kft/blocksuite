@@ -158,7 +158,7 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
@@ -225,7 +225,7 @@ export const styles = css`
   }
   .affine-embed-linked-doc-block:not(.loading).error,
   .affine-embed-linked-doc-block:not(.loading).deleted {
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
 
     .affine-embed-linked-doc-content-note.render {
       display: none;

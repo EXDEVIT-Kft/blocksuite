@@ -771,7 +771,7 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
     if (textStyle?.color) {
       return HighLightDuotoneIcon(textStyle.color);
     } else {
-      return HighLightDuotoneIcon(cssVarV2('icon/primary'));
+      return HighLightDuotoneIcon('var(--algogrind-text-paragraph-color)');
     }
   },
   groups: [

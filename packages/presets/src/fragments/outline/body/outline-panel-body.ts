@@ -76,7 +76,7 @@ const styles = css`
     font-size: 14px;
     line-height: 24px;
     font-weight: 500;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     padding-left: 8px;
     height: 40px;
     box-sizing: border-box;
@@ -248,7 +248,9 @@ export class OutlinePanelBody extends SignalWatcher(
   private _EmptyPanel() {
     return html`<div class="no-note-container">
       <div class="note-placeholder">
-        ${this.doc.readonly ? 'Ehhez a dokumentumhoz nem tartozik tartalomjegyzék' : 'Tartalomjegyzék létrehozásához használj címsorokat.'}
+        ${this.doc.readonly
+          ? 'Ehhez a dokumentumhoz nem tartozik tartalomjegyzék'
+          : 'Tartalomjegyzék létrehozásához használj címsorokat.'}
       </div>
     </div>`;
   }

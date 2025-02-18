@@ -40,7 +40,7 @@ export const typeConfig = (property: Property) => {
         hide: () => !property.typeSet || property.type$.value === 'title',
         postfix: html` <div
           class="affine-database-column-type-icon"
-          style="color: var(--affine-text-secondary-color);gap:4px;font-size: 14px;"
+          style="color: var(--algogrind-text-secondary);gap:4px;font-size: 14px;"
         >
           ${renderUniLit(property.icon)}
           ${property.view.propertyMetas.find(

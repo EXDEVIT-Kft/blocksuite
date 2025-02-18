@@ -19,7 +19,7 @@ const styles = css`
 
   .pie-node.child:not(.node-color)::after {
     content: attr(index);
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     position: absolute;
     font-size: 8px;
     bottom: 10%;

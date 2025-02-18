@@ -29,20 +29,21 @@
   --algogrind-text-placeholder-color: #94a3b8;
   --algogrind-text-code-color: #ff2d55;
   --algogrind-text-code-block-color: #334155;
-  --algogrind-text-doc-title-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-1-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-2-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-3-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-4-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-5-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
-  --algogrind-text-heading-6-family: 'Gotham Rounded', 'Quicksand', Arial,
-    sans-serif;
+  --algogrind-text-secondary: #64748b;
+  --algogrind-text-doc-title-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-1-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-2-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-3-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-4-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-5-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
+  --algogrind-text-heading-6-family:
+    'Gotham Rounded', 'Quicksand', Arial, sans-serif;
   --algogrind-text-paragraph-family: 'Quicksand', Arial, sans-serif;
   --algogrind-text-small-family: 'Quicksand', Arial, sans-serif;
   --algogrind-text-caption-family: 'Quicksand', Arial, sans-serif;
@@ -70,6 +71,7 @@
   --algogrind-line-height: calc(1em + 8px);
   --algogrind-grid-color: #e2e8f0;
   --algogrind-background-color: white;
+  --algogrind-background-secondary-color: #f1f5f9;
   --algogrind-overlay-panel-background-color: white;
   --algogrind-ring: 0 0 0 1px #e2e8f0;
   --algogrind-shadow-xsmall: 0px 0px 6px rgba(0, 0, 0, 0.1);
@@ -137,20 +139,24 @@
   --algogrind-palette-line-black: rgba(0, 0, 0, 1);
   --algogrind-palette-line-white: rgba(255, 255, 255, 1);
 
-  --algogrind-note-shadow-box: 0px 2px 12px 0px rgba(66, 65, 73, 0.2),
+  --algogrind-note-shadow-box:
+    0px 2px 12px 0px rgba(66, 65, 73, 0.2),
     0px 0px 4px 0px rgba(66, 65, 73, 0.2);
-  --algogrind-note-shadow-sticker: 0px 24px 26px -10px rgba(66, 65, 73, 0.07),
+  --algogrind-note-shadow-sticker:
+    0px 24px 26px -10px rgba(66, 65, 73, 0.07),
     0px 26px 18px -20px rgba(66, 65, 73, 0.22);
-  --algogrind-note-shadow-paper: 0px 0px 0px 10px #fff,
-    0px 3px 6px 12px rgba(66, 65, 73, 0.16);
-  --algogrind-note-shadow-float: 0px 12px 60px 0px rgba(66, 65, 73, 0.16),
+  --algogrind-note-shadow-paper:
+    0px 0px 0px 10px #fff, 0px 3px 6px 12px rgba(66, 65, 73, 0.16);
+  --algogrind-note-shadow-float:
+    0px 12px 60px 0px rgba(66, 65, 73, 0.16),
     0px 0px 0px 2px rgba(0, 0, 0, 0.06);
   --algogrind-note-shadow-film: 10px 10px 0px 6px #000, 0px 0px 0px 6px #000;
 }
 
 @font-face {
   font-family: 'color-emoji';
-  src: local('Apple Color Emoji'), local('Segoe UI Emoji'),
+  src:
+    local('Apple Color Emoji'), local('Segoe UI Emoji'),
     local('Segoe UI Symbol'), local('Noto Color Emoji');
   unicode-range: U+1F000-1F644, U+203C-3299;
 }

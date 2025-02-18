@@ -167,7 +167,7 @@ export class OutlineViewer extends SignalWatcher(WithDisposable(LitElement)) {
       span {
         flex: 1;
         overflow: hidden;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         text-overflow: ellipsis;
 
         font-family: var(--algogrind-text-paragraph-family);

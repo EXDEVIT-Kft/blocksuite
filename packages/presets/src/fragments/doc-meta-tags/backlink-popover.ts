@@ -27,8 +27,8 @@ export class BacklinkButton extends WithDisposable(LitElement) {
       user-select: none;
       font-size: var(--affine-font-sm);
       font-family: var(--algogrind-text-paragraph-family);
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       pointer-events: auto;
     }
 
@@ -65,7 +65,7 @@ export class BacklinkButton extends WithDisposable(LitElement) {
     }
 
     .backlink-popover .group-title {
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       margin: 8px 12px;
     }
 

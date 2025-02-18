@@ -43,7 +43,7 @@ const styles = css`
     margin-right: 12px;
     height: var(--data-view-cell-text-line-height);
     font-size: 16px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 `;
 

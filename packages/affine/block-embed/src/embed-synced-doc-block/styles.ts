@@ -299,7 +299,7 @@ export const cardStyles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
@@ -378,7 +378,7 @@ export const cardStyles = css`
 
   .affine-embed-synced-doc-card:not(.loading).deleted,
   .affine-embed-synced-doc-card:not(.loading).error {
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
   }
   .affine-embed-synced-doc-card:not(.loading):not(.error):not(
       .surface

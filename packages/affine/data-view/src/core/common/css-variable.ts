@@ -50,7 +50,7 @@ export const dataViewCommonStyle = (selector: string) => `
     border-radius: 8px;
   }
   .dv-color-2{
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
   .dv-shadow-2{
     box-shadow: var(--algogrind-shadow-small)

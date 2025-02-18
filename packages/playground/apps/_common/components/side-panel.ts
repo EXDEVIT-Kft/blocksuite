@@ -7,7 +7,7 @@ export class SidePanel extends ShadowlessElement {
   static override styles = css`
     side-panel {
       width: 395px;
-      background-color: var(--affine-background-secondary-color);
+      background-color: var(--algogrind-background-secondary-color);
       position: absolute;
       top: 0;
       right: 0;

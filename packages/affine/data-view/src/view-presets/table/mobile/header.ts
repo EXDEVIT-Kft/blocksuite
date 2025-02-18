@@ -16,7 +16,7 @@ export class MobileTableHeader extends SignalWatcher(
   static override styles = css`
     .mobile-table-add-column {
       font-size: 18px;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color)
       margin-left: 8px;
       display: flex;
       align-items: center;

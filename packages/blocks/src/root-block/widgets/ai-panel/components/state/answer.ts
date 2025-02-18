@@ -33,7 +33,7 @@ export class AIPanelAnswer extends WithDisposable(LitElement) {
     .answer-head {
       align-self: stretch;
 
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
 
       /* light/xsMedium */
       font-size: var(--affine-font-xs);

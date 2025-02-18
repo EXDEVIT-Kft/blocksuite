@@ -68,7 +68,7 @@ export const styles = css`
         gap: 6px;
         /* https://stackoverflow.com/a/36247448/15443637 */
         overflow: hidden;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: 14px;
         position: relative;
     }
@@ -184,7 +184,7 @@ export const styles = css`
         width: 40px;
         cursor: pointer;
         font-size: 18px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color)
     }
 
     @media print {
@@ -197,11 +197,11 @@ export const styles = css`
         border: 1px solid var(--algogrind-border-color);
         border-radius: 4px;
         padding: 5px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
     }
 
     .affine-database-column-type-menu-icon svg {
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         width: 20px;
         height: 20px;
 

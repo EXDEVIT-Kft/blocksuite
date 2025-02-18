@@ -106,12 +106,12 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       border-radius: 4px;
       cursor: pointer;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
     }
 
     .filter-group-button svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 20px;
       height: 20px;
     }
@@ -147,8 +147,8 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-item-ops svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 18px;
       height: 18px;
     }
@@ -167,12 +167,12 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-bg-1 {
-      background-color: var(--affine-background-secondary-color);
+      background-color: var(--algogrind-background-secondary-color);
       border: 1px solid var(--algogrind-border-color);
     }
 
     .filter-group-bg-2 {
-      background-color: var(--affine-background-tertiary-color);
+      background-color: var(--algogrind-border-color);
       border: 1px solid var(--algogrind-border-color);
     }
 

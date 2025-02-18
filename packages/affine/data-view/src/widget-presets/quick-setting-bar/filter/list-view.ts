@@ -43,7 +43,7 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
 
     .filter-bar-add-filter {
       white-space: nowrap;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       padding: 4px 8px;
       display: flex;
       align-items: center;

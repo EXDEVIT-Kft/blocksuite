@@ -235,7 +235,7 @@ export const styles = css`
   .affine-embed-youtube-content-url-icon .open-icon {
     height: 12px;
     width: 12px;
-    fill: var(--affine-text-secondary-color);
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-youtube-block.loading {

@@ -35,7 +35,7 @@ const styles = css`
   .outline-notice-label {
     font-weight: 600;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
   .outline-notice-close-button {
     display: flex;

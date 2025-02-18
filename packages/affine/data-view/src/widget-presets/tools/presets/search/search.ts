@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { CloseIcon, SearchIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
@@ -57,7 +56,7 @@ const styles = css`
     cursor: pointer;
     padding: 2px;
     border-radius: 4px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 
   .affine-database-search-input-icon:hover {

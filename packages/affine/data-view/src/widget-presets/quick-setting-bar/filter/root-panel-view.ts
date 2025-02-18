@@ -80,12 +80,12 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       border-radius: 4px;
       cursor: pointer;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
     }
 
     .filter-root-button svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 20px;
       height: 20px;
     }
@@ -132,8 +132,8 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-item-ops svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 18px;
       height: 18px;
     }

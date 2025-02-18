@@ -51,7 +51,7 @@ const styles = css`
 
   affine-data-view-kanban-card .card-header-icon {
     padding: 4px;
-    background-color: var(--affine-background-secondary-color);
+    background-color: var(--algogrind-background-secondary-color);
     display: flex;
     align-items: center;
     border-radius: 4px;

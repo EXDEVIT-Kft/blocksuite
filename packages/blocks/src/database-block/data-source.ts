@@ -9,7 +9,6 @@ import {
   type DatabaseFlags,
   DataSourceBase,
   type DataViewDataType,
-  getTagColor,
   type PropertyMetaConfig,
   type TypeInstance,
   type ViewManager,
@@ -431,17 +430,17 @@ export const databaseViewInitTemplate = (
       options: [
         {
           id: ids[0],
-          color: getTagColor(),
+          color: 'var(--algogrind-text-highlight-blue)',
           value: 'Teendő',
         },
         {
           id: ids[1],
-          color: getTagColor(),
+          color: 'var(--algogrind-text-highlight-orange)',
           value: 'Folyamatban',
         },
         {
           id: ids[2],
-          color: getTagColor(),
+          color: 'var(--algogrind-text-highlight-green)',
           value: 'Kész',
         },
       ],

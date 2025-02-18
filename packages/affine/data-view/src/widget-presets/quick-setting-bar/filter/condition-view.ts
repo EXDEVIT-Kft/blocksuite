@@ -62,7 +62,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
     .filter-condition-function-name {
       font-size: 12px;
       line-height: 20px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       padding: 2px 8px;
       border-radius: 4px;
       cursor: pointer;

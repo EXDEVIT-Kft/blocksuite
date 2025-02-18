@@ -45,7 +45,7 @@ export class RecordField extends SignalWatcher(
       gap: 6px;
       font-size: var(--data-view-cell-text-size);
       line-height: var(--data-view-cell-text-line-height);
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       width: 160px;
       border-radius: 4px;
       cursor: pointer;

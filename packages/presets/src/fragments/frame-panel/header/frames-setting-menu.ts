@@ -33,7 +33,7 @@ const styles = css`
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     padding: 0 4px;
   }
 

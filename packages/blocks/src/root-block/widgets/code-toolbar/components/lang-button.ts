@@ -37,9 +37,7 @@ export class LanguageListButton extends WithDisposable(
     .lang-button-icon {
       display: flex;
       align-items: center;
-      color: ${unsafeCSSVarV2('icon/primary')};
-
-      svg {
+      color: var(--algogrind-text-paragraph-1-color) svg {
         height: 16px;
         width: 16px;
       }

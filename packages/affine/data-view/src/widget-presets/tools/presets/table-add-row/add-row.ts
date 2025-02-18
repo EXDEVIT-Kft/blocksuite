@@ -12,7 +12,7 @@ const styles = css`
 
   .new-record svg {
     font-size: 20px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 `;
 

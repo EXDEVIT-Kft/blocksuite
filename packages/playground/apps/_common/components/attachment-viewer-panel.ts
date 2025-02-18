@@ -72,7 +72,7 @@ export class AttachmentViewerPanel extends SignalWatcher(
           justify-content: space-between;
           align-items: center;
           font-size: 12px;
-          color: var(--affine-text-secondary-color);
+          color: var(--algogrind-text-secondary);
         }
 
         h5 {

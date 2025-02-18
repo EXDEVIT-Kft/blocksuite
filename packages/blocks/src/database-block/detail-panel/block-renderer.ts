@@ -52,7 +52,7 @@ export class BlockRenderer
       height: 20px;
       padding: 2px;
       border-radius: 4px;
-      background-color: var(--affine-background-secondary-color);
+      background-color: var(--algogrind-background-secondary-color);
     }
 
     .database-block-detail-header-icon svg {

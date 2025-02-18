@@ -193,7 +193,7 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
 
     font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
@@ -218,7 +218,7 @@ export const styles = css`
   .affine-embed-github-content-url-icon .open-icon {
     height: 12px;
     width: 12px;
-    fill: var(--affine-text-secondary-color);
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-github-banner {

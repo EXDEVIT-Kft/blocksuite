@@ -41,7 +41,7 @@ export class DataViewHeaderViews extends WidgetBase {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       white-space: nowrap;
       max-width: 200px;
       min-width: 28px;

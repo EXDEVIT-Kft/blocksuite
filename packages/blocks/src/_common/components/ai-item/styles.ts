@@ -50,7 +50,7 @@ export const menuItemStyles = css`
   }
 
   .item-beta {
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-size: var(--affine-font-xs);
     font-weight: 500;
     margin-left: 0.5em;

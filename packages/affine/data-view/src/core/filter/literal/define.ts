@@ -103,7 +103,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
              border-radius:4px;
              font-size: 14px;
              line-height: 22px;
-             border:1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+             border:1px solid var(--algogrind-border-color);
 "
                     >${tag.value}</span
                   >`,
@@ -139,7 +139,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
              border-radius:4px;
              font-size: 14px;
              line-height: 22px;
-             border:1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+             border:1px solid var(--algogrind-border-color);
 "
                     >${tag.value}</span
                   >`,

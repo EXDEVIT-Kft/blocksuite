@@ -82,7 +82,6 @@ export const styles = css`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    border: 1px solid var(--algogrind-border-color);
     user-select: none;
   }
 
@@ -91,16 +90,17 @@ export const styles = css`
     line-height: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 500;
   }
 
   .tag-delete-icon {
     display: flex;
     align-items: center;
-    color: ${unsafeCSSVarV2('chip/label/text')};
+    color: var(--algogrind-text-small-color);
   }
 
   .select-option.selected {
-    background: ${unsafeCSSVarV2('layer/background/hoverOverlay')};
+    background: var(--algogrind-hover-color);
   }
   .select-option-content {
     display: flex;
@@ -116,7 +116,7 @@ export const styles = css`
     border-radius: 4px;
     cursor: pointer;
     visibility: hidden;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color)
     margin-left: 4px;
   }
 
@@ -141,7 +141,7 @@ export const styles = css`
   .select-option-new-icon {
     font-size: 14px;
     line-height: 22px;
-    color: ${unsafeCSSVarV2('text/primary')};
+    color: var(--algogrind-primary-color);
     margin-right: 8px;
     margin-left: 4px;
   }

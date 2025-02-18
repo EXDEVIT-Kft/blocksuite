@@ -118,7 +118,7 @@ export const datePickerStyle = css`
   }
 
   .days-header > div {
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-weight: 500;
     font-size: 12px;
     cursor: default;
@@ -297,7 +297,7 @@ export const datePickerStyle = css`
     border: none;
     border-radius: 4px;
     background: none;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     cursor: pointer;
     font-size: var(--affine-font-sm);
     padding: 0 12px;

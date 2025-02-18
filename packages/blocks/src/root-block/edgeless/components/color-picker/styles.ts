@@ -30,7 +30,7 @@ export const COLOR_PICKER_STYLE = css`
     flex: 1 0 0;
 
     ${FONT_XS};
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     font-weight: 600;
 
     border-radius: 8px;

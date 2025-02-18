@@ -33,7 +33,7 @@ export class AIItemList extends WithDisposable(LitElement) {
       display: flex;
       padding: 4px calc(var(--item-padding, 8px) + 4px);
       align-items: center;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       text-align: justify;
       font-size: var(--affine-font-xs);
       font-style: normal;

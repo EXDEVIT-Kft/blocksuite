@@ -43,7 +43,7 @@ export const linkedDocPopoverStyles = css`
   }
 
   .linked-doc-popover .group-title {
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     padding: 0 8px;
     height: 30px;
     font-size: var(--affine-font-xs);
@@ -54,7 +54,7 @@ export const linkedDocPopoverStyles = css`
   }
 
   .linked-doc-popover .divider {
-    border-top: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    border-top: 0.5px solid var(--algogrind-border-color);
   }
 
   .group icon-button svg {
@@ -83,7 +83,7 @@ export const mobileLinkedDocMenuStyles = css`
     align-items: flex-start;
     flex-shrink: 0;
 
-    --border-style: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    --border-style: 1px solid var(--algogrind-border-color);
 
     border-radius: 12px 12px 0px 0px;
     border-top: var(--border-style);
@@ -99,7 +99,7 @@ export const mobileLinkedDocMenuStyles = css`
 
   .divider {
     width: 100%;
-    border-top: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    border-top: 0.5px solid var(--algogrind-border-color);
   }
 
   .mobile-linked-doc-menu-item {
@@ -120,12 +120,12 @@ export const mobileLinkedDocMenuStyles = css`
     > svg {
       width: 20px;
       height: 20px;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color);
     }
 
     .text {
       overflow: hidden;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-primary-color);
       text-align: justify;
       text-overflow: ellipsis;
 

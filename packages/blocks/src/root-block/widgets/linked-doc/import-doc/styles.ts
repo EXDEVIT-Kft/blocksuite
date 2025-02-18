@@ -63,7 +63,7 @@ export const styles = css`
   .footer {
     display: flex;
     align-items: center;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .loading-header {

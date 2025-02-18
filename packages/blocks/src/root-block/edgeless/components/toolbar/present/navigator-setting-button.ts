@@ -50,7 +50,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       font-weight: 500;
       line-height: 20px;
       font-size: var(--affine-font-xs);
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
     }
 
     .divider {

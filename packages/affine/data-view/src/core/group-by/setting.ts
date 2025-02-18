@@ -125,7 +125,7 @@ export class GroupSetting extends SignalWatcher(
     return html`
       <div style="padding: 7px 0;">
         <div
-          style="padding: 0 4px; font-size: 12px;color: var(--affine-text-secondary-color);line-height: 20px;"
+          style="padding: 0 4px; font-size: 12px;color: var(--algogrind-text-secondary);line-height: 20px;"
         >
           Csoportok
         </div>
@@ -264,14 +264,14 @@ export const popGroupSetting = (
               name: 'Csoportosítás',
               postfix: html`
                 <div
-                  style="display:flex;align-items:center;gap: 4px;font-size: 12px;line-height: 20px;color: var(--affine-text-secondary-color);margin-right: 4px;margin-left: 8px;"
+                  style="display:flex;align-items:center;gap: 4px;font-size: 12px;line-height: 20px;color: var(--algogrind-text-secondary);margin-right: 4px;margin-left: 8px;"
                   class="dv-icon-16"
                 >
                   ${renderUniLit(icon, {})} ${groupProperty.name$.value}
                 </div>
               `,
               label: () => html`
-                <div style="color: var(--affine-text-secondary-color);">
+                <div style="color: var(--algogrind-text-secondary);">
                   Csoportosítás
                 </div>
               `,

@@ -42,7 +42,7 @@ const styles = css`
     padding: 4px;
     border-radius: 4px;
     font-size: 16px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 `;
 

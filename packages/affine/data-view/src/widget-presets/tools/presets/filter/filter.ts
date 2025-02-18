@@ -2,7 +2,6 @@ import { popupTargetFromElement } from '@blocksuite/affine-components/context-me
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { FilterIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 
@@ -88,8 +87,8 @@ export class DataViewHeaderToolsFilter extends WidgetBase {
     if (this.readonly) return nothing;
     const style = styleMap({
       color: this.hasFilter.value
-        ? cssVarV2('text/emphasis')
-        : cssVarV2('icon/primary'),
+        ? 'var(--algogrind-text-heading-1-color)'
+        : 'var(--algogrind-text-paragraph-color)',
     });
     return html` <div
       @click="${this.clickFilter}"

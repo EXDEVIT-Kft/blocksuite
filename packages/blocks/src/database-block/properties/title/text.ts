@@ -74,7 +74,7 @@ const styles = css`
     padding: 2px;
     border-radius: 4px;
     margin-top: 2px;
-    background-color: var(--affine-background-secondary-color);
+    background-color: var(--algogrind-background-secondary-color);
   }
 
   .data-view-header-area-icon svg {

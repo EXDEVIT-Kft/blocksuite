@@ -58,7 +58,7 @@ export class LinkCell extends BaseCellRenderer<string> {
       visibility: hidden;
       cursor: pointer;
       background: ${unsafeCSSVarV2('button/iconButtonSolid')};
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color)
       box-shadow: var(--affine-button-shadow);
       border-radius: 4px;
       font-size: 14px;

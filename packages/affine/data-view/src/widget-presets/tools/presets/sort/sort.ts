@@ -93,8 +93,8 @@ export class DataViewHeaderToolsSort extends WidgetBase {
     if (this.readonly) return nothing;
     const style = styleMap({
       color: this.hasSort.value
-        ? cssVarV2('text/emphasis')
-        : cssVarV2('icon/primary'),
+        ? 'var(--algogrind-text-heading-1-color)'
+        : 'var(--algogrind-text-paragraph-color)',
     });
     return html` <div
       @click="${this.clickSort}"

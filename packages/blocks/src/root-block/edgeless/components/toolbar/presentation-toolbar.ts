@@ -75,7 +75,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     }
 
     .edgeless-frame-navigator-count {
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       white-space: nowrap;
     }
     .edgeless-frame-navigator-stop {

@@ -41,7 +41,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
         align-self: stretch;
         .answer-label {
           align-self: stretch;
-          color: var(--affine-text-secondary-color);
+          color: var(--algogrind-text-secondary);
           /* light/xsMedium */
           font-size: var(--affine-font-xs);
           font-style: normal;

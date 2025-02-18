@@ -26,7 +26,7 @@ const styles = css`
     cursor: pointer;
     transition: opacity 230ms ease;
     font-size: 12px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     display: flex;
     opacity: 0;
     justify-content: flex-end;
@@ -60,7 +60,7 @@ const styles = css`
 
   .label {
     text-transform: uppercase;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .value {

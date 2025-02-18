@@ -110,7 +110,7 @@ export const styles = css`
   }
 
   .affine-attachment-card.loading {
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
 
     .affine-attachment-content-title-text {
       color: var(--algogrind-text-placeholder-color);
@@ -119,7 +119,7 @@ export const styles = css`
 
   .affine-attachment-card.error,
   .affine-attachment-card.unsynced {
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
   }
 
   .affine-attachment-card.cubeThick {

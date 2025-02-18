@@ -40,7 +40,7 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     .properties-group-title {
       font-size: 12px;
       line-height: 20px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       display: flex;
       align-items: center;
       gap: 8px;

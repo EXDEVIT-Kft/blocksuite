@@ -178,7 +178,7 @@ export class MenuComponent
     });
     return html` <div style=${searchStyle} class="affine-menu-search-container">
       <div
-        style="font-size:20px;display:flex;align-items:center;color: var(--affine-text-secondary-color)"
+        style="font-size:20px;display:flex;align-items:center;color: var(--algogrind-text-secondary)"
       >
         ${SearchIcon()}
       </div>

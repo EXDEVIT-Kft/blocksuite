@@ -178,7 +178,7 @@ export class SortRootView extends SignalWatcher(
                 </div>
                 <div
                   @click='${deleteRule}'
-                  style='padding: 2px;display: flex;align-items: center;border-radius: 2px;color:${unsafeCSSVarV2('icon/primary')}'
+                  style='padding: 2px;display: flex;align-items: center;border-radius: 2px;color:'var(--algogrind-text-paragraph-color)''
                   class='dv-hover dv-rounded'>${CloseIcon({ width: '16px', height: '16px' })}
                 </div>
               </div>

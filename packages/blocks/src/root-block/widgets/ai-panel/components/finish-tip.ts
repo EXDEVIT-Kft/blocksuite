@@ -24,7 +24,7 @@ export class AIFinishTip extends WithDisposable(LitElement) {
       padding: 0 12px;
       gap: 4px;
 
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
 
       .text {
         display: flex;

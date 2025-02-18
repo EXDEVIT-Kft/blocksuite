@@ -49,6 +49,7 @@ export class MenuButton extends MenuFocusable {
       font-size: 14px;
       line-height: 22px;
       color: var(--algogrind-text-paragraph-color);
+      font-weight: 500;
     }
 
     .affine-menu-button.focused {

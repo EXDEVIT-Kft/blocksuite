@@ -59,7 +59,8 @@ const styles = css`
     user-select: none;
     font-size: 12px;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    font-weight: 600;
+    color: var(--algogrind-text-secondary);
   }
 `;
 

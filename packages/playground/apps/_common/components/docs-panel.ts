@@ -22,7 +22,7 @@ export class DocsPanel extends WithDisposable(ShadowlessElement) {
       display: flex;
       flex-direction: column;
       width: 100%;
-      background-color: var(--affine-background-secondary-color);
+      background-color: var(--algogrind-background-secondary-color);
       font-family: var(--algogrind-text-paragraph-family);
       height: 100%;
       padding: 12px;

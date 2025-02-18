@@ -62,7 +62,7 @@ const styles = css`
     height: 22px;
     box-sizing: border-box;
     padding: 4px;
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
     border-radius: 4px;
     color: var(--algogrind-text-paragraph-color);
   }

@@ -49,11 +49,11 @@ const GroupTitleMobile = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: var(--data-view-cell-text-size);
       }
 
@@ -74,7 +74,7 @@ const GroupTitleMobile = (
         padding: 4px;
         border-radius: 4px;
         font-size: 16px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color);
       }
 
       .group-header-icon {
@@ -82,7 +82,7 @@ const GroupTitleMobile = (
         align-items: center;
         margin-right: -4px;
         font-size: 16px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color);
       }
     </style>
     <div
@@ -139,11 +139,11 @@ export const GroupTitle = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: var(--data-view-cell-text-size);
       }
 

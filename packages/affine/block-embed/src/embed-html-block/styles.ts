@@ -66,7 +66,7 @@ export const styles = css`
     padding: 7px 12px;
     font-weight: 500;
     font-size: var(--affine-font-xs);
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .embed-html-block-iframe-wrapper > embed-html-fullscreen-toolbar {

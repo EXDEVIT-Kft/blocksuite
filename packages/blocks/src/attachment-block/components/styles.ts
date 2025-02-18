@@ -44,7 +44,7 @@ export const renameStyles = css`
 
   .affine-attachment-rename-extension {
     font-size: var(--affine-font-xs);
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .affine-attachment-rename-overlay-mask {

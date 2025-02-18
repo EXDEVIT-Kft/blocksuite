@@ -6,7 +6,6 @@ import {
   type PopupTarget,
   popupTargetFromElement,
 } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import {
   ArrowRightSmallIcon,
   DeleteIcon,
@@ -56,7 +55,7 @@ const styles = css`
 
   .affine-database-toolbar-item.more-action {
     font-size: 20px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 
   .more-action.active {
@@ -263,20 +262,21 @@ export const popViewOptions = (
                 const iconStyle = styleMap({
                   fontSize: '24px',
                   color: isSelected
-                    ? 'var(--affine-text-emphasis-color)'
-                    : 'var(--affine-icon-secondary)',
+                    ? 'var(--algogrind-primary-color)'
+                    : 'var(--algogrind-text-paragraph-color)',
                 });
                 const textStyle = styleMap({
                   fontSize: '14px',
                   lineHeight: '22px',
+                  fontWeight: 500,
                   color: isSelected
-                    ? 'var(--affine-text-emphasis-color)'
-                    : 'var(--affine-text-secondary-color)',
+                    ? 'var(--algogrind-primary-color)'
+                    : 'var(--algogrind-text-paragraph-color)',
                 });
                 const data: MenuButtonData = {
                   content: () => html`
                     <div
-                      style="color:var(--affine-text-emphasis-color);width:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 6px 16px;"
+                      style="color:var(--algogrind-primary-color);width:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 6px 16px;"
                     >
                       <div style="${iconStyle}">
                         ${renderUniLit(meta.renderer.icon)}

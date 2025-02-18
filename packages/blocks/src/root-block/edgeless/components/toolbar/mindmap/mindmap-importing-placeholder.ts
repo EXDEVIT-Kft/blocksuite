@@ -20,7 +20,7 @@ export class MindMapPlaceholder extends ShadowlessElement {
       gap: 12px;
 
       background-color: ${unsafeCSSVarV2('layer/background/secondary')};
-      border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+      border: 1px solid var(--algogrind-border-color);
       color: ${unsafeCSSVarV2('text/placeholder')};
 
       box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);

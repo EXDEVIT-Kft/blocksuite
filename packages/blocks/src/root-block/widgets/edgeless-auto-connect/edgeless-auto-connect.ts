@@ -231,7 +231,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<
           width: `${EDGELESS_ONLY_INDEX_LABEL_WIDTH}px`,
           height: `${EDGELESS_ONLY_INDEX_LABEL_HEIGHT}px`,
           borderRadius: '50%',
-          backgroundColor: 'var(--affine-text-secondary-color)',
+          backgroundColor: 'var(--algogrind-text-secondary)',
           border: '1px solid var(--algogrind-border-color)',
           color: 'var(--affine-white)',
           position: 'absolute',

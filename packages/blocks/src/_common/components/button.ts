@@ -177,7 +177,7 @@ export class IconButton extends LitElement {
       this.dataset.testDisabled = 'false';
       const iconColor = this.active
         ? cssVarV2('icon/activated')
-        : cssVarV2('icon/primary');
+        : 'var(--algogrind-text-paragraph-1-color)';
       this.style.setProperty('--svg-icon-color', iconColor);
     }
 

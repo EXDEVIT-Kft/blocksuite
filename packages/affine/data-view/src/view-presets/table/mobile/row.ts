@@ -52,7 +52,7 @@ export class MobileTableRow extends SignalWatcher(
       background-color: var(--algogrind-background-color);
       position: relative;
       font-size: 16px;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color);
     }
   `;
 
