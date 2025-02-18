@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
 import { css } from 'lit';
 
 import { scrollbarStyle } from '../../../_common/components/utils.js';

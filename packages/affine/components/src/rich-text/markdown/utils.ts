@@ -1,6 +1,6 @@
-import type { BlockStdScope } from '@blocksuite/block-std';
-import type { InlineEditor } from '@blocksuite/inline';
-import type { BlockModel } from '@blocksuite/store';
+import type { BlockStdScope } from '@algogrind/block-std';
+import type { InlineEditor } from '@algogrind/inline';
+import type { BlockModel } from '@algogrind/store';
 
 import { focusTextModel } from '../dom.js';
 

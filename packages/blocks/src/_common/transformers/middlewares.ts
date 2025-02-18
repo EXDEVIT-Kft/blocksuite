@@ -5,10 +5,10 @@ import type {
   ListBlockModel,
   ParagraphBlockModel,
   SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
-import type { DeltaOperation, JobMiddleware } from '@blocksuite/store';
+} from '@algogrind/affine-model';
+import type { DeltaOperation, JobMiddleware } from '@algogrind/store';
 
-import { assertExists } from '@blocksuite/global/utils';
+import { assertExists } from '@algogrind/global/utils';
 
 import { DEFAULT_IMAGE_PROXY_ENDPOINT } from '../consts.js';
 

@@ -3,8 +3,8 @@ import type {
   ConnectorElementModel,
   NoteBlockModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import type { Bound, IVec } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { Bound, IVec } from '@algogrind/global/utils';
 
 import {
   CanvasElementType,
@@ -12,14 +12,14 @@ import {
   Overlay,
   OverlayIdentifier,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
-import { ConnectorPathGenerator } from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
+import { ConnectorPathGenerator } from '@algogrind/affine-block-surface';
 import {
   AutoCompleteArrowIcon,
   MindMapChildIcon,
   MindMapSiblingIcon,
   NoteAutoCompleteIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@algogrind/affine-components/icons';
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_SHAPE_STROKE_COLOR,
@@ -27,16 +27,16 @@ import {
   MindmapElementModel,
   ShapeElementModel,
   shapeMethods,
-} from '@blocksuite/affine-model';
-import { handleNativeRangeAtPoint } from '@blocksuite/affine-shared/utils';
-import { type BlockStdScope, stdContext } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-model';
+import { handleNativeRangeAtPoint } from '@algogrind/affine-shared/utils';
+import { type BlockStdScope, stdContext } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import {
   assertExists,
   DisposableGroup,
   Vec,
   WithDisposable,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 import { consume } from '@lit/context';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';

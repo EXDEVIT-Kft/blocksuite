@@ -1,4 +1,4 @@
-import { NOTE_MIN_HEIGHT, NOTE_MIN_WIDTH } from '@blocksuite/affine-model';
+import { NOTE_MIN_HEIGHT, NOTE_MIN_WIDTH } from '@algogrind/affine-model';
 import { expect } from '@playwright/test';
 
 import {

@@ -1,4 +1,4 @@
-import type { getImageSelectionsCommand } from '@blocksuite/affine-shared/commands';
+import type { getImageSelectionsCommand } from '@algogrind/affine-shared/commands';
 
 import type { insertImagesCommand } from './commands/insert-images.js';
 

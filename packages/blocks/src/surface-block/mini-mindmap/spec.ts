@@ -1,17 +1,17 @@
-import type { BlockSchema } from '@blocksuite/store';
+import type { BlockSchema } from '@algogrind/store';
 import type { z } from 'zod';
 
-import { SurfaceBlockSchema } from '@blocksuite/affine-block-surface';
-import { RootBlockSchema } from '@blocksuite/affine-model';
+import { SurfaceBlockSchema } from '@algogrind/affine-block-surface';
+import { RootBlockSchema } from '@algogrind/affine-model';
 import {
   DocModeService,
   ThemeService,
-} from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/services';
 import {
   BlockViewExtension,
   type ExtensionType,
   FlavourExtension,
-} from '@blocksuite/block-std';
+} from '@algogrind/block-std';
 import { literal } from 'lit/static-html.js';
 
 import { MindmapService } from './minmap-service.js';

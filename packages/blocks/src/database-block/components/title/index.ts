@@ -1,8 +1,8 @@
-import type { Text } from '@blocksuite/store';
+import type { Text } from '@algogrind/store';
 
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { stopPropagation } from '@algogrind/affine-shared/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -2,7 +2,7 @@ import {
   createEmptyDoc,
   EdgelessEditor,
   PageEditor,
-} from '@blocksuite/presets';
+} from '@algogrind/presets';
 
 import '../../../style.css';
 

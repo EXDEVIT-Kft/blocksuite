@@ -1,12 +1,12 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
 import {
   AIDoneIcon,
   CopyIcon,
   WarningIcon,
-} from '@blocksuite/affine-components/icons';
-import { NotificationProvider } from '@blocksuite/affine-shared/services';
-import { WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { NotificationProvider } from '@algogrind/affine-shared/services';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

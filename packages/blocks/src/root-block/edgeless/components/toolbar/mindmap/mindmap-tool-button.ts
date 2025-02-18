@@ -1,15 +1,15 @@
 import type {
   MindmapElementModel,
   MindmapStyle,
-} from '@blocksuite/affine-model';
-import type { GfxToolsFullOptionValue } from '@blocksuite/block-std/gfx';
-import type { Bound } from '@blocksuite/global/utils';
+} from '@algogrind/affine-model';
+import type { GfxToolsFullOptionValue } from '@algogrind/block-std/gfx';
+import type { Bound } from '@algogrind/global/utils';
 
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { SignalWatcher } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/services';
+import { SignalWatcher } from '@algogrind/global/utils';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

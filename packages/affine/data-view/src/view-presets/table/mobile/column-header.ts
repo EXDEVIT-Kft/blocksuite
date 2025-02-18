@@ -3,10 +3,10 @@ import {
   type MenuConfig,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/context-menu';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import {
   DeleteIcon,
   DuplicateIcon,

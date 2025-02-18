@@ -1,14 +1,14 @@
-import type { DragIndicator } from '@blocksuite/affine-components/drag-indicator';
-import type { BlockService, EditorHost } from '@blocksuite/block-std';
-import type { IVec } from '@blocksuite/global/utils';
-import type { BlockModel } from '@blocksuite/store';
+import type { DragIndicator } from '@algogrind/affine-components/drag-indicator';
+import type { BlockService, EditorHost } from '@algogrind/block-std';
+import type { IVec } from '@algogrind/global/utils';
+import type { BlockModel } from '@algogrind/store';
 
 import {
   getClosestBlockComponentByPoint,
   isInsidePageEditor,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { assertExists, Point } from '@blocksuite/global/utils';
+} from '@algogrind/affine-shared/utils';
+import { assertExists, Point } from '@algogrind/global/utils';
 
 import { calcDropTarget, type DropResult } from '../../_common/utils/index.js';
 

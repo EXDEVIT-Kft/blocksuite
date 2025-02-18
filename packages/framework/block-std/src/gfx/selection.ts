@@ -5,7 +5,7 @@ import {
   groupBy,
   type IPoint,
   Slot,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import type { CursorSelection, SurfaceSelection } from '../selection/index.js';
 import type { GfxController } from './controller.js';

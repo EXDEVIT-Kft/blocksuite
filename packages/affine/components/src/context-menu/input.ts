@@ -1,7 +1,7 @@
 import type { StyleInfo } from 'lit-html/directives/style-map.js';
 
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { IS_MOBILE } from '@blocksuite/global/env';
+import { unsafeCSSVarV2 } from '@algogrind/affine-shared/theme';
+import { IS_MOBILE } from '@algogrind/global/env';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';

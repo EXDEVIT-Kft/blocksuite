@@ -1,6 +1,6 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
-import { IS_MOBILE } from '@blocksuite/global/env';
-import { SignalWatcher, WithDisposable } from '@blocksuite/global/utils';
+import { ShadowlessElement } from '@algogrind/block-std';
+import { IS_MOBILE } from '@algogrind/global/env';
+import { SignalWatcher, WithDisposable } from '@algogrind/global/utils';
 import {
   ArrowLeftBigIcon,
   ArrowLeftSmallIcon,

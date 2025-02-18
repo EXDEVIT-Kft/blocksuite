@@ -1,4 +1,4 @@
-import { FONT_SM, FONT_XS } from '@blocksuite/affine-shared/styles';
+import { FONT_SM, FONT_XS } from '@algogrind/affine-shared/styles';
 import { css } from 'lit';
 
 export const COLOR_PICKER_STYLE = css`

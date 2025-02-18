@@ -1,4 +1,4 @@
-import { getDocContentWithMaxLength } from '@blocksuite/affine-block-embed';
+import { getDocContentWithMaxLength } from '@algogrind/affine-block-embed';
 import {
   CaptionIcon,
   CenterPeekIcon,
@@ -9,17 +9,17 @@ import {
   OpenIcon,
   PaletteIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { notifyLinkedDocSwitchedToEmbed } from '@blocksuite/affine-components/notification';
-import { isPeekable, peek } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@algogrind/affine-components/icons';
+import { notifyLinkedDocSwitchedToEmbed } from '@algogrind/affine-components/notification';
+import { isPeekable, peek } from '@algogrind/affine-components/peek';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   cloneGroups,
   type MenuItem,
   type MenuItemGroup,
   renderGroups,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@algogrind/affine-components/toolbar';
 import {
   type AliasInfo,
   type BookmarkBlockModel,
@@ -27,7 +27,7 @@ import {
   type EmbedGithubModel,
   type EmbedLinkedDocModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EmbedOptionProvider,
   type EmbedOptions,
@@ -37,10 +37,10 @@ import {
   type TelemetryEvent,
   TelemetryProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { getHostName, referenceToNode } from '@blocksuite/affine-shared/utils';
-import { type BlockStdScope, WidgetComponent } from '@blocksuite/block-std';
-import { type BlockModel, DocCollection } from '@blocksuite/store';
+} from '@algogrind/affine-shared/services';
+import { getHostName, referenceToNode } from '@algogrind/affine-shared/utils';
+import { type BlockStdScope, WidgetComponent } from '@algogrind/block-std';
+import { type BlockModel, DocCollection } from '@algogrind/store';
 import { autoUpdate, computePosition, flip, offset } from '@floating-ui/dom';
 import { html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';

@@ -2,7 +2,7 @@ import { html } from 'lit';
 
 // Edgeless toolbar
 
-import * as icons2 from '@blocksuite/editor-icons';
+import * as icons2 from '@algogrind/editor-icons';
 import * as icons from '@blocksuite/icons/lit';
 
 export const SelectIcon = icons.SelectIcon({

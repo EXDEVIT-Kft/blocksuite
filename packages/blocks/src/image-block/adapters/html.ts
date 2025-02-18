@@ -1,13 +1,13 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@algogrind/affine-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   FetchUtils,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
-import { sha } from '@blocksuite/global/utils';
-import { getAssetName, nanoid } from '@blocksuite/store';
+} from '@algogrind/affine-shared/adapters';
+import { getFilenameFromContentDisposition } from '@algogrind/affine-shared/utils';
+import { sha } from '@algogrind/global/utils';
+import { getAssetName, nanoid } from '@algogrind/store';
 
 export const imageBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
   flavour: ImageBlockSchema.model.flavour,

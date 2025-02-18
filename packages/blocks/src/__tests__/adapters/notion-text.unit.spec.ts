@@ -1,6 +1,6 @@
-import type { SliceSnapshot } from '@blocksuite/store';
+import type { SliceSnapshot } from '@algogrind/store';
 
-import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@blocksuite/affine-model';
+import { DEFAULT_NOTE_BACKGROUND_COLOR } from '@algogrind/affine-model';
 import { describe, expect, test } from 'vitest';
 
 import { NotionTextAdapter } from '../../_common/adapters/notion-text.js';

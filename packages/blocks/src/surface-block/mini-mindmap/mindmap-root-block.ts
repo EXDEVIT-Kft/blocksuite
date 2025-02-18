@@ -1,6 +1,6 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@algogrind/affine-model';
 
-import { BlockComponent } from '@blocksuite/block-std';
+import { BlockComponent } from '@algogrind/block-std';
 import { html } from 'lit';
 
 export class MindmapRootBlock extends BlockComponent<RootBlockModel> {

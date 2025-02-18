@@ -1,5 +1,5 @@
-import { assertExists } from '@blocksuite/global/utils';
-import { type BlockModel, type Doc, Text } from '@blocksuite/store';
+import { assertExists } from '@algogrind/global/utils';
+import { type BlockModel, type Doc, Text } from '@algogrind/store';
 
 /**
  * This file should only contain functions that are used to

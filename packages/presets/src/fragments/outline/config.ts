@@ -1,4 +1,4 @@
-import type { ParagraphBlockModel } from '@blocksuite/blocks';
+import type { ParagraphBlockModel } from '@algogrind/blocks';
 import type { TemplateResult } from 'lit';
 
 import {

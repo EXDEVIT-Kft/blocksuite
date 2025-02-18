@@ -1,4 +1,4 @@
-import * as icons2 from '@blocksuite/editor-icons';
+import * as icons2 from '@algogrind/editor-icons';
 import * as icons from '@blocksuite/icons/lit';
 import { html } from 'lit';
 

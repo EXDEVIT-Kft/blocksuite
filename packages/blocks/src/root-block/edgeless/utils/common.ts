@@ -1,8 +1,8 @@
-import type { NoteChildrenFlavour } from '@blocksuite/affine-shared/types';
-import type { BlockStdScope } from '@blocksuite/block-std';
+import type { NoteChildrenFlavour } from '@algogrind/affine-shared/types';
+import type { BlockStdScope } from '@algogrind/block-std';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { toast } from '@blocksuite/affine-components/toast';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { toast } from '@algogrind/affine-components/toast';
 import {
   type AttachmentBlockProps,
   DEFAULT_NOTE_HEIGHT,
@@ -11,17 +11,17 @@ import {
   NOTE_MIN_HEIGHT,
   type NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
+} from '@algogrind/affine-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@algogrind/affine-shared/consts';
+import { TelemetryProvider } from '@algogrind/affine-shared/services';
 import {
   handleNativeRangeAtPoint,
   humanFileSize,
-} from '@blocksuite/affine-shared/utils';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-shared/utils';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import {
   Bound,
   type IPoint,
@@ -29,7 +29,7 @@ import {
   Point,
   serializeXYWH,
   Vec,
-} from '@blocksuite/global/utils';
+} from '@algogrind/global/utils';
 
 import {
   getFileType,

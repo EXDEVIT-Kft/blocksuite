@@ -1,15 +1,15 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import type { Color, ShapeElementModel } from '@blocksuite/affine-model';
-import type { Bound } from '@blocksuite/global/utils';
+import type { SurfaceBlockModel } from '@algogrind/affine-block-surface';
+import type { Color, ShapeElementModel } from '@algogrind/affine-model';
+import type { Bound } from '@algogrind/global/utils';
 
 import {
   CanvasRenderer,
   elementRenderers,
   fitContent,
-} from '@blocksuite/affine-block-surface';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { BlockComponent } from '@blocksuite/block-std';
-import { GfxControllerIdentifier } from '@blocksuite/block-std/gfx';
+} from '@algogrind/affine-block-surface';
+import { ThemeProvider } from '@algogrind/affine-shared/services';
+import { BlockComponent } from '@algogrind/block-std';
+import { GfxControllerIdentifier } from '@algogrind/block-std/gfx';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 

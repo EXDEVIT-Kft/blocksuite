@@ -1,4 +1,4 @@
-import { ShadowlessElement } from '@blocksuite/block-std';
+import { ShadowlessElement } from '@algogrind/block-std';
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 

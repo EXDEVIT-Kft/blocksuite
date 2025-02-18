@@ -2,7 +2,7 @@ import {
   menu,
   popMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@algogrind/affine-components/context-menu';
 
 import type { SortUtils } from './utils.js';
 

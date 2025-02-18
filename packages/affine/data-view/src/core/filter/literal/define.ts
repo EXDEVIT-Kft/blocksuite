@@ -1,4 +1,4 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
+import { menu } from '@algogrind/affine-components/context-menu';
 import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 

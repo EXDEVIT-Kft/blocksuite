@@ -1,17 +1,17 @@
-import type { NoteBlockModel, RootBlockModel } from '@blocksuite/affine-model';
-import type { Viewport } from '@blocksuite/affine-shared/types';
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { BlockModel, Text } from '@blocksuite/store';
+import type { NoteBlockModel, RootBlockModel } from '@algogrind/affine-model';
+import type { Viewport } from '@algogrind/affine-shared/types';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { BlockModel, Text } from '@algogrind/store';
 
-import { focusTextModel } from '@blocksuite/affine-components/rich-text';
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { focusTextModel } from '@algogrind/affine-components/rich-text';
+import { NoteDisplayMode } from '@algogrind/affine-model';
 import {
   focusTitle,
   getDocTitleInlineEditor,
   getScrollContainer,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
-import { BlockComponent } from '@blocksuite/block-std';
+} from '@algogrind/affine-shared/utils';
+import { BlockComponent } from '@algogrind/block-std';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

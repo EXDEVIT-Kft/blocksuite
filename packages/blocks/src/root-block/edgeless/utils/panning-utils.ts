@@ -1,6 +1,6 @@
-import type { PointerEventState } from '@blocksuite/block-std';
-import type { Viewport } from '@blocksuite/block-std/gfx';
-import type { IVec } from '@blocksuite/global/utils';
+import type { PointerEventState } from '@algogrind/block-std';
+import type { Viewport } from '@algogrind/block-std/gfx';
+import type { IVec } from '@algogrind/global/utils';
 
 const PANNING_DISTANCE = 30;
 

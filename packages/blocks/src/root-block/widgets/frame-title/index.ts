@@ -1,5 +1,5 @@
-import { FrameBlockModel, type RootBlockModel } from '@blocksuite/affine-model';
-import { WidgetComponent } from '@blocksuite/block-std';
+import { FrameBlockModel, type RootBlockModel } from '@algogrind/affine-model';
+import { WidgetComponent } from '@algogrind/block-std';
 import { html } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 

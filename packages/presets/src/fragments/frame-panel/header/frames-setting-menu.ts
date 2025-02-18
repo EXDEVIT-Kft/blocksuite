@@ -1,7 +1,7 @@
-import type { EditorHost } from '@blocksuite/block-std';
+import type { EditorHost } from '@algogrind/block-std';
 
-import { EdgelessRootService, EditPropsStore } from '@blocksuite/blocks';
-import { WithDisposable } from '@blocksuite/global/utils';
+import { EdgelessRootService, EditPropsStore } from '@algogrind/blocks';
+import { WithDisposable } from '@algogrind/global/utils';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

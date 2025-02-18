@@ -1,4 +1,4 @@
-import { updateXYWH } from '@blocksuite/affine-block-surface';
+import { updateXYWH } from '@algogrind/affine-block-surface';
 import {
   AlignBottomIcon,
   AlignDistributeHorizontallyIcon,
@@ -9,9 +9,9 @@ import {
   AlignTopIcon,
   AlignVerticallyIcon,
   SmallArrowDownIcon,
-} from '@blocksuite/affine-components/icons';
-import { MindmapElementModel } from '@blocksuite/affine-model';
-import { Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/affine-components/icons';
+import { MindmapElementModel } from '@algogrind/affine-model';
+import { Bound, WithDisposable } from '@algogrind/global/utils';
 import { AutoTidyUpIcon, ResizeTidyUpIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';

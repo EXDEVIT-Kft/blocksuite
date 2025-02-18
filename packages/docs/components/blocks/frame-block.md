@@ -8,4 +8,4 @@ In presentation mode, the viewport will be moved to focus the frames one after a
 
 ## Reference
 
-- [`FrameBlockSchema`](/api/@blocksuite/blocks/variables/FrameBlockSchema.html)
+- [`FrameBlockSchema`](/api/@algogrind/blocks/variables/FrameBlockSchema.html)

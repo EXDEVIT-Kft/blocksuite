@@ -1,10 +1,10 @@
-import type { IndentContext } from '@blocksuite/affine-shared/types';
-import type { Command } from '@blocksuite/block-std';
+import type { IndentContext } from '@algogrind/affine-shared/types';
+import type { Command } from '@algogrind/block-std';
 
 import {
   getNearestHeadingBefore,
   matchFlavours,
-} from '@blocksuite/affine-shared/utils';
+} from '@algogrind/affine-shared/utils';
 
 import { correctNumberedListsOrderToPrev } from './utils.js';
 

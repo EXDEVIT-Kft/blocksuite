@@ -9,5 +9,5 @@ This is a container used to render graphical content.
 
 ## Reference
 
-- [`SurfaceBlockSchema`](/api/@blocksuite/blocks/variables/SurfaceBlockSchema.html)
-- [`SurfaceBlockService`](/api/@blocksuite/blocks/classes/SurfaceBlockService.html)
+- [`SurfaceBlockSchema`](/api/@algogrind/blocks/variables/SurfaceBlockSchema.html)
+- [`SurfaceBlockService`](/api/@algogrind/blocks/classes/SurfaceBlockService.html)

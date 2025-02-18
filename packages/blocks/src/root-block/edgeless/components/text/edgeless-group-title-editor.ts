@@ -1,16 +1,16 @@
-import type { RichText } from '@blocksuite/affine-components/rich-text';
-import type { GroupElementModel } from '@blocksuite/affine-model';
+import type { RichText } from '@algogrind/affine-components/rich-text';
+import type { GroupElementModel } from '@algogrind/affine-model';
 
 import {
   GROUP_TITLE_FONT_SIZE,
   GROUP_TITLE_OFFSET,
   GROUP_TITLE_PADDING,
-} from '@blocksuite/affine-block-surface';
+} from '@algogrind/affine-block-surface';
 import {
   RANGE_SYNC_EXCLUDE_ATTR,
   ShadowlessElement,
-} from '@blocksuite/block-std';
-import { assertExists, Bound, WithDisposable } from '@blocksuite/global/utils';
+} from '@algogrind/block-std';
+import { assertExists, Bound, WithDisposable } from '@algogrind/global/utils';
 import { html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
