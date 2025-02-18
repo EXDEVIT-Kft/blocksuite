@@ -1,7 +1,7 @@
 import type { PointerEventState } from '@blocksuite/block-std';
 
 import { on } from '@blocksuite/affine-shared/utils';
-import { BaseTool } from '@blocksuite/block-std/gfx';
+import { BaseTool, MouseButton } from '@blocksuite/block-std/gfx';
 import { Signal } from '@preact/signals-core';
 
 export type PanToolOption = {
@@ -47,8 +47,16 @@ export class PanTool extends BaseTool<PanToolOption> {
   override mounted(): void {
     this.addHook('pointerDown', evt => {
       evt.raw.preventDefault();
-
       const currentTool = this.controller.currentToolOption$.peek();
+
+      if (
+        !this.doc.readonly &&
+        currentTool.type !== 'pan' &&
+        evt.button !== MouseButton.MIDDLE
+      ) {
+        return;
+      }
+
       const restoreToPrevious = () => {
         this.controller.setTool(currentTool);
       };
