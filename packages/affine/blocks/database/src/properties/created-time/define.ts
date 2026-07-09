@@ -5,7 +5,7 @@ import zod from 'zod';
 export const createdTimeColumnType = propertyType('created-time');
 export const createdTimePropertyModelConfig = createdTimeColumnType.modelConfig(
   {
-    name: 'Created Time',
+    name: 'Létrehozás ideje',
     propertyData: {
       schema: zod.object({}),
       default: () => ({}),

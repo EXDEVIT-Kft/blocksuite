@@ -52,14 +52,15 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
     let index = 0;
 
     const insertBlankFrameItem: SlashMenuItem = {
-      name: 'Frame',
-      description: 'Insert a blank frame',
+      name: 'Keret',
+      description: 'Szúrj be egy üres keretet.',
       icon: FrameIcon(),
       tooltip: {
         figure: FrameTooltip,
-        caption: 'Frame',
+        caption: 'Keret',
       },
-      group: `5_Edgeless Element@${index++}`,
+      searchAlias: ['frame', 'keret'],
+      group: `5_Dokumentum Csoport & Keret@${index++}`,
       action: () => {
         const frameBound = findSpace(Bound.fromXYWH([0, 0, 1600, 900]));
         const frame = frameMgr.createFrameOnBound(frameBound);
@@ -68,14 +69,15 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
     };
 
     const insertMindMapItem: SlashMenuItem = {
-      name: 'Mind Map',
-      description: 'Insert a mind map',
+      name: 'Gondolattérkép',
+      description: 'Szúrj be egy gondolattérképet.',
       icon: MindmapIcon(),
       tooltip: {
         figure: MindMapTooltip,
-        caption: 'Edgeless',
+        caption: 'Vászon eszközök',
       },
-      group: `5_Edgeless Element@${index++}`,
+      searchAlias: ['mind map', 'mindmap', 'gondolattérkép'],
+      group: `5_Dokumentum Csoport & Keret@${index++}`,
       action: () => {
         const bound = findSpace(Bound.fromXYWH([0, 0, 200, 200]), 150);
         const { x, y, h } = bound;
@@ -98,7 +100,7 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
 
         const root: MindMapNode = {
           children: [],
-          text: 'Mind Map',
+          text: 'Gondolattérkép',
           xywh: `[${rootX},${rootY},${rootW},${rootH}]`,
         };
 
@@ -107,7 +109,7 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
           const nodeY = centerVertical - nodeH / 2 + (i - 1) * 50;
           root.children.push({
             children: [],
-            text: 'Text',
+            text: 'Szöveg',
             xywh: `[${nodeX},${nodeY},${nodeW},${nodeH}]`,
           });
         }
@@ -123,12 +125,12 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
     };
 
     const frameItems = frameMgr.frames.map<SlashMenuActionItem>(frameModel => ({
-      name: 'Frame: ' + frameModel.props.title,
+      name: 'Keret: ' + frameModel.props.title,
       icon: FrameIcon(),
-      group: `5_Edgeless Element@${index++}`,
+      group: `5_Dokumentum Csoport & Keret@${index++}`,
       tooltip: {
         figure: EdgelessTooltip,
-        caption: 'Edgeless',
+        caption: 'Vászon eszközök',
       },
       action: () => {
         insertSurfaceRefAndSelect(frameModel.id);
@@ -137,12 +139,12 @@ const surfaceRefSlashMenuConfig: SlashMenuConfig = {
 
     const groupElements = crud.getElementsByType('group');
     const groupItems = groupElements.map<SlashMenuActionItem>(group => ({
-      name: 'Group: ' + group.title.toString(),
+      name: 'Csoport: ' + group.title.toString(),
       icon: GroupingIcon(),
-      group: `5_Edgeless Element@${index++}`,
+      group: `5_Dokumentum Csoport & Keret@${index++}`,
       tooltip: {
         figure: EdgelessTooltip,
-        caption: 'Edgeless',
+        caption: 'Vászon eszközök',
       },
       action: () => {
         insertSurfaceRefAndSelect(group.id);

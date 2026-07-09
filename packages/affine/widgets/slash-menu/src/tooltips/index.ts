@@ -11,41 +11,41 @@ import { YesterdayTooltip } from './yesterday';
 export const slashMenuToolTips: Record<string, SlashMenuTooltip> = {
   Today: {
     figure: TodayTooltip,
-    caption: 'Today',
+    caption: 'Mai dátum',
   },
 
   Tomorrow: {
     figure: TomorrowTooltip,
-    caption: 'Tomorrow',
+    caption: 'Holnapi dátum',
   },
 
   Yesterday: {
     figure: YesterdayTooltip,
-    caption: 'Yesterday',
+    caption: 'Tegnapi dátum',
   },
 
   Now: {
     figure: NowTooltip,
-    caption: 'Now',
+    caption: 'Jelenlegi idő',
   },
 
   'Move Up': {
     figure: MoveUpTooltip,
-    caption: 'Move Up',
+    caption: 'Felfele Mozgatás',
   },
 
   'Move Down': {
     figure: MoveDownTooltip,
-    caption: 'Move Down',
+    caption: 'Lefele Mozgatás',
   },
 
   Copy: {
     figure: CopyTooltip,
-    caption: 'Copy / Duplicate',
+    caption: 'Másolás / Duplikálás',
   },
 
   Delete: {
     figure: DeleteTooltip,
-    caption: 'Delete',
+    caption: 'Törlés',
   },
 };

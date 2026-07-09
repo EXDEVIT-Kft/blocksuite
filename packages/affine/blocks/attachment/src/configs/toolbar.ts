@@ -48,7 +48,7 @@ export const attachmentViewDropdownMenu = {
   actions: [
     {
       id: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       run(ctx) {
         const model = ctx.getCurrentModelByType(AttachmentBlockModel);
         if (!model) return;
@@ -69,7 +69,7 @@ export const attachmentViewDropdownMenu = {
     },
     {
       id: 'embed',
-      label: 'Embed view',
+      label: 'Beágyazott nézet',
       disabled: ctx => {
         const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);
         return block ? !block.embedded() : true;
@@ -151,7 +151,7 @@ export const attachmentViewDropdownMenu = {
 
 const replaceAction = {
   id: 'c.replace',
-  tooltip: 'Replace attachment',
+  tooltip: 'Csere',
   icon: ReplaceIcon(),
   disabled(ctx) {
     const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);
@@ -169,7 +169,7 @@ const replaceAction = {
 
 const downloadAction = {
   id: 'd.download',
-  tooltip: 'Download',
+  tooltip: 'Letöltés',
   icon: DownloadIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);
@@ -185,7 +185,7 @@ const downloadAction = {
 
 const captionAction = {
   id: 'e.caption',
-  tooltip: 'Caption',
+  tooltip: 'Felirat',
   icon: CaptionIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);
@@ -211,8 +211,8 @@ const builtinToolbarConfig = {
 
         return html`
           <editor-icon-button
-            aria-label="Rename"
-            .tooltip="${'Rename'}"
+            aria-label="Átnevezés"
+            .tooltip="${'Átnevezés'}"
             @click=${() => {
               ctx.hide();
 
@@ -246,7 +246,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             // TODO(@fundon): unify `clone` method
@@ -256,7 +256,7 @@ const builtinToolbarConfig = {
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(AttachmentBlockModel);
@@ -276,7 +276,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'b.refresh',
-      label: 'Reload',
+      label: 'Frissítés',
       icon: ResetIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);
@@ -292,7 +292,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {
@@ -317,11 +317,11 @@ const builtinSurfaceToolbarConfig = {
       actions: [
         {
           id: 'horizontalThin',
-          label: 'Horizontal style',
+          label: 'Vízszintes elrendezés',
         },
         {
           id: 'cubeThick',
-          label: 'Vertical style',
+          label: 'Függőleges elrendezés',
         },
       ],
       content(ctx) {

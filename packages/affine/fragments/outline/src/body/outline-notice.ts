@@ -50,7 +50,7 @@ export class OutlineNotice extends SignalWatcher(
     return html`
       <div data-testid=${AFFINE_OUTLINE_NOTICE} class=${styles.outlineNotice}>
         <div class=${styles.outlineNoticeHeader}>
-          <span class=${styles.outlineNoticeLabel}>SOME CONTENTS HIDDEN</span>
+          <span class=${styles.outlineNoticeLabel}>NÉHÁNY TARTALOM EL VAN REJTVE</span>
           <span
             data-testid="outline-notice-close-button"
             class=${styles.outlineNoticeCloseButton}
@@ -62,7 +62,7 @@ export class OutlineNotice extends SignalWatcher(
         </div>
         <div class=${styles.outlineNoticeBody}>
           <div class="${styles.notice}">
-            Some contents are not visible on edgeless.
+            Egyes tartalmak nem láthatók a Rajztábla nézetben.
           </div>
           <div
             data-testid="outline-notice-sort-button"
@@ -72,11 +72,11 @@ export class OutlineNotice extends SignalWatcher(
               this._visible$.value = false;
             }}
           >
-            <span class=${styles.buttonSpan}>Click here or</span>
+            <span class=${styles.buttonSpan}>Kattints ide vagy</span>
             <span class=${styles.buttonSpan}
               >${SortIcon({ width: '20px', height: '20px' })}</span
             >
-            <span class=${styles.buttonSpan}>to organize content.</span>
+            <span class=${styles.buttonSpan}>a tartalmak rendszerezéséhez.</span>
           </div>
         </div>
       </div>

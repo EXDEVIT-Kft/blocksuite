@@ -13,9 +13,9 @@ import { join } from 'lit/directives/join.js';
 import { repeat } from 'lit/directives/repeat.js';
 
 const FONT_WEIGHT_CHOOSE: [FontWeight, () => string][] = [
-  [FontWeight.Light, () => 'Light'],
-  [FontWeight.Regular, () => 'Regular'],
-  [FontWeight.SemiBold, () => 'Semibold'],
+  [FontWeight.Light, () => 'Vékony'],
+  [FontWeight.Regular, () => 'Normál'],
+  [FontWeight.SemiBold, () => 'Vastag'],
 ];
 
 export class EdgelessFontWeightAndStylePanel extends LitElement {

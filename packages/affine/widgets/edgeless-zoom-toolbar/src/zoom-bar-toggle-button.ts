@@ -110,7 +110,7 @@ export class ZoomBarToggleButton extends WithDisposable(LitElement) {
     return html`
       <div class="toggle-button" @pointerdown=${stopPropagation}>
         <edgeless-tool-icon-button
-          .tooltip=${'Toggle Zoom Tool Bar'}
+          .tooltip=${'Nagyítási menü megnyitása'}
           .tipPosition=${'right'}
           .active=${this._showPopper}
           .arrow=${false}

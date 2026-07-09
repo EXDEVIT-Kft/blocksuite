@@ -63,7 +63,7 @@ const previewAction = {
 
 const captionAction = {
   id: 'd.caption',
-  tooltip: 'Caption',
+  tooltip: 'Felirat hozzáadása',
   icon: CaptionIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(BookmarkBlockComponent);
@@ -106,7 +106,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'inline',
-          label: 'Inline view',
+          label: 'Sorközi nézet',
           run(ctx) {
             const model = ctx.getCurrentModelByType(BookmarkBlockModel);
             if (!model) return;
@@ -139,12 +139,12 @@ const builtinToolbarConfig = {
         },
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           disabled: true,
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           disabled(ctx) {
             const model = ctx.getCurrentModelByType(BookmarkBlockModel);
             if (!model) return true;
@@ -247,11 +247,11 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'horizontal',
-          label: 'Large horizontal style',
+          label: 'Nagy vízszintes elrendezés',
         },
         {
           id: 'list',
-          label: 'Small horizontal style',
+          label: 'Kicsi vízszintes elrendezés',
         },
       ],
       content(ctx) {
@@ -294,7 +294,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(BookmarkBlockModel);
@@ -303,13 +303,13 @@ const builtinToolbarConfig = {
             const slice = Slice.fromModels(ctx.store, [model]);
             ctx.clipboard
               .copySlice(slice)
-              .then(() => toast(ctx.host, 'Copied to clipboard'))
+              .then(() => toast(ctx.host, 'Hivatkozás a vágólapra másolva'))
               .catch(console.error);
           },
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(BookmarkBlockModel);
@@ -327,7 +327,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'b.refresh',
-      label: 'Reload',
+      label: 'Frissítés',
       icon: ResetIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(BookmarkBlockComponent);
@@ -337,7 +337,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {
@@ -362,12 +362,12 @@ const builtinSurfaceToolbarConfig = {
       actions: [
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           disabled: true,
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           run(ctx) {
             const model = ctx.getCurrentModelByType(BookmarkBlockModel);
             if (!model) return;
@@ -459,7 +459,7 @@ const builtinSurfaceToolbarConfig = {
         if (!model) return null;
 
         const actions = this.actions.map(action => ({ ...action }));
-        const viewType$ = signal('Card view');
+        const viewType$ = signal('Kártya nézet');
         const onToggle = createOnToggleFn(
           ctx,
           'OpenedViewSelector',
@@ -483,19 +483,19 @@ const builtinSurfaceToolbarConfig = {
         [
           {
             id: 'horizontal',
-            label: 'Large horizontal style',
+            label: 'Nagy vízszintes elrendezés',
           },
           {
             id: 'list',
-            label: 'Small horizontal style',
+            label: 'Kicsi vízszintes elrendezés',
           },
           {
             id: 'vertical',
-            label: 'Large vertical style',
+            label: 'Nagy függőleges elrendezés',
           },
           {
             id: 'cube',
-            label: 'Small vertical style',
+            label: 'Kicsi függőleges elrendezés',
           },
         ] as const
       ).filter(action => BookmarkStyles.includes(action.id)),

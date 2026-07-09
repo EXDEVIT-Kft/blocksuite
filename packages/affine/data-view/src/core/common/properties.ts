@@ -243,7 +243,7 @@ export const popPropertiesSetting = (
     middleware,
     options: {
       title: {
-        text: 'Properties',
+        text: 'Tulajdonságok',
         onBack: props.onBack,
         onClose: props.onClose,
         postfix: () => {
@@ -260,7 +260,7 @@ export const popPropertiesSetting = (
             class="properties-group-op"
             @click="${clickChangeAll}"
           >
-            ${isAllShowed ? 'Hide All' : 'Show All'}
+            ${isAllShowed ? 'Mind elrejtése' : 'Mind megjelenítése'}
           </div>`;
         },
       },

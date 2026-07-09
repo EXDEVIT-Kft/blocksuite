@@ -104,12 +104,12 @@ type Page =
   | 'custom';
 
 const pageTitles: Record<Exclude<Page, 'custom'>, string> = {
-  main: 'View settings',
-  properties: 'Properties',
-  filter: 'Filter',
-  sort: 'Sort',
-  group: 'Group',
-  'group-select': 'Group by',
+  main: 'Nézet beállításai',
+  properties: 'Tulajdonságok',
+  filter: 'Szűrők',
+  sort: 'Rendezés',
+  group: 'Csoportosítás',
+  'group-select': 'Csoportosítás alapja',
 };
 
 export const popViewOptions = (
@@ -170,7 +170,7 @@ export const popViewOptions = (
       if (currentPage.value === 'custom') return customPageTitle;
       return (
         pageTitles[currentPage.value as Exclude<Page, 'custom'>] ??
-        'View settings'
+        'Nézet beállításai'
       );
     },
     get onBack(): ((menu: Menu) => false) | undefined {
@@ -196,7 +196,7 @@ export const popViewOptions = (
           style="padding:4px 8px;font-size:12px;line-height:20px;font-weight:500;border-radius:4px;cursor:pointer;color:var(--affine-primary-color);"
           @click="${clickChangeAll}"
         >
-          ${isAllShowed ? 'Hide All' : 'Show All'}
+          ${isAllShowed ? 'Mind elrejtése' : 'Mind megjelenítése'}
         </div>`;
     },
     get onClose() {
@@ -233,7 +233,7 @@ export const popViewOptions = (
       menu.group({
         items: [
           menu.action({
-            name: 'Add',
+            name: 'Új',
             prefix: PlusIcon(),
             select: ele => {
               const value = filterTrait.filter$.value;
@@ -262,7 +262,7 @@ export const popViewOptions = (
     return [
       () => html`<sort-root-view .sortUtils="${sortUtils}"></sort-root-view>`,
       menu.action({
-        name: 'Add sort',
+        name: 'Rendezés hozzáadása',
         prefix: PlusIcon(),
         select: ele => {
           popCreateSort(popupTargetFromElement(ele), { sortUtils });
@@ -270,7 +270,7 @@ export const popViewOptions = (
         },
       }),
       menu.action({
-        name: 'Delete',
+        name: 'Törlés',
         class: { 'delete-item': true },
         prefix: DeleteIcon(),
         select: () => {
@@ -316,7 +316,7 @@ export const popViewOptions = (
     items.push(
       menu.input({
         initialValue: view.name$.value,
-        placeholder: 'View name',
+        placeholder: 'Nézet neve',
         disableAutoFocus: true,
         onChange: text => {
           view.nameSet(text);
@@ -398,7 +398,7 @@ export const popViewOptions = (
                 <div
                   style="font-size:14px;line-height:22px;color:var(--affine-text-secondary-color);"
                 >
-                  Layout
+                  Elrendezés
                 </div>
               </div>
               <div style="display:flex;gap:4px;margin-top:8px;">
@@ -414,12 +414,12 @@ export const popViewOptions = (
 
     settingItems.push(
       menu.action({
-        name: 'Properties',
+        name: 'Tulajdonságok',
         prefix: InfoIcon(),
         closeOnSelect: false,
         postfix: html`
           <div style="font-size: 14px;">
-            ${view.properties$.value.length} shown
+            ${view.properties$.value.length} látható
           </div>
           ${ArrowRightSmallIcon()}
         `,
@@ -435,7 +435,7 @@ export const popViewOptions = (
       const filterCount = filterTrait.filter$.value.conditions.length;
       settingItems.push(
         menu.action({
-          name: 'Filter',
+          name: 'Szűrők',
           prefix: FilterIcon(),
           closeOnSelect: false,
           postfix: html`
@@ -443,8 +443,8 @@ export const popViewOptions = (
               ${filterCount === 0
                 ? ''
                 : filterCount === 1
-                  ? '1 active'
-                  : `${filterCount} active`}
+                  ? '1 szűrő'
+                  : `${filterCount} szűrő`}
             </div>
             ${ArrowRightSmallIcon()}
           `,
@@ -461,7 +461,7 @@ export const popViewOptions = (
       const sortCount = sortTrait.sortList$.value.length;
       settingItems.push(
         menu.action({
-          name: 'Sort',
+          name: 'Rendezés',
           prefix: SortIcon(),
           closeOnSelect: false,
           postfix: html`
@@ -469,8 +469,8 @@ export const popViewOptions = (
               ${sortCount === 0
                 ? ''
                 : sortCount === 1
-                  ? '1 active'
-                  : `${sortCount} active`}
+                  ? '1 rendezés'
+                  : `${sortCount} rendezés`}
             </div>
             ${ArrowRightSmallIcon()}
           `,
@@ -486,7 +486,7 @@ export const popViewOptions = (
     if (groupTrait) {
       settingItems.push(
         menu.action({
-          name: 'Group',
+          name: 'Csoportosítás',
           prefix: GroupingIcon(),
           closeOnSelect: false,
           postfix: html`
@@ -527,7 +527,7 @@ export const popViewOptions = (
       menu.group({
         items: [
           menu.action({
-            name: 'Duplicate view',
+            name: 'Nézet duplikálása',
             prefix: DuplicateIcon(),
             closeOnSelect: false,
             select: () => {
@@ -535,7 +535,7 @@ export const popViewOptions = (
             },
           }),
           menu.action({
-            name: 'Delete view',
+            name: 'Nézet törlése',
             prefix: DeleteIcon(),
             closeOnSelect: false,
             select: () => {

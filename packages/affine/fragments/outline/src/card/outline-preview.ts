@@ -61,7 +61,7 @@ export class OutlineBlockPreview extends SignalWatcher(
           ? LinkedPageIcon({ width: '1.1em', height: '1.1em' })
           : this._docDisplayMetaService.icon(refMeta.id).value;
         const title = unavailable
-          ? 'Deleted doc'
+          ? 'Törölt dokumentum'
           : this._docDisplayMetaService.title(refMeta.id).value;
 
         return html`<span
@@ -76,7 +76,7 @@ export class OutlineBlockPreview extends SignalWatcher(
               [styles.linkedDocText]: true,
               [styles.linkedDocTextUnavailable]: unavailable,
             })}
-            >${title.length ? title : 'Untitled'}</span
+            >${title.length ? title : 'Új dokumentum'}</span
           ></span
         >`;
       } else {

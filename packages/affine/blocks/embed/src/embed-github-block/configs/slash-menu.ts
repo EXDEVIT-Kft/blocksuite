@@ -10,13 +10,14 @@ export const embedGithubSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
       name: 'GitHub',
-      description: 'Link to a GitHub repository.',
+      description: 'Hivatkozz egy GitHub forrásra.',
       icon: GithubDuotoneIcon(),
       tooltip: {
         figure: GithubRepoTooltip,
         caption: 'GitHub Repo',
       },
-      group: '4_Content & Media@7',
+      searchAlias: ['embed', 'beágyaz'],
+      group: '4_Tartalom & Média@7',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:embed-github'),
       action: ({ std, model }) => {
@@ -30,7 +31,7 @@ export const embedGithubSlashMenuConfig: SlashMenuConfig = {
           await toggleEmbedCardCreateModal(
             host,
             'GitHub',
-            'The added GitHub issue or pull request link will be displayed as a card view.',
+            'A hozzáadott GitHub issue vagy Pull Request hivatkozás kártyanézetben lesz megjelenítve.',
             { mode: 'page', parentModel, index },
             ({ mode }) => {
               if (mode === 'edgeless') {

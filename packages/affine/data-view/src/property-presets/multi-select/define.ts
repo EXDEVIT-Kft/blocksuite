@@ -9,7 +9,7 @@ export const multiSelectPropertyType = propertyType('multi-select');
 
 export const multiSelectPropertyModelConfig =
   multiSelectPropertyType.modelConfig({
-    name: 'Multi-select',
+    name: 'Több címke',
     kanbanGroup: {
       enabled: true,
       mutable: true,

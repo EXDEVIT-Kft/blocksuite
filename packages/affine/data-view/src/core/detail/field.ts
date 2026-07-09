@@ -101,7 +101,7 @@ export class RecordField extends SignalWatcher(
     }
 
     .field-content.empty::before {
-      content: 'Empty';
+      content: 'Üres';
       color: var(--affine-text-disable-color);
       font-size: 14px;
       line-height: 22px;
@@ -124,7 +124,7 @@ export class RecordField extends SignalWatcher(
     popMenu(popupTargetFromElement(ele), {
       options: {
         title: {
-          text: 'Property settings',
+          text: 'Tulajdonság beállítások',
         },
         items: [
           menu.group({
@@ -133,7 +133,7 @@ export class RecordField extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Move Up',
+                name: 'Mozgatás felfelé',
                 prefix: html` <div
                   style="transform: rotate(90deg);display:flex;align-items:center;"
                 >
@@ -155,7 +155,7 @@ export class RecordField extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Move Down',
+                name: 'Mozgatás lefelé',
                 prefix: html` <div
                   style="transform: rotate(90deg);display:flex;align-items:center;"
                 >
@@ -183,7 +183,7 @@ export class RecordField extends SignalWatcher(
             name: 'operation',
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 hide: () => !this.column.canDuplicate,
                 select: () => {
@@ -191,7 +191,7 @@ export class RecordField extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 prefix: DeleteIcon(),
                 hide: () => !this.column.canDelete,
                 select: () => {

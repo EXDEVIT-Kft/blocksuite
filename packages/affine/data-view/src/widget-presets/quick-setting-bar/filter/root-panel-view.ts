@@ -214,7 +214,9 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
         items: [
           menu.action({
             name:
-              filter.type === 'filter' ? 'Turn into group' : 'Wrap in group',
+              filter.type === 'filter'
+                ? 'Csoporttá konvertálás'
+                : 'Csoportba foglalás',
             prefix: ConvertIcon(),
             hide: () => getDepth(filter) > 3,
             select: () => {
@@ -226,7 +228,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
             },
           }),
           menu.action({
-            name: 'Duplicate',
+            name: 'Duplikálás',
             prefix: DuplicateIcon(),
             select: () => {
               const conditions = [...this.filterGroup.value.conditions];
@@ -245,7 +247,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
             name: '',
             items: [
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 prefix: DeleteIcon(),
                 class: { 'delete-item': true },
                 select: () => {
@@ -337,7 +339,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       );
     };
     const length = condition.conditions.length;
-    const text = length > 1 ? `${length} rules` : `${length} rule`;
+    const text = length > 1 ? `${length} szabály` : `${length} szabály`;
     return html` <data-view-component-button
       hoverType="border"
       .icon="${FilterIcon()}"
@@ -386,7 +388,7 @@ export const popFilterRoot = (
     middleware,
     options: {
       title: {
-        text: 'Filters',
+        text: 'Szűrők',
         onBack: props.onBack,
         onClose: props.onClose,
       },
@@ -406,7 +408,7 @@ export const popFilterRoot = (
         menu.group({
           items: [
             menu.action({
-              name: 'Add',
+              name: 'Új',
               prefix: PlusIcon(),
               select: ele => {
                 const value = filterTrait.filter$.value;

@@ -37,8 +37,8 @@ const colors = [
 
 const backgroundColorAction = {
   id: 'background-color',
-  label: 'Background Color',
-  tooltip: 'Change background color',
+  label: 'Háttérszín',
+  tooltip: 'Háttérszín módosítása',
   icon: PaletteIcon(),
   run() {
     // This will be handled by the content function
@@ -57,14 +57,14 @@ const backgroundColorAction = {
         .button=${html`
           <editor-icon-button
             aria-label="background"
-            .tooltip=${'Background Color'}
+            .tooltip=${'Háttérszín'}
           >
             ${PaletteIcon()} ${EditorChevronDown}
           </editor-icon-button>
         `}
       >
         <div data-size="large" data-orientation="vertical">
-          <div class="highlight-heading">Background</div>
+          <div class="highlight-heading">Háttér</div>
           ${repeat(colors, color => {
             const isDefault = color === 'default';
             const value = isDefault
@@ -95,8 +95,8 @@ const backgroundColorAction = {
 
 const iconPickerAction = {
   id: 'icon-picker',
-  label: 'Icon Picker',
-  tooltip: 'Change icon',
+  label: 'Ikonválasztó',
+  tooltip: 'Ikon módosítása',
   icon: SmileIcon(),
   run() {
     // This will be handled by the content function
@@ -153,7 +153,7 @@ const iconPickerAction = {
     return html`
       <editor-icon-button
         aria-label="icon-picker"
-        .tooltip=${'Change Icon'}
+        .tooltip=${'Ikon módosítása'}
         @click=${handleIconPickerClick}
       >
         ${SmileIcon()} ${EditorChevronDown}
@@ -175,7 +175,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {

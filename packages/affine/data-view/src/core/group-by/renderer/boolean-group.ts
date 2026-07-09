@@ -18,7 +18,7 @@ export class BooleanGroupView extends BaseGroup<boolean, NonNullable<unknown>> {
   protected override render(): unknown {
     // Handle null/undefined values
     if (this.value == null) {
-      const displayName = `No ${this.group.property.name$.value ?? 'value'}`;
+      const displayName = `Nincs ${this.group.property.name$.value ?? 'érték'}`;
       return html` <div class="data-view-group-title-boolean-view">
         ${displayName}
       </div>`;

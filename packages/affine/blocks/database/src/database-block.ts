@@ -81,7 +81,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
       items: [
         menu.input({
           initialValue: this.model.props.title.toString(),
-          placeholder: 'Database title',
+          placeholder: 'Új adatbázis',
           onChange: text => {
             this.model.props.title.replace(
               0,
@@ -92,7 +92,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
         }),
         menu.action({
           prefix: CommentIcon(),
-          name: 'Comment',
+          name: 'Megjegyzés',
           hide: () => !this.std.getOptional(CommentProviderIdentifier),
           select: () => {
             this.std.getOptional(CommentProviderIdentifier)?.addComment([
@@ -104,13 +104,13 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
         }),
         menu.action({
           prefix: CopyIcon(),
-          name: 'Copy',
+          name: 'Másolás',
           select: () => {
             const slice = Slice.fromModels(this.store, [this.model]);
             this.std.clipboard
               .copySlice(slice)
               .then(() => {
-                toast(this.host, 'Copied to clipboard');
+                toast(this.host, 'Vágólapra másolva');
               })
               .catch(console.error);
           },
@@ -122,7 +122,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
               class: {
                 'delete-item': true,
               },
-              name: 'Delete Database',
+              name: 'Adatbázis törlése',
               select: () => {
                 this.model.children.slice().forEach(block => {
                   this.store.deleteBlock(block);

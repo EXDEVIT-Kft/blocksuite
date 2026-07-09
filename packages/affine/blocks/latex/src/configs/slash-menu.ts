@@ -12,19 +12,25 @@ import { LatexTooltip } from './tooltips';
 export const latexSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Inline equation',
-      group: '0_Basic@8',
-      description: 'Create a inline equation.',
+      name: 'Sorközi Egyenlet',
+      group: '0_Alapvető@8',
+      description: 'Szúrj be egy új sorközi egyenletet.',
       icon: TeXIcon(),
       tooltip: {
         figure: LatexTooltip(
-          'Energy. Mass. Light. In a single equation,',
+          'Energia. Tömeg. Fény. Egyetlen egyenletben,',
           'E=mc^2',
           false
         ),
-        caption: 'Inline equation',
+        caption: 'Sorközi Egyenlet',
       },
-      searchAlias: ['inlineMath, inlineEquation', 'inlineLatex'],
+      searchAlias: [
+        'inlineMath, inlineEquation',
+        'inlineLatex',
+        'matematika',
+        'számolás',
+        'latex',
+      ],
       action: ({ std }) => {
         std.command
           .chain()
@@ -34,19 +40,25 @@ export const latexSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Equation',
-      description: 'Create a equation block.',
+      name: 'Egyenlet',
+      description: 'Hozz létre egy új egyenlet blokkot.',
       icon: TeXIcon(),
       tooltip: {
         figure: LatexTooltip(
-          'Create a equation via LaTeX.',
+          'Hozz létre egy egyenletet LaTeX segítségével.',
           String.raw`\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd}`,
           true
         ),
-        caption: 'Equation',
+        caption: 'Egyenlet',
       },
-      searchAlias: ['mathBlock, equationBlock', 'latexBlock'],
-      group: '4_Content & Media@10',
+      searchAlias: [
+        'mathBlock, equationBlock',
+        'latexBlock',
+        'equation',
+        'matematika',
+        'latex',
+      ],
+      group: '4_Tartalom & Média@10',
       action: ({ std }) => {
         std.command
           .chain()

@@ -122,7 +122,7 @@ export class OutlinePanelBody extends SignalWatcher(
         data-testid="empty-panel-placeholder"
         class=${styles.emptyPanelPlaceholder}
       >
-        Use headings to create a table of contents.
+        Tartalomjegyzék létrehozásához használj címsorokat.
       </div>
     </div>`;
   }

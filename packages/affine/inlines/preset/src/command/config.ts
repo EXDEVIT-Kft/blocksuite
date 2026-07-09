@@ -32,7 +32,7 @@ export interface TextFormatConfig {
 export const textFormatConfigs: TextFormatConfig[] = [
   {
     id: 'bold',
-    name: 'Bold',
+    name: 'Félkövér',
     icon: BoldIcon,
     hotkey: 'Mod-b',
     activeWhen: host => {
@@ -48,7 +48,7 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'italic',
-    name: 'Italic',
+    name: 'Dőlt',
     icon: ItalicIcon,
     hotkey: 'Mod-i',
     activeWhen: host => {
@@ -64,7 +64,7 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'underline',
-    name: 'Underline',
+    name: 'Aláhúzott',
     icon: UnderlineIcon,
     hotkey: 'Mod-u',
     activeWhen: host => {
@@ -80,7 +80,7 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'strike',
-    name: 'Strikethrough',
+    name: 'Áthúzott',
     icon: StrikethroughIcon,
     hotkey: 'Mod-shift-s',
     activeWhen: host => {
@@ -96,7 +96,7 @@ export const textFormatConfigs: TextFormatConfig[] = [
   },
   {
     id: 'code',
-    name: 'Code',
+    name: 'Kód',
     icon: CodeIcon,
     hotkey: 'Mod-e',
     activeWhen: host => {

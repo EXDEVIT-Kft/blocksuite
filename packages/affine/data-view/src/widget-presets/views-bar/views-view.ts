@@ -138,7 +138,7 @@ export class DataViewHeaderViews extends WidgetBase {
         menu.group({
           items: this.dataSource.viewMetas.map(v => {
             return menu.action({
-              name: `Create ${v.model.defaultName}`,
+              name: `${v.model.defaultName} létrehozása`,
               hide: () => this.readonly,
               prefix: PlusIcon(),
               select: () => {
@@ -170,7 +170,7 @@ export class DataViewHeaderViews extends WidgetBase {
         items: [
           menu.input({
             initialValue: view.name$.value,
-            placeholder: 'View name',
+            placeholder: 'Nézet neve',
             onChange: text => {
               view.nameSet(text);
             },
@@ -178,7 +178,7 @@ export class DataViewHeaderViews extends WidgetBase {
           menu.group({
             items: [
               menu.action({
-                name: 'Edit View',
+                name: 'Nézet Szerkesztése',
                 prefix: InfoIcon(),
                 select: () => {
                   this.closest('affine-data-view-renderer')
@@ -187,7 +187,7 @@ export class DataViewHeaderViews extends WidgetBase {
                 },
               }),
               menu.action({
-                name: 'Move Left',
+                name: 'Mozgatás Balra',
                 hide: () => index === 0,
                 prefix: MoveLeftIcon(),
                 select: () => {
@@ -199,7 +199,7 @@ export class DataViewHeaderViews extends WidgetBase {
                 },
               }),
               menu.action({
-                name: 'Move Right',
+                name: 'Mozgatás Jobbra',
                 prefix: MoveRightIcon(),
                 hide: () => index === views.length - 1,
                 select: () => {
@@ -215,14 +215,14 @@ export class DataViewHeaderViews extends WidgetBase {
           menu.group({
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 select: () => {
                   this.viewManager.viewDuplicate(id);
                 },
               }),
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 prefix: DeleteIcon(),
                 select: () => {
                   view.delete();

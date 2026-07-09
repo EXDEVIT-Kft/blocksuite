@@ -16,15 +16,15 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
   disableWhen: ({ model }) => model.flavour === 'affine:database',
   items: [
     {
-      name: 'Table View',
-      description: 'Display items in a table format.',
-      searchAlias: ['database'],
+      name: 'Táblázat Nézet',
+      description: 'Jelenítsd meg az elemeket táblázatban.',
+      searchAlias: ['database', 'table', 'táblázat', 'adatbázis'],
       icon: DatabaseTableViewIcon(),
       tooltip: {
         figure: TableViewTooltip,
-        caption: 'Table View',
+        caption: 'Táblázat Nézet',
       },
-      group: '7_Database@0',
+      group: '7_Adatbázis@0',
       when: ({ model }) =>
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {
@@ -49,11 +49,11 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Calendar View',
-      description: 'Display items by date in a calendar.',
-      searchAlias: ['database', 'calendar'],
+      name: 'Naptár Nézet',
+      description: 'Jelenítsd meg az elemeket dátum szerint naptárban.',
+      searchAlias: ['database', 'calendar', 'naptár', 'adatbázis'],
       icon: TodayIcon(),
-      group: '7_Database@1',
+      group: '7_Adatbázis@1',
       when: ({ model }) =>
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {
@@ -78,15 +78,15 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
     },
 
     {
-      name: 'Kanban View',
-      description: 'Visualize data in a dashboard.',
-      searchAlias: ['database'],
+      name: 'Kanban Nézet',
+      description: 'Vizualizáld az elvégzendő feladatokat.',
+      searchAlias: ['database', 'kanban', 'adatbázis', 'task', 'feladatok'],
       icon: DatabaseKanbanViewIcon(),
       tooltip: {
         figure: KanbanViewTooltip,
-        caption: 'Kanban View',
+        caption: 'Kanban Nézet',
       },
-      group: '7_Database@2',
+      group: '7_Adatbázis@2',
       when: ({ model }) =>
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {

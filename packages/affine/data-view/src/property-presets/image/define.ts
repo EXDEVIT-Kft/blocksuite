@@ -6,7 +6,7 @@ import { propertyType } from '../../core/property/property-config.js';
 export const imagePropertyType = propertyType('image');
 
 export const imagePropertyModelConfig = imagePropertyType.modelConfig({
-  name: 'image',
+  name: 'Kép',
   propertyData: {
     schema: zod.object({}),
     default: () => ({}),

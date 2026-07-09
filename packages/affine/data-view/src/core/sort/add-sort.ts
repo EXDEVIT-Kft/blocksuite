@@ -24,7 +24,7 @@ export const popCreateSort = (
     options: {
       onClose: props.onClose,
       title: {
-        text: 'New sort',
+        text: 'Új rendezés',
         onBack: props.onBack,
       },
       items: [

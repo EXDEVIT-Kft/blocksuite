@@ -113,7 +113,7 @@ const conversionsActionGroup = {
           .button=${html`
             <editor-icon-button
               aria-label="Conversions"
-              .tooltip="${'Turn into'}"
+              .tooltip="${'Átváltás'}"
             >
               ${conversion.icon} ${EditorChevronDown}
             </editor-icon-button>
@@ -173,7 +173,7 @@ const alignActionGroup = {
         <editor-menu-button
           .contentPadding="${'8px'}"
           .button=${html`
-            <editor-icon-button aria-label="Align" .tooltip="${'Align'}">
+            <editor-icon-button aria-label="Align" .tooltip="${'Igazítás'}">
               ${alignment.icon} ${EditorChevronDown}
             </editor-icon-button>
           `}
@@ -222,7 +222,7 @@ const inlineTextActionGroup = {
           id: 'inline-latex',
           icon: TeXIcon(),
           score: score + 0.5,
-          tooltip: 'Inline Equation',
+          tooltip: 'Sorközi Egyenlet',
           run: ({ host }) => {
             host.std.command
               .chain()
@@ -263,7 +263,7 @@ const highlightActionGroup = {
 
 const turnIntoDatabase = {
   id: 'e.convert-to-database',
-  tooltip: 'Create Table',
+  tooltip: 'Táblázat létrehozása',
   icon: DatabaseTableViewIcon(),
   when({ chain }) {
     const middleware = (count = 0) => {
@@ -310,7 +310,7 @@ const turnIntoDatabase = {
 
 const turnIntoLinkedDoc = {
   id: 'f.convert-to-linked-doc',
-  tooltip: 'Create Linked Doc',
+  tooltip: 'Hivatkozott dokumentum létrehozása',
   icon: LinkedPageIcon(),
   when({ chain, std }) {
     const supportFlavours = [
@@ -396,7 +396,7 @@ export const builtinToolbarConfig = {
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run({ chain, host }) {
             const [ok] = chain
@@ -407,12 +407,12 @@ export const builtinToolbarConfig = {
 
             if (!ok) return;
 
-            toast(host, 'Copied to clipboard');
+            toast(host, 'Tartalom a vágólapra másolva');
           },
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run({ chain, store, selection }) {
             store.captureSync();
@@ -457,7 +457,7 @@ export const builtinToolbarConfig = {
       actions: [
         {
           id: 'delete',
-          label: 'Delete',
+          label: 'Törlés',
           icon: DeleteIcon(),
           variant: 'destructive',
           run({ chain }) {

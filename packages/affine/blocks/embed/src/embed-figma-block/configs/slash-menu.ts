@@ -10,13 +10,14 @@ export const embedFigmaSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
       name: 'Figma',
-      description: 'Embed a Figma document.',
+      description: 'Ágyazz be egy Figma dokumentumot.',
       icon: FigmaDuotoneIcon(),
       tooltip: {
         figure: FigmaTooltip,
         caption: 'Figma',
       },
-      group: '4_Content & Media@8',
+      searchAlias: ['embed', 'beágyaz'],
+      group: '4_Tartalom & Média@8',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:embed-figma'),
       action: ({ std, model }) => {
@@ -30,7 +31,7 @@ export const embedFigmaSlashMenuConfig: SlashMenuConfig = {
           await toggleEmbedCardCreateModal(
             host,
             'Figma',
-            'The added Figma link will be displayed as an embed view.',
+            'A hozzáadott Figma hivatkozás beágyazott nézetben fog megjelenni.',
             { mode: 'page', parentModel, index },
             ({ mode }) => {
               if (mode === 'edgeless') {

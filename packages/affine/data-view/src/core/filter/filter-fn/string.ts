@@ -6,7 +6,7 @@ export const stringFilter = [
     name: 'contains',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Contains',
+    label: 'Tartalmazza',
     shortString: v => (v ? `: ${v.value}` : undefined),
     impl: (self = '', value) => {
       return self.toLowerCase().includes(value.toLowerCase());
@@ -17,8 +17,8 @@ export const stringFilter = [
     name: 'doesNoContains',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Does no contains',
-    shortString: v => (v ? `: Not ${v.value}` : undefined),
+    label: 'Nem tartalmazza',
+    shortString: v => (v ? `: nem ${v.value}` : undefined),
     impl: (self = '', value) => {
       return !self.toLowerCase().includes(value.toLowerCase());
     },
@@ -27,8 +27,8 @@ export const stringFilter = [
     name: 'startsWith',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Starts with',
-    shortString: v => (v ? `: Starts with ${v.value}` : undefined),
+    label: 'Kezdődik',
+    shortString: v => (v ? `: így kezdődik ${v.value}` : undefined),
     impl: (self = '', value) => {
       return self.toLowerCase().startsWith(value.toLowerCase());
     },
@@ -38,8 +38,8 @@ export const stringFilter = [
     name: 'endsWith',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Ends with',
-    shortString: v => (v ? `: Ends with ${v.value}` : undefined),
+    label: 'Végződik',
+    shortString: v => (v ? `: így végződik ${v.value}` : undefined),
     impl: (self = '', value) => {
       return self.toLowerCase().endsWith(value.toLowerCase());
     },
@@ -49,7 +49,7 @@ export const stringFilter = [
     name: 'is',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Is',
+    label: 'Egyenlő',
     shortString: v => (v ? `: ${v.value}` : undefined),
     impl: (self = '', value) => {
       return self.toLowerCase() == value.toLowerCase();
@@ -60,8 +60,8 @@ export const stringFilter = [
     name: 'isNot',
     self: t.string.instance(),
     args: [t.string.instance()] as const,
-    label: 'Is not',
-    shortString: v => (v ? `: Not ${v.value}` : undefined),
+    label: 'Nem egyenlő',
+    shortString: v => (v ? `: nem egyenlő ${v.value}` : undefined),
     impl: (self = '', value) => {
       return self.toLowerCase() != value.toLowerCase();
     },

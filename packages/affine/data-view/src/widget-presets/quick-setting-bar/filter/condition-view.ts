@@ -143,7 +143,7 @@ export class FilterConditionView extends SignalWatcher(ShadowlessElement) {
           menu.group({
             items: [
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 class: { 'delete-item': true },
                 prefix: DeleteIcon(),
                 select: () => {

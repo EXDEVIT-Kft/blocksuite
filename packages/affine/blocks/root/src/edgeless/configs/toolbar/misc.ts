@@ -48,7 +48,7 @@ export const builtinMiscToolbarConfig = {
     {
       placement: ActionPlacement.Start,
       id: 'a.release-from-group',
-      tooltip: 'Release from group',
+      tooltip: 'Kivétel a csoportból',
       icon: ReleaseFromGroupIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModels();
@@ -78,9 +78,9 @@ export const builtinMiscToolbarConfig = {
     {
       placement: ActionPlacement.Start,
       id: 'b.add-frame',
-      label: 'Frame',
+      label: 'Keret',
       showLabel: true,
-      tooltip: 'Frame',
+      tooltip: 'Keret',
       icon: FrameIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModels();
@@ -121,9 +121,9 @@ export const builtinMiscToolbarConfig = {
     {
       placement: ActionPlacement.Start,
       id: 'c.add-group',
-      label: 'Group',
+      label: 'Csoport',
       showLabel: true,
-      tooltip: 'Group',
+      tooltip: 'Csoport',
       icon: GroupingIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModels();
@@ -172,16 +172,16 @@ export const builtinMiscToolbarConfig = {
 
         return renderAlignmentMenu(ctx, models, {
           icon: AlignLeftIcon(),
-          label: 'Align objects',
-          tooltip: 'Align objects',
+          label: 'Objektumok igazítása',
+          tooltip: 'Objektumok igazítása',
         });
       },
     },
     {
       placement: ActionPlacement.End,
       id: 'a.draw-connector',
-      label: 'Draw connector',
-      tooltip: 'Draw connector',
+      label: 'Összekötő rajzolása',
+      tooltip: 'Összekötő rajzolása',
       icon: ConnectorCIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModels();
@@ -222,7 +222,7 @@ export const builtinMiscToolbarConfig = {
     {
       placement: ActionPlacement.End,
       id: 'b.lock',
-      tooltip: 'Lock',
+      tooltip: 'Zárolás',
       icon: LockIcon(),
       run(ctx) {
         const models = ctx.getSurfaceModels();
@@ -335,7 +335,7 @@ export const builtinLockedToolbarConfig = {
     {
       placement: ActionPlacement.End,
       id: 'b.unlock',
-      label: 'Click to unlock',
+      label: 'Kattints a feloldáshoz',
       showLabel: true,
       icon: UnlockIcon(),
       run(ctx) {

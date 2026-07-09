@@ -8,15 +8,15 @@ import { calloutTooltip } from './tooltips';
 export const calloutSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Callout',
-      description: 'Let your words stand out.',
+      name: 'Kiemelés',
+      description: 'Emeld ki a fontos gondolataidat.',
       icon: FontIcon(),
       tooltip: {
         figure: calloutTooltip,
-        caption: 'Callout',
+        caption: 'Kiemelés',
       },
-      searchAlias: ['callout'],
-      group: '0_Basic@9',
+      searchAlias: ['callout', 'kiemelés'],
+      group: '0_Alapvető@9',
       when: ({ model }) => {
         return !isInsideBlockByFlavour(
           model.store,

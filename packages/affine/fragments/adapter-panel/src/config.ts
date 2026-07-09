@@ -9,9 +9,9 @@ export type AdapterItem = {
 
 export const ADAPTERS: AdapterItem[] = [
   { id: 'markdown', label: 'Markdown' },
-  { id: 'plaintext', label: 'PlainText' },
+  { id: 'plaintext', label: 'Egyszerű szöveg' },
   { id: 'html', label: 'HTML' },
-  { id: 'snapshot', label: 'Snapshot' },
+  { id: 'snapshot', label: 'Pillanatkép' },
 ];
 
 export type AdapterPanelContext = {

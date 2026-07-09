@@ -5,7 +5,7 @@ import { propertyType } from '../../core/property/property-config.js';
 export const textPropertyType = propertyType('text');
 
 export const textPropertyModelConfig = textPropertyType.modelConfig({
-  name: 'Plain-Text',
+  name: 'Egyszerű szöveg',
   propertyData: {
     schema: zod.object({}),
     default: () => ({}),

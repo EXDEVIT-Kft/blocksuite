@@ -10,13 +10,14 @@ export const embedYoutubeSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
       name: 'YouTube',
-      description: 'Embed a YouTube video.',
+      description: 'Ágyazz be egy YouTube videót.',
       icon: YoutubeDuotoneIcon(),
       tooltip: {
         figure: YoutubeVideoTooltip,
-        caption: 'YouTube Video',
+        caption: 'YouTube Videó',
       },
-      group: '4_Content & Media@6',
+      searchAlias: ['videó', 'video', 'embed', 'beágyaz'],
+      group: '4_Tartalom & Média@6',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:embed-youtube'),
       action: ({ std, model }) => {
@@ -30,7 +31,7 @@ export const embedYoutubeSlashMenuConfig: SlashMenuConfig = {
           await toggleEmbedCardCreateModal(
             host,
             'YouTube',
-            'The added YouTube video link will be displayed as an embed view.',
+            'A hozzáadott YouTube videó link beágyazott nézetben fog megjelenni.',
             { mode: 'page', parentModel, index },
             ({ mode }) => {
               if (mode === 'edgeless') {

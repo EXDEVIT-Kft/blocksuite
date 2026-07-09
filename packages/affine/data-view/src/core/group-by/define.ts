@@ -31,7 +31,7 @@ export const createGroupByConfig = <
 ): GroupByConfig => config as never;
 
 export const ungroups = {
-  key: 'Ungroups',
+  key: 'Csoport nélküliek',
   value: null,
 };
 
@@ -94,22 +94,22 @@ const dateRelativeCfg = buildDateCfg(
     const daysDiff = differenceInCalendarDays(d, today);
 
     // Handle specific days
-    if (isToday(d)) return 'Today';
-    if (isTomorrow(d)) return 'Tomorrow';
-    if (isYesterday(d)) return 'Yesterday';
+    if (isToday(d)) return 'Ma';
+    if (isTomorrow(d)) return 'Holnap';
+    if (isYesterday(d)) return 'Tegnap';
 
     // Handle future dates
     if (daysDiff > 0) {
-      if (daysDiff <= 7) return 'Next 7 days';
-      if (daysDiff <= 30) return 'Next 30 days';
+      if (daysDiff <= 7) return 'Következő 7 nap';
+      if (daysDiff <= 30) return 'Következő 30 nap';
       // Show month/year for future dates beyond 30 days
       return fmt(new Date(v), 'MMM yyyy');
     }
 
     // Handle past dates
     const daysAgo = -daysDiff;
-    if (daysAgo <= 7) return 'Last 7 days';
-    if (daysAgo <= 30) return 'Last 30 days';
+    if (daysAgo <= 7) return 'Elmúlt 7 nap';
+    if (daysAgo <= 30) return 'Elmúlt 30 nap';
     // Show month/year for past dates beyond 30 days
     return fmt(new Date(v), 'MMM yyyy');
   }

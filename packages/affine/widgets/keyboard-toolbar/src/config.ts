@@ -189,7 +189,7 @@ export type DynamicKeyboardToolPanelGroup = (
 
 const textToolActionItems: KeyboardToolbarActionItem[] = [
   {
-    name: 'Text',
+    name: 'Szöveg',
     icon: TextIcon(),
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
@@ -201,7 +201,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   ...([1, 2, 3, 4, 5, 6] as const).map(i => ({
-    name: `Heading ${i}`,
+    name: `Címsor ${i}`,
     icon: HeadingIcon(i),
     showWhen: ({ std }: KeyboardToolbarContext) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
@@ -213,7 +213,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   })),
   {
-    name: 'CodeBlock',
+    name: 'Kód Blokk',
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:code'),
     icon: CodeBlockIcon(),
     action: ({ std }) => {
@@ -223,7 +223,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Equation',
+    name: 'Egyenlet',
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:latex'),
     icon: TeXIcon(),
@@ -234,7 +234,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Quote',
+    name: 'Idézet',
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
     icon: QuoteIcon(),
@@ -246,7 +246,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Divider',
+    name: 'Elválasztó',
     icon: DividerIcon(),
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:divider'),
@@ -258,7 +258,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Inline equation',
+    name: 'Sorközi Egyenlet',
     icon: TeXIcon(),
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
@@ -271,7 +271,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Table',
+    name: 'Táblázat',
     icon: TableIcon(),
     showWhen: ({ std, rootComponent: { model } }) =>
       std.store.schema.flavourSchemaMap.has('affine:table') &&
@@ -296,7 +296,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'Callout',
+    name: 'Kiemelés',
     icon: FontIcon(),
     showWhen: ({ rootComponent: { model } }) => {
       return !isInsideBlockByFlavour(
@@ -331,7 +331,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
 
 const listToolActionItems: KeyboardToolbarActionItem[] = [
   {
-    name: 'BulletedList',
+    name: 'Felsorolás',
     icon: BulletedListIcon(),
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
     action: ({ std }) => {
@@ -344,7 +344,7 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'NumberedList',
+    name: 'Számozott Felsorolás',
     icon: NumberedListIcon(),
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
     action: ({ std }) => {
@@ -357,7 +357,7 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
     },
   },
   {
-    name: 'CheckBox',
+    name: 'To-do Lista',
     icon: CheckBoxCheckLinearIcon(),
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
     action: ({ std }) => {
@@ -372,10 +372,10 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
 ];
 
 const pageToolGroup: KeyboardToolPanelGroup = {
-  name: 'Page',
+  name: 'Oldal',
   items: [
     {
-      name: 'NewPage',
+      name: 'Új oldal',
       icon: NewPageIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
@@ -397,7 +397,7 @@ const pageToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'LinkedPage',
+      name: 'Új hivatkozott oldal',
       icon: LinkedPageIcon(),
       showWhen: ({ std, rootComponent }) => {
         const linkedDocWidget = std.view.getWidget(
@@ -428,10 +428,10 @@ const pageToolGroup: KeyboardToolPanelGroup = {
 };
 
 const contentMediaToolGroup: KeyboardToolPanelGroup = {
-  name: 'Content & Media',
+  name: 'Tartalom & Média',
   items: [
     {
-      name: 'Image',
+      name: 'Kép',
       icon: ImageIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:image'),
@@ -444,7 +444,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Link',
+      name: 'Weboldal',
       icon: LinkIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:bookmark'),
@@ -462,7 +462,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Links',
-          'The added link will be displayed as a card view.',
+          'A hozzáadott link kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {
@@ -477,7 +477,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Attachment',
+      name: 'Fájl',
       icon: AttachmentIcon(),
       showWhen: () => false,
       action: async ({ std }) => {
@@ -497,7 +497,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Equation',
+      name: 'Egyenlet',
       icon: TeXIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:latex'),
@@ -516,10 +516,10 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
 };
 
 const embedToolGroup: KeyboardToolPanelGroup = {
-  name: 'Embeds',
+  name: 'Beágyazások',
   items: [
     {
-      name: 'Embed',
+      name: 'Beágyazás',
       icon: EmbedIcon({ style: `color: black` }),
       showWhen: ({ std }) => {
         return std.store.schema.flavourSchemaMap.has('affine:embed-iframe');
@@ -561,7 +561,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'YouTube',
-          'The added YouTube video link will be displayed as an embed view.',
+          'A hozzáadott YouTube videó kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {
@@ -594,7 +594,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'GitHub',
-          'The added GitHub issue or pull request link will be displayed as a card view.',
+          'A hozzáadott GitHub beágyazott elem kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {
@@ -628,7 +628,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Figma',
-          'The added Figma link will be displayed as an embed view.',
+          'A beágyazott Figma dokumentum kártya nézetben került megjelenítésre.',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {
@@ -661,7 +661,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
         await toggleEmbedCardCreateModal(
           std.host,
           'Loom',
-          'The added Loom video link will be displayed as an embed view.',
+          'A beágyazott Loom videó kártya nézetben került megjelenítésre..',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {
@@ -676,7 +676,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Equation',
+      name: 'Egyenlet',
       icon: TeXIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:latex'),
@@ -704,7 +704,7 @@ const documentGroupFrameToolGroup: DynamicKeyboardToolPanelGroup = ({
     .map(block => block.model) as FrameBlockModel[];
 
   const frameItems = frameModels.map<KeyboardToolbarActionItem>(frameModel => ({
-    name: 'Frame: ' + frameModel.props.title.toString(),
+    name: 'Keret: ' + frameModel.props.title.toString(),
     icon: FrameIcon(),
     action: ({ std }) => {
       std.command
@@ -726,7 +726,7 @@ const documentGroupFrameToolGroup: DynamicKeyboardToolPanelGroup = ({
     : [];
 
   const groupItems = groupElements.map<KeyboardToolbarActionItem>(group => ({
-    name: 'Group: ' + group.title.toString(),
+    name: 'Csoport: ' + group.title.toString(),
     icon: GroupIcon(),
     action: ({ std }) => {
       std.command
@@ -746,16 +746,16 @@ const documentGroupFrameToolGroup: DynamicKeyboardToolPanelGroup = ({
   if (items.length === 0) return null;
 
   return {
-    name: 'Document Group&Frame',
+    name: 'Dokumentum Csoport & Keret',
     items,
   };
 };
 
 const dateToolGroup: KeyboardToolPanelGroup = {
-  name: 'Date',
+  name: 'Dátum',
   items: [
     {
-      name: 'Today',
+      name: 'Ma',
       icon: TodayIcon(),
       action: ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
@@ -768,7 +768,7 @@ const dateToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Tomorrow',
+      name: 'Holnap',
       icon: TomorrowIcon(),
       action: ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
@@ -783,7 +783,7 @@ const dateToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Yesterday',
+      name: 'Tegnap',
       icon: YesterdayIcon(),
       action: ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
@@ -798,7 +798,7 @@ const dateToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Now',
+      name: 'Most',
       icon: NowIcon(),
       action: ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
@@ -814,10 +814,10 @@ const dateToolGroup: KeyboardToolPanelGroup = {
 };
 
 const databaseToolGroup: KeyboardToolPanelGroup = {
-  name: 'Database',
+  name: 'Adatbázis',
   items: [
     {
-      name: 'Table view',
+      name: 'Táblázat',
       icon: DatabaseTableViewIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:database'),
@@ -834,7 +834,7 @@ const databaseToolGroup: KeyboardToolPanelGroup = {
       },
     },
     {
-      name: 'Kanban view',
+      name: 'Kanban',
       icon: DatabaseKanbanViewIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:database'),
@@ -860,8 +860,8 @@ const moreToolPanel: KeyboardToolPanelConfig = {
   }),
   activeBackground: cssVarV2('edgeless/selection/selectionMarqueeBackground'),
   groups: [
-    { name: 'Basic', items: textToolActionItems },
-    { name: 'List', items: listToolActionItems },
+    { name: 'Alapvető', items: textToolActionItems },
+    { name: 'Felsorolás', items: listToolActionItems },
     pageToolGroup,
     contentMediaToolGroup,
     embedToolGroup,
@@ -875,7 +875,7 @@ const textToolPanel: KeyboardToolPanelConfig = {
   icon: TextIcon(),
   groups: [
     {
-      name: 'Turn into',
+      name: 'Átváltás',
       items: textToolActionItems,
     },
   ],
@@ -883,7 +883,7 @@ const textToolPanel: KeyboardToolPanelConfig = {
 
 const textStyleToolItems: KeyboardToolbarItem[] = [
   {
-    name: 'Bold',
+    name: 'Félkövér',
     icon: BoldIcon(),
     background: ({ std }) => {
       const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -894,7 +894,7 @@ const textStyleToolItems: KeyboardToolbarItem[] = [
     },
   },
   {
-    name: 'Italic',
+    name: 'Dőlt',
     icon: ItalicIcon(),
     background: ({ std }) => {
       const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -905,7 +905,7 @@ const textStyleToolItems: KeyboardToolbarItem[] = [
     },
   },
   {
-    name: 'UnderLine',
+    name: 'Aláhúzott',
     icon: UnderLineIcon(),
     background: ({ std }) => {
       const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -916,7 +916,7 @@ const textStyleToolItems: KeyboardToolbarItem[] = [
     },
   },
   {
-    name: 'StrikeThrough',
+    name: 'Áthúzott',
     icon: StrikeThroughIcon(),
     background: ({ std }) => {
       const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -927,7 +927,7 @@ const textStyleToolItems: KeyboardToolbarItem[] = [
     },
   },
   {
-    name: 'Code',
+    name: 'Kód',
     icon: CodeIcon(),
     background: ({ std }) => {
       const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -961,10 +961,10 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
   },
   groups: [
     {
-      name: 'Color',
+      name: 'Szín',
       items: [
         {
-          name: 'Default Color',
+          name: 'Alapértelmezett',
           icon: TextColorIcon(cssVarV2('text/highlight/fg/orange')),
         },
         ...(
@@ -1004,10 +1004,10 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
       ],
     },
     {
-      name: 'Background',
+      name: 'Háttérszín',
       items: [
         {
-          name: 'Default Color',
+          name: 'Alapértelmezett',
           icon: TextBackgroundDuotoneIcon(cssVarV2('text/highlight/bg/orange')),
         },
         ...(
@@ -1057,7 +1057,7 @@ const textSubToolbarConfig: KeyboardSubToolbarConfig = {
     textToolPanel,
     ...textStyleToolItems,
     {
-      name: 'InlineTex',
+      name: 'Sorközi Egyenlet',
       icon: TeXIcon(),
       action: ({ std }) => {
         std.command
@@ -1086,7 +1086,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
     // { icon: AiIcon(iconStyle) },
     textSubToolbarConfig,
     {
-      name: 'Image',
+      name: 'Kép',
       icon: ImageIcon(),
       showWhen: ({ std }) =>
         std.store.schema.flavourSchemaMap.has('affine:image'),
@@ -1099,7 +1099,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Attachment',
+      name: 'Fájl',
       icon: AttachmentIcon(),
       showWhen: () => false,
       action: async ({ std }) => {
@@ -1119,7 +1119,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Undo',
+      name: 'Vissza',
       icon: UndoIcon(),
       disableWhen: ({ std }) => !std.store.canUndo,
       action: ({ std }) => {
@@ -1127,7 +1127,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Redo',
+      name: 'Újra',
       icon: RedoIcon(),
       disableWhen: ({ std }) => !std.store.canRedo,
       action: ({ std }) => {
@@ -1135,7 +1135,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'RightTab',
+      name: 'Behúzás',
       icon: RightTabIcon(),
       disableWhen: ({ std }) => {
         const [success] = std.command
@@ -1158,9 +1158,9 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     ...listToolActionItems,
-    ...textToolActionItems.filter(({ name }) => name === 'Divider'),
+    ...textToolActionItems.filter(({ name }) => name === 'Elválasztó'),
     {
-      name: 'CollapseTab',
+      name: 'Visszahúzás',
       icon: CollapseTabIcon(),
       disableWhen: ({ std }) => {
         const [success] = std.command
@@ -1183,7 +1183,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Copy',
+      name: 'Másolás',
       icon: CopyIcon(),
       action: ({ std }) => {
         std.command
@@ -1191,7 +1191,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
           .pipe(getSelectedModelsCommand)
           .with({
             onCopy: () => {
-              toast(std.host, 'Copied to clipboard');
+              toast(std.host, 'Vágólapra másolva');
             },
           })
           .pipe(draftSelectedModelsCommand)
@@ -1200,7 +1200,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Duplicate',
+      name: 'Duplikálás',
       icon: DuplicateIcon(),
       action: ({ std }) => {
         std.command
@@ -1211,7 +1211,7 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
       },
     },
     {
-      name: 'Delete',
+      name: 'Törlés',
       icon: DeleteIcon(),
       action: ({ std }) => {
         std.command

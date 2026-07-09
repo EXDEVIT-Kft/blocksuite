@@ -8,14 +8,15 @@ import { PhotoTooltip } from './tooltips';
 export const imageSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Image',
-      description: 'Insert an image.',
+      name: 'Kép',
+      description: 'Szúrj be egy képet.',
       icon: ImageIcon(),
       tooltip: {
         figure: PhotoTooltip,
-        caption: 'Photo',
+        caption: 'Kép beszúrása',
       },
-      group: '4_Content & Media@1',
+      searchAlias: ['image', 'picture', 'gif', 'grafika'],
+      group: '4_Tartalom & Média@1',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:image'),
       action: ({ std }) => {

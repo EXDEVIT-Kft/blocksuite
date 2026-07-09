@@ -44,8 +44,8 @@ export class DateGroupView extends SignalWatcher(
     const displayName =
       name ||
       (this.group.value === null
-        ? `No ${this.group.property.name$.value}`
-        : 'Ungroups');
+        ? `Nincs ${this.group.property.name$.value}`
+        : 'Csoport nélküliek');
     return html`<div class="dv-date-group">
       <span>${displayName}</span>
     </div>`;

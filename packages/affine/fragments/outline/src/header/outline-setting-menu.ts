@@ -20,10 +20,10 @@ export class OutlineNotePreviewSettingMenu extends SignalWatcher(
       @click=${(e: MouseEvent) => e.stopPropagation()}
     >
       <div class=${styles.notePreviewSettingMenuItem}>
-        <div class=${styles.settingLabel}>Settings</div>
+        <div class=${styles.settingLabel}>Beállítások</div>
       </div>
       <div class="${styles.notePreviewSettingMenuItem} ${styles.action}">
-        <div class=${styles.actionLabel}>Show type icon</div>
+        <div class=${styles.actionLabel}>Típus megjelenítése</div>
         <div class=${styles.toggleButton}>
           <toggle-switch
             .on=${showPreviewIcon}

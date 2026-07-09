@@ -51,12 +51,12 @@ export const builtinInlineReferenceToolbarConfig = {
       actions: [
         {
           id: 'inline',
-          label: 'Inline view',
+          label: 'Sorközi nézet',
           disabled: true,
         },
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           run(ctx) {
             const target = ctx.message$.peek()?.element;
             if (!(target instanceof AffineReference)) return;
@@ -105,7 +105,7 @@ export const builtinInlineReferenceToolbarConfig = {
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           disabled(ctx) {
             const target = ctx.message$.peek()?.element;
             if (!(target instanceof AffineReference)) return true;
@@ -228,7 +228,7 @@ export const builtinInlineReferenceToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {

@@ -147,13 +147,13 @@ export class AdapterPanelBody extends SignalWatcher(LitElement) {
             class="html-toggle-item"
             ?active=${!this.isHtmlPreview}
             @click=${() => (this._context.isHtmlPreview$.value = false)}
-            >Source</span
+            >Forrás</span
           >
           <span
             class="html-toggle-item"
             ?active=${this.isHtmlPreview}
             @click=${() => (this._context.isHtmlPreview$.value = true)}
-            >Preview</span
+            >Előnézet</span
           >
         </div>
       </div>

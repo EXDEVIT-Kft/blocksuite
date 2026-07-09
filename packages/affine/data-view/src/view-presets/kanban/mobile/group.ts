@@ -75,7 +75,7 @@ export class MobileKanbanGroup extends SignalWatcher(
       menu.group({
         items: [
           menu.action({
-            name: 'Ungroup',
+            name: 'Csoportbontás',
             hide: () => this.group.value == null,
             select: () => {
               this.group.rows.forEach(row => {
@@ -85,7 +85,7 @@ export class MobileKanbanGroup extends SignalWatcher(
             },
           }),
           menu.action({
-            name: 'Delete Cards',
+            name: 'Kártyák törlése',
             select: () => {
               this.view.rowsDelete(this.group.rows.map(row => row.rowId));
               this.requestUpdate();
@@ -129,7 +129,7 @@ export class MobileKanbanGroup extends SignalWatcher(
               >
                 ${AddCursorIcon()}
               </div>
-              Add
+              Hozzáad
             </div>`}
       </div>
     `;

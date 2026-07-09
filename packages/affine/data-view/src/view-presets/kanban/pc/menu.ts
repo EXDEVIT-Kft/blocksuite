@@ -42,14 +42,14 @@ export const popCardMenu = (
   );
   popFilterableSimpleMenu(ele, [
     menu.action({
-      name: 'Expand Card',
+      name: 'Kinagyítás',
       prefix: ExpandFullIcon(),
       select: () => {
         openDetail(kanbanViewLogic, rowId, selection);
       },
     }),
     menu.subMenu({
-      name: 'Move To',
+      name: 'Mozgatás',
       prefix: ArrowRightBigIcon(),
       options: {
         items:
@@ -64,7 +64,10 @@ export const popCardMenu = (
             })
             .map(group =>
               menu.action({
-                name: group.value != null ? group.name$.value : 'Ungroup',
+                name:
+                  group.value != null
+                    ? group.name$.value
+                    : 'Csoportosítás feloldása',
                 select: () => {
                   selection.moveCard(rowId, group.key);
                 },
@@ -76,7 +79,7 @@ export const popCardMenu = (
       name: '',
       items: [
         menu.action({
-          name: 'Insert Before',
+          name: 'Beszúrás Előtte',
           prefix: html` <div
             style="transform: rotate(90deg);display:flex;align-items:center;"
           >
@@ -87,7 +90,7 @@ export const popCardMenu = (
           },
         }),
         menu.action({
-          name: 'Insert After',
+          name: 'Beszúrás Utána',
           prefix: html` <div
             style="transform: rotate(90deg);display:flex;align-items:center;"
           >
@@ -103,7 +106,7 @@ export const popCardMenu = (
       name: '',
       items: [
         menu.action({
-          name: 'Delete Card',
+          name: 'Kártya törlése',
           class: {
             'delete-item': true,
           },

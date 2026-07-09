@@ -31,21 +31,23 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
 
     return [
       {
-        name: 'Today',
+        name: 'Ma',
         icon: TodayIcon(),
         tooltip: slashMenuToolTips['Today'],
+        searchAlias: ['today'],
         description: formatDate(now),
-        group: '6_Date@0',
+        group: '6_Dátumok@0',
         action: ({ std, model }) => {
           insertContent(std, model, formatDate(now));
         },
       },
       {
-        name: 'Tomorrow',
+        name: 'Holnap',
         icon: TomorrowIcon(),
         tooltip: slashMenuToolTips['Tomorrow'],
+        searchAlias: ['tomorrow'],
         description: formatDate(tomorrow),
-        group: '6_Date@1',
+        group: '6_Dátumok@1',
         action: ({ std, model }) => {
           const tomorrow = new Date();
           tomorrow.setDate(tomorrow.getDate() + 1);
@@ -53,11 +55,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Yesterday',
+        name: 'Tegnap',
         icon: YesterdayIcon(),
         tooltip: slashMenuToolTips['Yesterday'],
+        searchAlias: ['yesterday'],
         description: formatDate(yesterday),
-        group: '6_Date@2',
+        group: '6_Dátumok@2',
         action: ({ std, model }) => {
           const yesterday = new Date();
           yesterday.setDate(yesterday.getDate() - 1);
@@ -65,21 +68,23 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Now',
+        name: 'Most',
         icon: NowIcon(),
         tooltip: slashMenuToolTips['Now'],
+        searchAlias: ['now'],
         description: formatTime(now),
-        group: '6_Date@3',
+        group: '6_Dátumok@3',
         action: ({ std, model }) => {
           insertContent(std, model, formatTime(now));
         },
       },
       {
-        name: 'Move Up',
-        description: 'Shift this line up.',
+        name: 'Felfele Mozgatás',
+        description: 'Jelenlegi sor feljebb mozgatása.',
         icon: ArrowUpBigIcon(),
         tooltip: slashMenuToolTips['Move Up'],
-        group: '8_Actions@0',
+        searchAlias: ['művelet', 'fel', 'move up', 'operation'],
+        group: '8_Műveletek@0',
         action: ({ std, model }) => {
           const { host } = std;
           const previousSiblingModel = host.store.getPrev(model);
@@ -97,11 +102,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Move Down',
-        description: 'Shift this line down.',
+        name: 'Lefele Mozgatás',
+        description: 'Jelenlegi sor lejjebb mozgatása.',
         icon: ArrowDownBigIcon(),
         tooltip: slashMenuToolTips['Move Down'],
-        group: '8_Actions@1',
+        searchAlias: ['művelet', 'le', 'move down', 'operation'],
+        group: '8_Műveletek@1',
         action: ({ std, model }) => {
           const { host } = std;
           const nextSiblingModel = host.store.getNext(model);
@@ -114,18 +120,19 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Copy',
-        description: 'Copy this line to clipboard.',
+        name: 'Másolás',
+        description: 'Jelenlegi sor vágólapra másolása.',
         icon: CopyIcon(),
         tooltip: slashMenuToolTips['Copy'],
-        group: '8_Actions@2',
+        searchAlias: ['művelet', 'copy', 'operation'],
+        group: '8_Műveletek@2',
         action: ({ std, model }) => {
           const slice = Slice.fromModels(std.store, [model]);
 
           std.clipboard
             .copy(slice)
             .then(() => {
-              toast(std.host, 'Copied to clipboard');
+              toast(std.host, 'Tartalom a vágólapra másolva');
             })
             .catch(e => {
               console.error(e);
@@ -133,11 +140,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Duplicate',
-        description: 'Create a duplicate of this line.',
+        name: 'Duplikálás',
+        description: 'Jelenlegi sor duplikálása.',
         icon: DualLinkIcon(),
         tooltip: slashMenuToolTips['Copy'],
-        group: '8_Actions@3',
+        searchAlias: ['művelet', 'duplicate', 'operation'],
+        group: '8_Műveletek@3',
         action: ({ std, model }) => {
           if (!model.text || !(model.text instanceof Text)) {
             console.error("Can't duplicate a block without text");
@@ -174,12 +182,12 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
         },
       },
       {
-        name: 'Delete',
-        description: 'Remove this line permanently.',
-        searchAlias: ['remove'],
+        name: 'Törlés',
+        description: 'Jelenlegi sor törlése.',
+        searchAlias: ['művelet', 'remove', 'operation'],
         icon: DeleteIcon(),
         tooltip: slashMenuToolTips['Delete'],
-        group: '8_Actions@4',
+        group: '8_Műveletek@4',
         action: ({ std, model }) => {
           std.host.store.deleteBlock(model);
         },

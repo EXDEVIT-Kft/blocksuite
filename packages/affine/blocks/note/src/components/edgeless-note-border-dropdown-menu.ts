@@ -13,8 +13,8 @@ export class EdgelessNoteBorderDropdownMenu extends ShadowlessElement {
       <editor-menu-button
         .button=${html`
           <editor-icon-button
-            aria-label="Border style"
-            .tooltip="${'Border style'}"
+            aria-label="Szegély stílusa"
+            .tooltip="${'Szegély stílusa'}"
           >
             ${LineStyleIcon()} ${EditorChevronDown}
           </editor-icon-button>

@@ -245,7 +245,7 @@ export class BlockQueryDataSource extends DataSourceBase {
       return viewColumn.name;
     }
     if (propertyId === 'type') {
-      return 'Block Type';
+      return 'Blokk típusa';
     }
     return this.getProperty(propertyId)?.name ?? '';
   }

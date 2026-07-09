@@ -61,7 +61,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
       },
       {
         type: 'copy-code',
-        label: 'Copy code',
+        label: 'Kód másolása',
         icon: CopyIcon,
         generate: ({ blockComponent }) => {
           return {
@@ -98,7 +98,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
             render: item => {
               const collapsed = blockComponent.collapsed$.value;
               const icon = collapsed ? ExpandCodeIcon : CollapseCodeIcon;
-              const label = collapsed ? 'Expand code' : 'Collapse code';
+              const label = collapsed ? 'Kód kibontása' : 'Kód összecsukása';
               return html`
                 <editor-icon-button
                   class="code-toolbar-button collapse"
@@ -121,7 +121,7 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
       },
       {
         type: 'caption',
-        label: 'Caption',
+        label: 'Felirat',
         icon: CaptionIcon,
         when: ({ doc }) => !doc.readonly,
         generate: ({ blockComponent }) => {
@@ -150,8 +150,8 @@ export const PRIMARY_GROUPS: MenuItemGroup<CodeBlockToolbarContext>[] = [
       },
       {
         type: 'comment',
-        label: 'Comment',
-        tooltip: 'Comment',
+        label: 'Megjegyzés',
+        tooltip: 'Megjegyzés',
         icon: CommentIcon({
           width: '20',
           height: '20',
@@ -203,7 +203,7 @@ export const toggleGroup: MenuItemGroup<CodeBlockToolbarContext> = {
           action: () => {},
           render: () => {
             const wrapped = blockComponent.model.props.wrap;
-            const label = wrapped ? 'Cancel wrap' : 'Wrap';
+            const label = wrapped ? 'Tördelés visszavonása' : 'Tördelés';
             const icon = wrapped ? CancelWrapIcon : WrapIcon;
             return html`
               <editor-menu-action
@@ -235,7 +235,7 @@ export const toggleGroup: MenuItemGroup<CodeBlockToolbarContext> = {
           action: () => {},
           render: () => {
             const lineNumber = blockComponent.model.props.lineNumber ?? true;
-            const label = lineNumber ? 'Cancel line number' : 'Line number';
+            const label = lineNumber ? 'Sorszámozás kikapcsolása' : 'Sorszámozás';
             return html`
               <editor-menu-action
                 @click=${() => {
@@ -268,7 +268,7 @@ export const clipboardGroup: MenuItemGroup<CodeBlockToolbarContext> = {
   items: [
     {
       type: 'duplicate',
-      label: 'Duplicate',
+      label: 'Duplikálás',
       icon: DuplicateIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ host, blockComponent, close }) => {
@@ -303,7 +303,7 @@ export const deleteGroup: MenuItemGroup<CodeBlockToolbarContext> = {
   items: [
     {
       type: 'delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon,
       when: ({ doc }) => !doc.readonly,
       action: ({ doc, blockComponent, close }) => {

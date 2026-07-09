@@ -33,7 +33,7 @@ const builtinToolbarConfig = {
   actions: [
     {
       id: 'a.download',
-      tooltip: 'Download',
+      tooltip: 'Letöltés',
       icon: DownloadIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -42,7 +42,7 @@ const builtinToolbarConfig = {
     },
     {
       id: 'b.caption',
-      tooltip: 'Caption',
+      tooltip: 'Felirat hozzáadása',
       icon: CaptionIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -56,7 +56,7 @@ const builtinToolbarConfig = {
     },
     {
       id: 'c.1.align-left',
-      tooltip: 'Align left',
+      tooltip: 'Balra igazítás',
       icon: TextAlignLeftIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -72,7 +72,7 @@ const builtinToolbarConfig = {
     },
     {
       id: 'c.2.align-center',
-      tooltip: 'Align center',
+      tooltip: 'Középre igazítás',
       icon: TextAlignCenterIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -88,7 +88,7 @@ const builtinToolbarConfig = {
     },
     {
       id: 'c.3.align-right',
-      tooltip: 'Align right',
+      tooltip: 'Jobbra igazítás',
       icon: TextAlignRightIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -112,7 +112,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'a.copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -121,7 +121,7 @@ const builtinToolbarConfig = {
         },
         {
           id: 'b.duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -138,7 +138,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'a.turn-into-card-view',
-          label: 'Turn into card view',
+          label: 'Kártya nézetté alakítás',
           icon: BookmarkIcon(),
           when(ctx) {
             const supported =
@@ -158,7 +158,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {
@@ -177,7 +177,7 @@ const builtinSurfaceToolbarConfig = {
   actions: [
     {
       id: 'a.download',
-      tooltip: 'Download',
+      tooltip: 'Letöltés',
       icon: DownloadIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageEdgelessBlockComponent);
@@ -186,7 +186,7 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'b.caption',
-      tooltip: 'Caption',
+      tooltip: 'Felirat hozzáadása',
       icon: CaptionIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageEdgelessBlockComponent);

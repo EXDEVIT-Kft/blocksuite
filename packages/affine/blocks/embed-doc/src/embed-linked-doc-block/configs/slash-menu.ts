@@ -14,14 +14,15 @@ import { LinkDocTooltip, NewDocTooltip } from './tooltips';
 const linkedDocSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'New Doc',
-      description: 'Start a new document.',
+      name: 'Új Dokumentum',
+      description: 'Hozz létre egy új dokumentumot.',
       icon: PlusIcon(),
       tooltip: {
         figure: NewDocTooltip,
-        caption: 'New Doc',
+        caption: 'Új Dokumentum',
       },
-      group: '3_Page@0',
+      searchAlias: ['new doc', 'oldal'],
+      group: '3_Oldalak@0',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
       action: ({ std, model }) => {
@@ -35,15 +36,15 @@ const linkedDocSlashMenuConfig: SlashMenuConfig = {
       },
     },
     {
-      name: 'Linked Doc',
-      description: 'Link to another document.',
+      name: 'Hivatkozás',
+      description: 'Meglévő dokumentumra hivatkozás.',
       icon: LinkedPageIcon(),
       tooltip: {
         figure: LinkDocTooltip,
-        caption: 'Link Doc',
+        caption: 'Hivatkozás Dokumentumra',
       },
-      searchAlias: ['dual link'],
-      group: '3_Page@1',
+      searchAlias: ['dual link', 'link doc'],
+      group: '3_Oldalak@1',
       when: ({ std, model }) => {
         const root = model.store.root;
         if (!root) return false;

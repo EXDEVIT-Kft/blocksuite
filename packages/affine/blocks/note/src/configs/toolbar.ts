@@ -81,8 +81,8 @@ const builtinSurfaceToolbarConfig = {
         );
         const label$ = computed(() =>
           firstModel.props.displayMode$.value === NoteDisplayMode.EdgelessOnly
-            ? 'Display in Page'
-            : 'Displayed in Page'
+            ? 'Megjelenítés az Oldalon'
+            : 'Megjelenítve az Oldalon'
         );
         const onSelect = () => {
           const newMode =
@@ -105,7 +105,7 @@ const builtinSurfaceToolbarConfig = {
           content: html`<editor-icon-button
             aria-label="${label$.value}"
             .showTooltip="${shouldShowTooltip$.value}"
-            .tooltip="${'This note is part of Page Mode. Click to remove it from the page.'}"
+            .tooltip="${'Ez a jegyzet az Oldal nézet része. Kattints az oldalról való eltávolításához.'}"
             data-testid="display-in-page"
             @click=${() => onSelect()}
           >
@@ -146,10 +146,10 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'e.slicer',
-      label: 'Slicer',
+      label: 'Szeletelő',
       icon: ScissorsIcon(),
       tooltip: html`<affine-tooltip-content-with-shortcut
-        data-tip="${'Cutting mode'}"
+        data-tip="${'Vágás mód'}"
         data-shortcut="${'-'}"
       ></affine-tooltip-content-with-shortcut>`,
       active: false,
@@ -165,7 +165,7 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'f.auto-height',
-      label: 'Size',
+      label: 'Méret',
       when(ctx) {
         const elements = ctx.getSurfaceModelsByType(NoteBlockModel);
         return (
@@ -183,11 +183,11 @@ const builtinSurfaceToolbarConfig = {
         const { collapse } = firstModel.props.edgeless$.value;
         const options: Pick<ToolbarAction, 'tooltip' | 'icon'> = collapse
           ? {
-              tooltip: 'Auto height',
+              tooltip: 'Automatikus magasság',
               icon: AutoHeightIcon(),
             }
           : {
-              tooltip: 'Customized height',
+              tooltip: 'Egyedi magasság',
               icon: CustomizedHeightIcon(),
             };
 
@@ -303,24 +303,24 @@ function setDisplayMode(
   const data =
     newMode === NoteDisplayMode.EdgelessOnly
       ? {
-          title: 'Note removed from Page Mode',
-          message: 'Content removed from your page.',
+          title: 'A jegyzet eltávolítva az Oldal nézetből',
+          message: 'A tartalom eltávolítva az oldaladról.',
         }
       : {
-          title: 'Note displayed in Page Mode',
-          message: 'Content added to your page.',
+          title: 'A jegyzet megjelenítve az Oldal nézetben',
+          message: 'A tartalom hozzáadva az oldaladhoz.',
         };
 
   const notification = ctx.std.getOptional(NotificationProvider);
   notification?.notifyWithUndoAction({
     title: data.title,
-    message: `${data.message} Find it in the TOC for quick navigation.`,
+    message: `${data.message} Megtalálod a tartalomjegyzékben a gyors navigációhoz.`,
     accent: 'success',
     duration: 5 * 1000,
     actions: [
       {
         key: 'view-in-toc',
-        label: 'View in Toc',
+        label: 'Megjelenítés a tartalomjegyzékben',
         onClick: () => {
           const sidebar = ctx.std.getOptional(SidebarExtensionIdentifier);
           sidebar?.open('outline');

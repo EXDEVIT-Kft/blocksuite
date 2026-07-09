@@ -5,9 +5,9 @@ import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 const DisplayModeMap = {
-  [NoteDisplayMode.DocAndEdgeless]: 'Both',
-  [NoteDisplayMode.EdgelessOnly]: 'Edgeless',
-  [NoteDisplayMode.DocOnly]: 'Page',
+  [NoteDisplayMode.DocAndEdgeless]: 'Mindenhol',
+  [NoteDisplayMode.EdgelessOnly]: 'Rajztáblán',
+  [NoteDisplayMode.DocOnly]: 'Szövegként',
 } as const satisfies Record<NoteDisplayMode, string>;
 
 export class EdgelessNoteDisplayModeDropdownMenu extends ShadowlessElement {
@@ -23,13 +23,13 @@ export class EdgelessNoteDisplayModeDropdownMenu extends ShadowlessElement {
     const { displayMode, mode } = this;
 
     return html`
-      <span class="display-mode-button-label">Show in</span>
+      <span class="display-mode-button-label">Megjelenítés</span>
       <editor-menu-button
         .contentPadding=${'8px'}
         .button=${html`
           <editor-icon-button
-            aria-label="Mode"
-            .tooltip="${'Display mode'}"
+            aria-label="Megjelenítés módja"
+            .tooltip="${'Megjelenítés módja'}"
             .justify="${'space-between'}"
             .labelHeight="${'20px'}"
           >

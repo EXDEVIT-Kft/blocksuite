@@ -8,14 +8,15 @@ import { EmbedIframeTooltip } from './tooltip';
 export const embedIframeSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Embed',
-      description: 'For Google Drive, and more.',
+      name: 'Beágyazás',
+      description: 'Google Drive és egyéb tartalmak beágyazása.',
       icon: EmbedIcon(),
       tooltip: {
         figure: EmbedIframeTooltip,
-        caption: 'Embed',
+        caption: 'Beágyazás',
       },
-      group: '4_Content & Media@5',
+      searchAlias: ['embed', 'beágyaz', 'iframe'],
+      group: '4_Tartalom & Média@5',
       when: ({ model }) => {
         return model.store.schema.flavourSchemaMap.has('affine:embed-iframe');
       },

@@ -9,14 +9,15 @@ import { LoomTooltip } from './tooltips';
 export const embedLoomSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Loom',
+      name: 'Loom Videó',
       icon: LoomLogoDuotoneIcon(),
-      description: 'Embed a Loom video.',
+      description: 'Ágyazz be egy Loom videót.',
       tooltip: {
         figure: LoomTooltip,
-        caption: 'loom',
+        caption: 'Loom Videó',
       },
-      group: '4_Content & Media@9',
+      searchAlias: ['embed', 'beágyaz', 'loom'],
+      group: '4_Tartalom & Média@9',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:embed-loom'),
       action: ({ std, model }) => {
@@ -29,8 +30,8 @@ export const embedLoomSlashMenuConfig: SlashMenuConfig = {
           const index = parentModel.children.indexOf(model) + 1;
           await toggleEmbedCardCreateModal(
             host,
-            'Loom',
-            'The added Loom video link will be displayed as an embed view.',
+            'Loom Videó',
+            'A hozzáadott Loom videó hivatkozás beágyazott nézetben fog megjelenni.',
             { mode: 'page', parentModel, index },
             ({ mode }) => {
               if (mode === 'edgeless') {

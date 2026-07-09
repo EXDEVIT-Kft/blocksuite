@@ -9,7 +9,7 @@ export const selectOptionColors: SelectOptionColor[] = [
   {
     oldColor: 'var(--affine-tag-red)',
     color: cssVarV2('chip/label/red'),
-    name: 'Red',
+    name: 'Piros',
   },
   {
     oldColor: 'var(--affine-tag-pink)',
@@ -19,42 +19,42 @@ export const selectOptionColors: SelectOptionColor[] = [
   {
     oldColor: 'var(--affine-tag-orange)',
     color: cssVarV2('chip/label/orange'),
-    name: 'Orange',
+    name: 'Narancs',
   },
   {
     oldColor: 'var(--affine-tag-yellow)',
     color: cssVarV2('chip/label/yellow'),
-    name: 'Yellow',
+    name: 'Sárga',
   },
   {
     oldColor: 'var(--affine-tag-green)',
     color: cssVarV2('chip/label/green'),
-    name: 'Green',
+    name: 'Zöld',
   },
   {
     oldColor: 'var(--affine-tag-teal)',
     color: cssVarV2('chip/label/teal'),
-    name: 'Teal',
+    name: 'Türkizkék',
   },
   {
     oldColor: 'var(--affine-tag-blue)',
     color: cssVarV2('chip/label/blue'),
-    name: 'Blue',
+    name: 'Kék',
   },
   {
     oldColor: 'var(--affine-tag-purple)',
     color: cssVarV2('chip/label/purple'),
-    name: 'Purple',
+    name: 'Lila',
   },
   {
     oldColor: 'var(--affine-tag-gray)',
     color: cssVarV2('chip/label/grey'),
-    name: 'Grey',
+    name: 'Szürke',
   },
   {
     oldColor: 'var(--affine-tag-white)',
     color: cssVarV2('chip/label/white'),
-    name: 'White',
+    name: 'Fehér',
   },
 ];
 

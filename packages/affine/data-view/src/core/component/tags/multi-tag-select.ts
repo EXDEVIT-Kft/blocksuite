@@ -225,7 +225,7 @@ export class MultiTagSelect extends SignalWatcher(
             },
           }),
           menu.action({
-            name: 'Delete',
+            name: 'Törlés',
             prefix: DeleteIcon(),
             class: {
               'delete-item': true,
@@ -345,7 +345,7 @@ export class MultiTagSelect extends SignalWatcher(
         <input
           class="${tagSelectInputStyle}"
           ${ref(this._selectInput)}
-          placeholder="Type here..."
+          placeholder="Keress itt..."
           .value="${this.text.value}"
           @input="${this._onInput}"
           @keydown="${this._onInputKeydown}"
@@ -376,7 +376,9 @@ export class MultiTagSelect extends SignalWatcher(
           'layer/insideBorder/border'
         )};margin: 4px 0;"
       ></div>
-      <div class="${selectOptionsTipsStyle}">Select tag or create one</div>
+      <div class="${selectOptionsTipsStyle}">
+        Válassz címkét, vagy hozz létre egyet
+      </div>
       <div data-testid="tag-option-list" class="${selectOptionsContainerStyle}">
         ${repeat(
           this.tagManager.filteredOptions$.value,
@@ -404,7 +406,7 @@ export class MultiTagSelect extends SignalWatcher(
                 <div class="${selectOptionContentStyle}">
                   ${select.isCreate
                     ? html` <div class="${selectOptionNewIconStyle}">
-                        Create
+                        Létrehozás
                       </div>`
                     : html`
                         <div
@@ -565,7 +567,7 @@ const popMobileTagSelect = (target: PopupTarget, ops: TagSelectOptions) => {
                 .value="${tagManager.text$.value}"
                 @input="${onInput}"
                 @keydown="${onKeydown}"
-                placeholder="Type here..."
+                placeholder="Keress itt..."
                 type="text"
                 style="outline: none;border: none;flex:1;min-width: 10px"
               />
@@ -587,7 +589,9 @@ const popMobileTagSelect = (target: PopupTarget, ops: TagSelectOptions) => {
                     return html`
                       <div style="display: flex; align-items:center;">
                         ${option.isCreate
-                          ? html` <div style="margin-right: 8px;">Create</div>`
+                          ? html` <div style="margin-right: 8px;">
+                              Létrehozás
+                            </div>`
                           : ''}
                         <div class="${tagContainerStyle}" style=${style}>
                           <div class="${tagTextStyle}">${option.value}</div>

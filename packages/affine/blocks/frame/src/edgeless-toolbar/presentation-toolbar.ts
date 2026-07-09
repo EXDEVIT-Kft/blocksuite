@@ -246,7 +246,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     const min = 0;
     const max = frames.length - 1;
     if (this._currentFrameIndex === frames.length - 1) {
-      toast(this.host, 'You have reached the last frame');
+      toast(this.host, 'Elértél az utolsó diához');
     } else {
       this._currentFrameIndex = clamp(this._currentFrameIndex + 1, min, max);
     }
@@ -257,7 +257,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     const min = 0;
     const max = frames.length - 1;
     if (this._currentFrameIndex === 0) {
-      toast(this.host, 'You have reached the first frame');
+      toast(this.host, 'Elértél az első diához');
     } else {
       this._currentFrameIndex = clamp(this._currentFrameIndex - 1, min, max);
     }
@@ -399,7 +399,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       </style>
       <edgeless-tool-icon-button
         .iconContainerPadding=${0}
-        .tooltip=${'Previous'}
+        .tooltip=${'Előző'}
         .iconSize=${'24px'}
         @click=${() => this._previousFrame()}
       >
@@ -423,7 +423,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       </div>
 
       <edgeless-tool-icon-button
-        .tooltip=${'Next'}
+        .tooltip=${'Következő'}
         @click=${() => this._nextFrame()}
         .iconContainerPadding=${0}
         .iconSize=${'24px'}
@@ -436,8 +436,8 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       <div class="config-buttons">
         <edgeless-tool-icon-button
           .tooltip=${document.fullscreenElement
-            ? 'Exit Full Screen'
-            : 'Enter Full Screen'}
+            ? 'Kilépés a teljes képernyőből'
+            : 'Teljes képernyő'}
           @click=${() => this._toggleFullScreen()}
           .iconContainerPadding=${0}
           .iconContainerWidth=${'24px'}

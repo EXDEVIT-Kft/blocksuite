@@ -69,7 +69,7 @@ export const moreActions = [
     actions: [
       {
         id: 'a.create-frame',
-        label: 'Frame section',
+        label: 'Keret Létrehozása',
         icon: FrameIcon(),
         run(ctx) {
           const frame = ctx.std
@@ -90,7 +90,7 @@ export const moreActions = [
       },
       {
         id: 'b.create-group',
-        label: 'Group section',
+        label: 'Csoportosítás',
         icon: GroupIcon(),
         when(ctx) {
           const models = ctx.getSurfaceModels();
@@ -110,7 +110,7 @@ export const moreActions = [
     actions: [
       {
         id: 'a.bring-to-front',
-        label: 'Bring to Front',
+        label: 'Előrehozás',
         icon: ArrowUpBigTopIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -119,7 +119,7 @@ export const moreActions = [
       },
       {
         id: 'b.bring-forward',
-        label: 'Bring Forward',
+        label: 'Előbbre hozás',
         icon: ArrowUpBigIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -128,7 +128,7 @@ export const moreActions = [
       },
       {
         id: 'c.send-backward',
-        label: 'Send Backward',
+        label: 'Hátraküldés',
         icon: ArrowDownBigIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -137,7 +137,7 @@ export const moreActions = [
       },
       {
         id: 'c.send-to-back',
-        label: 'Send to Back',
+        label: 'Hátrébb küldés',
         icon: ArrowDownBigBottomIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -154,7 +154,7 @@ export const moreActions = [
     actions: [
       {
         id: 'copy',
-        label: 'Copy',
+        label: 'Másolás',
         icon: CopyIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -170,7 +170,7 @@ export const moreActions = [
       },
       {
         id: 'duplicate',
-        label: 'Duplicate',
+        label: 'Duplikálás',
         icon: DuplicateIcon(),
         run(ctx) {
           const models = ctx.getSurfaceModels();
@@ -184,7 +184,7 @@ export const moreActions = [
       },
       {
         id: 'reload',
-        label: 'Reload',
+        label: 'Frissítés',
         icon: ResetIcon(),
         when(ctx) {
           const models = ctx.getSurfaceModels();
@@ -213,7 +213,7 @@ export const moreActions = [
     actions: [
       {
         id: 'a.turn-into-linked-doc',
-        label: 'Turn into linked doc',
+        label: 'Hivatkozott dokumentummá konvertálás',
         icon: LinkedPageIcon(),
         when(ctx) {
           const models = ctx.getSurfaceModels();
@@ -290,7 +290,7 @@ export const moreActions = [
       },
       {
         id: 'b.create-linked-doc',
-        label: 'Create linked doc',
+        label: 'Hivatkozott dokumentum létrehozása',
         icon: LinkedPageIcon(),
         when(ctx) {
           const models = ctx.getSurfaceModels();
@@ -374,7 +374,7 @@ export const moreActions = [
   // Deleting Group
   {
     id: 'e.delete',
-    label: 'Delete',
+    label: 'Törlés',
     icon: DeleteIcon(),
     variant: 'destructive',
     run(ctx) {

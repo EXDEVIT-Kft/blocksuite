@@ -48,7 +48,7 @@ export const builtinInlineLinkToolbarConfig = {
       actions: [
         {
           id: 'copy-link',
-          tooltip: 'Copy link',
+          tooltip: 'Link másolása',
           icon: CopyIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
@@ -62,7 +62,7 @@ export const builtinInlineLinkToolbarConfig = {
             ctx.reset();
 
             navigator.clipboard.writeText(link).catch(console.error);
-            toast(ctx.host, 'Copied link to clipboard');
+            toast(ctx.host, 'Link a vágólapra másolva');
 
             ctx.track('CopiedLink', {
               ...trackBaseProps,
@@ -72,7 +72,7 @@ export const builtinInlineLinkToolbarConfig = {
         },
         {
           id: 'edit',
-          tooltip: 'Edit Description',
+          tooltip: 'Szerkesztés',
           icon: EditIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
@@ -105,12 +105,12 @@ export const builtinInlineLinkToolbarConfig = {
       actions: [
         {
           id: 'inline',
-          label: 'Inline view',
+          label: 'Sorközi nézet',
           disabled: true,
         },
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           run(ctx) {
             const target = ctx.message$.peek()?.element;
             if (!(target instanceof AffineLink)) return;
@@ -177,7 +177,7 @@ export const builtinInlineLinkToolbarConfig = {
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           when(ctx) {
             const target = ctx.message$.peek()?.element;
             if (!(target instanceof AffineLink)) return false;
@@ -329,7 +329,7 @@ export const builtinInlineLinkToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'b.remove-link',
-      label: 'Remove link',
+      label: 'Hivatkozás törlése',
       icon: UnlinkIcon(),
       run(ctx) {
         const target = ctx.message$.peek()?.element;
@@ -346,7 +346,7 @@ export const builtinInlineLinkToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {

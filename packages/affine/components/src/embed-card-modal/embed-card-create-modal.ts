@@ -29,7 +29,7 @@ export class EmbedCardCreateModal extends SignalWatcher(
     const url = this.input.value;
 
     if (!isValidUrl(url)) {
-      toast(this.host, 'Invalid link');
+      toast(this.host, 'Érvénytelen hivatkozás');
       return;
     }
 
@@ -124,7 +124,7 @@ export class EmbedCardCreateModal extends SignalWatcher(
             class="embed-card-modal-input link"
             id="card-description"
             type="text"
-            placeholder="Input in https://..."
+            placeholder="Add meg a teljes hivatkozást https://..."
             value=${this._linkInputValue}
             @input=${this._handleInput}
           />
@@ -139,7 +139,7 @@ export class EmbedCardCreateModal extends SignalWatcher(
             ?disabled=${!isValidUrl(this._linkInputValue)}
             @click=${this._onConfirm}
           >
-            Confirm
+            Hozzáad
           </button>
         </div>
       </div>

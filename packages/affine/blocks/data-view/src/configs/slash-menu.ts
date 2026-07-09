@@ -12,14 +12,14 @@ export const dataViewSlashMenuConfig: SlashMenuConfig = {
   },
   items: [
     {
-      name: 'Todo',
-      searchAlias: ['todo view'],
+      name: 'Todo Nézet',
+      searchAlias: ['todo view', 'táblázat', 'adatbázis', 'database', 'table'],
       icon: DatabaseTableViewIcon(),
       tooltip: {
         figure: ToDoListTooltip,
-        caption: 'To-do List',
+        caption: 'To-do Lista',
       },
-      group: '7_Database@1',
+      group: '7_Adatbázis@1',
       when: ({ model, std }) =>
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text') &&
         !!std.get(FeatureFlagService).getFlag('enable_block_query'),

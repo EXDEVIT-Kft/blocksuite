@@ -31,25 +31,25 @@ const noteSlashMenuConfig: SlashMenuConfig = {
   items: [
     ...textConversionConfigs
       .filter(i => i.type && ['h1', 'h2', 'h3', 'text'].includes(i.type))
-      .map(config => createConversionItem(config, `0_Basic@${basicIndex++}`)),
+      .map(config => createConversionItem(config, `0_Alapvető@${basicIndex++}`)),
     {
-      name: 'Other Headings',
+      name: 'Egyéb Címsorok',
       icon: HeadingsIcon(),
-      group: `0_Basic@${basicIndex++}`,
+      group: `0_Alapvető@${basicIndex++}`,
       subMenu: textConversionConfigs
         .filter(i => i.type && ['h4', 'h5', 'h6'].includes(i.type))
         .map(config => createConversionItem(config)),
     },
     ...textConversionConfigs
       .filter(i => i.flavour === 'affine:code')
-      .map(config => createConversionItem(config, `0_Basic@${basicIndex++}`)),
+      .map(config => createConversionItem(config, `0_Alapvető@${basicIndex++}`)),
 
     ...textConversionConfigs
       .filter(i => i.type && ['divider', 'quote'].includes(i.type))
       .map(
         config =>
           ({
-            ...createConversionItem(config, `0_Basic@${basicIndex++}`),
+            ...createConversionItem(config, `0_Alapvető@${basicIndex++}`),
             when: ({ model }) =>
               model.store.schema.flavourSchemaMap.has(config.flavour) &&
               !isInsideBlockByFlavour(
@@ -63,17 +63,17 @@ const noteSlashMenuConfig: SlashMenuConfig = {
     ...textConversionConfigs
       .filter(i => i.flavour === 'affine:list')
       .map((config, index) =>
-        createConversionItem(config, `1_List@${index++}`)
+        createConversionItem(config, `1_Felsorolások@${index++}`)
       ),
 
     ...textAlignConfigs.map((config, index) =>
-      createAlignItem(config, `2_Align@${index++}`)
+      createAlignItem(config, `2_Igazítás@${index++}`)
     ),
 
     ...textFormatConfigs
-      .filter(i => !['Code', 'Link'].includes(i.name))
+      .filter(i => !['Kód', 'Link'].includes(i.name))
       .map((config, index) =>
-        createTextFormatItem(config, `2_Style@${index++}`)
+        createTextFormatItem(config, `2_Stílusok@${index++}`)
       ),
   ],
 };

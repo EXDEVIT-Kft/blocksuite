@@ -16,19 +16,19 @@ export interface TextAlignConfig {
 export const textAlignConfigs: TextAlignConfig[] = [
   {
     textAlign: TextAlign.Left,
-    name: 'Align left',
+    name: 'Balra igazítás',
     hotkey: [`Mod-Shift-L`],
     icon: TextAlignLeftIcon(),
   },
   {
     textAlign: TextAlign.Center,
-    name: 'Align center',
+    name: 'Középre igazítás',
     hotkey: [`Mod-Shift-E`],
     icon: TextAlignCenterIcon(),
   },
   {
     textAlign: TextAlign.Right,
-    name: 'Align right',
+    name: 'Jobbra igazítás',
     hotkey: [`Mod-Shift-R`],
     icon: TextAlignRightIcon(),
   },

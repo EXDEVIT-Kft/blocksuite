@@ -11,14 +11,15 @@ export const tableSlashMenuConfig: SlashMenuConfig = {
   disableWhen: ({ model }) => model.flavour === 'affine:table',
   items: [
     {
-      name: 'Table',
-      description: 'Create a simple table.',
+      name: 'Táblázat',
+      description: 'Hozz létre egy egyszerű táblázatot.',
       icon: TableIcon(),
       tooltip: {
         figure: tableTooltip,
-        caption: 'Table',
+        caption: 'Táblázat',
       },
-      group: '4_Content & Media@0',
+      searchAlias: ['table', 'táblázat'],
+      group: '4_Tartalom & Média@0',
       when: ({ model }) =>
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {

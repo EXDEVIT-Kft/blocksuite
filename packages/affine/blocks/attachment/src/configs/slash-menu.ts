@@ -8,15 +8,15 @@ import { AttachmentTooltip, PDFTooltip } from './tooltips';
 export const attachmentSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Attachment',
-      description: 'Attach a file to document.',
+      name: 'Fájl',
+      description: 'Mellékelj egy tetszőleges fájlt.',
       icon: FileIcon(),
       tooltip: {
         figure: AttachmentTooltip,
-        caption: 'Attachment',
+        caption: 'Fájl beszúrása',
       },
-      searchAlias: ['file'],
-      group: '4_Content & Media@3',
+      searchAlias: ['file', 'attachment', 'melléklet', 'forrás'],
+      group: '4_Tartalom & Média@3',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:attachment'),
       action: ({ std, model }) => {
@@ -33,13 +33,14 @@ export const attachmentSlashMenuConfig: SlashMenuConfig = {
     },
     {
       name: 'PDF',
-      description: 'Upload a PDF to document.',
+      description: 'Tölts fel egy PDF fájlt a dokumentumba.',
       icon: ExportToPdfIcon(),
       tooltip: {
         figure: PDFTooltip,
         caption: 'PDF',
       },
-      group: '4_Content & Media@4',
+      searchAlias: ['pdf', 'fájl'],
+      group: '4_Tartalom & Média@4',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:attachment'),
       action: ({ std, model }) => {

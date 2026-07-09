@@ -7,7 +7,7 @@ import { parseNumber } from './utils/formatter.js';
 export const numberPropertyType = propertyType('number');
 
 export const numberPropertyModelConfig = numberPropertyType.modelConfig({
-  name: 'Number',
+  name: 'Szám',
   propertyData: {
     schema: NumberPropertySchema,
     default: () => ({ decimal: 0, format: 'number' }) as const,

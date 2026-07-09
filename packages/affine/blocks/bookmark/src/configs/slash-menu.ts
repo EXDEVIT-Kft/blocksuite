@@ -14,14 +14,15 @@ import { LinkTooltip } from './tooltips';
 const bookmarkSlashMenuConfig: SlashMenuConfig = {
   items: [
     {
-      name: 'Link',
-      description: 'Add a bookmark for reference.',
+      name: 'Weboldal',
+      description: 'Hivatkozz egy külső weboldalra elegánsan.',
       icon: LinkIcon(),
       tooltip: {
         figure: LinkTooltip,
-        caption: 'Link',
+        caption: 'Weboldal hivatkozása',
       },
-      group: '4_Content & Media@2',
+      searchAlias: ['hivatkozás', 'link', 'bookmark', 'website'],
+      group: '4_Tartalom & Média@2',
       when: ({ model }) =>
         model.store.schema.flavourSchemaMap.has('affine:bookmark'),
       action: ({ std, model }) => {
@@ -33,8 +34,8 @@ const bookmarkSlashMenuConfig: SlashMenuConfig = {
         const index = parentModel.children.indexOf(model) + 1;
         toggleEmbedCardCreateModal(
           host,
-          'Links',
-          'The added link will be displayed as a card view.',
+          'Weboldal hivatkozása',
+          'A hozzáadott weboldal kártya nézetben lesz megjelenítve.',
           { mode: 'page', parentModel, index },
           ({ mode }) => {
             if (mode === 'edgeless') {

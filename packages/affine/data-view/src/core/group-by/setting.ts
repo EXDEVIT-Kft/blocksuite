@@ -31,16 +31,16 @@ import type { GroupRenderProps } from './types.js';
 const dateModeLabel = (key?: string) => {
   switch (key) {
     case 'date-relative':
-      return 'Relative';
+      return 'Relatív';
     case 'date-day':
-      return 'Day';
+      return 'Nap';
     case 'date-week-mon':
     case 'date-week-sun':
-      return 'Week';
+      return 'Hét';
     case 'date-month':
-      return 'Month';
+      return 'Hónap';
     case 'date-year':
-      return 'Year';
+      return 'Év';
     default:
       return '';
   }
@@ -203,10 +203,10 @@ export class GroupSetting extends SignalWatcher(
         <div
           style="padding:0 4px;font-size:12px;color:var(--affine-text-secondary-color);line-height:20px;"
         >
-          Groups
+          Csoportok
         </div>
         <div class="properties-group-op" @click="${clickChangeAll}">
-          ${isAllShowed ? 'Hide All' : 'Show All'}
+          ${isAllShowed ? 'Mind elrejtése' : 'Mind megjelenítése'}
         </div>
       </div>
 
@@ -297,7 +297,7 @@ export const buildGroupSelectItems = (
           hide: () =>
             view instanceof KanbanSingleView || !group.property$.value,
           class: { 'delete-item': true },
-          name: 'Remove Grouping',
+          name: 'Csoportosítás törlése',
           select: () => {
             group.changeGroup(undefined);
             onSelect(undefined);
@@ -325,7 +325,7 @@ export const buildGroupSettingItems = (
     menu.group({
       items: [
         menu.action({
-          name: 'Group By',
+          name: 'Csoportosítás',
           postfix: html`
             <div
               style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
@@ -348,7 +348,7 @@ export const buildGroupSettingItems = (
             items: [
               menu.dynamic(() => [
                 menu.subMenu({
-                  name: 'Date by',
+                  name: 'Dátum szerint',
                   openOnHover: false,
                   middleware: dropdownSubMenuMiddleware,
                   autoHeight: true,
@@ -364,17 +364,17 @@ export const buildGroupSettingItems = (
                       menu.dynamic(() =>
                         (
                           [
-                            ['Relative', 'date-relative'],
-                            ['Day', 'date-day'],
+                            ['Relatív', 'date-relative'],
+                            ['Nap', 'date-day'],
                             [
-                              'Week',
+                              'Hét',
                               group.groupInfo$.value?.config.name ===
                               'date-week-mon'
                                 ? 'date-week-mon'
                                 : 'date-week-sun',
                             ],
-                            ['Month', 'date-month'],
-                            ['Year', 'date-year'],
+                            ['Hónap', 'date-month'],
+                            ['Év', 'date-year'],
                           ] as [string, string][]
                         ).map(
                           ([label, key]): MenuConfig =>
@@ -412,15 +412,15 @@ export const buildGroupSettingItems = (
                   items: [
                     menu.dynamic(() => [
                       menu.subMenu({
-                        name: 'Start week on',
+                        name: 'Hét kezdőnapja',
                         postfix: html`
                           <div
                             style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
                           >
                             ${group.groupInfo$.value?.config.name ===
                             'date-week-mon'
-                              ? 'Monday'
-                              : 'Sunday'}
+                              ? 'Hétfő'
+                              : 'Vasárnap'}
                           </div>
                         `,
                         options: {
@@ -428,8 +428,8 @@ export const buildGroupSettingItems = (
                             menu.dynamic(() =>
                               (
                                 [
-                                  ['Monday', 'date-week-mon'],
-                                  ['Sunday', 'date-week-sun'],
+                                  ['Hétfő', 'date-week-mon'],
+                                  ['Vasárnap', 'date-week-sun'],
                                 ] as [string, string][]
                               ).map(([label, key]) =>
                                 menu.action({
@@ -466,7 +466,7 @@ export const buildGroupSettingItems = (
             items: [
               menu.dynamic(() => [
                 menu.subMenu({
-                  name: 'Sort',
+                  name: 'Rendezés',
                   openOnHover: false,
                   middleware: dropdownSubMenuMiddleware,
                   autoHeight: true,
@@ -474,21 +474,23 @@ export const buildGroupSettingItems = (
                     <div
                       style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
                     >
-                      ${group.sortAsc$.value ? 'Oldest first' : 'Newest first'}
+                      ${group.sortAsc$.value
+                        ? 'Legrégebbi elöl'
+                        : 'Legújabb elöl'}
                     </div>
                   `,
                   options: {
                     items: [
                       menu.dynamic(() => [
                         menu.action({
-                          name: 'Oldest first',
+                          name: 'Legrégebbi elöl',
                           label: () => {
                             const isSelected = group.sortAsc$.value;
                             return html`<span
                               style="font-size:14px;color:${isSelected
                                 ? 'var(--affine-text-emphasis-color)'
                                 : 'var(--affine-text-secondary-color)'}"
-                              >Oldest first</span
+                              >Legrégebbi elöl</span
                             >`;
                           },
                           isSelected: group.sortAsc$.value,
@@ -498,14 +500,14 @@ export const buildGroupSettingItems = (
                           },
                         }),
                         menu.action({
-                          name: 'Newest first',
+                          name: 'Legújabb elöl',
                           label: () => {
                             const isSelected = !group.sortAsc$.value;
                             return html`<span
                               style="font-size:14px;color:${isSelected
                                 ? 'var(--affine-text-emphasis-color)'
                                 : 'var(--affine-text-secondary-color)'}"
-                              >Newest first</span
+                              >Legújabb elöl</span
                             >`;
                           },
                           isSelected: !group.sortAsc$.value,
@@ -528,7 +530,7 @@ export const buildGroupSettingItems = (
       items: [
         menu.dynamic(() => [
           menu.action({
-            name: 'Hide empty groups',
+            name: 'Üres csoportok elrejtése',
             isSelected: group.hideEmpty$.value,
             select: () => {
               group.setHideEmpty(!group.hideEmpty$.value);
@@ -553,7 +555,7 @@ export const buildGroupSettingItems = (
     menu.group({
       items: [
         menu.action({
-          name: 'Remove grouping',
+          name: 'Csoportosítás törlése',
           prefix: DeleteIcon(),
           class: { 'delete-item': true },
           hide: () => !(view instanceof TableSingleView),

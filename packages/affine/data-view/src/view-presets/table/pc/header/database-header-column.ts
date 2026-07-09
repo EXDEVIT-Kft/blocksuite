@@ -212,7 +212,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
           typeConfig(this.column),
           // Number format begin
           menu.subMenu({
-            name: 'Number Format',
+            name: 'Szám Formázása',
             hide: () =>
               !this.column.dataUpdate || this.column.type$.value !== 'number',
             options: {
@@ -242,7 +242,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Hide In View',
+                name: 'Elrejtés a Nézetben',
                 prefix: ViewIcon(),
                 hide: () => !this.column.hideCanSet,
                 select: () => {
@@ -254,17 +254,17 @@ export class DatabaseHeaderColumn extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Filter',
+                name: 'Szűrés',
                 prefix: FilterIcon(),
                 select: () => this._addFilter(),
               }),
               menu.action({
-                name: 'Sort Ascending',
+                name: 'Rendezés növekvőbe',
                 prefix: SortIcon(),
                 select: () => this._addSort(false),
               }),
               menu.action({
-                name: 'Sort Descending',
+                name: 'Rendezés csökkenőbe',
                 prefix: SortIcon(),
                 select: () => this._addSort(true),
               }),
@@ -273,7 +273,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Insert Left Column',
+                name: 'Oszlop Beszúrása Balra',
                 prefix: InsertLeftIcon(),
                 select: () => {
                   this.tableViewManager.propertyAdd({
@@ -296,7 +296,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Insert Right Column',
+                name: 'Oszlop Beszúrása Jobbra',
                 prefix: InsertRightIcon(),
                 select: () => {
                   this.tableViewManager.propertyAdd({
@@ -318,7 +318,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Move Left',
+                name: 'Mozgatás Balra',
                 prefix: MoveLeftIcon(),
                 hide: () => this.column.isFirst$.value,
                 select: () => {
@@ -333,7 +333,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Move Right',
+                name: 'Mozgatás Jobbra',
                 prefix: MoveRightIcon(),
                 hide: () => this.column.isLast$.value,
                 select: () => {
@@ -352,7 +352,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 hide: () => !this.column.canDuplicate,
                 select: () => {
@@ -360,7 +360,7 @@ export class DatabaseHeaderColumn extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 prefix: DeleteIcon(),
                 hide: () => !this.column.canDelete,
                 select: () => {

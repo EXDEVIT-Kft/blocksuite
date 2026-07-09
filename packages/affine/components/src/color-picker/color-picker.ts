@@ -40,8 +40,8 @@ import {
 } from './utils.js';
 
 const TABS: NavTab<NavType>[] = [
-  { type: 'colors', name: 'Colors' },
-  { type: 'custom', name: 'Custom' },
+  { type: 'colors', name: 'Színek' },
+  { type: 'custom', name: 'Egyedi' },
 ];
 
 export class EdgelessColorPicker extends SignalWatcher(
@@ -645,9 +645,9 @@ export class EdgelessColorPicker extends SignalWatcher(
   });
 
   accessor modes$ = signal<ModeTab<ModeType>[]>([
-    { type: 'normal', name: 'Normal', hsva: defaultHsva() },
-    { type: 'light', name: 'Light', hsva: defaultHsva() },
-    { type: 'dark', name: 'Dark', hsva: defaultHsva() },
+    { type: 'normal', name: 'Normál', hsva: defaultHsva() },
+    { type: 'light', name: 'Világos', hsva: defaultHsva() },
+    { type: 'dark', name: 'Sötét', hsva: defaultHsva() },
   ]);
 
   accessor modeType$ = signal<ModeType>('normal');
