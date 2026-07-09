@@ -6,7 +6,7 @@ import {
   EDGELESS_TOP_CONTENTEDITABLE_SELECTOR,
 } from '@blocksuite/affine-shared/consts';
 import {
-  BlockCommentManager,
+  BlockElementCommentManager,
   DocModeProvider,
   NotificationProvider,
 } from '@blocksuite/affine-shared/services';
@@ -50,6 +50,10 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
     }
     return modelPreview;
   });
+
+  collapsed$: Signal<boolean> = computed(
+    () => !!this.model.props.collapsed$.value
+  );
 
   highlightTokens$: Signal<ThemedToken[][]> = signal([]);
 
@@ -394,7 +398,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
   get isCommentHighlighted() {
     return (
       this.std
-        .getOptional(BlockCommentManager)
+        .getOptional(BlockElementCommentManager)
         ?.isBlockCommentHighlighted(this.model) ?? false
     );
   }
@@ -417,6 +421,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
       CodeBlockPreviewIdentifier(this.model.props.language ?? '')
     );
     const shouldRenderPreview = preview && previewContext;
+    const collapsed = this.collapsed$.value;
 
     return html`
       <div
@@ -426,6 +431,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
           mobile: IS_MOBILE,
           wrap: this.model.props.wrap,
           'disable-line-numbers': !showLineNumbers,
+          collapsed,
         })}
       >
         <rich-text
@@ -453,9 +459,12 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
           }}
         >
         </rich-text>
+        ${collapsed
+          ? html`<div class="code-collapsed-fade" aria-hidden="true"></div>`
+          : nothing}
         <div
           style=${styleMap({
-            display: shouldRenderPreview ? undefined : 'none',
+            display: shouldRenderPreview && !collapsed ? undefined : 'none',
           })}
           contenteditable="false"
           class="affine-code-block-preview"
@@ -469,6 +478,10 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
 
   setWrap(wrap: boolean) {
     this.store.updateBlock(this.model, { wrap });
+  }
+
+  setCollapsed(collapsed: boolean) {
+    this.store.updateBlock(this.model, { collapsed });
   }
 
   @query('rich-text')

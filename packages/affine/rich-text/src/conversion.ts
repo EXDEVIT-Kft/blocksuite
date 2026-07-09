@@ -13,6 +13,7 @@ import {
   QuoteIcon,
   TextIcon,
 } from '@blocksuite/affine-components/icons';
+import { TeXIcon } from '@blocksuite/icons/lit';
 import type { TemplateResult } from 'lit';
 
 /**
@@ -26,6 +27,7 @@ export interface TextConversionConfig {
   description?: string;
   hotkey: string[] | null;
   icon: TemplateResult<1>;
+  searchAlias?: string[];
 }
 
 export const textConversionConfigs: TextConversionConfig[] = [
@@ -106,6 +108,7 @@ export const textConversionConfigs: TextConversionConfig[] = [
     type: 'todo',
     name: 'To-do List',
     description: 'Add tasks to a to-do list.',
+    searchAlias: ['checkbox'],
     hotkey: null,
     icon: CheckBoxIcon,
   },
@@ -116,6 +119,15 @@ export const textConversionConfigs: TextConversionConfig[] = [
     description: 'Code snippet with formatting.',
     hotkey: [`Mod-Alt-c`],
     icon: CodeBlockIcon,
+  },
+  {
+    flavour: 'affine:latex',
+    type: undefined,
+    name: 'Equation',
+    description: 'Formula block with LaTeX rendering.',
+    hotkey: null,
+    icon: TeXIcon(),
+    searchAlias: ['mathBlock', 'equationBlock', 'latexBlock'],
   },
   {
     flavour: 'affine:paragraph',

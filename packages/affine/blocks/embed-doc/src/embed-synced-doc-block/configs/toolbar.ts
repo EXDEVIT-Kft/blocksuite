@@ -16,7 +16,6 @@ import {
 import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
 import {
   ActionPlacement,
-  blockCommentToolbarButton,
   EditorSettingProvider,
   type LinkEventType,
   type OpenDocMode,
@@ -200,7 +199,7 @@ const conversionsActionGroup = {
         @toggle=${onToggle}
         .actions=${actions}
         .context=${ctx}
-        .viewType$=${viewType$}
+        .viewTypeSignal=${viewType$}
       ></affine-view-dropdown-menu>`
     )}`;
   },
@@ -226,10 +225,6 @@ const builtinToolbarConfig = {
     openDocActionGroup,
     conversionsActionGroup,
     captionAction,
-    {
-      id: 'e.comment',
-      ...blockCommentToolbarButton,
-    },
     {
       placement: ActionPlacement.More,
       id: 'a.clipboard',
@@ -471,7 +466,7 @@ const builtinSurfaceToolbarConfig = {
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
-            .size$=${scale$}
+            .sizeSignal=${scale$}
           ></affine-size-dropdown-menu>`
         )}`;
       },

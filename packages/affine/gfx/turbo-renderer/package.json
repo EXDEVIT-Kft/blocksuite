@@ -10,10 +10,11 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
+    "@blocksuite/affine-shared": "workspace:*",
     "@blocksuite/global": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@blocksuite/store": "workspace:*",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.2"
   },
   "exports": {
     ".": "./src/index.ts",
@@ -25,5 +26,5 @@
     "!src/__tests__",
     "!dist/__tests__"
   ],
-  "version": "0.22.4"
+  "version": "0.27.0"
 }

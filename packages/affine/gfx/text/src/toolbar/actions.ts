@@ -17,9 +17,9 @@ import {
   TextAlign,
   type TextStyleProps,
 } from '@blocksuite/affine-model';
-import type {
-  ToolbarActions,
-  ToolbarContext,
+import {
+  type ToolbarActions,
+  type ToolbarContext,
 } from '@blocksuite/affine-shared/services';
 import {
   getMostCommonResolvedValue,
@@ -353,7 +353,7 @@ export function createTextActions<
           @select=${onPick}
           .label="${'Font size'}"
           .sizes=${FONT_SIZE_LIST}
-          .size$=${fontSize$}
+          .sizeSignal=${fontSize$}
         ></affine-size-dropdown-menu>`;
       },
     },

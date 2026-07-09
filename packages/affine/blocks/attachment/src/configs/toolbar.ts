@@ -10,7 +10,6 @@ import {
 } from '@blocksuite/affine-shared/consts';
 import {
   ActionPlacement,
-  blockCommentToolbarButton,
   type ToolbarAction,
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
@@ -145,7 +144,7 @@ export const attachmentViewDropdownMenu = {
       @toggle=${onToggle}
       .actions=${actions.value}
       .context=${ctx}
-      .viewType$=${viewType$}
+      .viewTypeSignal=${viewType$}
     ></affine-view-dropdown-menu>`;
   },
 } as const satisfies ToolbarActionGroup<ToolbarAction>;
@@ -241,10 +240,6 @@ const builtinToolbarConfig = {
     replaceAction,
     downloadAction,
     captionAction,
-    {
-      id: 'f.comment',
-      ...blockCommentToolbarButton,
-    },
     {
       placement: ActionPlacement.More,
       id: 'a.clipboard',
@@ -371,7 +366,7 @@ const builtinSurfaceToolbarConfig = {
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
-            .style$=${style$}
+            .styleSignal=${style$}
           ></affine-card-style-dropdown-menu>`
         )}`;
       },

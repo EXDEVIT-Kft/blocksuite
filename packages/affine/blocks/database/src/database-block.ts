@@ -10,9 +10,10 @@ import { toast } from '@blocksuite/affine-components/toast';
 import type { DatabaseBlockModel } from '@blocksuite/affine-model';
 import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/affine-shared/consts';
 import {
-  BlockCommentManager,
+  BlockElementCommentManager,
   CommentProviderIdentifier,
   DocModeProvider,
+  FeatureFlagService,
   NotificationProvider,
   type TelemetryEventMap,
   TelemetryProvider,
@@ -33,7 +34,9 @@ import {
   type SingleView,
   uniMap,
 } from '@blocksuite/data-view';
+import { CalendarExternalSourceProvider } from '@blocksuite/data-view/view-presets';
 import { widgetPresets } from '@blocksuite/data-view/widget-presets';
+import { IS_MOBILE } from '@blocksuite/global/env';
 import { Rect } from '@blocksuite/global/gfx';
 import {
   CommentIcon,
@@ -47,6 +50,8 @@ import { Slice } from '@blocksuite/store';
 import { autoUpdate } from '@floating-ui/dom';
 import { computed, signal } from '@preact/signals-core';
 import { html, nothing } from 'lit';
+import { repeat } from 'lit/directives/repeat.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 import { popSideDetail } from './components/layout.js';
 import { DatabaseConfigExtension } from './config.js';
@@ -144,6 +149,14 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
           dataSource.serviceSet(
             ExternalGroupByConfigProvider(config.name),
             config
+          );
+        });
+      this.std.provider
+        .getAll(CalendarExternalSourceProvider)
+        .forEach(source => {
+          dataSource.serviceSet(
+            CalendarExternalSourceProvider(source.id),
+            source
           );
         });
     });
@@ -289,6 +302,12 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
       widgetPresets.tools.viewOptions,
       widgetPresets.tools.tableAddRow,
     ],
+    calendar: [
+      widgetPresets.tools.filter,
+      widgetPresets.tools.search,
+      widgetPresets.tools.viewOptions,
+      widgetPresets.tools.tableAddRow,
+    ],
   });
 
   private readonly viewSelection$ = computed(() => {
@@ -315,7 +334,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
   get isCommentHighlighted() {
     return (
       this.std
-        .getOptional(BlockCommentManager)
+        .getOptional(BlockElementCommentManager)
         ?.isBlockCommentHighlighted(this.model) ?? false
     );
   }
@@ -348,6 +367,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
     this.setAttribute(RANGE_SYNC_EXCLUDE_ATTR, 'true');
     this.classList.add(databaseBlockStyles);
     this.listenFullWidthChange();
+    this.handleMobileEditing();
   }
 
   listenFullWidthChange() {
@@ -363,6 +383,41 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
       })
     );
   }
+
+  handleMobileEditing() {
+    if (!IS_MOBILE) return;
+
+    let notifyClosed = true;
+    const handler = () => {
+      if (
+        !this.std
+          .get(FeatureFlagService)
+          .getFlag('enable_mobile_database_editing')
+      ) {
+        const notification = this.std.getOptional(NotificationProvider);
+        if (notification && notifyClosed) {
+          notifyClosed = false;
+          notification.notify({
+            title: html`<div
+              style=${styleMap({
+                whiteSpace: 'wrap',
+              })}
+            >
+              Mobile database editing is not supported yet. You can open it in
+              experimental features, or edit it in desktop mode.
+            </div>`,
+            accent: 'warning',
+            onClose: () => {
+              notifyClosed = true;
+            },
+          });
+        }
+      }
+    };
+
+    this.disposables.addFromEvent(this, 'click', handler);
+  }
+
   private readonly dataViewRootLogic = lazy(
     () =>
       new DataViewRootUILogic({
@@ -387,6 +442,7 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
         headerWidget: this.headerWidget,
         onDrag: this.onDrag,
         clipboard: this.std.clipboard,
+        dnd: this.std.dnd,
         notification: {
           toast: message => {
             const notification = this.std.getOptional(NotificationProvider);
@@ -451,9 +507,15 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
       })
   );
   override renderBlock() {
+    const widgets = html`${repeat(
+      Object.entries(this.widgets),
+      ([id]) => id,
+      ([_, widget]) => widget
+    )}`;
+
     return html`
       <div contenteditable="false" class="${databaseContentStyles}">
-        ${this.dataViewRootLogic.value.render()}
+        ${this.dataViewRootLogic.value.render()} ${widgets}
       </div>
     `;
   }

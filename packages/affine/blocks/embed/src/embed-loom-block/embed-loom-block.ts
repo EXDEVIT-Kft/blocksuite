@@ -89,14 +89,14 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
   }
 
   override renderBlock() {
-    const { image, title = 'Loom', description, videoId } = this.model.props;
+    const { image, title, description, videoId } = this.model.props;
 
     const loading = this.loading;
     const theme = this.std.get(ThemeProvider).theme;
     const imageProxyService = this.store.get(ImageProxyService);
     const { EmbedCardBannerIcon } = getEmbedCardIcons(theme);
     const titleIcon = loading ? LoadingIcon() : LoomIcon;
-    const titleText = loading ? 'Loading...' : title;
+    const titleText = loading ? 'Loading...' : title || 'Loom';
     const descriptionText = loading ? '' : description;
     const bannerImage =
       !loading && image
@@ -124,7 +124,8 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
                     <iframe
                       src=${`https://www.loom.com/embed/${videoId}?hide_title=true`}
                       frameborder="0"
-                      allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      sandbox="allow-scripts allow-same-origin allow-presentation"
                       loading="lazy"
                       credentialless
                     ></iframe>

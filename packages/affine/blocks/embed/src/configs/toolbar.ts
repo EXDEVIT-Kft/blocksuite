@@ -13,7 +13,6 @@ import {
 } from '@blocksuite/affine-shared/consts';
 import {
   ActionPlacement,
-  blockCommentToolbarButton,
   EmbedOptionProvider,
   type LinkEventType,
   type ToolbarAction,
@@ -282,7 +281,7 @@ function createBuiltinToolbarConfigForExternal(
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
-              .viewType$=${viewType$}
+              .viewTypeSignal=${viewType$}
             ></affine-view-dropdown-menu>`
           )}`;
         },
@@ -330,7 +329,7 @@ function createBuiltinToolbarConfigForExternal(
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
-              .style$=${model.props.style$}
+              .styleSignal=${model.props.style$}
             ></affine-card-style-dropdown-menu>`
           )}`;
         },
@@ -348,10 +347,6 @@ function createBuiltinToolbarConfigForExternal(
             control: 'add caption',
           });
         },
-      },
-      {
-        id: 'e.comment',
-        ...blockCommentToolbarButton,
       },
       {
         placement: ActionPlacement.More,
@@ -519,7 +514,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
-              .viewType$=${viewType$}
+              .viewTypeSignal=${viewType$}
             ></affine-view-dropdown-menu>`
           )}`;
         },
@@ -584,7 +579,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
-              .style$=${style$}
+              .styleSignal=${style$}
             ></affine-card-style-dropdown-menu>`
           )}`;
         },
@@ -651,7 +646,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
               @select=${onSelect}
               @toggle=${onToggle}
               .format=${format}
-              .size$=${scale$}
+              .sizeSignal=${scale$}
             ></affine-size-dropdown-menu>`
           )}`;
         },

@@ -8,7 +8,7 @@ import {
   EDGELESS_TOP_CONTENTEDITABLE_SELECTOR,
 } from '@blocksuite/affine-shared/consts';
 import {
-  BlockCommentManager,
+  BlockElementCommentManager,
   CitationProvider,
   DocModeProvider,
 } from '@blocksuite/affine-shared/services';
@@ -27,8 +27,8 @@ import { computed, effect, signal } from '@preact/signals-core';
 import { html, nothing, type TemplateResult } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 import { ParagraphBlockConfigExtension } from './paragraph-block-config.js';
 import { paragraphBlockStyles } from './styles.js';
@@ -111,7 +111,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
   get isCommentHighlighted() {
     return (
       this.std
-        .getOptional(BlockCommentManager)
+        .getOptional(BlockElementCommentManager)
         ?.isBlockCommentHighlighted(this.model) ?? false
     );
   }
@@ -236,6 +236,12 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
   }
 
   override renderBlock(): TemplateResult<1> {
+    const widgets = html`${repeat(
+      Object.entries(this.widgets),
+      ([id]) => id,
+      ([_, widget]) => widget
+    )}`;
+
     const { type$ } = this.model.props;
     const collapsed = this.store.readonly
       ? this._readonlyCollapsed
@@ -244,18 +250,25 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
 
     let style = html``;
     if (this.model.props.type$.value.startsWith('h') && collapsed) {
+      const collapsedSiblingStyles = collapsedSiblings
+        .map(
+          sibling => `
+            [data-block-id="${sibling.id}"] {
+              display: none !important;
+            }
+          `
+        )
+        .join('\n');
       style = html`
         <style>
-          ${collapsedSiblings.map(sibling =>
-            unsafeHTML(`
-              [data-block-id="${sibling.id}"] {
-                display: none !important;
-              }
-            `)
-          )}
+          ${collapsedSiblingStyles}
         </style>
       `;
     }
+
+    const textAlignStyle = styleMap({
+      textAlign: this.model.props.textAlign$?.value,
+    });
 
     const children = html`<div
       class="affine-block-children-container"
@@ -281,6 +294,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
           'affine-paragraph-block-container': true,
           'highlight-comment': this.isCommentHighlighted,
         })}
+        style="${textAlignStyle}"
         data-has-collapsed-siblings="${collapsedSiblings.length > 0}"
       >
         <div
@@ -352,7 +366,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
               `}
         </div>
 
-        ${children}
+        ${children} ${widgets}
       </div>
     `;
   }

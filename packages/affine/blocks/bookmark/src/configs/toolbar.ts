@@ -17,7 +17,6 @@ import {
 } from '@blocksuite/affine-shared/consts';
 import {
   ActionPlacement,
-  blockCommentToolbarButton,
   EmbedIframeService,
   EmbedOptionProvider,
   type LinkEventType,
@@ -238,7 +237,7 @@ const builtinToolbarConfig = {
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
-            .viewType$=${viewType$}
+            .viewTypeSignal=${viewType$}
           ></affine-view-dropdown-menu>`
         )}`;
       },
@@ -283,16 +282,12 @@ const builtinToolbarConfig = {
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
-            .style$=${model.props.style$}
+            .styleSignal=${model.props.style$}
           ></affine-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
     captionAction,
-    {
-      id: 'e.comment',
-      ...blockCommentToolbarButton,
-    },
     {
       placement: ActionPlacement.More,
       id: 'a.clipboard',
@@ -477,7 +472,7 @@ const builtinSurfaceToolbarConfig = {
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
-            .viewType$=${viewType$}
+            .viewTypeSignal=${viewType$}
           ></affine-view-dropdown-menu>`
         )}`;
       },
@@ -539,7 +534,7 @@ const builtinSurfaceToolbarConfig = {
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
-            .style$=${style$}
+            .styleSignal=${style$}
           ></affine-card-style-dropdown-menu>`
         )}`;
       },
@@ -596,7 +591,7 @@ const builtinSurfaceToolbarConfig = {
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
-            .size$=${scale$}
+            .sizeSignal=${scale$}
           ></affine-size-dropdown-menu>`
         )}`;
       },

@@ -96,21 +96,15 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
   }
 
   override renderBlock() {
-    const {
-      image,
-      title = 'YouTube',
-      description,
-      creator,
-      creatorImage,
-      videoId,
-    } = this.model.props;
+    const { image, title, description, creator, creatorImage, videoId } =
+      this.model.props;
 
     const loading = this.loading;
     const theme = this.std.get(ThemeProvider).theme;
     const imageProxyService = this.store.get(ImageProxyService);
     const { EmbedCardBannerIcon } = getEmbedCardIcons(theme);
     const titleIcon = loading ? LoadingIcon() : YoutubeIcon;
-    const titleText = loading ? 'Loading...' : title;
+    const titleText = loading ? 'Loading...' : title || 'YouTube';
     const descriptionText = loading ? null : description;
     const bannerImage =
       !loading && image
@@ -148,8 +142,8 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
                       type="text/html"
                       src=${`https://www.youtube.com/embed/${videoId}`}
                       frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
+                      allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      sandbox="allow-scripts allow-same-origin allow-presentation"
                       loading="lazy"
                       credentialless
                     ></iframe>
