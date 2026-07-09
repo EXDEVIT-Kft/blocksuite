@@ -1,3 +1,7 @@
+import {
+  EMBED_CARD_HEIGHT,
+  EMBED_CARD_WIDTH,
+} from '@blocksuite/affine-shared/consts';
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { css, html } from 'lit';
 
@@ -42,6 +46,13 @@ export const styles = css`
     width: 100%;
     height: 100%;
     border-radius: 4px;
+  }
+
+  /* [ALGOGRIND] */
+  /* In readonly mode only the player iframe is rendered, so the container
+     needs its own aspect ratio to size itself without the card layout */
+  .affine-embed-youtube-video-iframe-container.readonly {
+    aspect-ratio: ${EMBED_CARD_WIDTH.video} / ${EMBED_CARD_HEIGHT.video - 116};
   }
 
   .affine-embed-youtube-video-iframe-overlay {

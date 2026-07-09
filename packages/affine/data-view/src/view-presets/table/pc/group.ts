@@ -247,6 +247,8 @@ export class TableGroup extends SignalWatcher(
       },
     ],
     onDragEnd: ({ over, active }) => {
+      // [ALGOGRIND] columns must not be reorderable in readonly mode
+      if (this.view.readonly$.value) return;
       if (over && over.id !== active.id) {
         const activeIndex = this.view.properties$.value.findIndex(
           data => data.id === active.id

@@ -171,7 +171,8 @@ export class FramePanelBody extends SignalWatcher(
   }
 
   private _drag(e: DragEvent) {
-    if (!this._selected.length) return;
+    // [ALGOGRIND] frames must not be reorderable in readonly mode
+    if (!this._selected.length || this.editorHost.store.readonly) return;
 
     this._dragging = true;
 

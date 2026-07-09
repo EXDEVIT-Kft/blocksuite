@@ -4,7 +4,9 @@ import { stopPropagation } from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
+import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { offset } from '@floating-ui/dom';
+import { effect } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
@@ -65,6 +67,24 @@ export class ZoomBarToggleButton extends WithDisposable(LitElement) {
     this._showPopper = true;
   }
 
+  private get _gfx() {
+    return this.std.get(GfxControllerIdentifier);
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
+
+    // [ALGOGRIND]
+    // Rerender when the current tool changes so the presentation-mode
+    // check in render() stays up to date.
+    this.disposables.add(
+      effect(() => {
+        void this._gfx.tool.currentToolName$.value;
+        this.requestUpdate();
+      })
+    );
+  }
+
   override disconnectedCallback() {
     super.disconnectedCallback();
     this._closeZoomMenu();
@@ -80,7 +100,10 @@ export class ZoomBarToggleButton extends WithDisposable(LitElement) {
   }
 
   override render() {
-    if (this.std.store.readonly) {
+    // [ALGOGRIND]
+    // Keep the zoom toolbar available in readonly mode;
+    // only hide it in presentation (frameNavigator) mode.
+    if (this._gfx.tool.currentToolName$.value === 'frameNavigator') {
       return nothing;
     }
 

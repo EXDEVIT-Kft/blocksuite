@@ -711,6 +711,11 @@ export class DragEventWatcher {
     dropPayload: DropPayload,
     point: Point
   ) => {
+    // [ALGOGRIND] dropping blocks must not modify a readonly doc
+    if (this.std.store.readonly) {
+      return;
+    }
+
     this.std.store.captureSync();
     if (this.mode === 'edgeless') {
       this._onEdgelessDrop(dropBlock, dragPayload, dropPayload, point);

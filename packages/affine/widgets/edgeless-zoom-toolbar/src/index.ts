@@ -35,6 +35,13 @@ export class AffineEdgelessZoomToolbarWidget extends WidgetComponent<RootBlockMo
       }
     }
 
+    /* [ALGOGRIND] hide the zoom toggle button on small (mobile) viewports */
+    @container viewport (width <= 600px) {
+      zoom-bar-toggle-button {
+        display: none;
+      }
+    }
+
     @container viewport (width > 1200px) {
       zoom-bar-toggle-button {
         display: none;

@@ -110,6 +110,9 @@ export class DatabaseColumnStatsCell extends SignalWatcher(
   });
 
   openMenu = (ev: MouseEvent) => {
+    // [ALGOGRIND] the statistics function must not be changeable in readonly
+    if (this.column.view.readonly$.value) return;
+
     const menus: MenuConfig[] = Object.entries(this.groups$.value).map(
       ([group, funcs]) => {
         return menu.subMenu({

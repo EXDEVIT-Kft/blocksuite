@@ -50,7 +50,11 @@ import {
 import { matchModels } from '@blocksuite/affine-shared/utils';
 import { IS_MAC } from '@blocksuite/global/env';
 import { Bound, getCommonBound } from '@blocksuite/global/gfx';
-import { SurfaceSelection, TextSelection } from '@blocksuite/std';
+import {
+  SurfaceSelection,
+  TextSelection,
+  type UIEventHandler,
+} from '@blocksuite/std';
 import {
   type BaseTool,
   GfxBlockElementModel,
@@ -86,8 +90,7 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
 
   constructor(override rootComponent: EdgelessRootBlockComponent) {
     super(rootComponent);
-    this.rootComponent.bindHotKey(
-      {
+    const hotkeys: Record<string, UIEventHandler> = {
         v: () => {
           this._setEdgelessTool(DefaultTool);
         },
@@ -457,11 +460,25 @@ export class EdgelessPageKeyboardManager extends PageKeyboardManager {
             }
           });
         },
-      },
-      {
-        global: true,
-      }
-    );
+      };
+
+    // [ALGOGRIND]
+    // In readonly mode disable every edgeless hotkey except the hand (pan)
+    // tool, so tools, zoom, selection and edits cannot be triggered from
+    // the keyboard.
+    const readonlyAllowedHotkeys = new Set(['h']);
+    Object.keys(hotkeys).forEach(key => {
+      if (readonlyAllowedHotkeys.has(key)) return;
+      const handler = hotkeys[key];
+      hotkeys[key] = ctx => {
+        if (this.rootComponent.store.readonly) return;
+        return handler(ctx);
+      };
+    });
+
+    this.rootComponent.bindHotKey(hotkeys, {
+      global: true,
+    });
 
     this._bindToggleHand();
   }

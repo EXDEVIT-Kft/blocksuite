@@ -80,14 +80,18 @@ export class PanTool extends BaseTool<PanToolOption> {
     this.addHook('pointerDown', evt => {
       const shouldPanWithMiddle = evt.raw.button === MouseButton.MIDDLE;
 
-      if (!shouldPanWithMiddle) {
+      // [ALGOGRIND]
+      // In readonly mode any pointer button starts a temporary pan,
+      // so the doc behaves as a hand/pan surface while staying on 'grab'
+      // cursor when idle (see edgeless-root-block: panning defaults to false).
+      if (!shouldPanWithMiddle && !this.doc.readonly) {
         return;
       }
 
       const currentTool = this.controller.currentToolOption$.peek();
       const { toolType, options: originalToolOptions } = currentTool;
 
-      if (toolType?.toolName === PanTool.toolName) {
+      if (toolType?.toolName === PanTool.toolName && !this.doc.readonly) {
         return;
       }
 
@@ -135,7 +139,10 @@ export class PanTool extends BaseTool<PanToolOption> {
       });
 
       const dispose = on(document, 'pointerup', evt => {
-        if (evt.button === MouseButton.MIDDLE) {
+        // [ALGOGRIND]
+        // In readonly mode the temporary pan must be restored on any button
+        // release, otherwise the cursor would stay in 'grabbing' state.
+        if (evt.button === MouseButton.MIDDLE || this.doc.readonly) {
           restoreToPrevious();
         }
         dispose();

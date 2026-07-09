@@ -328,6 +328,15 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragStart', ctx => {
+        // [ALGOGRIND]
+        // In readonly mode only the pan tool may handle drag events.
+        if (
+          this.std.store.readonly &&
+          this.currentTool$.peek()?.toolName !== 'pan'
+        ) {
+          return;
+        }
+
         const evt = ctx.get('pointerState');
 
         if (
@@ -409,7 +418,12 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragMove', ctx => {
-        if (!this.dragging$.peek()) {
+        if (
+          !this.dragging$.peek() ||
+          // [ALGOGRIND] readonly: only pan may drag
+          (this.std.store.readonly &&
+            this.currentTool$.peek()?.toolName !== 'pan')
+        ) {
           return;
         }
 
@@ -453,7 +467,12 @@ export class ToolController extends GfxExtension {
 
     this._disposableGroup.add(
       this.std.event.add('dragEnd', ctx => {
-        if (!this.dragging$.peek()) {
+        if (
+          !this.dragging$.peek() ||
+          // [ALGOGRIND] readonly: only pan may drag
+          (this.std.store.readonly &&
+            this.currentTool$.peek()?.toolName !== 'pan')
+        ) {
           return;
         }
 

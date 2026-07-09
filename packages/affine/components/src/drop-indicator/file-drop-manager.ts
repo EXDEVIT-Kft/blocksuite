@@ -135,6 +135,9 @@ export class FileDropExtension extends LifeCycleWatcher {
   onDragOver = (event: DragEvent) => {
     event.preventDefault();
 
+    // [ALGOGRIND] no file drop feedback in readonly mode
+    if (this.doc.readonly) return;
+
     if (this.shouldIgnoreEvent(event)) return;
 
     this.updatePoint(event);
@@ -242,6 +245,12 @@ export class FileDropExtension extends LifeCycleWatcher {
     );
     std.event.disposables.add(
       std.event.add('nativeDrop', context => {
+        // [ALGOGRIND] dropping files must not modify a readonly doc
+        if (this.doc.readonly) {
+          this.onDragLeave();
+          return;
+        }
+
         const event = context.get('dndState').raw;
         const { x, y, dataTransfer } = event;
         const droppedFiles = dataTransfer?.files;

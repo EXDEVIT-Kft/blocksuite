@@ -156,6 +156,16 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
     });
   };
 
+  // [ALGOGRIND]
+  // In readonly mode the block toolbar (with its "open in edgeless" action)
+  // is not available, so double-clicking the block opens the referenced
+  // frame/group on the edgeless surface instead.
+  private readonly _handleDblClick = () => {
+    if (this.store.readonly) {
+      this.viewInEdgeless();
+    }
+  };
+
   private _initHotkey() {
     const selection = this.host.selection;
     const addParagraph = () => {
@@ -472,6 +482,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
           'comment-highlighted': this.isCommentHighlighted,
         })}
         @click=${this._handleClick}
+        @dblclick=${this._handleDblClick}
       >
         ${content}
       </div>

@@ -450,7 +450,10 @@ export class EdgelessRootBlockComponent extends BlockComponent<
     this._initPinchEvent();
 
     if (this.store.readonly) {
-      this.gfx.tool.setTool(PanTool, { panning: true });
+      // [ALGOGRIND]
+      // Start with panning=false so the cursor shows 'grab' instead of being
+      // stuck on 'grabbing'; the pan tool switches to grabbing during drag.
+      this.gfx.tool.setTool(PanTool, { panning: false });
     } else {
       this.gfx.tool.setTool(DefaultTool);
     }

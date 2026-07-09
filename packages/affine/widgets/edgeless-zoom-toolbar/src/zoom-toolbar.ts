@@ -145,7 +145,10 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
   }
 
   override render() {
-    if (this.std.store.readonly) {
+    // [ALGOGRIND]
+    // Keep the zoom toolbar available in readonly mode;
+    // only hide it in presentation (frameNavigator) mode.
+    if (this.gfx.tool.currentToolName$.value === 'frameNavigator') {
       return nothing;
     }
 
