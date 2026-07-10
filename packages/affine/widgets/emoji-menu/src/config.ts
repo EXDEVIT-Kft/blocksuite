@@ -1,0 +1,2988 @@
+import { insertContent } from '@blocksuite/affine-rich-text';
+import type { BlockStdScope } from '@blocksuite/std';
+import type { BlockModel } from '@blocksuite/store';
+
+export type EmojiMenuContext = {
+  std: BlockStdScope;
+  model: BlockModel;
+};
+
+export type EmojiItem = {
+  emoji: string;
+  name: string;
+  tags: string[];
+  action: (ctx: EmojiMenuContext) => void | Promise<void>;
+  content: string;
+  length: number;
+  textCodes?: string[]; // Add this new property
+};
+
+export type EmojiCategory = {
+  name: string;
+  icon: string;
+  emojis: EmojiItem[];
+};
+
+export type EmojiMenuConfig = {
+  ignoreBlockTypes: string[];
+  categories: EmojiCategory[];
+  maxHeight: number;
+  tooltipTimeout: number;
+};
+
+// Helper function to create emoji items with actions
+const createEmojiItem = (
+  emoji: string,
+  name: string,
+  tags: string[],
+  textCodes?: string[]
+): EmojiItem => ({
+  emoji,
+  name,
+  tags,
+  content: emoji,
+  length: 0,
+  textCodes,
+  action: async ({ std, model }) => {
+    try {
+      const host = std.host;
+      // Wait for the DOM update to complete
+      await host.updateComplete;
+      // Then insert the emoji
+      insertContent(std, model, emoji);
+      // Wait for final update
+      await host.updateComplete;
+    } catch (error) {
+      console.warn('Error inserting emoji:', error);
+      // Fallback: try direct insertion if cleanup fails
+      insertContent(std, model, emoji);
+    }
+  },
+});
+
+// Sample data structure with emojis
+export const emojiCategories: EmojiCategory[] = [
+  {
+    name: 'Emberek & Érzelmek',
+    icon: '😀',
+    emojis: [
+      createEmojiItem(
+        '😀',
+        'vigyorgó arc',
+        ['smile', 'happy', 'mosoly', 'boldog'],
+        [':D', ':-D']
+      ),
+      createEmojiItem(
+        '😃',
+        'vigyorgó arc nagy szemekkel',
+        ['happy', 'joy', 'boldog', 'öröm'],
+        [':DD']
+      ),
+      createEmojiItem(
+        '😄',
+        'vigyorgó arc mosolygó szemekkel',
+        ['happy', 'laugh', 'boldog', 'nevetés'],
+        [':)', '=)']
+      ),
+      createEmojiItem(
+        '😁',
+        'sugárzó arc mosolygó szemekkel',
+        ['happy', 'proud', 'boldog', 'büszke'],
+        [':D']
+      ),
+      createEmojiItem(
+        '😅',
+        'izzadó vigyorgó arc',
+        ['hot', 'happy', 'meleg', 'boldog'],
+        [":'D"]
+      ),
+      createEmojiItem(
+        '😂',
+        'örömkönnyező arc',
+        ['laugh', 'lol', 'nevetés', 'vicces'],
+        [":')"]
+      ),
+      createEmojiItem(
+        '🤣',
+        'földön fetrengve nevető',
+        ['lmao', 'lol', 'röhögés', 'vicces'],
+        ['xd', 'XD']
+      ),
+      createEmojiItem(
+        '😆',
+        'nevető kacagás',
+        ['lmao', 'lol', 'röhögés', 'vicces'],
+        ['xd', 'XD']
+      ),
+      createEmojiItem(
+        '😊',
+        'mosolygó arc mosolygó szemekkel',
+        ['blush', 'happy', 'pirulós', 'boldog'],
+        [':]', ':-)']
+      ),
+      createEmojiItem(
+        '😇',
+        'mosolygó arc glóriával',
+        ['angel', 'innocent', 'angyal', 'ártatlan'],
+        ['O:)', '0:-)']
+      ),
+      createEmojiItem(
+        '🙂',
+        'enyhén mosolygó arc',
+        ['smile', 'kind', 'mosoly', 'kedves'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🙃',
+        'fejjel lefelé arc',
+        ['silly', 'sarcasm', 'vicces', 'szarkasztikus'],
+        [':)']
+      ),
+      createEmojiItem(
+        '😉',
+        'kacsintó arc',
+        ['wink', 'joke', 'kacsintás', 'vicc'],
+        [';)', ';-)']
+      ),
+      createEmojiItem(
+        '😌',
+        'megkönnyebbült arc',
+        ['relaxed', 'phew', 'nyugodt', 'megkönnyebbült'],
+        [':)', '^_^', ':3']
+      ),
+      createEmojiItem(
+        '😍',
+        'mosolygó arc szív szemekkel',
+        ['love', 'crush', 'szerelem', 'rajongás'],
+        ['<3', ':-3', ':-*']
+      ),
+      createEmojiItem(
+        '🥰',
+        'mosolygó arc szívekkel',
+        ['love', 'adore', 'szerelem', 'imádat'],
+        ['<3', ':)', ':-)']
+      ),
+      createEmojiItem(
+        '😘',
+        'csókot dobó arc',
+        ['kiss', 'love', 'csók', 'szerelem'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😗',
+        'csókoló arc',
+        ['kiss', 'love', 'csók', 'szerelem'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😙',
+        'csókoló arc mosolygó szemekkel',
+        ['kiss', 'happy', 'csók', 'boldog'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😚',
+        'csókoló arc csukott szemekkel',
+        ['kiss', 'blush', 'csók', 'pirulós'],
+        [':*']
+      ),
+      createEmojiItem(
+        '😋',
+        'nyalakodó arc',
+        ['yum', 'delicious', 'finom', 'ízletes'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😛',
+        'arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😜',
+        'kacsintó arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '🤪',
+        'őrült arc',
+        ['crazy', 'silly', 'őrült', 'vicces'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '😝',
+        'hunyorító arc nyelvvel',
+        ['silly', 'playful', 'vicces', 'játékos'],
+        [':X', 'xP']
+      ),
+      createEmojiItem(
+        '🤑',
+        'pénzes arc',
+        ['rich', 'money', 'gazdag', 'pénz'],
+        [':P', ':-P']
+      ),
+      createEmojiItem(
+        '🤗',
+        'ölelő arc',
+        ['hug', 'happy', 'ölelés', 'boldog'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🤭',
+        'kuncogó arc',
+        ['giggle', 'oops', 'kuncogás', 'hoppá'],
+        [':x']
+      ),
+      createEmojiItem(
+        '🤫',
+        'csitító arc',
+        ['quiet', 'secret', 'csend', 'titok'],
+        [':-#']
+      ),
+      createEmojiItem(
+        '🤔',
+        'gondolkodó arc',
+        ['hmm', 'wonder', 'hmm', 'tűnődés'],
+        [':-/', ':/']
+      ),
+      createEmojiItem(
+        '🤐',
+        'cipzáras szájú arc',
+        ['silent', 'quiet', 'néma', 'csend'],
+        [':|', ':-#']
+      ),
+      createEmojiItem('🤨', 'felvont szemöldökű arc', [
+        'suspicious',
+        'doubt',
+        'gyanús',
+        'kétség',
+      ]),
+      createEmojiItem(
+        '😐',
+        'semleges arc',
+        ['meh', 'neutral', 'közömbös', 'semleges'],
+        [':|', ':-|']
+      ),
+      createEmojiItem(
+        '😑',
+        'kifejezéstelen arc',
+        ['blank', 'void', 'üres', 'kifejezéstelen'],
+        [':|']
+      ),
+      createEmojiItem('😶', 'száj nélküli arc', [
+        'silent',
+        'speechless',
+        'néma',
+        'szótlan',
+      ]),
+      createEmojiItem(
+        '😏',
+        'önelégült arc',
+        ['flirt', 'smug', 'flört', 'önelégült'],
+        [':3']
+      ),
+      createEmojiItem(
+        '😒',
+        'unott arc',
+        ['unhappy', 'meh', 'boldogtalan', 'unott'],
+        [':(']
+      ),
+      createEmojiItem('🙄', 'forgó szemű arc', [
+        'whatever',
+        'ugh',
+        'mindegy',
+        'jaj',
+      ]),
+      createEmojiItem(
+        '😬',
+        'grimaszos arc',
+        ['awkward', 'eek', 'kínos', 'fúj'],
+        [':S']
+      ),
+      createEmojiItem('🤥', 'hazudós arc', [
+        'liar',
+        'pinocchio',
+        'hazug',
+        'pinokkió',
+      ]),
+      createEmojiItem('😌', 'megkönnyebbült arc', [
+        'relaxed',
+        'phew',
+        'nyugodt',
+        'huh',
+      ]),
+      createEmojiItem('🧐', 'gondolkodó arc', [
+        'curious',
+        'thinking',
+        'figyelmes',
+        'kíváncsi',
+        'kérdő',
+      ]),
+      createEmojiItem('🤓', 'okos tanulós arc', [
+        'geek',
+        'nerd',
+        'intelligens',
+        'okos',
+        'tanulós',
+      ]),
+      createEmojiItem('😎', 'menő szemüveges arc', [
+        'cool',
+        'chill',
+        'menő',
+        'nyugodt',
+        'laid-back',
+      ]),
+      createEmojiItem(
+        '🥺',
+        'kérlelő szomorú arc',
+        ['puppy eyes', 'szomorú', 'aranyos', 'kérlelő', 'bájos'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😔',
+        'szomorú gondterhelt arc',
+        ['sad', 'thoughtful', 'szomorú', 'gondolkodó', 'törődő'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😟',
+        'aggódó szorongó arc',
+        ['worried', 'anxious', 'szorongó', 'aggódó', 'feszültség'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😢',
+        'síró szomorú arc',
+        ['crying', 'sad', 'szomorú', 'lehangolt', 'szomorúság'],
+        [':(']
+      ),
+      createEmojiItem(
+        '😓',
+        'síró kétségbeesett arc',
+        ['exhausted', 'sweating', 'kimerült', 'fáradt', 'izzadós'],
+        [':(']
+      ),
+      createEmojiItem(
+        '🙁',
+        'szomorú csalódott arc',
+        ['sad', 'disappointed', 'csalódott', 'szomorú', 'boldogtalan'],
+        [':(']
+      ),
+      createEmojiItem('😪', 'álmos arc', [
+        'tired',
+        'rest',
+        'fáradt',
+        'pihenés',
+      ]),
+      createEmojiItem('🤤', 'nyáladzó arc', [
+        'hungry',
+        'tasty',
+        'éhes',
+        'finom',
+      ]),
+      createEmojiItem('😴', 'alvó arc', ['sleep', 'zzz', 'alvás', 'zzz']),
+      createEmojiItem('😷', 'maszkos arc', ['sick', 'ill', 'beteg', 'lázas']),
+      createEmojiItem('🤒', 'lázmérős arc', [
+        'sick',
+        'temperature',
+        'beteg',
+        'láz',
+      ]),
+      createEmojiItem('🤕', 'bekötözött fejű arc', [
+        'hurt',
+        'injury',
+        'sérült',
+        'sérülés',
+      ]),
+      createEmojiItem('🤢', 'émelygő arc', [
+        'sick',
+        'gross',
+        'beteg',
+        'undorító',
+      ]),
+      createEmojiItem('🤮', 'hányó arc', [
+        'sick',
+        'throw up',
+        'beteg',
+        'hányás',
+      ]),
+      createEmojiItem('🤧', 'tüsszentő arc', [
+        'sick',
+        'allergy',
+        'beteg',
+        'allergia',
+      ]),
+      createEmojiItem(
+        '🥵',
+        'forró arc',
+        ['heat', 'sweating', 'meleg', 'izzadás'],
+        [':O']
+      ),
+      createEmojiItem(
+        '🥶',
+        'fagyos arc',
+        ['freezing', 'ice', 'fagyos', 'jég'],
+        [':O']
+      ),
+      createEmojiItem(
+        '🥴',
+        'kábult arc',
+        ['dizzy', 'drunk', 'szédülés', 'részeg'],
+        [':s']
+      ),
+      createEmojiItem(
+        '😵',
+        'szédülő arc',
+        ['spin', 'confused', 'forgás', 'zavart'],
+        [':o']
+      ),
+      createEmojiItem(
+        '🤯',
+        'robbanó fej',
+        ['mind blown', 'shocked', 'döbbenet', 'sokk'],
+        [':o']
+      ),
+      createEmojiItem(
+        '🤠',
+        'cowboy arc',
+        ['cowboy', 'rodeo', 'cowboy', 'rodeó'],
+        [':o']
+      ),
+      createEmojiItem('🥳', 'ünneplő arc', [
+        'celebration',
+        'party',
+        'ünneplés',
+        'buli',
+      ]),
+
+      createEmojiItem(
+        '😈',
+        'ördögi arc szarvakkal',
+        ['devil', 'mischievous', 'ördög', 'pajkos'],
+        [':)']
+      ),
+      createEmojiItem(
+        '🤡',
+        'bohóc arc',
+        ['clown', 'circus', 'bohóc', 'cirkusz'],
+        [':o)']
+      ),
+      createEmojiItem('👻', 'szellem', [
+        'halloween',
+        'spooky',
+        'szellem',
+        'ijesztő',
+      ]),
+      createEmojiItem('💀', 'koponya', ['dead', 'danger', 'halál', 'veszély']),
+      createEmojiItem('☠️', 'koponya keresztcsontokkal', [
+        'danger',
+        'poison',
+        'veszély',
+        'méreg',
+      ]),
+      createEmojiItem('👽', 'űrlény', ['UFO', 'space', 'űrlény', 'űr']),
+      createEmojiItem('👾', 'űrlény szörny', ['game', 'space', 'játék', 'űr']),
+      createEmojiItem('🤖', 'robot', ['machine', 'bot', 'gép', 'robot']),
+
+      // People
+      createEmojiItem('👶', 'baba', ['child', 'infant', 'gyerek', 'csecsemő']),
+      createEmojiItem('👧', 'lány', ['child', 'person', 'gyerek', 'személy']),
+      createEmojiItem('👩', 'nő', ['person', 'female', 'személy', 'nő']),
+      createEmojiItem('👨', 'férfi', ['person', 'male', 'személy', 'férfi']),
+      createEmojiItem('👴', 'idős férfi', [
+        'elderly',
+        'person',
+        'idős',
+        'személy',
+      ]),
+      createEmojiItem('👵', 'idős nő', [
+        'elderly',
+        'person',
+        'idős',
+        'személy',
+      ]),
+      createEmojiItem('👩‍👦', 'család: nő és fiú', [
+        'mother',
+        'son',
+        'anya',
+        'fiú',
+      ]),
+      createEmojiItem('👨‍👧', 'család: férfi és lány', [
+        'father',
+        'daughter',
+        'apa',
+        'lány',
+      ]),
+      createEmojiItem('👩‍🏫', 'tanárnő', [
+        'education',
+        'school',
+        'oktatás',
+        'iskola',
+      ]),
+      createEmojiItem('👨‍🌾', 'férfi földműves', [
+        'agriculture',
+        'farming',
+        'mezőgazdaság',
+        'gazdálkodás',
+      ]),
+      createEmojiItem('👩‍🍳', 'szakácsnő', ['chef', 'cooking', 'séf', 'főzés']),
+      createEmojiItem('👨‍🔧', 'férfi szerelő', [
+        'repair',
+        'work',
+        'javítás',
+        'munka',
+      ]),
+      createEmojiItem('👩‍🎨', 'művésznő', ['art', 'paint', 'művészet', 'festés']),
+      createEmojiItem('👨‍✈️', 'férfi pilóta', [
+        'airplane',
+        'fly',
+        'repülő',
+        'repülés',
+      ]),
+
+      // Gestures & Body Parts
+      createEmojiItem('👋', 'integető kéz', [
+        'hello',
+        'goodbye',
+        'szia',
+        'viszlát',
+      ]),
+      createEmojiItem('🤚', 'felemelt kézhát', [
+        'stop',
+        'high five',
+        'állj',
+        'pacsi',
+      ]),
+      createEmojiItem('🖐️', 'széttárt ujjú kéz', [
+        'hand',
+        'stop',
+        'kéz',
+        'állj',
+      ]),
+      createEmojiItem('✋', 'felemelt kéz', [
+        'high five',
+        'stop',
+        'pacsi',
+        'állj',
+      ]),
+      createEmojiItem('🖖', 'vulkáni üdvözlet', [
+        'prosper',
+        'spock',
+        'vulkáni',
+        'spock',
+      ]),
+      createEmojiItem('👌', 'OK kéz', [
+        'perfect',
+        'okay',
+        'tökéletes',
+        'rendben',
+      ]),
+      createEmojiItem('🤏', 'csipkedő kéz', ['small', 'tiny', 'kicsi', 'apró']),
+      createEmojiItem('✌️', 'győzelem kéz', [
+        'peace',
+        'victory',
+        'béke',
+        'győzelem',
+      ]),
+      createEmojiItem('🤞', 'keresztezett ujjak', [
+        'luck',
+        'hope',
+        'szerencse',
+        'remény',
+      ]),
+      createEmojiItem('🤟', 'szeretlek jel', [
+        'love',
+        'rock',
+        'szeretet',
+        'rock',
+      ]),
+      createEmojiItem('🤘', 'rock kéz', ['rock', 'metal', 'rock', 'metál']),
+      createEmojiItem('🤙', 'hívj fel kéz', [
+        'phone',
+        'hang loose',
+        'telefon',
+        'laza',
+      ]),
+      createEmojiItem('👈', 'balra mutató kéz', [
+        'left',
+        'point',
+        'bal',
+        'mutat',
+      ]),
+      createEmojiItem('👉', 'jobbra mutató kéz', [
+        'right',
+        'point',
+        'jobb',
+        'mutat',
+      ]),
+      createEmojiItem('👆', 'felfelé mutató kéz', [
+        'up',
+        'point',
+        'fel',
+        'mutat',
+      ]),
+      createEmojiItem('👇', 'lefelé mutató kéz', [
+        'down',
+        'point',
+        'le',
+        'mutat',
+      ]),
+      createEmojiItem('☝️', 'felfelé mutató ujj', [
+        'point',
+        'up',
+        'mutat',
+        'fel',
+      ]),
+      createEmojiItem('👍', 'felfelé mutató hüvelykujj', [
+        'approve',
+        'like',
+        'jóváhagyás',
+        'tetszik',
+      ]),
+      createEmojiItem('👎', 'lefelé mutató hüvelykujj', [
+        'disapprove',
+        'dislike',
+        'elutasítás',
+        'nemtetszik',
+      ]),
+      createEmojiItem('✊', 'felemelt ököl', [
+        'power',
+        'strength',
+        'erő',
+        'hatalom',
+      ]),
+      createEmojiItem('👊', 'ütő ököl', ['punch', 'power', 'ütés', 'erő']),
+      createEmojiItem('🤛', 'balra néző ököl', [
+        'punch',
+        'fist bump',
+        'ütés',
+        'ökölpacsi',
+      ]),
+      createEmojiItem('🤜', 'jobbra néző ököl', [
+        'punch',
+        'fist bump',
+        'ütés',
+        'ökölpacsi',
+      ]),
+    ],
+  },
+  {
+    name: 'Állatok & Természet',
+    icon: '🐶',
+    emojis: [
+      // Mammals
+      createEmojiItem('🐶', 'kutyafej', [
+        'dog',
+        'puppy',
+        'pet',
+        'kutya',
+        'kölyök',
+        'háziállat',
+      ]),
+      createEmojiItem('🐕', 'kutya', [
+        'dog',
+        'pet',
+        'animal',
+        'kutya',
+        'háziállat',
+        'állat',
+      ]),
+      createEmojiItem('🦮', 'vakvezető kutya', [
+        'service',
+        'animal',
+        'szolgálati',
+        'állat',
+      ]),
+      createEmojiItem('🐕‍🦺', 'segítő kutya', [
+        'assistance',
+        'animal',
+        'segítség',
+        'állat',
+      ]),
+      createEmojiItem('🐩', 'uszkár', ['dog', 'pet', 'kutya', 'háziállat']),
+      createEmojiItem('🐱', 'macskafej', [
+        'cat',
+        'kitten',
+        'pet',
+        'macska',
+        'cica',
+        'háziállat',
+      ]),
+      createEmojiItem('🐈', 'macska', ['pet', 'animal', 'háziállat', 'állat']),
+      createEmojiItem('🦁', 'oroszlán', ['animal', 'wild', 'állat', 'vad']),
+      createEmojiItem('🐯', 'tigrisfej', ['animal', 'wild', 'állat', 'vad']),
+      createEmojiItem('🐅', 'tigris', ['animal', 'wild', 'állat', 'vad']),
+      createEmojiItem('🐆', 'leopárd', ['animal', 'wild', 'állat', 'vad']),
+      createEmojiItem('🐎', 'ló', ['animal', 'race', 'állat', 'verseny']),
+      createEmojiItem('🦄', 'unikornis', [
+        'fantasy',
+        'horse',
+        'fantázia',
+        'ló',
+      ]),
+      createEmojiItem('🦓', 'zebra', ['animal', 'stripes', 'állat', 'csíkos']),
+      createEmojiItem('🦌', 'szarvas', ['animal', 'forest', 'állat', 'erdő']),
+      createEmojiItem('🐮', 'tehénfej', ['farm', 'animal', 'farm', 'állat']),
+      createEmojiItem('🐄', 'tehén', ['farm', 'milk', 'farm', 'tej']),
+      createEmojiItem('🐷', 'malacfej', ['farm', 'animal', 'farm', 'állat']),
+      createEmojiItem('🐖', 'malac', ['farm', 'animal', 'farm', 'állat']),
+      createEmojiItem('🐗', 'vaddisznó', ['wild', 'animal', 'vad', 'állat']),
+      createEmojiItem('🐏', 'kos', ['sheep', 'animal', 'birka', 'állat']),
+      createEmojiItem('🐑', 'birka', ['farm', 'wool', 'farm', 'gyapjú']),
+      createEmojiItem('🐐', 'kecske', ['farm', 'animal', 'farm', 'állat']),
+      createEmojiItem('🐪', 'teve', ['desert', 'animal', 'sivatag', 'állat']),
+      createEmojiItem('🐫', 'kétpúpú teve', [
+        'desert',
+        'animal',
+        'sivatag',
+        'állat',
+      ]),
+      createEmojiItem('🦙', 'láma', ['animal', 'wool', 'állat', 'gyapjú']),
+      createEmojiItem('🦒', 'zsiráf', ['animal', 'tall', 'állat', 'magas']),
+      createEmojiItem('🐘', 'elefánt', ['animal', 'big', 'állat', 'nagy']),
+      createEmojiItem('🦏', 'orrszarvú', ['animal', 'horn', 'állat', 'szarv']),
+      createEmojiItem('🦛', 'víziló', ['animal', 'water', 'állat', 'víz']),
+      createEmojiItem('🐭', 'egérfej', [
+        'animal',
+        'rodent',
+        'állat',
+        'rágcsáló',
+      ]),
+      createEmojiItem('🐁', 'egér', ['animal', 'rodent', 'állat', 'rágcsáló']),
+      createEmojiItem('🐀', 'patkány', [
+        'animal',
+        'rodent',
+        'állat',
+        'rágcsáló',
+      ]),
+      createEmojiItem('🐹', 'hörcsög', [
+        'pet',
+        'rodent',
+        'háziállat',
+        'rágcsáló',
+      ]),
+      createEmojiItem('🐰', 'nyúlfej', ['bunny', 'pet', 'nyuszi', 'háziállat']),
+      createEmojiItem('🐇', 'nyúl', ['bunny', 'animal', 'nyuszi', 'állat']),
+      createEmojiItem('🦔', 'sün', ['animal', 'spiky', 'állat', 'tüskés']),
+      createEmojiItem('🦇', 'denevér', ['animal', 'night', 'állat', 'éjszaka']),
+      createEmojiItem('🐻', 'medve', ['animal', 'wild', 'állat', 'vad']),
+      createEmojiItem('🐨', 'koala', [
+        'animal',
+        'australia',
+        'állat',
+        'ausztrália',
+      ]),
+      createEmojiItem('🐼', 'panda', ['animal', 'china', 'állat', 'kína']),
+
+      // Birds
+      createEmojiItem('🦃', 'pulyka', [
+        'bird',
+        'thanksgiving',
+        'madár',
+        'hálaadás',
+      ]),
+      createEmojiItem('🐔', 'csirke', ['bird', 'farm', 'madár', 'farm']),
+      createEmojiItem('🐓', 'kakas', ['bird', 'farm', 'madár', 'farm']),
+      createEmojiItem('🐣', 'kikelő csibe', ['baby', 'bird', 'bébi', 'madár']),
+      createEmojiItem('🐤', 'csibe', ['bird', 'young', 'madár', 'kicsi']),
+      createEmojiItem('🐥', 'előrenéző csibe', [
+        'bird',
+        'young',
+        'madár',
+        'kicsi',
+      ]),
+      createEmojiItem('🐦', 'madár', ['animal', 'fly', 'állat', 'repül']),
+      createEmojiItem('🦅', 'sas', ['bird', 'predator', 'madár', 'ragadozó']),
+      createEmojiItem('🦆', 'kacsa', ['bird', 'water', 'madár', 'víz']),
+      createEmojiItem('🦢', 'hattyú', ['bird', 'elegant', 'madár', 'elegáns']),
+      createEmojiItem('🦉', 'bagoly', ['bird', 'night', 'madár', 'éjszaka']),
+      createEmojiItem('🦩', 'flamingó', ['bird', 'pink', 'madár', 'rózsaszín']),
+      createEmojiItem('🦚', 'páva', ['bird', 'proud', 'madár', 'büszke']),
+
+      // Reptiles & Amphibians
+      createEmojiItem('🐊', 'krokodil', [
+        'reptile',
+        'predator',
+        'hüllő',
+        'ragadozó',
+      ]),
+      createEmojiItem('🐢', 'teknős', ['reptile', 'slow', 'hüllő', 'lassú']),
+      createEmojiItem('🦎', 'gyík', ['reptile', 'small', 'hüllő', 'kicsi']),
+      createEmojiItem('🐍', 'kígyó', ['reptile', 'danger', 'hüllő', 'veszély']),
+      createEmojiItem('🐸', 'béka', [
+        'amphibian',
+        'toad',
+        'kétéltű',
+        'varangy',
+      ]),
+
+      // Marine Life
+      createEmojiItem('🐳', 'spriccelő bálna', [
+        'marine',
+        'ocean',
+        'tengeri',
+        'óceán',
+      ]),
+      createEmojiItem('🐋', 'bálna', ['marine', 'ocean', 'tengeri', 'óceán']),
+      createEmojiItem('🐬', 'delfin', ['marine', 'ocean', 'tengeri', 'óceán']),
+      createEmojiItem('🦈', 'cápa', ['fish', 'ocean', 'hal', 'óceán']),
+      createEmojiItem('🐟', 'hal', ['marine', 'ocean', 'tengeri', 'óceán']),
+      createEmojiItem('🐠', 'trópusi hal', [
+        'marine',
+        'ocean',
+        'tengeri',
+        'óceán',
+      ]),
+      createEmojiItem('🐡', 'gömbhal', ['marine', 'ocean', 'tengeri', 'óceán']),
+      createEmojiItem('🦐', 'garnéla', [
+        'seafood',
+        'small',
+        'tenger gyümölcse',
+        'kicsi',
+      ]),
+      createEmojiItem('🦑', 'tintahal', [
+        'marine',
+        'ocean',
+        'tengeri',
+        'óceán',
+      ]),
+      createEmojiItem('🐙', 'polip', ['marine', 'ocean', 'tengeri', 'óceán']),
+
+      // Insects & Arachnids
+      createEmojiItem('🦋', 'pillangó', [
+        'insect',
+        'beautiful',
+        'rovar',
+        'szép',
+      ]),
+      createEmojiItem('🐌', 'csiga', ['slow', 'shell', 'lassú', 'ház']),
+      createEmojiItem('🐛', 'hernyó', [
+        'insect',
+        'caterpillar',
+        'rovar',
+        'hernyó',
+      ]),
+      createEmojiItem('🐜', 'hangya', ['insect', 'small', 'rovar', 'kicsi']),
+      createEmojiItem('🐝', 'méh', ['insect', 'honey', 'rovar', 'méz']),
+      createEmojiItem('🐞', 'katicabogár', [
+        'insect',
+        'luck',
+        'rovar',
+        'szerencse',
+      ]),
+      createEmojiItem('🦗', 'tücsök', [
+        'insect',
+        'chirp',
+        'rovar',
+        'ciripelés',
+      ]),
+      createEmojiItem('🕷️', 'pók', ['arachnid', 'web', 'pókszabású', 'háló']),
+      createEmojiItem('🦂', 'skorpió', [
+        'arachnid',
+        'dangerous',
+        'pókszabású',
+        'veszélyes',
+      ]),
+
+      // Plants & Flowers
+      createEmojiItem('💐', 'virágcsokor', [
+        'flowers',
+        'gift',
+        'virágok',
+        'ajándék',
+      ]),
+      createEmojiItem('🌸', 'cseresznyevirág', [
+        'flower',
+        'spring',
+        'virág',
+        'tavasz',
+      ]),
+      createEmojiItem('💮', 'fehér virág', [
+        'flower',
+        'pure',
+        'virág',
+        'tiszta',
+      ]),
+      createEmojiItem('🌹', 'rózsa', ['flower', 'love', 'virág', 'szerelem']),
+      createEmojiItem('🌺', 'hibiszkusz', [
+        'flower',
+        'tropical',
+        'virág',
+        'trópusi',
+      ]),
+      createEmojiItem('🌻', 'napraforgó', ['flower', 'sun', 'virág', 'nap']),
+      createEmojiItem('🌼', 'virágzat', [
+        'flower',
+        'nature',
+        'virág',
+        'természet',
+      ]),
+      createEmojiItem('🌷', 'tulipán', ['flower', 'spring', 'virág', 'tavasz']),
+      createEmojiItem('🌱', 'csíra', [
+        'plant',
+        'growing',
+        'növény',
+        'növekedés',
+      ]),
+      createEmojiItem('🌲', 'örökzöld fa', ['tree', 'pine', 'fa', 'fenyő']),
+      createEmojiItem('🌳', 'lombhullató fa', [
+        'tree',
+        'nature',
+        'fa',
+        'természet',
+      ]),
+      createEmojiItem('🌴', 'pálmafa', ['tree', 'tropical', 'fa', 'trópusi']),
+      createEmojiItem('🌵', 'kaktusz', [
+        'plant',
+        'desert',
+        'növény',
+        'sivatag',
+      ]),
+      createEmojiItem('🌾', 'rizs', ['plant', 'crop', 'növény', 'termény']),
+      createEmojiItem('🌿', 'gyógynövény', [
+        'plant',
+        'leaf',
+        'növény',
+        'levél',
+      ]),
+      createEmojiItem('☘️', 'lóhere', ['plant', 'irish', 'növény', 'ír']),
+      createEmojiItem('🍀', 'négylevelű lóhere', [
+        'plant',
+        'luck',
+        'növény',
+        'szerencse',
+      ]),
+      createEmojiItem('🍁', 'juharlevél', ['leaf', 'fall', 'levél', 'ősz']),
+      createEmojiItem('🍂', 'hulló levél', ['leaf', 'autumn', 'levél', 'ősz']),
+      createEmojiItem('🍃', 'szélben lebegő levél', [
+        'leaf',
+        'nature',
+        'levél',
+        'természet',
+      ]),
+
+      // Nature & Weather
+      createEmojiItem('🌍', 'földgömb: Európa-Afrika', [
+        'earth',
+        'world',
+        'föld',
+        'világ',
+      ]),
+      createEmojiItem('🌎', 'földgömb: Amerika', [
+        'earth',
+        'world',
+        'föld',
+        'világ',
+      ]),
+      createEmojiItem('🌏', 'földgömb: Ázsia-Ausztrália', [
+        'earth',
+        'world',
+        'föld',
+        'világ',
+      ]),
+      createEmojiItem('🌑', 'újhold', ['space', 'night', 'űr', 'éjszaka']),
+      createEmojiItem('🌒', 'növekvő félhold', [
+        'moon',
+        'night',
+        'hold',
+        'éjszaka',
+      ]),
+      createEmojiItem('🌓', 'első negyed', [
+        'moon',
+        'night',
+        'hold',
+        'éjszaka',
+      ]),
+      createEmojiItem('🌔', 'dagadó hold', [
+        'moon',
+        'night',
+        'hold',
+        'éjszaka',
+      ]),
+      createEmojiItem('🌕', 'telihold', ['moon', 'night', 'hold', 'éjszaka']),
+      createEmojiItem('⭐', 'csillag', ['space', 'night', 'űr', 'éjszaka']),
+      createEmojiItem('🌟', 'ragyogó csillag', [
+        'space',
+        'shine',
+        'űr',
+        'ragyogás',
+      ]),
+      createEmojiItem('☀️', 'nap', ['weather', 'bright', 'időjárás', 'fényes']),
+      createEmojiItem('⛅', 'nap felhő mögött', [
+        'weather',
+        'cloudy',
+        'időjárás',
+        'felhős',
+      ]),
+      createEmojiItem('☁️', 'felhő', ['weather', 'sky', 'időjárás', 'ég']),
+      createEmojiItem('⛈️', 'felhő villámlással és esővel', [
+        'weather',
+        'storm',
+        'időjárás',
+        'vihar',
+      ]),
+      createEmojiItem('🌤️', 'nap kis felhő mögött', [
+        'weather',
+        'cloudy',
+        'időjárás',
+        'felhős',
+      ]),
+      createEmojiItem('🌈', 'szivárvány', [
+        'weather',
+        'colors',
+        'időjárás',
+        'színek',
+      ]),
+      createEmojiItem('⚡', 'magasfeszültség', [
+        'lightning',
+        'thunder',
+        'villám',
+        'mennydörgés',
+      ]),
+      createEmojiItem('❄️', 'hópehely', ['winter', 'cold', 'tél', 'hideg']),
+      createEmojiItem('🔥', 'tűz', ['hot', 'flame', 'forró', 'láng']),
+      createEmojiItem('💧', 'vízcsepp', ['water', 'drop', 'víz', 'csepp']),
+      createEmojiItem('🌊', 'vízhullám', ['ocean', 'sea', 'óceán', 'tenger']),
+    ],
+  },
+  {
+    name: 'Ételek & Italok',
+    icon: '🍔',
+    emojis: [
+      // Fruits
+      createEmojiItem('🍎', 'piros alma', [
+        'fruit',
+        'food',
+        'gyümölcs',
+        'étel',
+      ]),
+      createEmojiItem('🍐', 'körte', ['fruit', 'food', 'gyümölcs', 'étel']),
+      createEmojiItem('🍊', 'mandarin', [
+        'fruit',
+        'orange',
+        'gyümölcs',
+        'narancs',
+      ]),
+      createEmojiItem('🍋', 'citrom', [
+        'fruit',
+        'citrus',
+        'gyümölcs',
+        'citrus',
+      ]),
+      createEmojiItem('🍌', 'banán', ['fruit', 'food', 'gyümölcs', 'étel']),
+      createEmojiItem('🍉', 'görögdinnye', [
+        'fruit',
+        'summer',
+        'gyümölcs',
+        'nyár',
+      ]),
+      createEmojiItem('🍇', 'szőlő', ['fruit', 'wine', 'gyümölcs', 'bor']),
+      createEmojiItem('🍓', 'eper', ['fruit', 'berry', 'gyümölcs', 'bogyó']),
+      createEmojiItem('🍈', 'sárgadinnye', [
+        'fruit',
+        'sweet',
+        'gyümölcs',
+        'édes',
+      ]),
+      createEmojiItem('🍒', 'cseresznye', [
+        'fruit',
+        'berry',
+        'gyümölcs',
+        'bogyó',
+      ]),
+      createEmojiItem('🍑', 'őszibarack', [
+        'fruit',
+        'sweet',
+        'gyümölcs',
+        'édes',
+      ]),
+      createEmojiItem('🥭', 'mangó', [
+        'fruit',
+        'tropical',
+        'gyümölcs',
+        'trópusi',
+      ]),
+      createEmojiItem('🍍', 'ananász', [
+        'fruit',
+        'tropical',
+        'gyümölcs',
+        'trópusi',
+      ]),
+      createEmojiItem('🥝', 'kivi', ['fruit', 'green', 'gyümölcs', 'zöld']),
+
+      // Vegetables
+      createEmojiItem('🥑', 'avokádó', [
+        'vegetable',
+        'guacamole',
+        'zöldség',
+        'guakamólé',
+      ]),
+      createEmojiItem('🍅', 'paradicsom', [
+        'vegetable',
+        'fruit',
+        'zöldség',
+        'gyümölcs',
+      ]),
+      createEmojiItem('🥕', 'répa', [
+        'vegetable',
+        'orange',
+        'zöldség',
+        'narancs',
+      ]),
+      createEmojiItem('🌽', 'kukorica', [
+        'vegetable',
+        'maize',
+        'zöldség',
+        'tengeri',
+      ]),
+      createEmojiItem('🥒', 'uborka', [
+        'vegetable',
+        'pickle',
+        'zöldség',
+        'savanyúság',
+      ]),
+      createEmojiItem('🥬', 'leveles zöldség', [
+        'vegetable',
+        'lettuce',
+        'zöldség',
+        'saláta',
+      ]),
+      createEmojiItem('🥦', 'brokkoli', [
+        'vegetable',
+        'green',
+        'zöldség',
+        'zöld',
+      ]),
+      createEmojiItem('🧄', 'fokhagyma', [
+        'vegetable',
+        'seasoning',
+        'zöldség',
+        'fűszer',
+      ]),
+      createEmojiItem('🧅', 'hagyma', [
+        'vegetable',
+        'seasoning',
+        'zöldség',
+        'fűszer',
+      ]),
+      createEmojiItem('🥔', 'burgonya', [
+        'vegetable',
+        'food',
+        'zöldség',
+        'étel',
+      ]),
+      createEmojiItem('🍠', 'édesburgonya', [
+        'vegetable',
+        'food',
+        'zöldség',
+        'étel',
+      ]),
+      createEmojiItem('🌶️', 'erős paprika', [
+        'vegetable',
+        'spicy',
+        'zöldség',
+        'csípős',
+      ]),
+
+      // Prepared Foods
+      createEmojiItem('🍕', 'pizza', ['food', 'italian', 'étel', 'olasz']),
+      createEmojiItem('🍔', 'hamburger', ['food', 'burger', 'étel', 'burger']),
+      createEmojiItem('🍟', 'sült krumpli', [
+        'food',
+        'potato',
+        'étel',
+        'burgonya',
+      ]),
+      createEmojiItem('🌭', 'hot dog', ['food', 'sausage', 'étel', 'virsli']),
+      createEmojiItem('🥪', 'szendvics', ['food', 'lunch', 'étel', 'ebéd']),
+      createEmojiItem('🌮', 'taco', ['food', 'mexican', 'étel', 'mexikói']),
+      createEmojiItem('🌯', 'burrito', ['food', 'mexican', 'étel', 'mexikói']),
+      createEmojiItem('🥙', 'töltött lepény', [
+        'food',
+        'kebab',
+        'étel',
+        'kebab',
+      ]),
+      createEmojiItem('🧆', 'falafel', [
+        'food',
+        'mediterranean',
+        'étel',
+        'mediterrán',
+      ]),
+      createEmojiItem('🥚', 'tojás', ['food', 'breakfast', 'étel', 'reggeli']),
+      createEmojiItem('🍳', 'sütés', ['food', 'breakfast', 'étel', 'reggeli']),
+      createEmojiItem('🥘', 'serpenyős étel', [
+        'food',
+        'paella',
+        'étel',
+        'paella',
+      ]),
+      createEmojiItem('🍲', 'fazék étel', ['food', 'soup', 'étel', 'leves']),
+      createEmojiItem('🥣', 'tál kanállal', [
+        'food',
+        'cereal',
+        'étel',
+        'müzli',
+      ]),
+
+      // Asian Foods
+      createEmojiItem('🍱', 'bento doboz', [
+        'food',
+        'japanese',
+        'étel',
+        'japán',
+      ]),
+      createEmojiItem('🍘', 'rizs keksz', [
+        'food',
+        'japanese',
+        'étel',
+        'japán',
+      ]),
+      createEmojiItem('🍙', 'rizs labda', [
+        'food',
+        'japanese',
+        'étel',
+        'japán',
+      ]),
+      createEmojiItem('🍚', 'főtt rizs', ['food', 'asian', 'étel', 'ázsiai']),
+      createEmojiItem('🍛', 'currys rizs', [
+        'food',
+        'indian',
+        'étel',
+        'indiai',
+      ]),
+      createEmojiItem('🍜', 'gőzölgő tál', [
+        'noodles',
+        'ramen',
+        'tészta',
+        'ramen',
+      ]),
+      createEmojiItem('🍝', 'spagetti', [
+        'pasta',
+        'italian',
+        'tészta',
+        'olasz',
+      ]),
+      createEmojiItem('🍢', 'oden', ['food', 'japanese', 'étel', 'japán']),
+      createEmojiItem('🍣', 'szusi', ['food', 'japanese', 'étel', 'japán']),
+      createEmojiItem('🍤', 'rántott garnéla', [
+        'food',
+        'tempura',
+        'étel',
+        'tempura',
+      ]),
+      createEmojiItem('🍥', 'hal sütemény', [
+        'food',
+        'japanese',
+        'étel',
+        'japán',
+      ]),
+
+      // Sweets & Desserts
+      createEmojiItem('🍦', 'lágy fagylalt', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍧', 'jégkása', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍨', 'fagylalt', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍩', 'fánk', ['dessert', 'sweet', 'desszert', 'édes']),
+      createEmojiItem('🍪', 'süti', ['dessert', 'sweet', 'desszert', 'édes']),
+      createEmojiItem('🎂', 'születésnapi torta', [
+        'dessert',
+        'celebration',
+        'desszert',
+        'ünneplés',
+      ]),
+      createEmojiItem('🍰', 'sütemény', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🧁', 'muffin', ['dessert', 'sweet', 'desszert', 'édes']),
+      createEmojiItem('🥧', 'pite', ['dessert', 'sweet', 'desszert', 'édes']),
+      createEmojiItem('🍫', 'csokoládé', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍬', 'cukorka', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍭', 'nyalóka', [
+        'dessert',
+        'sweet',
+        'desszert',
+        'édes',
+      ]),
+      createEmojiItem('🍮', 'puding', ['dessert', 'sweet', 'desszert', 'édes']),
+      createEmojiItem('🍯', 'mézes csupor', ['sweet', 'bee', 'édes', 'méh']),
+
+      // Drinks
+      createEmojiItem('☕', 'forró ital', ['coffee', 'tea', 'kávé', 'tea']),
+      createEmojiItem('🍵', 'fül nélküli teáscsésze', [
+        'tea',
+        'green',
+        'tea',
+        'zöld',
+      ]),
+      createEmojiItem('🍶', 'szaké', ['drink', 'alcohol', 'ital', 'alkohol']),
+      createEmojiItem('🍾', 'pezsgős üveg', [
+        'champagne',
+        'celebration',
+        'pezsgő',
+        'ünneplés',
+      ]),
+      createEmojiItem('🍷', 'borospohár', [
+        'drink',
+        'alcohol',
+        'ital',
+        'alkohol',
+      ]),
+      createEmojiItem('🍸', 'koktélos pohár', [
+        'drink',
+        'alcohol',
+        'ital',
+        'alkohol',
+      ]),
+      createEmojiItem('🍹', 'trópusi ital', [
+        'cocktail',
+        'summer',
+        'koktél',
+        'nyár',
+      ]),
+      createEmojiItem('🍺', 'sörös korsó', [
+        'drink',
+        'alcohol',
+        'ital',
+        'alkohol',
+      ]),
+      createEmojiItem('🍻', 'koccintó sörös korsók', [
+        'drink',
+        'cheers',
+        'ital',
+        'egészségünkre',
+      ]),
+      createEmojiItem('🥂', 'koccintó poharak', [
+        'celebration',
+        'cheers',
+        'ünneplés',
+        'egészségünkre',
+      ]),
+      createEmojiItem('🥃', 'rövid ital', [
+        'whiskey',
+        'alcohol',
+        'whiskey',
+        'alkohol',
+      ]),
+      createEmojiItem('🥤', 'pohár szívószállal', [
+        'soda',
+        'drink',
+        'üdítő',
+        'ital',
+      ]),
+      createEmojiItem('🧃', 'italos doboz', [
+        'juice',
+        'drink',
+        'gyümölcslé',
+        'ital',
+      ]),
+      createEmojiItem('🧊', 'jégkocka', ['cold', 'drink', 'hideg', 'ital']),
+
+      // Food Items
+      createEmojiItem('🥄', 'kanál', [
+        'cutlery',
+        'eating',
+        'evőeszköz',
+        'evés',
+      ]),
+      createEmojiItem('🍴', 'villa és kés', [
+        'cutlery',
+        'eating',
+        'evőeszköz',
+        'evés',
+      ]),
+      createEmojiItem('🍽️', 'tányér evőeszközökkel', [
+        'dining',
+        'food',
+        'étkezés',
+        'étel',
+      ]),
+      createEmojiItem('🥢', 'evőpálcikák', [
+        'eating',
+        'asian',
+        'evés',
+        'ázsiai',
+      ]),
+      createEmojiItem('🧂', 'só', [
+        'seasoning',
+        'condiment',
+        'fűszer',
+        'ízesítő',
+      ]),
+    ],
+  },
+  {
+    name: 'Tevékenységek',
+    icon: '⚽',
+    emojis: [
+      // Ball Sports
+      createEmojiItem('⚽', 'focilabda', [
+        'football',
+        'sport',
+        'foci',
+        'sport',
+      ]),
+      createEmojiItem('🏀', 'kosárlabda', ['sport', 'ball', 'sport', 'labda']),
+      createEmojiItem('🏈', 'amerikai foci', [
+        'sport',
+        'ball',
+        'sport',
+        'labda',
+      ]),
+      createEmojiItem('⚾', 'baseball', ['sport', 'ball', 'sport', 'labda']),
+      createEmojiItem('🥎', 'softball', ['sport', 'ball', 'sport', 'labda']),
+      createEmojiItem('🎾', 'tenisz', ['sport', 'ball', 'sport', 'labda']),
+      createEmojiItem('🏐', 'röplabda', ['sport', 'ball', 'sport', 'labda']),
+      createEmojiItem('🏉', 'rögbi', ['sport', 'ball', 'sport', 'labda']),
+
+      // Individual Sports
+      createEmojiItem('🎳', 'bowling', ['sport', 'game', 'sport', 'játék']),
+      createEmojiItem('🏏', 'krikett', ['sport', 'bat', 'sport', 'ütő']),
+      createEmojiItem('🏑', 'gyeplabda', ['sport', 'game', 'sport', 'játék']),
+      createEmojiItem('🏒', 'jégkorong', ['sport', 'game', 'sport', 'játék']),
+      createEmojiItem('🥍', 'lacrosse', ['sport', 'game', 'sport', 'játék']),
+      createEmojiItem('🏓', 'pingpong', [
+        'table tennis',
+        'game',
+        'asztalitenisz',
+        'játék',
+      ]),
+      createEmojiItem('🏸', 'tollaslabda', ['sport', 'game', 'sport', 'játék']),
+      createEmojiItem('🥊', 'boxkesztyű', [
+        'sport',
+        'fighting',
+        'sport',
+        'küzdelem',
+      ]),
+      createEmojiItem('🥋', 'harcművészeti ruha', [
+        'karate',
+        'judo',
+        'karate',
+        'dzsúdó',
+      ]),
+      createEmojiItem('⛳', 'golf zászló', ['golf', 'sport', 'golf', 'sport']),
+      createEmojiItem('🎽', 'futóing', [
+        'sport',
+        'marathon',
+        'sport',
+        'maraton',
+      ]),
+
+      // Water Sports
+      createEmojiItem('🏊', 'úszó ember', ['swim', 'sport', 'úszás', 'sport']),
+      createEmojiItem('🏄', 'szörföző ember', [
+        'surf',
+        'ocean',
+        'szörf',
+        'óceán',
+      ]),
+      createEmojiItem('🚣', 'evező ember', ['row', 'sport', 'evezés', 'sport']),
+      createEmojiItem('🏖️', 'strand napernyővel', [
+        'vacation',
+        'summer',
+        'nyaralás',
+        'nyár',
+      ]),
+
+      // Winter Sports
+      createEmojiItem('⛷️', 'síelő', ['ski', 'snow', 'sí', 'hó']),
+      createEmojiItem('🏂', 'snowboardos', ['snow', 'winter', 'hó', 'tél']),
+      createEmojiItem('🎿', 'sílécek', ['winter', 'sport', 'tél', 'sport']),
+      createEmojiItem('⛸️', 'korcsolya', [
+        'skating',
+        'winter',
+        'korcsolyázás',
+        'tél',
+      ]),
+
+      // Games & Entertainment
+      createEmojiItem('🎯', 'telitalálat', [
+        'target',
+        'bullseye',
+        'cél',
+        'középpont',
+      ]),
+      createEmojiItem('🎱', 'biliárdgolyó', [
+        'billiards',
+        'game',
+        'biliárd',
+        'játék',
+      ]),
+      createEmojiItem('🎮', 'videojáték', ['game', 'play', 'játék', 'játszás']),
+      createEmojiItem('🕹️', 'joystick', [
+        'game',
+        'controller',
+        'játék',
+        'irányító',
+      ]),
+      createEmojiItem('🎲', 'dobókocka', [
+        'dice',
+        'random',
+        'kocka',
+        'véletlen',
+      ]),
+      createEmojiItem('🎰', 'játékgép', [
+        'casino',
+        'gambling',
+        'kaszinó',
+        'szerencsejáték',
+      ]),
+      createEmojiItem('🎴', 'virágos kártyák', [
+        'game',
+        'cards',
+        'játék',
+        'kártya',
+      ]),
+      createEmojiItem('🀄', 'madzsong vörös sárkány', [
+        'game',
+        'tiles',
+        'játék',
+        'csempék',
+      ]),
+      createEmojiItem('🎭', 'előadóművészet', [
+        'theater',
+        'drama',
+        'színház',
+        'dráma',
+      ]),
+      createEmojiItem('🎪', 'cirkuszi sátor', [
+        'carnival',
+        'festival',
+        'karnevál',
+        'fesztivál',
+      ]),
+
+      // Music & Arts
+      createEmojiItem('🎨', 'festőpaletta', [
+        'art',
+        'paint',
+        'művészet',
+        'festés',
+      ]),
+      createEmojiItem('🎼', 'kotta', ['music', 'notes', 'zene', 'hangjegyek']),
+      createEmojiItem('🎹', 'zongora', [
+        'music',
+        'instrument',
+        'zene',
+        'hangszer',
+      ]),
+      createEmojiItem('🎸', 'gitár', [
+        'music',
+        'instrument',
+        'zene',
+        'hangszer',
+      ]),
+      createEmojiItem('🎻', 'hegedű', [
+        'music',
+        'instrument',
+        'zene',
+        'hangszer',
+      ]),
+      createEmojiItem('🎺', 'trombita', [
+        'music',
+        'instrument',
+        'zene',
+        'hangszer',
+      ]),
+      createEmojiItem('🎷', 'szaxofon', [
+        'music',
+        'instrument',
+        'zene',
+        'hangszer',
+      ]),
+      createEmojiItem('🥁', 'dob', ['music', 'instrument', 'zene', 'hangszer']),
+      createEmojiItem('🎤', 'mikrofon', [
+        'sing',
+        'karaoke',
+        'éneklés',
+        'karaoke',
+      ]),
+      createEmojiItem('🎧', 'fejhallgató', [
+        'music',
+        'listen',
+        'zene',
+        'hallgatás',
+      ]),
+
+      // Events & Celebration
+      createEmojiItem('🎫', 'jegy', [
+        'event',
+        'admission',
+        'esemény',
+        'belépés',
+      ]),
+      createEmojiItem('🎟️', 'belépőjegyek', [
+        'event',
+        'concert',
+        'esemény',
+        'koncert',
+      ]),
+      createEmojiItem('🎖️', 'katonai kitüntetés', [
+        'award',
+        'honor',
+        'díj',
+        'tisztelet',
+      ]),
+      createEmojiItem('🏆', 'trófea', ['winner', 'award', 'győztes', 'díj']),
+      createEmojiItem('🏅', 'sportérem', ['award', 'winner', 'díj', 'győztes']),
+      createEmojiItem('🥇', 'aranyérem', ['1st', 'winner', 'első', 'győztes']),
+      createEmojiItem('🥈', 'ezüstérem', ['2nd', 'award', 'második', 'díj']),
+      createEmojiItem('🥉', 'bronzérem', ['3rd', 'award', 'harmadik', 'díj']),
+    ],
+  },
+  {
+    name: 'Utazás & Helyek',
+    icon: '✈️',
+    emojis: [
+      // Transportation - Air
+      createEmojiItem('✈️', 'repülőgép', [
+        'flight',
+        'travel',
+        'repülés',
+        'utazás',
+      ]),
+      createEmojiItem('🛩️', 'kis repülőgép', [
+        'flight',
+        'private',
+        'repülés',
+        'magán',
+      ]),
+      createEmojiItem('🚁', 'helikopter', [
+        'flight',
+        'transport',
+        'repülés',
+        'szállítás',
+      ]),
+      createEmojiItem('🛫', 'felszálló repülőgép', [
+        'takeoff',
+        'travel',
+        'felszállás',
+        'utazás',
+      ]),
+      createEmojiItem('🛬', 'leszálló repülőgép', [
+        'landing',
+        'travel',
+        'leszállás',
+        'utazás',
+      ]),
+      createEmojiItem('🪂', 'ejtőernyő', [
+        'sky diving',
+        'fly',
+        'ejtőernyőzés',
+        'repülés',
+      ]),
+
+      // Transportation - Ground
+      createEmojiItem('🚗', 'autó', [
+        'vehicle',
+        'transport',
+        'jármű',
+        'szállítás',
+      ]),
+      createEmojiItem('🚕', 'taxi', ['cab', 'vehicle', 'taxi', 'jármű']),
+      createEmojiItem('🚙', 'terepjáró', ['car', 'suv', 'autó', 'terepjáró']),
+      createEmojiItem('🚌', 'busz', [
+        'vehicle',
+        'transport',
+        'jármű',
+        'szállítás',
+      ]),
+      createEmojiItem('🚎', 'trolibusz', [
+        'vehicle',
+        'transport',
+        'jármű',
+        'szállítás',
+      ]),
+      createEmojiItem('🏎️', 'versenyautó', ['fast', 'sport', 'gyors', 'sport']),
+      createEmojiItem('🚓', 'rendőrautó', [
+        'emergency',
+        'law',
+        'vészhelyzet',
+        'rendőrség',
+      ]),
+      createEmojiItem('🚑', 'mentőautó', [
+        'emergency',
+        'hospital',
+        'vészhelyzet',
+        'kórház',
+      ]),
+      createEmojiItem('🚒', 'tűzoltóautó', [
+        'emergency',
+        'fire',
+        'vészhelyzet',
+        'tűz',
+      ]),
+      createEmojiItem('🚐', 'kisbusz', [
+        'vehicle',
+        'transport',
+        'jármű',
+        'szállítás',
+      ]),
+      createEmojiItem('🚚', 'szállító teherautó', [
+        'shipping',
+        'transport',
+        'szállítás',
+        'fuvar',
+      ]),
+      createEmojiItem('🚛', 'nyerges vontató', [
+        'truck',
+        'transport',
+        'kamion',
+        'szállítás',
+      ]),
+      createEmojiItem('🚜', 'traktor', ['farm', 'vehicle', 'farm', 'jármű']),
+      createEmojiItem('🛵', 'robogó', [
+        'vehicle',
+        'transport',
+        'jármű',
+        'közlekedés',
+      ]),
+      createEmojiItem('🏍️', 'motorkerékpár', [
+        'bike',
+        'vehicle',
+        'motor',
+        'jármű',
+      ]),
+      createEmojiItem('🚲', 'kerékpár', [
+        'bike',
+        'cycling',
+        'bicikli',
+        'kerékpározás',
+      ]),
+
+      // Transportation - Rail
+      createEmojiItem('🚂', 'gőzmozdony', ['train', 'steam', 'vonat', 'gőz']),
+      createEmojiItem('🚃', 'vasúti kocsi', [
+        'train',
+        'transport',
+        'vonat',
+        'szállítás',
+      ]),
+      createEmojiItem('🚄', 'gyorsvonat', ['rail', 'fast', 'vasút', 'gyors']),
+      createEmojiItem('🚅', 'szupergyors vonat', [
+        'rail',
+        'fast',
+        'vasút',
+        'gyors',
+      ]),
+      createEmojiItem('🚆', 'vonat', [
+        'rail',
+        'transport',
+        'vasút',
+        'szállítás',
+      ]),
+      createEmojiItem('🚇', 'metró', ['subway', 'train', 'metró', 'vonat']),
+      createEmojiItem('🚈', 'könnyűvasút', [
+        'train',
+        'transport',
+        'vonat',
+        'szállítás',
+      ]),
+      createEmojiItem('🚉', 'állomás', [
+        'train',
+        'transport',
+        'vonat',
+        'szállítás',
+      ]),
+      createEmojiItem('🚊', 'villamos', [
+        'transport',
+        'vehicle',
+        'közlekedés',
+        'jármű',
+      ]),
+      createEmojiItem('🚝', 'egysínű vasút', [
+        'transport',
+        'train',
+        'közlekedés',
+        'vonat',
+      ]),
+
+      // Transportation - Water
+      createEmojiItem('🚢', 'hajó', ['boat', 'cruise', 'hajó', 'tengerjáró']),
+      createEmojiItem('⛴️', 'komp', ['boat', 'transport', 'hajó', 'szállítás']),
+      createEmojiItem('🛥️', 'motorcsónak', [
+        'ship',
+        'vehicle',
+        'hajó',
+        'jármű',
+      ]),
+      createEmojiItem('🚤', 'gyorsjáratú hajó', [
+        'ship',
+        'fast',
+        'hajó',
+        'gyors',
+      ]),
+      createEmojiItem('⛵', 'vitorlás', ['ship', 'sea', 'hajó', 'tenger']),
+      createEmojiItem('🛶', 'kenu', ['boat', 'water', 'csónak', 'víz']),
+
+      // Places & Landmarks
+      createEmojiItem('🗽', 'Szabadság-szobor', [
+        'nyc',
+        'landmark',
+        'new york',
+        'látványosság',
+      ]),
+      createEmojiItem('🗼', 'Tokiói torony', [
+        'japan',
+        'landmark',
+        'japán',
+        'látványosság',
+      ]),
+      createEmojiItem('🗿', 'moai szobor', [
+        'easter island',
+        'statue',
+        'húsvét-sziget',
+        'szobor',
+      ]),
+      createEmojiItem('🗺️', 'világtérkép', [
+        'globe',
+        'travel',
+        'földgömb',
+        'utazás',
+      ]),
+      createEmojiItem('🏛️', 'klasszikus épület', [
+        'architecture',
+        'history',
+        'építészet',
+        'történelem',
+      ]),
+      createEmojiItem('🏰', 'kastély', [
+        'building',
+        'fairy tale',
+        'épület',
+        'mese',
+      ]),
+      createEmojiItem('🏯', 'japán kastély', [
+        'building',
+        'fortress',
+        'épület',
+        'erőd',
+      ]),
+      createEmojiItem('🏠', 'ház', ['building', 'home', 'épület', 'otthon']),
+      createEmojiItem('🏡', 'ház kerttel', ['home', 'yard', 'otthon', 'kert']),
+      createEmojiItem('🏢', 'irodaház', ['work', 'city', 'munka', 'város']),
+      createEmojiItem('🏣', 'japán posta', [
+        'building',
+        'mail',
+        'épület',
+        'posta',
+      ]),
+      createEmojiItem('🏤', 'posta', ['mail', 'building', 'posta', 'épület']),
+      createEmojiItem('🏥', 'kórház', [
+        'health',
+        'medical',
+        'egészség',
+        'orvosi',
+      ]),
+      createEmojiItem('🏦', 'bank', ['building', 'money', 'épület', 'pénz']),
+      createEmojiItem('🏨', 'hotel', [
+        'building',
+        'vacation',
+        'épület',
+        'nyaralás',
+      ]),
+      createEmojiItem('🏪', 'kisbolt', ['shop', 'building', 'bolt', 'épület']),
+      createEmojiItem('🏫', 'iskola', [
+        'building',
+        'education',
+        'épület',
+        'oktatás',
+      ]),
+      createEmojiItem('🏬', 'áruház', [
+        'shopping',
+        'building',
+        'vásárlás',
+        'épület',
+      ]),
+      createEmojiItem('🏭', 'gyár', ['building', 'industry', 'épület', 'ipar']),
+      createEmojiItem('⛪', 'templom', [
+        'building',
+        'religion',
+        'épület',
+        'vallás',
+      ]),
+      createEmojiItem('🕌', 'mecset', [
+        'building',
+        'religion',
+        'épület',
+        'vallás',
+      ]),
+      createEmojiItem('🕍', 'zsinagóga', [
+        'building',
+        'religion',
+        'épület',
+        'vallás',
+      ]),
+      createEmojiItem('⛩️', 'sintó szentély', [
+        'temple',
+        'japan',
+        'templom',
+        'japán',
+      ]),
+
+      // Scenery & Places
+      createEmojiItem('🌅', 'napfelkelte', ['morning', 'sun', 'reggel', 'nap']),
+      createEmojiItem('🌄', 'napfelkelte a hegyek felett', [
+        'morning',
+        'view',
+        'reggel',
+        'kilátás',
+      ]),
+      createEmojiItem('🌇', 'naplemente', ['evening', 'city', 'este', 'város']),
+      createEmojiItem('🌆', 'városkép szürkületkor', [
+        'city',
+        'evening',
+        'város',
+        'este',
+      ]),
+      createEmojiItem('🏙️', 'városkép', [
+        'city',
+        'buildings',
+        'város',
+        'épületek',
+      ]),
+      createEmojiItem('🌃', 'csillagos éjszaka', [
+        'evening',
+        'city',
+        'este',
+        'város',
+      ]),
+      createEmojiItem('🌉', 'híd éjszaka', [
+        'evening',
+        'city',
+        'este',
+        'város',
+      ]),
+      createEmojiItem('🏖️', 'strand napernyővel', [
+        'vacation',
+        'summer',
+        'nyaralás',
+        'nyár',
+      ]),
+      createEmojiItem('🏝️', 'lakatlan sziget', [
+        'beach',
+        'tropical',
+        'strand',
+        'trópusi',
+      ]),
+      createEmojiItem('🏜️', 'sivatag', ['hot', 'sand', 'forró', 'homok']),
+      createEmojiItem('🏕️', 'kempingezés', [
+        'outdoors',
+        'tent',
+        'szabadtér',
+        'sátor',
+      ]),
+      createEmojiItem('⛰️', 'hegy', ['hill', 'landscape', 'domb', 'táj']),
+      createEmojiItem('🏔️', 'havas hegycsúcs', ['peak', 'snow', 'csúcs', 'hó']),
+      createEmojiItem('🗻', 'Fudzsi-hegy', [
+        'japan',
+        'mountain',
+        'japán',
+        'hegy',
+      ]),
+      createEmojiItem('🌋', 'vulkán', [
+        'mountain',
+        'eruption',
+        'hegy',
+        'kitörés',
+      ]),
+      createEmojiItem('🏞️', 'nemzeti park', [
+        'nature',
+        'environment',
+        'természet',
+        'környezet',
+      ]),
+
+      // Entertainment & Recreation
+      createEmojiItem('🎠', 'körhinta ló', [
+        'carnival',
+        'ride',
+        'vidámpark',
+        'játék',
+      ]),
+      createEmojiItem('🎡', 'óriáskerék', [
+        'carnival',
+        'amusement',
+        'vidámpark',
+        'szórakozás',
+      ]),
+      createEmojiItem('🎢', 'hullámvasút', [
+        'amusement',
+        'ride',
+        'vidámpark',
+        'játék',
+      ]),
+      createEmojiItem('🎪', 'cirkuszi sátor', [
+        'carnival',
+        'festival',
+        'cirkusz',
+        'fesztivál',
+      ]),
+      createEmojiItem('⛲', 'szökőkút', ['water', 'decoration', 'víz', 'dísz']),
+      createEmojiItem('⛱️', 'napernyő a földön', [
+        'beach',
+        'shade',
+        'strand',
+        'árnyék',
+      ]),
+      createEmojiItem('🎣', 'horgászbot', ['fish', 'hobby', 'hal', 'hobbi']),
+    ],
+  },
+  {
+    name: 'Tárgyak',
+    icon: '💡',
+    emojis: [
+      // Technology & Electronics
+      createEmojiItem('💡', 'villanykörte', [
+        'idea',
+        'bright',
+        'ötlet',
+        'fényes',
+      ]),
+      createEmojiItem('📱', 'mobiltelefon', [
+        'phone',
+        'device',
+        'telefon',
+        'eszköz',
+      ]),
+      createEmojiItem('📲', 'mobiltelefon nyíllal', [
+        'phone',
+        'receive',
+        'telefon',
+        'fogadás',
+      ]),
+      createEmojiItem('💻', 'laptop', [
+        'computer',
+        'device',
+        'számítógép',
+        'eszköz',
+      ]),
+      createEmojiItem('⌨️', 'billentyűzet', [
+        'computer',
+        'type',
+        'számítógép',
+        'gépelés',
+      ]),
+      createEmojiItem('🖥️', 'asztali számítógép', [
+        'pc',
+        'screen',
+        'számítógép',
+        'képernyő',
+      ]),
+      createEmojiItem('🖨️', 'nyomtató', [
+        'print',
+        'office',
+        'nyomtatás',
+        'iroda',
+      ]),
+      createEmojiItem('📀', 'dvd', ['disk', 'storage', 'lemez', 'tárolás']),
+      createEmojiItem('💿', 'cd', ['disk', 'storage', 'lemez', 'tárolás']),
+      createEmojiItem('🎥', 'filmkamera', [
+        'film',
+        'record',
+        'film',
+        'felvétel',
+      ]),
+      createEmojiItem('🎬', 'csapótábla', ['movie', 'action', 'film', 'akció']),
+      createEmojiItem('📺', 'televízió', ['tv', 'broadcast', 'tévé', 'adás']),
+      createEmojiItem('📷', 'fényképezőgép', [
+        'photo',
+        'picture',
+        'fotó',
+        'kép',
+      ]),
+      createEmojiItem('📸', 'fényképezőgép vakuval', [
+        'photo',
+        'picture',
+        'fotó',
+        'kép',
+      ]),
+      createEmojiItem('📹', 'videókamera', [
+        'record',
+        'movie',
+        'felvétel',
+        'film',
+      ]),
+      createEmojiItem('🎮', 'videojáték', ['game', 'play', 'játék', 'játszás']),
+      createEmojiItem('🕹️', 'joystick', [
+        'game',
+        'control',
+        'játék',
+        'irányítás',
+      ]),
+      createEmojiItem('🔋', 'elem', ['power', 'energy', 'energia', 'töltés']),
+      createEmojiItem('🔌', 'elektromos csatlakozó', [
+        'power',
+        'connect',
+        'áram',
+        'csatlakozás',
+      ]),
+
+      // Office & School
+      createEmojiItem('📚', 'könyvek', [
+        'read',
+        'library',
+        'olvasás',
+        'könyvtár',
+      ]),
+      createEmojiItem('📖', 'nyitott könyv', [
+        'read',
+        'book',
+        'olvasás',
+        'könyv',
+      ]),
+      createEmojiItem('📓', 'jegyzetfüzet', [
+        'write',
+        'notes',
+        'írás',
+        'jegyzetek',
+      ]),
+      createEmojiItem('📒', 'üzleti napló', [
+        'notebook',
+        'business',
+        'jegyzet',
+        'üzlet',
+      ]),
+      createEmojiItem('📔', 'díszes borítójú jegyzetfüzet', [
+        'book',
+        'notes',
+        'könyv',
+        'jegyzetek',
+      ]),
+      createEmojiItem('📕', 'zárt könyv', [
+        'read',
+        'library',
+        'olvasás',
+        'könyvtár',
+      ]),
+      createEmojiItem('📗', 'zöld könyv', ['read', 'book', 'olvasás', 'könyv']),
+      createEmojiItem('📘', 'kék könyv', ['read', 'book', 'olvasás', 'könyv']),
+      createEmojiItem('📙', 'narancssárga könyv', [
+        'read',
+        'book',
+        'olvasás',
+        'könyv',
+      ]),
+      createEmojiItem('📰', 'újság', ['news', 'paper', 'hírek', 'papír']),
+      createEmojiItem('🗞️', 'felgöngyölt újság', [
+        'news',
+        'paper',
+        'hírek',
+        'papír',
+      ]),
+      createEmojiItem('📜', 'tekercs', [
+        'document',
+        'ancient',
+        'dokumentum',
+        'régi',
+      ]),
+      createEmojiItem('📄', 'dokumentum', [
+        'document',
+        'paper',
+        'dokumentum',
+        'papír',
+      ]),
+      createEmojiItem('📃', 'felkunkorodó dokumentum', [
+        'document',
+        'paper',
+        'dokumentum',
+        'papír',
+      ]),
+      createEmojiItem('📑', 'könyvjelzők', [
+        'marker',
+        'save',
+        'jelölő',
+        'mentés',
+      ]),
+      createEmojiItem('🔖', 'könyvjelző', [
+        'save',
+        'mark',
+        'mentés',
+        'jelölés',
+      ]),
+      createEmojiItem('✏️', 'ceruza', ['write', 'draw', 'írás', 'rajzolás']),
+      createEmojiItem('✒️', 'fekete toll hegy', [
+        'pen',
+        'write',
+        'toll',
+        'írás',
+      ]),
+      createEmojiItem('🖋️', 'töltőtoll', ['write', 'ink', 'írás', 'tinta']),
+      createEmojiItem('🖊️', 'toll', ['write', 'click', 'írás', 'kattintás']),
+      createEmojiItem('🖌️', 'ecset', ['draw', 'art', 'rajzolás', 'művészet']),
+      createEmojiItem('🖍️', 'zsírkréta', ['draw', 'color', 'rajzolás', 'szín']),
+      createEmojiItem('📝', 'jegyzet', ['write', 'note', 'írás', 'jegyzet']),
+      createEmojiItem('📏', 'vonalzó', [
+        'measure',
+        'straight',
+        'mérés',
+        'egyenes',
+      ]),
+      createEmojiItem('📐', 'háromszög vonalzó', [
+        'measure',
+        'angle',
+        'mérés',
+        'szög',
+      ]),
+      createEmojiItem('✂️', 'olló', ['cut', 'tool', 'vágás', 'eszköz']),
+      createEmojiItem('📎', 'gemkapocs', [
+        'attach',
+        'document',
+        'csatolás',
+        'dokumentum',
+      ]),
+      createEmojiItem('📍', 'kerek rajzszög', [
+        'location',
+        'mark',
+        'hely',
+        'jelölés',
+      ]),
+      createEmojiItem('📌', 'rajzszög', [
+        'location',
+        'mark',
+        'hely',
+        'jelölés',
+      ]),
+
+      // Household Items
+      createEmojiItem('🛋️', 'kanapé és lámpa', [
+        'furniture',
+        'home',
+        'bútor',
+        'otthon',
+      ]),
+      createEmojiItem('🪑', 'szék', ['seat', 'furniture', 'ülés', 'bútor']),
+      createEmojiItem('🚪', 'ajtó', ['entry', 'exit', 'bejárat', 'kijárat']),
+      createEmojiItem('🛏️', 'ágy', ['sleep', 'furniture', 'alvás', 'bútor']),
+      createEmojiItem('🛒', 'bevásárlókocsi', [
+        'shopping',
+        'store',
+        'vásárlás',
+        'bolt',
+      ]),
+      createEmojiItem('🧹', 'seprű', ['clean', 'sweep', 'tisztítás', 'seprés']),
+      createEmojiItem('🧺', 'kosár', [
+        'laundry',
+        'container',
+        'mosás',
+        'tároló',
+      ]),
+      createEmojiItem('🧻', 'papírtekercs', [
+        'toilet',
+        'bathroom',
+        'wc',
+        'fürdőszoba',
+      ]),
+      createEmojiItem('🧸', 'plüssmaci', ['toy', 'plush', 'játék', 'plüss']),
+      createEmojiItem('🧷', 'biztosítótű', [
+        'attach',
+        'secure',
+        'rögzítés',
+        'biztonság',
+      ]),
+      createEmojiItem('🪒', 'borotva', [
+        'shave',
+        'cut',
+        'borotválkozás',
+        'vágás',
+      ]),
+      createEmojiItem('🧴', 'testápoló', [
+        'moisturizer',
+        'cream',
+        'hidratáló',
+        'krém',
+      ]),
+      createEmojiItem('🧽', 'szivacs', ['clean', 'wash', 'tisztítás', 'mosás']),
+
+      // Tools & Utilities
+      createEmojiItem('🔨', 'kalapács', ['tool', 'fix', 'szerszám', 'javítás']),
+      createEmojiItem('🔧', 'csavarkulcs', [
+        'tool',
+        'fix',
+        'szerszám',
+        'javítás',
+      ]),
+      createEmojiItem('🔩', 'csavar és anya', [
+        'tool',
+        'fix',
+        'szerszám',
+        'javítás',
+      ]),
+      createEmojiItem('⚙️', 'fogaskerék', [
+        'settings',
+        'mechanical',
+        'beállítások',
+        'mechanikus',
+      ]),
+      createEmojiItem('🗜️', 'satu', ['tool', 'press', 'szerszám', 'szorítás']),
+      createEmojiItem('⛓️', 'láncok', ['link', 'connect', 'lánc', 'kapcsolat']),
+      createEmojiItem('⚗️', 'lombik', [
+        'chemistry',
+        'science',
+        'kémia',
+        'tudomány',
+      ]),
+      createEmojiItem('🔬', 'mikroszkóp', [
+        'science',
+        'lab',
+        'tudomány',
+        'labor',
+      ]),
+      createEmojiItem('🔭', 'teleszkóp', [
+        'space',
+        'science',
+        'űr',
+        'tudomány',
+      ]),
+
+      // Personal Items
+      createEmojiItem('👓', 'szemüveg', [
+        'eyewear',
+        'vision',
+        'szemüveg',
+        'látás',
+      ]),
+      createEmojiItem('🕶️', 'napszemüveg', ['cool', 'eyes', 'menő', 'szem']),
+      createEmojiItem('👔', 'nyakkendő', [
+        'business',
+        'formal',
+        'üzlet',
+        'hivatalos',
+      ]),
+      createEmojiItem('👕', 'póló', [
+        'clothes',
+        'casual',
+        'ruha',
+        'hétköznapi',
+      ]),
+      createEmojiItem('👗', 'ruha', ['clothes', 'fashion', 'ruha', 'divat']),
+      createEmojiItem('👜', 'kézitáska', ['bag', 'fashion', 'táska', 'divat']),
+      createEmojiItem('🎒', 'hátizsák', ['bag', 'school', 'táska', 'iskola']),
+      createEmojiItem('👝', 'kis táska', [
+        'purse',
+        'fashion',
+        'táska',
+        'divat',
+      ]),
+      createEmojiItem('👛', 'pénztárca', [
+        'wallet',
+        'money',
+        'pénztárca',
+        'pénz',
+      ]),
+      createEmojiItem('👞', 'férfi cipő', [
+        'footwear',
+        'fashion',
+        'lábbeli',
+        'divat',
+      ]),
+      createEmojiItem('👟', 'sportcipő', ['sneaker', 'sport', 'cipő', 'sport']),
+      createEmojiItem('👠', 'magassarkú cipő', [
+        'fashion',
+        'formal',
+        'divat',
+        'elegáns',
+      ]),
+      createEmojiItem('⌚', 'karóra', [
+        'time',
+        'accessory',
+        'idő',
+        'kiegészítő',
+      ]),
+      createEmojiItem('💍', 'gyűrű', [
+        'jewelry',
+        'wedding',
+        'ékszer',
+        'esküvő',
+      ]),
+      createEmojiItem('💎', 'drágakő', [
+        'diamond',
+        'jewel',
+        'gyémánt',
+        'ékszer',
+      ]),
+
+      // Money & Security
+      createEmojiItem('💰', 'pénzeszsák', [
+        'cash',
+        'rich',
+        'készpénz',
+        'gazdag',
+      ]),
+      createEmojiItem('💴', 'jen bankjegy', [
+        'money',
+        'japan',
+        'pénz',
+        'japán',
+      ]),
+      createEmojiItem('💵', 'dollár bankjegy', [
+        'money',
+        'cash',
+        'pénz',
+        'készpénz',
+      ]),
+      createEmojiItem('💶', 'euró bankjegy', [
+        'money',
+        'europe',
+        'pénz',
+        'európa',
+      ]),
+      createEmojiItem('💷', 'font bankjegy', [
+        'money',
+        'britain',
+        'pénz',
+        'brit',
+      ]),
+      createEmojiItem('💳', 'bankkártya', [
+        'payment',
+        'money',
+        'fizetés',
+        'pénz',
+      ]),
+      createEmojiItem('🔑', 'kulcs', ['lock', 'secure', 'zár', 'biztonság']),
+      createEmojiItem('🗝️', 'régi kulcs', ['lock', 'antique', 'zár', 'antik']),
+      createEmojiItem('🔒', 'lezárt', [
+        'secure',
+        'closed',
+        'biztonságos',
+        'zárt',
+      ]),
+      createEmojiItem('🔓', 'nyitott', [
+        'open',
+        'insecure',
+        'nyitott',
+        'nem biztonságos',
+      ]),
+
+      // Miscellaneous Objects
+      createEmojiItem('🎁', 'becsomagolt ajándék', [
+        'present',
+        'surprise',
+        'ajándék',
+        'meglepetés',
+      ]),
+      createEmojiItem('🎈', 'lufi', [
+        'party',
+        'celebration',
+        'buli',
+        'ünneplés',
+      ]),
+      createEmojiItem('🎀', 'szalag', [
+        'decoration',
+        'gift',
+        'dekoráció',
+        'ajándék',
+      ]),
+      createEmojiItem('🎊', 'konfetti labda', [
+        'party',
+        'celebration',
+        'buli',
+        'ünneplés',
+      ]),
+      createEmojiItem('🎉', 'party kellék', [
+        'celebration',
+        'tada',
+        'ünneplés',
+        'tadaa',
+      ]),
+      createEmojiItem('🧨', 'petárda', ['dynamite', 'boom', 'dinamit', 'bumm']),
+      createEmojiItem('✉️', 'boríték', ['letter', 'mail', 'levél', 'posta']),
+      createEmojiItem('📦', 'csomag', [
+        'box',
+        'delivery',
+        'doboz',
+        'szállítás',
+      ]),
+      createEmojiItem('📫', 'postaláda felemelt zászlóval', [
+        'mail',
+        'post',
+        'levél',
+        'posta',
+      ]),
+      createEmojiItem('🏷️', 'címke', ['tag', 'name', 'címke', 'név']),
+      createEmojiItem('📅', 'naptár', [
+        'date',
+        'schedule',
+        'dátum',
+        'időbeosztás',
+      ]),
+      createEmojiItem('🗓️', 'spirál naptár', [
+        'date',
+        'schedule',
+        'dátum',
+        'időbeosztás',
+      ]),
+      createEmojiItem('⏰', 'ébresztőóra', [
+        'time',
+        'wake',
+        'idő',
+        'ébresztés',
+      ]),
+      createEmojiItem('⏲️', 'időzítő óra', [
+        'time',
+        'countdown',
+        'idő',
+        'visszaszámlálás',
+      ]),
+      createEmojiItem('🌡️', 'hőmérő', [
+        'temperature',
+        'weather',
+        'hőmérséklet',
+        'időjárás',
+      ]),
+      createEmojiItem('⚰️', 'koporsó', [
+        'funeral',
+        'death',
+        'temetés',
+        'halál',
+      ]),
+      createEmojiItem('⚱️', 'hamvasztási urna', [
+        'death',
+        'ashes',
+        'halál',
+        'hamu',
+      ]),
+      createEmojiItem('🏁', 'kockás zászló', [
+        'finish',
+        'race',
+        'cél',
+        'verseny',
+      ]),
+      createEmojiItem('🚩', 'háromszög zászló', [
+        'mark',
+        'location',
+        'jelölés',
+        'hely',
+      ]),
+      createEmojiItem('🎌', 'keresztezett zászlók', [
+        'japan',
+        'nation',
+        'japán',
+        'nemzet',
+      ]),
+      createEmojiItem('🏴', 'fekete zászló', [
+        'pirate',
+        'flag',
+        'kalóz',
+        'zászló',
+      ]),
+      createEmojiItem('🏳️', 'fehér zászló', [
+        'surrender',
+        'peace',
+        'megadás',
+        'béke',
+      ]),
+      createEmojiItem('🏴‍☠️', 'kalóz zászló', [
+        'skull',
+        'crossbones',
+        'koponya',
+        'csontok',
+      ]),
+    ],
+  },
+  {
+    name: 'Szimbólumok',
+    icon: '❤️',
+    emojis: [
+      // Hearts & Emotions
+      createEmojiItem('❤️', 'piros szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('🧡', 'narancssárga szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('💛', 'sárga szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('💚', 'zöld szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('💙', 'kék szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('💜', 'lila szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('🤎', 'barna szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('🖤', 'fekete szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem('🤍', 'fehér szív', [
+        'love',
+        'like',
+        'szerelem',
+        'tetszik',
+      ]),
+      createEmojiItem(
+        '💔',
+        'törött szív',
+        ['heartbreak', 'sad', 'szívfájdalom', 'szomorú'],
+        [':(']
+      ),
+      createEmojiItem('❣️', 'szív felkiáltójel', [
+        'love',
+        'emphasis',
+        'szerelem',
+        'hangsúly',
+      ]),
+      createEmojiItem('💕', 'két szív', ['love', 'couple', 'szerelem', 'pár']),
+      createEmojiItem('💞', 'forgó szívek', [
+        'love',
+        'spin',
+        'szerelem',
+        'forgás',
+      ]),
+      createEmojiItem('💓', 'dobogó szív', [
+        'love',
+        'alive',
+        'szerelem',
+        'élő',
+      ]),
+      createEmojiItem('💗', 'növekvő szív', [
+        'love',
+        'expand',
+        'szerelem',
+        'növekedés',
+      ]),
+      createEmojiItem('💖', 'csillogó szív', [
+        'love',
+        'sparkle',
+        'szerelem',
+        'csillogás',
+      ]),
+      createEmojiItem('💘', 'szív nyíllal', [
+        'love',
+        'cupid',
+        'szerelem',
+        'ámor',
+      ]),
+      createEmojiItem('💝', 'szív masnival', [
+        'love',
+        'gift',
+        'szerelem',
+        'ajándék',
+      ]),
+
+      // Geometric Shapes
+      createEmojiItem('⭐', 'csillag', [
+        'favorite',
+        'rating',
+        'kedvenc',
+        'értékelés',
+      ]),
+      createEmojiItem('🌟', 'ragyogó csillag', [
+        'sparkle',
+        'shine',
+        'csillogás',
+        'ragyogás',
+      ]),
+      createEmojiItem('✨', 'szikrák', ['shine', 'new', 'ragyogás', 'új']),
+      createEmojiItem('💫', 'szédülés', ['star', 'spin', 'csillag', 'forgás']),
+      createEmojiItem('⚡', 'magasfeszültség', [
+        'power',
+        'energy',
+        'erő',
+        'energia',
+      ]),
+      createEmojiItem('🔴', 'piros kör', ['shape', 'red', 'forma', 'piros']),
+      createEmojiItem('🟠', 'narancssárga kör', [
+        'shape',
+        'orange',
+        'forma',
+        'narancssárga',
+      ]),
+      createEmojiItem('🟡', 'sárga kör', ['shape', 'yellow', 'forma', 'sárga']),
+      createEmojiItem('🟢', 'zöld kör', ['shape', 'green', 'forma', 'zöld']),
+      createEmojiItem('🔵', 'kék kör', ['shape', 'blue', 'forma', 'kék']),
+      createEmojiItem('🟣', 'lila kör', ['shape', 'purple', 'forma', 'lila']),
+      createEmojiItem('⚫', 'fekete kör', [
+        'shape',
+        'black',
+        'forma',
+        'fekete',
+      ]),
+      createEmojiItem('⚪', 'fehér kör', ['shape', 'white', 'forma', 'fehér']),
+      createEmojiItem('🟥', 'piros négyzet', [
+        'shape',
+        'red',
+        'forma',
+        'piros',
+      ]),
+      createEmojiItem('🟧', 'narancssárga négyzet', [
+        'shape',
+        'orange',
+        'forma',
+        'narancssárga',
+      ]),
+      createEmojiItem('🟨', 'sárga négyzet', [
+        'shape',
+        'yellow',
+        'forma',
+        'sárga',
+      ]),
+      createEmojiItem('🟩', 'zöld négyzet', [
+        'shape',
+        'green',
+        'forma',
+        'zöld',
+      ]),
+      createEmojiItem('🟦', 'kék négyzet', ['shape', 'blue', 'forma', 'kék']),
+      createEmojiItem('🟪', 'lila négyzet', [
+        'shape',
+        'purple',
+        'forma',
+        'lila',
+      ]),
+      createEmojiItem('⬛', 'fekete négyzet', [
+        'shape',
+        'black',
+        'forma',
+        'fekete',
+      ]),
+      createEmojiItem('⬜', 'fehér négyzet', [
+        'shape',
+        'white',
+        'forma',
+        'fehér',
+      ]),
+
+      // Arrows & Directions
+      createEmojiItem('⬆️', 'felfelé nyíl', [
+        'direction',
+        'top',
+        'irány',
+        'fel',
+      ]),
+      createEmojiItem('↗️', 'jobbra fel nyíl', [
+        'direction',
+        'diagonal',
+        'irány',
+        'átlós',
+      ]),
+      createEmojiItem('➡️', 'jobbra nyíl', [
+        'direction',
+        'next',
+        'irány',
+        'következő',
+      ]),
+      createEmojiItem('↘️', 'jobbra le nyíl', [
+        'direction',
+        'diagonal',
+        'irány',
+        'átlós',
+      ]),
+      createEmojiItem('⬇️', 'lefelé nyíl', [
+        'direction',
+        'bottom',
+        'irány',
+        'le',
+      ]),
+      createEmojiItem('↙️', 'balra le nyíl', [
+        'direction',
+        'diagonal',
+        'irány',
+        'átlós',
+      ]),
+      createEmojiItem('⬅️', 'balra nyíl', [
+        'direction',
+        'previous',
+        'irány',
+        'előző',
+      ]),
+      createEmojiItem('↖️', 'balra fel nyíl', [
+        'direction',
+        'diagonal',
+        'irány',
+        'átlós',
+      ]),
+
+      // Status & Info
+      createEmojiItem('✅', 'pipa', ['correct', 'done', 'helyes', 'kész']),
+      createEmojiItem('❌', 'kereszt', ['wrong', 'no', 'rossz', 'nem']),
+      createEmojiItem('❎', 'négyzetes kereszt', [
+        'wrong',
+        'square',
+        'rossz',
+        'négyzet',
+      ]),
+      createEmojiItem('➰', 'hurok', ['loop', 'curl', 'hurok', 'göndör']),
+      createEmojiItem('➿', 'dupla hurok', ['loop', 'tape', 'hurok', 'szalag']),
+
+      // Religious & Cultural
+      createEmojiItem('☮️', 'béke szimbólum', [
+        'peace',
+        'hippie',
+        'béke',
+        'hippi',
+      ]),
+      createEmojiItem('✝️', 'latin kereszt', [
+        'christian',
+        'religion',
+        'keresztény',
+        'vallás',
+      ]),
+      createEmojiItem('☪️', 'félhold és csillag', [
+        'islam',
+        'religion',
+        'iszlám',
+        'vallás',
+      ]),
+      createEmojiItem('🕉️', 'om', ['hindu', 'religion', 'hindu', 'vallás']),
+      createEmojiItem('☸️', 'dharma kerék', [
+        'buddhist',
+        'religion',
+        'buddhista',
+        'vallás',
+      ]),
+      createEmojiItem('✡️', 'Dávid-csillag', [
+        'jewish',
+        'religion',
+        'zsidó',
+        'vallás',
+      ]),
+      createEmojiItem('☯️', 'jin-jang', ['balance', 'tao', 'egyensúly', 'tao']),
+      createEmojiItem('☦️', 'ortodox kereszt', [
+        'christian',
+        'religion',
+        'keresztény',
+        'vallás',
+      ]),
+      createEmojiItem('🛐', 'imahely', ['religion', 'pray', 'vallás', 'ima']),
+
+      // Zodiac
+      createEmojiItem('♈', 'Kos', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♉', 'Bika', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♊', 'Ikrek', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♋', 'Rák', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♌', 'Oroszlán', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♍', 'Szűz', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♎', 'Mérleg', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♏', 'Skorpió', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♐', 'Nyilas', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♑', 'Bak', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♒', 'Vízöntő', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+      createEmojiItem('♓', 'Halak', [
+        'zodiac',
+        'horoscope',
+        'csillagjegy',
+        'horoszkóp',
+      ]),
+    ],
+  },
+];
+
+export const defaultEmojiMenuConfig: EmojiMenuConfig = {
+  ignoreBlockTypes: ['affine:code'],
+  maxHeight: 344,
+  tooltipTimeout: 800,
+  categories: emojiCategories,
+};

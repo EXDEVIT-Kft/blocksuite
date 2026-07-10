@@ -53,6 +53,7 @@ import { NoteSlicerViewExtension } from '@blocksuite/affine-widget-note-slicer/v
 import { PageDraggingAreaViewExtension } from '@blocksuite/affine-widget-page-dragging-area/view';
 import { RemoteSelectionViewExtension } from '@blocksuite/affine-widget-remote-selection/view';
 import { ScrollAnchoringViewExtension } from '@blocksuite/affine-widget-scroll-anchoring/view';
+import { EmojiMenuViewExtension } from '@blocksuite/affine-widget-emoji-menu/view';
 import { SlashMenuViewExtension } from '@blocksuite/affine-widget-slash-menu/view';
 import { ToolbarViewExtension } from '@blocksuite/affine-widget-toolbar/view';
 import { ViewportOverlayViewExtension } from '@blocksuite/affine-widget-viewport-overlay/view';
@@ -114,6 +115,7 @@ export function getInternalViewExtensions() {
     RemoteSelectionViewExtension,
     ScrollAnchoringViewExtension,
     SlashMenuViewExtension,
+    EmojiMenuViewExtension,
     ToolbarViewExtension,
     ViewportOverlayViewExtension,
     EdgelessZoomToolbarViewExtension,

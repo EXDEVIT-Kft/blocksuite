@@ -68,6 +68,7 @@
     { "path": "../widgets/page-dragging-area" },
     { "path": "../widgets/remote-selection" },
     { "path": "../widgets/scroll-anchoring" },
+    { "path": "../widgets/emoji-menu" },
     { "path": "../widgets/slash-menu" },
     { "path": "../widgets/toolbar" },
     { "path": "../widgets/viewport-overlay" },

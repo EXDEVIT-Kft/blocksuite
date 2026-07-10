@@ -1664,6 +1664,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@blocksuite/affine-widget-emoji-menu@workspace:*, @blocksuite/affine-widget-emoji-menu@workspace:packages/affine/widgets/emoji-menu":
+  version: 0.0.0-use.local
+  resolution: "@blocksuite/affine-widget-emoji-menu@workspace:packages/affine/widgets/emoji-menu"
+  dependencies:
+    "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-ext-loader": "workspace:*"
+    "@blocksuite/affine-rich-text": "workspace:*"
+    "@blocksuite/affine-shared": "workspace:*"
+    "@blocksuite/global": "workspace:*"
+    "@blocksuite/std": "workspace:*"
+    "@blocksuite/store": "workspace:*"
+    "@types/lodash-es": "npm:^4.17.12"
+    lit: "npm:^3.2.0"
+    lodash-es: "npm:^4.17.23"
+  languageName: unknown
+  linkType: soft
+
 "@blocksuite/affine-widget-frame-title@workspace:*, @blocksuite/affine-widget-frame-title@workspace:packages/affine/widgets/frame-title":
   version: 0.0.0-use.local
   resolution: "@blocksuite/affine-widget-frame-title@workspace:packages/affine/widgets/frame-title"
@@ -1916,6 +1933,7 @@ __metadata:
     "@blocksuite/affine-widget-edgeless-selected-rect": "workspace:*"
     "@blocksuite/affine-widget-edgeless-toolbar": "workspace:*"
     "@blocksuite/affine-widget-edgeless-zoom-toolbar": "workspace:*"
+    "@blocksuite/affine-widget-emoji-menu": "workspace:*"
     "@blocksuite/affine-widget-frame-title": "workspace:*"
     "@blocksuite/affine-widget-keyboard-toolbar": "workspace:*"
     "@blocksuite/affine-widget-linked-doc": "workspace:*"
