@@ -1,8 +1,9 @@
 name: PR Auto Assign
 
 on:
-  pull_request:
-    types: [opened, ready_for_review, reopened]
+  workflow_dispatch:
+  #pull_request:
+    #types: [opened, ready_for_review, reopened]
 
 jobs:
   assign:

@@ -514,6 +514,7 @@ __metadata:
     "@blocksuite/affine-block-embed-doc": "workspace:*"
     "@blocksuite/affine-block-surface": "workspace:*"
     "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
     "@blocksuite/affine-shared": "workspace:*"
@@ -746,6 +747,7 @@ __metadata:
     "@blocksuite/affine-block-note": "workspace:*"
     "@blocksuite/affine-block-surface": "workspace:*"
     "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-gfx-turbo-renderer": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
@@ -768,6 +770,7 @@ __metadata:
   dependencies:
     "@blocksuite/affine-block-note": "workspace:*"
     "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-inline-latex": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
@@ -975,6 +978,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@blocksuite/affine-components@workspace:packages/affine/components"
   dependencies:
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
     "@blocksuite/affine-shared": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -994,6 +998,14 @@ __metadata:
     lodash-es: "npm:^4.17.23"
     rxjs: "npm:^7.8.2"
     yjs: "npm:^13.6.27"
+  languageName: unknown
+  linkType: soft
+
+"@blocksuite/affine-editor-icons@workspace:*, @blocksuite/affine-editor-icons@workspace:packages/affine/editor-icons":
+  version: 0.0.0-use.local
+  resolution: "@blocksuite/affine-editor-icons@workspace:packages/affine/editor-icons"
+  dependencies:
+    lit: "npm:^3.2.0"
   languageName: unknown
   linkType: soft
 
@@ -1063,6 +1075,7 @@ __metadata:
   dependencies:
     "@blocksuite/affine-block-frame": "workspace:*"
     "@blocksuite/affine-block-surface": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
     "@blocksuite/affine-rich-text": "workspace:*"
@@ -1646,6 +1659,7 @@ __metadata:
   dependencies:
     "@blocksuite/affine-block-surface": "workspace:*"
     "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
     "@blocksuite/affine-shared": "workspace:*"
@@ -1669,6 +1683,7 @@ __metadata:
   dependencies:
     "@blocksuite/affine-block-surface": "workspace:*"
     "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-editor-icons": "workspace:*"
     "@blocksuite/affine-ext-loader": "workspace:*"
     "@blocksuite/affine-model": "workspace:*"
     "@blocksuite/affine-shared": "workspace:*"

@@ -25,6 +25,80 @@ And this would build the BlockSuite packages:
 yarn build
 ```
 
+## [ALGOGRIND] Build és publish
+
+A csomagokat `@algogrind/*` néven, privát (restricted) npm csomagként publikáljuk.
+
+### Ajánlott: GitHub Action
+
+Az **Algogrind Publish** workflow (`.github/workflows/algogrind-publish.yml`) kézzel indítható (Actions fül → workflow_dispatch), és mindent elvégez a CI-ban: átnevezés → install → build → exports átírás → npm publish. Semmit nem commitol vissza a branchre.
+
+Előfeltételek:
+
+- `NPM_TOKEN` repository secret: npm automation token publish joggal az `@algogrind` orgra.
+- A verziószámok a branchen előre fel legyenek bumpolva — a már fent lévő verziókat a publish átugorja (`--tolerate-republish`).
+
+### Kézi folyamat (lokálisan)
+
+A folyamat KÉTFÁZISÚ: a build még a `./src`-re mutató exports-okkal fut (különben a tsc a saját outputját olvasná inputként), az exports-ok csak a build UTÁN állnak át `./dist`-re.
+
+1. Publish branch létrehozása (eldobható, soha nem merge-öljük vissza):
+
+```sh
+git checkout algogrind
+git checkout -b algogrind-publish
+```
+
+2. Átnevezés (minden `@blocksuite/*` → `@algogrind/*` a package.json-ökben és a forrásfájlokban, kivéve a külső `@blocksuite/icons` csomagot):
+
+```sh
+yarn prepare-publish
+```
+
+3. Verziók ellenőrzése a `packages/**/package.json` fájlokban — nem lehet hátrébb, mint a legutóbb publikált `@algogrind/*` verzió.
+
+4. Build-melléktermékek törlése, újratelepítés (PowerShell):
+
+```powershell
+Get-ChildItem -Path . -Include dist -Recurse -Directory | ForEach-Object { Remove-Item $_.FullName -Recurse -Force }
+Get-ChildItem -Path . -Include *.tsbuildinfo -Recurse -File | ForEach-Object { Remove-Item $_.FullName -Force }
+yarn install --mode update-lockfile
+yarn install
+```
+
+5. Minden fájl commitolása, majd build:
+
+```sh
+git add -A && git commit -m "chore: prepare algogrind publish"
+yarn build:packages
+```
+
+6. Exports átírása dist-re + `publishConfig.access: restricted` (ez után már NE buildelj újra!):
+
+```sh
+node scripts/finalize-publish.mjs
+```
+
+7. npm hitelesítés az `algogrind` scope-ra (Yarn 4 a saját auth-ját használja, nem az `npm login`-ét!). Vagy interaktívan:
+
+```sh
+yarn npm login --scope algogrind
+```
+
+   vagy tokennel a `~/.yarnrc.yml`-ben:
+
+```yaml
+npmScopes:
+  algogrind:
+    npmAuthToken: npm_xxx
+```
+
+8. Publikálás (a `--no-private` kihagyja a playground/docs csomagokat, a `--tolerate-republish` a már fent lévő verziókat):
+
+```sh
+yarn publish:algogrind
+```
+
 ## Testing
 
 ### Test Locally

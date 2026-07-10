@@ -1,0 +1,51 @@
+name: Algogrind Publish
+
+# [ALGOGRIND] Publishes every workspace package to npm under the @algogrind
+# scope (restricted access). The rename + exports rewrite happens ephemerally
+# in the CI workspace via scripts/prepare-publish.mjs — nothing is committed
+# back to the branch.
+#
+# Requirements:
+#   - NPM_TOKEN repository secret: npm automation token with publish rights
+#     to the @algogrind org.
+#   - Package versions must be bumped on the branch before dispatching,
+#     otherwise the already-published versions are skipped (--tolerate-republish).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable corepack (yarn 4)
+        run: corepack enable
+
+      - name: Rename packages to @algogrind scope
+        run: node scripts/prepare-publish.mjs
+
+      - name: Install dependencies
+        run: yarn install --mode update-lockfile && yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          HUSKY: 0
+
+      - name: Build packages
+        run: yarn build:packages
+
+      - name: Rewrite exports to dist
+        run: node scripts/finalize-publish.mjs
+
+      - name: Publish to npm
+        run: yarn publish:algogrind
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

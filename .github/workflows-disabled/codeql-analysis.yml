@@ -1,9 +1,9 @@
 name: CodeQL
 
 on:
-  schedule:
+  #schedule:
     # At the end of every day
-    - cron: '0 0 * * *'
+    #- cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
