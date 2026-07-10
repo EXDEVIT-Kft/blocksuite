@@ -32,7 +32,7 @@ export const surfaceRefToolbarModuleConfig: ToolbarModuleConfig = {
     },
     {
       id: 'c.copy-surface-ref',
-      label: 'Copy',
+      label: 'Másolás',
       icon: CopyIcon(),
       run: ctx => {
         const surfaceRefBlock = ctx.getCurrentBlockByType(
@@ -47,7 +47,7 @@ export const surfaceRefToolbarModuleConfig: ToolbarModuleConfig = {
           .pipe(copySelectedModelsCommand)
           .run();
 
-        toast(surfaceRefBlock.std.host, 'Copied to clipboard');
+        toast(surfaceRefBlock.std.host, 'Vágólapra másolva');
       },
     },
     {
@@ -82,7 +82,7 @@ export const surfaceRefToolbarModuleConfig: ToolbarModuleConfig = {
     },
     {
       id: 'g.surface-ref-deletion',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       placement: ActionPlacement.More,
       variant: 'destructive',

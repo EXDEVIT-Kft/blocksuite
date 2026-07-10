@@ -318,7 +318,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
       type: 'page',
       meta: {
         id: nanoid(),
-        title: HastUtils.getTextContent(titleAst, 'Untitled'),
+        title: HastUtils.getTextContent(titleAst, 'Új dokumentum'),
         createDate: Date.now(),
         tags: [],
       },
@@ -332,7 +332,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
             delta: this.deltaConverter.astToDelta(
               titleAst ?? {
                 type: 'text',
-                value: 'Untitled',
+                value: 'Új dokumentum',
               }
             ),
           },

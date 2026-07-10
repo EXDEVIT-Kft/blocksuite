@@ -16,13 +16,13 @@ import {
 } from './paragraph-keymap.js';
 
 const placeholders = {
-  text: "Type '/' for commands",
-  h1: 'Heading 1',
-  h2: 'Heading 2',
-  h3: 'Heading 3',
-  h4: 'Heading 4',
-  h5: 'Heading 5',
-  h6: 'Heading 6',
+  text: "Írj be egy '/' jelet az utasításokért...",
+  h1: 'Címsor 1',
+  h2: 'Címsor 2',
+  h3: 'Címsor 3',
+  h4: 'Címsor 4',
+  h5: 'Címsor 5',
+  h6: 'Címsor 6',
   quote: '',
 };
 

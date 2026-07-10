@@ -593,7 +593,7 @@ async function exportDoc(doc: Store) {
   });
 
   let downloadBlob: Blob;
-  const docTitle = doc.meta?.title || 'Untitled';
+  const docTitle = doc.meta?.title || 'Új dokumentum';
   let name: string;
   const contentBlob = new Blob([markdownResult.file], { type: 'plain/text' });
   if (markdownResult.assetsIds.length > 0) {

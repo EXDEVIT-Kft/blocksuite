@@ -180,8 +180,8 @@ export const builtinMiscToolbarConfig = {
     {
       placement: ActionPlacement.End,
       id: 'a.draw-connector',
-      label: 'Összekötő rajzolása',
-      tooltip: 'Összekötő rajzolása',
+      label: 'Összekötés rajzolása',
+      tooltip: 'Összekötés rajzolása',
       icon: ConnectorCIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModels();

@@ -72,7 +72,7 @@ export const placeholderMap = {
   code: 'Code Block',
   bulleted: 'Bulleted List',
   numbered: 'Numbered List',
-  toggle: 'Toggle List',
+  toggle: 'Összecsukható Lista',
   todo: 'Todo',
   bookmark: 'Bookmark',
   image: 'Image',

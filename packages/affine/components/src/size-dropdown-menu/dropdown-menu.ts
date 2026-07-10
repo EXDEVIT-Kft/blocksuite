@@ -1,6 +1,6 @@
+import { DoneIcon } from '@blocksuite/affine-editor-icons';
 import { stopPropagation } from '@blocksuite/affine-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
-import { DoneIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
 import type { ReadonlySignal, Signal } from '@preact/signals-core';
 import { css, html, LitElement, type TemplateResult } from 'lit';
@@ -178,7 +178,7 @@ export class SizeDropdownMenu extends SignalWatcher(
                 @click=${() => this.select(value)}
               >
                 ${key ?? format?.(value) ?? value}
-                ${when(isCheckType && size === value, () => DoneIcon())}
+                ${when(isCheckType && size === value, () => DoneIcon({ width: '20', height: '20' }))}
               </editor-menu-action>
             `
           )}

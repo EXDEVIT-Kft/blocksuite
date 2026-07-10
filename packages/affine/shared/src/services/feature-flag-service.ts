@@ -29,8 +29,8 @@ export class FeatureFlagService extends StoreExtension {
   static override key = 'feature-flag-server';
 
   private readonly _flags: Signal<BlockSuiteFlags> = signal({
-    enable_database_attachment_note: false,
-    enable_database_full_width: false,
+    enable_database_attachment_note: true,
+    enable_database_full_width: true,
     enable_block_query: false,
     // [ALGOGRIND] flag defaults ported from fork playground defaultFlags
     enable_edgeless_text: false,

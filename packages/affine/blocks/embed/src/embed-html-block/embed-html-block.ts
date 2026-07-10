@@ -49,7 +49,7 @@ export class EmbedHtmlBlockComponent extends EmbedBlockComponent<EmbedHtmlModel>
   }
 
   override renderBlock(): unknown {
-    const titleText = 'Basic HTML Page Structure';
+    const titleText = 'Alapértelmezett HTML struktúra';
 
     const htmlSrc = `
       <style>

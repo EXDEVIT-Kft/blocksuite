@@ -1,6 +1,6 @@
+import { ImageIcon } from '@blocksuite/affine-editor-icons';
 import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
 import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
-import { ImageIcon } from '@blocksuite/icons/lit';
 
 import { insertImagesCommand } from '../commands';
 import { PhotoTooltip } from './tooltips';
@@ -10,7 +10,10 @@ export const imageSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Kép',
       description: 'Szúrj be egy képet.',
-      icon: ImageIcon(),
+      icon: ImageIcon({
+        width: '20',
+        height: '20',
+      }),
       tooltip: {
         figure: PhotoTooltip,
         caption: 'Kép beszúrása',

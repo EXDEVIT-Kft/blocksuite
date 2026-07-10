@@ -146,10 +146,10 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'e.slicer',
-      label: 'Szeletelő',
+      label: 'Feldarabolás',
       icon: ScissorsIcon(),
       tooltip: html`<affine-tooltip-content-with-shortcut
-        data-tip="${'Vágás mód'}"
+        data-tip="${'Feldarabolás'}"
         data-shortcut="${'-'}"
       ></affine-tooltip-content-with-shortcut>`,
       active: false,

@@ -464,7 +464,12 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
     const enabled = provider.shouldShowStatus(model);
 
     return html`
-      <div class="affine-attachment-embed-container">
+      <div
+        class=${classMap({
+          'affine-attachment-embed-container': true,
+          selected: this.selected$.value,
+        })}
+      >
         ${guard([this._refreshKey$.value], () => render(model, blobUrl))}
       </div>
       ${when(enabled, () => {

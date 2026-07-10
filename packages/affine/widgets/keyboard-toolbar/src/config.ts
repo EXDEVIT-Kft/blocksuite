@@ -20,6 +20,14 @@ import { DefaultTool, getSurfaceBlock } from '@blocksuite/affine-block-surface';
 import { insertSurfaceRefBlockCommand } from '@blocksuite/affine-block-surface-ref';
 import { insertTableBlockCommand } from '@blocksuite/affine-block-table';
 import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
+import {
+  BulletedListIcon,
+  CodeBlockIcon,
+  DividerIcon,
+  NumberedListIcon,
+  QuoteIcon,
+  TextIcon,
+} from '@blocksuite/affine-components/icons';
 import { toast } from '@blocksuite/affine-components/toast';
 import { insertInlineLatex } from '@blocksuite/affine-inline-latex';
 import { toggleLink } from '@blocksuite/affine-inline-link';
@@ -61,17 +69,14 @@ import { assertType } from '@blocksuite/global/utils';
 import {
   AttachmentIcon,
   BoldIcon,
-  BulletedListIcon,
   CheckBoxCheckLinearIcon,
   CloseIcon,
-  CodeBlockIcon,
   CodeIcon,
   CollapseTabIcon,
   CopyIcon,
   DatabaseKanbanViewIcon,
   DatabaseTableViewIcon,
   DeleteIcon,
-  DividerIcon,
   DuplicateIcon,
   EmbedIcon,
   FontIcon,
@@ -85,15 +90,12 @@ import {
   LoomLogoIcon,
   NewPageIcon,
   NowIcon,
-  NumberedListIcon,
   PlusIcon,
-  QuoteIcon,
   RedoIcon,
   RightTabIcon,
   StrikeThroughIcon,
   TableIcon,
   TeXIcon,
-  TextIcon,
   TodayIcon,
   TomorrowIcon,
   UnderLineIcon,
@@ -190,7 +192,7 @@ export type DynamicKeyboardToolPanelGroup = (
 const textToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'Szöveg',
-    icon: TextIcon(),
+    icon: TextIcon,
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
     action: ({ std }) => {
@@ -215,7 +217,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'Kód Blokk',
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:code'),
-    icon: CodeBlockIcon(),
+    icon: CodeBlockIcon,
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
         flavour: 'affine:code',
@@ -237,7 +239,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: 'Idézet',
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:paragraph'),
-    icon: QuoteIcon(),
+    icon: QuoteIcon,
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
         flavour: 'affine:paragraph',
@@ -247,7 +249,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
   },
   {
     name: 'Elválasztó',
-    icon: DividerIcon(),
+    icon: DividerIcon,
     showWhen: ({ std }) =>
       std.store.schema.flavourSchemaMap.has('affine:divider'),
     action: ({ std }) => {
@@ -332,7 +334,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
 const listToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'Felsorolás',
-    icon: BulletedListIcon(),
+    icon: BulletedListIcon,
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
@@ -345,7 +347,7 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
   },
   {
     name: 'Számozott Felsorolás',
-    icon: NumberedListIcon(),
+    icon: NumberedListIcon,
     showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
@@ -872,7 +874,7 @@ const moreToolPanel: KeyboardToolPanelConfig = {
 };
 
 const textToolPanel: KeyboardToolPanelConfig = {
-  icon: TextIcon(),
+  icon: TextIcon,
   groups: [
     {
       name: 'Átváltás',

@@ -130,7 +130,7 @@ export const TYPE_ICON_MAP: {
     icon: MindmapIcon(),
   },
   edgeless: {
-    name: 'Edgeless content',
+    name: 'Rajztábla Tartalom',
     icon: EdgelessIcon(),
   },
 };

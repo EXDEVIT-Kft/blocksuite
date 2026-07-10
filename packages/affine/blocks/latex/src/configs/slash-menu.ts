@@ -1,10 +1,13 @@
+import {
+  EquationBlockIcon,
+  EquationInlineIcon,
+} from '@blocksuite/affine-editor-icons';
 import { insertInlineLatex } from '@blocksuite/affine-inline-latex';
 import {
   getSelectedModelsCommand,
   getTextSelectionCommand,
 } from '@blocksuite/affine-shared/commands';
 import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
-import { TeXIcon } from '@blocksuite/icons/lit';
 
 import { insertLatexBlockCommand } from '../commands';
 import { LatexTooltip } from './tooltips';
@@ -15,7 +18,10 @@ export const latexSlashMenuConfig: SlashMenuConfig = {
       name: 'Sorközi Egyenlet',
       group: '0_Alapvető@8',
       description: 'Szúrj be egy új sorközi egyenletet.',
-      icon: TeXIcon(),
+      icon: EquationInlineIcon({
+        width: '20',
+        height: '20',
+      }),
       tooltip: {
         figure: LatexTooltip(
           'Energia. Tömeg. Fény. Egyetlen egyenletben,',
@@ -42,7 +48,10 @@ export const latexSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Egyenlet',
       description: 'Hozz létre egy új egyenlet blokkot.',
-      icon: TeXIcon(),
+      icon: EquationBlockIcon({
+        width: '20',
+        height: '20',
+      }),
       tooltip: {
         figure: LatexTooltip(
           'Hozz létre egy egyenletet LaTeX segítségével.',

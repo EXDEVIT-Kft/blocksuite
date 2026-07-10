@@ -77,7 +77,7 @@ const openDocActions = [
   {
     mode: 'open-in-active-view',
     id: 'a.open-in-active-view',
-    label: 'Open this doc',
+    label: 'Dokumentum megnyitása',
     icon: ExpandFullIcon(),
   },
 ] as const satisfies (Pick<ToolbarAction, 'id' | 'label' | 'icon'> & {
@@ -108,7 +108,7 @@ const openDocActionGroup = {
       <editor-menu-button
         .contentPadding="${'8px'}"
         .button=${html`
-          <editor-icon-button aria-label="Open doc" .tooltip=${'Open doc'}>
+          <editor-icon-button aria-label="Megnyitás" .tooltip=${'Megnyitás'}>
             ${OpenInNewIcon()} ${EditorChevronDown}
           </editor-icon-button>
         `}
@@ -140,7 +140,7 @@ const conversionsActionGroup = {
   actions: [
     {
       id: 'inline',
-      label: 'Inline view',
+      label: 'Sorközi nézet',
       run(ctx) {
         const block = ctx.getCurrentBlockByType(EmbedSyncedDocBlockComponent);
         block?.convertToInline();
@@ -159,7 +159,7 @@ const conversionsActionGroup = {
     },
     {
       id: 'card',
-      label: 'Card view',
+      label: 'Kártya nézet',
       run(ctx) {
         const block = ctx.getCurrentBlockByType(EmbedSyncedDocBlockComponent);
         if (isGfxBlockComponent(block)) {
@@ -181,7 +181,7 @@ const conversionsActionGroup = {
     },
     {
       id: 'embed',
-      label: 'Embed view',
+      label: 'Beágyazott nézet',
       disabled: true,
     },
   ],
@@ -207,7 +207,7 @@ const conversionsActionGroup = {
 
 const captionAction = {
   id: 'd.caption',
-  tooltip: 'Caption',
+  tooltip: 'Felirat',
   icon: CaptionIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(EmbedSyncedDocBlockComponent);
@@ -231,7 +231,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedSyncedDocModel);
@@ -240,13 +240,13 @@ const builtinToolbarConfig = {
             const slice = Slice.fromModels(ctx.store, [model]);
             ctx.clipboard
               .copySlice(slice)
-              .then(() => toast(ctx.host, 'Copied to clipboard'))
+              .then(() => toast(ctx.host, 'Vágólapra másolva'))
               .catch(console.error);
           },
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedSyncedDocModel);
@@ -264,7 +264,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {
@@ -287,8 +287,8 @@ const builtinSurfaceToolbarConfig = {
     conversionsActionGroup,
     {
       id: 'b.insert-to-page',
-      label: 'Insert to page',
-      tooltip: 'Insert to page',
+      label: 'Beszúrás a Dokumentumba',
+      tooltip: 'Beszúrás a Dokumentumba',
       icon: InsertIntoPageIcon(),
       run: ctx => {
         const model = ctx.getCurrentModelByType(EmbedSyncedDocModel);
@@ -322,7 +322,7 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'c.duplicate-as-note',
-      label: 'Duplicate as note',
+      label: 'Duplikálás jegyzetként',
       tooltip:
         'Duplicate as note to create an editable copy, the original remains unchanged.',
       icon: DuplicateIcon(),

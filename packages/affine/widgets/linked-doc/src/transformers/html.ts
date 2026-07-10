@@ -65,7 +65,7 @@ async function exportDoc(doc: Store) {
   });
 
   let downloadBlob: Blob;
-  const docTitle = doc.meta?.title || 'Untitled';
+  const docTitle = doc.meta?.title || 'Új dokumentum';
   let name: string;
   const contentBlob = new Blob([htmlResult.file], { type: 'plain/text' });
   if (htmlResult.assetsIds.length > 0) {

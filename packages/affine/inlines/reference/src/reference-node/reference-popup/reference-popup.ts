@@ -180,7 +180,7 @@ export class ReferencePopup extends SignalWatcher(
           <input
             id="alias-title"
             type="text"
-            placeholder="Add a custom title"
+            placeholder="Egyedi cím megadása"
             .value=${live(this.title$.value)}
             @input=${this._updateTitle}
           />

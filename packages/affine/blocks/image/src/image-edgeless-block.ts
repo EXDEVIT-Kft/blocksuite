@@ -108,7 +108,7 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
 
   private _handleError() {
     this.resourceController.updateState({
-      errorMessage: 'Failed to download image!',
+      errorMessage: 'A képet nem sikerült letölteni!',
     });
   }
 

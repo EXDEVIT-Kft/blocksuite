@@ -161,4 +161,10 @@ export const styles = css`
     position: absolute;
     inset: 0;
   }
+
+  /* [ALGOGRIND] once the block is selected, let the user interact with the
+     embedded content (scroll PDFs, play media) */
+  .affine-attachment-embed-container.selected .affine-attachment-embed-event-mask {
+    display: none;
+  }
 `;

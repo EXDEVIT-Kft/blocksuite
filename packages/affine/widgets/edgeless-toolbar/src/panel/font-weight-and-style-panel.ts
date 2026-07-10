@@ -1,11 +1,11 @@
 import { TextUtils } from '@blocksuite/affine-block-surface';
+import { DoneIcon } from '@blocksuite/affine-editor-icons';
 import {
   FontFamily,
   FontFamilyMap,
   FontStyle,
   FontWeight,
 } from '@blocksuite/affine-model';
-import { DoneIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';
@@ -100,7 +100,7 @@ export class EdgelessFontWeightAndStylePanel extends LitElement {
                       this._onSelect(fontFace.weight as FontWeight)}
                   >
                     ${choose(fontFace.weight, FONT_WEIGHT_CHOOSE)}
-                    ${active ? DoneIcon() : nothing}
+                    ${active ? DoneIcon({ width: '20', height: '20' }) : nothing}
                   </edgeless-tool-icon-button>
                 `;
               }
@@ -132,7 +132,7 @@ export class EdgelessFontWeightAndStylePanel extends LitElement {
                       )}
                   >
                     ${choose(fontFace.weight, FONT_WEIGHT_CHOOSE)} Italic
-                    ${active ? DoneIcon() : nothing}
+                    ${active ? DoneIcon({ width: '20', height: '20' }) : nothing}
                   </edgeless-tool-icon-button>
                 `;
               }

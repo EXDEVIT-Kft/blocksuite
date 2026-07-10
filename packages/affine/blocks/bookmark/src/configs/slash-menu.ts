@@ -1,11 +1,11 @@
 import { DefaultTool } from '@blocksuite/affine-block-surface';
 import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
+import { WebIcon } from '@blocksuite/affine-editor-icons';
 import { BookmarkBlockSchema } from '@blocksuite/affine-model';
 import {
   type SlashMenuConfig,
   SlashMenuConfigIdentifier,
 } from '@blocksuite/affine-widget-slash-menu';
-import { LinkIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import type { ExtensionType } from '@blocksuite/store';
 
@@ -16,7 +16,10 @@ const bookmarkSlashMenuConfig: SlashMenuConfig = {
     {
       name: 'Weboldal',
       description: 'Hivatkozz egy külső weboldalra elegánsan.',
-      icon: LinkIcon(),
+      icon: WebIcon({
+        width: '20',
+        height: '20',
+      }),
       tooltip: {
         figure: LinkTooltip,
         caption: 'Weboldal hivatkozása',

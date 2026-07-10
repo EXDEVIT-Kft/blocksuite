@@ -224,7 +224,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
 
   private _handleError() {
     this.block.resourceController.updateState({
-      errorMessage: 'Failed to download image!',
+      errorMessage: 'A képet nem sikerült letölteni!',
     });
   }
 

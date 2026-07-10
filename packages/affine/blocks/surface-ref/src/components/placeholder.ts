@@ -115,7 +115,7 @@ export class SurfaceRefPlaceHolder extends SignalWatcher(
         <div class="surface-ref-placeholder-body">
           <span class="surface-ref-text">
             ${modelNotFound
-              ? `The ${matchedType.name.toLowerCase()} is deleted or not in this doc.`
+              ? 'Ez a tartalom törölve lett a rajztáblán'
               : `The ${matchedType.name.toLowerCase()} is inserted but cannot display in edgeless mode. Switch to page mode to view the block.`}
           </span>
         </div>

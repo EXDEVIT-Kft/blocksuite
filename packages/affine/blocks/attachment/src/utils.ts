@@ -42,7 +42,7 @@ export function downloadAttachmentBlob(block: AttachmentBlockComponent) {
   const { host, model, blobUrl, resourceController } = block;
 
   if (resourceController.state$.peek().downloading) {
-    toast(host, 'Download in progress...');
+    toast(host, 'Letöltés folyamatban...');
     return;
   }
 
@@ -50,13 +50,13 @@ export function downloadAttachmentBlob(block: AttachmentBlockComponent) {
   const shortName = name.length < 20 ? name : name.slice(0, 20) + '...';
 
   if (!blobUrl) {
-    toast(host, `Failed to download ${shortName}!`);
+    toast(host, `Sikertelen letöltés: ${shortName}!`);
     return;
   }
 
   resourceController.updateState({ downloading: true });
 
-  toast(host, `Downloading ${shortName}`);
+  toast(host, `Letöltés: ${shortName}`);
 
   const tmpLink = document.createElement('a');
   const event = new MouseEvent('click');

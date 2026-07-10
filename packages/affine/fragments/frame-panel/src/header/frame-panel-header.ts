@@ -7,10 +7,11 @@ import {
   DocModeProvider,
   EditPropsStore,
 } from '@blocksuite/affine-shared/services';
+import { PresentationIcon } from '@blocksuite/affine-editor-icons';
 import { createButtonPopper } from '@blocksuite/affine-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { WithDisposable } from '@blocksuite/global/lit';
-import { PresentationIcon, SettingsIcon } from '@blocksuite/icons/lit';
+import { SettingsIcon } from '@blocksuite/icons/lit';
 import type { EditorHost } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { css, html, LitElement, type PropertyValues } from 'lit';
@@ -211,7 +212,7 @@ export class FramePanelHeader extends WithDisposable(LitElement) {
         ></affine-frames-setting-menu>
       </div>
       <div class="presentation-button" @click=${this._enterPresentationMode}>
-        ${PresentationIcon({ width: '16px', height: '16px' })}<span
+        ${PresentationIcon({ width: '16', height: '16' })}<span
           class="presentation-button-label"
           >Prezentálás</span
         >

@@ -305,7 +305,9 @@ export class AffinePageDraggingAreaWidget extends WidgetComponent<RootBlockModel
       <style>
         .affine-page-dragging-area {
           position: absolute;
-          background: var(--affine-hover-color);
+          background: var(--algogrind-selection-color);
+          border-radius: 4px;
+          border: 1px solid var(--algogrind-selection-border-color);
           z-index: 1;
           pointer-events: none;
         }

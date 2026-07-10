@@ -193,12 +193,12 @@ const embedConfig: AttachmentEmbedConfig[] = [
         <iframe
           style=${styleMap({
             width: '100%',
+            height: '75vh',
             minHeight: '480px',
             colorScheme: 'auto',
           })}
           src=${blobUrl + parameters}
           loading="lazy"
-          scrolling="no"
           frameborder="no"
           allowTransparency
           allowfullscreen

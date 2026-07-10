@@ -40,8 +40,8 @@ export class ViewDropdownMenu extends SignalWatcher(LitElement) {
         .contentPadding="${'8px'}"
         .button=${html`
           <editor-icon-button
-            aria-label="Switch view"
-            .tooltip="${'Switch view'}"
+            aria-label="Nézet váltása"
+            .tooltip="${'Nézet váltása'}"
             .justify="${'space-between'}"
             .labelHeight="${'20px'}"
             .iconContainerWidth="${'110px'}"

@@ -22,7 +22,7 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
       ?disabled=${this.disabled}
       .range=${{ points: this.lineWidths }}
       .value=${this.selectedSize}
-      .tooltip=${this.hasTooltip ? 'Thickness' : undefined}
+      .tooltip=${this.hasTooltip ? 'Vastagság' : undefined}
       @select=${(e: SliderSelectEvent) => {
         e.stopPropagation();
         this._onSelect(e.detail.value);

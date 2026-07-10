@@ -31,7 +31,7 @@ import {
 import type { ImageBlockComponent } from './image-block';
 import type { ImageEdgelessBlockComponent } from './image-edgeless-block';
 
-const DEFAULT_ATTACHMENT_NAME = 'affine-attachment';
+const DEFAULT_ATTACHMENT_NAME = 'AlgoGrind melléklet';
 
 async function getImageBlob(model: ImageBlockModel) {
   const sourceId = model.props.sourceId$.peek();
@@ -66,18 +66,18 @@ export async function downloadImageBlob(
   const { host, blobUrl, resourceController } = block;
 
   if (!blobUrl) {
-    toast(host, 'Failed to download image!');
+    toast(host, 'A képet nem sikerült letölteni!');
     return;
   }
 
   if (resourceController.state$.peek().downloading) {
-    toast(host, 'Download in progress...');
+    toast(host, 'Letöltés folyamatban...');
     return;
   }
 
   resourceController.updateState({ downloading: true });
 
-  toast(host, 'Downloading image...');
+  toast(host, 'Kép letöltése folyamatban...');
 
   const tmpLink = document.createElement('a');
   const event = new MouseEvent('click');
@@ -160,7 +160,7 @@ export async function copyImageBlob(
       ]);
     }
 
-    toast(host, 'Copied image to clipboard');
+    toast(host, 'Kép a vágólapra másolva');
   } catch (error) {
     console.error(error);
   }

@@ -99,7 +99,7 @@ export const createGroupCommand: Command<
       },
       {} as Record<string, true>
     ),
-    title: `Group ${groups.length + 1}`,
+    title: `Csoport ${groups.length + 1}`,
   });
   if (!groupId) {
     return;

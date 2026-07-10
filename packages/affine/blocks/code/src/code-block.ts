@@ -390,7 +390,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
         this.notificationService?.toast('Copied to clipboard');
       })
       .catch(e => {
-        this.notificationService?.toast('Copied failed, something went wrong');
+        this.notificationService?.toast('Másolás sikertelen');
         console.error(e);
       });
   }

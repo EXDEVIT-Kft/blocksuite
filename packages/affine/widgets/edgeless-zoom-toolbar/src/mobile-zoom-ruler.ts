@@ -1,6 +1,6 @@
+import { ViewBarIcon } from '@blocksuite/affine-editor-icons';
 import { stopPropagation } from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
-import { ViewBarIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { baseTheme } from '@toeverything/theme';
@@ -128,7 +128,10 @@ export class MobileZoomRuler extends WithDisposable(LitElement) {
           ?disabled=${locked}
           @click=${() => this.gfx.fitToScreen()}
         >
-          ${ViewBarIcon()}
+          ${ViewBarIcon({
+            width: '24',
+            height: '24',
+          })}
         </button>
       </div>
     `;

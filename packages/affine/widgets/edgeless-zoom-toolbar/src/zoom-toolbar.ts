@@ -1,7 +1,11 @@
 import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
+import {
+  MinusIcon,
+  PlusIcon,
+  ViewBarIcon,
+} from '@blocksuite/affine-editor-icons';
 import { stopPropagation } from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
-import { MinusIcon, PlusIcon, ViewBarIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import {
   GfxControllerIdentifier,
@@ -172,7 +176,10 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
           .iconSize=${'24px'}
           .disabled=${locked}
         >
-          ${ViewBarIcon()}
+          ${ViewBarIcon({
+            width: '24',
+            height: '24',
+          })}
         </edgeless-tool-icon-button>
         <edgeless-tool-icon-button
           .tooltip=${'Kicsinyítés'}
@@ -183,7 +190,10 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
           .iconSize=${'24px'}
           .disabled=${locked}
         >
-          ${MinusIcon()}
+          ${MinusIcon({
+            width: '24',
+            height: '24',
+          })}
         </edgeless-tool-icon-button>
         <button
           class="zoom-percent"
@@ -201,7 +211,10 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
           .iconSize=${'24px'}
           .disabled=${locked}
         >
-          ${PlusIcon()}
+          ${PlusIcon({
+            width: '24',
+            height: '24',
+          })}
         </edgeless-tool-icon-button>
       </div>
     `;

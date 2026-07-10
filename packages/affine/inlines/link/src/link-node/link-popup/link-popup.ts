@@ -47,7 +47,7 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
           class="affine-link-popover-input"
           type="text"
           spellcheck="false"
-          placeholder="Paste or type a link"
+          placeholder="Írj vagy másolj be egy hivatkozást"
           @paste=${this._updateConfirmBtn}
           @input=${this._updateConfirmBtn}
         />
@@ -83,7 +83,7 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
             class="affine-edit-input"
             id="text-input"
             type="text"
-            placeholder="Enter text"
+            placeholder="Szöveg megadása"
             @input=${this._updateConfirmBtn}
           />
           <label class="affine-edit-label" for="text-input">Text</label>
@@ -94,7 +94,7 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
             class="affine-edit-input"
             type="text"
             spellcheck="false"
-            placeholder="Paste or type a link"
+            placeholder="Írj vagy másolj be egy hivatkozást"
             @input=${this._updateConfirmBtn}
           />
           <label class="affine-edit-label" for="link-input">Link</label>

@@ -33,12 +33,12 @@ const defaultConfig: OpenDocConfig = {
   items: [
     {
       type: 'open-in-active-view',
-      label: 'Open this doc',
+      label: 'Dokumentum megnyitása',
       icon: ExpandFullIcon(),
     },
     {
       type: 'open-in-center-peek',
-      label: 'Open in center peek',
+      label: 'Bepillantás a dokumentumba',
       icon: CenterPeekIcon(),
     },
   ],

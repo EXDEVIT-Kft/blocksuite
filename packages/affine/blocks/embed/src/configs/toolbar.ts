@@ -387,7 +387,7 @@ function createBuiltinToolbarConfigForExternal(
       {
         placement: ActionPlacement.More,
         id: 'b.reload',
-        label: 'Reload',
+        label: 'Frissítés',
         icon: ResetIcon(),
         run(ctx) {
           const block = ctx.getCurrentBlockByType(klass);
