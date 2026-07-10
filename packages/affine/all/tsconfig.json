@@ -7,6 +7,7 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../blocks/accordion" },
     { "path": "../blocks/attachment" },
     { "path": "../blocks/bookmark" },
     { "path": "../blocks/callout" },

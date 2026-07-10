@@ -10,6 +10,7 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
+    "@blocksuite/affine-block-accordion": "workspace:*",
     "@blocksuite/affine-block-attachment": "workspace:*",
     "@blocksuite/affine-block-bookmark": "workspace:*",
     "@blocksuite/affine-block-callout": "workspace:*",
@@ -106,6 +107,9 @@
     "./blocks/bookmark": "./src/blocks/bookmark/index.ts",
     "./blocks/bookmark/store": "./src/blocks/bookmark/store.ts",
     "./blocks/bookmark/view": "./src/blocks/bookmark/view.ts",
+    "./blocks/accordion": "./src/blocks/accordion/index.ts",
+    "./blocks/accordion/store": "./src/blocks/accordion/store.ts",
+    "./blocks/accordion/view": "./src/blocks/accordion/view.ts",
     "./blocks/callout": "./src/blocks/callout/index.ts",
     "./blocks/callout/store": "./src/blocks/callout/store.ts",
     "./blocks/callout/view": "./src/blocks/callout/view.ts",

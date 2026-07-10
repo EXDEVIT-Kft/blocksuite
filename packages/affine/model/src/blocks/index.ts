@@ -1,3 +1,4 @@
+export * from './accordion/index.js';
 export * from './attachment/index.js';
 export * from './bookmark/index.js';
 export * from './callout/index.js';

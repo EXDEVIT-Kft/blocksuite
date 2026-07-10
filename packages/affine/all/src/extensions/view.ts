@@ -1,5 +1,6 @@
 import { AttachmentViewExtension } from '@blocksuite/affine-block-attachment/view';
 import { BookmarkViewExtension } from '@blocksuite/affine-block-bookmark/view';
+import { AccordionViewExtension } from '@blocksuite/affine-block-accordion/view';
 import { CalloutViewExtension } from '@blocksuite/affine-block-callout/view';
 import { CodeBlockViewExtension } from '@blocksuite/affine-block-code/view';
 import { DataViewViewExtension } from '@blocksuite/affine-block-data-view/view';
@@ -78,6 +79,7 @@ export function getInternalViewExtensions() {
     AttachmentViewExtension,
     BookmarkViewExtension,
     CalloutViewExtension,
+    AccordionViewExtension,
     CodeBlockViewExtension,
     DataViewViewExtension,
     DatabaseViewExtension,
