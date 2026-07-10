@@ -12,7 +12,7 @@ export const styles = css`
     border-radius: 8px;
     border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
 
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
     overflow: hidden;
   }
@@ -80,7 +80,7 @@ export const styles = css`
       'clig' off,
       'liga' off;
     text-transform: capitalize;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -126,9 +126,9 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -146,9 +146,9 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -177,19 +177,19 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
   .affine-embed-github-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-embed-github-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-embed-github-content-url-icon {
@@ -202,7 +202,7 @@ export const styles = css`
   .affine-embed-github-content-url-icon .open-icon {
     height: 12px;
     width: 12px;
-    fill: var(--affine-text-secondary-color);
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-github-banner {
@@ -222,16 +222,16 @@ export const styles = css`
 
   .affine-embed-github-block.loading {
     .affine-embed-github-content-title-text {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
   .affine-embed-github-block.selected {
     .affine-embed-github-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-embed-github-content-url .open-icon {
-      fill: var(--affine-link-color);
+      fill: var(--algogrind-link-color);
     }
   }
 
@@ -293,7 +293,7 @@ export const styles = css`
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
 
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-xs);
       font-style: normal;
       font-weight: 600;
@@ -302,7 +302,7 @@ export const styles = css`
 
     .affine-embed-github-content-assignees-text.label {
       width: 72px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-weight: 600;
     }
 
@@ -316,12 +316,12 @@ export const styles = css`
     }
 
     .affine-embed-github-content-assignees-text-users.user {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
       cursor: pointer;
     }
 
     .affine-embed-github-content-assignees-text-users.placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
 
     .affine-embed-github-banner {

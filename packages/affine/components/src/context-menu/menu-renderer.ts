@@ -1,4 +1,3 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -34,22 +33,21 @@ export class MenuComponent
 {
   static override styles = css`
     affine-menu {
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       display: flex;
       flex-direction: column;
       user-select: none;
       min-width: 320px;
       max-width: 320px;
       max-height: 700px;
-      box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
+      box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
       border-radius: 4px;
-      background-color: ${unsafeCSSVarV2('layer/background/overlayPanel')};
+      background-color: var(--algogrind-overlay-panel-background-color);
       padding: 8px;
       position: absolute;
       z-index: 999;
       gap: 8px;
-      border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .affine-menu-search-container {
@@ -58,7 +56,7 @@ export class MenuComponent
       align-items: center;
       padding: 4px 10px;
       gap: 8px;
-      border: 1px solid ${unsafeCSSVarV2('input/border/default')};
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .affine-menu-search {
@@ -79,7 +77,7 @@ export class MenuComponent
     .no-results {
       font-size: 12px;
       line-height: 20px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-paragraph-color);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,7 +183,7 @@ export class MenuComponent
     });
     return html` <div style=${searchStyle} class="affine-menu-search-container">
       <div
-        style="font-size:20px;display:flex;align-items:center;color: var(--affine-text-secondary-color)"
+        style="font-size:20px;display:flex;align-items:center;color: var(--algogrind-text-secondary)"
       >
         ${SearchIcon()}
       </div>
@@ -228,7 +226,7 @@ export class MenuComponent
             </div>`
           : nothing}
         <div
-          style="flex:1;font-weight:500;font-size: 14px;line-height: 22px;color: var(--affine-text-primary-color)"
+          style="flex:1;font-weight:500;font-size: 14px;line-height: 22px;color: var(--algogrind-text-paragraph-color)"
         >
           ${title.text}
         </div>
@@ -262,18 +260,19 @@ export class MobileMenuComponent
 {
   static override styles = css`
     mobile-menu {
+      box-sizing: border-box;
       height: 100%;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       display: flex;
       flex-direction: column;
       user-select: none;
       width: 100%;
-      background-color: ${unsafeCSSVarV2('layer/background/secondary')};
+      background-color: var(--algogrind-overlay-panel-background-color);
       padding: calc(8px + env(safe-area-inset-top, 0px)) 8px
         calc(8px + env(safe-area-inset-bottom, 0px)) 8px;
       position: absolute;
       z-index: 999;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-link-color);
     }
 
     .mobile-menu-body {
@@ -346,7 +345,7 @@ export class MobileMenuComponent
           font-style: normal;
           font-weight: 500;
           line-height: 22px;
-          color: var(--affine-text-primary-color);
+          color: var(--algogrind-text-paragraph-color);
           display: flex;
           justify-content: center;
 "
@@ -359,7 +358,7 @@ export class MobileMenuComponent
           display:flex;
           font-weight: 500;
           font-size: 17px;
-          color: ${unsafeCSSVarV2('button/primary')};
+          color: var(--algogrind-link-color);
           width: 50px;
           flex-shrink: 0;
           margin-right: 10px;
@@ -400,7 +399,7 @@ export const createModal = (container: HTMLElement = document.body) => {
   div.style.height = '100%';
   // [ALGOGRIND] raise modal above mobile UI layers (was 1001)
   div.style.zIndex = '6050';
-  div.style.fontFamily = 'var(--affine-font-family)';
+  div.style.fontFamily = 'var(--algogrind-text-paragraph-family)';
   container.append(div);
   return div;
 };

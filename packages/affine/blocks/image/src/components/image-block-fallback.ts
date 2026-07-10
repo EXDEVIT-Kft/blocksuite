@@ -30,8 +30,8 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
       flex-direction: column;
       justify-content: space-between;
       border-radius: 8px;
-      border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
-      background: ${unsafeCSSVarV2('layer/background/secondary')};
+      border: 1px solid var(--algogrind-border-color);
+      background: var(--algogrind-image-loading-background-color);
       padding: 12px;
     }
 
@@ -60,26 +60,26 @@ export class ImageBlockFallbackCard extends WithDisposable(ShadowlessElement) {
     }
 
     .affine-image-fallback-card-title-text {
-      color: var(--affine-placeholder-color);
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-sm);
+      color: var(--algogrind-text-paragraph-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
       font-style: normal;
       font-weight: 600;
       line-height: 22px;
     }
 
     .affine-image-fallback-card-description {
-      color: var(--affine-text-secondary-color);
-      font-family: var(--affine-font-family);
+      color: var(--algogrind-text-paragraph-color);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-xs);
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 20px;
     }
 
     .affine-image-fallback-card.loading {
       .affine-image-fallback-card-title {
-        color: var(--affine-placeholder-color);
+        color: var(--algogrind-text-paragraph-color);
       }
     }
 

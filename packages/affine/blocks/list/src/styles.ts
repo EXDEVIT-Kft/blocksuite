@@ -3,10 +3,12 @@ import { css } from 'lit';
 export const listPrefix = css`
   .affine-list-block__prefix {
     display: flex;
-    color: var(--affine-blue-700);
+    color: currentColor;
     font-size: var(--affine-font-sm);
     user-select: none;
     position: relative;
+    top: -1px;
+    left: -2px;
   }
 
   .affine-list-block__numbered {
@@ -21,7 +23,7 @@ export const listPrefix = css`
     cursor: pointer;
     width: 24px;
     height: 24px;
-    color: var(--affine-icon-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   .affine-list-block__todo-prefix.readonly {
@@ -29,20 +31,20 @@ export const listPrefix = css`
   }
 
   .affine-list-block__todo-prefix > svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 `;
 
 export const listBlockStyles = css`
   affine-list {
     display: block;
-    font-size: var(--affine-font-base);
+    font-size: var(--algogrind-text-paragraph-size);
   }
 
   affine-list code {
-    font-size: calc(var(--affine-font-base) - 3px);
-    padding: 0px 4px 2px;
+    font-size: var(--algogrind-text-code-size);
+    padding: 2px 6px;
   }
 
   .affine-list-block-container {
@@ -62,7 +64,11 @@ export const listBlockStyles = css`
   }
 
   .affine-list--checked {
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-disabled-color);
+  }
+
+  .affine-list--checked span[data-v-text='true'] {
+    text-decoration: line-through;
   }
 
   ${listPrefix}

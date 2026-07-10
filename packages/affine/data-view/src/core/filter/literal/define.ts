@@ -1,5 +1,4 @@
 import { menu } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
@@ -88,7 +87,9 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
             type.element.data?.map(tag => {
               const selected = set.has(tag.id);
               const prefix = selected
-                ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
+                ? CheckBoxCheckSolidIcon({
+                    style: `color:var(--algogrind-primary-color)`,
+                  })
                 : CheckBoxUnIcon();
               return menu.action({
                 name: tag.value,
@@ -101,7 +102,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
              border-radius:4px;
              font-size: 14px;
              line-height: 22px;
-             border:1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+             border:1px solid var(--algogrind-border-color);
 "
                     >${tag.value}</span
                   >`,
@@ -137,7 +138,7 @@ export const allLiteralConfig: LiteralItemsConfig[] = [
              border-radius:4px;
              font-size: 14px;
              line-height: 22px;
-             border:1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+             border:1px solid var(--algogrind-border-color);
 "
                     >${tag.value}</span
                   >`,

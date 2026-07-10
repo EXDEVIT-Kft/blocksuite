@@ -6,7 +6,6 @@ import {
 import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { computed, signal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import type { TemplateResult } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { html } from 'lit/static-html.js';
@@ -230,7 +229,7 @@ export class VirtualTableViewUILogic extends DataViewUILogicBase<
       groups$: this.groups$,
       createCell: (cell, wrapper) => {
         if (cell.columnId === 'row-header') {
-          wrapper.style.borderBottom = `1px solid ${cssVarV2.database.border}`;
+          wrapper.style.borderBottom = '1px solid var(--algogrind-border-color)';
           const rowHeader = new TableRowHeader();
           rowHeader.gridCell = cell;
           rowHeader.tableViewLogic = this;

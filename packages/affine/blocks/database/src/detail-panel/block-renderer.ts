@@ -7,8 +7,7 @@ import type {
 import { WithDisposable } from '@blocksuite/global/lit';
 import type { EditorHost } from '@blocksuite/std';
 import { ShadowlessElement } from '@blocksuite/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class BlockRenderer
@@ -23,9 +22,9 @@ export class BlockRenderer
       flex-direction: column;
       gap: 16px;
       margin-bottom: 12px;
-      border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
+      border-bottom: 1px solid var(--algogrind-border-color);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
     }
 
     database-datasource-block-renderer .tips-placeholder {
@@ -40,7 +39,7 @@ export class BlockRenderer
     database-datasource-block-renderer.empty rich-text::before {
       content: 'Új dokumentum';
       position: absolute;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
       font-size: 15px;
       line-height: 24px;
       user-select: none;
@@ -52,7 +51,7 @@ export class BlockRenderer
       height: 20px;
       padding: 2px;
       border-radius: 4px;
-      background-color: var(--affine-background-secondary-color);
+      background-color: var(--algogrind-background-secondary-color);
     }
 
     .database-block-detail-header-icon svg {

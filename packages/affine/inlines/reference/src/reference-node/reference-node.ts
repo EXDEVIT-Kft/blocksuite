@@ -42,8 +42,8 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
     .affine-reference {
       white-space: normal;
       word-break: break-word;
-      color: var(--affine-text-primary-color);
-      fill: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
+      fill: var(--algogrind-text-paragraph-color);
       border-radius: 4px;
       text-decoration: none;
       cursor: pointer;
@@ -55,20 +55,20 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
       }
     }
     .affine-reference:hover {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .affine-reference[data-selected='true'] {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .affine-reference-title {
       margin-left: 4px;
-      border-bottom: 0.5px solid var(--affine-divider-color);
+      border-bottom: 0.5px solid var(--algogrind-border-color);
       transition: border 0.2s ease-out;
     }
     .affine-reference-title:hover {
-      border-bottom: 0.5px solid var(--affine-icon-color);
+      border-bottom: 0.5px solid var(--algogrind-text-paragraph-color);
     }
   `;
 
@@ -268,9 +268,9 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
       attributes,
       isDeleted
         ? {
-            color: 'var(--affine-text-disable-color)',
+            color: 'var(--algogrind-text-disabled-color)',
             textDecoration: 'line-through',
-            fill: 'var(--affine-text-disable-color)',
+            fill: 'var(--algogrind-text-disabled-color)',
           }
         : {}
     );

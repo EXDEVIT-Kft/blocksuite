@@ -20,12 +20,14 @@ const styles = css`
     box-sizing: border-box;
     max-width: 280px;
     min-height: 32px;
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-weight: 500;
+    font-family: var(--algogrind-text-small-family);
+    font-size: var(--algogrind-text-small-size);
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-small);
     border-radius: 4px;
     padding: 6px 12px;
-    color: var(--affine-v2-tooltips-foreground, var(--affine-white));
-    background: var(--affine-v2-tooltips-background, var(--affine-tooltip));
+    color: var(--algogrind-text-small-color);
+    background: var(--algogrind-overlay-panel-background-color);
 
     overflow-wrap: anywhere;
     white-space: normal;
@@ -40,8 +42,7 @@ const styles = css`
   }
 `;
 
-const TOOLTIP_ARROW_COLOR =
-  'var(--affine-v2-tooltips-background, var(--affine-tooltip))';
+const TOOLTIP_ARROW_COLOR = 'var(--algogrind-overlay-panel-background-color)';
 
 // See http://apps.eky.hk/css-triangle-generator/
 const TRIANGLE_HEIGHT = 6;

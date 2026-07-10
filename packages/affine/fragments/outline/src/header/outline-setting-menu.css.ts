@@ -1,4 +1,3 @@
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 export const host = style({});
@@ -24,7 +23,7 @@ export const settingLabel = style({
   fontSize: '12px',
   fontWeight: 500,
   lineHeight: '20px',
-  color: cssVarV2('text/secondary'),
+  color: 'var(--algogrind-text-secondary)',
   padding: '0 4px',
 });
 
@@ -39,7 +38,7 @@ export const actionLabel = style({
   fontSize: '12px',
   fontWeight: 500,
   lineHeight: '20px',
-  color: cssVarV2('text/primary'),
+  color: 'var(--algogrind-text-paragraph-color)',
 });
 
 export const toggleButton = style({

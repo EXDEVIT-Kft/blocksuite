@@ -40,6 +40,7 @@ export class ReferencePopup extends SignalWatcher(
     .popover-container {
       position: absolute;
       display: flex;
+      width: min(50ch, calc(100% - 2rem));
       gap: 8px;
       box-sizing: content-box;
       justify-content: space-between;
@@ -65,11 +66,11 @@ export class ReferencePopup extends SignalWatcher(
       padding: 0;
       border: none;
       background: transparent;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
     ${fontXSStyle('input')}
     input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
     input:focus {
       outline: none;

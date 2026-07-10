@@ -1,5 +1,3 @@
-import { cssVar } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 export const outlinePanelBody = style({
@@ -11,6 +9,21 @@ export const outlinePanelBody = style({
   padding: '0 8px',
   flexGrow: 1,
   overflowY: 'scroll',
+
+  selectors: {
+    '&::-webkit-scrollbar': {
+      width: '4px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      borderRadius: '2px',
+    },
+    '&:hover::-webkit-scrollbar-thumb': {
+      backgroundColor: 'var(--algogrind-scroll-thumb-hover-color)',
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent',
+    },
+  },
 });
 
 export const cardList = style({
@@ -22,7 +35,7 @@ export const edgelessCardListTitle = style({
   fontSize: '14px',
   lineHeight: '24px',
   fontWeight: 500,
-  color: cssVarV2('text/secondary'),
+  color: 'var(--algogrind-text-secondary)',
   paddingLeft: '8px',
   height: '40px',
   boxSizing: 'border-box',
@@ -33,7 +46,7 @@ export const edgelessCardListTitle = style({
 export const insertIndicator = style({
   height: '2px',
   borderRadius: '1px',
-  backgroundColor: cssVar('brandColor'),
+  backgroundColor: 'var(--algogrind-primary-color)',
   position: 'absolute',
   top: 0,
   left: 0,
@@ -51,12 +64,11 @@ export const emptyPanel = style({
 export const emptyPanelPlaceholder = style({
   marginTop: '240px',
   alignSelf: 'center',
-  width: '190px',
-  height: '48px',
-  color: cssVarV2('text/secondary'),
+  color: 'var(--algogrind-text-placeholder-color)',
   textAlign: 'center',
-  fontSize: '15px',
+  fontSize: 'var(--algogrind-text-paragraph-size)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
   fontStyle: 'normal',
-  fontWeight: 400,
+  fontWeight: 500,
   lineHeight: '24px',
 });

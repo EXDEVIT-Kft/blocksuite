@@ -192,6 +192,19 @@ export const AffineCanvasTextFonts: FontConfig[] = [
     weight: FontWeight.Regular,
     style: FontStyle.Normal,
   },
+  // Quicksand, https://fonts.cdnfonts.com/css/quicksand
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.SemiBold,
+    style: FontStyle.Normal,
+  },
 ];
 
 export const CommunityCanvasTextFonts: FontConfig[] = [
@@ -374,6 +387,19 @@ export const CommunityCanvasTextFonts: FontConfig[] = [
     font: FontFamily.OrelegaOne,
     url: 'https://fonts.cdnfonts.com/s/93179/OrelegaOne-Regular.woff',
     weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  // Quicksand, https://fonts.cdnfonts.com/css/quicksand
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.Regular,
+    style: FontStyle.Normal,
+  },
+  {
+    font: FontFamily.Quicksand,
+    url: 'https://fonts.cdnfonts.com/s/368/Quicksand[wght].woff',
+    weight: FontWeight.SemiBold,
     style: FontStyle.Normal,
   },
 ];

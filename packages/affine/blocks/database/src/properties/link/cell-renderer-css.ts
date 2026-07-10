@@ -1,6 +1,5 @@
 import { cssVarV2 } from '@blocksuite/affine-shared/theme';
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
 
 export const linkCellStyle = css({
   width: '100%',
@@ -42,11 +41,11 @@ export const linkIconStyle = css({
   display: 'flex',
   alignItems: 'center',
   cursor: 'pointer',
-  color: cssVarV2.icon.primary,
+  color: 'var(--algogrind-text-paragraph-1-color)',
   fontSize: '14px',
   padding: '2px',
   ':hover': {
-    backgroundColor: cssVarV2.layer.background.hoverOverlay,
+    backgroundColor: 'var(--algogrind-hover-color)',
   },
 });
 
@@ -58,11 +57,11 @@ export const showLinkIconStyle = css({
 
 export const linkedDocStyle = css({
   textDecoration: 'underline',
-  textDecorationColor: 'var(--affine-divider-color)',
+  textDecorationColor: 'var(--algogrind-border-color)',
   transition: 'text-decoration-color 0.2s ease-out',
   cursor: 'pointer',
   ':hover': {
-    textDecorationColor: 'var(--affine-icon-color)',
+    textDecorationColor: 'var(--algogrind-text-paragraph-color)',
   },
 });
 
@@ -72,8 +71,8 @@ export const linkEditingStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
-  color: 'var(--affine-text-primary-color)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
+  color: 'var(--algogrind-text-paragraph-color)',
   fontWeight: 400,
   backgroundColor: 'transparent',
   fontSize: 'var(--data-view-cell-text-size)',
@@ -86,10 +85,10 @@ export const linkEditingStyle = css({
 
 export const inlineLinkNodeStyle = css({
   wordBreak: 'break-all',
-  color: 'var(--affine-link-color)',
-  fill: 'var(--affine-link-color)',
+  color: 'var(--algogrind-link-color)',
+  fill: 'var(--algogrind-link-color)',
   cursor: 'pointer',
-  fontWeight: 'normal',
+  fontWeight: '500',
   fontStyle: 'normal',
   textDecoration: 'none',
 });

@@ -8,7 +8,7 @@ export class Button extends SignalWatcher(WithDisposable(ShadowlessElement)) {
   static override styles = css`
     data-view-component-button {
       border-radius: 4px;
-      border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+      border: 1px solid var(--algogrind-border-color);
       display: flex;
       padding: 4px 8px;
       align-items: center;
@@ -16,7 +16,7 @@ export class Button extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       font-size: 14px;
       font-weight: 400;
       line-height: 22px;
-      color: ${unsafeCSSVarV2('text/primary')};
+      color: var(--algogrind-text-paragraph-color);
       cursor: pointer;
       transition:
         color 0.2s,
@@ -27,8 +27,8 @@ export class Button extends SignalWatcher(WithDisposable(ShadowlessElement)) {
 
     data-view-component-button.border:hover,
     data-view-component-button.border.active {
-      color: ${unsafeCSSVarV2('text/emphasis')};
-      border-color: ${unsafeCSSVarV2('icon/activated')};
+      color: var(--algogrind-text-heading-1-color);
+      border-color: var(--algogrind-primary-color);
     }
 
     data-view-component-button.background:hover,
@@ -41,12 +41,12 @@ export class Button extends SignalWatcher(WithDisposable(ShadowlessElement)) {
       display: flex;
       align-items: center;
       transition: color 0.2s;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color);
     }
 
     data-view-component-button.border:hover .button-icon,
     data-view-component-button.border.active .button-icon {
-      color: ${unsafeCSSVarV2('icon/activated')};
+      color: var(--algogrind-primary-color);
     }
   `;
 

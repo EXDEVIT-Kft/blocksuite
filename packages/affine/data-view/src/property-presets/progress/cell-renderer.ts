@@ -118,7 +118,7 @@ export class ProgressCell extends BaseCellRenderer<number, number> {
     });
     const bgStyles = styleMap({
       backgroundColor:
-        progress === 0 ? progressColors.empty : 'var(--affine-hover-color)',
+        progress === 0 ? progressColors.empty : 'var(--algogrind-hover-color)',
     });
 
     return html`

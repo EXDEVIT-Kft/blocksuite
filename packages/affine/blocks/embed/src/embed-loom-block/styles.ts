@@ -15,7 +15,7 @@ export const styles = css`
     border-radius: 8px;
     border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
 
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -85,7 +85,7 @@ export const styles = css`
   .affine-embed-loom-content-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-loom-content-title-text {
@@ -98,9 +98,9 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -119,9 +119,9 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -146,19 +146,19 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
   .affine-embed-loom-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-embed-loom-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-embed-loom-content-url-icon {
@@ -171,21 +171,21 @@ export const styles = css`
   .affine-embed-loom-content-url-icon .open-icon {
     height: 12px;
     width: 12px;
-    fill: var(--affine-text-secondary-color);
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-loom-block.loading {
     .affine-embed-loom-content-title-text {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
   .affine-embed-loom-block.selected {
     .affine-embed-loom-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-embed-loom-content-url .open-icon {
-      fill: var(--affine-link-color);
+      fill: var(--algogrind-link-color);
     }
   }
 `;

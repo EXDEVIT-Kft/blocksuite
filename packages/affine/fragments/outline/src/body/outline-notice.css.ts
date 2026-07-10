@@ -1,5 +1,3 @@
-import { cssVar } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 export const outlineNotice = style({
@@ -15,7 +13,7 @@ export const outlineNotice = style({
   fontSize: '12px',
   flexDirection: 'column',
   borderRadius: '8px',
-  backgroundColor: cssVar('--affine-background-overlay-panel-color'),
+  backgroundColor: 'var(--algogrind-overlay-panel-background-color)',
 });
 
 export const outlineNoticeHeader = style({
@@ -29,7 +27,7 @@ export const outlineNoticeHeader = style({
 export const outlineNoticeLabel = style({
   fontWeight: 600,
   lineHeight: '20px',
-  color: cssVarV2('text/secondary'),
+  color: 'var(--algogrind-text-secondary)',
 });
 
 export const outlineNoticeCloseButton = style({
@@ -39,7 +37,7 @@ export const outlineNoticeCloseButton = style({
   width: '20px',
   height: '20px',
   cursor: 'pointer',
-  color: cssVarV2('icon/primary'),
+  color: 'var(--algogrind-text-paragraph-color)',
 });
 
 export const outlineNoticeBody = style({
@@ -54,7 +52,7 @@ const outlineNoticeItem = style({
   height: '20px',
   alignItems: 'center',
   lineHeight: '20px',
-  color: cssVarV2('text/primary'),
+  color: 'var(--algogrind-text-paragraph-color)',
 });
 
 export const notice = style([

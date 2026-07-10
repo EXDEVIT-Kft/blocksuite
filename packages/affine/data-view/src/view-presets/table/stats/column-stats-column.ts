@@ -25,7 +25,7 @@ const styles = css`
     cursor: pointer;
     transition: opacity 230ms ease;
     font-size: 12px;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
     display: flex;
     opacity: 0;
     justify-content: flex-end;
@@ -41,7 +41,7 @@ const styles = css`
   .stats-cell:hover,
   affine-database-column-stats-cell.active .stats-cell {
     opacity: 1;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
     cursor: pointer;
   }
 
@@ -59,11 +59,11 @@ const styles = css`
 
   .stats-cell .label {
     text-transform: uppercase;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .stats-cell .value {
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 `;
 

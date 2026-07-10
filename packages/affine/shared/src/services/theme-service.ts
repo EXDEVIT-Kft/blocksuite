@@ -14,6 +14,10 @@ import {
   combinedLightCssVariables,
 } from '@toeverything/theme';
 
+import {
+  algogrindEdgelessDarkColors,
+  algogrindEdgelessLightColors,
+} from '../theme/algogrind-edgeless-colors';
 import { isInsideEdgelessEditor } from '../utils/dom';
 
 export const ThemeExtensionIdentifier = createIdentifier<ThemeExtension>(
@@ -87,7 +91,13 @@ export class ThemeService extends Extension {
     fallback: Color = DefaultTheme.transparent,
     theme = this.theme
   ) {
-    const result = resolveColor(color, theme, resolveColor(fallback, theme));
+    // [ALGOGRIND] Trim to tolerate legacy identifiers persisted with
+    // stray whitespace (e.g. ' --algogrind-palette-shape-lime').
+    const result = resolveColor(
+      color,
+      theme,
+      resolveColor(fallback, theme)
+    ).trim();
 
     // Compatible old data
     if (result.startsWith('--')) {
@@ -122,7 +132,13 @@ export class ThemeService extends Extension {
     real = false,
     theme = this.theme
   ) {
-    let result = resolveColor(color, theme, resolveColor(fallback, theme));
+    // [ALGOGRIND] Trim to tolerate legacy identifiers persisted with
+    // stray whitespace (e.g. ' --algogrind-palette-shape-lime').
+    let result = resolveColor(
+      color,
+      theme,
+      resolveColor(fallback, theme)
+    ).trim();
 
     // Compatible old data
     if (real && result.startsWith('--')) {
@@ -142,10 +158,23 @@ export class ThemeService extends Extension {
       }
       const key = property as keyof AffineCssVariables;
       // V1 theme
-      const color =
+      let color =
         theme === ColorScheme.Dark
           ? combinedDarkCssVariables[key]
           : combinedLightCssVariables[key];
+
+      // [ALGOGRIND]
+      // If we fail to find the css var's color value within the affine palette,
+      // check the algogrind override values
+      if (color === undefined) {
+        color =
+          theme === ColorScheme.Dark
+            ? // @ts-expect-error no ts for theme override
+              algogrindEdgelessDarkColors[key]
+            : // @ts-expect-error no ts for theme override
+              algogrindEdgelessLightColors[key];
+      }
+
       return color;
     }
     return property;

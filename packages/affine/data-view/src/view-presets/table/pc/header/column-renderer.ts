@@ -1,7 +1,6 @@
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -23,7 +22,7 @@ export class DataViewColumnPreview extends SignalWatcher(
       pointer-events: none;
       display: block;
       position: fixed;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
     }
   `;
 
@@ -35,9 +34,7 @@ export class DataViewColumnPreview extends SignalWatcher(
     const columnIndex = this.column.index$.value;
     return html`
       <div
-        style="background-color: var(--affine-background-primary-color);border-top: 1px solid ${unsafeCSS(
-          cssVarV2.layer.insideBorder.border
-        )};box-shadow: var(--affine-shadow-2);"
+        style="background-color: var(--algogrind-background-color);border-top: 1px solid var(--algogrind-border-color);box-shadow: var(--algogrind-shadow-small);"
       >
         <affine-database-header-column
           .tableViewLogic="${this.tableViewLogic}"
@@ -51,9 +48,7 @@ export class DataViewColumnPreview extends SignalWatcher(
             height: height + 'px',
           });
           return html`<div
-            style="border-top: 1px solid ${unsafeCSS(
-              cssVarV2.layer.insideBorder.border
-            )}"
+            style="border-top: 1px solid var(--algogrind-border-color)"
           >
             <div style="${style}">
               <dv-table-view-cell-container

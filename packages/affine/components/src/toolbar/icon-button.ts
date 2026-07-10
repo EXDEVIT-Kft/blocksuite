@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import type { Placement } from '@floating-ui/dom';
 import type { TemplateResult } from 'lit';
 import { css, html, LitElement, nothing } from 'lit';
@@ -12,7 +11,7 @@ export class EditorIconButton extends LitElement {
     :host(:disabled) {
       pointer-events: none;
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
     }
 
     .icon-container {
@@ -20,7 +19,7 @@ export class EditorIconButton extends LitElement {
       display: flex;
       align-items: center;
       padding: var(--icon-container-padding);
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-color);
       border-radius: 4px;
       cursor: pointer;
       white-space: nowrap;
@@ -32,20 +31,20 @@ export class EditorIconButton extends LitElement {
     }
 
     :host([active]) .icon-container.active-mode-color {
-      color: var(--affine-primary-color);
+      color: var(--algogrind-primary-color);
     }
 
     :host([active]) .icon-container.active-mode-border {
-      border: 1px solid var(--affine-brand-color);
+      border: 1px solid var(--algogrind-primary-color);
     }
 
     :host([active]) .icon-container.active-mode-background {
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
     }
 
     .icon-container[coming] {
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
     }
 
     ::slotted(svg) {
@@ -73,7 +72,7 @@ export class EditorIconButton extends LitElement {
     .icon-container[with-hover]::before {
       content: '';
       display: block;
-      background: var(--affine-hover-color);
+      background: var(--algogrind-hover-color);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -134,7 +133,9 @@ export class EditorIconButton extends LitElement {
       <style>
         .icon-container:hover,
         .icon-container.hovered {
-          background: ${this.hover ? `var(--affine-hover-color)` : 'inherit'};
+          background: ${this.hover
+            ? `var(--algogrind-hover-color)`
+            : 'inherit'};
         }
       </style>
       <div

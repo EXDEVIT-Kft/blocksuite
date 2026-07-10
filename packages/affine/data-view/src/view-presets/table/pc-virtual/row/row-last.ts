@@ -1,4 +1,3 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { effect } from '@preact/signals-core';
@@ -19,7 +18,7 @@ export class TableRowLast extends SignalWatcher(
     super.connectedCallback();
     const style = this.parentElement?.style;
     if (style) {
-      style.borderBottom = `1px solid ${cssVarV2.database.border}`;
+      style.borderBottom = '1px solid var(--algogrind-border-color)';
     }
     this.disposables.add(
       effect(() => {

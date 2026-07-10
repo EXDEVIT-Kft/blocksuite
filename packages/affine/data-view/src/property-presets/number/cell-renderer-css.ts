@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
 
 export const numberStyle = css({
   overflow: 'hidden',
@@ -9,11 +8,11 @@ export const numberStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
   fontSize: 'var(--data-view-cell-text-size)',
   lineHeight: 'var(--data-view-cell-text-line-height)',
-  color: 'var(--affine-text-primary-color)',
-  fontWeight: '400',
+  color: 'var(--algogrind-text-paragraph-color)',
+  fontWeight: '500',
   backgroundColor: 'transparent',
   wordBreak: 'break-all',
 });
@@ -24,11 +23,11 @@ export const numberInputStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
   fontSize: 'var(--data-view-cell-text-size)',
   lineHeight: 'var(--data-view-cell-text-line-height)',
-  color: 'var(--affine-text-primary-color)',
-  fontWeight: '400',
+  color: 'var(--algogrind-text-paragraph-color)',
+  fontWeight: '500',
   backgroundColor: 'transparent',
   textAlign: 'right',
   ':focus': {

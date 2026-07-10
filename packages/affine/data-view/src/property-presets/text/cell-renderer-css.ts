@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
 
 export const textStyle = css({
   display: 'flex',
@@ -8,10 +7,10 @@ export const textStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
-  fontSize: 'var(--affine-font-base)',
-  lineHeight: 'var(--affine-line-height)',
-  color: 'var(--affine-text-primary-color)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
+  fontSize: 'var(--algogrind-text-paragraph-size)',
+  lineHeight: 'var(--algogrind-line-height)',
+  color: 'var(--algogrind-text-paragraph-color)',
   fontWeight: '400',
   backgroundColor: 'transparent',
   overflow: 'hidden',
@@ -26,10 +25,10 @@ export const textInputStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
-  fontSize: 'var(--affine-font-base)',
-  lineHeight: 'var(--affine-line-height)',
-  color: 'var(--affine-text-primary-color)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
+  fontSize: 'var(--algogrind-text-paragraph-size)',
+  lineHeight: 'var(--algogrind-line-height)',
+  color: 'var(--algogrind-text-paragraph-color)',
   fontWeight: '400',
   backgroundColor: 'transparent',
   cursor: 'text',

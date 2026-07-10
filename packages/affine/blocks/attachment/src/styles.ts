@@ -7,12 +7,16 @@ export const styles = css`
     box-sizing: border-box;
     user-select: none;
     overflow: hidden;
-    border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    border: 1px solid var(--algogrind-border-color);
+    background: var(--algogrind-background-color);
 
     &.focused {
       border-color: ${unsafeCSSVarV2('layer/insideBorder/primaryBorder')};
     }
+  }
+
+  .affine-attachment-container-readonly {
+    cursor: pointer;
   }
 
   .affine-attachment-container.comment-highlighted {
@@ -53,14 +57,14 @@ export const styles = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-heading-6-color);
     font-size: 16px;
   }
 
   .affine-attachment-content-title-text {
-    color: var(--affine-text-primary-color);
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    color: var(--algogrind-text-heading-6-color);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
@@ -74,11 +78,11 @@ export const styles = css`
   }
 
   .affine-attachment-content-info {
-    color: var(--affine-text-secondary-color);
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    color: var(--algogrind-text-caption-color);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
 
@@ -111,7 +115,7 @@ export const styles = css`
 
   .affine-attachment-card.loading {
     .affine-attachment-content-title-text {
-      color: ${unsafeCSSVarV2('text/placeholder')};
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
@@ -123,7 +127,7 @@ export const styles = css`
 
   .affine-attachment-card.loading,
   .affine-attachment-card.error {
-    background: ${unsafeCSSVarV2('layer/background/secondary')};
+    background: var(--algogrind-background-secondary-color);
   }
 
   .affine-attachment-card.cubeThick {

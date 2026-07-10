@@ -40,9 +40,9 @@ export const EdgelessTextZodSchema = z
   })
   .default({
     color: DefaultTheme.textColor,
-    fontFamily: FontFamily.Inter,
+    fontFamily: FontFamily.Quicksand,
     fontStyle: FontStyle.Normal,
-    fontWeight: FontWeight.Regular,
+    fontWeight: FontWeight.SemiBold,
     textAlign: TextAlign.Left,
   });
 

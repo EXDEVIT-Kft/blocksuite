@@ -1,4 +1,3 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
 import { css } from '@emotion/css';
 
 export const groupHeaderCount = css({
@@ -6,11 +5,11 @@ export const groupHeaderCount = css({
   width: '20px',
   height: '20px',
   borderRadius: '4px',
-  backgroundColor: 'var(--affine-background-secondary-color)',
+  backgroundColor: 'var(--algogrind-background-secondary-color)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: cssVarV2.text.secondary,
+  color: 'var(--algogrind-text-secondary)',
   fontSize: 'var(--data-view-cell-text-size)',
 });
 
@@ -34,9 +33,9 @@ export const groupHeaderOp = css({
   padding: '4px',
   borderRadius: '4px',
   transition: 'all 150ms cubic-bezier(0.42, 0, 1, 1)',
-  color: cssVarV2.icon.primary,
+  color: 'var(--algogrind-text-paragraph-1-color)',
   '&:hover, &.active': {
-    backgroundColor: cssVarV2.layer.background.hoverOverlay,
+    backgroundColor: 'var(--algogrind-hover-color)',
   },
 });
 
@@ -44,12 +43,12 @@ export const groupHeaderIcon = css({
   display: 'flex',
   alignItems: 'center',
   marginRight: '-4px',
-  color: cssVarV2.icon.primary,
+  color: 'var(--algogrind-text-paragraph-1-color)',
   fontSize: '16px',
 });
 
 export const groupHeaderTitle = css({
-  color: cssVarV2.text.primary,
+  color: 'var(--algogrind-text-paragraph-color)',
   fontSize: 'var(--data-view-cell-text-size)',
   marginLeft: '4px',
 });

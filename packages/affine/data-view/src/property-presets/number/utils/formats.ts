@@ -16,4 +16,5 @@ export const numberFormats: NumberCellFormat[] = [
   { type: 'currencyUSD', label: 'US Dollár', symbol: '$' },
   { type: 'currencyEUR', label: 'Euró', symbol: '€' },
   { type: 'currencyGBP', label: 'Angol Font', symbol: '£' },
+  { type: 'currencyHUF', label: 'Forint', symbol: 'Ft' },
 ];

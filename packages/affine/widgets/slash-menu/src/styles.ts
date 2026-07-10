@@ -1,7 +1,5 @@
 import { scrollbarStyle } from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
 export const styles = css`
   .overlay-mask {
@@ -22,30 +20,32 @@ export const styles = css`
     padding: 8px 4px 8px 8px;
     width: 280px;
     overflow-y: auto;
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-family: var(--algogrind-text-paragraph-family);
 
-    background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
-    box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
     border-radius: 8px;
     z-index: var(--affine-z-index-popover);
     user-select: none;
     /* transition: max-height 0.2s ease-in-out; */
   }
 
+  .slash-menu > *:first-child {
+    padding-top: 0 !important;
+  }
+
   ${scrollbarStyle('.slash-menu')}
 
   .slash-menu-group-name {
     box-sizing: border-box;
-    padding: 2px 8px;
+    padding: 8px 8px 0;
 
-    font-size: var(--affine-font-xs);
-    font-weight: 500;
-    line-height: var(--affine-line-height);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
+    font-weight: 600;
+    line-height: var(--algogrind-line-height);
     text-align: left;
-    color: var(
-      --light-textColor-textSecondaryColor,
-      var(--textColor-textSecondaryColor, #8e8d91)
-    );
+    color: var(--algogrind-text-caption-color);
   }
 
   .slash-menu-item {
@@ -59,10 +59,10 @@ export const styles = css`
     width: 28px;
     height: 28px;
     padding: 4px;
-    border: 1px solid var(--affine-border-color, #e3e2e4);
     border-radius: 4px;
-    color: var(--affine-icon-color);
-    background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
+    color: var(--algogrind-text-paragraph-color);
+    background: var(--algogrind-overlay-panel-background-color);
+    box-shadow: var(--algogrind-ring);
 
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ export const styles = css`
   }
 
   .slash-menu-item.ask-ai {
-    color: var(--affine-brand-color);
+    color: var(--algogrind-primary-color);
   }
   .slash-menu-item.github .github-icon {
     color: var(--affine-black);
@@ -98,12 +98,10 @@ export const slashItemToolTipStyle = css`
 
   .tooltip-caption {
     padding-left: 4px;
-    color: var(
-      --light-textColor-textSecondaryColor,
-      var(--textColor-textSecondaryColor, #8e8d91)
-    );
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
-    line-height: var(--affine-line-height);
+    padding-bottom: 2px;
+    color: var(--algogrind-text-caption-color);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
+    font-weight: 500;
   }
 `;

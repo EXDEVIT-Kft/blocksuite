@@ -7,7 +7,6 @@ import {
   type PopupTarget,
   popupTargetFromElement,
 } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import {
   ArrowRightSmallIcon,
   DeleteIcon,
@@ -51,16 +50,16 @@ const styles = css`
   }
 
   .affine-database-toolbar-item.more-action:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .affine-database-toolbar-item.more-action {
     font-size: 20px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 
   .more-action.active {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 `;
 
@@ -193,7 +192,7 @@ export const popViewOptions = (
       return () =>
         html`<div
           class="properties-group-op"
-          style="padding:4px 8px;font-size:12px;line-height:20px;font-weight:500;border-radius:4px;cursor:pointer;color:var(--affine-primary-color);"
+          style="padding:4px 8px;font-size:12px;line-height:20px;font-weight:500;border-radius:4px;cursor:pointer;color:var(--algogrind-primary-color);"
           @click="${clickChangeAll}"
         >
           ${isAllShowed ? 'Mind elrejtése' : 'Mind megjelenítése'}
@@ -339,15 +338,16 @@ export const popViewOptions = (
                   const iconStyle = styleMap({
                     fontSize: '24px',
                     color: isSelected
-                      ? 'var(--affine-text-emphasis-color)'
-                      : 'var(--affine-icon-secondary)',
+                      ? 'var(--algogrind-primary-color)'
+                      : 'var(--algogrind-text-paragraph-color)',
                   });
                   const textStyle = styleMap({
                     fontSize: '14px',
                     lineHeight: '22px',
+                    fontWeight: 500,
                     color: isSelected
-                      ? 'var(--affine-text-emphasis-color)'
-                      : 'var(--affine-text-secondary-color)',
+                      ? 'var(--algogrind-primary-color)'
+                      : 'var(--algogrind-text-paragraph-color)',
                   });
                   const buttonData: MenuButtonData = {
                     content: () => html`
@@ -391,12 +391,12 @@ export const popViewOptions = (
                 style="display:flex;align-items:center;gap:8px;padding:0 2px;"
               >
                 <div
-                  style="display:flex;align-items:center;color:var(--affine-icon-color);"
+                  style="display:flex;align-items:center;color:var(--algogrind-text-paragraph-color);"
                 >
                   ${LayoutIcon()}
                 </div>
                 <div
-                  style="font-size:14px;line-height:22px;color:var(--affine-text-secondary-color);"
+                  style="font-size:14px;line-height:22px;color:var(--algogrind-text-secondary);"
                 >
                   Elrendezés
                 </div>

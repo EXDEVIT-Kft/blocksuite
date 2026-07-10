@@ -8,11 +8,11 @@ export const codeBlockStyles = css`
   }
 
   .affine-code-block-container {
-    font-size: var(--affine-font-xs);
-    line-height: var(--affine-line-height);
+    font-size: var(--algogrind-text-code-block-size);
+    line-height: var(--algogrind-line-height);
     position: relative;
     padding: 32px 20px;
-    background: var(--affine-background-code-block);
+    background: var(--algogrind-code-background-color);
     border-radius: 10px;
     box-sizing: border-box;
   }
@@ -37,8 +37,28 @@ export const codeBlockStyles = css`
     }
   }
 
+  .affine-code-block-container rich-text::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: block;
+    height: 6px;
+  }
+
+  .affine-code-block-container rich-text::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: transparent;
+  }
+
+  .affine-code-block-container rich-text:hover::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: var(--algogrind-scroll-thumb-hover-color);
+  }
+
+  .affine-code-block-container rich-text:hover::-webkit-scrollbar-track {
+    background-color: var(--algogrind-hover-color);
+  }
+
   .affine-code-block-container .inline-editor {
-    font-family: var(--affine-font-code-family);
+    font-family: var(--algogrind-text-code-block-family);
     font-variant-ligatures: none;
   }
 
@@ -65,12 +85,13 @@ export const codeBlockStyles = css`
     white-space: nowrap;
     left: -0.5px;
     z-index: 1;
-    background: var(--affine-background-code-block);
-    font-size: var(--affine-font-xs);
-    line-height: var(--affine-line-height);
-    color: var(--affine-text-secondary);
+    background: var(--algogrind-code-background-color);
+    font-size: var(--algogrind-text-code-block-size);
+    line-height: var(--algogrind-line-height);
+    color: var(--algogrind-text-code-block-color);
     box-sizing: border-box;
     user-select: none;
+    opacity: 0.3;
   }
 
   .affine-code-block-container.disable-line-numbers .line-number {
@@ -86,7 +107,7 @@ export const codeBlockStyles = css`
   /* Clamp the rich-text to the first 8 lines */
   .affine-code-block-container.collapsed rich-text {
     display: block;
-    max-height: calc(8 * var(--affine-line-height));
+    max-height: calc(8 * var(--algogrind-line-height));
     overflow: hidden;
   }
 
@@ -105,7 +126,7 @@ export const codeBlockStyles = css`
     background: linear-gradient(
       to bottom,
       transparent,
-      var(--affine-background-code-block)
+      var(--algogrind-code-background-color)
     );
     border-radius: 0 0 10px 10px;
     pointer-events: none;

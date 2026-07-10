@@ -7,7 +7,6 @@ import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -115,11 +114,11 @@ export class GroupSetting extends SignalWatcher(
       border-radius: 4px;
     }
     .group-item-op-icon:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
     .group-item-op-icon svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 20px;
       height: 20px;
     }
@@ -137,11 +136,11 @@ export class GroupSetting extends SignalWatcher(
       font-weight: 500;
       border-radius: 4px;
       cursor: pointer;
-      color: ${unsafeCSS(cssVarV2.button.primary)};
+      color: var(--algogrind-primary-color);
     }
 
     .properties-group-op:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -201,7 +200,7 @@ export class GroupSetting extends SignalWatcher(
         style="padding:7px 0;display:flex;justify-content:space-between;align-items:center;"
       >
         <div
-          style="padding:0 4px;font-size:12px;color:var(--affine-text-secondary-color);line-height:20px;"
+          style="padding:0 4px;font-size:12px;color:var(--algogrind-text-secondary);line-height:20px;"
         >
           Csoportok
         </div>
@@ -328,7 +327,7 @@ export const buildGroupSettingItems = (
           name: 'Csoportosítás',
           postfix: html`
             <div
-              style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+              style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--algogrind-text-secondary);margin-left:8px;"
               class="dv-icon-16"
             >
               ${renderUniLit(icon, {})} ${gProp.name$.value}
@@ -354,7 +353,7 @@ export const buildGroupSettingItems = (
                   autoHeight: true,
                   postfix: html`
                     <div
-                      style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:30px;"
+                      style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--algogrind-text-secondary);margin-left:30px;"
                     >
                       ${dateModeLabel(group.groupInfo$.value?.config.name)}
                     </div>
@@ -385,8 +384,8 @@ export const buildGroupSettingItems = (
                                   group.groupInfo$.value?.config.name === key;
                                 return html`<span
                                   style="font-size:14px;color:${isSelected
-                                    ? 'var(--affine-text-emphasis-color)'
-                                    : 'var(--affine-text-secondary-color)'}"
+                                    ? 'var(--algogrind-primary-color)'
+                                    : 'var(--algogrind-text-secondary)'}"
                                   >${label}</span
                                 >`;
                               },
@@ -415,7 +414,7 @@ export const buildGroupSettingItems = (
                         name: 'Hét kezdőnapja',
                         postfix: html`
                           <div
-                            style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+                            style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--algogrind-text-secondary);margin-left:8px;"
                           >
                             ${group.groupInfo$.value?.config.name ===
                             'date-week-mon'
@@ -440,8 +439,8 @@ export const buildGroupSettingItems = (
                                       key;
                                     return html`<span
                                       style="font-size:14px;color:${isSelected
-                                        ? 'var(--affine-text-emphasis-color)'
-                                        : 'var(--affine-text-secondary-color)'}"
+                                        ? 'var(--algogrind-primary-color)'
+                                        : 'var(--algogrind-text-secondary)'}"
                                       >${label}</span
                                     >`;
                                   },
@@ -472,7 +471,7 @@ export const buildGroupSettingItems = (
                   autoHeight: true,
                   postfix: html`
                     <div
-                      style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+                      style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--algogrind-text-secondary);margin-left:8px;"
                     >
                       ${group.sortAsc$.value
                         ? 'Legrégebbi elöl'
@@ -488,8 +487,8 @@ export const buildGroupSettingItems = (
                             const isSelected = group.sortAsc$.value;
                             return html`<span
                               style="font-size:14px;color:${isSelected
-                                ? 'var(--affine-text-emphasis-color)'
-                                : 'var(--affine-text-secondary-color)'}"
+                                ? 'var(--algogrind-primary-color)'
+                                : 'var(--algogrind-text-secondary)'}"
                               >Legrégebbi elöl</span
                             >`;
                           },
@@ -505,8 +504,8 @@ export const buildGroupSettingItems = (
                             const isSelected = !group.sortAsc$.value;
                             return html`<span
                               style="font-size:14px;color:${isSelected
-                                ? 'var(--affine-text-emphasis-color)'
-                                : 'var(--affine-text-secondary-color)'}"
+                                ? 'var(--algogrind-primary-color)'
+                                : 'var(--algogrind-text-secondary)'}"
                               >Legújabb elöl</span
                             >`;
                           },

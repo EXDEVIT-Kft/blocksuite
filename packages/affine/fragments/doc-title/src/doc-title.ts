@@ -15,20 +15,24 @@ import { effect } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
-const DOC_BLOCK_CHILD_PADDING = 24;
+const DOC_BLOCK_CHILD_PADDING = 20;
 
 export class DocTitle extends WithDisposable(ShadowlessElement) {
   static override styles = css`
+    .doc-icon-container {
+      font-family: var(--affine-font-family);
+      color: var(--affine-text-primary-color);
+    }
     .doc-title-container {
-      font-size: 40px;
-      line-height: 50px;
+      font-family: var(--algogrind-text-doc-title-family);
+      color: var(--algogrind-text-doc-title-color);
+      font-size: var(--algogrind-text-doc-title-size);
+      line-height: 1.25;
       font-weight: 700;
     }
     .doc-icon-container,
     .doc-title-container {
       box-sizing: border-box;
-      font-family: var(--affine-font-family);
-      color: var(--affine-text-primary-color);
       outline: none;
       resize: none;
       border: 0;
@@ -36,7 +40,6 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       max-width: var(--affine-editor-width);
       margin-left: auto;
       margin-right: auto;
-      padding: 38px 0;
 
       padding-left: var(
         --affine-editor-side-padding,
@@ -46,6 +49,8 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
         --affine-editor-side-padding,
         ${DOC_BLOCK_CHILD_PADDING}px
       );
+      padding-top: 5rem;
+      padding-bottom: 38px;
     }
     .doc-icon-container + * .doc-title-container {
       /* when doc icon exists, remove the top padding */
@@ -61,9 +66,15 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       }
     }
 
+    @media screen and (max-width: 768px) {
+      .doc-title-container {
+        font-size: calc(var(--algogrind-text-doc-title-size) * 0.67);
+      }
+    }
+
     .doc-title-container-empty::before {
       content: 'Cím';
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
       position: absolute;
       opacity: 0.5;
       pointer-events: none;

@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css } from 'lit';
@@ -36,14 +35,13 @@ export class MultiTagView extends WithDisposable(ShadowlessElement) {
     .affine-select-cell-container .select-selected {
       height: 22px;
       font-size: 14px;
-      line-height: 20px;
+      line-height: 22px;
       padding: 0 8px;
       border-radius: 4px;
       white-space: nowrap;
-      background: var(--affine-tag-white);
+      background: var(--algogrind-note-background-white);
       overflow: hidden;
       text-overflow: ellipsis;
-      border: 1px solid ${unsafeCSSVarV2('database/border')};
     }
   `;
 

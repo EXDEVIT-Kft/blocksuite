@@ -37,19 +37,20 @@ export class MenuButton extends MenuFocusable {
       padding: 4px;
       gap: 8px;
       border-radius: 4px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .affine-menu-button:hover,
     affine-menu-button.active .affine-menu-button {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .affine-menu-button .affine-menu-action-text {
       flex: 1;
       font-size: 14px;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
+      font-weight: 500;
     }
 
     .affine-menu-button.focused {
@@ -125,12 +126,12 @@ export class MobileMenuButton extends MenuFocusable {
       padding: 11px 8px;
       gap: 8px;
       border-radius: 4px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .mobile-menu-button .affine-menu-action-text {
       flex: 1;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       font-size: 17px;
       line-height: 22px;
     }
@@ -251,7 +252,9 @@ export const menuButtonItems = {
       const data: MenuButtonData = {
         content: () => html`
           ${config.checked.value
-            ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
+            ? CheckBoxCheckSolidIcon({
+                style: `color:var(--algogrind-primary-color)`,
+              })
             : CheckBoxUnIcon()}
           <div class="affine-menu-action-text">
             ${config.label?.() ?? config.name}

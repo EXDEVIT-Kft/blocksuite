@@ -14,8 +14,7 @@ import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { type EditorHost, ShadowlessElement } from '@blocksuite/std';
 import type { BaseTextAttributes } from '@blocksuite/store';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import { isPureText } from '../utils/title-doc.js';
@@ -93,9 +92,7 @@ export class NoteRenderer
   protected override render(): unknown {
     return html`
       <div
-        style="height: 1px;max-width: var(--affine-editor-width);background-color: ${unsafeCSS(
-          cssVarV2.layer.insideBorder.border
-        )};margin: auto;margin-bottom: 16px"
+        style="height: 1px;max-width: var(--affine-editor-width);background-color: var(--algogrind-border-color);margin: auto;margin-bottom: 16px"
       ></div>
       ${this.renderNote()}
     `;
@@ -106,9 +103,9 @@ export class NoteRenderer
       return html` <div>
         <div
           @click="${this.addNote}"
-          style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--affine-text-disable-color)"
+          style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--algogrind-text-disabled-color)"
         >
-          Click to create a linked doc in center peek.
+          Kattints egy új beágyazott dokumentum létrehozásához.
         </div>
       </div>`;
     }

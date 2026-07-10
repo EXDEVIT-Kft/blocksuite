@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { cssVarV2 } from '@toeverything/theme/v2';
 
 export const groupFooter = css({
   display: 'block',
@@ -13,7 +12,7 @@ export const addRowWrapper = css({
   cursor: 'pointer',
   transition: 'opacity 0.2s ease-in-out',
   padding: '4px 8px',
-  borderBottom: `1px solid ${cssVarV2.database.border}`,
+  borderBottom: '1px solid var(--algogrind-border-color)',
 });
 
 export const addRowButton = css({
@@ -29,5 +28,5 @@ export const addRowText = css({
   userSelect: 'none',
   fontSize: '12px',
   lineHeight: '20px',
-  color: cssVarV2.text.secondary,
+  color: 'var(--algogrind-text-secondary)',
 });

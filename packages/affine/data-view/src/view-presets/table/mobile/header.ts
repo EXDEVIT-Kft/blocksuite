@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -17,7 +16,7 @@ export class MobileTableHeader extends SignalWatcher(
   static override styles = css`
     .mobile-table-add-column {
       font-size: 18px;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color)
       margin-left: 8px;
       display: flex;
       align-items: center;

@@ -19,7 +19,7 @@ export const styles = css`
     border-radius: 8px;
     border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
 
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -45,7 +45,9 @@ export const styles = css`
   .affine-embed-youtube-video-iframe-container > iframe {
     width: 100%;
     height: 100%;
-    border-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
   }
 
   /* [ALGOGRIND] */
@@ -53,6 +55,13 @@ export const styles = css`
      needs its own aspect ratio to size itself without the card layout */
   .affine-embed-youtube-video-iframe-container.readonly {
     aspect-ratio: ${EMBED_CARD_WIDTH.video} / ${EMBED_CARD_HEIGHT.video - 116};
+  }
+
+  /* [ALGOGRIND] */
+  /* In readonly mode we need all corners to be rounded */
+  .affine-embed-youtube-video-iframe-container.readonly > iframe {
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .affine-embed-youtube-video-iframe-overlay {
@@ -96,7 +105,7 @@ export const styles = css`
   .affine-embed-youtube-content-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-youtube-content-title-text {
@@ -109,10 +118,10 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-heading-6-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
@@ -132,7 +141,7 @@ export const styles = css`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-youtube-content-creator-text {
@@ -140,12 +149,12 @@ export const styles = css`
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 
-    color: var(--affine-text-primary-color);
     text-align: justify;
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    color: var(--algogrind-text-caption-color);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
 
@@ -158,12 +167,12 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-caption-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
 
@@ -172,7 +181,7 @@ export const styles = css`
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
   }
 
   .affine-embed-youtube-content-url {
@@ -193,19 +202,19 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-caption-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
   .affine-embed-youtube-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-embed-youtube-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-embed-youtube-content-url-icon {
@@ -214,25 +223,26 @@ export const styles = css`
     justify-content: center;
     width: 12px;
     height: 12px;
+    padding-inline: 1rem;
   }
   .affine-embed-youtube-content-url-icon svg {
     height: 12px;
     width: 12px;
-    fill: ${unsafeCSSVarV2('icon/primary')};
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-youtube-block.loading {
     .affine-embed-youtube-content-title-text {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
   .affine-embed-youtube-block.selected {
     .affine-embed-youtube-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-embed-youtube-content-url .open-icon {
-      fill: var(--affine-link-color);
+      fill: var(--algogrind-link-color);
     }
   }
 `;

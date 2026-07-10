@@ -1,6 +1,5 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { css, unsafeCSS } from 'lit';
+import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { css } from 'lit';
 
 export const styles = css`
   bookmark-card {
@@ -17,9 +16,9 @@ export const styles = css`
     width: 100%;
 
     border-radius: 8px;
-    border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
+    border: 1px solid var(--algogrind-border-color);
 
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -55,7 +54,7 @@ export const styles = css`
   .affine-bookmark-content-title-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-bookmark-content-title-text {
@@ -66,10 +65,10 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-heading-6-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
@@ -86,12 +85,12 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-caption-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--algogrind-text-caption-family);
+    font-size: var(--algogrind-text-caption-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
 
@@ -113,19 +112,19 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-small-color);
 
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-    font-size: var(--affine-font-xs);
+    font-family: var(--algogrind-text-small-family);
+    font-size: var(--algogrind-text-small-size);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
   }
   .affine-bookmark-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-bookmark-content-url:hover {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-bookmark-content-url-icon {
@@ -138,24 +137,24 @@ export const styles = css`
   .affine-bookmark-content-url-icon {
     height: 12px;
     width: 12px;
-    color: ${unsafeCSSVar('iconSecondary')};
+    color: var(--algogrind-text-heading-6-color);
   }
 
   .affine-bookmark-banner {
-    margin: 12px 12px 0px 0px;
-    width: 204px;
+    width: 228px;
     max-width: 100%;
-    height: 102px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: end;
   }
 
   .affine-bookmark-banner img,
   .affine-bookmark-banner object,
   .affine-bookmark-banner svg {
-    width: 204px;
     max-width: 100%;
-    height: 102px;
+    max-height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 0 8px 8px 0;
   }
 
   .affine-bookmark-card.comment-highlighted {
@@ -164,22 +163,22 @@ export const styles = css`
 
   .affine-bookmark-card.loading {
     .affine-bookmark-content-title-text {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
   .affine-bookmark-card.error {
     .affine-bookmark-content-description {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
   }
 
   .affine-bookmark-card.selected {
     .affine-bookmark-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-bookmark-content-url .affine-bookmark-content-url-icon {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
   }
 

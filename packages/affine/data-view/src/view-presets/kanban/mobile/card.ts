@@ -1,10 +1,8 @@
 import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { CenterPeekIcon, MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -19,7 +17,7 @@ const styles = css`
     display: flex;
     position: relative;
     flex-direction: column;
-    border: 0.5px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+    border: 0.5px solid var(--algogrind-border-color);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     background-color: var(--affine-background-kanban-card-color);
@@ -37,7 +35,7 @@ const styles = css`
   }
 
   .mobile-card-header.has-divider {
-    border-bottom: 0.5px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+    border-bottom: 0.5px solid var(--algogrind-border-color);
   }
 
   .mobile-card-header-title {
@@ -47,13 +45,13 @@ const styles = css`
 
   .mobile-card-header-icon {
     padding: 4px;
-    background-color: var(--affine-background-secondary-color);
+    background-color: var(--algogrind-background-secondary-color);
     display: flex;
     align-items: center;
     border-radius: 4px;
     width: max-content;
     font-size: 16px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 
   .mobile-card-body {
@@ -81,9 +79,9 @@ const styles = css`
     padding: 4px;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
     font-size: 16px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 `;
 

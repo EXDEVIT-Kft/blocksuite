@@ -13,7 +13,7 @@ export const styles = css`
     border-radius: 8px;
     border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
 
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -84,7 +84,7 @@ export const styles = css`
   .affine-embed-figma-content-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-figma-content-title-text {
@@ -97,9 +97,9 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -115,9 +115,9 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -129,7 +129,7 @@ export const styles = css`
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
   }
 
   .affine-embed-figma-content-url {
@@ -150,19 +150,19 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-secondary);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
   .affine-embed-figma-content-url:hover > span {
-    color: var(--affine-link-color);
+    color: var(--algogrind-link-color);
   }
   .affine-embed-figma-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+    fill: var(--algogrind-link-color);
   }
 
   .affine-embed-figma-content-url-icon {
@@ -175,15 +175,15 @@ export const styles = css`
   .affine-embed-figma-content-url-icon svg {
     height: 12px;
     width: 12px;
-    fill: ${unsafeCSSVarV2('icon/primary')};
+    fill: var(--algogrind-text-secondary);
   }
 
   .affine-embed-figma-block.selected {
     .affine-embed-figma-content-url > span {
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
     }
     .affine-embed-figma-content-url .open-icon {
-      fill: var(--affine-link-color);
+      fill: var(--algogrind-link-color);
     }
   }
 `;

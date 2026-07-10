@@ -99,8 +99,6 @@ export class EmbedBlockComponent<
           ...this.selectedStyle$?.value,
         })}
         style=${styleMap({
-          height: `${this._cardHeight}px`,
-          width: '100%',
           ...(this.isCommentHighlighted
             ? {
                 border: `2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')}`,

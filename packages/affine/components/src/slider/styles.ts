@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { css } from 'lit';
 
 export const styles = css`
@@ -41,12 +40,12 @@ export const styles = css`
   .point-circle {
     width: var(--item-icon-size);
     height: var(--item-icon-size);
-    background-color: ${unsafeCSSVarV2('layer/insideBorder/border')};
+    background-color: var(--algogrind-border-color);
     border-radius: 50%;
   }
 
   .point-button[data-selected] .point-circle {
-    background-color: ${unsafeCSSVarV2('icon/primary')};
+    background-color: var(--algogrind-text-paragraph-color);
   }
 
   .drag-handle {
@@ -54,7 +53,7 @@ export const styles = css`
     width: var(--drag-handle-size);
     height: var(--drag-handle-size);
     border-radius: 50%;
-    background-color: ${unsafeCSSVarV2('icon/primary')};
+    background-color: var(--algogrind-text-paragraph-color);
     z-index: 3;
     left: var(--drag-handle-center-x);
   }
@@ -68,11 +67,11 @@ export const styles = css`
 
   .bottom-line {
     width: calc(100% - var(--item-size));
-    background-color: ${unsafeCSSVarV2('layer/insideBorder/border')};
+    background-color: var(--algogrind-border-color);
   }
 
   .slider-selected-overlay {
-    background-color: ${unsafeCSSVarV2('icon/primary')};
+    background-color: var(--algogrind-text-paragraph-color);
     z-index: 1;
     width: var(--drag-handle-center-x);
   }

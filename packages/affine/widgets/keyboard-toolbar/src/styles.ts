@@ -21,7 +21,7 @@ export const keyboardToolbarStyles = css`
     z-index: var(--affine-z-index-popover);
 
     background-color: ${unsafeCSSVarV2('layer/background/primary')};
-    border-top: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    border-top: 0.5px solid var(--algogrind-border-color);
     box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.05);
 
     > div {
@@ -55,7 +55,7 @@ export const keyboardToolbarStyles = css`
 
   .divider {
     height: 24px;
-    border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    border: 0.5px solid var(--algogrind-border-color);
   }
 `;
 
@@ -121,7 +121,7 @@ export const keyboardToolPanelStyles = css`
 
       border: none;
       border-radius: 4px;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color);
       background: ${unsafeCSSVarV2('layer/background/secondary')};
     }
 

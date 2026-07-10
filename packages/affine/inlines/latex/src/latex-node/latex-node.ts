@@ -30,7 +30,7 @@ export class AffineLatexNode extends SignalWatcher(
       white-space: nowrap;
       word-break: break-word;
       color: ${unsafeCSSVar('textPrimaryColor')};
-      fill: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
       border-radius: 4px;
       text-decoration: none;
       cursor: pointer;

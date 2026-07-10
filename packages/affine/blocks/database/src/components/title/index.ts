@@ -23,7 +23,7 @@ export class DatabaseTitle extends SignalWatcher(
       font-size: 20px;
       line-height: 28px;
       font-weight: 600;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
       overflow: hidden;
     }
 
@@ -67,11 +67,11 @@ export class DatabaseTitle extends SignalWatcher(
       content: 'Új adatbázis';
       position: absolute;
       pointer-events: none;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .affine-database-title [data-title-focus='true']::before {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
     }
 
     .affine-database-title.comment-highlighted {

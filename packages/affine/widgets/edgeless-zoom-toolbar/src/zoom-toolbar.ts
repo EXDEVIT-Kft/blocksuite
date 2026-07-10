@@ -10,8 +10,7 @@ import {
   ZOOM_STEP,
 } from '@blocksuite/std/gfx';
 import { effect } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import clamp from 'lodash-es/clamp';
 
@@ -36,10 +35,10 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
 
     .edgeless-zoom-toolbar-container.vertical {
       flex-direction: column;
-      width: 40px;
-      background-color: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
-      border: 1px solid var(--affine-border-color);
+      width: 32px;
+      background-color: var(--algogrind-overlay-panel-background-color);
+      box-shadow: var(--algogrind-shadow-small);
+      border: 1px solid var(--algogrind-border-color);
       border-radius: 8px;
     }
 
@@ -62,26 +61,26 @@ export class EdgelessZoomToolbar extends WithDisposable(LitElement) {
       border: none;
       box-sizing: border-box;
       padding: 4px;
-      color: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-caption-size);
       background-color: transparent;
       border-radius: 4px;
       cursor: pointer;
       white-space: nowrap;
-      font-size: 12px;
-      font-weight: 500;
+      font-weight: 600;
       text-align: center;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
     }
 
     .zoom-percent:hover {
-      color: var(--affine-primary-color);
-      background-color: var(--affine-hover-color);
+      color: var(--algogrind-primary-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .zoom-percent[disabled] {
       pointer-events: none;
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--algogrind-text-disabled-color);
     }
   `;
 

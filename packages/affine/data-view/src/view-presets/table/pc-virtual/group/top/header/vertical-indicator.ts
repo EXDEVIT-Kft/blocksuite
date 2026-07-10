@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, html } from 'lit';
@@ -24,7 +23,7 @@ export class TableVerticalIndicator extends WithDisposable(ShadowlessElement) {
       position: absolute;
       pointer-events: none;
       width: 1px;
-      background-color: ${unsafeCSSVarV2('layer/background/hoverOverlay')};
+      background-color: var(--algogrind-hover-color);
     }
 
     .vertical-indicator::after {
@@ -34,7 +33,7 @@ export class TableVerticalIndicator extends WithDisposable(ShadowlessElement) {
       height: 100%;
       content: '';
       right: 0;
-      background-color: var(--affine-primary-color);
+      background-color: var(--algogrind-primary-color);
       border-radius: 1px;
     }
 

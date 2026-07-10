@@ -2,8 +2,7 @@ import { popupTargetFromElement } from '@blocksuite/affine-components/context-me
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { CenterPeekIcon, MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, nothing, unsafeCSS } from 'lit';
+import { css, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -23,7 +22,7 @@ export class TableRowView extends SignalWatcher(
 ) {
   static override styles = css`
     .affine-database-block-row:has(.row-select-checkbox.selected) {
-      background: var(--affine-primary-color-04);
+      background: var(--algogrind-primary-color-04);
     }
     .affine-database-block-row:has(.row-select-checkbox.selected)
       .row-selected-bg {
@@ -37,13 +36,13 @@ export class TableRowView extends SignalWatcher(
       right: 0;
       top: 0;
       bottom: 0;
-      background: var(--affine-primary-color-04);
+      background: var(--algogrind-primary-color-04);
     }
     .affine-database-block-row {
       width: 100%;
       display: flex;
       flex-direction: row;
-      border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+      border-bottom: 1px solid var(--algogrind-border-color);
       position: relative;
     }
 
@@ -88,8 +87,8 @@ export class TableRowView extends SignalWatcher(
       display: flex;
       padding: 4px;
       border-radius: 4px;
-      box-shadow: var(--affine-button-shadow);
-      background-color: var(--affine-background-primary-color);
+      box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
+      background-color: var(--algogrind-background-color);
       position: relative;
     }
 
@@ -101,12 +100,12 @@ export class TableRowView extends SignalWatcher(
       right: 0;
       top: 0;
       bottom: 0;
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .row-op svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 16px;
       height: 16px;
     }
@@ -117,7 +116,7 @@ export class TableRowView extends SignalWatcher(
       align-items: center;
       justify-content: center;
       cursor: grab;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--algogrind-background-color);
     }
   `;
 
@@ -189,7 +188,7 @@ export class TableRowView extends SignalWatcher(
                   style="width: 4px;
                   border-radius: 2px;
                   height: 12px;
-                  background-color: var(--affine-placeholder-color);"
+                  background-color: var(--algogrind-text-placeholder-color);"
                 ></div>
               </div>
               <row-select-checkbox

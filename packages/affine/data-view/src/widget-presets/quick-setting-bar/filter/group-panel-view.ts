@@ -16,8 +16,7 @@ import {
 } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, nothing, type TemplateResult, unsafeCSS } from 'lit';
+import { css, html, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -79,7 +78,7 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
       font-style: normal;
       font-weight: 400;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-op-clickable {
@@ -88,7 +87,7 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-op-clickable:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-group-container {
@@ -106,24 +105,24 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       border-radius: 4px;
       cursor: pointer;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
     }
 
     .filter-group-button svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 20px;
       height: 20px;
     }
 
     .filter-group-button:hover {
-      background-color: var(--affine-hover-color);
-      color: var(--affine-text-primary-color);
+      background-color: var(--algogrind-hover-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-button:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .filter-group-item {
@@ -143,19 +142,19 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-item-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .filter-group-item-ops svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--algogrind-text-secondary);
+      color: var(--algogrind-text-secondary);
       width: 18px;
       height: 18px;
     }
 
     .filter-group-item-ops:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
     }
 
     .delete-style {
@@ -163,21 +162,21 @@ export class FilterGroupView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-group-border {
-      border: 1px dashed ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+      border: 1px dashed var(--algogrind-border-color);
     }
 
     .filter-group-bg-1 {
-      background-color: var(--affine-background-secondary-color);
-      border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+      background-color: var(--algogrind-background-secondary-color);
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .filter-group-bg-2 {
-      background-color: var(--affine-background-tertiary-color);
-      border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+      background-color: var(--algogrind-border-color);
+      border: 1px solid var(--algogrind-border-color);
     }
 
     .hover-style {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .delete-style {

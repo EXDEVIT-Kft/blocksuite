@@ -3,7 +3,6 @@ import {
   popMenu,
   popupTargetFromElement,
 } from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from '@emotion/css';
@@ -49,7 +48,7 @@ const mobileAddGroup = css({
   padding: '4px',
   borderRadius: '4px',
   fontSize: '16px',
-  color: `var(${unsafeCSSVarV2('icon/primary')})`,
+  color: 'var(--algogrind-text-paragraph-1-color)',
 });
 
 export class MobileKanbanViewUILogic extends DataViewUILogicBase<

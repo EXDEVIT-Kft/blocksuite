@@ -30,7 +30,7 @@ const playCheckAnimation = async (
     [
       {
         boxShadow:
-          '0 -18px 0 -8px #1e96eb, 16px -8px 0 -8px #1e96eb, 16px 8px 0 -8px #1e96eb, 0 18px 0 -8px #1e96eb, -16px 8px 0 -8px #1e96eb, -16px -8px 0 -8px #1e96eb',
+          '0 -18px 0 -8px var(--algogrind-primary-color), 16px -8px 0 -8px var(--algogrind-primary-color), 16px 8px 0 -8px var(--algogrind-primary-color), 0 18px 0 -8px var(--algogrind-primary-color), -16px 8px 0 -8px var(--algogrind-primary-color), -16px -8px 0 -8px var(--algogrind-primary-color)',
       },
     ],
     { duration: 240, easing: 'ease', fill: 'forwards' }
@@ -97,7 +97,9 @@ export class CheckboxCell extends BaseCellRenderer<boolean> {
   override render() {
     const checked = this.value ?? false;
     const icon = checked
-      ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
+      ? CheckBoxCheckSolidIcon({
+          style: `color:var(--algogrind-primary-color)`,
+        })
       : CheckBoxUnIcon();
     return html` <div class="affine-database-checkbox-container">
       <div

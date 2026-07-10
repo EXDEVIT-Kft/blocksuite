@@ -41,7 +41,7 @@ export class DataViewHeaderViews extends WidgetBase {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       white-space: nowrap;
       max-width: 200px;
       min-width: 28px;
@@ -69,8 +69,8 @@ export class DataViewHeaderViews extends WidgetBase {
     }
 
     .database-view-button.selected {
-      color: var(--affine-text-primary-color);
-      background-color: var(--affine-hover-color-filled);
+      color: var(--algogrind-text-paragraph-color);
+      background-color: var(--algogrind-hover-color-filled);
     }
   `;
 
@@ -252,7 +252,7 @@ export class DataViewHeaderViews extends WidgetBase {
     }
     return html`
       <div class="database-view-button dv-hover" @click="${this._showMore}">
-        ${views.length - count} More
+        ${views.length - count} További
       </div>
     `;
   };

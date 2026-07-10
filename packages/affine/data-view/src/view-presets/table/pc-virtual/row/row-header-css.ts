@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { cssVarV2 } from '@toeverything/theme/v2';
 
 export const leftBar = css({
   display: 'flex',
@@ -7,7 +6,7 @@ export const leftBar = css({
 });
 
 export const dragHandlerWrapper = css({
-  backgroundColor: cssVarV2.layer.background.primary,
+  backgroundColor: 'var(--algogrind-background-color)',
   marginBottom: '1px',
   display: 'flex',
 });
@@ -18,25 +17,25 @@ export const dragHandler = css({
   alignItems: 'center',
   justifyContent: 'center',
   cursor: 'grab',
-  backgroundColor: 'var(--affine-background-primary-color)',
+  backgroundColor: 'var(--algogrind-background-color)',
   opacity: 0,
 });
 
 export const checkboxWrapper = css({
-  backgroundColor: cssVarV2.layer.background.primary,
+  backgroundColor: 'var(--algogrind-background-color)',
   marginBottom: '1px',
   display: 'flex',
 });
 
 export const rowSelectedBg = css({
-  backgroundColor: 'var(--affine-primary-color-04)',
+  backgroundColor: 'var(--algogrind-primary-color-04)',
 });
 
 export const dragHandlerIndicator = css({
   width: '4px',
   borderRadius: '2px',
   height: '12px',
-  backgroundColor: 'var(--affine-placeholder-color)',
+  backgroundColor: 'var(--algogrind-text-placeholder-color)',
 });
 
 export const show = css({
@@ -48,5 +47,5 @@ export const rowSelectCheckbox = css({
   opacity: 0,
   cursor: 'pointer',
   fontSize: '20px',
-  color: cssVarV2.icon.primary,
+  color: 'var(--algogrind-text-paragraph-1-color)',
 });

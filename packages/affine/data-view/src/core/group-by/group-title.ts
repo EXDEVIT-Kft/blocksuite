@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { MoreHorizontalIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { nothing } from 'lit';
@@ -49,11 +48,11 @@ const GroupTitleMobile = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: var(--data-view-cell-text-size);
       }
 
@@ -74,7 +73,7 @@ const GroupTitleMobile = (
         padding: 4px;
         border-radius: 4px;
         font-size: 16px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color);
       }
 
       .group-header-icon {
@@ -82,11 +81,11 @@ const GroupTitleMobile = (
         align-items: center;
         margin-right: -4px;
         font-size: 16px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color);
       }
 
       .group-header-title {
-        color: ${unsafeCSSVarV2('text/primary')};
+        color: var(--algogrind-text-paragraph-color);
         font-size: var(--data-view-cell-text-size);
       }
     </style>
@@ -146,11 +145,11 @@ export const GroupTitle = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: var(--data-view-cell-text-size);
       }
 
@@ -184,23 +183,23 @@ export const GroupTitle = (
       .group-header-icon svg {
         width: 16px;
         height: 16px;
-        color: var(--affine-icon-color);
-        fill: var(--affine-icon-color);
+        color: var(--algogrind-text-paragraph-color);
+        fill: var(--algogrind-text-paragraph-color);
       }
 
       .group-header-op:hover {
-        background-color: var(--affine-hover-color);
+        background-color: var(--algogrind-hover-color);
       }
 
       .group-header-op svg {
         width: 16px;
         height: 16px;
-        fill: var(--affine-icon-color);
-        color: var(--affine-icon-color);
+        fill: var(--algogrind-text-paragraph-color);
+        color: var(--algogrind-text-paragraph-color);
       }
 
       .group-header-title {
-        color: ${unsafeCSSVarV2('text/primary')};
+        color: var(--algogrind-text-paragraph-color);
         font-size: var(--data-view-cell-text-size);
         margin-left: 4px;
       }

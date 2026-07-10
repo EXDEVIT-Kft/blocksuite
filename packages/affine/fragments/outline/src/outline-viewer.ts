@@ -1,4 +1,7 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import {
+  NoteDisplayMode,
+  type ParagraphBlockModel,
+} from '@blocksuite/affine-model';
 import { DocModeProvider } from '@blocksuite/affine-shared/services';
 import { scrollbarStyle } from '@blocksuite/affine-shared/styles';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
@@ -39,16 +42,19 @@ export class OutlineViewer extends SignalWatcher(
       --duration: 120ms;
       --timing: cubic-bezier(0.42, 0, 0.58, 1);
 
-      max-height: 100%;
+      max-height: calc(100dvh - 20vh);
       box-sizing: border-box;
       display: flex;
+
+      position: absolute;
+      top: 10vh;
+      left: -1.25rem;
     }
 
     .outline-viewer-indicators-container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      max-height: 100%;
+      position: relative;
+      height: min-content;
+      max-height: 80dvh;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -70,16 +76,70 @@ export class OutlineViewer extends SignalWatcher(
       background: var(--affine-black-10, rgba(0, 0, 0, 0.1));
     }
 
+    .outline-viewer-indicator[data-level='h1'] {
+      width: 20px;
+    }
+
+    .outline-viewer-indicator[data-level='h2'] {
+      width: 16px;
+    }
+
+    .outline-viewer-indicator[data-level='h3'] {
+      width: 12px;
+    }
+
+    .outline-viewer-indicator[data-level='h4'] {
+      width: 10px;
+    }
+
+    .outline-viewer-indicator[data-level='h5'] {
+      width: 8px;
+    }
+
+    .outline-viewer-indicator[data-level='h6'] {
+      width: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .outline-viewer-indicator {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h1'] {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h2'] {
+        width: 8px;
+      }
+
+      .outline-viewer-indicator[data-level='h3'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h4'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h5'] {
+        width: 4px;
+      }
+
+      .outline-viewer-indicator[data-level='h6'] {
+        width: 4px;
+      }
+    }
+
     .outline-viewer-indicator.active {
-      width: 24px;
-      background: var(--affine-text-primary-color);
+      background: var(--algogrind-text-paragraph-color);
     }
 
     .outline-viewer-panel {
       position: relative;
       display: flex;
       width: 0px;
-      max-height: 100%;
+      left: -200px;
+      max-height: calc(100dvh - 20vh);
       box-sizing: border-box;
       flex-direction: column;
       align-items: flex-start;
@@ -87,8 +147,8 @@ export class OutlineViewer extends SignalWatcher(
       border-radius: 8px;
       border-width: 0px;
       border-style: solid;
-      border-color: var(--affine-border-color);
-      background: var(--affine-background-overlay-panel-color);
+      border-color: var(--algogrind-border-color);
+      background: var(--algogrind-overlay-panel-background-color);
       box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.14);
 
       overflow-y: auto;
@@ -115,10 +175,10 @@ export class OutlineViewer extends SignalWatcher(
       span {
         flex: 1;
         overflow: hidden;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         text-overflow: ellipsis;
 
-        font-family: var(--affine-font-family);
+        font-family: var(--algogrind-text-paragraph-family);
         font-size: 12px;
         font-style: normal;
         font-weight: 500;
@@ -146,6 +206,12 @@ export class OutlineViewer extends SignalWatcher(
           opacity var(--duration) var(--timing);
       }
     }
+
+    @media (min-width: 768px) {
+      .outline-viewer-root {
+        left: -2.25rem;
+      }
+    }
   `;
 
   private readonly _activeHeadingId$ = signal<string | null>(null);
@@ -155,9 +221,24 @@ export class OutlineViewer extends SignalWatcher(
   private _lockActiveHeadingId = false;
 
   private readonly _scrollPanel = () => {
-    this._activeItem?.scrollIntoView({
+    if (!this._activeItem) return;
+
+    const panel = this._activeItem.closest('.outline-viewer-panel');
+    if (!panel) return;
+
+    // Calculate scroll position to center the active item
+    const panelRect = panel.getBoundingClientRect();
+    const itemRect = this._activeItem.getBoundingClientRect();
+
+    const scrollTop =
+      panel.scrollTop +
+      (itemRect.top - panelRect.top) -
+      panelRect.height / 2 +
+      itemRect.height / 2;
+
+    panel.scrollTo({
+      top: scrollTop,
       behavior: 'instant',
-      block: 'center',
     });
   };
 
@@ -265,6 +346,10 @@ export class OutlineViewer extends SignalWatcher(
                     'outline-viewer-indicator': true,
                     active: this._activeHeadingId$.value === block.id,
                   })}
+                  data-level=${block.flavour === 'affine:paragraph' &&
+                  (block as ParagraphBlockModel).props.type.startsWith('h')
+                    ? (block as ParagraphBlockModel).props.type
+                    : 'h1'}
                 ></div>
               </div>`
           )}

@@ -5,78 +5,92 @@ const Transparent = 'transparent';
 const White = getColorByKey('edgeless/palette/white');
 const Black = getColorByKey('edgeless/palette/black');
 
+// [ALGOGRIND]
+// The palettes below are wired to the `--algogrind-*` CSS variables provided
+// by the host application (see also `algogrindEdgelessLightColors` /
+// `algogrindEdgelessDarkColors` in `@blocksuite/affine-shared/theme`, which
+// the theme-service uses to resolve these variables on canvas).
+
+// Pastel palette used for shape fills.
 const Light = {
-  Red: getColorByKey('edgeless/palette/light/redLight'),
-  Orange: getColorByKey('edgeless/palette/light/orangeLight'),
-  Yellow: getColorByKey('edgeless/palette/light/yellowLight'),
-  Green: getColorByKey('edgeless/palette/light/greenLight'),
-  Blue: getColorByKey('edgeless/palette/light/blueLight'),
-  Purple: getColorByKey('edgeless/palette/light/purpleLight'),
-  Magenta: getColorByKey('edgeless/palette/light/magentaLight'),
-  Grey: getColorByKey('edgeless/palette/light/greyLight'),
+  Red: '--algogrind-palette-shape-red',
+  Orange: '--algogrind-palette-shape-orange',
+  Yellow: '--algogrind-palette-shape-yellow',
+  Lime: '--algogrind-palette-shape-lime',
+  Green: '--algogrind-palette-shape-green',
+  Teal: '--algogrind-palette-shape-teal',
+  Blue: '--algogrind-palette-shape-blue',
+  Purple: '--algogrind-palette-shape-purple',
+  Magenta: '--algogrind-palette-shape-pink',
+  Grey: '--algogrind-palette-shape-grey',
 } as const;
 
+// Saturated palette used for lines, strokes and text.
 const Medium = {
-  Red: getColorByKey('edgeless/palette/medium/redMedium'),
-  Orange: getColorByKey('edgeless/palette/medium/orangeMedium'),
-  Yellow: getColorByKey('edgeless/palette/medium/yellowMedium'),
-  Green: getColorByKey('edgeless/palette/medium/greenMedium'),
-  Blue: getColorByKey('edgeless/palette/medium/blueMedium'),
-  Purple: getColorByKey('edgeless/palette/medium/purpleMedium'),
-  Magenta: getColorByKey('edgeless/palette/medium/magentaMedium'),
-  Grey: getColorByKey('edgeless/palette/medium/greyMedium'),
+  Red: '--algogrind-palette-line-red',
+  Orange: '--algogrind-palette-line-orange',
+  Yellow: '--algogrind-palette-line-yellow',
+  Lime: '--algogrind-palette-line-lime',
+  Green: '--algogrind-palette-line-green',
+  Teal: '--algogrind-palette-line-teal',
+  Blue: '--algogrind-palette-line-blue',
+  Purple: '--algogrind-palette-line-purple',
+  Magenta: '--algogrind-palette-line-pink',
+  Grey: '--algogrind-palette-line-grey',
 } as const;
 
-const Heavy = {
-  Red: getColorByKey('edgeless/palette/heavy/red'),
-  Orange: getColorByKey('edgeless/palette/heavy/orange'),
-  Yellow: getColorByKey('edgeless/palette/heavy/yellow'),
-  Green: getColorByKey('edgeless/palette/heavy/green'),
-  Blue: getColorByKey('edgeless/palette/heavy/blue'),
-  Purple: getColorByKey('edgeless/palette/heavy/purple'),
-  Magenta: getColorByKey('edgeless/palette/heavy/magenta'),
-} as const;
+const LineBlack = '--algogrind-palette-line-black';
+const LineWhite = '--algogrind-palette-line-white';
+const ShapeBlack = '--algogrind-palette-shape-black';
+const ShapeWhite = '--algogrind-palette-shape-white';
 
 const NoteBackgroundColorMap = {
-  Red: getColorByKey('edgeless/note/red'),
-  Orange: getColorByKey('edgeless/note/orange'),
-  Yellow: getColorByKey('edgeless/note/yellow'),
-  Green: getColorByKey('edgeless/note/green'),
-  Blue: getColorByKey('edgeless/note/blue'),
-  Purple: getColorByKey('edgeless/note/purple'),
-  Magenta: getColorByKey('edgeless/note/magenta'),
-  White: getColorByKey('edgeless/note/white'),
-  Transparent: Transparent,
+  Red: '--algogrind-note-background-red',
+  Orange: '--algogrind-note-background-orange',
+  Yellow: '--algogrind-note-background-yellow',
+  Green: '--algogrind-note-background-green',
+  Teal: '--algogrind-note-background-teal',
+  Blue: '--algogrind-note-background-blue',
+  Purple: '--algogrind-note-background-purple',
+  Magenta: '--algogrind-note-background-pink',
+  Grey: '--algogrind-note-background-grey',
+  Black: '--algogrind-note-background-black',
+  White: '--algogrind-note-background-white',
 } as const;
 
 const Palettes: Palette[] = [
-  // Light
+  // Light (pastel)
   ...buildPalettes(Light, 'Light'),
 
   { key: 'Transparent', value: Transparent },
 
-  // Medium
+  // Medium (saturated)
   ...buildPalettes(Medium, 'Medium'),
 
-  { key: 'White', value: White },
-
-  // Heavy
-  ...buildPalettes(Heavy, 'Heavy'),
-
-  { key: 'Black', value: Black },
+  { key: 'White', value: LineWhite },
+  { key: 'Black', value: LineBlack },
 ] as const;
 
 const NoteBackgroundColorPalettes: Palette[] = [
   ...buildPalettes(NoteBackgroundColorMap),
 ] as const;
 
-const StrokeColorShortMap = { ...Medium, Black, White } as const;
+const StrokeColorShortMap = {
+  ...Medium,
+  Black: LineBlack,
+  White: LineWhite,
+} as const;
 
 const StrokeColorShortPalettes: Palette[] = [
   ...buildPalettes(StrokeColorShortMap),
 ] as const;
 
-const FillColorShortMap = { ...Medium, Black, White, Transparent } as const;
+const FillColorShortMap = {
+  ...Light,
+  Black: ShapeBlack,
+  White: ShapeWhite,
+  Transparent,
+} as const;
 
 const FillColorShortPalettes: Palette[] = [
   ...buildPalettes(FillColorShortMap),
@@ -93,19 +107,15 @@ const ShapeTextColorShortPalettes: Palette[] = [
 ] as const;
 
 const ShapeTextColorPalettes: Palette[] = [
-  // Light
+  // Light (pastel)
   ...buildPalettes(Light, 'Light'),
 
   { key: 'Transparent', value: Transparent },
 
-  // Medium
+  // Medium (saturated)
   ...buildPalettes(Medium, 'Medium'),
 
   { key: 'White', value: pureWhite },
-
-  // Heavy
-  ...buildPalettes(Heavy, 'Heavy'),
-
   { key: 'Black', value: pureBlack },
 ] as const;
 
@@ -115,10 +125,10 @@ export const DefaultTheme: Theme = {
   black: Black,
   white: White,
   transparent: Transparent,
-  textColor: Black,
-  shapeTextColor: pureBlack,
+  textColor: Medium.Blue,
+  shapeTextColor: LineBlack,
   shapeStrokeColor: Medium.Yellow,
-  shapeFillColor: Medium.Yellow,
+  shapeFillColor: Light.Yellow,
   connectorColor: Medium.Grey,
   noteBackgrounColor: NoteBackgroundColorMap.White,
   // 30% transparent `Medium.Blue`

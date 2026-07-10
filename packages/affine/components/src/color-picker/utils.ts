@@ -323,7 +323,7 @@ export const calcCustomButtonStyle = (
 
   if (color.startsWith('--')) {
     if (!color.endsWith('transparent')) {
-      b = 'var(--affine-background-overlay-panel-color)';
+      b = 'var(--algogrind-overlay-panel-background-color)';
       c = keepColor(
         rgbaToHex8(
           preprocessColor(window.getComputedStyle(ele))({
@@ -334,7 +334,7 @@ export const calcCustomButtonStyle = (
       );
     }
   } else {
-    b = 'var(--affine-background-overlay-panel-color)';
+    b = 'var(--algogrind-overlay-panel-background-color)';
     c = keepColor(color);
   }
 

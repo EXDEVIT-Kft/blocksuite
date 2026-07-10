@@ -1,4 +1,3 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
@@ -12,7 +11,7 @@ const styles = css`
 
   .new-record svg {
     font-size: 20px;
-    color: ${unsafeCSSVarV2('icon/primary')};
+    color: var(--algogrind-text-paragraph-1-color);
   }
 `;
 

@@ -19,7 +19,7 @@ const styles = css`
     text-indent: -9999px;
     width: 38px;
     height: 20px;
-    background: ${unsafeCSSVarV2('toggle/backgroundOff')};
+    background: var(--algogrind-text-paragraph-color);
     display: block;
     border-radius: 20px;
     position: relative;
@@ -38,7 +38,7 @@ const styles = css`
   }
 
   label.on {
-    background: ${unsafeCSSVarV2('toggle/background')};
+    background: var(--algogrind-primary-color);
   }
 
   label.on:after {

@@ -54,28 +54,26 @@ const styles = css`
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 300px;
   }
 
   .no-frame-placeholder {
     margin-top: 240px;
     align-self: center;
-    width: 230px;
-    height: 48px;
-    color: var(--affine-text-secondary-color, #8e8d91);
+    color: var(--algogrind-text-placeholder-color);
     text-align: center;
 
     /* light/base */
-    font-size: 15px;
+    font-size: var(--algogrind-text-paragraph-size);
+    font-family: var(--algogrind-text-paragraph-family);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 24px;
   }
 
   .insert-indicator {
     height: 2px;
     border-radius: 1px;
-    background-color: var(--affine-blue-600);
+    background-color: var(--algogrind-primary-color);
     position: absolute;
     contain: layout size;
     width: 284px;

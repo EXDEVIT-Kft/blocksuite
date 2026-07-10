@@ -36,7 +36,10 @@ export class KanbanDragController implements ReactiveController {
     >(evt, {
       onDrag: () => undefined,
       onMove: evt => {
-        if (!(evt.target instanceof HTMLElement)) {
+        if (
+          !(evt.target instanceof HTMLElement) ||
+          this.logic.view.readonly$.value
+        ) {
           return;
         }
         preview.display(evt.x - offsetLeft, evt.y - offsetTop);
@@ -185,7 +188,7 @@ const createDragPreview = (card: KanbanCard, x: number, y: number) => {
   kanbanCard.cardId = card.cardId;
   kanbanCard.kanbanViewLogic = card.kanbanViewLogic;
   kanbanCard.isFocus$.value = true;
-  kanbanCard.style.backgroundColor = 'var(--affine-background-primary-color)';
+  kanbanCard.style.backgroundColor = 'var(--algogrind-background-color)';
   div.append(kanbanCard);
   div.className = 'with-data-view-css-variable';
   div.style.width = `${card.getBoundingClientRect().width}px`;
@@ -215,7 +218,7 @@ const createDropPreview = () => {
   div.style.zIndex = '9999';
   div.style.height = '3px';
   div.style.borderRadius = '2px';
-  div.style.backgroundColor = 'var(--affine-primary-color)';
+  div.style.backgroundColor = 'var(--algogrind-primary-color)';
   div.style.boxShadow = '0px 0px 8px 0px rgba(30, 150, 235, 0.35)';
   return {
     display(

@@ -6,20 +6,20 @@ import {
 import { unsafeCSS } from 'lit';
 
 const toolbarColorKeys: Array<keyof AffineCssVariables> = [
-  '--affine-background-overlay-panel-color',
+  //'--algogrind-overlay-panel-background-color',
   '--affine-v2-layer-background-overlayPanel' as never,
   '--affine-v2-layer-insideBorder-blackBorder' as never,
   '--affine-v2-icon-primary' as never,
   '--affine-background-error-color',
-  '--affine-background-primary-color',
+  //'--algogrind-background-color',
   '--affine-background-tertiary-color',
-  '--affine-icon-color',
+  //'--algogrind-text-paragraph-color',
   '--affine-icon-secondary',
-  '--affine-border-color',
   '--affine-divider-color',
-  '--affine-text-primary-color',
-  '--affine-hover-color',
-  '--affine-hover-color-filled',
+  // '--algogrind-border-color',
+  //'--algogrind-text-paragraph-color',
+  //'--algogrind-hover-color',
+  //'--algogrind-hover-color-filled',
 ];
 
 export const lightToolbarStyles = (selector: string) => `

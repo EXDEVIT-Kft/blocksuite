@@ -68,8 +68,11 @@ export async function printToPdf(
                   -webkit-text-fill-color: #000 !important;
                 }
                 :root {
-                  --affine-note-shadow-box: none !important;
-                  --affine-note-shadow-sticker: none !important;
+                  --algogrind-note-shadow-box: none !important;
+                  --algogrind-note-shadow-sticker: none !important;
+                  --algogrind-note-shadow-paper: none !important;
+                  --algogrind-note-shadow-float: none !important;
+                  --algogrind-note-shadow-film: none !important;
                 }
               }</style></head><body></body></html>`);
       doc.close();
@@ -107,8 +110,11 @@ export async function printToPdf(
                 -webkit-text-fill-color: #000 !important;
               }
               :root {
-                --affine-note-shadow-box: none !important;
-                --affine-note-shadow-sticker: none !important;
+                --algogrind-note-shadow-box: none !important;
+                --algogrind-note-shadow-sticker: none !important;
+                --algogrind-note-shadow-paper: none !important;
+                --algogrind-note-shadow-float: none !important;
+                --algogrind-note-shadow-film: none !important;
               }
             }</style></head><body></body></html>`);
 

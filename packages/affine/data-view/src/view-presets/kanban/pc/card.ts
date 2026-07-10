@@ -3,8 +3,7 @@ import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { CenterPeekIcon, MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { signal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -19,7 +18,7 @@ const styles = css`
     display: flex;
     position: relative;
     flex-direction: column;
-    border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+    border: 1px solid var(--algogrind-border-color);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     transition: background-color 100ms ease-in-out;
@@ -27,7 +26,7 @@ const styles = css`
   }
 
   affine-data-view-kanban-card:hover {
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   affine-data-view-kanban-card .card-header {
@@ -42,7 +41,7 @@ const styles = css`
   }
 
   .card-header.has-divider {
-    border-bottom: 0.5px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+    border-bottom: 1px solid var(--algogrind-border-color);
   }
 
   affine-data-view-kanban-card .card-header-title {
@@ -52,7 +51,7 @@ const styles = css`
 
   affine-data-view-kanban-card .card-header-icon {
     padding: 4px;
-    background-color: var(--affine-background-secondary-color);
+    background-color: var(--algogrind-background-secondary-color);
     display: flex;
     align-items: center;
     border-radius: 4px;
@@ -62,8 +61,8 @@ const styles = css`
   affine-data-view-kanban-card .card-header-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
   }
 
   affine-data-view-kanban-card .card-body {
@@ -100,7 +99,7 @@ const styles = css`
     padding: 4px;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px rgba(66, 65, 73, 0.14);
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--algogrind-background-color);
   }
 
   .card-op:hover:before {
@@ -111,12 +110,12 @@ const styles = css`
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
 
   .card-op svg {
-    fill: var(--affine-icon-color);
-    color: var(--affine-icon-color);
+    fill: var(--algogrind-text-paragraph-color);
+    color: var(--algogrind-text-paragraph-color);
     width: 16px;
     height: 16px;
   }
@@ -306,7 +305,7 @@ export class KanbanCard extends SignalWatcher(
       v => !this.view.isInHeader(v.id)
     );
     this.style.border = this.isFocus$.value
-      ? '1px solid var(--affine-primary-color)'
+      ? '1px solid var(--algogrind-primary-color)'
       : '';
     return html`
       ${this.renderHeader(columns)} ${this.renderBody(columns)}

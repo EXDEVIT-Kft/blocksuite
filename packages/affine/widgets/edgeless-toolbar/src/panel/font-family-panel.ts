@@ -53,5 +53,5 @@ export class EdgelessFontFamilyPanel extends LitElement {
   accessor onSelect: ((value: FontFamily) => void) | undefined = undefined;
 
   @property({ attribute: false })
-  accessor value: FontFamily = FontFamily.Inter;
+  accessor value: FontFamily = FontFamily.Quicksand;
 }

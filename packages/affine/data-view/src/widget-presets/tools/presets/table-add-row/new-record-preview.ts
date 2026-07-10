@@ -1,7 +1,6 @@
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 
 export class NewRecordPreview extends ShadowlessElement {
   override render() {
@@ -16,9 +15,9 @@ export class NewRecordPreview extends ShadowlessElement {
           left: 0;
           height: 32px;
           width: 32px;
-          border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+          border: 1px solid var(--algogrind-border-color);
           border-radius: 50%;
-          background: var(--affine-blue-100);
+          background: var(--algogrind-primary-color-100);
           box-shadow:
             0px 0px 10px rgba(0, 0, 0, 0.05),
             0px 0px 0px 0.5px var(--affine-black-10);
@@ -35,7 +34,7 @@ export class NewRecordPreview extends ShadowlessElement {
         }
 
         affine-database-new-record-preview path {
-          fill: var(--affine-brand-color);
+          fill: var(--algogrind-primary-color);
         }
       </style>
       ${PlusIcon()}

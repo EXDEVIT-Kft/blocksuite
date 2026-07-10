@@ -1,5 +1,3 @@
-import { cssVar } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 export const outlineCard = style({
@@ -28,13 +26,13 @@ export const cardPreview = style({
   userSelect: 'none',
   selectors: {
     [`${outlineCard}[data-sortable="true"] &:hover`]: {
-      background: cssVarV2('layer/background/hoverOverlay'),
+      background: 'var(--algogrind-hover-color)',
     },
     [`${outlineCard}[data-status="selected"] &`]: {
-      background: cssVarV2('layer/background/hoverOverlay'),
+      background: 'var(--algogrind-hover-color)',
     },
     [`${outlineCard}[data-status="dragging"] &`]: {
-      background: cssVarV2('layer/background/hoverOverlay'),
+      background: 'var(--algogrind-hover-color)',
       opacity: 0.9,
     },
   },
@@ -65,7 +63,7 @@ export const cardHeader = style({
 const invisibleCard = style({
   selectors: {
     [`${outlineCard}[data-visibility="edgeless"] &`]: {
-      color: cssVarV2('text/disable'),
+      color: 'var(--algogrind-text-disabled-color)',
       pointerEvents: 'none',
     },
   },
@@ -83,10 +81,11 @@ export const headerIcon = style([
 export const headerNumber = style([
   {
     textAlign: 'center',
-    fontSize: cssVar('fontSm'),
-    color: cssVar('brandColor'),
+    fontSize: 'var(--algogrind-text-paragraph-size)',
+    fontFamily: 'var(--algogrind-text-paragraph-family)',
+    color: 'var(--algogrind-primary-color)',
     fontWeight: 500,
-    lineHeight: '14px',
+    lineHeight: '20px',
   },
   invisibleCard,
 ]);
@@ -94,7 +93,7 @@ export const headerNumber = style([
 export const divider = style({
   height: '1px',
   flex: 1,
-  borderTop: `1px dashed ${cssVar('borderColor')}`,
+  borderTop: '1px dashed var(--algogrind-border-color)',
   transform: 'translateY(50%)',
 });
 
@@ -103,13 +102,17 @@ export const displayModeButtonGroup = style({
   position: 'absolute',
   right: '8px',
   top: '-6px',
-  paddingTop: '8px',
-  paddingBottom: '8px',
+  marginBlock: '8px',
+  paddingLeft: '4px',
+  borderRadius: '4px',
   alignItems: 'center',
   gap: '4px',
-  fontSize: '12px',
   fontWeight: 500,
   lineHeight: '20px',
+  fontSize: 'var(--algogrind-text-small-size)',
+  fontFamily: 'var(--algogrind-text-small-family)',
+  color: 'var(--algogrind-text-small-color)',
+  backgroundColor: 'var(--algogrind-overlay-panel-background-color)',
 
   selectors: {
     [`${cardPreview}:hover &`]: {
@@ -121,7 +124,7 @@ export const displayModeButtonGroup = style({
 export const displayModeButton = style({
   display: 'flex',
   borderRadius: '4px',
-  backgroundColor: cssVar('hoverColor'),
+  backgroundColor: 'var(--algogrind-hover-color)',
   alignItems: 'center',
 });
 
@@ -133,9 +136,10 @@ export const currentModeLabel = style({
 
 export const cardContent = style([
   {
-    fontFamily: cssVar('fontSansFamily'),
+    fontSize: 'var(--algogrind-text-small-size)',
+    color: 'var(--algogrind-text-small-color)',
+    fontFamily: 'var(--algogrind-text-small-family)',
     userSelect: 'none',
-    color: cssVarV2('text/primary'),
 
     ':hover': {
       cursor: 'pointer',
@@ -147,16 +151,16 @@ export const cardContent = style([
 export const modeChangePanel = style({
   position: 'absolute',
   display: 'none',
-  background: cssVarV2('layer/background/overlayPanel'),
+  background: 'var(--algogrind-overlay-panel-background-color)',
   borderRadius: '8px',
-  boxShadow: cssVar('shadow2'),
+  boxShadow: 'var(--algogrind-ring), var(--algogrind-shadow-medium)',
   boxSizing: 'border-box',
   padding: '8px',
-  fontSize: cssVar('fontSm'),
-  color: cssVarV2('text/primary'),
+  fontSize: 'var(--algogrind-text-small-size)',
+  color: 'var(--algogrind-text-small-color)',
+  fontFamily: 'var(--algogrind-text-small-family)',
   lineHeight: '22px',
-  fontWeight: 400,
-  fontFamily: cssVar('fontSansFamily'),
+  fontWeight: 500,
 
   selectors: {
     '&[data-show]': {

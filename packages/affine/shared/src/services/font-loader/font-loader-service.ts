@@ -66,6 +66,11 @@ export class FontLoaderService extends LifeCycleWatcher {
       return weight === FontWeight.Regular || weight === FontWeight.SemiBold;
     }
 
+    // [ALGOGRIND] Quicksand is the default surface font.
+    if (font === FontFamily.Quicksand) {
+      return weight === FontWeight.Regular || weight === FontWeight.SemiBold;
+    }
+
     if (font === FontFamily.Kalam) {
       // Mindmap style four uses bold Kalam text.
       // We map to SemiBold because this is the strongest shipped Kalam weight.

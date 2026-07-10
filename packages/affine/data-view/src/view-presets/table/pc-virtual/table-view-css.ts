@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { cssVarV2 } from '@toeverything/theme/v2';
 
 import { LEFT_TOOL_BAR_WIDTH } from '../consts.js';
 
@@ -33,10 +32,10 @@ export const tableBlockTable = css({
   },
   '&:hover::-webkit-scrollbar-thumb:horizontal': {
     borderRadius: '4px',
-    backgroundColor: 'var(--affine-black-30)',
+    backgroundColor: 'var(--algogrind-scroll-thumb-hover-color)',
   },
   '&:hover::-webkit-scrollbar-track:horizontal': {
-    backgroundColor: 'var(--affine-hover-color)',
+    backgroundColor: 'var(--algogrind-hover-color)',
     height: '8px',
   },
 });
@@ -52,7 +51,7 @@ export const addGroup = css({
   alignItems: 'center',
   gap: '10px',
   padding: '6px 12px 6px 8px',
-  color: cssVarV2.text.secondary,
+  color: 'var(--algogrind-text-secondary)',
   fontSize: '12px',
   lineHeight: '20px',
   position: 'sticky',

@@ -24,12 +24,9 @@ export class BlockSelection extends SignalWatcher(LitElement) {
     :host {
       position: absolute;
       z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      inset: -0.25rem;
       pointer-events: none;
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-selection-color);
       border-color: transparent;
       border-style: solid;
     }

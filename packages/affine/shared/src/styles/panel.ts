@@ -1,13 +1,11 @@
 import { css, unsafeCSS } from 'lit';
 
-import { unsafeCSSVarV2 } from '../theme/css-variables';
 import { fontSMStyle } from './font';
 
 export const panelBaseColorsStyle = (container: string) => css`
   ${unsafeCSS(container)} {
-    color: var(--affine-icon-color);
-    box-shadow: var(--affine-overlay-shadow);
-    background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
+    color: var(--algogrind-text-paragraph-color);
+    background: var(--algogrind-overlay-panel-background-color);
   }
 `;
 
@@ -17,9 +15,9 @@ export const panelBaseStyle = (container: string) => css`
     align-items: center;
     gap: 8px;
     width: max-content;
-    padding: 0 6px;
+    padding: 0 6px 0 8px;
     border-radius: 8px;
-    border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    box-shadow: var(--algogrind-ring), var(--algogrind-shadow-medium);
   }
   ${panelBaseColorsStyle(container)}
   ${fontSMStyle(container)}

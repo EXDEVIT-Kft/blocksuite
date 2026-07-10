@@ -8,8 +8,7 @@ import { InvisibleIcon, ViewIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import type { Middleware } from '@floating-ui/dom';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, unsafeCSS } from 'lit';
+import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -35,13 +34,13 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+      border-bottom: 1px solid var(--algogrind-border-color);
     }
 
     .properties-group-title {
       font-size: 12px;
       line-height: 20px;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -54,11 +53,11 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
       font-weight: 500;
       border-radius: 4px;
       cursor: pointer;
-      color: ${unsafeCSS(cssVarV2.button.primary)};
+      color: var(--algogrind-primary-color);
     }
 
     .properties-group-op:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .properties-group {
@@ -92,8 +91,8 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-icon svg {
-      color: var(--affine-icon-color);
-      fill: var(--affine-icon-color);
+      color: var(--algogrind-text-paragraph-color);
+      fill: var(--algogrind-text-paragraph-color);
       width: 20px;
       height: 20px;
     }
@@ -105,7 +104,7 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-op-icon:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--algogrind-hover-color);
     }
 
     .property-item-op-icon.disabled:hover {
@@ -113,15 +112,15 @@ export class DataViewPropertiesSettingView extends SignalWatcher(
     }
 
     .property-item-op-icon svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--algogrind-text-paragraph-color);
+      color: var(--algogrind-text-paragraph-color);
       width: 20px;
       height: 20px;
     }
 
     .property-item-op-icon.disabled svg {
-      fill: var(--affine-text-disable-color);
-      color: var(--affine-text-disable-color);
+      fill: var(--algogrind-text-disabled-color);
+      color: var(--algogrind-text-disabled-color);
     }
 
     .property-item-name {

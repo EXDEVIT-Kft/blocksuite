@@ -1,11 +1,11 @@
-import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { globalStyle, style } from '@vanilla-extract/css';
 
 export const outlineBlockPreview = style({
-  fontFamily: cssVar('fontFamily'),
+  fontFamily: 'var(--algogrind-text-heading-6-family)',
   width: '100%',
   boxSizing: 'border-box',
+  borderRadius: '4px',
   padding: '6px 8px',
   whiteSpace: 'nowrap',
   display: 'flex',
@@ -15,12 +15,13 @@ export const outlineBlockPreview = style({
 
   ':hover': {
     cursor: 'pointer',
-    background: cssVarV2('layer/background/hoverOverlay'),
+    background: 'var(--algogrind-hover-color)',
   },
 
   selectors: {
     '.active > &': {
-      color: cssVarV2('text/emphasis'),
+      color: 'var(--algogrind-link-color)',
+      background: 'var(--algogrind-hover-color)',
     },
     '&:not(:has(span))': {
       display: 'none',
@@ -36,9 +37,9 @@ export const icon = style({
   height: '22px',
   boxSizing: 'border-box',
   padding: '4px',
-  background: cssVarV2('layer/background/secondary'),
+  background: 'var(--algogrind-background-secondary-color)',
   borderRadius: '4px',
-  color: cssVarV2('icon/primary'),
+  color: 'var(--algogrind-text-paragraph-color)',
 });
 
 export const iconDisabled = style({
@@ -50,7 +51,7 @@ export const text = style({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   flex: 1,
-  fontSize: cssVar('fontSm'),
+  fontSize: 'var(--algogrind-text-small-size)',
   lineHeight: '22px',
   height: '22px',
 });
@@ -66,27 +67,27 @@ export const subtypeStyles = {
     paddingLeft: '0',
   }),
   h1: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '0',
   }),
   h2: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '4px',
   }),
   h3: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '12px',
   }),
   h4: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '16px',
   }),
   h5: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '20px',
   }),
   h6: style({
-    fontWeight: 600,
+    fontWeight: 500,
     paddingLeft: '24px',
   }),
 };
@@ -99,13 +100,13 @@ export const textSpan = style({
 
 export const linkedDocText = style({
   fontSize: 'inherit',
-  borderBottom: `0.5px solid ${cssVar('dividerColor')}`,
+  boxShadow: 'var(--algogrind-ring)',
   whiteSpace: 'break-spaces',
   marginRight: '2px',
 });
 
 export const linkedDocPreviewUnavailable = style({
-  color: cssVarV2('text/disable'),
+  color: 'var(--algogrind-text-disabled-color)',
 });
 
 export const linkedDocPreviewAvailable = style({});
@@ -114,6 +115,6 @@ globalStyle(`${linkedDocPreviewAvailable} > svg`, {
 });
 
 export const linkedDocTextUnavailable = style({
-  color: cssVarV2('text/disable'),
+  color: 'var(--algogrind-text-disabled-color)',
   textDecoration: 'line-through',
 });

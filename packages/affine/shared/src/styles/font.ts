@@ -1,9 +1,8 @@
-import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';
 
 export const fontBaseStyle = (container: string) => css`
   ${unsafeCSS(container)} {
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+    font-family: var(--algogrind-text-paragraph-family);
     font-feature-settings:
       'clig' off,
       'liga' off;
@@ -14,7 +13,7 @@ export const fontBaseStyle = (container: string) => css`
 export const fontSMStyle = (container: string) => css`
   ${fontBaseStyle(container)}
   ${unsafeCSS(container)} {
-    font-size: var(--affine-font-sm);
+    font-size: var(--algogrind-text-small-size);
     font-weight: 500;
     line-height: 22px;
   }
@@ -23,7 +22,7 @@ export const fontSMStyle = (container: string) => css`
 export const fontXSStyle = (container: string) => css`
   ${fontBaseStyle(container)}
   ${unsafeCSS(container)} {
-    font-size: var(--affine-font-xs);
+    font-size: var(--algogrind-text-caption-size);
     font-weight: 500;
     line-height: 20px;
   }

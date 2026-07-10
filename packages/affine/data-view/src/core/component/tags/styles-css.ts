@@ -1,16 +1,14 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 
 export const tagSelectContainerStyle = css({
   position: 'absolute',
   zIndex: 2,
-  color: cssVarV2('text/primary'),
-  border: `0.5px solid ${cssVarV2('layer/insideBorder/blackBorder')}`,
+  color: 'var(--algogrind-text-paragraph-color)',
   borderRadius: '8px',
-  backgroundColor: cssVarV2.layer.background.overlayPanel,
-  boxShadow: 'var(--affine-shadow-1)',
-  fontFamily: 'var(--affine-font-family)',
+  backgroundColor: 'var(--algogrind-overlay-panel-background-color)',
+  boxShadow: 'var(--algogrind-ring), var(--algogrind-shadow-medium)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
   maxWidth: '400px',
   padding: '8px',
   display: 'flex',
@@ -32,20 +30,20 @@ export const tagSelectInputContainerStyle = css({
 export const tagSelectInputStyle = css({
   flex: '1 1 0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
-  color: cssVarV2('text/primary'),
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
+  color: 'var(--algogrind-text-paragraph-color)',
   backgroundColor: 'transparent',
   lineHeight: '22px',
   fontSize: '14px',
   outline: 'none',
   '::placeholder': {
-    color: 'var(--affine-placeholder-color)',
+    color: 'var(--algogrind-text-placeholder-color)',
   },
 });
 
 export const selectOptionsTipsStyle = css({
   padding: '4px',
-  color: cssVarV2('text/secondary'),
+  color: 'var(--algogrind-text-placeholder-color)',
   fontSize: '14px',
   fontWeight: 500,
   lineHeight: '22px',
@@ -71,7 +69,7 @@ export const selectOptionStyle = css({
 });
 
 export const selectedStyle = css({
-  background: cssVarV2('layer/background/hoverOverlay'),
+  background: 'var(--algogrind-hover-color)',
 });
 
 export const tagContainerStyle = css({
@@ -83,7 +81,6 @@ export const tagContainerStyle = css({
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
   overflow: 'hidden',
-  border: `1px solid ${cssVarV2('database/border')}`,
   userSelect: 'none',
 });
 
@@ -92,12 +89,13 @@ export const tagTextStyle = css({
   lineHeight: '22px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
+  fontWeight: 500,
 });
 
 export const tagDeleteIconStyle = css({
   display: 'flex',
   alignItems: 'center',
-  color: cssVarV2('chip/label/text'),
+  color: 'var(--algogrind-text-small-color)',
 });
 
 export const selectOptionContentStyle = css({
@@ -114,10 +112,10 @@ export const selectOptionIconStyle = css({
   borderRadius: '4px',
   cursor: 'pointer',
   visibility: 'hidden',
-  color: cssVarV2('icon/primary'),
+  color: 'var(--algogrind-text-paragraph-1-color)',
   marginLeft: '4px',
   ':hover': {
-    background: cssVarV2('layer/background/hoverOverlay'),
+    background: 'var(--algogrind-hover-color)',
   },
   [`.${selectedStyle} &`]: {
     visibility: 'visible',
@@ -137,7 +135,7 @@ export const selectOptionDragHandlerStyle = css({
 export const selectOptionNewIconStyle = css({
   fontSize: '14px',
   lineHeight: '22px',
-  color: cssVarV2('text/primary'),
+  color: 'var(--algogrind-primary-color)',
   marginRight: '8px',
   marginLeft: '4px',
 });

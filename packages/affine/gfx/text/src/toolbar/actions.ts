@@ -130,7 +130,7 @@ export function createTextActions<
         const mappedModels = models.map(mapInto);
 
         const fontFamily =
-          getMostCommonValue(mappedModels, 'fontFamily') ?? FontFamily.Inter;
+          getMostCommonValue(mappedModels, 'fontFamily') ?? FontFamily.Quicksand;
         const styleInfo = { fontFamily: TextUtils.wrapFontFamily(fontFamily) };
 
         const onPick = (fontFamily: FontFamily) => {
@@ -265,7 +265,7 @@ export function createTextActions<
 
         const fontFamily =
           getMostCommonValue(models.map(mapInto), 'fontFamily') ??
-          FontFamily.Inter;
+          FontFamily.Quicksand;
         const fontWeight =
           getMostCommonValue(models.map(mapInto), 'fontWeight') ??
           FontWeight.Regular;

@@ -8,12 +8,12 @@ export const dividerBlockStyles = css`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 18px 8px;
+    padding: 6px 0;
     margin-top: var(--affine-paragraph-space);
   }
   .affine-divider-block-container hr {
     border: none;
-    border-top: 1px solid var(--affine-divider-color);
+    border-top: 1px solid var(--algogrind-border-color);
     width: 100%;
   }
 `;

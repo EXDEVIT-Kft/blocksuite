@@ -74,8 +74,8 @@ export const ConnectorSchema = z
     labelStyle: {
       color: DefaultTheme.black,
       fontSize: 16,
-      fontFamily: FontFamily.Inter,
-      fontWeight: FontWeight.Regular,
+      fontFamily: FontFamily.Quicksand,
+      fontWeight: FontWeight.SemiBold,
       fontStyle: FontStyle.Normal,
       textAlign: TextAlign.Center,
     },
@@ -114,8 +114,8 @@ const DEFAULT_SHAPE = {
   filled: true,
   radius: 0,
   fontSize: 20,
-  fontFamily: FontFamily.Inter,
-  fontWeight: FontWeight.Regular,
+  fontFamily: FontFamily.Quicksand,
+  fontWeight: FontWeight.SemiBold,
   fontStyle: FontStyle.Normal,
   textAlign: TextAlign.Center,
   roughness: DEFAULT_ROUGHNESS,
@@ -158,8 +158,8 @@ export const TextSchema = z
   .default({
     color: DefaultTheme.textColor,
     fontSize: 24,
-    fontFamily: FontFamily.Inter,
-    fontWeight: FontWeight.Regular,
+    fontFamily: FontFamily.Quicksand,
+    fontWeight: FontWeight.SemiBold,
     fontStyle: FontStyle.Normal,
     textAlign: TextAlign.Left,
   });

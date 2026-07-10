@@ -31,16 +31,18 @@ export class BlockCaptionEditor<
       outline: none;
       border: 0;
       background: transparent;
-      color: var(--affine-icon-color);
-      font-size: var(--affine-font-sm);
+      color: var(--algogrind-text-small-color);
+      font-size: var(--algogrind-text-small-size);
       font-family: inherit;
       text-align: center;
       field-sizing: content;
       padding: 0;
       margin-top: 4px;
+      font-weight: 500;
     }
     .block-caption-editor::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--algogrind-text-placeholder-color);
+      font-weight: 500;
     }
   `;
 

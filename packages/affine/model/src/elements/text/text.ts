@@ -64,7 +64,7 @@ export class TextElementModel extends GfxPrimitiveElementModel<TextElementProps>
   accessor color: Color = DefaultTheme.black;
 
   @field()
-  accessor fontFamily: FontFamily = FontFamily.Inter;
+  accessor fontFamily: FontFamily = FontFamily.Quicksand;
 
   @field()
   accessor fontSize: number = 16;
@@ -72,8 +72,8 @@ export class TextElementModel extends GfxPrimitiveElementModel<TextElementProps>
   @field(FontStyle.Normal as FontStyle)
   accessor fontStyle: FontStyle = FontStyle.Normal;
 
-  @field(FontWeight.Regular as FontWeight)
-  accessor fontWeight: FontWeight = FontWeight.Regular;
+  @field(FontWeight.SemiBold as FontWeight)
+  accessor fontWeight: FontWeight = FontWeight.SemiBold;
 
   @field(false)
   accessor hasMaxWidth: boolean = false;

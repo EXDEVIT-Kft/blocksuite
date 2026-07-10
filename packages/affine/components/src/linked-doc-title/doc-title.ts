@@ -18,11 +18,11 @@ export class DocTitle extends LitElement {
       white-space: nowrap;
       user-select: none;
       cursor: pointer;
-      color: var(--affine-link-color);
+      color: var(--algogrind-link-color);
       font-feature-settings:
         'clig' off,
         'liga' off;
-      font-family: var(--affine-font-family);
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-sm);
       font-style: normal;
       font-weight: 400;

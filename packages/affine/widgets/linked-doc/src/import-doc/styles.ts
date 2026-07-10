@@ -1,5 +1,4 @@
-import { baseTheme } from '@toeverything/theme';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
 export const styles = css`
   .container {
@@ -7,15 +6,15 @@ export const styles = css`
     width: 480px;
     left: calc(50% - 480px / 2);
     top: calc(50% - 270px / 2);
-    font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-    font-size: var(--affine-font-base);
-    line-height: var(--affine-line-height);
+    font-family: var(--algogrind-text-paragraph-family);
+    font-size: var(--algogrind-text-paragraph-size);
+    line-height: var(--algogrind-line-height);
     padding: 12px 40px 36px;
     gap: 20px;
     display: flex;
     flex-direction: column;
-    background: var(--affine-background-primary-color);
-    box-shadow: var(--affine-shadow-2);
+    background: var(--algogrind-background-color);
+    box-shadow: var(--algogrind-shadow-small);
     border-radius: 16px;
     z-index: var(--affine-z-index-popover);
   }
@@ -34,8 +33,8 @@ export const styles = css`
   a {
     white-space: nowrap;
     word-break: break-word;
-    color: var(--affine-link-color);
-    fill: var(--affine-link-color);
+    color: var(--algogrind-link-color);
+    fill: var(--algogrind-link-color);
     text-decoration: none;
     cursor: pointer;
   }
@@ -57,14 +56,14 @@ export const styles = css`
     gap: 12px;
     width: 190px;
     height: 40px;
-    box-shadow: var(--affine-shadow-1);
+    box-shadow: var(--algogrind-shadow-xsmall);
     border-radius: 10px;
   }
 
   .footer {
     display: flex;
     align-items: center;
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .loading-header {

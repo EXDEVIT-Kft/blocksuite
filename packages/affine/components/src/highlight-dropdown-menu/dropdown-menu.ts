@@ -1,6 +1,6 @@
 import type { AffineTextStyleAttributes } from '@blocksuite/affine-shared/types';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
-import { LitElement } from 'lit';
+import { css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { html } from 'lit-html';
@@ -17,6 +17,7 @@ const colors = [
   'teal',
   'blue',
   'purple',
+  'pink',
   'grey',
 ] as const;
 
@@ -35,6 +36,20 @@ export type HighlightType = Pick<
   updateHighlight: PropTypes.instanceOf(Function),
 })
 export class HighlightDropdownMenu extends LitElement {
+  /* [ALGOGRIND] caption styling for the highlight panel headings */
+  static override styles = css`
+    .highlight-heading {
+      display: flex;
+      padding: 8px 8px 0;
+      font-family: var(--algogrind-text-caption-family);
+      font-size: var(--algogrind-text-caption-size);
+      font-weight: 600;
+      line-height: var(--algogrind-line-height);
+      text-align: left;
+      color: var(--algogrind-text-caption-color);
+    }
+  `;
+
   @property({ attribute: false })
   accessor updateHighlight!: (styles: HighlightType) => void;
 
@@ -46,7 +61,7 @@ export class HighlightDropdownMenu extends LitElement {
   };
 
   override render() {
-    const prefix = '--affine-text-highlight';
+    const prefix = '--algogrind-text-highlight';
 
     return html`
       <editor-menu-button

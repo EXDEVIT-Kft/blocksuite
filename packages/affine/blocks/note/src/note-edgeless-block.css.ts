@@ -11,7 +11,7 @@ export const edgelessNoteContainer = style({
   pointerEvents: 'all',
   transformOrigin: '0 0',
   fontWeight: '400',
-  lineHeight: cssVar('lineHeight'),
+  lineHeight: 'var(--algogrind-line-height)',
 });
 
 export const collapseButton = style({
@@ -53,7 +53,7 @@ export const noteBackground = style({
       width: `calc(100% + ${ACTIVE_NOTE_EXTRA_PADDING * 2}px)`,
       height: `calc(100% + ${ACTIVE_NOTE_EXTRA_PADDING * 2}px)`,
       transition: 'left 0.3s, top 0.3s, width 0.3s, height 0.3s',
-      boxShadow: cssVar('activeShadow'),
+      boxShadow: 'var(--algogrind-shadow-active)',
     },
   },
 });
@@ -68,7 +68,7 @@ export const collapsedContent = style({
   background: cssVar('white'),
   opacity: 0.5,
   pointerEvents: 'none',
-  border: `2px ${cssVar('blue')} solid`,
+  border: '2px var(--algogrind-primary-color) solid',
   borderTop: 'unset',
   borderRadius: '0 0 8px 8px',
 });

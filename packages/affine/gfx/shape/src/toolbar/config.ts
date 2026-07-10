@@ -113,7 +113,7 @@ export const shapeToolbarConfig = {
           getMostCommonValue(models, field) ?? ShapeStyle.General;
         const onPick = (value: boolean) => {
           const shapeStyle = value ? ShapeStyle.Scribbled : ShapeStyle.General;
-          const fontFamily = value ? FontFamily.Kalam : FontFamily.Inter;
+          const fontFamily = value ? FontFamily.Kalam : FontFamily.Quicksand;
 
           for (const model of models) {
             ctx.std

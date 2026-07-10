@@ -158,8 +158,8 @@ export class AffineLink extends WithDisposable(ShadowlessElement) {
 
   override render() {
     const linkStyle = {
-      color: 'var(--affine-link-color)',
-      fill: 'var(--affine-link-color)',
+      color: 'var(--algogrind-link-color)',
+      fill: 'var(--algogrind-link-color)',
       cursor: 'pointer',
     };
 

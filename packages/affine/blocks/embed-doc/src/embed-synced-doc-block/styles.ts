@@ -38,7 +38,7 @@ export const blockStyles = css`
     height: calc(${EMBED_CARD_HEIGHT.syncedDoc}px + 36px);
   }
   .edgeless-block-portal-embed .affine-embed-synced-doc-container.surface {
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
   }
 
   affine-embed-synced-doc-block[data-nested-editor],
@@ -61,7 +61,7 @@ export const blockStyles = css`
     outline: 2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')};
   }
   .affine-embed-synced-doc-container.show-hover-border:hover {
-    border-color: var(--affine-border-color);
+    border-color: var(--algogrind-border-color);
   }
   .affine-embed-synced-doc-container.page {
     display: block;
@@ -96,7 +96,7 @@ export const blockStyles = css`
     width: 100%;
     height: 100%;
     padding: 0 var(--embed-padding);
-    background-color: var(--affine-hover-color);
+    background-color: var(--algogrind-hover-color);
   }
   .affine-embed-synced-doc-header svg {
     flex-shrink: 0;
@@ -141,11 +141,11 @@ export const blockStyles = css`
   }
 
   .affine-embed-synced-doc-editor-empty > span {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
     font-feature-settings:
       'clig' off,
       'liga' off;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -154,7 +154,7 @@ export const blockStyles = css`
 
   .affine-embed-synced-doc-container.surface {
     border-color: ${unsafeCSSVarV2('layer/insideBorder/border')};
-    background: ${unsafeCSSVarV2('layer/background/linkedDocOnEdgeless')};
+    background: var(--algogrind-background-color);
 
     affine-preview-root {
       padding: 0 24px;
@@ -198,7 +198,7 @@ export const cardStyles = css`
     height: ${EMBED_CARD_HEIGHT.horizontal}px;
     border-radius: 8px;
     border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
-    background: ${unsafeCSSVarV2('layer/background/primary')};
+    background: var(--algogrind-background-color);
     user-select: none;
   }
 
@@ -230,7 +230,7 @@ export const cardStyles = css`
   .affine-embed-synced-doc-card-content-title-icon svg {
     width: 16px;
     height: 16px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--algogrind-background-color);
   }
 
   .affine-embed-synced-doc-card-content-title-text {
@@ -240,8 +240,8 @@ export const cardStyles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-paragraph-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     font-style: normal;
     font-weight: 600;
@@ -264,8 +264,8 @@ export const cardStyles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-placeholder-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-placeholder-color);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -292,8 +292,8 @@ export const cardStyles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-secondary-color);
-    font-family: var(--affine-font-family);
+    color: var(--algogrind-text-secondary);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 400;
@@ -306,7 +306,7 @@ export const cardStyles = css`
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    color: ${unsafeCSSVarV2('button/primary')};
+    color: var(--algogrind-primary-color);
   }
   .affine-embed-synced-doc-card-content-reload-button svg {
     width: 12px;
@@ -320,7 +320,7 @@ export const cardStyles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: var(--affine-font-family);
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 500;
@@ -369,7 +369,7 @@ export const cardStyles = css`
 
   .affine-embed-synced-doc-card:not(.loading).deleted,
   .affine-embed-synced-doc-card:not(.loading).error {
-    background: var(--affine-background-secondary-color);
+    background: var(--algogrind-background-secondary-color);
   }
   .affine-embed-synced-doc-card:not(.loading):not(.error):not(
       .surface

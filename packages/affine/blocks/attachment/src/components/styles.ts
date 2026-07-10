@@ -21,12 +21,12 @@ export const renameStyles = css`
     padding: 4px 10px;
     background: var(--affine-white-10);
     border-radius: 4px;
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--algogrind-border-color);
   }
 
   .affine-attachment-rename-input-wrapper:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--algogrind-primary-color);
+    box-shadow: var(--algogrind-shadow-active);
   }
 
   .affine-attachment-rename-input-wrapper input {
@@ -34,17 +34,17 @@ export const renameStyles = css`
     border: none;
     outline: none;
     background: transparent;
-    color: var(--affine-text-primary-color);
+    color: var(--algogrind-text-paragraph-color);
   }
   ${fontXSStyle('.affine-attachment-rename-input-wrapper input')}
 
   .affine-attachment-rename-input-wrapper input::placeholder {
-    color: var(--affine-placeholder-color);
+    color: var(--algogrind-text-placeholder-color);
   }
 
   .affine-attachment-rename-extension {
     font-size: var(--affine-font-xs);
-    color: var(--affine-text-secondary-color);
+    color: var(--algogrind-text-secondary);
   }
 
   .affine-attachment-rename-overlay-mask {

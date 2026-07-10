@@ -1,7 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
 import {
   DEFAULT_ADD_BUTTON_WIDTH,
@@ -11,7 +8,7 @@ import {
 export const styles = css`
     affine-database-column-header {
         display: block;
-        background-color: var(--affine-background-primary-color);
+        background-color: var(--algogrind-background-color);
         position: relative;
         z-index: 2;
     }
@@ -20,11 +17,11 @@ export const styles = css`
         position: relative;
         display: flex;
         flex-direction: row;
-        border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
-        border-top: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+        border-bottom: 1px solid var(--algogrind-border-color);
+        border-top: 1px solid var(--algogrind-border-color);
         box-sizing: border-box;
         user-select: none;
-        background-color: var(--affine-background-primary-color);
+        background-color: var(--algogrind-background-color);
     }
 
     .affine-database-column {
@@ -56,7 +53,7 @@ export const styles = css`
 
     .affine-database-column-content:hover,
     .affine-database-column-content.edit {
-        background: var(--affine-hover-color);
+        background: var(--algogrind-hover-color);
     }
 
     .affine-database-column-content.edit .affine-database-column-text-icon {
@@ -70,7 +67,7 @@ export const styles = css`
         gap: 6px;
         /* https://stackoverflow.com/a/36247448/15443637 */
         overflow: hidden;
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         font-size: 14px;
         position: relative;
     }
@@ -81,7 +78,7 @@ export const styles = css`
         border-radius: 4px;
         padding: 2px;
         font-size: 18px;
-        color: ${unsafeCSSVarV2('database/textSecondary')};
+        color: var(--algogrind-text-secondary);
     }
 
     .affine-database-column-text-content {
@@ -109,7 +106,7 @@ export const styles = css`
         width: 16px;
         height: 16px;
         background: var(--affine-white);
-        border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+        border: 1px solid var(--algogrind-border-color);
         border-radius: 4px;
         opacity: 0;
     }
@@ -121,16 +118,16 @@ export const styles = css`
         height: 16px;
         border: 1px solid transparent;
         border-radius: 4px;
-        fill: var(--affine-icon-color);
+        fill: var(--algogrind-text-paragraph-color);
     }
 
     .affine-database-column-text-save-icon:hover {
         background: var(--affine-white);
-        border-color: ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+        border-color: var(--algogrind-border-color);
     }
 
     .affine-database-column-text-icon svg {
-        fill: var(--affine-icon-color);
+        fill: var(--algogrind-text-paragraph-color);
     }
 
     .affine-database-column-input {
@@ -141,7 +138,7 @@ export const styles = css`
         color: inherit;
         font-weight: 600;
         font-size: 14px;
-        font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+        font-family: var(--algogrind-text-paragraph-family);
         background: transparent;
     }
 
@@ -179,14 +176,14 @@ export const styles = css`
 
     .header-add-column-button {
         height: ${DEFAULT_COLUMN_TITLE_HEIGHT}px;
-        background-color: var(--affine-background-primary-color);
+        background-color: var(--algogrind-background-color);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 40px;
         cursor: pointer;
         font-size: 18px;
-        color: ${unsafeCSSVarV2('icon/primary')};
+        color: var(--algogrind-text-paragraph-1-color)
     }
 
     @media print {
@@ -196,14 +193,14 @@ export const styles = css`
     }
 
     .affine-database-column-type-menu-icon {
-        border: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+        border: 1px solid var(--algogrind-border-color);
         border-radius: 4px;
         padding: 5px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--algogrind-background-secondary-color);
     }
 
     .affine-database-column-type-menu-icon svg {
-        color: var(--affine-text-secondary-color);
+        color: var(--algogrind-text-secondary);
         width: 20px;
         height: 20px;
 
@@ -214,11 +211,11 @@ export const styles = css`
         z-index: 100;
         width: 100px;
         height: 100px;
-        background: var(--affine-text-emphasis-color);
+        background: var(--algogrind-primary-color);
     }
 
     .affine-database-column-move {
-        --color: var(--affine-placeholder-color);
+        --color: var(--algogrind-text-placeholder-color);
         --active: var(--affine-black-10);
         --bw: 1px;
         --bw2: -1px;

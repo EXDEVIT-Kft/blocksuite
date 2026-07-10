@@ -43,7 +43,7 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
 
     .filter-bar-add-filter {
       white-space: nowrap;
-      color: var(--affine-text-secondary-color);
+      color: var(--algogrind-text-secondary);
       padding: 4px 8px;
       display: flex;
       align-items: center;
@@ -70,11 +70,11 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
 
     filter-bar:hover::-webkit-scrollbar-thumb {
       border-radius: 16px;
-      background-color: var(--affine-black-30);
+      background-color: var(--algogrind-scroll-thumb-hover-color);
     }
 
     filter-bar:hover::-webkit-scrollbar-track {
-      //background-color: var(--affine-hover-color);
+      //background-color: var(--algogrind-hover-color);
     }
   `;
 
@@ -140,7 +140,7 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
       class="filter-bar-add-filter dv-icon-16 dv-round-4 dv-hover"
       @click="${this.addFilter}"
     >
-      ${PlusIcon()} Add filter
+      ${PlusIcon()} Szűrő hozzáadása
     </div>`;
   };
 
@@ -186,7 +186,7 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
       );
     };
     const length = condition.conditions.length;
-    const text = length > 1 ? `${length} rules` : `${length} rule`;
+    const text = length > 1 ? `${length} szűrő` : `${length} szűrő`;
     return html` <data-view-component-button
       hoverType="border"
       .icon="${FilterIcon()}"

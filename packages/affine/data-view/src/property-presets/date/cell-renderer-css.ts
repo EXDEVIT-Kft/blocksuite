@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
 
 export const dateCellStyle = css({
   display: 'flex',
@@ -7,8 +6,8 @@ export const dateCellStyle = css({
   width: '100%',
   padding: '0',
   border: 'none',
-  fontFamily: baseTheme.fontSansFamily,
-  color: 'var(--affine-text-primary-color)',
+  fontFamily: 'var(--algogrind-text-paragraph-family)',
+  color: 'var(--algogrind-text-paragraph-color)',
   fontWeight: '400',
   backgroundColor: 'transparent',
   fontSize: 'var(--data-view-cell-text-size)',

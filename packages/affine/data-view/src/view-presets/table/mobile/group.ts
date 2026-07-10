@@ -11,8 +11,7 @@ import {
 } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { signal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
-import { css, html, nothing, unsafeCSS } from 'lit';
+import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
@@ -33,7 +32,7 @@ const styles = css`
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     padding: 4px 8px;
-    border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
+    border-bottom: 1px solid var(--algogrind-border-color);
   }
 
   .data-view-table-group-add-row-button {
@@ -46,7 +45,8 @@ const styles = css`
     user-select: none;
     font-size: 12px;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    font-weight: 600;
+    color: var(--algogrind-text-secondary);
   }
 
   .group-toggle-btn {
@@ -61,7 +61,7 @@ const styles = css`
   }
 
   .group-toggle-btn:hover {
-    background: var(--affine-hover-color);
+    background: var(--algogrind-hover-color);
   }
 
   .group-toggle-btn svg {
