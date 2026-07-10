@@ -59,4 +59,21 @@ export const ImageBlockSchemaExtension = BlockSchemaExtension(ImageBlockSchema);
 
 export class ImageBlockModel
   extends GfxCompatible<ImageBlockProps>(BlockModel)
-  implements GfxElementGeometry {}
+  implements GfxElementGeometry
+{
+  // [ALGOGRIND]
+  // Delete the stored blob when the image block gets deleted from the
+  // document, so removed images do not pile up in the blob storage.
+  constructor() {
+    super();
+
+    this.deleted.subscribe(() => {
+      const sourceId = this.props.sourceId$.value;
+      if (!sourceId) {
+        return;
+      }
+
+      this.store.blobSync.delete(sourceId).catch(console.error);
+    });
+  }
+}

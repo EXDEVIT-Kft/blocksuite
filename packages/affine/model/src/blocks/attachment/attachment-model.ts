@@ -109,4 +109,21 @@ export const AttachmentBlockSchemaExtension = BlockSchemaExtension(
 
 export class AttachmentBlockModel
   extends GfxCompatible<AttachmentBlockProps>(BlockModel)
-  implements GfxElementGeometry {}
+  implements GfxElementGeometry
+{
+  // [ALGOGRIND]
+  // Delete the stored blob when an attachment of any kind gets deleted
+  // from the document, so removed files do not pile up in the blob storage.
+  constructor() {
+    super();
+
+    this.deleted.subscribe(() => {
+      const sourceId = this.props.sourceId$.value;
+      if (!sourceId) {
+        return;
+      }
+
+      this.store.blobSync.delete(sourceId).catch(console.error);
+    });
+  }
+}
