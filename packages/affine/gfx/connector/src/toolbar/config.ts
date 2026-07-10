@@ -109,17 +109,17 @@ const REAR_ENDPOINT_STYLE_LIST = [
 
 const CONNECTOR_MODE_LIST = [
   {
-    key: 'Curve',
+    key: 'Íves',
     value: ConnectorMode.Curve,
     icon: ConnectorCIcon(),
   },
   {
-    key: 'Elbowed',
+    key: 'Szögletes',
     value: ConnectorMode.Orthogonal,
     icon: ConnectorEIcon(),
   },
   {
-    key: 'Straight',
+    key: 'Egyenes',
     value: ConnectorMode.Straight,
     icon: ConnectorLIcon(),
   },
@@ -191,7 +191,7 @@ export const connectorToolbarConfig = {
         return html`
           <edgeless-color-picker-button
             class="stroke-color"
-            .label="${'Stroke style'}"
+            .label="${'Szín'}"
             .pick=${onPickColor}
             .color=${stroke}
             .theme=${theme}
@@ -232,7 +232,7 @@ export const connectorToolbarConfig = {
         };
 
         return renderMenu({
-          label: 'Style',
+          label: 'Stílus',
           items: LINE_STYLE_LIST,
           currentValue: rough,
           onPick,
@@ -256,7 +256,7 @@ export const connectorToolbarConfig = {
             };
 
             return renderMenu({
-              label: 'Start point style',
+              label: 'Kezdőpont stílusa',
               items: FRONT_ENDPOINT_STYLE_LIST,
               currentValue: pointStyle,
               onPick,
@@ -266,7 +266,7 @@ export const connectorToolbarConfig = {
         {
           id: 'b.flip-direction',
           icon: FlipDirectionIcon(),
-          tooltip: 'Flip direction',
+          tooltip: 'Irányváltás',
           run(ctx) {
             const models = ctx.getSurfaceModelsByType(ConnectorElementModel);
             if (!models.length) return;
@@ -302,7 +302,7 @@ export const connectorToolbarConfig = {
             };
 
             return renderMenu({
-              label: 'End point style',
+              label: 'Végpont stílusa',
               items: REAR_ENDPOINT_STYLE_LIST,
               currentValue: pointStyle,
               onPick,
@@ -323,8 +323,8 @@ export const connectorToolbarConfig = {
             };
 
             return renderMenu({
-              label: 'Shape',
-              tooltip: 'Connector shape',
+              label: 'Forma',
+              tooltip: 'Forma',
               items: CONNECTOR_MODE_LIST,
               currentValue: mode,
               onPick,
@@ -335,7 +335,7 @@ export const connectorToolbarConfig = {
     },
     {
       id: 'g.text',
-      tooltip: 'Add text',
+      tooltip: 'Szöveg hozzáadása',
       icon: AddTextIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModelsByType(ConnectorElementModel);

@@ -108,7 +108,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
     return html`
       <edgeless-tool-icon-button
         class="navigator-setting-button"
-        .tooltip=${this.popperShow ? '' : 'Settings'}
+        .tooltip=${this.popperShow ? '' : 'Beállítások'}
         .iconSize=${'24px'}
         @click=${() => {
           this._navigatorSettingPopper?.toggle();
@@ -125,11 +125,11 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         }}
       >
         <div class="item-container header">
-          <div class="text title">Playback Settings</div>
+          <div class="text title">Vetítés beállításai</div>
         </div>
 
         <div class="item-container">
-          <div class="text">Black background</div>
+          <div class="text">Fekete háttér</div>
 
           <toggle-switch
             .on=${this.blackBackground}
@@ -139,7 +139,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         </div>
 
         <div class="item-container">
-          <div class="text">Hide toolbar</div>
+          <div class="text">Menüsáv elrejtése</div>
 
           <toggle-switch
             .on=${this.hideToolbar}
@@ -153,7 +153,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
         ${this.includeFrameOrder
           ? html` <div class="divider"></div>
               <div class="item-container header">
-                <div class="text title">Frame Order</div>
+                <div class="text title">Keretek sorrendje</div>
               </div>
 
               <edgeless-frame-order-menu

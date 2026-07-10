@@ -86,7 +86,7 @@ export const shapeToolbarConfig = {
 
         return renderMenu({
           icon: ShapeIcon(),
-          label: 'Switch shape type',
+          label: 'Alakzat módosítása',
           items: ShapeComponentConfig.map(item => ({
             key: item.tooltip,
             value: item.name,
@@ -123,7 +123,7 @@ export const shapeToolbarConfig = {
         };
 
         return renderMenu({
-          label: 'Style',
+          label: 'Stílus',
           items: LINE_STYLE_LIST,
           currentValue: shapeStyle === ShapeStyle.Scribbled,
           onPick,
@@ -260,7 +260,7 @@ export const shapeToolbarConfig = {
     },
     {
       id: 'f.text',
-      tooltip: 'Add text',
+      tooltip: 'Szöveg hozzáadása',
       icon: AddTextIcon(),
       when(ctx) {
         const models = ctx.getSurfaceModelsByType(ShapeElementModel);

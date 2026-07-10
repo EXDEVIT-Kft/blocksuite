@@ -529,7 +529,7 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
         >
           ${MoreHorizontalIcon({ width: '20px', height: '20px' })}
           <affine-tooltip tip-position="top" .offset=${25}>
-            More Tools
+            További Eszközök
           </affine-tooltip>
         </icon-button>
       </div>

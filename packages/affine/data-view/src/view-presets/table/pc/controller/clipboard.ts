@@ -56,14 +56,10 @@ export class TableClipboardController implements ReactiveController {
       })
       .then(() => {
         if (area[0]?.row) {
-          this.notification.toast(
-            `${area.length} row${area.length > 1 ? 's' : ''} copied to clipboard`
-          );
+          this.notification.toast(`${area.length} sor a vágólapra másolva`);
         } else {
           const count = area.flatMap(row => row.cells).length;
-          this.notification.toast(
-            `${count} cell${count > 1 ? 's' : ''} copied to clipboard`
-          );
+          this.notification.toast(`${count} cella a vágólapra másolva`);
         }
       })
       .catch(console.error);

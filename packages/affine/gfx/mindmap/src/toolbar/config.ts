@@ -46,19 +46,19 @@ const MINDMAP_STYLE_LIST = [
 
 const MINDMAP_LAYOUT_LIST = [
   {
-    key: 'Left',
+    key: 'Bal',
     value: LayoutType.LEFT,
     icon: RightLayoutIcon({
       style: 'transform: rotate(0.5turn); transform-origin: center;',
     }),
   },
   {
-    key: 'Radial',
+    key: 'Kiegyensúlyozott',
     value: LayoutType.BALANCE,
     icon: RadiantIcon(),
   },
   {
-    key: 'Right',
+    key: 'Jobb',
     value: LayoutType.RIGHT,
     icon: RightLayoutIcon(),
   },
@@ -77,7 +77,7 @@ export const createMindmapStyleActionMenu = (
   };
 
   return renderMenu({
-    label: 'Style',
+    label: 'Stílus',
     icon: StyleIcon(),
     items: MINDMAP_STYLE_LIST,
     currentValue: style,
@@ -100,7 +100,7 @@ export const createMindmapLayoutActionMenu = (
   };
 
   return renderMenu({
-    label: 'Layout',
+    label: 'Elrendezés',
     items: MINDMAP_LAYOUT_LIST,
     currentValue: layoutType,
     onPick,

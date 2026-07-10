@@ -98,7 +98,7 @@ export const brushToolbarConfig = {
         return html`
           <edgeless-color-picker-button
             class="color"
-            .label="${'Color'}"
+            .label="${'Szín'}"
             .pick=${onPick}
             .color=${color}
             .theme=${theme}

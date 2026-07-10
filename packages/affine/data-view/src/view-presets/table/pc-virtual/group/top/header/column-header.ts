@@ -30,7 +30,7 @@ export class VirtualTableHeader extends SignalWatcher(
     popMenu(popupTargetFromElement(ele), {
       options: {
         title: {
-          text: 'Property type',
+          text: 'Tulajdonság típusa',
         },
         items: [
           menu.group({

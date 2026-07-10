@@ -325,7 +325,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
             if (!store.getStorage('presentNoFrameToastShown')) {
               toast(
                 this.host,
-                'The presentation requires at least 1 frame. You can firstly create a frame.',
+                'A prezentációhoz legalább 1 Keret szükséges. Először hozz létre egy Keretet.',
                 5000
               );
               store.setStorage('presentNoFrameToastShown', true);

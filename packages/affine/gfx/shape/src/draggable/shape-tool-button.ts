@@ -70,7 +70,7 @@ export class EdgelessShapeToolButton extends EdgelessToolbarToolMixin(
         .tooltip=${this.popper
           ? ''
           : html`<affine-tooltip-content-with-shortcut
-              data-tip="${'Shape'}"
+              data-tip="${'Alakzat'}"
               data-shortcut="${'S'}"
             ></affine-tooltip-content-with-shortcut>`}
         .tooltipOffset=${5}

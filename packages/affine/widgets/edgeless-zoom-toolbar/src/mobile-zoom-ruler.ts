@@ -124,7 +124,7 @@ export class MobileZoomRuler extends WithDisposable(LitElement) {
         <span class="divider"></span>
         <button
           class="fit-button"
-          aria-label="Fit to screen"
+          aria-label="Tartalom Középre"
           ?disabled=${locked}
           @click=${() => this.gfx.fitToScreen()}
         >

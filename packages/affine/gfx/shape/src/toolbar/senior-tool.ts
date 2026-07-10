@@ -5,7 +5,7 @@ export const shapeSeniorTool = SeniorToolExtension(
   'shape',
   ({ block, toolbarContainer }) => {
     return {
-      name: 'Shape',
+      name: 'Alakzat',
       content: html`<edgeless-shape-tool-button
         .edgeless=${block}
         .toolbarContainer=${toolbarContainer}

@@ -18,17 +18,17 @@ export type LineDetailType =
 
 const LINE_STYLE_LIST = [
   {
-    key: 'Solid',
+    key: 'Folytonos',
     value: StrokeStyle.Solid,
     icon: StraightLineIcon(),
   },
   {
-    key: 'Dash',
+    key: 'Szaggatott',
     value: StrokeStyle.Dash,
     icon: DashLineIcon(),
   },
   {
-    key: 'None',
+    key: 'Nincs',
     value: StrokeStyle.None,
     icon: BanIcon(),
   },

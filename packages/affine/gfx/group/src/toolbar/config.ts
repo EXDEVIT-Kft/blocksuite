@@ -28,8 +28,8 @@ export const groupToolbarConfig = {
   actions: [
     {
       id: 'a.insert-into-page',
-      label: 'Insert into Page',
-      tooltip: 'Insert into Page',
+      label: 'Beszúrás a Dokumentumba',
+      tooltip: 'Beszúrás a Dokumentumba',
       icon: InsertIntoPageIcon(),
       when: ctx => ctx.getSurfaceModelsByType(GroupElementModel).length === 1,
       run(ctx) {
@@ -64,12 +64,12 @@ export const groupToolbarConfig = {
           lastNoteId
         );
 
-        toast(ctx.host, 'Group has been inserted into doc');
+        toast(ctx.host, 'A csoport már a Szöveges nézetben is megjelenik.');
       },
     },
     {
       id: 'b.rename',
-      tooltip: 'Rename',
+      tooltip: 'Átnevezés',
       icon: EditIcon(),
       when: ctx => ctx.getSurfaceModelsByType(GroupElementModel).length === 1,
       run(ctx) {
@@ -84,7 +84,7 @@ export const groupToolbarConfig = {
     },
     {
       id: 'b.ungroup',
-      tooltip: 'Ungroup',
+      tooltip: 'Csoportbontás',
       icon: UngroupIcon(),
       run(ctx) {
         const models = ctx.getSurfaceModelsByType(GroupElementModel);

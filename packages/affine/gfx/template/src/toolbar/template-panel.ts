@@ -393,7 +393,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
           <input
             class="search-input"
             type="text"
-            placeholder="Search file or anything..."
+            placeholder="Keress rá bármire..."
             @input=${this._updateSearchKeyword}
             @cut=${stopPropagation}
             @copy=${stopPropagation}
@@ -459,7 +459,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
                           style=${styleMap({
                             opacity: isBeingDragged ? '0' : '1',
                           })}
-                          data-hover-text="Add"
+                          data-hover-text="Hozzáad"
                           @mousedown=${(e: MouseEvent) =>
                             this.draggableController.onMouseDown(e, {
                               data: template,

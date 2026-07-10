@@ -47,15 +47,15 @@ import {
 
 const FONT_WEIGHT_LIST = [
   {
-    key: 'Light',
+    key: 'Vékony',
     value: FontWeight.Light,
   },
   {
-    key: 'Regular',
+    key: 'Normál',
     value: FontWeight.Regular,
   },
   {
-    key: 'Semibold',
+    key: 'Vastag',
     value: FontWeight.SemiBold,
   },
 ] as const satisfies MenuItem<FontWeight>[];
@@ -65,7 +65,7 @@ const FONT_STYLE_LIST = [
     value: FontStyle.Normal,
   },
   {
-    key: 'Italic',
+    key: 'Dőlt',
     value: FontStyle.Italic,
   },
 ] as const satisfies MenuItem<FontStyle>[];
@@ -81,17 +81,17 @@ const FONT_SIZE_LIST = [
 
 const TEXT_ALIGN_LIST = [
   {
-    key: 'Left',
+    key: 'Bal',
     value: TextAlign.Left,
     icon: TextAlignLeftIcon(),
   },
   {
-    key: 'Center',
+    key: 'Közép',
     value: TextAlign.Center,
     icon: TextAlignCenterIcon(),
   },
   {
-    key: 'Right',
+    key: 'Jobb',
     value: TextAlign.Right,
     icon: TextAlignRightIcon(),
   },
@@ -157,8 +157,8 @@ export function createTextActions<
             .contentPadding="${'8px'}"
             .button=${html`
               <editor-icon-button
-                aria-label="Font"
-                .tooltip="${'Font'}"
+                aria-label="Betűtípus"
+                .tooltip="${'Betűtípus'}"
                 .justify="${'space-between'}"
                 .iconContainerWidth="${'40px'}"
               >
@@ -239,7 +239,7 @@ export function createTextActions<
         return html`
           <edgeless-color-picker-button
             class="text-color"
-            .label="${'Text color'}"
+            .label="${'Szövegszín'}"
             .pick=${onPick}
             .color=${color}
             .theme=${theme}
@@ -289,8 +289,8 @@ export function createTextActions<
             .contentPadding="${'8px'}"
             .button=${html`
               <editor-icon-button
-                aria-label="Font style"
-                .tooltip="${'Font style'}"
+                aria-label="Betűstílus"
+                .tooltip="${'Betűstílus'}"
                 .justify="${'space-between'}"
                 .iconContainerWidth="${'90px'}"
                 .disabled=${disabled}
@@ -351,7 +351,7 @@ export function createTextActions<
 
         return html`<affine-size-dropdown-menu
           @select=${onPick}
-          .label="${'Font size'}"
+          .label="${'Betűméret'}"
           .sizes=${FONT_SIZE_LIST}
           .sizeSignal=${fontSize$}
         ></affine-size-dropdown-menu>`;
@@ -378,7 +378,7 @@ export function createTextActions<
         };
 
         return renderMenu({
-          label: 'Alignment',
+          label: 'Igazítás',
           items: TEXT_ALIGN_LIST,
           currentValue: textAlign,
           onPick,

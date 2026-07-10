@@ -50,8 +50,8 @@ const builtinSurfaceToolbarConfig = {
   actions: [
     {
       id: 'a.insert-into-page',
-      label: 'Insert into Page',
-      tooltip: 'Insert into Page',
+      label: 'Beszúrás a Szöveg nézetbe',
+      tooltip: 'Beszúrás a Szöveg nézetbe',
       icon: InsertIntoPageIcon(),
       when: ctx => ctx.getSurfaceModelsByType(FrameBlockModel).length === 1,
       run(ctx) {
@@ -90,18 +90,18 @@ const builtinSurfaceToolbarConfig = {
         const notification = ctx.std.getOptional(NotificationProvider);
         if (notification) {
           notification.notifyWithUndoAction({
-            title: 'Frame inserted into Page.',
-            message: 'Frame has been inserted into doc',
+            title: 'Keret beszúrva a Szöveg nézetbe.',
+            message: 'A Keret már a Szöveg nézetben is megjelenik',
             accent: 'success',
           });
         } else {
-          toast(ctx.host, 'Frame has been inserted into doc');
+          toast(ctx.host, 'A Keret már a Szöveg nézetben is megjelenik');
         }
       },
     },
     {
       id: 'b.rename',
-      tooltip: 'Rename',
+      tooltip: 'Átnevezés',
       icon: EditIcon(),
       when: ctx => ctx.getSurfaceModelsByType(FrameBlockModel).length === 1,
       run(ctx) {
@@ -116,7 +116,7 @@ const builtinSurfaceToolbarConfig = {
     },
     {
       id: 'b.ungroup',
-      tooltip: 'Ungroup',
+      tooltip: 'Csoportbontás',
       icon: UngroupIcon(),
       run(ctx) {
         const models = ctx.getSurfaceModelsByType(FrameBlockModel);
@@ -188,7 +188,7 @@ const builtinSurfaceToolbarConfig = {
         return html`
           <edgeless-color-picker-button
             class="background"
-            .label="${'Background'}"
+            .label="${'Háttér'}"
             .pick=${onPick}
             .color=${background}
             .theme=${theme}

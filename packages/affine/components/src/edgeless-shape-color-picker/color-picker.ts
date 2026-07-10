@@ -195,7 +195,7 @@ export class EdgelessShapeColorPicker extends WithDisposable(
         .contentPadding="${tabType === 'normal' ? '8px' : '0px'}"
         @click=${stopPropagation}
         .button=${html`
-          <editor-icon-button aria-label="Color" .tooltip="${'Color'}">
+          <editor-icon-button aria-label="Szín" .tooltip="${'Szín'}">
             <edgeless-color-button
               .color=${fillColorWithoutAlpha}
             ></edgeless-color-button>
@@ -211,14 +211,14 @@ export class EdgelessShapeColorPicker extends WithDisposable(
                   ${repeat(
                     [
                       {
-                        label: 'Fill color',
+                        label: 'Kitöltés',
                         type: 'fillColor',
                         value: fillColor,
                         hollowCircle: false,
                         onPick: this.#pickFillColor,
                       },
                       {
-                        label: 'Border color',
+                        label: 'Szegély',
                         type: 'strokeColor',
                         value: strokeColor,
                         hollowCircle: true,

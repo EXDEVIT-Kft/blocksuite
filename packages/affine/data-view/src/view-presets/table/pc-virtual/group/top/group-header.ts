@@ -86,7 +86,7 @@ export class TableGroupHeader extends SignalWatcher(
     const ele = e.currentTarget as HTMLElement;
     popFilterableSimpleMenu(popupTargetFromElement(ele), [
       menu.action({
-        name: 'Ungroup',
+        name: 'Csoportosítás feloldása',
         hide: () => group.value == null,
         select: () => {
           group.rows.forEach(row => {
@@ -95,7 +95,7 @@ export class TableGroupHeader extends SignalWatcher(
         },
       }),
       menu.action({
-        name: 'Delete Cards',
+        name: 'Kártyák törlése',
         select: () => {
           this.tableViewManager.rowsDelete(group.rows.map(row => row.rowId));
           this.requestUpdate();

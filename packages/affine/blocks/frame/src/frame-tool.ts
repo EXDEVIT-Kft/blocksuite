@@ -73,7 +73,7 @@ export class FrameTool extends BaseTool {
       const props = this.std
         .get(EditPropsStore)
         .applyLastProps('affine:frame', {
-          title: new Text(new Y.Text(`Frame ${frames.length + 1}`)),
+          title: new Text(new Y.Text(`Keret ${frames.length + 1}`)),
           xywh: Bound.fromPoints([this._startPoint, currentPoint]).serialize(),
           index: this.gfx.layer.generateIndex(true),
           presentationIndex: this.frameManager.generatePresentationIndex(),

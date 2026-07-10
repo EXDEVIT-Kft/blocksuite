@@ -173,7 +173,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
       </button>
       <affine-tooltip tip-position="top" .offset=${12}>
         <affine-tooltip-content-with-shortcut
-          data-tip="${'Support import of FreeMind,OPML.'}"
+          data-tip="${'FreeMind, OPML sablon importálása'}"
         ></affine-tooltip-content-with-shortcut>
       </affine-tooltip>
     </div>`;
@@ -205,7 +205,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
           other: 'failed',
           module: 'toolbar',
         });
-        toast(this.edgeless.host, 'Import failed, please try again');
+        toast(this.edgeless.host, 'Az importálás nem sikerült, próbáld újra');
         console.error(e);
       })
       .finally(() => {
@@ -303,7 +303,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
           </button>
           <affine-tooltip tip-position="top" .offset=${12}>
             <affine-tooltip-content-with-shortcut
-              data-tip="${'Add media'}"
+              data-tip="${'Média hozzáadása'}"
             ></affine-tooltip-content-with-shortcut>
           </affine-tooltip>
         </div>
@@ -334,7 +334,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
           </button>
           <affine-tooltip tip-position="top" .offset=${12}>
             <affine-tooltip-content-with-shortcut
-              data-tip="${'Edgeless Text'}"
+              data-tip="${'Egyszerű Szöveg'}"
               data-shortcup="${'T'}"
             ></affine-tooltip-content-with-shortcut>
           </affine-tooltip>
@@ -380,7 +380,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
               </button>
               <affine-tooltip tip-position="top" .offset=${12}>
                 <affine-tooltip-content-with-shortcut
-                  data-tip="${'Mind Map'}"
+                  data-tip="${'Gondolattérkép'}"
                   data-shortcup="${'M'}"
                 ></affine-tooltip-content-with-shortcut>
               </affine-tooltip>

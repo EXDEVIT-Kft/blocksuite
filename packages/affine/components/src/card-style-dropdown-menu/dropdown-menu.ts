@@ -77,8 +77,8 @@ export class CardStyleDropdownMenu extends SignalWatcher(LitElement) {
         .contentPadding="${'8px'}"
         .button=${html`
           <editor-icon-button
-            aria-label="Card style"
-            .tooltip="${'Card style'}"
+            aria-label="Kártya megjelenése"
+            .tooltip="${'Kártya megjelenése'}"
           >
             ${PaletteIcon()}
           </editor-icon-button>

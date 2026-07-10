@@ -250,7 +250,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
   openSetupMenu(target: HTMLElement) {
     const items = this.view.dateProperties$.value.map(property =>
       menu.action({
-        name: property.name$.value || 'Date',
+        name: property.name$.value || 'Dátum',
         select: () => {
           this.view.setDateColumn(property.id);
         },
@@ -259,7 +259,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     if (!this.view.readonly$.value) {
       items.push(
         menu.action({
-          name: 'Create date property',
+          name: 'Dátum tulajdonság létrehozása',
           select: () => {
             this.view.createDateColumn();
           },
@@ -289,7 +289,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
       source =>
         source.getSubscriptionOptions?.().map(subscription =>
           menu.action({
-            name: `${selectedIds && !selectedIds.has(subscription.id) ? 'Show' : 'Hide'} ${subscription.name}`,
+            name: `${subscription.name} ${selectedIds && !selectedIds.has(subscription.id) ? 'megjelenítése' : 'elrejtése'}`,
             closeOnSelect: false,
             select: () => {
               const allIds = source
@@ -314,7 +314,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
       source.openConnectSettings
         ? [
             menu.action({
-              name: 'Connect calendar',
+              name: 'Naptár csatlakoztatása',
               closeOnSelect: false,
               select: () => {
                 source.openConnectSettings?.();
@@ -327,8 +327,8 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
       ? [
           menu.action({
             name: workspaceCalendar.enabled
-              ? 'Hide workspace calendar'
-              : 'Show workspace calendar',
+              ? 'Munkaterület-naptár elrejtése'
+              : 'Munkaterület-naptár megjelenítése',
             closeOnSelect: false,
             select: () => {
               this.view.setWorkspaceCalendarEnabled(!workspaceCalendar.enabled);
@@ -336,7 +336,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
             },
           }),
           menu.action({
-            name: 'Show all workspace calendars',
+            name: 'Összes munkaterület-naptár megjelenítése',
             closeOnSelect: false,
             select: () => {
               this.view.setWorkspaceCalendarSubscriptionIds(undefined);
@@ -370,7 +370,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     if (options?.includeNone) {
       items.push(
         menu.action({
-          name: 'None',
+          name: 'Nincs',
           isSelected: !selectedPropertyId,
           closeOnSelect,
           select: () => onSelect(undefined),
@@ -380,7 +380,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     items.push(
       ...this.view.dateProperties$.value.map(property =>
         menu.action({
-          name: property.name$.value || 'Date',
+          name: property.name$.value || 'Dátum',
           isSelected: property.id === selectedPropertyId,
           closeOnSelect,
           select: () => onSelect(property.id),
@@ -390,7 +390,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     if (!this.view.readonly$.value && create) {
       items.push(
         menu.action({
-          name: options?.createLabel ?? 'Create date property',
+          name: options?.createLabel ?? 'Dátum tulajdonság létrehozása',
           closeOnSelect,
           select: create,
         })
@@ -407,10 +407,10 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     const selectedEnd = this.view.endDateMapping$.value.propertyId;
     return [
       menu.group({
-        name: 'Date range',
+        name: 'Dátumtartomány',
         items: [
           menu.action({
-            name: 'Calendar by',
+            name: 'Naptár alapja',
             prefix: TodayIcon(),
             closeOnSelect: false,
             postfix: html`<div
@@ -423,7 +423,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
               </div>
               ${ArrowRightSmallIcon()}`,
             select: () => {
-              navigateToSubPage('Calendar by', () =>
+              navigateToSubPage('Naptár alapja', () =>
                 this.getDatePropertyMenuItems(
                   this.view.startDateMapping$.value.propertyId,
                   propertyId => {
@@ -442,7 +442,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
             },
           }),
           menu.action({
-            name: 'End date',
+            name: 'Záró dátum',
             prefix: DateTimeIcon(),
             closeOnSelect: false,
             postfix: html`<div
@@ -450,11 +450,11 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
               >
                 ${selectedEnd
                   ? this.view.propertyGetOrCreate(selectedEnd).name$.value
-                  : 'None'}
+                  : 'Nincs'}
               </div>
               ${ArrowRightSmallIcon()}`,
             select: () => {
-              navigateToSubPage('End date', () =>
+              navigateToSubPage('Záró dátum', () =>
                 this.getDatePropertyMenuItems(
                   this.view.endDateMapping$.value.propertyId,
                   propertyId => {
@@ -467,7 +467,7 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
                   },
                   {
                     includeNone: true,
-                    createLabel: 'Create end date property',
+                    createLabel: 'Záró dátum tulajdonság létrehozása',
                     closeOnSelect: false,
                   }
                 )
@@ -475,12 +475,12 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
             },
           }),
           menu.action({
-            name: 'External calendars',
+            name: 'Külső naptárak',
             prefix: IntegrationsIcon(),
             closeOnSelect: false,
             postfix: html`${ArrowRightSmallIcon()}`,
             select: () => {
-              navigateToSubPage('External calendars', () =>
+              navigateToSubPage('Külső naptárak', () =>
                 this.createSourceControlItems()
               );
             },
@@ -683,7 +683,9 @@ export class CalendarViewUILogic extends DataViewUILogicBase<CalendarSingleView>
     this.view
       .loadExternalEntries({ from: range.from, to: range.to })
       .catch(() => {
-        this.root.config.notification.toast('Failed to load calendar entries');
+        this.root.config.notification.toast(
+          'A naptárbejegyzések betöltése sikertelen'
+        );
       });
   }
 }
@@ -913,9 +915,9 @@ export class CalendarViewUI extends DataViewUIBase<CalendarViewUILogic> {
     }
     return html`<div class="calendar-empty-month-hint">
       <div class="calendar-empty-month-hint-copy">
-        <span class="calendar-empty-month-hint-title">Nothing here yet</span>
+        <span class="calendar-empty-month-hint-title">Még nincs itt semmi</span>
         <span class="calendar-empty-month-hint-body">
-          Add a row to any date, it'll appear here on the calendar.
+          Adj hozzá egy sort bármelyik dátumhoz, és megjelenik itt a naptárban.
         </span>
       </div>
       <div class="calendar-empty-month-hint-actions">
@@ -928,11 +930,11 @@ export class CalendarViewUI extends DataViewUIBase<CalendarViewUILogic> {
                   getDefaultCreateDate(this.logic.currentMonth)
                 )}
             >
-              ${PlusIcon()}<span>New row</span>
+              ${PlusIcon()}<span>Új sor</span>
             </button>`}
         <button
           class="calendar-empty-month-hint-close"
-          aria-label="Dismiss"
+          aria-label="Bezárás"
           @click=${() => this.logic.view.dismissEmptyMonthHint()}
         >
           ${CloseIcon()}
@@ -969,18 +971,18 @@ export class CalendarViewUI extends DataViewUIBase<CalendarViewUILogic> {
                   class="calendar-today-button"
                   @click=${() => this.logic.goToday()}
                 >
-                  <span>Today</span>
+                  <span>Ma</span>
                 </button>`}
             <button
               class="calendar-icon-button"
-              aria-label="Previous month"
+              aria-label="Előző hónap"
               @click=${() => this.logic.moveMonth(-1)}
             >
               ${ArrowLeftSmallIcon()}
             </button>
             <button
               class="calendar-icon-button"
-              aria-label="Next month"
+              aria-label="Következő hónap"
               @click=${() => this.logic.moveMonth(1)}
             >
               ${ArrowRightSmallIcon()}
@@ -1047,12 +1049,12 @@ export class CalendarViewUI extends DataViewUIBase<CalendarViewUILogic> {
                           ${canReserveNewRow
                             ? html`<button
                                 class="calendar-new-row"
-                                aria-label="+ New row"
+                                aria-label="+ Új sor"
                                 ?disabled=${this.logic.isInteracting}
                                 @click=${() =>
                                   this.logic.createRowOnDate(day.date)}
                               >
-                                ${PlusIcon()}<span>New row</span>
+                                ${PlusIcon()}<span>Új sor</span>
                               </button>`
                             : nothing}
                         </div>
@@ -1098,7 +1100,9 @@ export class CalendarViewUI extends DataViewUIBase<CalendarViewUILogic> {
                 @click=${(event: MouseEvent) =>
                   this.logic.openSetupMenu(event.currentTarget as HTMLElement)}
               >
-                ${TodayIcon()}<span>Select or create date property</span>
+                ${TodayIcon()}<span
+                  >Dátum tulajdonság kiválasztása vagy létrehozása</span
+                >
               </button>
             </div>`
           : nothing}

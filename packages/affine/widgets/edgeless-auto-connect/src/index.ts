@@ -265,7 +265,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
         return html`<div style=${style} class="edgeless-only-index-label">
           ${InvisibleIcon({ width: '20px', height: '20px' })}
           <affine-tooltip tip-position="bottom">
-            ${getIndexLabelTooltip(SmallDocIcon, 'Hidden on page')}
+            ${getIndexLabelTooltip(SmallDocIcon, 'Szöveges nézet elől elrejtve')}
           </affine-tooltip>
         </div>`;
       }
@@ -486,7 +486,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
             >
               ${index}
               <affine-tooltip tip-position="bottom">
-                ${getIndexLabelTooltip(SmallDocIcon, 'Page mode index')}
+                ${getIndexLabelTooltip(SmallDocIcon, 'Szöveges nézet sorrend')}
               </affine-tooltip>
             </div>
           `);

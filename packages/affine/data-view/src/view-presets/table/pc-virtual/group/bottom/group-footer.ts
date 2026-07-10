@@ -87,7 +87,7 @@ export class TableGroupFooter extends WithDisposable(ShadowlessElement) {
                 role="button"
               >
                 ${PlusIcon()}<span class="${styles.addRowText}"
-                  >New Record</span
+                  >Új sor</span
                 >
               </div>
             </div>

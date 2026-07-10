@@ -55,9 +55,9 @@ export type Connection = {
 
 export const getConnectorModeName = (mode: ConnectorMode) => {
   return {
-    [ConnectorMode.Straight]: 'Straight',
-    [ConnectorMode.Orthogonal]: 'Elbowed',
-    [ConnectorMode.Curve]: 'Curve',
+    [ConnectorMode.Straight]: 'Egyenes',
+    [ConnectorMode.Orthogonal]: 'Szögletes',
+    [ConnectorMode.Curve]: 'Íves',
   }[mode];
 };
 

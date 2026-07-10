@@ -267,12 +267,12 @@ export function renderToolbar(
           `${flavour}:${key}`,
           html`
             <editor-menu-button
-              aria-label="More menu"
+              aria-label="Továbbiak menü"
               .contentPadding="${'8px'}"
               .button=${html`
                 <editor-icon-button
-                  aria-label="More"
-                  .tooltip="${'More'}"
+                  aria-label="Továbbiak"
+                  .tooltip="${'Továbbiak'}"
                   .iconContainerPadding=${innerToolbar ? 4 : 2}
                   .iconSize=${innerToolbar ? '16px' : undefined}
                 >

@@ -115,7 +115,7 @@ export const highlighterToolbarConfig = {
         return html`
           <edgeless-color-picker-button
             .colorPanelClass="${'one-way small'}"
-            .label="${'Color'}"
+            .label="${'Szín'}"
             .pick=${onPick}
             .color=${color}
             .theme=${theme}

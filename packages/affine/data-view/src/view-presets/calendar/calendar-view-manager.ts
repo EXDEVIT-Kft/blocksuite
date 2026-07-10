@@ -457,7 +457,7 @@ export class CalendarSingleView extends SingleViewBase<CalendarStoredViewData> {
   createStartDateColumn() {
     const id = this.propertyAdd('end', {
       type: 'date',
-      name: 'Date',
+      name: 'Dátum',
     });
     if (id) {
       this.setStartDateColumn(id);
@@ -472,7 +472,7 @@ export class CalendarSingleView extends SingleViewBase<CalendarStoredViewData> {
   createEndDateColumn() {
     const id = this.propertyAdd('end', {
       type: 'date',
-      name: 'End Date',
+      name: 'Záró dátum',
     });
     if (id) {
       this.setEndDateColumn(id);

@@ -59,7 +59,7 @@ export const openCalendarEntry = (
               <span class="calendar-event-popover-icon"
                 >${CalendarPanelIcon()}</span
               >
-              <span>${entry.calendarName ?? 'Calendar event'}</span>
+              <span>${entry.calendarName ?? 'Naptáresemény'}</span>
             </div>
             <div class="calendar-event-popover-row">
               <span class="calendar-event-popover-icon">${DateTimeIcon()}</span>

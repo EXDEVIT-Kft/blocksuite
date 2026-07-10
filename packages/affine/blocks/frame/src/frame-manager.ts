@@ -211,7 +211,7 @@ export class EdgelessFrameManager extends GfxExtension {
     const props = this.gfx.std
       .get(EditPropsStore)
       .applyLastProps('affine:frame', {
-        title: new Text(new Y.Text(`Frame ${this.frames.length + 1}`)),
+        title: new Text(new Y.Text(`Keret ${this.frames.length + 1}`)),
         xywh: bound.serialize(),
         index: this.gfx.layer.generateIndex(true),
         presentationIndex: this.generatePresentationIndex(),

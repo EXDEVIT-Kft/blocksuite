@@ -49,22 +49,22 @@ type AlignmentMap = Record<
 
 const HORIZONTAL_ALIGNMENT = [
   {
-    key: 'Align left',
+    key: 'Balra igazítás',
     value: Alignment.Left,
     icon: AlignLeftIcon(),
   },
   {
-    key: 'Align horizontally',
+    key: 'Középre vízszintesen igazítás',
     value: Alignment.Horizontally,
     icon: AlignHorizontalCenterIcon(),
   },
   {
-    key: 'Align right',
+    key: 'Jobbra igazítás',
     value: Alignment.Right,
     icon: AlignRightIcon(),
   },
   {
-    key: 'Distribute horizontally',
+    key: 'Elosztás vízszintesen',
     value: Alignment.DistributeHorizontally,
     icon: DistributeHorizontalIcon(),
   },
@@ -72,22 +72,22 @@ const HORIZONTAL_ALIGNMENT = [
 
 const VERTICAL_ALIGNMENT = [
   {
-    key: 'Align top',
+    key: 'Felülre igazítás',
     value: Alignment.Top,
     icon: AlignTopIcon(),
   },
   {
-    key: 'Align vertically',
+    key: 'Középre függőlegesen igazítás',
     value: Alignment.Vertically,
     icon: AlignVerticalCenterIcon(),
   },
   {
-    key: 'Align bottom',
+    key: 'Alulra igazítás',
     value: Alignment.Bottom,
     icon: AlignBottomIcon(),
   },
   {
-    key: 'Distribute vertically',
+    key: 'Elosztás függőlegesen',
     value: Alignment.DistributeVertically,
     icon: DistributeVerticalIcon(),
   },
@@ -95,12 +95,12 @@ const VERTICAL_ALIGNMENT = [
 
 const AUTO_ALIGNMENT = [
   {
-    key: 'Auto arrange',
+    key: 'Automatikus elrendezés',
     value: Alignment.AutoArrange,
     icon: AutoTidyUpIcon(),
   },
   {
-    key: 'Resize & Align',
+    key: 'Átméretezés & Elrendezés',
     value: Alignment.AutoResize,
     icon: ResizeTidyUpIcon(),
   },

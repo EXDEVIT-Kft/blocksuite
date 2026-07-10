@@ -169,7 +169,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
     const frameMgr = this.std.get(EdgelessFrameManagerIdentifier);
     const frameIndex = frameMgr.frames.length + 1;
     const props = this.std.get(EditPropsStore).applyLastProps('affine:frame', {
-      title: new Y.Text(`Frame ${frameIndex}`),
+      title: new Y.Text(`Keret ${frameIndex}`),
       xywh: serializeXYWH(...xywh),
       presentationIndex: frameMgr.generatePresentationIndex(),
     });
@@ -622,7 +622,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       ${shapeButtons}
 
       <edgeless-tool-icon-button
-        .tooltip=${'Text'}
+        .tooltip=${'Szöveg'}
         .iconSize=${'20px'}
         @pointerenter=${() => this._showOverlay('text')}
         @pointerleave=${() => this._removeOverlay()}
@@ -631,7 +631,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         ${FontFamilyIcon}
       </edgeless-tool-icon-button>
       <edgeless-tool-icon-button
-        .tooltip=${'Note'}
+        .tooltip=${'Jegyzet'}
         .iconSize=${'20px'}
         @pointerenter=${() => this._showOverlay('note')}
         @pointerleave=${() => this._removeOverlay()}
@@ -640,7 +640,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
         ${PageIcon()}
       </edgeless-tool-icon-button>
       <edgeless-tool-icon-button
-        .tooltip=${'Frame'}
+        .tooltip=${'Keret'}
         .iconSize=${'20px'}
         @pointerenter=${() => this._showOverlay('frame')}
         @pointerleave=${() => this._removeOverlay()}

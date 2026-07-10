@@ -129,11 +129,11 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.subMenu({
-                name: 'Background color',
+                name: 'Háttérszín',
                 prefix: ColorPickerIcon(),
                 options: {
                   items: [
-                    { name: 'Default', color: undefined },
+                    { name: 'Alapértelmezett', color: undefined },
                     ...colorList,
                   ].map(item =>
                     menu.action({
@@ -159,7 +159,7 @@ export class TableCell extends SignalWatcher(
               ...(column.backgroundColor
                 ? [
                     menu.action({
-                      name: 'Clear column style',
+                      name: 'Oszlopstílus törlése',
                       prefix: CloseIcon(),
                       select: () => {
                         this.dataManager.setColumnBackgroundColor(
@@ -175,7 +175,7 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Insert Left',
+                name: 'Beszúrás Balra',
                 prefix: InsertLeftIcon(),
                 select: () => {
                   this.dataManager.insertColumn(
@@ -184,21 +184,21 @@ export class TableCell extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Insert Right',
+                name: 'Beszúrás Jobbra',
                 prefix: InsertRightIcon(),
                 select: () => {
                   this.dataManager.insertColumn(columnIndex);
                 },
               }),
               menu.action({
-                name: 'Move Left',
+                name: 'Mozgatás Balra',
                 prefix: ArrowLeftBigIcon(),
                 select: () => {
                   this.dataManager.moveColumn(columnIndex, columnIndex - 2);
                 },
               }),
               menu.action({
-                name: 'Move Right',
+                name: 'Mozgatás Jobbra',
                 prefix: ArrowRightBigIcon(),
                 select: () => {
                   this.dataManager.moveColumn(columnIndex, columnIndex + 1);
@@ -209,7 +209,7 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 select: () => {
                   this.dataManager.duplicateColumn(columnIndex);
@@ -217,7 +217,7 @@ export class TableCell extends SignalWatcher(
               }),
 
               menu.action({
-                name: 'Clear column contents',
+                name: 'Oszloptartalom törlése',
                 prefix: CloseIcon(),
                 select: () => {
                   this.dataManager.clearColumn(column.columnId);
@@ -225,7 +225,7 @@ export class TableCell extends SignalWatcher(
               }),
 
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 class: {
                   'delete-item': true,
                 },
@@ -255,11 +255,11 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.subMenu({
-                name: 'Background color',
+                name: 'Háttérszín',
                 prefix: ColorPickerIcon(),
                 options: {
                   items: [
-                    { name: 'Default', color: undefined },
+                    { name: 'Alapértelmezett', color: undefined },
                     ...colorList,
                   ].map(item =>
                     menu.action({
@@ -285,7 +285,7 @@ export class TableCell extends SignalWatcher(
               ...(row.backgroundColor
                 ? [
                     menu.action({
-                      name: 'Clear row style',
+                      name: 'Sorstílus törlése',
                       prefix: CloseIcon(),
                       select: () => {
                         this.dataManager.setRowBackgroundColor(
@@ -301,7 +301,7 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Insert Above',
+                name: 'Beszúrás Fölé',
                 prefix: InsertAboveIcon(),
                 select: () => {
                   this.dataManager.insertRow(
@@ -310,21 +310,21 @@ export class TableCell extends SignalWatcher(
                 },
               }),
               menu.action({
-                name: 'Insert Below',
+                name: 'Beszúrás Alá',
                 prefix: InsertBelowIcon(),
                 select: () => {
                   this.dataManager.insertRow(rowIndex);
                 },
               }),
               menu.action({
-                name: 'Move Up',
+                name: 'Mozgatás Fel',
                 prefix: ArrowUpBigIcon(),
                 select: () => {
                   this.dataManager.moveRow(rowIndex, rowIndex - 1);
                 },
               }),
               menu.action({
-                name: 'Move Down',
+                name: 'Mozgatás Le',
                 prefix: ArrowDownBigIcon(),
                 select: () => {
                   this.dataManager.moveRow(rowIndex, rowIndex + 1);
@@ -335,21 +335,21 @@ export class TableCell extends SignalWatcher(
           menu.group({
             items: [
               menu.action({
-                name: 'Duplicate',
+                name: 'Duplikálás',
                 prefix: DuplicateIcon(),
                 select: () => {
                   this.dataManager.duplicateRow(rowIndex);
                 },
               }),
               menu.action({
-                name: 'Clear row contents',
+                name: 'Sortartalom törlése',
                 prefix: CloseIcon(),
                 select: () => {
                   this.dataManager.clearRow(row.rowId);
                 },
               }),
               menu.action({
-                name: 'Delete',
+                name: 'Törlés',
                 class: {
                   'delete-item': true,
                 },
@@ -370,10 +370,10 @@ export class TableCell extends SignalWatcher(
     select: (color?: string) => void
   ) {
     return menu.subMenu({
-      name: 'Background color',
+      name: 'Háttérszín',
       prefix: ColorPickerIcon(),
       options: {
-        items: [{ name: 'Default', color: undefined }, ...colorList].map(item =>
+        items: [{ name: 'Alapértelmezett', color: undefined }, ...colorList].map(item =>
           menu.action({
             prefix: html`<div
               style="color: ${item.color ??
@@ -408,14 +408,14 @@ export class TableCell extends SignalWatcher(
             menu.group({
               items: [
                 menu.action({
-                  name: 'Copy',
+                  name: 'Másolás',
                   prefix: CopyIcon(),
                   select: () => {
                     this.selectionController.doCopyOrCut(selected, false);
                   },
                 }),
                 menu.action({
-                  name: 'Paste',
+                  name: 'Beillesztés',
                   prefix: PasteIcon(),
                   select: () => {
                     // oxlint-disable-next-line @typescript-eslint/no-floating-promises
@@ -429,7 +429,7 @@ export class TableCell extends SignalWatcher(
             menu.group({
               items: [
                 menu.action({
-                  name: 'Clear contents',
+                  name: 'Tartalom törlése',
                   prefix: CloseIcon(),
                   select: () => {
                     this.dataManager.clearCellsBySelection(selected);

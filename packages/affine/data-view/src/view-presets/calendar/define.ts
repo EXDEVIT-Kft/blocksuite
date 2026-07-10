@@ -6,7 +6,7 @@ export const calendarViewType = viewType('calendar');
 
 export const calendarViewModel = calendarViewType.createModel<CalendarViewData>(
   {
-    defaultName: 'Calendar View',
+    defaultName: 'Naptár Nézet',
     dataViewManager: CalendarSingleView,
     defaultData: viewManager => {
       return {

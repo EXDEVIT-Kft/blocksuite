@@ -80,7 +80,7 @@ export class SizeDropdownMenu extends SignalWatcher(
   accessor format: ((e: number) => string) | undefined;
 
   @property({ attribute: false })
-  accessor label: string = 'Scale';
+  accessor label: string = 'Méret';
 
   @property({ attribute: false })
   accessor icon: TemplateResult | undefined;
