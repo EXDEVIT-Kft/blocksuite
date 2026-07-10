@@ -1,6 +1,7 @@
 {
   "name": "@blocksuite/integration-test",
   "description": "Integration test for BlockSuite",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
