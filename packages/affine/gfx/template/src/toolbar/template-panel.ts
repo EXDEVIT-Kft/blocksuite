@@ -43,6 +43,9 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .edgeless-templates-panel {
       width: 467px;
       height: 568px;
+      /* [ALGOGRIND] keep the panel on screen on small viewports */
+      max-width: 95vw;
+      max-height: 50dvh;
       border-radius: 12px;
       background-color: var(--affine-background-overlay-panel-color);
       box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.2);
@@ -106,10 +109,14 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .template-viewport {
       position: relative;
       flex-grow: 1;
+      overflow: hidden;
     }
 
+    /* [ALGOGRIND] use native scrolling instead of overlay-scrollbar,
+       which broke scrolling in the template menu */
     .template-scrollcontent {
-      overflow: hidden;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
       height: 100%;
       width: 100%;
     }
@@ -491,7 +498,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
                   )}
             </div>
           </div>
-          <overlay-scrollbar></overlay-scrollbar>
+          <!-- [ALGOGRIND] overlay-scrollbar removed in favour of native scrolling -->
         </div>
         <div class="arrow">${Triangle}</div>
       </div>

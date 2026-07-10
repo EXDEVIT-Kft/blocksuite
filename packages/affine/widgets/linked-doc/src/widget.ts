@@ -237,7 +237,10 @@ export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
   override connectedCallback() {
     super.connectedCallback();
 
-    this._watchInput();
+    // [ALGOGRIND] Disabled doc linking temporarily
+    // (the fork disabled the '@' / '[[' trigger; re-enable by
+    // restoring the _watchInput() call below)
+    void this._watchInput;
     this._watchViewportChange();
   }
 

@@ -1,4 +1,7 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+import {
+  DividerBlockModel,
+  ParagraphBlockModel,
+} from '@blocksuite/affine-model';
 import type { BlockModel } from '@blocksuite/store';
 
 import { matchModels } from '../model/checker.js';
@@ -12,7 +15,40 @@ export function calculateCollapsedSiblings(
   const index = children.indexOf(model);
   if (index === -1) return [];
 
+  // [ALGOGRIND] dividers stop the collapse of the nearest heading.
+  // Just to include the divider in the collapsed siblings
+  let nextDividerFound = false;
+  // Used to keep collapsing siblings if a smaller heading is found before a divider
+  // -> the divider should only stop the nearest heading's collapse
+  /**
+   * h1
+   * text
+   * h2
+   * text
+   * divider
+   * text
+   * h1
+   */
+  // -> in this example the divider should only stop the collapse of the h2 heading
+  // the h1 heading should be collapsed until the next h1 heading
+  let foundSmallerHeading = false;
+
   const collapsedEdgeIndex = children.findIndex((child, i) => {
+    if (
+      i > index &&
+      matchModels(child, [DividerBlockModel]) &&
+      !foundSmallerHeading
+    ) {
+      nextDividerFound = true;
+      return false;
+    }
+
+    // Ran AFTER the divider have been found -> to include the divider in the collapsed siblings
+    if (nextDividerFound) {
+      nextDividerFound = false;
+      return true;
+    }
+
     if (
       i > index &&
       matchModels(child, [ParagraphBlockModel]) &&
@@ -20,6 +56,11 @@ export function calculateCollapsedSiblings(
     ) {
       const modelLevel = parseInt(model.props.type.slice(1));
       const childLevel = parseInt(child.props.type.slice(1));
+
+      if (childLevel > modelLevel) {
+        foundSmallerHeading = true;
+      }
+
       return childLevel <= modelLevel;
     }
     return false;

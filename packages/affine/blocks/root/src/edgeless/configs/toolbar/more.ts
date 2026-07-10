@@ -210,6 +210,9 @@ export const moreActions = [
   // Conversions Group
   {
     id: 'd.conversions',
+    // [ALGOGRIND] linked-doc conversions removed from the edgeless more-menu
+    // (fork commit 6356f587e removed the conversions group)
+    when: () => false,
     actions: [
       {
         id: 'a.turn-into-linked-doc',

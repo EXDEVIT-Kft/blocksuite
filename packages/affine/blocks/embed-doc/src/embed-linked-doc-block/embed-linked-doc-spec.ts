@@ -3,7 +3,8 @@ import { BlockViewExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
 
-import { LinkedDocSlashMenuConfigExtension } from './configs/slash-menu';
+// [ALGOGRIND] linked-doc slash menu entries removed (fork commit 6356f587e)
+// import { LinkedDocSlashMenuConfigExtension } from './configs/slash-menu';
 import { createBuiltinToolbarConfigExtension } from './configs/toolbar';
 import { EmbedLinkedDocInteraction } from './embed-edgeless-linked-doc-block';
 
@@ -17,5 +18,7 @@ export const EmbedLinkedDocViewExtensions: ExtensionType[] = [
   }),
   createBuiltinToolbarConfigExtension(flavour),
   EmbedLinkedDocInteraction,
-  LinkedDocSlashMenuConfigExtension,
+  // [ALGOGRIND] 'Oldalak' group (Új Dokumentum + Hivatkozás) removed from
+  // the slash menu (fork commit 6356f587e)
+  // LinkedDocSlashMenuConfigExtension,
 ].flat();

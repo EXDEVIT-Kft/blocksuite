@@ -1,5 +1,8 @@
 import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import {
+  FeatureFlagService,
+  TelemetryProvider,
+} from '@blocksuite/affine-shared/services';
 import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
 import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
 import { viewPresets } from '@blocksuite/data-view/view-presets';
@@ -25,7 +28,9 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
         caption: 'Táblázat Nézet',
       },
       group: '7_Adatbázis@0',
-      when: ({ model }) =>
+      // [ALGOGRIND] database creation gated behind feature flag (fork commit 714bff02a)
+      when: ({ std, model }) =>
+        !!std.get(FeatureFlagService).getFlag('algogrind_enable_database') &&
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {
         std.command
@@ -54,7 +59,9 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
       searchAlias: ['database', 'calendar', 'naptár', 'adatbázis'],
       icon: TodayIcon(),
       group: '7_Adatbázis@1',
-      when: ({ model }) =>
+      // [ALGOGRIND] database creation gated behind feature flag (fork commit 714bff02a)
+      when: ({ std, model }) =>
+        !!std.get(FeatureFlagService).getFlag('algogrind_enable_database') &&
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {
         std.command
@@ -87,7 +94,9 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
         caption: 'Kanban Nézet',
       },
       group: '7_Adatbázis@2',
-      when: ({ model }) =>
+      // [ALGOGRIND] database creation gated behind feature flag (fork commit 714bff02a)
+      when: ({ std, model }) =>
+        !!std.get(FeatureFlagService).getFlag('algogrind_enable_database') &&
         !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
       action: ({ std }) => {
         std.command

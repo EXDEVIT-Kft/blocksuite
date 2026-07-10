@@ -4,7 +4,6 @@ import {
 } from '@blocksuite/affine-ext-loader';
 
 import { effects } from './effects';
-import { linkQuickTool } from './link-tool';
 
 export class LinkViewExtension extends ViewExtensionProvider {
   override name = 'affine-link-gfx';
@@ -16,8 +15,10 @@ export class LinkViewExtension extends ViewExtensionProvider {
 
   override setup(context: ViewExtensionContext) {
     super.setup(context);
-    if (this.isEdgeless(context.scope)) {
-      context.register(linkQuickTool);
-    }
+    // [ALGOGRIND] Link quick tool removed from the edgeless toolbar
+    // (fork commit 6356f587e)
+    // if (this.isEdgeless(context.scope)) {
+    //   context.register(linkQuickTool);
+    // }
   }
 }

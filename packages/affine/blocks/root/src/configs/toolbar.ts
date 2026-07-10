@@ -261,7 +261,8 @@ const highlightActionGroup = {
   },
 } as const satisfies ToolbarAction;
 
-const turnIntoDatabase = {
+// [ALGOGRIND] not registered in builtinToolbarConfig (database creation removed from format bar)
+export const turnIntoDatabase = {
   id: 'e.convert-to-database',
   tooltip: 'Táblázat létrehozása',
   icon: DatabaseTableViewIcon(),
@@ -308,7 +309,8 @@ const turnIntoDatabase = {
   },
 } as const satisfies ToolbarAction;
 
-const turnIntoLinkedDoc = {
+// [ALGOGRIND] not registered in builtinToolbarConfig (linked-doc creation removed from format bar)
+export const turnIntoLinkedDoc = {
   id: 'f.convert-to-linked-doc',
   tooltip: 'Hivatkozott dokumentum létrehozása',
   icon: LinkedPageIcon(),
@@ -384,8 +386,8 @@ export const builtinToolbarConfig = {
     alignActionGroup,
     inlineTextActionGroup,
     highlightActionGroup,
-    turnIntoDatabase,
-    turnIntoLinkedDoc,
+    // [ALGOGRIND] turnIntoDatabase and turnIntoLinkedDoc removed from the
+    // format bar (fork commits 6356f587e, 714bff02a)
     {
       id: 'g.comment',
       ...blockCommentToolbarButton,

@@ -203,7 +203,11 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       const rootModel = this._rootModel;
       rootModel.props.title.yText.observe(updateMetaTitle);
       this._disposables.add(() => {
-        rootModel.props.title.yText.unobserve(updateMetaTitle);
+        // [ALGOGRIND] unobserve throws if the yDoc was already destroyed
+        try {
+          rootModel.props.title.yText.unobserve(updateMetaTitle);
+          // eslint-disable-next-line
+        } catch (e) {}
       });
     }
   }

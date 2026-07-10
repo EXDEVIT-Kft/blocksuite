@@ -46,6 +46,9 @@ export class EdgelessNoteMask extends SignalWatcher(
       <div
         class="affine-note-mask"
         style=${styleMap({
+          // [ALGOGRIND] hide the mask in readonly mode so embeds (e.g. the
+          // YouTube player) and toggleable headings stay interactive
+          display: this.model.store.readonly$.value ? 'none' : 'block',
           position: 'absolute',
           top: `${-extra}px`,
           left: `${-extra}px`,

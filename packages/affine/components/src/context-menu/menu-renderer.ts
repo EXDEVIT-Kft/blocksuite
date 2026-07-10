@@ -398,7 +398,8 @@ export const createModal = (container: HTMLElement = document.body) => {
   div.style.top = '0';
   div.style.width = '100%';
   div.style.height = '100%';
-  div.style.zIndex = '1001';
+  // [ALGOGRIND] raise modal above mobile UI layers (was 1001)
+  div.style.zIndex = '6050';
   div.style.fontFamily = 'var(--affine-font-family)';
   container.append(div);
   return div;

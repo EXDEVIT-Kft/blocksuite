@@ -1,5 +1,6 @@
 import { addAttachments } from '@blocksuite/affine-block-attachment';
-import { insertLinkByQuickSearchCommand } from '@blocksuite/affine-block-bookmark';
+// [ALGOGRIND] Link button removed from the edgeless note menu (fork commit 6356f587e)
+// import { insertLinkByQuickSearchCommand } from '@blocksuite/affine-block-bookmark';
 import { addImages } from '@blocksuite/affine-block-image';
 import { DefaultTool } from '@blocksuite/affine-block-surface';
 import { MAX_IMAGE_WIDTH } from '@blocksuite/affine-model';
@@ -10,7 +11,7 @@ import {
   openSingleFileWith,
 } from '@blocksuite/affine-shared/utils';
 import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
-import { AttachmentIcon, ImageIcon, LinkIcon } from '@blocksuite/icons/lit';
+import { AttachmentIcon, ImageIcon } from '@blocksuite/icons/lit';
 import type { ToolOptions } from '@blocksuite/std/gfx';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
@@ -65,27 +66,28 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
     this.gfx.selection.set({ elements: ids });
   }
 
-  private _onHandleLinkButtonClick() {
-    const [_, { insertedLinkType }] = this.edgeless.service.std.command.exec(
-      insertLinkByQuickSearchCommand
-    );
-
-    insertedLinkType
-      ?.then(type => {
-        const flavour = type?.flavour;
-        if (!flavour) return;
-
-        this.edgeless.std
-          .getOptional(TelemetryProvider)
-          ?.track('CanvasElementAdded', {
-            control: 'toolbar:general',
-            page: 'whiteboard editor',
-            module: 'toolbar',
-            type: flavour.split(':')[1],
-          });
-      })
-      .catch(console.error);
-  }
+  // [ALGOGRIND] Link button removed from the edgeless note menu (fork commit 6356f587e)
+  // private _onHandleLinkButtonClick() {
+  //   const [_, { insertedLinkType }] = this.edgeless.service.std.command.exec(
+  //     insertLinkByQuickSearchCommand
+  //   );
+  //
+  //   insertedLinkType
+  //     ?.then(type => {
+  //       const flavour = type?.flavour;
+  //       if (!flavour) return;
+  //
+  //       this.edgeless.std
+  //         .getOptional(TelemetryProvider)
+  //         ?.track('CanvasElementAdded', {
+  //           control: 'toolbar:general',
+  //           page: 'whiteboard editor',
+  //           module: 'toolbar',
+  //           type: flavour.split(':')[1],
+  //         });
+  //     })
+  //     .catch(console.error);
+  // }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
@@ -122,18 +124,7 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
               ${ImageIcon()}
             </edgeless-tool-icon-button>
 
-            <edgeless-tool-icon-button
-              .activeMode=${'background'}
-              .tooltip=${html`<affine-tooltip-content-with-shortcut
-                data-tip="${'Link'}"
-                data-shortcut="${'@'}"
-              ></affine-tooltip-content-with-shortcut>`}
-              @click=${() => {
-                this._onHandleLinkButtonClick();
-              }}
-            >
-              ${LinkIcon()}
-            </edgeless-tool-icon-button>
+            <!-- [ALGOGRIND] Link button removed (fork commit 6356f587e) -->
 
             <edgeless-tool-icon-button
               .activeMode=${'background'}
