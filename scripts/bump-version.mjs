@@ -9,7 +9,7 @@
 // plain workflow dispatch always publishes one patch above whatever is
 // live on npm. Requires NPM_TOKEN (or YARN_NPM_AUTH_TOKEN) in the env for
 // the registry query, since the packages are restricted.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -71,3 +71,15 @@ for (const file of walkPackages(ROOT)) {
 }
 
 console.log(`bumped ${count} packages to ${version}`);
+
+// In CI, surface the resolved version on the workflow run page (the run
+// name itself cannot be changed mid-run)
+if (process.env.GITHUB_STEP_SUMMARY) {
+  appendFileSync(
+    process.env.GITHUB_STEP_SUMMARY,
+    `## 📦 Publikált verzió: \`${version}\` (${count} csomag)\n`
+  );
+}
+if (process.env.GITHUB_OUTPUT) {
+  appendFileSync(process.env.GITHUB_OUTPUT, `version=${version}\n`);
+}

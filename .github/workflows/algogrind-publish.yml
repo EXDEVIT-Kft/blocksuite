@@ -1,5 +1,10 @@
 name: Algogrind Publish
 
+# [ALGOGRIND] the run list shows this name; the version is only known at
+# dispatch time when given explicitly — auto-bumped runs surface the
+# resolved version in the run summary instead (written by bump-version.mjs)
+run-name: "Algogrind Publish ${{ inputs.version != '' && format('v{0}', inputs.version) || '(auto patch bump)' }}"
+
 # [ALGOGRIND] Publishes every workspace package to npm under the @algogrind
 # scope (restricted access). The rename + exports rewrite happens ephemerally
 # in the CI workspace via scripts/prepare-publish.mjs — nothing is committed
