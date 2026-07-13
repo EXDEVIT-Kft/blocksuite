@@ -117,16 +117,17 @@ export const TYPE_ICON_MAP: {
     icon: TemplateResult;
   };
 } = {
+  // [ALGOGRIND] A `name` csak kijelzésre szolgál (placeholder.ts), nem perzisztált azonosító.
   'affine:frame': {
-    name: 'Frame',
+    name: 'Keret',
     icon: FrameIcon(),
   },
   group: {
-    name: 'Group',
+    name: 'Csoport',
     icon: GroupIcon(),
   },
   mindmap: {
-    name: 'Mind map',
+    name: 'Gondolattérkép',
     icon: MindmapIcon(),
   },
   edgeless: {

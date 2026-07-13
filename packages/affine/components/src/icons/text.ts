@@ -129,6 +129,17 @@ export const CodeIcon = icons2.CodeInlineIcon({
   height: '20',
 });
 
+// [ALGOGRIND] superscript/subscript inline formatting
+export const SuperscriptIcon = icons2.SuperscriptIcon({
+  width: '20',
+  height: '20',
+});
+
+export const SubscriptIcon = icons2.SubscriptIcon({
+  width: '20',
+  height: '20',
+});
+
 export const LinkIcon = icons.LinkIcon({
   width: '20',
   height: '20',

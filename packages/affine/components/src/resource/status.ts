@@ -123,20 +123,21 @@ export class ResourceStatus extends WithDisposable(LitElement) {
 
   override render() {
     const { message, needUpload } = this;
+    // [ALGOGRIND] Csak megjelenő szövegek
     const { type, label } = needUpload
       ? {
-          type: 'Upload',
-          label: 'Retry',
+          type: 'Sikertelen feltöltés',
+          label: 'Újrapróbálás',
         }
       : {
-          type: 'Download',
-          label: 'Reload',
+          type: 'Sikertelen letöltés',
+          label: 'Újratöltés',
         };
 
     return html`
       <button class="status">${InformationIcon()}</button>
       <div class="popper">
-        <div class="header">${type} failed</div>
+        <div class="header">${type}</div>
         <div class="content">${message}</div>
         <div class="footer">
           <button class="action">${label}</button>

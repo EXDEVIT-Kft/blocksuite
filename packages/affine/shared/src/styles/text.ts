@@ -27,6 +27,16 @@ export function affineTextStyles(
     };
   }
 
+  // [ALGOGRIND] superscript/subscript inline formatting
+  let scriptStyle = {};
+  if (props.superscript || props.subscript) {
+    scriptStyle = {
+      'vertical-align': props.superscript ? 'super' : 'sub',
+      'font-size': '0.75em',
+      'line-height': 'normal',
+    };
+  }
+
   return {
     'font-weight': props.bold ? 'bolder' : 'inherit',
     'font-style': props.italic ? 'italic' : 'normal',
@@ -34,6 +44,7 @@ export function affineTextStyles(
     color: props.color ? props.color : undefined,
     'text-decoration': textDecorations.length > 0 ? textDecorations : 'none',
     ...inlineCodeStyle,
+    ...scriptStyle,
     ...override,
   };
 }

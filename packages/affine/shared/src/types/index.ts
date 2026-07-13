@@ -43,6 +43,9 @@ export type AffineTextStyleAttributes = {
   code?: true | null;
   color?: string | null;
   background?: string | null;
+  // [ALGOGRIND] superscript/subscript inline formatting
+  superscript?: true | null;
+  subscript?: true | null;
 };
 
 export type AffineTextAttributes = AffineTextStyleAttributes & {

@@ -15,6 +15,8 @@ import {
 import type { HighlightType } from '@blocksuite/affine-components/highlight-dropdown-menu';
 import { toast } from '@blocksuite/affine-components/toast';
 import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
+// [ALGOGRIND] use the custom fork icon for inline equations (fork parity)
+import { EquationInlineIcon } from '@blocksuite/affine-editor-icons';
 import { insertInlineLatex } from '@blocksuite/affine-inline-latex';
 import {
   deleteTextCommand,
@@ -62,7 +64,6 @@ import {
   DeleteIcon,
   DuplicateIcon,
   LinkedPageIcon,
-  TeXIcon,
 } from '@blocksuite/icons/lit';
 import {
   type BlockComponent,
@@ -220,7 +221,7 @@ const inlineTextActionGroup = {
         textAction,
         {
           id: 'inline-latex',
-          icon: TeXIcon(),
+          icon: EquationInlineIcon({ width: '20', height: '20' }),
           score: score + 0.5,
           tooltip: 'Sorközi Egyenlet',
           run: ({ host }) => {

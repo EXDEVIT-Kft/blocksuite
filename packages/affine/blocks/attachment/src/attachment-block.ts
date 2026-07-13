@@ -110,7 +110,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
   copy = () => {
     const slice = Slice.fromModels(this.store, [this.model]);
     this.std.clipboard.copySlice(slice).catch(console.error);
-    toast(this.host, 'Copied to clipboard');
+    toast(this.host, 'Vágólapra másolva');
   };
 
   download = () => {
@@ -297,7 +297,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
             }
           }}
         >
-          ${UpgradeIcon()} Upgrade
+          ${UpgradeIcon()} Bővítés
         </button>
       `
     );
@@ -305,6 +305,9 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
 
   protected renderNormalButton = (needUpload: boolean) => {
     const label = needUpload ? 'retry' : 'reload';
+    // [ALGOGRIND] the label doubles as a typed telemetry control id, so the
+    // displayed text is translated separately
+    const text = needUpload ? 'Újrapróbálás' : 'Újratöltés';
     const run = async () => {
       if (needUpload) {
         await this.resourceController.upload();
@@ -338,7 +341,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
           }
         }}
       >
-        ${ResetIcon()} ${label}
+        ${ResetIcon()} ${text}
       </button>
     `;
   };

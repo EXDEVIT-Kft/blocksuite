@@ -23,28 +23,16 @@ import {
   CopyIcon,
   DeleteIcon,
   DuplicateIcon,
-  LinkedPageIcon,
   OpenInNewIcon,
   ResetIcon,
 } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier, BlockSelection } from '@blocksuite/std';
-import {
-  type ExtensionType,
-  Slice,
-  Text,
-  toDraftModel,
-} from '@blocksuite/store';
+import { type ExtensionType, Slice, Text } from '@blocksuite/store';
 import { computed, signal } from '@preact/signals-core';
 import { html } from 'lit';
 import { keyed } from 'lit/directives/keyed.js';
 import * as Y from 'yjs';
 
-import {
-  convertSelectedBlocksToLinkedDoc,
-  getTitleFromSelectedModels,
-  notifyDocCreated,
-  promptDocTitle,
-} from '../../common/render-linked-doc';
 import { EmbedIframeBlockComponent } from '../embed-iframe-block';
 
 const trackBaseProps = {
@@ -62,7 +50,7 @@ const openLinkAction = (id: string): ToolbarAction => {
   return {
     id,
     when: showWhenUrlExists,
-    tooltip: 'Original',
+    tooltip: 'Eredeti megnyitása',
     icon: OpenInNewIcon(),
     run(ctx) {
       const component = ctx.getCurrentBlockByType(EmbedIframeBlockComponent);
@@ -80,7 +68,7 @@ const captionAction = (id: string): ToolbarAction => {
   return {
     id,
     when: showWhenUrlExists,
-    tooltip: 'Caption',
+    tooltip: 'Felirat',
     icon: CaptionIcon(),
     run(ctx) {
       const component = ctx.getCurrentBlockByType(EmbedIframeBlockComponent);
@@ -103,7 +91,7 @@ export const builtinToolbarConfig = {
       actions: [
         {
           id: 'inline',
-          label: 'Inline view',
+          label: 'Sorközi nézet',
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
             if (!model) return;
@@ -138,7 +126,7 @@ export const builtinToolbarConfig = {
         },
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
             if (!model) return;
@@ -177,7 +165,7 @@ export const builtinToolbarConfig = {
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           disabled: true,
         },
       ],
@@ -208,56 +196,15 @@ export const builtinToolbarConfig = {
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
     captionAction('d.caption'),
-    {
-      id: 'e.convert-to-linked-doc',
-      tooltip: 'Create Linked Doc',
-      icon: LinkedPageIcon(),
-      run(ctx) {
-        const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
-        if (!model) return;
-
-        const { store, std, selection, track } = ctx;
-        selection.clear();
-
-        const draftedModels = [model].map(toDraftModel);
-        const autofill = getTitleFromSelectedModels(draftedModels);
-        promptDocTitle(std, autofill)
-          .then(async title => {
-            if (title === null) return;
-            await convertSelectedBlocksToLinkedDoc(
-              std,
-              store,
-              draftedModels,
-              title
-            );
-            notifyDocCreated(std);
-
-            track('DocCreated', {
-              segment: 'doc',
-              page: 'doc editor',
-              module: 'toolbar',
-              control: 'create linked doc',
-              type: 'embed-linked-doc',
-            });
-
-            track('LinkedDocCreated', {
-              segment: 'doc',
-              page: 'doc editor',
-              module: 'toolbar',
-              control: 'create linked doc',
-              type: 'embed-linked-doc',
-            });
-          })
-          .catch(console.error);
-      },
-    },
+    // [ALGOGRIND] linked-doc creation removed from toolbars
+    // (fork commits 6356f587e, 714bff02a)
     {
       placement: ActionPlacement.More,
       id: 'a.clipboard',
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
@@ -266,7 +213,7 @@ export const builtinToolbarConfig = {
             const slice = Slice.fromModels(ctx.store, [model]);
             ctx.clipboard
               .copySlice(slice)
-              .then(() => toast(ctx.host, 'Copied to clipboard'))
+              .then(() => toast(ctx.host, 'Vágólapra másolva'))
               .catch(console.error);
 
             ctx.track('CopiedLink', {
@@ -277,7 +224,7 @@ export const builtinToolbarConfig = {
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
@@ -295,7 +242,7 @@ export const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'b.reload',
-      label: 'Reload',
+      label: 'Frissítés',
       icon: ResetIcon(),
       run(ctx) {
         const component = ctx.getCurrentBlockByType(EmbedIframeBlockComponent);
@@ -317,7 +264,7 @@ export const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {
@@ -343,7 +290,7 @@ export const builtinSurfaceToolbarConfig = {
       actions: [
         {
           id: 'card',
-          label: 'Card view',
+          label: 'Kártya nézet',
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedIframeBlockModel);
             if (!model) return;
@@ -384,7 +331,7 @@ export const builtinSurfaceToolbarConfig = {
         },
         {
           id: 'embed',
-          label: 'Embed view',
+          label: 'Beágyazott nézet',
           disabled: true,
         },
       ],

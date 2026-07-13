@@ -8,7 +8,6 @@ import {
   DocModeProvider,
   TelemetryProvider,
 } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import { css, LitElement, nothing } from 'lit';
@@ -21,8 +20,12 @@ import type { CodeBlockComponent } from '../..';
 export class LanguageListButton extends WithDisposable(
   SignalWatcher(LitElement)
 ) {
+  /* [ALGOGRIND] fork parity: solid background + shadow and dark icon color
+     (the upstream transparent button with grey icon looked washed out) */
   static override styles = css`
     .lang-button {
+      background-color: var(--algogrind-background-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       display: flex;
       gap: 4px;
       padding: 2px 4px;
@@ -30,17 +33,17 @@ export class LanguageListButton extends WithDisposable(
     }
 
     .lang-button:hover {
-      background: ${unsafeCSSVarV2('layer/background/hoverOverlay')};
+      background: var(--algogrind-hover-color-filled);
     }
 
     .lang-button[hover] {
-      background: ${unsafeCSSVarV2('layer/background/hoverOverlay')};
+      background: var(--algogrind-hover-color-filled);
     }
 
     .lang-button-icon {
       display: flex;
       align-items: center;
-      color: ${unsafeCSSVarV2('icon/primary')};
+      color: var(--algogrind-text-paragraph-1-color);
 
       svg {
         height: 16px;

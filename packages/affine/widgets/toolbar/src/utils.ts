@@ -124,7 +124,10 @@ export function autoUpdatePosition(
       result.y -
       (currentPlacement.includes('top') ? 0 : offsetTop + offsetBottom);
 
-    toolbar.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    // [ALGOGRIND] round to whole device pixels: fractional offsets on a
+    // composited (translate3d) layer rasterize the toolbar between pixels,
+    // which makes its icons and text look blurry.
+    toolbar.style.transform = `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`;
 
     if (middlewareData.hide) {
       if (toolbar.dataset.open) {

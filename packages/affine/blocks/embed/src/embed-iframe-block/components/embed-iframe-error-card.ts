@@ -246,10 +246,13 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
             <span class="error-icon">
               ${InformationIcon({ width: '16px', height: '16px' })}
             </span>
-            <span class="error-title-text">This link couldn’t be loaded.</span>
+            <span class="error-title-text"
+              >Ezt a linket nem sikerült betölteni.</span
+            >
           </div>
           <div class="error-message">
-            ${this.error?.message || 'Failed to load embedded content'}
+            ${this.error?.message ||
+            'A beágyazott tartalom betöltése sikertelen'}
           </div>
           <div class="error-info">
             ${this.readonly
@@ -259,14 +262,14 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
                     <span class="icon"
                       >${EditIcon({ width: '16px', height: '16px' })}</span
                     >
-                    <span class="text">Edit</span>
+                    <span class="text">Szerkesztés</span>
                   </div>
                 `}
             <div class="button retry" @click=${this._handleRetry}>
               <span class="icon"
                 >${ResetIcon({ width: '16px', height: '16px' })}</span
               >
-              <span class="text">Reload</span>
+              <span class="text">Újratöltés</span>
             </div>
           </div>
         </div>

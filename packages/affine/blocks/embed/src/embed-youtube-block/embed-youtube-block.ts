@@ -104,7 +104,7 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
     const imageProxyService = this.store.get(ImageProxyService);
     const { EmbedCardBannerIcon } = getEmbedCardIcons(theme);
     const titleIcon = loading ? LoadingIcon() : YoutubeIcon;
-    const titleText = loading ? 'Loading...' : title || 'YouTube';
+    const titleText = loading ? 'Betöltés...' : title || 'YouTube';
     const descriptionText = loading ? null : description;
     const bannerImage =
       !loading && image
@@ -138,6 +138,54 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
       `;
     }
 
+    // [ALGOGRIND] edit mode mirrors the readonly view: only the responsive
+    // video is shown, without the title/description/link chrome — but wrapped
+    // in renderEmbed so selection, drag and the toolbar keep working
+    if (videoId) {
+      return this.renderEmbed(
+        () => html`
+          <div
+            class=${classMap({
+              'affine-embed-youtube-video-iframe-container': true,
+              'video-only': true,
+            })}
+            @click=${this._handleClick}
+            @dblclick=${this._handleDoubleClick}
+          >
+            <iframe
+              id="ytplayer"
+              type="text/html"
+              src=${`https://www.youtube.com/embed/${videoId}`}
+              frameborder="0"
+              allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              sandbox="allow-scripts allow-same-origin allow-presentation"
+              loading="lazy"
+              credentialless
+            ></iframe>
+
+            <!-- overlay to prevent the iframe from capturing pointer events -->
+            <div
+              class=${classMap({
+                'affine-embed-youtube-video-iframe-overlay': true,
+                hide: !this.showOverlay$.value,
+              })}
+            ></div>
+            <img
+              class=${classMap({
+                'affine-embed-youtube-video-iframe-overlay': true,
+                'media-print': true,
+                hide: !this._showImage,
+              })}
+              src=${`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              alt="YouTube Video"
+              loading="lazy"
+            />
+          </div>
+        `
+      );
+    }
+
+    // Fallback card while there is no videoId yet (loading / invalid link)
     return this.renderEmbed(
       () => html`
         <div
@@ -152,42 +200,7 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-youtube-video">
-            ${videoId
-              ? html`
-                  <div class="affine-embed-youtube-video-iframe-container">
-                    <iframe
-                      id="ytplayer"
-                      type="text/html"
-                      src=${`https://www.youtube.com/embed/${videoId}`}
-                      frameborder="0"
-                      allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      sandbox="allow-scripts allow-same-origin allow-presentation"
-                      loading="lazy"
-                      credentialless
-                    ></iframe>
-
-                    <!-- overlay to prevent the iframe from capturing pointer events -->
-                    <div
-                      class=${classMap({
-                        'affine-embed-youtube-video-iframe-overlay': true,
-                        hide: !this.showOverlay$.value,
-                      })}
-                    ></div>
-                    <img
-                      class=${classMap({
-                        'affine-embed-youtube-video-iframe-overlay': true,
-                        'media-print': true,
-                        hide: !this._showImage,
-                      })}
-                      src=${`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-                      alt="YouTube Video"
-                      loading="lazy"
-                    />
-                  </div>
-                `
-              : bannerImage}
-          </div>
+          <div class="affine-embed-youtube-video">${bannerImage}</div>
           <div class="affine-embed-youtube-content">
             <div class="affine-embed-youtube-content-header">
               <div class="affine-embed-youtube-content-title-icon">

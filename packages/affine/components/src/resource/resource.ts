@@ -10,6 +10,13 @@ import type { TemplateResult } from 'lit-html';
 
 export type ResourceKind = 'Blob' | 'File' | 'Image';
 
+// [ALGOGRIND] Csak megjelenő hibaszövegekhez — a `kind` azonosító nem változik.
+const resourceKindNames: Record<ResourceKind, string> = {
+  Blob: 'A tartalom',
+  File: 'A fájl',
+  Image: 'A kép',
+};
+
 export type StateKind =
   | 'loading'
   | 'uploading'
@@ -168,10 +175,10 @@ export class ResourceController implements Disposable {
 
       blob = (await this.engine.get(blobId)) ?? null;
 
-      if (!blob) errorMessage = `${this.kind} not found`;
+      if (!blob) errorMessage = `${resourceKindNames[this.kind]} nem található`;
     } catch (err) {
       console.error(err);
-      errorMessage = `Failed to retrieve ${this.kind}`;
+      errorMessage = `${resourceKindNames[this.kind]} betöltése sikertelen`;
     }
 
     if (errorMessage) this.updateState({ errorMessage });

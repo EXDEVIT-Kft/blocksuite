@@ -235,7 +235,10 @@ async function buildPropsWith(std: BlockStdScope, file: File) {
   ]);
 
   if (!(imageSize.width * imageSize.height)) {
-    toast(std.host, 'Failed to read image size, please try another image');
+    toast(
+      std.host,
+      'A kép méretét nem sikerült beolvasni, próbálj másik képet'
+    );
     throw new Error('Failed to read image size');
   }
 

@@ -26,9 +26,9 @@ export type EmbedLinkInputPopupOptions = {
 const DEFAULT_OPTIONS: EmbedLinkInputPopupOptions = {
   showCloseButton: false,
   variant: 'default',
-  title: 'Embed Link',
-  description: 'Works with links of Google Drive, Spotify…',
-  placeholder: 'Paste the Embed link...',
+  title: 'Link beágyazása',
+  description: 'Google Drive, Spotify és hasonló linkekkel működik…',
+  placeholder: 'Illeszd be a beágyazandó linket...',
   telemetrySegment: 'editor',
 };
 
@@ -270,7 +270,7 @@ export class EmbedIframeLinkInputPopup extends EmbedIframeLinkInputBase {
             @click=${this.onConfirm}
             ?disabled=${this.isInputEmpty()}
           >
-            Confirm
+            Beágyazás
           </div>
         </div>
       </div>

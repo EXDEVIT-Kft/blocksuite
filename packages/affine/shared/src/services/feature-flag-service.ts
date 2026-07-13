@@ -32,8 +32,7 @@ export class FeatureFlagService extends StoreExtension {
     enable_database_attachment_note: true,
     enable_database_full_width: true,
     enable_block_query: false,
-    // [ALGOGRIND] flag defaults ported from fork playground defaultFlags
-    enable_edgeless_text: false,
+    enable_edgeless_text: true,
     enable_ai_onboarding: false,
     enable_ai_chat_block: false,
     enable_color_picker: true,
@@ -44,14 +43,11 @@ export class FeatureFlagService extends StoreExtension {
     enable_mobile_linked_doc_menu: false,
     enable_block_meta: true,
     enable_mobile_database_editing: false,
-    enable_edgeless_scribbled_style: false,
+    enable_edgeless_scribbled_style: true,
     enable_table_virtual_scroll: false,
     enable_turbo_renderer: false,
     enable_dom_renderer: false,
     enable_pdfmake_export: false,
-    // [ALGOGRIND] gates database view creation; enabled by default matching
-    // the fork's final state (714bff02a removed it, a later commit restored
-    // it behind this flag with a true default)
     algogrind_enable_database: true,
   });
 

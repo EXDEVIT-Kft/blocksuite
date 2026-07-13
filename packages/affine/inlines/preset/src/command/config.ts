@@ -4,6 +4,8 @@ import {
   ItalicIcon,
   LinkIcon,
   StrikethroughIcon,
+  SubscriptIcon,
+  SuperscriptIcon,
   UnderlineIcon,
 } from '@blocksuite/affine-components/icons';
 import { toggleLink } from '@blocksuite/affine-inline-link';
@@ -16,6 +18,8 @@ import {
   toggleCode,
   toggleItalic,
   toggleStrike,
+  toggleSubscript,
+  toggleSuperscript,
   toggleUnderline,
 } from './text-style.js';
 
@@ -92,6 +96,39 @@ export const textFormatConfigs: TextFormatConfig[] = [
     },
     action: host => {
       host.std.command.chain().pipe(toggleStrike).run();
+    },
+  },
+  // [ALGOGRIND] superscript/subscript inline formatting
+  {
+    id: 'superscript',
+    name: 'Felső index',
+    icon: SuperscriptIcon,
+    hotkey: 'Mod-.',
+    activeWhen: host => {
+      const [result] = host.std.command
+        .chain()
+        .pipe(isTextAttributeActive, { key: 'superscript' })
+        .run();
+      return result;
+    },
+    action: host => {
+      host.std.command.chain().pipe(toggleSuperscript).run();
+    },
+  },
+  {
+    id: 'subscript',
+    name: 'Alsó index',
+    icon: SubscriptIcon,
+    hotkey: 'Mod-,',
+    activeWhen: host => {
+      const [result] = host.std.command
+        .chain()
+        .pipe(isTextAttributeActive, { key: 'subscript' })
+        .run();
+      return result;
+    },
+    action: host => {
+      host.std.command.chain().pipe(toggleSubscript).run();
     },
   },
   {

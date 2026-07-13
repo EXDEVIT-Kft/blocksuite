@@ -108,7 +108,7 @@ export class SurfaceRefPlaceHolder extends SignalWatcher(
           ${modelNotFound ? DeleteIcon() : matchedType.icon}
           <span class="surface-ref-title">
             ${modelNotFound
-              ? `This ${matchedType.name} not available`
+              ? `Ez a tartalom (${matchedType.name}) nem elérhető`
               : `${title}`}
           </span>
         </div>
@@ -116,7 +116,7 @@ export class SurfaceRefPlaceHolder extends SignalWatcher(
           <span class="surface-ref-text">
             ${modelNotFound
               ? 'Ez a tartalom törölve lett a rajztáblán'
-              : `The ${matchedType.name.toLowerCase()} is inserted but cannot display in edgeless mode. Switch to page mode to view the block.`}
+              : `A(z) ${matchedType.name.toLowerCase()} beszúrva, de rajztábla módban nem jeleníthető meg. Válts oldal módra a blokk megtekintéséhez.`}
           </span>
         </div>
       </div>

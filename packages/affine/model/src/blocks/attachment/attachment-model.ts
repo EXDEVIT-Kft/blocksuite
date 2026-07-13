@@ -10,6 +10,7 @@ import {
 } from '@blocksuite/store';
 
 import type { BlockMeta, EmbedCardStyle } from '../../utils/index.js';
+import { isBlobStillReferenced } from '../../utils/helper.js';
 import { AttachmentBlockTransformer } from './attachment-transformer.js';
 
 /**
@@ -120,6 +121,13 @@ export class AttachmentBlockModel
     this.deleted.subscribe(() => {
       const sourceId = this.props.sourceId$.value;
       if (!sourceId) {
+        return;
+      }
+
+      // [ALGOGRIND] the blob may still be in use: converting to an image
+      // block or duplicating creates another block with the same sourceId —
+      // deleting the blob then would break the new block
+      if (isBlobStillReferenced(this.store, sourceId, this.id)) {
         return;
       }
 

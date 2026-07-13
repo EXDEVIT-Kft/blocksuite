@@ -71,6 +71,35 @@ export const underlineDeltaToHtmlAdapterMatcher =
     },
   });
 
+// [ALGOGRIND] superscript/subscript inline formatting
+export const superscriptDeltaToHtmlAdapterMatcher =
+  InlineDeltaToHtmlAdapterExtension({
+    name: 'superscript',
+    match: delta => !!delta.attributes?.superscript,
+    toAST: (_, context) => {
+      return {
+        type: 'element',
+        tagName: 'sup',
+        properties: {},
+        children: [context.current],
+      };
+    },
+  });
+
+export const subscriptDeltaToHtmlAdapterMatcher =
+  InlineDeltaToHtmlAdapterExtension({
+    name: 'subscript',
+    match: delta => !!delta.attributes?.subscript,
+    toAST: (_, context) => {
+      return {
+        type: 'element',
+        tagName: 'sub',
+        properties: {},
+        children: [context.current],
+      };
+    },
+  });
+
 export const highlightBackgroundDeltaToHtmlAdapterMatcher =
   InlineDeltaToHtmlAdapterExtension({
     name: 'highlight-background',
@@ -148,6 +177,9 @@ export const InlineDeltaToHtmlAdapterExtensions = [
   italicDeltaToHtmlAdapterMatcher,
   strikeDeltaToHtmlAdapterMatcher,
   underlineDeltaToHtmlAdapterMatcher,
+  // [ALGOGRIND]
+  superscriptDeltaToHtmlAdapterMatcher,
+  subscriptDeltaToHtmlAdapterMatcher,
   highlightBackgroundDeltaToHtmlAdapterMatcher,
   highlightColorDeltaToHtmlAdapterMatcher,
   inlineCodeDeltaToHtmlAdapterMatcher,

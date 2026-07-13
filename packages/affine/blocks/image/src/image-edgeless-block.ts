@@ -276,7 +276,7 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
 
   override renderGfxBlock() {
     const blobUrl = this.blobUrl;
-    const { rotate, size: rawSize, caption = 'Image' } = this.model.props;
+    const { rotate, size: rawSize, caption = 'Kép' } = this.model.props;
     const size = rawSize ?? 0;
     this._resetLodSource(blobUrl);
 
@@ -296,7 +296,7 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
       }),
       errorIcon: BrokenImageIcon(),
       icon: ImageIcon(),
-      title: 'Image',
+      title: 'Kép',
       description: formatSize(size),
     });
 

@@ -118,7 +118,7 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
       <div class=${cardClasses} style=${cardStyle}>
         <span class="icon"> ${EmbedIcon()} </span>
         <span class="text">
-          Embed anything (Google Drive, Google Docs, Spotify, Miro…)
+          Ágyazz be bármit (Google Drive, Google Docs, Spotify, Miro…)
         </span>
       </div>
     `;

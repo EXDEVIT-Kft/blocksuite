@@ -207,8 +207,13 @@ export const renderCanvas = (canvas: HTMLCanvasElement, rgb: Rgb) => {
 };
 
 // Drops alpha value
+// [ALGOGRIND] Only truncate concrete hex colors (`#rrggbbaa` -> `#rrggbb`).
+// Persisted CSS variable identifiers (`--algogrind-palette-line-*`) and
+// generated `var(...)` properties must pass through unchanged — truncating
+// them produced invalid values like `var(--a` which made toolbar icons
+// fall back to black.
 export const keepColor = (color: string) =>
-  color.length > 7 && !color.endsWith('transparent')
+  color.startsWith('#') && color.length > 7 && !color.endsWith('transparent')
     ? color.substring(0, 7)
     : color;
 

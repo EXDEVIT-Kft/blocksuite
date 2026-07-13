@@ -12,6 +12,7 @@ import { computed } from '@preact/signals-core';
 import throttle from 'lodash-es/throttle';
 
 import {
+  ADD_BLOCK_WIDGET_HEIGHT,
   ADD_BLOCK_WIDGET_WIDTH,
   DRAG_HANDLE_CONTAINER_WIDTH,
   DRAG_HANDLE_GRABBER_BORDER_RADIUS,
@@ -352,8 +353,14 @@ export class PointerEventWatcher {
         this.widget.mode === 'page'
       ) {
         const posTop = this._getTopWithBlockComponent(block);
+        // [ALGOGRIND] center the "+" on the block's first line the same way
+        // the grabber is centered (per-type line height from heightMap)
+        const containerHeight = getDragHandleContainerHeight(block.model);
+        const offsetY =
+          (((containerHeight - ADD_BLOCK_WIDGET_HEIGHT) / 2 + 2) *
+            this.widget.scaleInNote.peek());
         addBlockWidgetContainer.style.left = `${draggingAreaRect.left - ADD_BLOCK_WIDGET_WIDTH}px`;
-        addBlockWidgetContainer.style.top = `${posTop}px`;
+        addBlockWidgetContainer.style.top = `${posTop + offsetY}px`;
         addBlockWidgetContainer.style.height = 'auto';
         addBlockWidgetContainer.style.display = 'flex';
       } else if (addBlockWidgetContainer) {

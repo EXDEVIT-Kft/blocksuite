@@ -18,6 +18,7 @@
     { "path": "../paragraph" },
     { "path": "../surface" },
     { "path": "../../components" },
+    { "path": "../../editor-icons" },
     { "path": "../../ext-loader" },
     { "path": "../../gfx/brush" },
     { "path": "../../gfx/connector" },

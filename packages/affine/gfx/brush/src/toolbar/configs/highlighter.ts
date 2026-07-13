@@ -23,6 +23,8 @@ import {
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 import { html } from 'lit';
 
+import { resolvePenColor } from '../utils';
+
 const trackBaseProps = {
   category: 'highlighter',
 };
@@ -90,7 +92,13 @@ export const highlighterToolbarConfig = {
         );
         const onPick = (e: PickColorEvent) => {
           if (e.type === 'pick') {
-            const color = adjustColorAlpha(e.detail.value, 0.3);
+            // [ALGOGRIND] Resolve persisted palette CSS variables to
+            // concrete colors before applying alpha, otherwise the
+            // highlighter color degrades to black.
+            const color = adjustColorAlpha(
+              resolvePenColor(e.detail.value, ctx.theme),
+              0.3
+            );
             for (const model of models) {
               const props = packColor(field, color);
               ctx.std

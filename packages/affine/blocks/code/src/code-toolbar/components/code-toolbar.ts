@@ -4,7 +4,6 @@ import type {
   MenuItemGroup,
 } from '@blocksuite/affine-components/toolbar';
 import { renderGroups } from '@blocksuite/affine-components/toolbar';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import { MoreVerticalIcon } from '@blocksuite/icons/lit';
@@ -33,10 +32,12 @@ export class AffineCodeToolbar extends WithDisposable(LitElement) {
       display: flex;
     }
 
+    /* [ALGOGRIND] fork parity: dark icon color + fork background/shadow
+       (the upstream icon/primary grey made the toolbar look washed out) */
     .code-toolbar-button {
-      color: ${unsafeCSSVarV2('icon/primary')};
-      background-color: ${unsafeCSSVarV2('button/secondary')};
-      box-shadow: var(--affine-shadow-1);
+      color: var(--algogrind-text-paragraph-color);
+      background-color: var(--algogrind-background-color);
+      box-shadow: var(--algogrind-shadow-xsmall);
       border-radius: 4px;
     }
   `;

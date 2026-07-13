@@ -1,4 +1,5 @@
-import { HighLightDuotoneIcon } from '@blocksuite/icons/lit';
+// [ALGOGRIND] use the custom fork paint icon for the highlight button (fork parity)
+import { PaintIcon } from '@blocksuite/affine-editor-icons';
 import { css, LitElement } from 'lit';
 
 export class HighlightDuotoneIcon extends LitElement {
@@ -6,13 +7,12 @@ export class HighlightDuotoneIcon extends LitElement {
     svg {
       display: flex;
       font-size: 20px;
-    }
-    svg > path:nth-child(1) {
-      fill: var(--color, unset);
+      /* [ALGOGRIND] the fork icon is stroke-based and follows currentColor */
+      color: var(--color, currentColor);
     }
   `;
   override render() {
-    return HighLightDuotoneIcon();
+    return PaintIcon();
   }
 }
 

@@ -259,7 +259,7 @@ export class EdgelessShapeColorPicker extends WithDisposable(
                       </edgeless-color-panel>
                     `
                   )}
-                  <div class="picker-label">Border style</div>
+                  <div class="picker-label">Szegély stílusa</div>
                   <edgeless-line-styles-panel
                     class="picker"
                     .lineSize=${strokeWidth}

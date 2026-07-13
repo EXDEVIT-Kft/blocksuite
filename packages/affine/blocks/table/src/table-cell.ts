@@ -648,10 +648,128 @@ export class TableCell extends SignalWatcher(
     return this.richText$.value?.inlineEditor;
   }
 
+  // [ALGOGRIND] focuses the rich-text of the cell at the given position
+  private _focusSiblingCell(
+    rowIndex: number,
+    columnIndex: number,
+    position: 'start' | 'end'
+  ): boolean {
+    const table = this.closest<TableBlockComponent>('affine-table');
+    if (!table) return false;
+
+    const target = Array.from(
+      table.querySelectorAll<TableCell>(TableCellComponentName)
+    ).find(
+      cell => cell.rowIndex === rowIndex && cell.columnIndex === columnIndex
+    );
+    const inlineEditor = target?.richText$.value?.inlineEditor;
+    if (!inlineEditor) return false;
+
+    if (position === 'start') {
+      inlineEditor.focusStart();
+    } else {
+      inlineEditor.focusEnd();
+    }
+    return true;
+  }
+
   private readonly _handleKeyDown = (e: KeyboardEvent) => {
     if (e.key !== 'Escape' && e.key === 'Tab') {
       e.preventDefault();
       return;
+    }
+
+    // [ALGOGRIND] explicit arrow-key navigation between cells — the native
+    // caret movement crosses cells in DOM order, which makes ArrowUp/Down
+    // step sideways and misbehaves in empty cells
+    //
+    // Every cell's inline editor listens on the same event source, so after
+    // one cell handled the arrow and moved the focus, the same event still
+    // reaches the newly focused cell's editor — without this guard a single
+    // keypress would cascade through the whole row/column
+    if (e.defaultPrevented) return;
+
+    const inlineEditor = this.inlineEditor;
+    if (!inlineEditor) return;
+    // the inlineRange$ signal lags behind the DOM selection (it only updates
+    // on the async selectionchange event), so read the range from the DOM
+    let range = inlineEditor.getInlineRange();
+    const nativeRange = inlineEditor.getNativeRange();
+    if (nativeRange) {
+      range = inlineEditor.toInlineRange(nativeRange) ?? range;
+    }
+    if (!range) return;
+
+    const cellText = inlineEditor.yTextString;
+    const rows = this.dataManager.uiRows$.value;
+    const columns = this.dataManager.uiColumns$.value;
+
+    const navigate = (
+      target: { row: number; column: number } | null,
+      position: 'start' | 'end'
+    ) => {
+      // Swallow the event even at the table edges: the default caret
+      // movement would jump to an unrelated cell
+      e.preventDefault();
+      e.stopPropagation();
+      if (target) {
+        this._focusSiblingCell(target.row, target.column, position);
+      }
+    };
+
+    switch (e.key) {
+      case 'ArrowUp': {
+        // Hop only from the first logical line — a plain string check: the
+        // rect-based isFirstLine/isLastLine heuristics are unreliable inside
+        // table cells (and can even throw on empty cells)
+        if (range.length > 0) return;
+        if (cellText.slice(0, range.index).includes('\n')) return;
+        navigate(
+          this.rowIndex > 0
+            ? { row: this.rowIndex - 1, column: this.columnIndex }
+            : null,
+          'end'
+        );
+        return;
+      }
+      case 'ArrowDown': {
+        if (range.length > 0) return;
+        if (cellText.slice(range.index).includes('\n')) return;
+        navigate(
+          this.rowIndex < rows.length - 1
+            ? { row: this.rowIndex + 1, column: this.columnIndex }
+            : null,
+          'end'
+        );
+        return;
+      }
+      case 'ArrowLeft': {
+        // Only hop cells when the caret is collapsed at the very start
+        if (range.length > 0 || range.index > 0) return;
+        if (this.columnIndex > 0) {
+          navigate({ row: this.rowIndex, column: this.columnIndex - 1 }, 'end');
+        } else if (this.rowIndex > 0) {
+          navigate({ row: this.rowIndex - 1, column: columns.length - 1 }, 'end');
+        } else {
+          navigate(null, 'end');
+        }
+        return;
+      }
+      case 'ArrowRight': {
+        // Only hop cells when the caret is collapsed at the very end
+        if (range.length > 0 || range.index < inlineEditor.yTextLength) return;
+        if (this.columnIndex < columns.length - 1) {
+          navigate(
+            { row: this.rowIndex, column: this.columnIndex + 1 },
+            'start'
+          );
+        } else if (this.rowIndex < rows.length - 1) {
+          navigate({ row: this.rowIndex + 1, column: 0 }, 'start');
+        } else {
+          navigate(null, 'start');
+        }
+        return;
+      }
     }
   };
 

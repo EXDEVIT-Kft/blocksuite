@@ -18,7 +18,7 @@ import {
   getViewportElement,
 } from '@blocksuite/affine-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
-import { TextSelection } from '@blocksuite/std';
+import { BlockSelection, TextSelection } from '@blocksuite/std';
 import {
   getInlineRangeProvider,
   type InlineRangeProvider,
@@ -186,12 +186,19 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
     this.disposables.add(
       effect(() => {
         const collapsed = this.model.props.collapsed$.value;
-        this._readonlyCollapsed = collapsed;
+
+        // [ALGOGRIND] only seed the readonly collapse state on the first run —
+        // later re-runs must not clobber what the reader toggled locally
+        if (!this._readonlyCollapseLoaded) {
+          this._readonlyCollapsed = collapsed;
+        }
+        this._readonlyCollapseLoaded = true;
 
         // reset text selection when selected block is collapsed
         if (this.model.props.type$.value.startsWith('h') && collapsed) {
           const collapsedSiblings = this.collapsedSiblings;
           const textSelection = this.host.selection.find(TextSelection);
+          const blockSelections = this.host.selection.filter(BlockSelection);
 
           if (
             textSelection &&
@@ -200,6 +207,16 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
             )
           ) {
             this.host.selection.clear(['text']);
+          }
+
+          if (
+            blockSelections.some(selection =>
+              collapsedSiblings.some(
+                sibling => sibling.id === selection.blockId
+              )
+            )
+          ) {
+            this.host.selection.clear(['block']);
           }
         }
       })
@@ -293,15 +310,29 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
         class=${classMap({
           'affine-paragraph-block-container': true,
           'highlight-comment': this.isCommentHighlighted,
+          readonly: this.store.readonly,
         })}
         style="${textAlignStyle}"
         data-has-collapsed-siblings="${collapsedSiblings.length > 0}"
+        @click=${() => {
+          // [ALGOGRIND] readonly mode: clicking the heading itself toggles
+          // the local collapse state (fork behavior)
+          if (
+            !this.store.readonly ||
+            !this.model.props.type$.value.startsWith('h') ||
+            collapsedSiblings.length === 0
+          ) {
+            return;
+          }
+          this._readonlyCollapsed = !this._readonlyCollapsed;
+        }}
       >
         <div
           class=${classMap({
             'affine-paragraph-rich-text-wrapper': true,
             [type$.value]: true,
             [TOGGLE_BUTTON_PARENT_CLASS]: true,
+            'heading-collapsed': collapsed,
           })}
         >
           ${this.model.props.type$.value.startsWith('h')
@@ -333,6 +364,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
                       });
                     }
                   }}
+                  @click=${(e: PointerEvent) => e.stopPropagation()}
                 ></blocksuite-toggle-button>
               `
             : nothing}
@@ -373,6 +405,11 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
 
   @state()
   private accessor _readonlyCollapsed = false;
+
+  // [ALGOGRIND] guards the readonly collapse state from being reset by
+  // later effect re-runs (see connectedCallback)
+  @state()
+  private accessor _readonlyCollapseLoaded = false;
 
   @query('rich-text')
   private accessor _richTextElement: RichText | null = null;

@@ -173,7 +173,7 @@ export class EmbedIframeLoadingCard extends LitElement {
       <div class=${cardClasses} style=${cardStyle}>
         <div class="loading-content">
           <div class="loading-spinner">${LoadingIcon()}</div>
-          <div class="loading-text">Loading...</div>
+          <div class="loading-text">Betöltés...</div>
         </div>
         <div class="loading-banner">
           <div class="icon-box">${EmbedIcon()}</div>

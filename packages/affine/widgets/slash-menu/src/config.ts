@@ -1,4 +1,11 @@
 import { toast } from '@blocksuite/affine-components/toast';
+// [ALGOGRIND] use the custom fork date & time icons (fork parity)
+import {
+  DateTimeIcon,
+  DateTodayIcon,
+  DateTomorrowIcon,
+  DateYesterdayIcon,
+} from '@blocksuite/affine-editor-icons';
 import type {
   ListBlockModel,
   ParagraphBlockModel,
@@ -10,10 +17,6 @@ import {
   CopyIcon,
   DeleteIcon,
   DualLinkIcon,
-  NowIcon,
-  TodayIcon,
-  TomorrowIcon,
-  YesterdayIcon,
 } from '@blocksuite/icons/lit';
 import { type DeltaInsert, Slice, Text } from '@blocksuite/store';
 
@@ -32,7 +35,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
     return [
       {
         name: 'Ma',
-        icon: TodayIcon(),
+        icon: DateTodayIcon({ width: '20', height: '20' }),
         tooltip: slashMenuToolTips['Today'],
         searchAlias: ['today'],
         description: formatDate(now),
@@ -43,7 +46,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
       {
         name: 'Holnap',
-        icon: TomorrowIcon(),
+        icon: DateTomorrowIcon({ width: '20', height: '20' }),
         tooltip: slashMenuToolTips['Tomorrow'],
         searchAlias: ['tomorrow'],
         description: formatDate(tomorrow),
@@ -56,7 +59,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
       {
         name: 'Tegnap',
-        icon: YesterdayIcon(),
+        icon: DateYesterdayIcon({ width: '20', height: '20' }),
         tooltip: slashMenuToolTips['Yesterday'],
         searchAlias: ['yesterday'],
         description: formatDate(yesterday),
@@ -69,7 +72,7 @@ export const defaultSlashMenuConfig: SlashMenuConfig = {
       },
       {
         name: 'Most',
-        icon: NowIcon(),
+        icon: DateTimeIcon({ width: '20', height: '20' }),
         tooltip: slashMenuToolTips['Now'],
         searchAlias: ['now'],
         description: formatTime(now),

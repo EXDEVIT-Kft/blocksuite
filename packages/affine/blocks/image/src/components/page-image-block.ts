@@ -365,7 +365,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
       : null;
 
     const blobUrl = this.block.blobUrl;
-    const caption = this.block.model.props.caption$.value ?? 'Image';
+    const caption = this.block.model.props.caption$.value ?? 'Kép';
     const { loading, error, icon, description, needUpload } = this.state;
 
     return html`

@@ -23,23 +23,23 @@ function notify(std: BlockStdScope, title: string, message: string) {
 export function notifyLinkedDocSwitchedToCard(std: BlockStdScope) {
   notify(
     std,
-    'View Updated',
-    'The alias modification has disabled sync. The embed has been updated to a card view.'
+    'Nézet frissítve',
+    'Az alias módosítása kikapcsolta a szinkronizálást. A beágyazás kártya nézetre váltott.'
   );
 }
 
 export function notifyLinkedDocSwitchedToEmbed(std: BlockStdScope) {
   notify(
     std,
-    'Embed View Restored',
-    'Custom alias removed. The linked doc now displays the original title and description.'
+    'Beágyazott nézet visszaállítva',
+    'Az egyéni alias törölve. A hivatkozott dokumentum újra az eredeti címet és leírást mutatja.'
   );
 }
 
 export function notifyLinkedDocClearedAliases(std: BlockStdScope) {
   notify(
     std,
-    'Reset successful',
-    `Card view has been restored to original doc title and description. All custom aliases have been removed.`
+    'Sikeres visszaállítás',
+    'A kártya nézet újra az eredeti dokumentumcímet és leírást mutatja. Minden egyéni alias törölve lett.'
   );
 }

@@ -96,7 +96,7 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
     const imageProxyService = this.store.get(ImageProxyService);
     const { EmbedCardBannerIcon } = getEmbedCardIcons(theme);
     const titleIcon = loading ? LoadingIcon() : LoomIcon;
-    const titleText = loading ? 'Loading...' : title || 'Loom';
+    const titleText = loading ? 'Betöltés...' : title || 'Loom';
     const descriptionText = loading ? '' : description;
     const bannerImage =
       !loading && image

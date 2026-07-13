@@ -83,6 +83,9 @@ export class EdgelessMindmapToolButton extends EdgelessToolbarToolMixin(
       bottom: 0;
       height: 17px;
       width: 76px;
+      /* [ALGOGRIND] hide the basket tray under the text/mindmap tools —
+         the design looks cleaner without it */
+      display: none;
     }
     .basket > div,
     .basket > svg {

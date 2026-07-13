@@ -159,7 +159,7 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
       }),
       errorIcon: BrokenImageIcon(),
       icon: ImageIcon(),
-      title: 'Image',
+      title: 'Kép',
       description: formatSize(size),
     });
 

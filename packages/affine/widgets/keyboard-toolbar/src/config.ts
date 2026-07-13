@@ -952,6 +952,18 @@ const textStyleToolItems: KeyboardToolbarItem[] = [
   },
 ];
 
+// [ALGOGRIND] Csak megjelenő nevek — a kulcsok CSS-változó azonosítók, nem változhatnak.
+const highlightColorNames: Record<string, string> = {
+  red: 'Piros',
+  orange: 'Narancs',
+  yellow: 'Sárga',
+  green: 'Zöld',
+  teal: 'Türkizkék',
+  blue: 'Kék',
+  purple: 'Lila',
+  grey: 'Szürke',
+};
+
 const highlightToolPanel: KeyboardToolPanelConfig = {
   icon: ({ std }) => {
     const [_, { textAttributes }] = std.command.exec(getTextAttributes);
@@ -981,7 +993,7 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
             'grey',
           ] as const
         ).map<KeyboardToolbarActionItem>(color => ({
-          name: color.charAt(0).toUpperCase() + color.slice(1),
+          name: highlightColorNames[color] ?? color,
           icon: TextColorIcon(cssVarV2(`text/highlight/fg/${color}`)),
           action: ({ std }) => {
             const payload = {
@@ -1024,7 +1036,7 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
             'grey',
           ] as const
         ).map<KeyboardToolbarActionItem>(color => ({
-          name: color.charAt(0).toUpperCase() + color.slice(1),
+          name: highlightColorNames[color] ?? color,
           icon: TextBackgroundDuotoneIcon(
             cssVarV2(`text/highlight/bg/${color}`)
           ),

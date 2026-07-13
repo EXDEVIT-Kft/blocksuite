@@ -447,7 +447,9 @@ export class OutlinePanelBody extends SignalWatcher(
       ${when(
         items.length > 0,
         () =>
-          html`<div class=${styles.edgelessCardListTitle}>Hidden Contents</div>`
+          html`<div class=${styles.edgelessCardListTitle}>
+            Rejtett tartalmak
+          </div>`
       )}
       ${this._renderNoteCards(items)}
     </div>`;

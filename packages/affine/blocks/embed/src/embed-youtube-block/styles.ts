@@ -51,15 +51,18 @@ export const styles = css`
   }
 
   /* [ALGOGRIND] */
-  /* In readonly mode only the player iframe is rendered, so the container
-     needs its own aspect ratio to size itself without the card layout */
-  .affine-embed-youtube-video-iframe-container.readonly {
+  /* When only the player iframe is rendered (readonly mode, and since the
+     video-only edit view also mirrors it), the container needs its own
+     aspect ratio to size itself without the card layout */
+  .affine-embed-youtube-video-iframe-container.readonly,
+  .affine-embed-youtube-video-iframe-container.video-only {
     aspect-ratio: ${EMBED_CARD_WIDTH.video} / ${EMBED_CARD_HEIGHT.video - 116};
   }
 
   /* [ALGOGRIND] */
-  /* In readonly mode we need all corners to be rounded */
-  .affine-embed-youtube-video-iframe-container.readonly > iframe {
+  /* Video-only views need all corners to be rounded */
+  .affine-embed-youtube-video-iframe-container.readonly > iframe,
+  .affine-embed-youtube-video-iframe-container.video-only > iframe {
     border-radius: 8px;
     overflow: hidden;
   }

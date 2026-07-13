@@ -129,19 +129,19 @@ export function promptDocTitle(std: BlockStdScope, autofill?: string) {
   if (!notification) return Promise.resolve(undefined);
 
   return notification.prompt({
-    title: 'Create linked doc',
-    message: 'Enter a title for the new doc.',
-    placeholder: 'Untitled',
+    title: 'Hivatkozott dokumentum létrehozása',
+    message: 'Add meg az új dokumentum címét',
+    placeholder: 'Új dokumentum',
     autofill,
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
+    confirmText: 'Létrehoz',
+    cancelText: 'Mégse',
   });
 }
 
 export function notifyDocCreated(std: BlockStdScope) {
   std.getOptional(NotificationProvider)?.notifyWithUndoAction({
-    title: 'Linked doc created',
-    message: 'You can click undo to recovery block content',
+    title: 'Hivatkozott dokumentum létrehozva',
+    message: 'A Visszavonás gombra kattintva visszahozhatod a blokk tartalmát',
     accent: 'info',
     duration: 10 * 1000,
   });

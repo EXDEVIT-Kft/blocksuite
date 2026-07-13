@@ -3,7 +3,10 @@ import {
   EdgelessCRUDIdentifier,
   SurfaceBlockComponent,
 } from '@blocksuite/affine-block-surface';
-import { EmbedIframeService } from '@blocksuite/affine-shared/services';
+import {
+  EmbedIframeService,
+  EmbedOptionProvider,
+} from '@blocksuite/affine-shared/services';
 import { Bound, Vec } from '@blocksuite/global/gfx';
 import {
   BlockSelection,
@@ -23,6 +26,17 @@ export const insertEmbedIframeWithUrlCommand: Command<
   { blockId: string; flavour: string }
 > = (ctx, next) => {
   const { url, std } = ctx;
+
+  // [ALGOGRIND] URLs with a dedicated embed block (YouTube, Loom, GitHub,
+  // Figma…) must not be claimed by the generic iframe — those sites refuse
+  // to serve their raw page URL inside an iframe (X-Frame-Options). Bail out
+  // so the command chain falls through to insertBookmarkCommand, which
+  // resolves the dedicated flavour.
+  const embedOptions = std.get(EmbedOptionProvider).getEmbedBlockOptions(url);
+  if (embedOptions?.viewType === 'embed') {
+    return;
+  }
+
   const embedIframeService = std.get(EmbedIframeService);
   if (!embedIframeService || !embedIframeService.canEmbed(url)) {
     return;

@@ -94,6 +94,11 @@ export const styles = css`
     gap: 4px;
     white-space: nowrap;
     padding: 0 4px;
+    /* [ALGOGRIND] reset the native button chrome */
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
     color: ${unsafeCSSVarV2('button/primary')};
     font-family: var(--affine-font-family);
     font-size: var(--affine-font-xs);

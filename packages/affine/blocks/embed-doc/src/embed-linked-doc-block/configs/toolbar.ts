@@ -238,7 +238,9 @@ const conversionsActionGroup = {
     if (!model) return null;
 
     const actions = this.actions.map(action => ({ ...action }));
-    const viewType$ = signal('Card view');
+    // [ALGOGRIND] Egyeznie kell a fenti 'Kártya nézet' labellel
+    // (a dropdown `label === viewType` alapján jelöli az aktív nézetet).
+    const viewType$ = signal('Kártya nézet');
     const onToggle = createOnToggleFn(ctx, 'OpenedViewSelector', 'switch view');
 
     return html`${keyed(

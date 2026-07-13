@@ -6,6 +6,7 @@ import {
   type BlockModel,
   defineBlockSchema,
   type InternalPrimitives,
+  type Store,
 } from '@blocksuite/store';
 
 import type { BlockMeta } from './types';
@@ -70,4 +71,23 @@ export function createEmbedBlockSchema<
     toModel,
     transformer,
   });
+}
+
+// [ALGOGRIND] true while another block (image or attachment) still
+// references the same blob — e.g. right after an image <-> attachment
+// conversion or a duplicate, where the new block shares the sourceId.
+// Used to guard the blob-cleanup listeners against deleting a blob that
+// is still in use.
+export function isBlobStillReferenced(
+  store: Store,
+  sourceId: string,
+  excludeBlockId: string
+): boolean {
+  return ['affine:image', 'affine:attachment'].some(flavour =>
+    store.getModelsByFlavour(flavour).some(model => {
+      if (model.id === excludeBlockId) return false;
+      const props = model.props as { sourceId?: string };
+      return props.sourceId === sourceId;
+    })
+  );
 }

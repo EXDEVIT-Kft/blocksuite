@@ -161,17 +161,17 @@ export class EmbedSyncedDocCard extends WithDisposable(ShadowlessElement) {
       : isLoading
         ? LoadingIcon()
         : this.block.icon$.value;
-    const title = isLoading ? 'Loading...' : this.block.title$;
+    const title = isLoading ? 'Betöltés...' : this.block.title$;
 
     const showDefaultNoteContent = isLoading || error || isDeleted || isEmpty;
     const defaultNoteContent = error
-      ? 'This linked doc failed to load.'
+      ? 'A hivatkozott dokumentumot nem sikerült betölteni.'
       : isLoading
         ? ''
         : isDeleted
-          ? 'This linked doc is deleted.'
+          ? 'A hivatkozott dokumentum törölve lett.'
           : isEmpty
-            ? 'Preview of the page will be displayed here.'
+            ? 'Itt jelenik meg az oldal előnézete.'
             : '';
 
     const dateText = this.block.docUpdatedAt.toLocaleString();

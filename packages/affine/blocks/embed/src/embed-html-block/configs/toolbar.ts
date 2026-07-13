@@ -39,7 +39,7 @@ const openDocAction = {
 
 const captionAction = {
   id: 'c.caption',
-  tooltip: 'Caption',
+  tooltip: 'Felirat',
   icon: CaptionIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(EmbedHtmlBlockComponent);
@@ -60,11 +60,11 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'horizontal',
-          label: 'Large horizontal style',
+          label: 'Nagy vízszintes elrendezés',
         },
         {
           id: 'list',
-          label: 'Small horizontal style',
+          label: 'Kicsi vízszintes elrendezés',
         },
       ],
       content(ctx) {
@@ -112,7 +112,7 @@ const builtinToolbarConfig = {
       actions: [
         {
           id: 'copy',
-          label: 'Copy',
+          label: 'Másolás',
           icon: CopyIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedHtmlModel);
@@ -121,13 +121,13 @@ const builtinToolbarConfig = {
             const slice = Slice.fromModels(ctx.store, [model]);
             ctx.clipboard
               .copySlice(slice)
-              .then(() => toast(ctx.host, 'Copied to clipboard'))
+              .then(() => toast(ctx.host, 'Vágólapra másolva'))
               .catch(console.error);
           },
         },
         {
           id: 'duplicate',
-          label: 'Duplicate',
+          label: 'Duplikálás',
           icon: DuplicateIcon(),
           run(ctx) {
             const model = ctx.getCurrentModelByType(EmbedHtmlModel);
@@ -145,7 +145,7 @@ const builtinToolbarConfig = {
     {
       placement: ActionPlacement.More,
       id: 'c.delete',
-      label: 'Delete',
+      label: 'Törlés',
       icon: DeleteIcon(),
       variant: 'destructive',
       run(ctx) {

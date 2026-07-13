@@ -1,6 +1,7 @@
 import type { EmbedIframeBlockModel } from '@blocksuite/affine-model';
 import {
   EmbedIframeService,
+  EmbedOptionProvider,
   NotificationProvider,
 } from '@blocksuite/affine-shared/services';
 import { isValidUrl, stopPropagation } from '@blocksuite/affine-shared/utils';
@@ -28,21 +29,31 @@ export class EmbedIframeLinkInputBase extends WithDisposable(LitElement) {
   protected tryToAddBookmark(url: string) {
     if (!isValidUrl(url)) {
       this.notificationService?.notify({
-        title: 'Invalid URL',
-        message: 'Please enter a valid URL',
+        title: 'Érvénytelen URL',
+        message: 'Adj meg egy érvényes URL-t',
         accent: 'error',
         onClose: function (): void {},
       });
       return;
     }
 
+    this.replaceBlockWith('affine:bookmark', url);
+  }
+
+  // Replaces the temporary embed-iframe block with the given flavour.
+  protected replaceBlockWith(flavour: string, url: string) {
     const { model } = this;
     const { parent } = model;
     const index = parent?.children.indexOf(model);
-    const flavour = 'affine:bookmark';
+
+    const props: Record<string, unknown> = { url };
+    // [ALGOGRIND] keep the position when the temp block lives on the surface
+    if (this.inSurface && model.xywh) {
+      props.xywh = model.xywh;
+    }
 
     this.store.transact(() => {
-      const blockId = this.store.addBlock(flavour, { url }, parent, index);
+      const blockId = this.store.addBlock(flavour, props, parent, index);
       this.store.deleteBlock(model);
       if (this.inSurface) {
         this.std.selection.setGroup('gfx', [
@@ -77,6 +88,22 @@ export class EmbedIframeLinkInputBase extends WithDisposable(LitElement) {
       }
 
       const url = this._linkInputValue;
+
+      // [ALGOGRIND] prefer the dedicated embed blocks (YouTube, Loom,
+      // GitHub, Figma…): the generic iframe would load the raw page URL,
+      // which these sites refuse to serve inside an iframe
+      // (X-Frame-Options) — the dedicated blocks use the proper embed URL
+      if (isValidUrl(url)) {
+        const embedOptions = this.std
+          .get(EmbedOptionProvider)
+          .getEmbedBlockOptions(url);
+        if (embedOptions?.viewType === 'embed') {
+          this.replaceBlockWith(embedOptions.flavour, url);
+          this.track('success');
+          return;
+        }
+      }
+
       const canEmbed = embedIframeService.canEmbed(url);
 
       if (!canEmbed) {
@@ -95,8 +122,9 @@ export class EmbedIframeLinkInputBase extends WithDisposable(LitElement) {
     } catch (error) {
       this.track('failure');
       this.notificationService?.notify({
-        title: 'Error in embed iframe creation',
-        message: error instanceof Error ? error.message : 'Please try again',
+        title: 'Hiba a beágyazás létrehozásakor',
+        message:
+          error instanceof Error ? error.message : 'Kérlek, próbáld újra',
         accent: 'error',
         onClose: function (): void {},
       });

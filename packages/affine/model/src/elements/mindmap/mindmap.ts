@@ -281,7 +281,8 @@ export class MindmapElementModel extends GfxGroupLikeElementModel<MindmapElement
       throw new Error(`Parent node ${parent} not found`);
     }
 
-    props['text'] = new Y.Text((props['text'] as string) ?? 'New node');
+    // [ALGOGRIND] Új node alapértelmezett szövege (csak új elemeknél, meglévő dokumentumokat nem érint)
+    props['text'] = new Y.Text((props['text'] as string) ?? 'Új elem');
 
     const type = (props.type as string) ?? 'shape';
     let id: string;

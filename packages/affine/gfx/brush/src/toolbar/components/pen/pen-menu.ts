@@ -22,6 +22,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 import { BrushTool } from '../../../brush-tool';
 import { HighlighterTool } from '../../../highlighter-tool';
+import { resolvePenColor } from '../../utils';
 import { penInfoMap } from './consts';
 import type { Pen, PenMap } from './types';
 
@@ -96,7 +97,13 @@ export class EdgelessPenMenu extends EdgelessToolbarToolMixin(
   private readonly _onPickColor = (e: ColorEvent) => {
     let color = e.detail.value;
     if (this.pen$.peek() === 'highlighter') {
-      color = adjustColorAlpha(color, 0.3);
+      // [ALGOGRIND] Resolve persisted palette CSS variables to concrete
+      // colors before applying alpha, otherwise the highlighter color
+      // degrades to black.
+      color = adjustColorAlpha(
+        resolvePenColor(color, this.edgeless.std.get(ThemeProvider)),
+        0.3
+      );
     }
     this.onChange({ color });
   };

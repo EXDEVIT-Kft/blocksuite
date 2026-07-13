@@ -97,7 +97,7 @@ function createBuiltinToolbarConfigForExternal(
         actions: [
           {
             id: 'inline',
-            label: 'Inline view',
+            label: 'Sorközi nézet',
             run(ctx) {
               const model = ctx.getCurrentModel();
               if (!model || !isExternalEmbedModel(model)) return;
@@ -130,7 +130,7 @@ function createBuiltinToolbarConfigForExternal(
           },
           {
             id: 'card',
-            label: 'Card view',
+            label: 'Kártya nézet',
             disabled(ctx) {
               const model = ctx.getCurrentModel();
               if (!model || !isExternalEmbedModel(model)) return true;
@@ -190,7 +190,7 @@ function createBuiltinToolbarConfigForExternal(
           },
           {
             id: 'embed',
-            label: 'Embed view',
+            label: 'Beágyazott nézet',
             disabled(ctx) {
               const model = ctx.getCurrentModel();
               if (!model || !isExternalEmbedModel(model)) return false;
@@ -266,8 +266,10 @@ function createBuiltinToolbarConfigForExternal(
             ctx.std.get(EmbedOptionProvider).getEmbedBlockOptions(url)
               ?.viewType ?? 'card';
           const actions = this.actions.map(action => ({ ...action }));
+          // [ALGOGRIND] A signal értékének egyeznie kell a fenti magyar labelekkel
+          // (a dropdown `label === viewType` alapján jelöli az aktív nézetet).
           const viewType$ = signal(
-            `${viewType === 'card' ? 'Card' : 'Embed'} view`
+            viewType === 'card' ? 'Kártya nézet' : 'Beágyazott nézet'
           );
           const onToggle = createOnToggleFn(
             ctx,
@@ -291,11 +293,11 @@ function createBuiltinToolbarConfigForExternal(
         actions: [
           {
             id: 'horizontal',
-            label: 'Large horizontal style',
+            label: 'Nagy vízszintes elrendezés',
           },
           {
             id: 'list',
-            label: 'Small horizontal style',
+            label: 'Kicsi vízszintes elrendezés',
           },
         ],
         when(ctx) {
@@ -336,7 +338,7 @@ function createBuiltinToolbarConfigForExternal(
       } satisfies ToolbarActionGroup<ToolbarAction>,
       {
         id: 'd.caption',
-        tooltip: 'Caption',
+        tooltip: 'Felirat',
         icon: CaptionIcon(),
         run(ctx) {
           const block = ctx.getCurrentBlockByType(klass);
@@ -354,7 +356,7 @@ function createBuiltinToolbarConfigForExternal(
         actions: [
           {
             id: 'copy',
-            label: 'Copy',
+            label: 'Másolás',
             icon: CopyIcon(),
             run(ctx) {
               const model = ctx.getCurrentBlockByType(klass)?.model;
@@ -363,13 +365,13 @@ function createBuiltinToolbarConfigForExternal(
               const slice = Slice.fromModels(ctx.store, [model]);
               ctx.clipboard
                 .copySlice(slice)
-                .then(() => toast(ctx.host, 'Copied to clipboard'))
+                .then(() => toast(ctx.host, 'Vágólapra másolva'))
                 .catch(console.error);
             },
           },
           {
             id: 'duplicate',
-            label: 'Duplicate',
+            label: 'Duplikálás',
             icon: DuplicateIcon(),
             run(ctx) {
               const model = ctx.getCurrentBlockByType(klass)?.model;
@@ -397,7 +399,7 @@ function createBuiltinToolbarConfigForExternal(
       {
         placement: ActionPlacement.More,
         id: 'c.delete',
-        label: 'Delete',
+        label: 'Törlés',
         icon: DeleteIcon(),
         variant: 'destructive',
         run(ctx) {
@@ -430,7 +432,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
         actions: [
           {
             id: 'card',
-            label: 'Card view',
+            label: 'Kártya nézet',
             run(ctx) {
               const model = ctx.getCurrentBlockByType(klass)?.model;
               if (!model || !isExternalEmbedModel(model)) return;
@@ -475,7 +477,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
           },
           {
             id: 'embed',
-            label: 'Embed view',
+            label: 'Beágyazott nézet',
             disabled: true,
           },
         ],
@@ -499,8 +501,10 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
             ctx.std.get(EmbedOptionProvider).getEmbedBlockOptions(url)
               ?.viewType ?? 'card';
           const actions = this.actions.map(action => ({ ...action }));
+          // [ALGOGRIND] A signal értékének egyeznie kell a fenti magyar labelekkel
+          // (a dropdown `label === viewType` alapján jelöli az aktív nézetet).
           const viewType$ = signal(
-            `${viewType === 'card' ? 'Card' : 'Embed'} view`
+            viewType === 'card' ? 'Kártya nézet' : 'Beágyazott nézet'
           );
           const onToggle = createOnToggleFn(
             ctx,
@@ -525,19 +529,19 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
           [
             {
               id: 'horizontal',
-              label: 'Large horizontal style',
+              label: 'Nagy vízszintes elrendezés',
             },
             {
               id: 'list',
-              label: 'Small horizontal style',
+              label: 'Kicsi vízszintes elrendezés',
             },
             {
               id: 'vertical',
-              label: 'Large vertical style',
+              label: 'Nagy függőleges elrendezés',
             },
             {
               id: 'cube',
-              label: 'Small vertical style',
+              label: 'Kicsi függőleges elrendezés',
             },
           ] as const
         ).filter(action => EmbedGithubStyles.includes(action.id)),
@@ -586,7 +590,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
       } satisfies ToolbarActionGroup<ToolbarAction>,
       {
         id: 'd.caption',
-        tooltip: 'Caption',
+        tooltip: 'Felirat',
         icon: CaptionIcon(),
         run(ctx) {
           const block = ctx.getCurrentBlockByType(klass);

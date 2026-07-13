@@ -17,7 +17,6 @@ export class AffineAddBlockWidget extends LitElement {
       justify-content: center;
       width: 18px;
       height: 18px;
-      margin-top: 8px;
       cursor: pointer;
       border-radius: 4px;
       color: var(--affine-placeholder-color);
@@ -61,8 +60,8 @@ export class AffineAddBlockWidget extends LitElement {
     return html`
       <button
         class="affine-add-block-widget"
-        title="Click to add a block below"
-        aria-label="Add block below"
+        title="Kattints új blokk hozzáadásához alá"
+        aria-label="Blokk hozzáadása alá"
         @click=${this._handleClick}
       >
         ${PlusIcon({ width: '12', height: '12' })}

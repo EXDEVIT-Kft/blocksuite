@@ -10,6 +10,7 @@ import {
 } from '@blocksuite/store';
 
 import type { TextAlign } from '../../consts';
+import { isBlobStillReferenced } from '../../utils/helper.js';
 import type { BlockMeta } from '../../utils/types.js';
 import { ImageBlockTransformer } from './image-transformer.js';
 
@@ -70,6 +71,13 @@ export class ImageBlockModel
     this.deleted.subscribe(() => {
       const sourceId = this.props.sourceId$.value;
       if (!sourceId) {
+        return;
+      }
+
+      // [ALGOGRIND] the blob may still be in use: converting to a card view
+      // (attachment) or duplicating creates another block with the same
+      // sourceId — deleting the blob then would break the new block
+      if (isBlobStillReferenced(this.store, sourceId, this.id)) {
         return;
       }
 

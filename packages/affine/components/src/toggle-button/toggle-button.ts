@@ -1,10 +1,13 @@
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
-import { ToggleDownIcon, ToggleRightIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { html } from 'lit-html';
+
+// [ALGOGRIND] fork toggle chevron icons (dark, fill-based) instead of the
+// grey @blocksuite/icons ToggleDown/ToggleRight glyphs
+import { toggleDown, toggleRight } from '../icons/list.js';
 
 export const TOGGLE_BUTTON_PARENT_CLASS = 'blocksuite-toggle-button-parent';
 
@@ -17,7 +20,10 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
       position: absolute;
       width: 16px;
       height: 16px;
-      top: calc((1em - 16px) / 2 + 5px - 0.1em);
+      /* [ALGOGRIND] fork positioning: the per-heading margin-top rules in the
+         paragraph styles center the arrow — an extra top offset here would
+         double-shift it */
+      margin-top: 0.35em;
       left: -4px;
       transform: translateX(-100%);
       border-radius: 4px;
@@ -59,10 +65,7 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
         class="toggle-icon"
         @click=${() => this.updateCollapsed(!this.collapsed)}
       >
-        ${ToggleDownIcon({
-          width: '16px',
-          height: '16px',
-        })}
+        ${toggleDown}
       </div>
     `;
 
@@ -73,10 +76,7 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
         data-collapsed=${this.collapsed}
         @click=${() => this.updateCollapsed(!this.collapsed)}
       >
-        ${ToggleRightIcon({
-          width: '16px',
-          height: '16px',
-        })}
+        ${toggleRight}
       </div>
     `;
 

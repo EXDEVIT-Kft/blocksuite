@@ -188,13 +188,15 @@ const embedConfig: AttachmentEmbedConfig[] = [
     render: (_, blobUrl) => {
       // More options: https://tinytip.co/tips/html-pdf-params/
       // https://chromium.googlesource.com/chromium/src/+/refs/tags/121.0.6153.1/chrome/browser/resources/pdf/open_pdf_params_parser.ts
-      const parameters = '#toolbar=0';
+      // [ALGOGRIND] FitH + A4 aspect ratio: the embed is exactly one
+      // portrait A4 page tall (in edgeless the bound caps it via maxHeight)
+      const parameters = '#toolbar=0&view=FitH';
       return html`
         <iframe
           style=${styleMap({
             width: '100%',
-            height: '75vh',
-            minHeight: '480px',
+            aspectRatio: '210 / 297',
+            maxHeight: '100%',
             colorScheme: 'auto',
           })}
           src=${blobUrl + parameters}

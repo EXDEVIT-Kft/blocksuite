@@ -13,7 +13,8 @@ import {
   QuoteIcon,
   TextIcon,
 } from '@blocksuite/affine-components/icons';
-import { TeXIcon } from '@blocksuite/icons/lit';
+// [ALGOGRIND] use the custom fork icon for the equation block (fork parity)
+import { EquationBlockIcon } from '@blocksuite/affine-editor-icons';
 import type { TemplateResult } from 'lit';
 
 /**
@@ -136,7 +137,7 @@ export const textConversionConfigs: TextConversionConfig[] = [
     name: 'Egyenlet',
     description: 'Hozz létre egy új egyenlet blokkot.',
     hotkey: null,
-    icon: TeXIcon(),
+    icon: EquationBlockIcon({ width: '20', height: '20' }),
     searchAlias: [
       'mathBlock',
       'equationBlock',

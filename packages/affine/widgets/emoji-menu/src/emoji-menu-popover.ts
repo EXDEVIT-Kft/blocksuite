@@ -1,4 +1,3 @@
-import { cleanSpecifiedTail } from '@blocksuite/affine-rich-text';
 import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
 import {
   createKeydownObserver,
@@ -19,13 +18,43 @@ export class EmojiMenu extends WithDisposable(LitElement) {
 
   private _currentCategory = 0;
 
+  // [ALGOGRIND] Delete the trigger ':' plus the typed search text based on the
+  // actual document content between the trigger and the current cursor,
+  // instead of `cleanSpecifiedTail(':' + _searchText)`. The old approach
+  // silently bailed out whenever the (lowercased) `_searchText` did not match
+  // the document text exactly or the inline range was momentarily unavailable,
+  // leaving the typed query (e.g. ":sz") in the document while the emoji was
+  // still appended.
+  private _cleanTriggerText() {
+    const inlineEditor = this.inlineEditor;
+    const curRange = inlineEditor.getInlineRange() ?? this._startRange;
+    if (!curRange) return;
+
+    const text = inlineEditor.yText.toString();
+    const cursor = Math.min(curRange.index, text.length);
+    if (cursor <= 0) return;
+
+    const triggerIndex = text.lastIndexOf(':', cursor - 1);
+    if (triggerIndex < 0) return;
+
+    // Only delete when the text between the trigger and the cursor looks like
+    // the emoji query (no whitespace), so e.g. "12:30 hello|" is left intact.
+    const typed = text.slice(triggerIndex + 1, cursor);
+    if (/\s/.test(typed)) return;
+
+    inlineEditor.deleteText({
+      index: triggerIndex,
+      length: cursor - triggerIndex,
+    });
+    inlineEditor.setInlineRange({
+      index: triggerIndex,
+      length: 0,
+    });
+  }
+
   private readonly _handleEmojiSelect = (emoji: EmojiItem) => {
     try {
-      cleanSpecifiedTail(
-        this.context.std,
-        this.context.model,
-        ':' + this._searchText
-      );
+      this._cleanTriggerText();
       this.inlineEditor
         .waitForUpdate()
         .then(() => {
@@ -292,6 +321,15 @@ export class EmojiMenu extends WithDisposable(LitElement) {
   override connectedCallback() {
     super.connectedCallback();
 
+    // [ALGOGRIND] Prevent the editor from losing focus/selection when the
+    // emoji is picked with the mouse. The new block-std selection handling is
+    // pointer-event based, so `mousedown` alone is not enough — without the
+    // `pointerdown` handler the inline range was cleared before the click
+    // handler ran, and the typed ":query" text could not be deleted (same
+    // pattern as the linked-doc popover).
+    this._disposables.addFromEvent(this, 'pointerdown', e => {
+      e.preventDefault();
+    });
     this._disposables.addFromEvent(this, 'mousedown', e => {
       e.preventDefault();
     });
@@ -327,17 +365,21 @@ export class EmojiMenu extends WithDisposable(LitElement) {
           key === 'Enter'
         ) {
           event.preventDefault();
-
-          // Do not insert newline after pressing enter
-          if (key === 'Enter') {
-            event.stopPropagation();
-          }
+          // [ALGOGRIND] Swallow navigation keys entirely while the popup is
+          // open: without stopPropagation the keydown bubbled up to the
+          // editor host keymap and the block selection/highlight also moved
+          // in the background (same pattern as the linked-doc popover).
+          event.stopPropagation();
 
           this._handleKeyNavigation(key);
           return;
         }
 
         if (key === 'Escape') {
+          // [ALGOGRIND] Consume Escape so it only closes the popup and does
+          // not also clear the editor selection in the background.
+          event.preventDefault();
+          event.stopPropagation();
           this.abortController.abort();
           return;
         }

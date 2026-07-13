@@ -15,37 +15,21 @@ export function calculateCollapsedSiblings(
   const index = children.indexOf(model);
   if (index === -1) return [];
 
-  // [ALGOGRIND] dividers stop the collapse of the nearest heading.
-  // Just to include the divider in the collapsed siblings
+  // [ALGOGRIND] a divider always stops the collapse — regardless of any
+  // lower-level headings before it. The collapse spans until the end of the
+  // document, a divider block, or a heading of the same or higher level.
+  // The flag exists so the divider itself is still included in the
+  // collapsed (hidden) siblings; the edge is the element right after it.
   let nextDividerFound = false;
-  // Used to keep collapsing siblings if a smaller heading is found before a divider
-  // -> the divider should only stop the nearest heading's collapse
-  /**
-   * h1
-   * text
-   * h2
-   * text
-   * divider
-   * text
-   * h1
-   */
-  // -> in this example the divider should only stop the collapse of the h2 heading
-  // the h1 heading should be collapsed until the next h1 heading
-  let foundSmallerHeading = false;
 
   const collapsedEdgeIndex = children.findIndex((child, i) => {
-    if (
-      i > index &&
-      matchModels(child, [DividerBlockModel]) &&
-      !foundSmallerHeading
-    ) {
+    if (i > index && matchModels(child, [DividerBlockModel])) {
       nextDividerFound = true;
       return false;
     }
 
     // Ran AFTER the divider have been found -> to include the divider in the collapsed siblings
     if (nextDividerFound) {
-      nextDividerFound = false;
       return true;
     }
 
@@ -56,10 +40,6 @@ export function calculateCollapsedSiblings(
     ) {
       const modelLevel = parseInt(model.props.type.slice(1));
       const childLevel = parseInt(child.props.type.slice(1));
-
-      if (childLevel > modelLevel) {
-        foundSmallerHeading = true;
-      }
 
       return childLevel <= modelLevel;
     }

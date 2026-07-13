@@ -313,6 +313,39 @@ export const htmlUnderlineElementToDeltaMatcher = HtmlASTToDeltaExtension({
   },
 });
 
+// [ALGOGRIND] superscript/subscript inline formatting
+export const htmlSupElementToDeltaMatcher = HtmlASTToDeltaExtension({
+  name: 'sup-element',
+  match: ast => isElement(ast) && ast.tagName === 'sup',
+  toDelta: (ast, context) => {
+    if (!isElement(ast)) {
+      return [];
+    }
+    return ast.children.flatMap(child =>
+      context.toDelta(child, { trim: false }).map(delta => {
+        delta.attributes = { ...delta.attributes, superscript: true };
+        return delta;
+      })
+    );
+  },
+});
+
+export const htmlSubElementToDeltaMatcher = HtmlASTToDeltaExtension({
+  name: 'sub-element',
+  match: ast => isElement(ast) && ast.tagName === 'sub',
+  toDelta: (ast, context) => {
+    if (!isElement(ast)) {
+      return [];
+    }
+    return ast.children.flatMap(child =>
+      context.toDelta(child, { trim: false }).map(delta => {
+        delta.attributes = { ...delta.attributes, subscript: true };
+        return delta;
+      })
+    );
+  },
+});
+
 export const htmlMarkElementToDeltaMatcher = HtmlASTToDeltaExtension({
   name: 'mark-element',
   match: ast => isElement(ast) && ast.tagName === 'mark',
@@ -358,6 +391,9 @@ export const HtmlInlineToDeltaAdapterExtensions = [
   htmlCodeElementToDeltaMatcher,
   htmlDelElementToDeltaMatcher,
   htmlUnderlineElementToDeltaMatcher,
+  // [ALGOGRIND]
+  htmlSupElementToDeltaMatcher,
+  htmlSubElementToDeltaMatcher,
   htmlMarkElementToDeltaMatcher,
   htmlBrElementToDeltaMatcher,
 ];

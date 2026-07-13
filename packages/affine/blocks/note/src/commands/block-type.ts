@@ -108,13 +108,30 @@ export const updateBlockType: Command<
       return next({ updatedBlocks: [] });
     }
     const index = parent.children.indexOf(model);
-    const nextSibling = doc.getNext(model);
-    let nextSiblingId = nextSibling?.id as string;
-    const id = doc.addBlock('affine:divider', {}, parent, index + 1);
-    if (!nextSibling) {
-      nextSiblingId = doc.addBlock('affine:paragraph', {}, parent);
+
+    // [ALGOGRIND] When invoked on an empty paragraph (slash menu / hotkey on a
+    // blank line — the slash query text is already removed at this point),
+    // insert the divider IN PLACE of the empty line instead of after it, so no
+    // empty paragraph is left before the divider. The original empty paragraph
+    // slides below the divider and keeps the caret.
+    const isEmptyParagraph =
+      matchModels(model, [ParagraphBlockModel]) &&
+      model.props.type !== 'quote' &&
+      !model.text?.length;
+
+    let id: string;
+    if (isEmptyParagraph) {
+      id = doc.addBlock('affine:divider', {}, parent, index);
+      focusTextModel(host.std, model.id);
+    } else {
+      const nextSibling = doc.getNext(model);
+      let nextSiblingId = nextSibling?.id as string;
+      id = doc.addBlock('affine:divider', {}, parent, index + 1);
+      if (!nextSibling) {
+        nextSiblingId = doc.addBlock('affine:paragraph', {}, parent);
+      }
+      focusTextModel(host.std, nextSiblingId);
     }
-    focusTextModel(host.std, nextSiblingId);
     const newModel = doc.getModelById(id);
     if (!newModel) {
       return next({ updatedBlocks: [] });

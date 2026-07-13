@@ -57,14 +57,15 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
 
   highlightTokens$: Signal<ThemedToken[][]> = signal([]);
 
+  // [ALGOGRIND] Csak kijelzési fallback (lang-button), a language prop nem változik.
   languageName$: Signal<string> = computed(() => {
     const lang = this.model.props.language$.value;
     if (lang === null) {
-      return 'Plain Text';
+      return 'Szöveg';
     }
 
     const matchedInfo = this.langs.find(info => info.id === lang);
-    return matchedInfo ? matchedInfo.name : 'Plain Text';
+    return matchedInfo ? matchedInfo.name : 'Szöveg';
   });
 
   get inlineEditor() {

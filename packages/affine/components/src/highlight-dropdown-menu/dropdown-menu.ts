@@ -21,6 +21,21 @@ const colors = [
   'grey',
 ] as const;
 
+// [ALGOGRIND] Csak megjelenő nevek — a `colors` kulcsok CSS-változó azonosítók
+// (--algogrind-text-highlight-*), azok NEM változhatnak.
+const colorNames: Record<(typeof colors)[number], string> = {
+  default: 'Alapértelmezett',
+  red: 'Piros',
+  orange: 'Narancs',
+  yellow: 'Sárga',
+  green: 'Zöld',
+  teal: 'Türkizkék',
+  blue: 'Kék',
+  purple: 'Lila',
+  pink: 'Pink',
+  grey: 'Szürke',
+};
+
 export type HighlightType = Pick<
   AffineTextStyleAttributes,
   'color' | 'background'
@@ -67,7 +82,7 @@ export class HighlightDropdownMenu extends LitElement {
       <editor-menu-button
         .contentPadding="${'8px'}"
         .button=${html`
-          <editor-icon-button aria-label="highlight" .tooltip="${'Highlight'}">
+          <editor-icon-button aria-label="highlight" .tooltip="${'Kiemelés'}">
             <affine-highlight-duotone-icon
               style=${styleMap({
                 '--color':
@@ -80,7 +95,7 @@ export class HighlightDropdownMenu extends LitElement {
         `}
       >
         <div data-size="large" data-orientation="vertical">
-          <div class="highlight-heading">Color</div>
+          <div class="highlight-heading">Szín</div>
           ${repeat(colors, color => {
             const isDefault = color === 'default';
             const value = isDefault
@@ -97,13 +112,15 @@ export class HighlightDropdownMenu extends LitElement {
                   })}
                 ></affine-text-duotone-icon>
                 <span class="label capitalize"
-                  >${isDefault ? `${color} color` : color}</span
+                  >${isDefault
+                    ? 'Alapértelmezett szín'
+                    : colorNames[color]}</span
                 >
               </editor-menu-action>
             `;
           })}
 
-          <div class="highlight-heading">Background</div>
+          <div class="highlight-heading">Háttérszín</div>
           ${repeat(colors, color => {
             const isDefault = color === 'default';
             const value = isDefault ? null : `var(${prefix}-${color})`;
@@ -120,7 +137,9 @@ export class HighlightDropdownMenu extends LitElement {
                 ></affine-text-duotone-icon>
 
                 <span class="label capitalize"
-                  >${isDefault ? `${color} background` : color}</span
+                  >${isDefault
+                    ? 'Alapértelmezett háttér'
+                    : colorNames[color]}</span
                 >
               </editor-menu-action>
             `;

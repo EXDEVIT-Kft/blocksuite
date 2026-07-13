@@ -190,7 +190,9 @@ const conversionsActionGroup = {
     if (!model) return null;
 
     const actions = this.actions.map(action => ({ ...action }));
-    const viewType$ = signal('Embed view');
+    // [ALGOGRIND] Egyeznie kell a fenti 'Beágyazott nézet' labellel
+    // (a dropdown `label === viewType` alapján jelöli az aktív nézetet).
+    const viewType$ = signal('Beágyazott nézet');
     const onToggle = createOnToggleFn(ctx, 'OpenedViewSelector', 'switch view');
 
     return html`${keyed(

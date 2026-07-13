@@ -139,7 +139,7 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
       ? getGithubStatusIcon(githubType, status, statusReason)
       : nothing;
     const statusText = loading ? '' : status;
-    const titleText = loading ? 'Loading...' : title || 'GitHub';
+    const titleText = loading ? 'Betöltés...' : title || 'GitHub';
     const descriptionText = loading ? '' : description;
     const bannerImage =
       !loading && image

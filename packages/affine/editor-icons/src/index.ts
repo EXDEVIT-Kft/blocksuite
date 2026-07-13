@@ -26,6 +26,8 @@ export { default as PlusIcon } from './icons/PlusIcon.js';
 export { default as PresentationIcon } from './icons/PresentationIcon.js';
 export { default as QuoteIcon } from './icons/QuoteIcon.js';
 export { default as StrikeThroughIcon } from './icons/StrikeThroughIcon.js';
+export { default as SubscriptIcon } from './icons/SubscriptIcon.js';
+export { default as SuperscriptIcon } from './icons/SuperscriptIcon.js';
 export { default as TextConversionIcon } from './icons/TextConversionIcon.js';
 export { default as TextFontIcon } from './icons/TextFontIcon.js';
 export { default as TextIcon } from './icons/TextIcon.js';

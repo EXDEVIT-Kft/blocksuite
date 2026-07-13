@@ -53,10 +53,10 @@ export class BookmarkCard extends SignalWatcher(
     )?.[1];
 
     const titleText = this.loading
-      ? 'Loading...'
+      ? 'Betöltés...'
       : !title
         ? this.error
-          ? (domainName ?? 'Link card')
+          ? (domainName ?? 'Linkkártya')
           : ''
         : title;
 
@@ -74,7 +74,7 @@ export class BookmarkCard extends SignalWatcher(
       ? ''
       : !description
         ? this.error
-          ? 'Failed to retrieve link information.'
+          ? 'A link adatait nem sikerült lekérni.'
           : url
         : (description ?? '');
 

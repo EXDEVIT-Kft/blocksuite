@@ -11,6 +11,15 @@ import isEqual from 'lodash-es/isEqual';
 
 import { AdditionIcon } from './icons';
 
+// [ALGOGRIND] Palette entries are persisted CSS variable identifiers
+// (`--algogrind-palette-line-*`), while the current value may arrive as a
+// generated `var(...)` property. Normalize both sides before comparing so
+// the active ring is shown on the selected swatch.
+const normalizeColorForComparison = (color: unknown) =>
+  typeof color === 'string' && color.startsWith('var(') && color.endsWith(')')
+    ? color.slice(4, -1).trim()
+    : color;
+
 export class EdgelessColorButton extends LitElement {
   static override styles = css`
     :host {
@@ -173,7 +182,10 @@ export class EdgelessColorPanel extends LitElement {
         palette => palette.key,
         palette => {
           const resolvedColor = resolveColor(palette.value, this.theme);
-          const activated = isEqual(resolvedColor, this.resolvedValue);
+          const activated = isEqual(
+            normalizeColorForComparison(resolvedColor),
+            normalizeColorForComparison(this.resolvedValue)
+          );
           return html`<edgeless-color-button
             class=${classMap({ large: true })}
             .label=${palette.key}

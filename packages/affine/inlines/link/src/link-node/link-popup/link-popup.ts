@@ -1,3 +1,5 @@
+// [ALGOGRIND] fork parity: custom confirm (done) icon
+import { ConfirmIcon } from '@blocksuite/affine-components/icons';
 import type { EditorIconButton } from '@blocksuite/affine-components/toolbar';
 import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
 import {
@@ -6,7 +8,6 @@ import {
   stopPropagation,
 } from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
-import { DoneIcon } from '@blocksuite/icons/lit';
 import {
   type BlockStdScope,
   ShadowlessElement,
@@ -123,7 +124,7 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
         .disabled=${true}
         @click=${this._onConfirm}
       >
-        ${DoneIcon()}
+        ${ConfirmIcon}
       </editor-icon-button>
     `;
   }
