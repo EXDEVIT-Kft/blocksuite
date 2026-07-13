@@ -14,7 +14,6 @@ export class EdgelessNoteMask extends SignalWatcher(
   protected override firstUpdated() {
     const maskDOM = this.renderRoot!.querySelector('.affine-note-mask');
     const observer = new ResizeObserver(entries => {
-      if (this.model.store.readonly) return;
       for (const entry of entries) {
         if (!this.model.props.edgeless.collapse) {
           const bound = Bound.deserialize(this.model.xywh);
@@ -26,6 +25,17 @@ export class EdgelessNoteMask extends SignalWatcher(
           }
 
           bound.h = height;
+
+          // [ALGOGRIND] in readonly the reader can still toggle heading
+          // collapse locally, which changes the DOM height. Sync the bound
+          // LOCALLY (stash without pop = no doc write) so the viewport
+          // culling doesn't hide the note while its content is on screen.
+          if (this.model.store.readonly) {
+            this.model.stash('xywh');
+            this.model.xywh = bound.serialize();
+            continue;
+          }
+
           this.model.stash('xywh');
           this.model.xywh = bound.serialize();
           this.model.pop('xywh');
@@ -46,16 +56,21 @@ export class EdgelessNoteMask extends SignalWatcher(
       <div
         class="affine-note-mask"
         style=${styleMap({
-          // [ALGOGRIND] hide the mask in readonly mode so embeds (e.g. the
-          // YouTube player) and toggleable headings stay interactive
-          display: this.model.store.readonly$.value ? 'none' : 'block',
+          // [ALGOGRIND] in readonly the mask must not block interaction
+          // (embeds, toggleable headings), but it has to keep its layout so
+          // the ResizeObserver above can keep measuring the note height —
+          // visibility: hidden instead of display: none
+          visibility: this.model.store.readonly$.value ? 'hidden' : 'visible',
           position: 'absolute',
           top: `${-extra}px`,
           left: `${-extra}px`,
           bottom: `${-extra}px`,
           right: `${-extra}px`,
           zIndex: '1',
-          pointerEvents: this.editing || this.disableMask ? 'none' : 'auto',
+          pointerEvents:
+            this.editing || this.disableMask || this.model.store.readonly$.value
+              ? 'none'
+              : 'auto',
           borderRadius: `${
             this.model.props.edgeless.style.borderRadius * this.zoom
           }px`,
