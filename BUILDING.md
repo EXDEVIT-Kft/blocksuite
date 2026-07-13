@@ -31,12 +31,16 @@ A csomagokat `@algogrind/*` néven, privát (restricted) npm csomagként publik�
 
 ### Ajánlott: GitHub Action
 
-Az **Algogrind Publish** workflow (`.github/workflows/algogrind-publish.yml`) kézzel indítható (Actions fül → workflow_dispatch), és mindent elvégez a CI-ban: átnevezés → install → build → exports átírás → npm publish. Semmit nem commitol vissza a branchre.
+Az **Algogrind Publish** workflow (`.github/workflows/algogrind-publish.yml`) kézzel indítható (Actions fül → workflow_dispatch), és mindent elvégez a CI-ban: átnevezés → verzió-bump → install → build → exports átírás → npm publish. Semmit nem commitol vissza a branchre.
 
-Előfeltételek:
+Verziókezelés: a workflow a verziókat futáskor, csak a CI-munkakönyvtárban állítja be (`scripts/bump-version.mjs`).
+
+- A `version` inputot **üresen hagyva** lekérdezi az npm-ről a legutóbb publikált `@algogrind/affine` verziót, és annak patch-számát emeli (pl. `0.27.0` → `0.27.1`).
+- Minor/major kiadáshoz add meg explicit a verziót az inputban (pl. `0.28.0`).
+
+Előfeltétel:
 
 - `NPM_TOKEN` repository secret: npm automation token publish joggal az `@algogrind` orgra.
-- A verziószámok a branchen előre fel legyenek bumpolva — a már fent lévő verziókat a publish átugorja (`--tolerate-republish`).
 
 ### Kézi folyamat (lokálisan)
 
@@ -55,7 +59,11 @@ git checkout -b algogrind-publish
 yarn prepare-publish
 ```
 
-3. Verziók ellenőrzése a `packages/**/package.json` fájlokban — nem lehet hátrébb, mint a legutóbb publikált `@algogrind/*` verzió.
+3. Verziók beállítása — explicit verzióval, vagy argumentum nélkül + `NPM_TOKEN` env-vel az automatikus patch-bumphoz:
+
+```sh
+node scripts/bump-version.mjs 0.27.1
+```
 
 4. Build-melléktermékek törlése, újratelepítés (PowerShell):
 

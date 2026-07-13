@@ -8,11 +8,19 @@ name: Algogrind Publish
 # Requirements:
 #   - NPM_TOKEN repository secret: npm automation token with publish rights
 #     to the @algogrind org.
-#   - Package versions must be bumped on the branch before dispatching,
-#     otherwise the already-published versions are skipped (--tolerate-republish).
+#
+# Versioning: the workflow bumps every package version ephemerally before
+# publishing. With the `version` input empty it queries npm for the latest
+# published @algogrind/affine version and bumps its patch number; pass an
+# explicit version (e.g. 0.28.0) for minor/major releases.
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Publikálandó verzió (üresen hagyva: az npm-en lévő legutóbbi verzió patch-bumpja)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -39,6 +47,11 @@ jobs:
 
       - name: Rename packages to @algogrind scope
         run: node scripts/prepare-publish.mjs
+
+      - name: Bump package versions
+        run: node scripts/bump-version.mjs "${{ inputs.version }}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: yarn install --mode update-lockfile && yarn install
