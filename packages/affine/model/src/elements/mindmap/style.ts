@@ -4,6 +4,8 @@ import last from 'lodash-es/last';
 import { ConnectorMode } from '../../consts/connector.js';
 import { MindmapStyle } from '../../consts/mindmap.js';
 import { StrokeStyle } from '../../consts/note.js';
+// [ALGOGRIND] every mindmap node style uses FontWeight.Regular — the
+// SemiBold/Bold upstream defaults looked too heavy (user request)
 import { FontFamily, FontWeight, TextResizing } from '../../consts/text.js';
 import { type Color, DefaultTheme } from '../../themes/index.js';
 import type { MindmapNode } from './mindmap.js';
@@ -99,8 +101,9 @@ export class StyleOne extends MindmapStyleGetter {
     strokeColor: '#53b2ef',
 
     fontFamily: FontFamily.Poppins,
-    fontSize: 20,
-    fontWeight: FontWeight.SemiBold,
+    // [ALGOGRIND] root matches the child node font size (user request)
+    fontSize: 16,
+    fontWeight: FontWeight.Regular,
     color: DefaultTheme.pureBlack,
 
     filled: true,
@@ -158,7 +161,7 @@ export class StyleOne extends MindmapStyleGetter {
         color: DefaultTheme.pureWhite,
 
         fontFamily: FontFamily.Quicksand,
-        fontWeight: FontWeight.SemiBold,
+        fontWeight: FontWeight.Regular,
         fontSize: 15,
       },
       node: {
@@ -172,7 +175,7 @@ export class StyleOne extends MindmapStyleGetter {
 
         fontFamily: FontFamily.Poppins,
         fontSize: 16,
-        fontWeight: FontWeight.Medium,
+        fontWeight: FontWeight.Regular,
         color: DefaultTheme.pureBlack,
 
         filled: true,
@@ -209,8 +212,9 @@ export class StyleTwo extends MindmapStyleGetter {
     strokeColor: DefaultTheme.black,
 
     fontFamily: FontFamily.Poppins,
-    fontSize: 18,
-    fontWeight: FontWeight.SemiBold,
+    // [ALGOGRIND] root matches the child node font size (user request)
+    fontSize: 16,
+    fontWeight: FontWeight.Regular,
     color: DefaultTheme.pureBlack,
 
     filled: true,
@@ -270,7 +274,7 @@ export class StyleTwo extends MindmapStyleGetter {
         color: DefaultTheme.white,
 
         fontFamily: FontFamily.Quicksand,
-        fontWeight: FontWeight.SemiBold,
+        fontWeight: FontWeight.Regular,
         fontSize: 15,
       },
       node: {
@@ -284,7 +288,7 @@ export class StyleTwo extends MindmapStyleGetter {
 
         fontFamily: FontFamily.Poppins,
         fontSize: 16,
-        fontWeight: FontWeight.SemiBold,
+        fontWeight: FontWeight.Regular,
         color: DefaultTheme.pureBlack,
 
         filled: true,
@@ -322,7 +326,7 @@ export class StyleThree extends MindmapStyleGetter {
 
     fontFamily: FontFamily.Poppins,
     fontSize: 16,
-    fontWeight: FontWeight.Medium,
+    fontWeight: FontWeight.Regular,
     color: DefaultTheme.pureBlack,
 
     filled: true,
@@ -358,7 +362,7 @@ export class StyleThree extends MindmapStyleGetter {
 
         fontFamily: FontFamily.Poppins,
         fontSize: 16,
-        fontWeight: FontWeight.Medium,
+        fontWeight: FontWeight.Regular,
         color: DefaultTheme.pureBlack,
 
         filled: true,
@@ -400,7 +404,7 @@ export class StyleThree extends MindmapStyleGetter {
         color: DefaultTheme.pureWhite,
 
         fontFamily: FontFamily.Quicksand,
-        fontWeight: FontWeight.SemiBold,
+        fontWeight: FontWeight.Regular,
         fontSize: 15,
       },
       connector: {
@@ -435,8 +439,9 @@ export class StyleFour extends MindmapStyleGetter {
     strokeColor: 'transparent',
 
     fontFamily: FontFamily.Kalam,
-    fontSize: 22,
-    fontWeight: FontWeight.Bold,
+    // [ALGOGRIND] root matches the child node font size (user request)
+    fontSize: 18,
+    fontWeight: FontWeight.Regular,
     color: DefaultTheme.black,
 
     filled: true,
@@ -487,7 +492,7 @@ export class StyleFour extends MindmapStyleGetter {
         color: DefaultTheme.pureWhite,
 
         fontFamily: FontFamily.Quicksand,
-        fontWeight: FontWeight.SemiBold,
+        fontWeight: FontWeight.Regular,
         fontSize: 15,
       },
       node: {
