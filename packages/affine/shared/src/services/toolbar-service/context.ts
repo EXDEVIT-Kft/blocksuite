@@ -67,7 +67,10 @@ abstract class ToolbarContextBase {
   }
 
   get activated() {
-    if (this.readonly) return false;
+    // [ALGOGRIND] readonly no longer disables the toolbar wholesale — the
+    // action list is filtered instead (only `allowedWhenReadonly` actions,
+    // e.g. download, survive; see widgets/toolbar utils). When nothing
+    // remains after filtering, the toolbar resets itself.
     if (this.flags.accept()) return true;
     if (this.host.event.active) return true;
     // Selects `embed-synced-doc-block`

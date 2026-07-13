@@ -21,8 +21,8 @@ export class AffineMention extends SignalWatcher(
       font-feature-settings:
         'liga' off,
         'clig' off;
-      /* Client/baseMedium */
-      font-family: Inter;
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-size-base);
       font-style: normal;
       font-weight: 500;

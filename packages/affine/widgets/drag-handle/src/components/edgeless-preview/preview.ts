@@ -77,7 +77,8 @@ export class EdgelessDndPreviewElement extends LitElement {
 
       transform-origin: center;
 
-      font-family: var(--affine-font-family);
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
       box-shadow: 0px 0px 0px 0.5px #e3e3e4 inset;
     }
 

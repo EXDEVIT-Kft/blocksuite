@@ -33,7 +33,8 @@ export class BlockCaptionEditor<
       background: transparent;
       color: var(--algogrind-text-small-color);
       font-size: var(--algogrind-text-small-size);
-      font-family: inherit;
+      /* [ALGOGRIND] captions are always Quicksand, weight 500 */
+      font-family: var(--algogrind-text-caption-family);
       text-align: center;
       field-sizing: content;
       padding: 0;
@@ -42,6 +43,8 @@ export class BlockCaptionEditor<
     }
     .block-caption-editor::placeholder {
       color: var(--algogrind-text-placeholder-color);
+      /* [ALGOGRIND] captions are always Quicksand, weight 500 */
+      font-family: var(--algogrind-text-caption-family);
       font-weight: 500;
     }
   `;

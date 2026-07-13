@@ -15,6 +15,9 @@ type ActionBase = {
   when?: ((cx: ToolbarContext) => boolean) | boolean;
   active?: ((cx: ToolbarContext) => boolean) | boolean;
   placement?: ActionPlacement;
+  // [ALGOGRIND] readonly mode shows only the explicitly allowed actions
+  // (e.g. download) — everything else is filtered out
+  allowedWhenReadonly?: boolean;
 };
 
 export type ToolbarAction = ActionBase & {

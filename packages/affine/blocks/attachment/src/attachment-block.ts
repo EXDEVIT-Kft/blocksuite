@@ -511,10 +511,13 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
   };
 
   override renderBlock() {
+    // [ALGOGRIND] in readonly mode clicking the block selects it and the
+    // toolbar shows the download-only menu (allowedWhenReadonly filtering)
     return html`
       <div
         class=${classMap({
           'affine-attachment-container': true,
+          'affine-attachment-container-readonly': this.store.readonly,
           focused: this.selected$.value,
           'comment-highlighted': this.isCommentHighlighted,
         })}

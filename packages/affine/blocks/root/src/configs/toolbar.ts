@@ -69,6 +69,7 @@ import {
   type BlockComponent,
   BlockSelection,
   BlockViewIdentifier,
+  type EditorHost,
 } from '@blocksuite/std';
 import { toDraftModel } from '@blocksuite/store';
 import { html } from 'lit';
@@ -199,43 +200,74 @@ const alignActionGroup = {
   },
 } as const satisfies ToolbarActionGenerator;
 
+// [ALGOGRIND] only the primary text tools stay on the toolbar; the
+// secondary formatting moved to the top of the "..." menu (see
+// moreTextActionGroup below)
+const INLINE_PRIMARY_TEXT_ACTIONS = [
+  'bold',
+  'italic',
+  'underline',
+  'code',
+  'link',
+];
+
 const inlineTextActionGroup = {
   id: 'b.inline-text',
   when: ({ chain }) => isFormatSupported(chain).run()[0],
-  actions: textFormatConfigs.flatMap(
-    ({ id, name, action, activeWhen, icon }, score) => {
+  actions: textFormatConfigs
+    .filter(({ id }) => INLINE_PRIMARY_TEXT_ACTIONS.includes(id))
+    .map(({ id, name, action, activeWhen, icon }, index) => {
       const textAction: ToolbarAction = {
-        id,
+        // the toolbar orders actions by id, so the requested order
+        // (bold, italic, underline, code, link) needs an index prefix
+        id: `${String.fromCharCode(97 + index)}.${id}`,
         icon,
-        score,
+        score: index,
         tooltip: name,
         run: ({ host }) => action(host),
         active: ({ host }) => activeWhen(host),
       };
+      return textAction;
+    }),
+} as const satisfies ToolbarActionGroup;
 
-      if (id !== 'underline') {
-        return [textAction];
-      }
-
-      return [
-        textAction,
-        {
-          id: 'inline-latex',
-          icon: EquationInlineIcon({ width: '20', height: '20' }),
-          score: score + 0.5,
-          tooltip: 'Sorközi Egyenlet',
-          run: ({ host }) => {
-            host.std.command
-              .chain()
-              .pipe(getTextSelectionCommand)
-              .pipe(insertInlineLatex)
-              .run();
-          },
-          active: () => false,
-        },
-      ];
-    }
-  ),
+// [ALGOGRIND] secondary text formatting at the top of the "..." menu:
+// superscript, subscript, inline equation, strike — the group separator
+// under them is rendered automatically between More groups
+const moreTextActionGroup = {
+  placement: ActionPlacement.More,
+  id: 'a.a-text-formatting',
+  when: ({ chain }) => isFormatSupported(chain).run()[0],
+  actions: [
+    ...textFormatConfigs
+      .filter(({ id }) => id === 'superscript' || id === 'subscript')
+      .map(({ id, name, action, icon }) => ({
+        id: `${id === 'superscript' ? 'a' : 'b'}.${id}`,
+        label: name,
+        icon,
+        run: ({ host }: { host: EditorHost }) => action(host),
+      })),
+    {
+      id: 'c.inline-latex',
+      label: 'Sorközi Egyenlet',
+      icon: EquationInlineIcon({ width: '20', height: '20' }),
+      run({ host }) {
+        host.std.command
+          .chain()
+          .pipe(getTextSelectionCommand)
+          .pipe(insertInlineLatex)
+          .run();
+      },
+    },
+    ...textFormatConfigs
+      .filter(({ id }) => id === 'strike')
+      .map(({ name, action, icon }) => ({
+        id: 'd.strike',
+        label: name,
+        icon,
+        run: ({ host }: { host: EditorHost }) => action(host),
+      })),
+  ],
 } as const satisfies ToolbarActionGroup;
 
 const highlightActionGroup = {
@@ -386,6 +418,8 @@ export const builtinToolbarConfig = {
     conversionsActionGroup,
     alignActionGroup,
     inlineTextActionGroup,
+    // [ALGOGRIND] secondary text formatting at the top of the "..." menu
+    moreTextActionGroup,
     highlightActionGroup,
     // [ALGOGRIND] turnIntoDatabase and turnIntoLinkedDoc removed from the
     // format bar (fork commits 6356f587e, 714bff02a)

@@ -25,7 +25,8 @@ export class TestAffineEditorContainer extends SignalWatcher(
       overflow-y: auto;
       container-name: viewport;
       container-type: inline-size;
-      font-family: var(--affine-font-family);
+      /* [ALGOGRIND] fork-parity editor font */
+      font-family: var(--algogrind-text-paragraph-family);
     }
     .affine-page-viewport * {
       box-sizing: border-box;
@@ -39,7 +40,8 @@ export class TestAffineEditorContainer extends SignalWatcher(
 
     .playground-page-editor-container {
       flex-grow: 1;
-      font-family: var(--affine-font-family);
+      /* [ALGOGRIND] fork-parity editor font */
+      font-family: var(--algogrind-text-paragraph-family);
       display: block;
     }
 
@@ -54,7 +56,8 @@ export class TestAffineEditorContainer extends SignalWatcher(
     }
 
     .edgeless-editor-container {
-      font-family: var(--affine-font-family);
+      /* [ALGOGRIND] fork-parity editor font */
+      font-family: var(--algogrind-text-paragraph-family);
       background: var(--affine-background-primary-color);
       display: block;
       height: 100%;

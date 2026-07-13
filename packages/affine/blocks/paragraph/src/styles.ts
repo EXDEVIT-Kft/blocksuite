@@ -214,6 +214,13 @@ export const paragraphBlockStyles = css`
     }
   }
   /* [ALGOGRIND] added special collapsed heading styles */
+  .heading-collapsed {
+    /* the z-index: -1 background must stay inside the paragraph's own
+       stacking context — without this it slips behind the edgeless note
+       background and becomes invisible on the canvas */
+    isolation: isolate;
+  }
+
   .heading-collapsed::after {
     content: '';
     position: absolute;

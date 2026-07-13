@@ -1,13 +1,5 @@
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import {
-  css,
-  html,
-  LitElement,
-  nothing,
-  type TemplateResult,
-  unsafeCSS,
-} from 'lit';
+import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class FootNotePopupChip extends LitElement {
@@ -48,7 +40,8 @@ export class FootNotePopupChip extends LitElement {
       color: ${unsafeCSSVarV2('text/primary')};
       font-size: var(--affine-font-sm);
       font-weight: 500;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
     }
   `;
 

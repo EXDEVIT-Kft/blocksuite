@@ -8,7 +8,6 @@ import {
   type ShapeProps,
   type StrokeStyle,
 } from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import {
   type ColorEvent,
   stopPropagation,
@@ -61,9 +60,12 @@ export class EdgelessShapeColorPicker extends WithDisposable(
       gap: 8px;
     }
 
+    /* [ALGOGRIND] match the slash menu group title style (Quicksand) */
     .picker-label {
-      color: ${unsafeCSSVarV2('text/secondary')};
-      font-weight: 400;
+      font-family: var(--algogrind-text-caption-family);
+      font-size: var(--algogrind-text-caption-size);
+      font-weight: 600;
+      color: var(--algogrind-text-caption-color);
     }
   `;
 

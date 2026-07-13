@@ -34,6 +34,8 @@ const builtinToolbarConfig = {
     {
       id: 'a.download',
       tooltip: 'Letöltés',
+      // [ALGOGRIND] page images already show the floating corner download
+      // button in readonly — no toolbar duplicate needed here
       icon: DownloadIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -178,6 +180,8 @@ const builtinSurfaceToolbarConfig = {
     {
       id: 'a.download',
       tooltip: 'Letöltés',
+      // [ALGOGRIND] downloads stay available in readonly mode
+      allowedWhenReadonly: true,
       icon: DownloadIcon(),
       run(ctx) {
         const block = ctx.getCurrentBlockByType(ImageEdgelessBlockComponent);

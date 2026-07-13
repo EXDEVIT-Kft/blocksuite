@@ -83,13 +83,9 @@ export class HighlightDropdownMenu extends LitElement {
         .contentPadding="${'8px'}"
         .button=${html`
           <editor-icon-button aria-label="highlight" .tooltip="${'Kiemelés'}">
-            <affine-highlight-duotone-icon
-              style=${styleMap({
-                '--color':
-                  // latestHighlightColor ?? 'var(--affine-text-primary-color)',
-                  'var(--affine-text-primary-color)',
-              })}
-            ></affine-highlight-duotone-icon>
+            <!-- [ALGOGRIND] no --color override: the icon inherits the
+              toolbar's icon color (currentColor), matching the other icons -->
+            <affine-highlight-duotone-icon></affine-highlight-duotone-icon>
             ${EditorChevronDown}
           </editor-icon-button>
         `}

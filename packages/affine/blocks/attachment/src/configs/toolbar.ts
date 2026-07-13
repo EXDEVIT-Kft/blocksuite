@@ -170,6 +170,8 @@ const replaceAction = {
 const downloadAction = {
   id: 'd.download',
   tooltip: 'Letöltés',
+  // [ALGOGRIND] downloads stay available in readonly mode
+  allowedWhenReadonly: true,
   icon: DownloadIcon(),
   run(ctx) {
     const block = ctx.getCurrentBlockByType(AttachmentBlockComponent);

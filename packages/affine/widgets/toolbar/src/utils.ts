@@ -200,6 +200,26 @@ const merge = (a: any, b: any) =>
     Array.isArray(obj) ? group(obj.concat(src)) : src
   );
 
+// [ALGOGRIND] readonly whitelist: keeps actions flagged with
+// `allowedWhenReadonly` (recursively for groups); everything else is dropped
+function filterReadonlyAllowedActions(
+  actions: ToolbarActions
+): ToolbarActions {
+  return actions
+    .map(action => {
+      if (action.allowedWhenReadonly) return action;
+
+      if ('actions' in action && Array.isArray(action.actions)) {
+        const nested = filterReadonlyAllowedActions(action.actions);
+        if (nested.length === 0) return null;
+        return { ...action, actions: nested };
+      }
+
+      return null;
+    })
+    .filter(action => action !== null) as ToolbarActions;
+}
+
 /**
  * Renders toolbar
  *
@@ -217,7 +237,7 @@ export function renderToolbar(
   const hasSurfaceScope = flavour.includes('surface');
   const toolbarRegistry = context.toolbarRegistry;
 
-  const actions = [
+  let actions = [
     flavour,
     `custom:${flavour}`,
     hasSurfaceScope ? ['affine:surface:*', 'custom:affine:surface:*'] : [],
@@ -233,6 +253,12 @@ export function renderToolbar(
         : (module.config.when ?? true)
     )
     .flatMap(module => module.config.actions);
+
+  // [ALGOGRIND] readonly mode: only the explicitly allowed actions survive
+  // (e.g. download); with nothing left the toolbar resets below
+  if (context.readonly) {
+    actions = filterReadonlyAllowedActions(actions);
+  }
 
   const combined = combine(actions, context);
 

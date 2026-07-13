@@ -369,7 +369,7 @@ export class EdgelessConnectorLabelEditor extends WithDisposable(
         ${isEmpty
           ? html`
               <span class="edgeless-connector-label-editor-placeholder">
-                Add text
+                Szöveg
               </span>
             `
           : nothing}

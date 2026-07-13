@@ -4,8 +4,7 @@ import {
 } from '@blocksuite/affine-shared/services';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { CloseIcon } from '@blocksuite/icons/lit';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, nothing, unsafeCSS } from 'lit';
+import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -41,7 +40,8 @@ export class EmbedIframeLinkInputPopup extends EmbedIframeLinkInputBase {
       border-radius: 8px;
       background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
       box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
     }
 
     .link-input-popup-content-wrapper {

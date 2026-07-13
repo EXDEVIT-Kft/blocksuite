@@ -49,8 +49,8 @@ export class EmbedIframeLoadingCard extends LitElement {
           overflow: hidden;
           color: ${unsafeCSSVarV2('text/primary')};
           text-overflow: ellipsis;
-          /* Client/smMedium */
-          font-family: Inter;
+          /* [ALGOGRIND] */
+          font-family: var(--algogrind-text-paragraph-family);
           font-size: var(--affine-font-sm);
           font-style: normal;
           font-weight: 500;

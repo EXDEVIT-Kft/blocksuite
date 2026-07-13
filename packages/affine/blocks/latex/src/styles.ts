@@ -22,7 +22,8 @@ export const latexBlockStyles = css`
 
   .latex-block-error-placeholder {
     color: ${unsafeCSSVarV2('text/highlight/fg/red')};
-    font-family: Inter;
+    /* [ALGOGRIND] */
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: 12px;
     font-weight: 500;
     line-height: normal;
@@ -31,7 +32,8 @@ export const latexBlockStyles = css`
 
   .latex-block-empty-placeholder {
     color: ${unsafeCSSVarV2('text/secondary')};
-    font-family: Inter;
+    /* [ALGOGRIND] */
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: 12px;
     font-weight: 500;
     line-height: normal;

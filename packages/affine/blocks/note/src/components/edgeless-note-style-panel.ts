@@ -67,17 +67,17 @@ export class EdgelessNoteStylePanel extends SignalWatcher(
       gap: 4px;
       height: 22px;
       align-self: stretch;
-      color: ${unsafeCSSVarV2('text/secondary')};
       font-feature-settings:
         'liga' off,
         'clig' off;
 
-      /* Client/sm */
-      font-family: var(--affine-font-family);
-      font-size: 14px;
+      /* [ALGOGRIND] match the slash menu group title style (Quicksand) */
+      font-family: var(--algogrind-text-caption-family);
+      font-size: var(--algogrind-text-caption-size);
       font-style: normal;
-      font-weight: 400;
-      line-height: 22px; /* 157.143% */
+      font-weight: 600;
+      line-height: 22px;
+      color: var(--algogrind-text-caption-color);
     }
 
     edgeless-line-styles-panel {

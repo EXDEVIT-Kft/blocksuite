@@ -1,5 +1,4 @@
 import type { EditorHost } from '@blocksuite/std';
-import { baseTheme } from '@toeverything/theme';
 import { html } from 'lit';
 
 import { createToastContainer } from './create.js';
@@ -25,7 +24,8 @@ export const toast = (
   const styles = `
     max-width: 480px;
     text-align: center;
-    font-family: ${baseTheme.fontSansFamily};
+    /* [ALGOGRIND] */
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-sm);
     padding: 6px 12px;
     margin: 10px 0 0 0;

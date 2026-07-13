@@ -7,6 +7,7 @@ import {
 } from '@blocksuite/affine-shared/commands';
 import { ImageSelection } from '@blocksuite/affine-shared/selection';
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { DownloadIcon } from '@blocksuite/icons/lit';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import type { BlockComponent, UIEventStateContext } from '@blocksuite/std';
 import {
@@ -39,6 +40,31 @@ export class ImageBlockPageComponent extends SignalWatcher(
       justify-content: center;
       line-height: 0;
       cursor: pointer;
+    }
+
+    /* [ALGOGRIND] readonly: floating download button over the image */
+    affine-page-image .algogrind-image-readonly-download {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 6px;
+      background: var(--algogrind-background-color, #fff);
+      color: var(--algogrind-text-paragraph-color, #333);
+      box-shadow: var(--algogrind-shadow-xsmall, 0 1px 4px rgba(0, 0, 0, 0.2));
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    affine-page-image .resizable-img:hover .algogrind-image-readonly-download {
+      opacity: 1;
     }
 
     affine-page-image .loading {
@@ -386,6 +412,22 @@ export class ImageBlockPageComponent extends SignalWatcher(
         />
 
         ${imageSelectedRect}
+        ${when(
+          this._doc.readonly && Boolean(blobUrl),
+          // [ALGOGRIND] readonly: floating download button over the image
+          () => html`
+            <button
+              class="algogrind-image-readonly-download"
+              title="Kép letöltése"
+              @click=${(e: MouseEvent) => {
+                e.stopPropagation();
+                this.block.download();
+              }}
+            >
+              ${DownloadIcon({ width: '18px', height: '18px' })}
+            </button>
+          `
+        )}
       </div>
 
       ${when(loading, () => html`<div class="loading">${icon}</div>`)}

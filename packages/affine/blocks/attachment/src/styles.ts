@@ -15,10 +15,6 @@ export const styles = css`
     }
   }
 
-  .affine-attachment-container-readonly {
-    cursor: pointer;
-  }
-
   .affine-attachment-container.comment-highlighted {
     outline: 2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')};
   }
@@ -100,7 +96,8 @@ export const styles = css`
     border-radius: 4px;
     cursor: pointer;
     color: ${unsafeCSSVarV2('button/primary')};
-    font-family: var(--affine-font-family);
+    /* [ALGOGRIND] */
+    font-family: var(--algogrind-text-paragraph-family);
     font-size: var(--affine-font-xs);
     font-style: normal;
     font-weight: 500;
@@ -150,10 +147,26 @@ export const styles = css`
     }
   }
 
+  /* [ALGOGRIND] readonly: the whole card is a download button */
+  .affine-attachment-container-readonly {
+    cursor: pointer;
+  }
+
   .affine-attachment-embed-container {
     position: relative;
     width: 100%;
     height: 100%;
+    /* [ALGOGRIND] a fraction of overflow from the aspect-ratio sized iframe
+       must not spill scrollbars onto the card */
+    overflow: hidden;
+  }
+
+  /* [ALGOGRIND] in edgeless the block bound defines the size (the pdf
+     constants are already A4-proportioned), so the iframe simply fills the
+     container instead of sizing itself via aspect-ratio */
+  affine-edgeless-attachment .affine-attachment-embed-container > iframe {
+    aspect-ratio: auto !important;
+    height: 100% !important;
   }
 
   .affine-attachment-embed-status {

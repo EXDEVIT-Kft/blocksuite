@@ -1,13 +1,11 @@
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
-import { baseTheme } from '@toeverything/theme';
 import {
   css,
   html,
   LitElement,
   nothing,
   type TemplateResult,
-  unsafeCSS,
 } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -26,7 +24,8 @@ export class CitationCard extends SignalWatcher(WithDisposable(LitElement)) {
       padding: 4px 8px;
       background-color: ${unsafeCSSVarV2('layer/background/primary')};
       border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
       cursor: pointer;
     }
 

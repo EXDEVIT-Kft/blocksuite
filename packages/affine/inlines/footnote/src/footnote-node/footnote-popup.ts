@@ -13,8 +13,7 @@ import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import { computed, signal } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import type { FootNotePopupClickHandler } from './footnote-config';
@@ -39,7 +38,8 @@ export class FootNotePopup extends SignalWatcher(WithDisposable(LitElement)) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
       font-size: var(--affine-font-xs);
       font-style: normal;
       font-weight: 400;

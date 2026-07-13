@@ -59,6 +59,8 @@ export class EdgelessRootBlockComponent extends BlockComponent<
       display: block;
       height: 100%;
       touch-action: none;
+      /* [ALGOGRIND] fork-parity: edgeless text defaults to Quicksand */
+      font-family: var(--algogrind-text-paragraph-family);
     }
 
     .widgets-container {
@@ -85,7 +87,8 @@ export class EdgelessRootBlockComponent extends BlockComponent<
     }
 
     .edgeless-container {
-      color: var(--affine-text-primary-color);
+      /* [ALGOGRIND] fork-parity text color */
+      color: var(--algogrind-text-paragraph-color);
       position: relative;
     }
 

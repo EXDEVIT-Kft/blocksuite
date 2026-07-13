@@ -59,7 +59,10 @@ export function getListIcon(
         @click=${onClick}
       >
         ${model.props.checked
-          ? CheckBoxCheckSolidIcon({ style: 'color: #1E96EB' })
+          ? // [ALGOGRIND] fork-parity: checked todo uses the brand primary color
+            CheckBoxCheckSolidIcon({
+              style: 'color: var(--algogrind-primary-color)',
+            })
           : CheckBoxUnIcon()}
       </div>`;
     case 'toggle':

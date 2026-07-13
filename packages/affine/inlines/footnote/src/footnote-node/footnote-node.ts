@@ -20,8 +20,7 @@ import {
 } from '@blocksuite/std/inline';
 import type { DeltaInsert } from '@blocksuite/store';
 import { flip, offset, shift } from '@floating-ui/dom';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, nothing, unsafeCSS } from 'lit';
+import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { ref } from 'lit-html/directives/ref.js';
@@ -54,7 +53,8 @@ export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
         border-radius: 50%;
         text-align: center;
         text-overflow: ellipsis;
-        font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+        /* [ALGOGRIND] */
+        font-family: var(--algogrind-text-paragraph-family);
         transition: background 0.3s ease-in-out;
         transform: translateY(-0.2em);
       }

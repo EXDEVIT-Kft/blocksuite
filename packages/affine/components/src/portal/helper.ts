@@ -194,8 +194,10 @@ export function createLitPortal({
         const { x, y } = positionReturn;
         // Use transform maybe cause overlay-mask offset issue
         // portalRoot.style.transform = `translate(${x}px, ${y}px)`;
-        portalRoot.style.left = `${x}px`;
-        portalRoot.style.top = `${y}px`;
+        // [ALGOGRIND] round to whole pixels: fractional offsets rasterize the
+        // popup between device pixels, which makes icons and text look blurry.
+        portalRoot.style.left = `${Math.round(x)}px`;
+        portalRoot.style.top = `${Math.round(y)}px`;
         if (portalRoot.style.visibility === 'hidden') {
           portalRoot.style.visibility = visibility;
         }

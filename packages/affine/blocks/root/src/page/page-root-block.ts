@@ -55,6 +55,18 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
       height: 100%;
     }
 
+    /* [ALGOGRIND] general rule: every text inside the editor defaults to
+       Quicksand. Zero-specificity :where() keeps code blocks
+       (--algogrind-text-code-block-family) and KaTeX (class-based
+       font-family rules) intact; form controls do not inherit fonts by
+       default, so force them to. */
+    editor-host {
+      font-family: var(--algogrind-text-paragraph-family);
+    }
+    editor-host :where(input, textarea, button, select) {
+      font-family: inherit;
+    }
+
     affine-page-root {
       display: block;
       height: 100%;
@@ -66,11 +78,12 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
       flex-direction: column;
       width: 100%;
       height: 100%;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
-      font-weight: 400;
+      /* [ALGOGRIND] fork-parity editor base typography */
+      font-family: var(--algogrind-text-paragraph-family);
+      font-size: var(--algogrind-text-paragraph-size);
+      line-height: var(--algogrind-line-height);
+      color: var(--algogrind-text-paragraph-color);
+      font-weight: 500;
       max-width: var(--affine-editor-width);
       margin: 0 auto;
 

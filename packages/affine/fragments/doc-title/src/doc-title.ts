@@ -20,8 +20,9 @@ const DOC_BLOCK_CHILD_PADDING = 20;
 export class DocTitle extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     .doc-icon-container {
-      font-family: var(--affine-font-family);
-      color: var(--affine-text-primary-color);
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
+      color: var(--algogrind-text-paragraph-color);
     }
     .doc-title-container {
       font-family: var(--algogrind-text-doc-title-family);

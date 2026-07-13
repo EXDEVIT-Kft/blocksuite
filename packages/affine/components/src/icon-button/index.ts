@@ -1,4 +1,3 @@
-import { baseTheme } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   css,
@@ -6,7 +5,6 @@ import {
   LitElement,
   nothing,
   type TemplateResult,
-  unsafeCSS,
 } from 'lit';
 import { property, query } from 'lit/decorators.js';
 
@@ -43,7 +41,8 @@ export class IconButton extends LitElement {
       background: transparent;
       cursor: pointer;
       user-select: none;
-      font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+      /* [ALGOGRIND] */
+      font-family: var(--algogrind-text-paragraph-family);
       color: var(--affine-text-primary-color);
       pointer-events: auto;
       padding: 4px;

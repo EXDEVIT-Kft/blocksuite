@@ -104,8 +104,11 @@ export function createButtonPopper(options: ButtonPopperOptions) {
         Object.assign(popperElement.style, {
           position: 'absolute',
           zIndex: 1,
-          left: `${x}px`,
-          top: `${y}px`,
+          // [ALGOGRIND] round to whole pixels: fractional offsets (esp. inside
+          // the composited editor-toolbar layer) rasterize the popup between
+          // device pixels, which makes its icons and text look blurry.
+          left: `${Math.round(x)}px`,
+          top: `${Math.round(y)}px`,
         });
       })
       .catch(console.error);

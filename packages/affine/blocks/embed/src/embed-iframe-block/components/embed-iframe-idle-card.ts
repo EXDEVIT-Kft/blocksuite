@@ -1,8 +1,7 @@
 import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { EmbedIcon } from '@blocksuite/icons/lit';
-import { baseTheme } from '@toeverything/theme';
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -41,7 +40,8 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 160% */
-        font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
+        /* [ALGOGRIND] */
+        font-family: var(--algogrind-text-paragraph-family);
         color: ${unsafeCSSVarV2('text/secondary')};
         white-space: nowrap;
         overflow: hidden;

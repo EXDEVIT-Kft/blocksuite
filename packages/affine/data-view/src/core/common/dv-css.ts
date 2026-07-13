@@ -7,13 +7,15 @@ export const dataViewVars = {
 };
 
 export const dataViewRoot = css({
-  fontFamily: 'var(--affine-font-family)',
+  // [ALGOGRIND] database/data-view text uses Quicksand
+  fontFamily: 'var(--algogrind-text-paragraph-family, var(--affine-font-family))',
   [dataViewVars.cellTextSize]: '14px',
   [dataViewVars.cellTextLineHeight]: '22px',
 });
 
 export const withDataViewCssVariable = css({
-  fontFamily: 'var(--affine-font-family)',
+  // [ALGOGRIND] database/data-view text uses Quicksand
+  fontFamily: 'var(--algogrind-text-paragraph-family, var(--affine-font-family))',
   [dataViewVars.cellTextSize]: '14px',
   [dataViewVars.cellTextLineHeight]: '22px',
 });

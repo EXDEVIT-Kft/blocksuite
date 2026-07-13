@@ -185,12 +185,16 @@ const embedConfig: AttachmentEmbedConfig[] = [
         xywh: bound.serialize(),
       });
     },
-    render: (_, blobUrl) => {
+    render: (model, blobUrl) => {
       // More options: https://tinytip.co/tips/html-pdf-params/
       // https://chromium.googlesource.com/chromium/src/+/refs/tags/121.0.6153.1/chrome/browser/resources/pdf/open_pdf_params_parser.ts
       // [ALGOGRIND] FitH + A4 aspect ratio: the embed is exactly one
-      // portrait A4 page tall (in edgeless the bound caps it via maxHeight)
-      const parameters = '#toolbar=0&view=FitH';
+      // portrait A4 page tall (in edgeless the bound caps it via maxHeight).
+      // In readonly mode Chrome's own PDF toolbar stays visible so readers
+      // can download/print the file.
+      const parameters = model.store.readonly
+        ? '#view=FitH'
+        : '#toolbar=0&view=FitH';
       return html`
         <iframe
           style=${styleMap({
