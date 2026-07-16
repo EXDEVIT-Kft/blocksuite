@@ -185,4 +185,14 @@ export const styles = css`
   .affine-attachment-embed-container.selected .affine-attachment-embed-event-mask {
     display: none;
   }
+
+  /* [ALGOGRIND] in edgeless the mask must stay active even while selected,
+     otherwise the PDF iframe swallows the pointer events and the block can't
+     be dragged (it won't move / stutters). Reading the PDF inline is replaced
+     by the peek view (double click), matching the embed-synced-doc block. */
+  affine-edgeless-attachment
+    .affine-attachment-embed-container.selected
+    .affine-attachment-embed-event-mask {
+    display: block;
+  }
 `;
