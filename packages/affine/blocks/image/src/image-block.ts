@@ -44,6 +44,12 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
     'Image'
   );
 
+  // [ALGOGRIND] Lazy image loading: whether the initial blob fetch has been
+  // triggered, and the observer that gates it (see `connectedCallback`).
+  private _hasFetchedBlob = false;
+
+  private _lazyLoadObserver?: IntersectionObserver;
+
   get blobUrl() {
     return this.resourceController.blobUrl$.value;
   }
@@ -123,9 +129,50 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
 
     this.disposables.add(
       this.model.props.sourceId$.subscribe(() => {
-        this.refreshData();
+        // [ALGOGRIND] The initial blob fetch is gated by the lazy-load observer
+        // below. Only react here to *later* sourceId changes, and only once the
+        // image has already been fetched (i.e. was scrolled into view). If it
+        // has not been fetched yet, the observer fetches the current sourceId
+        // when the block first nears the viewport.
+        if (this._hasFetchedBlob) this.refreshData();
       })
     );
+
+    // [ALGOGRIND] Lazy image loading: defer the initial blob fetch until the
+    // block is near the viewport, so opening a doc full of images does not fire
+    // a network request for every image on mount. `<img loading="lazy">` only
+    // defers rendering, not the blob fetch, which runs on the mount path.
+    // Observing the host element (connectedCallback runs on every reconnect)
+    // keeps this correct across block moves.
+    if (!this._hasFetchedBlob) {
+      this._lazyLoadObserver?.disconnect();
+      this._lazyLoadObserver = new IntersectionObserver(
+        entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            this._fetchBlobOnce();
+          }
+        },
+        // ~one screen of prefetch above and below the viewport.
+        { rootMargin: '800px 0px' }
+      );
+      this._lazyLoadObserver.observe(this);
+    }
+  }
+
+  override disconnectedCallback() {
+    this._lazyLoadObserver?.disconnect();
+    this._lazyLoadObserver = undefined;
+    super.disconnectedCallback();
+  }
+
+  // [ALGOGRIND] Trigger the initial blob fetch exactly once, then stop
+  // observing.
+  private _fetchBlobOnce() {
+    this._lazyLoadObserver?.disconnect();
+    this._lazyLoadObserver = undefined;
+    if (this._hasFetchedBlob) return;
+    this._hasFetchedBlob = true;
+    this.refreshData();
   }
 
   override firstUpdated() {
