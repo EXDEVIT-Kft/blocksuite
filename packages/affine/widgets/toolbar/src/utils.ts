@@ -87,6 +87,15 @@ export function autoUpdatePosition(
             },
           }),
           isInline ? inline() : undefined,
+          // [ALGOGRIND] `flip` must run before `shift`: `shift` only enables
+          // vertical (cross-axis) shifting when the resolved placement is
+          // `bottom`. If `shift` ran first (on the original `top` placement),
+          // that check is always false and the toolbar can't be pulled back
+          // on-screen after `flip` sends it below the reference — so on a short
+          // viewport (e.g. the on-screen keyboard is up) it ends up rendered
+          // off the bottom edge, half-covered. Flipping first lets `shift` see
+          // the `bottom` placement and keep it within the visible viewport.
+          flip({ padding: 10 }),
           shift(state => ({
             padding: {
               top: 10,
@@ -97,7 +106,6 @@ export function autoUpdatePosition(
             crossAxis: state.placement.includes('bottom'),
             limiter: limitShift(),
           })),
-          flip({ padding: 10 }),
           hide(),
         ],
       };

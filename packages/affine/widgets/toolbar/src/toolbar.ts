@@ -81,6 +81,28 @@ export class AffineToolbarWidget extends WidgetComponent {
       }
     }
 
+    /* [ALGOGRIND] Keep the floating toolbar within the viewport on narrow
+       screens — e.g. the desktop editor opened on a phone, where the
+       device-flagged mobile branch below is not active. Cap the width to the
+       viewport and let the button row wrap instead of overflowing off-screen
+       or being mispositioned by the floating-ui clamp when it is wider than
+       the viewport. Wrapping (rather than overflow scroll) keeps the dropdown
+       menus — which render as absolutely-positioned children — from being
+       clipped. On wide screens \`max-content\` stays below the cap, so this is
+       a no-op there. The mobile and inner variants keep their own behavior. */
+    editor-toolbar:not([data-mobile='true']):not([data-placement='inner']) {
+      /* Keep the toolbar within the viewport on narrow screens — e.g. the
+         desktop editor opened on a phone, where the device-flagged mobile
+         branch below is not active. The button row inside \`editor-toolbar\`
+         scrolls horizontally (see its .toolbar-scroll wrapper) once it no
+         longer fits. \`- 32px\` leaves room for the toolbar's own horizontal
+         padding and a small gap from the viewport edges (matches the mobile
+         branch below); \`:host\` is \`box-sizing: content-box\`, so the padding
+         sits outside this cap. On wide screens \`max-content\` stays below the
+         cap, so this is a no-op there. */
+      max-width: calc(100vw - 32px);
+    }
+
     editor-toolbar[data-open][data-inline='true'] {
       transition-property: opacity, overlay, display, transform;
       transition-timing-function: ease;
