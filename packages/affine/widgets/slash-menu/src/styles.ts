@@ -19,6 +19,10 @@ export const styles = css`
     box-sizing: border-box;
     padding: 8px 4px 8px 8px;
     width: 280px;
+    /* Keep the menu on-screen on narrow viewports (matches the edge gap used
+       by the position clamp). Keep the 280px width above in sync with
+       AFFINE_SLASH_MENU_WIDTH in consts.ts. */
+    max-width: calc(100vw - 40px);
     overflow-y: auto;
     font-family: var(--algogrind-text-paragraph-family);
 

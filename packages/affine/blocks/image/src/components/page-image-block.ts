@@ -254,27 +254,28 @@ export class ImageBlockPageComponent extends SignalWatcher(
     });
   }
 
+  // Bound declaratively via `@click` in `render()` (see `.resizable-img`).
+  // It must not be attached imperatively in `firstUpdated`: when the block is
+  // drag-moved, the `.resizable-img` node is re-created on re-render, which
+  // would leave an imperative listener stranded on the detached node and make
+  // the moved image unclickable.
+  private readonly _onImageClick = (event: MouseEvent) => {
+    // the peek view need handle shift + click
+    if (event.shiftKey) return;
+
+    event.stopPropagation();
+    const selection = this._host.selection;
+    selection.update(selList => {
+      return selList
+        .filter(sel => !['block', 'image', 'text'].includes(sel.type))
+        .concat(
+          selection.create(ImageSelection, { blockId: this.block.blockId })
+        );
+    });
+  };
+
   private _handleSelection() {
     const selection = this._host.selection;
-
-    this._disposables.addFromEvent(
-      this.resizeImg,
-      'click',
-      (event: MouseEvent) => {
-        // the peek view need handle shift + click
-        if (event.shiftKey) return;
-
-        event.stopPropagation();
-        selection.update(selList => {
-          return selList
-            .filter(sel => !['block', 'image', 'text'].includes(sel.type))
-            .concat(
-              selection.create(ImageSelection, { blockId: this.block.blockId })
-            );
-        });
-        return true;
-      }
-    );
 
     this.block.handleEvent(
       'click',
@@ -401,6 +402,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
           'comment-highlighted': this.block.isCommentHighlighted,
         })}
         style=${styleMap(imageSize)}
+        @click=${this._onImageClick}
       >
         <img
           class="drag-target"

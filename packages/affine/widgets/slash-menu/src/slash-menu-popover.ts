@@ -32,6 +32,7 @@ import {
   AFFINE_SLASH_MENU_MAX_HEIGHT,
   AFFINE_SLASH_MENU_TOOLTIP_TIMEOUT,
   AFFINE_SLASH_MENU_TRIGGER_KEY,
+  AFFINE_SLASH_MENU_WIDTH,
 } from './consts.js';
 import { slashItemToolTipStyle, styles } from './styles.js';
 import type {
@@ -317,7 +318,14 @@ export class SlashMenu extends WithDisposable(LitElement) {
 
       // Handle position
       const updatePosition = throttle(() => {
-        this._position = getPopperPosition(this, currRage);
+        // The `.slash-menu` content renders with `position: fixed` inside the
+        // shadow root, so the host element (`this`) measures as zero width
+        // here. Pass the real width so the viewport-boundary clamp keeps the
+        // menu on-screen instead of letting it overflow the right edge on
+        // narrow viewports.
+        this._position = getPopperPosition(this, currRage, {
+          size: { width: AFFINE_SLASH_MENU_WIDTH },
+        });
       }, 10);
 
       this.disposables.addFromEvent(window, 'resize', updatePosition);

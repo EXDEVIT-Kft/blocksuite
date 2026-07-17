@@ -79,7 +79,23 @@ export function getPopperPosition(
   reference: {
     getBoundingClientRect: () => DOMRect;
   },
-  { gap = 12, offsetY = 5 }: { gap?: number; offsetY?: number } = {}
+  {
+    gap = 12,
+    offsetY = 5,
+    size,
+  }: {
+    gap?: number;
+    offsetY?: number;
+    /**
+     * Explicit popper size used for the viewport-boundary clamp.
+     *
+     * Pass this when `popper.getBoundingClientRect()` can't report the real
+     * size at position-calc time — e.g. the popper renders its content with
+     * `position: fixed` inside a shadow root, so the host element measures as
+     * zero width and the clamp would let the menu overflow the viewport.
+     */
+    size?: { width?: number; height?: number };
+  } = {}
 ) {
   if (!popper) {
     // foolproof, someone may use element with non-null assertion
@@ -113,9 +129,14 @@ export function getPopperPosition(
   // because we are calculated its correct height
   const popperRect = popper?.getBoundingClientRect();
 
+  const objRect = {
+    width: size?.width ?? popperRect.width,
+    height: size?.height ?? popperRect.height,
+  };
+
   const safeCoordinate = calcSafeCoordinate({
     positioningPoint,
-    objRect: popperRect,
+    objRect,
     boundaryRect,
     offsetY: placement === 'bottom' ? offsetY : -offsetY,
   });
