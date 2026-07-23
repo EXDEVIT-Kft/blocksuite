@@ -5,8 +5,16 @@ import {
   defineBlockSchema,
 } from '@blocksuite/store';
 
+// [ALGOGRIND] Edgeless canvas background pattern options.
+export type EdgelessGridBgMode = 'dot' | 'grid' | 'lines' | 'none';
+
 export type RootBlockProps = {
   title: Text;
+  // [ALGOGRIND] Edgeless canvas background pattern, stored PER-DOCUMENT so each
+  // whiteboard keeps its own background across reloads. Consumed by
+  // edgeless-root-block via the .edgeless-background[data-grid-bg] CSS variants.
+  // Old docs saved before this prop existed read as undefined → treated as 'dot'.
+  edgelessGridBg: EdgelessGridBgMode;
 };
 
 export class RootBlockModel extends BlockModel<RootBlockProps> {
@@ -54,6 +62,7 @@ export const RootBlockSchema = defineBlockSchema({
   flavour: 'affine:page',
   props: (internal): RootBlockProps => ({
     title: internal.Text(),
+    edgelessGridBg: 'dot',
   }),
   metadata: {
     version: 2,

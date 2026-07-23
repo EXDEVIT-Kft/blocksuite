@@ -80,10 +80,42 @@ export class EdgelessRootBlockComponent extends BlockComponent<
     .edgeless-background {
       height: 100%;
       background-color: var(--algogrind-background-color);
+      /* [ALGOGRIND] Default: dotted grid. The pattern is switchable via the
+         data-grid-bg attribute (set from the editor setting edgelessGridBg);
+         background-size/position are set imperatively for pan/zoom and apply to
+         every variant. See _initBackgroundPattern. */
       background-image: radial-gradient(
         var(--algogrind-grid-color) 1px,
         var(--algogrind-background-color) 1px
       );
+    }
+
+    /* [ALGOGRIND] Square grid: two 1px lines crossing at each grid step. */
+    .edgeless-background[data-grid-bg='grid'] {
+      background-image: linear-gradient(
+          0deg,
+          var(--algogrind-grid-color) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          var(--algogrind-grid-color) 1px,
+          transparent 1px
+        );
+    }
+
+    /* [ALGOGRIND] Horizontal lines (ruled / striped). */
+    .edgeless-background[data-grid-bg='lines'] {
+      background-image: linear-gradient(
+        0deg,
+        var(--algogrind-grid-color) 1px,
+        transparent 1px
+      );
+    }
+
+    /* [ALGOGRIND] Plain background, no pattern. */
+    .edgeless-background[data-grid-bg='none'] {
+      background-image: none;
     }
 
     .edgeless-container {
@@ -474,6 +506,23 @@ export class EdgelessRootBlockComponent extends BlockComponent<
     );
 
     this._refreshLayerViewport();
+
+    this._initBackgroundPattern();
+  }
+
+  // [ALGOGRIND] Drive the edgeless canvas background pattern from the PER-DOCUMENT
+  // root prop `edgelessGridBg` ('dot' | 'grid' | 'lines' | 'none'), reacting to
+  // changes live. Persisted in the doc, so each whiteboard keeps its own
+  // background across reloads. The CSS variants keyed on data-grid-bg do the
+  // actual drawing. Set it with:
+  //   store.updateBlock(rootModel, { edgelessGridBg: 'lines' })
+  private _initBackgroundPattern() {
+    this._disposables.add(
+      effect(() => {
+        const mode = this.model.props.edgelessGridBg$.value ?? 'dot';
+        if (this.backgroundElm) this.backgroundElm.dataset.gridBg = mode;
+      })
+    );
   }
 
   override renderBlock() {

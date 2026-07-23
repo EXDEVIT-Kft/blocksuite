@@ -139,7 +139,14 @@ export class AffineToolbarWidget extends WidgetComponent {
       bottom: 16px;
       transform: translateX(-50%);
       max-width: calc(100vw - 32px);
-      overflow-x: auto;
+      /* [ALGOGRIND] Do NOT put overflow-x here: this host is position: fixed, so
+         it is the containing block of the absolutely-positioned dropdown panels
+         (editor-menu-content). overflow-x: auto forces overflow-y to compute to
+         auto too (CSS spec), which clips a dropdown opening upward from this
+         bottom bar — the "menus won't open on mobile" bug. The inner
+         .toolbar-scroll wrapper (position: static) already scrolls the button
+         row horizontally without clipping the dropdowns. Keep touch-action so
+         the row can still be swiped on touch. */
       touch-action: pan-x;
     }
 
@@ -324,12 +331,33 @@ export class AffineToolbarWidget extends WidgetComponent {
       toolbar.dataset.mobile = 'true';
       this.shadowRoot!.append(toolbar);
 
-      // Position toolbar above virtual keyboard using Visual Viewport API
+      // [ALGOGRIND] Pin the toolbar just above the on-screen keyboard using the
+      // Visual Viewport as the source of truth. `vv.offsetTop + vv.height` is the
+      // bottom edge of the *visible* area (above the keyboard) in layout-viewport
+      // coordinates. Positioning with `top` off that — instead of a `bottom`
+      // anchor — keeps the bar visible whether or not the keyboard is open and,
+      // crucially on iOS, makes it follow the page as it scrolls with the
+      // keyboard up (a `bottom`-anchored fixed bar otherwise drifts off the
+      // bottom of the screen the lower the caret is). Recomputed on every
+      // visualViewport resize/scroll (listeners below).
       updateMobilePosition = () => {
         const vv = window.visualViewport;
         if (!vv) return;
-        const keyboardHeight = window.innerHeight - vv.height - vv.offsetTop;
-        toolbar.style.bottom = `${Math.max(16, keyboardHeight + 16)}px`;
+        // [ALGOGRIND] Pin the toolbar to the bottom of the *visible* area using
+        // the Visual Viewport: `vv.offsetTop + vv.height` is the bottom edge of
+        // what's visible (above the keyboard) in layout-viewport coordinates.
+        // Positioning with `top` off that — instead of a `bottom` anchor — keeps
+        // it above the keyboard AND makes it follow the page as it scrolls with
+        // the keyboard up (a bottom-anchored fixed bar otherwise drifts behind
+        // the keyboard the lower the caret is). In edgeless, lift it further to
+        // clear the persistent tools toolbar at the very bottom.
+        const height = toolbar.offsetHeight || 44;
+        const edgelessOffset = context.isEdgelessMode ? 80 : 0;
+        const visibleBottom = vv.offsetTop + vv.height;
+        toolbar.style.bottom = 'auto';
+        toolbar.style.top = `${Math.round(
+          visibleBottom - height - 16 - edgelessOffset
+        )}px`;
       };
       if (window.visualViewport) {
         disposables.addFromEvent(

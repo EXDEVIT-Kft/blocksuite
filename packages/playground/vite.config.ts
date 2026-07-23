@@ -49,6 +49,13 @@ export default defineConfig(({ mode }) => {
 
   return {
     envDir: __dirname,
+    // [ALGOGRIND] Dev-only: allow reaching the dev server from a phone on the
+    // SAME local network for live mobile testing (http://<lan-ip>:5173). Vite
+    // allows LAN access by IP out of the box; the dev script already passes
+    // --host, this just makes it explicit. See TELEFON-TESZT-TERV.md.
+    server: {
+      host: true, // listen on all interfaces (same as --host)
+    },
     define: {
       'import.meta.env.PLAYGROUND_SERVER': JSON.stringify(
         process.env.PLAYGROUND_SERVER ?? 'http://localhost:8787'

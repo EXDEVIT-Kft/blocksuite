@@ -37,6 +37,11 @@ export class EditorToolbar extends WithDisposable(LitElement) {
       height: 100%;
       max-width: 100%;
       overflow-x: auto;
+      /* [ALGOGRIND] This inner wrapper is the sole horizontal scroller (the
+         mobile host no longer carries overflow, so dropdowns are not clipped).
+         Allow horizontal touch panning so the button row can be swiped on a
+         phone; only affects touch, so it is a no-op with a mouse. */
+      touch-action: pan-x;
       /* Hide the scrollbar; the row is dragged/swiped instead, and on wide
          screens it never overflows so there is nothing to scroll. */
       scrollbar-width: none;

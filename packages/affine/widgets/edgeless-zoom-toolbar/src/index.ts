@@ -90,8 +90,11 @@ export class AffineEdgelessZoomToolbarWidget extends WidgetComponent<RootBlockMo
       return nothing;
     }
 
+    // [ALGOGRIND] Hide the zoom control entirely on mobile: it overlapped the
+    // element/edgeless toolbars at the bottom and wastes space on a small
+    // screen (pinch-to-zoom still works).
     if (IS_MOBILE) {
-      return html`<mobile-zoom-ruler .std=${this.std}></mobile-zoom-ruler>`;
+      return nothing;
     }
 
     return html`

@@ -19,7 +19,7 @@ import {
 } from '@blocksuite/affine-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
-import { autoPlacement, offset } from '@floating-ui/dom';
+import { autoPlacement, offset, shift } from '@floating-ui/dom';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -417,9 +417,23 @@ export class InnerSlashMenu extends WithDisposable(LitElement) {
         autoUpdate: true,
         middleware: [
           offset(12),
+          // [ALGOGRIND] Allow the fly-out to open to the LEFT as well, so on a
+          // narrow (phone) screen it can flip to whichever side has more room.
           autoPlacement({
-            allowedPlacements: ['right-start', 'right-end'],
+            allowedPlacements: [
+              'right-start',
+              'right-end',
+              'left-start',
+              'left-end',
+            ],
           }),
+          // [ALGOGRIND] crossAxis:true is the key on phones: when the sub-menu is
+          // wider than the space on either side, it would still overflow the
+          // screen edge. For a left/right placement shift's main axis is
+          // vertical, so without crossAxis it never corrects the horizontal
+          // overflow. crossAxis lets it slide back into the viewport (overlapping
+          // the parent menu, which is fine for a sub-menu).
+          shift({ mainAxis: true, crossAxis: true, padding: 8 }),
         ],
       },
       abortController: this._subMenuAbortController,

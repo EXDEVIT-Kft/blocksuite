@@ -16,7 +16,7 @@ import { BlockSelection } from '@blocksuite/std';
 import { computed } from '@preact/signals-core';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { html } from 'lit';
-import { query } from 'lit/decorators.js';
+import { query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { when } from 'lit/directives/when.js';
 
@@ -50,6 +50,13 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
 
   private _lazyLoadObserver?: IntersectionObserver;
 
+  // [ALGOGRIND] Whether an initial blob fetch is currently in flight. Drives the
+  // "Betöltés" spinner in the fallback card so that scrolling to a not-yet-loaded
+  // (lazy) image shows progress instead of a static placeholder. The sync
+  // engine's `downloading` state does not cover the direct `engine.get()` fetch.
+  @state()
+  private accessor _fetching = false;
+
   get blobUrl() {
     return this.resourceController.blobUrl$.value;
   }
@@ -67,7 +74,12 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
   };
 
   refreshData = () => {
-    refreshData(this).catch(console.error);
+    this._fetching = true;
+    refreshData(this)
+      .catch(console.error)
+      .finally(() => {
+        this._fetching = false;
+      });
   };
 
   get resizableImg() {
@@ -209,6 +221,16 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
       title: 'Kép',
       description: formatSize(size),
     });
+
+    // [ALGOGRIND] While the blob is being fetched (including the lazy,
+    // viewport-gated initial fetch that scrolling triggers), show a spinner and
+    // a "Betöltés" label in the fallback card. Uses the default spinner colors so
+    // it stays visible on the light card, unlike the white over-image variant.
+    if (!blobUrl && !resovledState.error && (this._fetching || resovledState.loading)) {
+      resovledState.loading = true;
+      resovledState.title = 'Betöltés';
+      resovledState.icon = LoadingIcon();
+    }
 
     return html`
       <div class="affine-image-container" style=${containerStyleMap}>
