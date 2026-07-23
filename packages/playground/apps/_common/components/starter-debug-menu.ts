@@ -623,6 +623,14 @@ export class StarterDebugMenu extends ShadowlessElement {
     this.mode = newMode;
   }
 
+  // [ALGOGRIND] Set the per-document edgeless background pattern. Persisted on
+  // the root block, so it survives reload / syncs with the doc.
+  private _setEdgelessBg(mode: 'dot' | 'grid' | 'lines' | 'none') {
+    const root = this.doc.root;
+    if (!root) return;
+    this.doc.updateBlock(root, { edgelessGridBg: mode });
+  }
+
   private _switchOffsetMode() {
     this._hasOffset = !this._hasOffset;
   }
@@ -930,6 +938,23 @@ export class StarterDebugMenu extends ShadowlessElement {
               </sl-menu-item>
               <sl-menu-item @click="${this._toggleAdapterPanel}">
                 Toggle Adapter Panel
+              </sl-menu-item>
+              <sl-menu-item>
+                Edgeless Background
+                <sl-menu slot="submenu">
+                  <sl-menu-item @click="${() => this._setEdgelessBg('dot')}">
+                    Dot
+                  </sl-menu-item>
+                  <sl-menu-item @click="${() => this._setEdgelessBg('grid')}">
+                    Grid
+                  </sl-menu-item>
+                  <sl-menu-item @click="${() => this._setEdgelessBg('lines')}">
+                    Lines
+                  </sl-menu-item>
+                  <sl-menu-item @click="${() => this._setEdgelessBg('none')}">
+                    None
+                  </sl-menu-item>
+                </sl-menu>
               </sl-menu-item>
             </sl-menu>
           </sl-dropdown>
